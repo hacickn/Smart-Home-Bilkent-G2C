@@ -11,17 +11,17 @@ Tarık Buğra Karali 21703937
 
 > There are 4 main part of Smart Home
 
-- [PcUserInterface](#Pc User Interface)
-- [AndroidUserInterface](#Android User Interface)
+- [Pc User Interface](#PcUserInterface)
+- [AndroidUserInterface](#AndroidUserInterface)
 - [Arduino](#Arduino)
 - [Proteus](#Proteus)
 
 
 
-## PcUserInterface 
+### PcUserInterface 
 
 
-## AndroidUserInterface
+### AndroidUserInterface
 
 
 ### Arduino
