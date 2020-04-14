@@ -43,7 +43,7 @@ Tarık Buğra Karali 21703937
 * [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) - SQLite JDBC Driver
 
 #### Features
-
+- To communicate with database, Singleton patters is used
 
 ## Android User Interface
 
