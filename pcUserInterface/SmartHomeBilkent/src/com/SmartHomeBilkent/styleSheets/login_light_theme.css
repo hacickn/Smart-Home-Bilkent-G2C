@@ -1,0 +1,37 @@
+#root{
+       -fx-background-color: white ;
+}
+#nameImage{
+    -fx-background-image: url("images/nameDarkTheme.jpg");
+    -fx-background-size: cover;
+}
+#keyImage{
+    -fx-background-image: url("images/keyDarkTheme.jpg");
+    -fx-background-size: cover;
+}
+.button{
+    -fx-text-fill: black;
+    -fx-border-color: #b85c00;
+    -fx-background-color: white;
+}
+
+.button:hover{
+    -fx-text-fill: black;
+    -fx-border-color: #b85c00;
+    -fx-background-color: #b85c00;
+}
+
+.text-field{
+     -fx-text-fill: black;
+     -jfx-focus-color: #b85c00;
+     -jfx-unfocus-color: black;
+}
+
+.label{
+     -fx-text-fill: #b85c00;
+}
+
+.line{
+     -fx-fill: #b85c00;
+     -fx-stroke: #b85c00;
+}

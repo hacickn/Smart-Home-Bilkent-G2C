@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="firstStackPane" maxHeight="1600.0" maxWidth="1600.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" stylesheets="@styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
+   <children>
+      <StackPane prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="generalAnchorPane" prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="logoutButtpn" layoutX="366.0" layoutY="696.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00" AnchorPane.bottomAnchor="34.0">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="settingsButton" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButton" text="settingsButton" textFill="#ffffff00" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                  <JFXButton fx:id="settingsButtonActive" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButtonActive" text="settingsButtonActive" textFill="#ffffff00" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                  <JFXButton fx:id="userProfileButton" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoy" text="userProfileButton" textFill="#ffffff00" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                  <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                  <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                  <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="settingTopPaneLabels" text="USER PROFILE" visible="false">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="menuMenuLabel" alignment="CENTER" layoutX="294.0" layoutY="105.0" prefHeight="22.0" prefWidth="213.0" styleClass="settingTopPaneLabels" text="MENU" visible="false">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="menuSettingLabel" alignment="CENTER" layoutX="574.0" layoutY="105.0" prefHeight="22.0" prefWidth="182.0" styleClass="settingTopPaneLabels" text="SETTINGS" visible="false" AnchorPane.rightAnchor="44.0">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="menuAnchorPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0">
+               <children>
+                  <BorderPane fx:id="menuBorderPane" opacity="0.9" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <VBox fx:id="menuLeffVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="menuElecButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT" />
+                              <JFXProgressBar fx:id="mennuElecProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
+                              <JFXButton fx:id="menuGasButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT" />
+                              <JFXProgressBar fx:id="menuGasProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
+                           </children>
+                        </VBox>
+                     </left>
+                     <right>
+                        <VBox fx:id="menuRightVBox" alignment="CENTER" prefHeight="316.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="menuWaterButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT" />
+                              <JFXProgressBar fx:id="menuWaterProgress" prefWidth="50.0" visible="false" />
+                              <JFXButton fx:id="menuGreenHouseButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT" />
+                           </children>
+                        </VBox>
+                     </right>
+                     <bottom>
+                        <HBox fx:id="menuBottomHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane fx:id="menuHeaterTempPane" prefHeight="100.0" prefWidth="417.0">
+                                 <children>
+                                    <Label layoutX="60.0" layoutY="21.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="HOME">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="208.0" layoutY="21.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="WEATHER">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="weatherImage" fitHeight="60.0" fitWidth="60.0" layoutX="343.0" layoutY="20.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="weather" />
+                                    <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="20.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
+                                 </children></Pane>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <top>
+                        <Pane fx:id="connectionPane" maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="menuConnectionButton" layoutX="315.0" layoutY="2.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                              <Label fx:id="menuConnectionWarningLabel" alignment="CENTER" layoutX="179.0" layoutY="72.0" prefHeight="23.0" prefWidth="342.0" styleClass="connectionInfo" text="menuConnectionWarningLabel" visible="false">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <Pane fx:id="menuEmptPane" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane fx:id="menuElecPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane">
+                                 <children>
+                                    <Label fx:id="elecSubPaneLabelPassive" alignment="CENTER" layoutX="100.0" layoutY="14.0" prefWidth="300.0" styleClass="contextPassive" text="ELECTRICITY">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="elecSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="elecSubMenuToggleButton" textFill="TRANSPARENT" />
+                                    <Label fx:id="elecSubPaneOpenLabelPassive" alignment="CENTER" layoutX="30.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0" styleClass="contextPassive" text="LAST OPENING">
+                                       <font>
+                                          <Font name="Agency FB" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneCloseLabelPassive" alignment="CENTER" layoutX="306.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0" styleClass="contextPassive" text="LAST CLOSURE">
+                                       <font>
+                                          <Font name="Agency FB" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneOpenValueLabelPassive" alignment="CENTER" layoutX="30.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0" style="-fx-border-radius: 15;" styleClass="contextDetailPassive" text="YESTERDAY  14.37">
+                                       <font>
+                                          <Font name="Agency FB" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneCloseValueLabelPassive" alignment="CENTER" layoutX="306.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0" style="-fx-border-radius: 15;" styleClass="contextDetailPassive" text="YESTERDAY 23.45">
+                                       <font>
+                                          <Font name="Agency FB" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="elecSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="elecSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                    <Label fx:id="elecSubPaneLabelActive" alignment="CENTER" layoutX="100.0" layoutY="14.0" prefWidth="300.0" styleClass="contextActive" text="ELECTRICITY" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneOpenLabelActive" alignment="CENTER" layoutX="30.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0" styleClass="contextActive" text="LAST OPENING" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneCloseLabelActive" alignment="CENTER" layoutX="306.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0" styleClass="contextActive" text="LAST CLOSURE" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneOpenValueLabelActive" alignment="CENTER" layoutX="30.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0" style="-fx-border-radius: 15;" styleClass="contextDetailActive" text="YESTERDAY  14.37" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="elecSubPaneCloseValueLabelActive" alignment="CENTER" layoutX="306.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0" style="-fx-border-radius: 15;" styleClass="contextDetailActive" text="YESTERDAY 23.45" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="elecSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="elecSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="menuGasPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
+                                 <children>
+                                    <Label fx:id="gasSubPaneLabelPassive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextPassive" text="GAS">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
+                                    <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gasSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                    <Label fx:id="gasSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GAS" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gasSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="menuWaterPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
+                                 <children>
+                                    <Label fx:id="aquiarumSubPaneLabelPassive" alignment="CENTER" layoutX="96.0" layoutY="14.0" prefWidth="300.0" styleClass="contextPassive" text="AQUARIUM">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="waterSubMenuToggleButton" textFill="TRANSPARENT" />
+                                    <JFXButton fx:id="waterSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                    <Label fx:id="aquiarumSubPaneLabelActive" alignment="CENTER" layoutX="96.0" layoutY="14.0" prefWidth="300.0" styleClass="contextActive" text="AQUARIUM" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="menuTempPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
+                                 <children>
+                                    <Label fx:id="greenHouseSubPaneLabelPassive" alignment="CENTER" layoutX="91.0" layoutY="14.0" prefHeight="0.0" prefWidth="310.0" styleClass="contextPassive" text="GREEN HOUSE">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ghTempSubPaneLabelActive" alignment="CENTER" layoutX="91.0" layoutY="14.0" prefHeight="0.0" prefWidth="310.0" styleClass="contextActive" text="GREEN HOUSE" visible="false">
+                                       <font>
+                                          <Font name="Agency FB" size="35.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ghHumidityTempLabel" alignment="CENTER" layoutX="283.0" layoutY="72.0" prefHeight="0.0" prefWidth="200.0" styleClass="tempLabel" text="HUMIDITY">
+                                       <font>
+                                          <Font name="Agency FB" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ghHumidityValueLabel" alignment="CENTER" layoutX="283.0" layoutY="112.0" prefHeight="0.0" prefWidth="200.0" style="-fx-border-radius: 15;" styleClass="tempValueLabel" text="21">
+                                       <font>
+                                          <Font name="Agency FB" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="menuHomeTempLabel" alignment="CENTER" layoutX="14.0" layoutY="72.0" prefHeight="0.0" prefWidth="200.0" styleClass="tempLabel" text="TEMPERATURE">
+                                       <font>
+                                          <Font name="Agency FB" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ghTempValueLabel" alignment="CENTER" layoutX="14.0" layoutY="110.0" prefHeight="0.0" prefWidth="200.0" style="-fx-border-radius: 15;" styleClass="tempValueLabel" text="23">
+                                       <font>
+                                          <Font name="Agency FB" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="greenhouseSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                    <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="greenhouseSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0">
+         <children>
+            <AnchorPane fx:id="userProfileAnchorPane" maxHeight="550.0" prefHeight="550.0" prefWidth="700.0">
+               <children>
+                  <Pane fx:id="userProfilePane" opacity="0.9" prefHeight="550.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="userInfoPane">
+                     <children>
+                        <Label fx:id="userProfileNameLabel" alignment="CENTER_RIGHT" layoutX="19.0" layoutY="115.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="NAME">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userProfileSurnameLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="165.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="SURNAME">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userProfileAgeLabel" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="215.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="BIRTHDAY">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userProfileGenderLabel" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="265.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="GENDER">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userProfileUserNameLabel" alignment="CENTER_RIGHT" layoutX="302.0" layoutY="115.0" prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels" text="USER NAME">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userProfilePasswordLabel" alignment="CENTER_RIGHT" layoutX="301.0" layoutY="165.0" prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels" text="PASSWORD">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="userProfileNameField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="147.0" layoutY="118.0" styleClass="userInfoTextField" text="HACI">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userProfileSurnameField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="147.0" layoutY="168.0" styleClass="userInfoTextField" text="CAKIN">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userProfileAgeField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="147.0" layoutY="218.0" styleClass="userInfoTextField" text="20">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userProfileGenderField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="147.0" layoutY="268.0" styleClass="userInfoTextField" text="MALE">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userProfileUserNameField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="479.0" layoutY="118.0" styleClass="userInfoTextField" text="hcckn">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userProfilePasswordField" alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="479.0" layoutY="168.0" styleClass="userInfoTextField" text="*******">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="changeUserNormalInfoButton" layoutX="192.0" layoutY="296.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserNormalnfo" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="changeUserPrivInfoButton" layoutX="524.0" layoutY="196.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserPrivInfo" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="userChangerButton" layoutX="315.0" layoutY="14.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userChange" text="changeUserButton" textFill="TRANSPARENT" />
+                        <Label fx:id="userChangerInfoLabel" alignment="CENTER" layoutX="259.0" layoutY="84.0" prefHeight="17.0" prefWidth="182.0" styleClass="userProfileInfoLabel" text="CHANGE USER" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="changeUserInfoLabel" alignment="CENTER" layoutX="100.0" layoutY="346.0" prefHeight="17.0" prefWidth="233.0" styleClass="userProfileInfoLabel" text="CHANGE INFO" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="changeUserPrivInfoLabel" alignment="CENTER" layoutX="433.0" layoutY="246.0" prefHeight="17.0" prefWidth="233.0" styleClass="userProfileInfoLabel" text="CHANGE PRIV INFO" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="userInfoBoyImage" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@styleSheets/images/boy4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="userInfoGirlImage" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@styleSheets/images/girls4.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="changeUserNormalInfoPane" layoutX="40.0" layoutY="70.0" prefHeight="330.0" prefWidth="290.0" style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;" styleClass="changeUserInfoPane" visible="false">
+                     <children>
+                        <JFXButton fx:id="saveUserNormalInfo" layoutX="120.0" layoutY="14.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="saveNormalInfo" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="backToUserProfileFromNormalInfo" layoutX="120.0" layoutY="266.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackNormalnfo" textFill="TRANSPARENT" />
+                        <Label fx:id="normalChangeNameLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="90.0" prefHeight="21.0" prefWidth="92.0" styleClass="changeUserInfoLabels" text="NAME">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="normalChangeSurnameLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="125.0" prefHeight="21.0" prefWidth="90.0" styleClass="changeUserInfoLabels" text="SURNAME">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="normalChangeBirthdayLabel" alignment="CENTER_RIGHT" layoutX="7.0" layoutY="160.0" prefHeight="21.0" prefWidth="92.0" styleClass="changeUserInfoLabels" text="BIRTHDAY">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="normalChangeGenderLabel" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="195.0" prefHeight="21.0" prefWidth="92.0" styleClass="changeUserInfoLabels" text="GENDER">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="nameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="83.0" styleClass="changeUserInfoTextField" />
+                        <JFXTextField fx:id="surnameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="118.0" styleClass="changeUserInfoTextField" />
+                        <JFXTextField fx:id="birthdayTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="153.0" styleClass="changeUserInfoTextField" />
+                        <JFXRadioButton fx:id="maleRadioOption" alignment="CENTER_LEFT" layoutX="105.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="86.0" styleClass="changeUserInforRadioButton" text="MALE" />
+                        <JFXRadioButton fx:id="femaleRadioOption" alignment="CENTER_LEFT" layoutX="194.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="92.0" styleClass="changeUserInforRadioButton" text="FEMALE" />
+                        <Label fx:id="normalInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0" prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels" text="PLEASE FILL TAL GAPS" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="changeUserPrivInfoPane" layoutX="370.0" layoutY="70.0" prefHeight="330.0" prefWidth="290.0" style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;" styleClass="changeUserInfoPane" visible="false">
+                     <children>
+                        <JFXButton fx:id="saveUserPrivInfo" layoutX="120.0" layoutY="14.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="savePrivInfo" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="backToUserProfileFromPrivInfo" layoutX="120.0" layoutY="266.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackPrivInfo" textFill="TRANSPARENT" />
+                        <Label fx:id="userNameLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="90.0" prefHeight="21.0" prefWidth="150.0" styleClass="changeUserInfoLabels" text="USER NAME">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="newPasswrodLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="125.0" prefHeight="21.0" prefWidth="150.0" styleClass="changeUserInfoLabels" text="NEW PASSWORD">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="verfifyNewPasswordLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="160.0" prefHeight="21.0" prefWidth="150.0" styleClass="changeUserInfoLabels" text="VERIFY NEW PASSWORD">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="currentPasswordLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="195.0" prefHeight="21.0" prefWidth="150.0" styleClass="changeUserInfoLabels" text="CURRENT PASSWORD">
+                           <font>
+                              <Font name="Agency FB" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="userNameTextField" alignment="CENTER" focusColor="WHITE" layoutX="157.0" layoutY="83.0" prefWidth="120.0" styleClass="changeUserInfoTextField" />
+                        <JFXTextField fx:id="newPasswrodTextField" alignment="CENTER" focusColor="WHITE" layoutX="157.0" layoutY="118.0" prefWidth="120.0" styleClass="changeUserInfoTextField" />
+                        <JFXTextField fx:id="verfifyNewPasswordField" alignment="CENTER" focusColor="WHITE" layoutX="157.0" layoutY="153.0" prefWidth="120.0" styleClass="changeUserInfoTextField" />
+                        <JFXTextField fx:id="currentPasswordField" alignment="CENTER" focusColor="WHITE" layoutX="157.0" layoutY="188.0" prefWidth="120.0" styleClass="changeUserInfoTextField" />
+                        <Label fx:id="privateInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0" prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font></Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
+               <children>
+                  <Pane fx:id="settingMainFunctionsPane" layoutX="100.0" layoutY="-3.0" prefHeight="105.0" prefWidth="500.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingSubPane">
+                     <children>
+                        <JFXButton fx:id="applicationSettingButton" layoutX="45.0" layoutY="24.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="applicationSettings" text="applicationSettingButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="settingsUsersSettingButton" layoutX="165.0" layoutY="24.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="userSettings" text="usersSettingButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="modsSettingButton" layoutX="285.0" layoutY="24.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="modsSettings" text="modsSettingButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingButton" layoutX="405.0" layoutY="24.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="homeSettings" text="homeSettingButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="applicationSettingButtonActive" layoutX="45.0" layoutY="24.0" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="applicationSettingsActive" text="applicationSettingButtonActive" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="settingsUsersSettingButtonActive" layoutX="165.0" layoutY="24.0" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="userSettingsActive" text="usersSettingButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="modsSettingButtonActive" layoutX="285.0" layoutY="24.0" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="modsSettingsActive" text="modsSettingButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingButtonActive" layoutX="405.0" layoutY="24.0" onMouseEntered="#settingsFacilitiesButtonsMov" onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="homeSettingsActive" text="homeSettingButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <Label fx:id="applicationSettingButtonLabel" alignment="CENTER" layoutX="13.0" layoutY="80.0" prefHeight="24.0" prefWidth="125.0" styleClass="settingTopPaneLabels" text="APPLICATION" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="usersSettingButtonLabel" alignment="CENTER" layoutX="126.0" layoutY="80.0" prefHeight="24.0" prefWidth="139.0" styleClass="settingTopPaneLabels" text="USERS" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="modsSettingButtonLabel" alignment="CENTER" layoutX="257.0" layoutY="79.0" prefHeight="24.0" prefWidth="116.0" styleClass="settingTopPaneLabels" text="MODS" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="homeSettingButtonLabel" alignment="CENTER" layoutX="366.0" layoutY="80.0" prefHeight="24.0" prefWidth="139.0" styleClass="settingTopPaneLabels" text="HOME" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="settingSubAnchorBottom" layoutY="108.0" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" opacity="0.9" prefHeight="450.0" prefWidth="700.0">
+               <children>
+                  <SplitPane fx:id="settingModePane" dividerPositions="0.4" orientation="VERTICAL" prefHeight="450.0" prefWidth="700.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2;" styleClass="settingSubPane">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="355.0">
+                           <children>
+                              <Label fx:id="interactiveTextModeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0" prefWidth="396.0" styleClass="tempLabel" text="INTERACTIVE TEXT MODE">
+                                 <font>
+                                    <Font name="Agency FB" size="25.0" />
+                                 </font>
+                              </Label>
+                              <JFXToggleButton fx:id="textModeToggle" layoutX="308.0" layoutY="44.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="13.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="694.0">
+                           <children>
+                              <Label fx:id="interactiveSoundModeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0" prefWidth="396.0" styleClass="tempLabel" text="INTERACTIVE SOUND MODE">
+                                 <font>
+                                    <Font name="Agency FB" size="25.0" />
+                                 </font>
+                              </Label>
+                              <JFXToggleButton fx:id="soundModeToggle" layoutX="309.0" layoutY="40.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="150.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="soundExtraToggle" layoutX="313.0" layoutY="132.0" onAction="#modsToggleButtons" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <Label fx:id="soundHelperLabel" alignment="CENTER" layoutX="171.0" layoutY="110.0" prefHeight="24.0" prefWidth="353.0" styleClass="tempLabel" text="HELPER MODE">
+                                 <font>
+                                    <Font name="Agency FB" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXSlider fx:id="soundVolumeSlider" blockIncrement="100.0" layoutX="277.0" layoutY="225.0" onMouseReleased="#volumeAdjust" showTickMarks="true" value="50.0" />
+                              <Label fx:id="soundVolumeLabel" alignment="CENTER" layoutX="163.0" layoutY="190.0" prefHeight="24.0" prefWidth="370.0" styleClass="tempLabel" text="VOLUME">
+                                 <font>
+                                    <Font name="Agency FB" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <Pane fx:id="settingThemePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                     <children>
+                        <Label fx:id="themeTopLabel" alignment="CENTER" layoutX="197.0" layoutY="14.0" prefHeight="31.0" prefWidth="307.0" styleClass="tempLabel" text="THEMES">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton fx:id="darkThemeRadioButton" layoutX="14.0" layoutY="73.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="182.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="15.0" layoutY="133.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="182.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="LIGHT ">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="15.0" layoutY="193.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="182.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="14.0" layoutY="253.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="182.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXButton fx:id="settingThemeSaveButton" layoutX="585.0" layoutY="150.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#applicationSettingButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeThemeSave" text="saveChanges" textFill="TRANSPARENT" />
+                        <ImageView fx:id="settingThemeDarkImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@styleSheets/images/darkMode.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="settingThemeLightImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@styleSheets/images/lightMode.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="settingThemeSmoothImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@styleSheets/images/smoothMode.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="settingThemeCartoonImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@styleSheets/images/cartoonMode.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="languageTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="31.0" prefWidth="299.0" styleClass="tempLabel" text="LANGUAGES">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="englishOption" layoutX="80.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 100;" styleClass="english" text="english" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="germanOption" layoutX="304.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="deutsch" text="deutsch" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="turkishOption" layoutX="501.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="turkce" text="turkce" textFill="TRANSPARENT" />
+                        <Label fx:id="englishLabel" layoutX="120.0" layoutY="66.0" styleClass="settingTopPaneLabels" text="ENGLISH" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="germanLabel" layoutX="312.0" layoutY="66.0" styleClass="settingTopPaneLabels" text="DEUTSCH" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="turkishLabel" layoutX="514.0" layoutY="66.0" styleClass="settingTopPaneLabels" text="TÜRKÇE" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="settingEmergenyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="emergencyTopLabel" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="31.0" prefWidth="551.0" styleClass="tempLabel" text="EMERGENCY">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="31.0" prefWidth="353.0" styleClass="tempLabel" text="NOTIFICATIONS">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="settingConnectionPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="connectionTopLabel" alignment="CENTER" layoutX="179.0" layoutY="14.0" prefHeight="31.0" prefWidth="341.0" styleClass="tempLabel" text="CONNECTIONS">
+                           <font>
+                              <Font name="Agency FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <Line endX="-3.0" endY="-9.0" layoutX="353.0" layoutY="73.0" startX="-3.0" startY="255.0" />
+                        <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="134.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="bluImage" />
+                        <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="483.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="usbImage" />
+                        <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="134.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="bluImageActive" visible="false" />
+                        <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="483.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="usbImageActive" visible="false" />
+                        <JFXButton layoutX="144.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="bluConnection" textFill="TRANSPARENT" />
+                        <JFXButton layoutX="493.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT" />
+                        <JFXComboBox fx:id="portChooser" editable="true" layoutX="415.0" layoutY="137.0" prefHeight="25.0" prefWidth="206.0" promptText="CHOOSE THE PORT" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="settingUsersPane" maxHeight="450.0" maxWidth="700.0" minHeight="354.0" minWidth="700.0" prefHeight="355.0" prefWidth="700.0" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <JFXTreeTableView fx:id="settingUserTable" onMouseMoved="#settingUserTableMov" onMousePressed="#settingUserTableMov" prefHeight="354.0" prefWidth="700.0">
+                           <columns>
+                              <TreeTableColumn fx:id="settingUserTableName" prefWidth="100.0" text="NAME" />
+                              <TreeTableColumn fx:id="settingUserTableSurname" prefWidth="100.0" text="SURNAME" />
+                              <TreeTableColumn fx:id="settingUserTableBirthday" prefWidth="100.0" text="BIRTHDAY" />
+                              <TreeTableColumn fx:id="settingUserTableGender" prefWidth="99.0" text="GENDER" />
+                              <TreeTableColumn fx:id="settingUserTableUserName" prefWidth="100.0" text="USER NAME" />
+                              <TreeTableColumn fx:id="settingUserTableTheme" prefWidth="99.0" text="THEME" />
+                              <TreeTableColumn fx:id="settingUserTableLanguage" prefWidth="99.0" text="LANGUAGE" />
+                           </columns>
+                        </JFXTreeTableView>
+                     </children></Pane>
+                  <Pane fx:id="settingElecSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="homeElecSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="ELECTRICITY SETTINGS">
+                           <font>
+                              <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                        <JFXToggleButton layoutX="311.0" layoutY="50.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                        <BarChart layoutX="152.0" layoutY="108.0" prefHeight="220.0" prefWidth="396.0">
+                          <xAxis>
+                            <CategoryAxis label="DAYS OF MONTH" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="HOURS" prefHeight="158.0" prefWidth="43.0" side="LEFT" upperBound="20.0" />
+                          </yAxis>
+                        </BarChart>
+                     </children></Pane>
+                  <Pane fx:id="settingGasSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="homeGasSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="GAS SETTINGS">
+                           <font>
+                              <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                        <JFXToggleButton layoutX="311.0" layoutY="59.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                        <BarChart layoutX="152.0" layoutY="115.0" prefHeight="220.0" prefWidth="396.0">
+                           <xAxis>
+                              <CategoryAxis label="DAYS OF MONTH" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="HOURS" prefHeight="158.0" prefWidth="43.0" side="LEFT" upperBound="20.0" />
+                           </yAxis>
+                        </BarChart>
+                     </children></Pane>
+                  <Pane fx:id="settingAquSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="homeAquSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="AQUARIUM SETTINGS">
+                           <font>
+                              <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="122.0" styleClass="tempLabel" text="SPECIES OF FISH">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="93.0" layoutY="165.0" styleClass="tempLabel" text="FEEDING START TIME(EACH DAY)">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="211.0" styleClass="tempLabel" text="WEEKLY WATER EXCHANGE DAY AND TIME">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="263.0" styleClass="tempLabel" text="DAILY AIR ENGINE RUN TIME AND START TIME">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox layoutX="297.0" layoutY="117.0" prefWidth="150.0" />
+                        <JFXTimePicker layoutX="297.0" layoutY="160.0" />
+                        <JFXTimePicker layoutX="500.0" layoutY="213.0" />
+                        <JFXTimePicker layoutX="500.0" layoutY="258.0" />
+                        <JFXComboBox layoutX="298.0" layoutY="213.0" prefHeight="25.0" prefWidth="171.0" />
+                        <JFXSlider blockIncrement="24.0" layoutX="313.0" layoutY="270.0" max="24.0" minorTickCount="24" showTickMarks="true" />
+                        <JFXToggleButton layoutX="311.0" layoutY="50.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                     </children></Pane>
+                  <Pane fx:id="settingGreenHouseSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="homeGreenHouseSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="GREEN HOUSE SETTINGS">
+                           <font>
+                              <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="115.0" prefHeight="17.0" prefWidth="194.0" styleClass="tempLabel" text="TEMPERATURE">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="488.0" layoutY="115.0" prefHeight="17.0" prefWidth="170.0" styleClass="tempLabel" text="HUMUDITY">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="208.0" layoutY="115.0" prefHeight="17.0" prefWidth="280.0" styleClass="tempLabel" text="LATEST WATER FROM AQUARIUM">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="132.0" prefHeight="17.0" prefWidth="170.0" style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel" text="24" />
+                        <Label alignment="CENTER" layoutX="212.0" layoutY="132.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel" text="24.04.2020 14.38" />
+                        <Label alignment="CENTER" layoutX="515.0" layoutY="132.0" prefHeight="17.0" prefWidth="116.0" style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel" text="\%24" />
+                        <BarChart alternativeRowFillVisible="false" horizontalZeroLineVisible="false" layoutX="84.0" layoutY="174.0" prefHeight="163.0" prefWidth="529.0" verticalZeroLineVisible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children></Pane>
+                  <Pane fx:id="settingRFIDSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                     <children>
+                        <Label fx:id="homeRfidSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="RFID SETTINGS">
+                           <font>
+                              <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
+                  <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
+                  <AnchorPane fx:id="applicationSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="610.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane">
+                     <children>
+                        <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettings" text="themeSetting" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="languageSettingButton" layoutX="160.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettings" text="languageSetting" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="emergencySettingButton" layoutX="281.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettings" text="emergencySetting" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="phoneNotificationSettingButton" layoutX="413.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="phoneNotificationSettings" text="phoneNotificationSetting" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="smartHomeConnectionSettingButton" layoutX="517.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettings" text="smartHomeConnectionSetting" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="themeSettingButtonActive" layoutX="39.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettingsActive" text="themeSettingActive" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="languageSettingButtonActive" layoutX="160.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettingsActive" text="languageSettingActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="emergencySettingButtonActive" layoutX="281.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettingsActive" text="emergencySettingActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="phoneNotificationSettingsActive" text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettingsActive" text="smartHomeConnectionSettingActive" textFill="TRANSPARENT" visible="false" />
+                        <Label fx:id="themeSubLabel" alignment="CENTER" layoutX="-3.0" layoutY="67.0" prefHeight="18.0" prefWidth="135.0" styleClass="tempLabel" text="THEME" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="languageSubLabel" alignment="CENTER" layoutX="118.0" layoutY="67.0" prefHeight="18.0" prefWidth="135.0" styleClass="tempLabel" text="LANGUAGE" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emergencySubLabel" alignment="CENTER" layoutX="231.0" layoutY="67.0" prefHeight="18.0" prefWidth="150.0" styleClass="tempLabel" text="EMERGENCY" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="notificationSubLabel" alignment="CENTER" layoutX="357.0" layoutY="67.0" prefHeight="18.0" prefWidth="162.0" styleClass="tempLabel" text="NOTIFICATION" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="connectionSubLabel" alignment="CENTER" layoutX="461.0" layoutY="67.0" prefHeight="18.0" prefWidth="162.0" styleClass="tempLabel" text="CONNECTION" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="usersSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="610.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane" visible="false">
+                     <children>
+                        <JFXButton fx:id="usersSettingSubPaneAddUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="addUserButton" text="addUser" textFill="TRANSPARENT" AnchorPane.leftAnchor="167.0" />
+                        <JFXButton fx:id="usersSettingSubPaneRemoveUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="removeUserButton" text="removeUser" textFill="TRANSPARENT" AnchorPane.rightAnchor="167.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="homeSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="625.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane" visible="false">
+                     <children>
+                        <JFXButton fx:id="homeSettingElecButton" layoutX="43.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="elecButton" text="homeSettingElecButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingGasButton" layoutX="157.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButton" text="homeSettingGasButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingGreenHouseButton" layoutX="399.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingRFIDButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="rfid" text="homeSettingRFIDButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouseActive" text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingRFIDButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="rfidActive" text="homeSettingRFIDButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <Label fx:id="homeSubPaneELecLabel" alignment="CENTER" layoutX="18.0" layoutY="73.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="ELECTRICITY" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="homeSubPaneGasLabel" alignment="CENTER" layoutX="145.0" layoutY="73.0" prefHeight="22.0" prefWidth="90.0" styleClass="tempLabel" text="GAS" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="homeSubPaneAquLabel" alignment="CENTER" layoutX="230.0" layoutY="72.0" prefHeight="22.0" prefWidth="162.0" styleClass="tempLabel" text="AQUARIUM" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="homeSubPaneGreenHouseLabel" alignment="CENTER" layoutX="351.0" layoutY="72.0" prefHeight="22.0" prefWidth="162.0" styleClass="tempLabel" text="GREEN HOUSE" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="homeSubPaneRfidLabel" alignment="CENTER" layoutX="492.0" layoutY="72.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="RFID" visible="false">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+                  <Pane fx:id="addUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="addRemoveUserPane" visible="false">
+                     <children>
+                        <Label fx:id="createUserTopLabel" alignment="CENTER" layoutX="187.0" layoutY="14.0" prefHeight="32.0" prefWidth="341.0" styleClass="tempLabel" text="CREATE NEW USER">
+                           <font>
+                              <Font name="Agency FB" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserNameLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="62.0" prefHeight="24.0" prefWidth="92.0" styleClass="tempLabel" text="NAME">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserSurnameLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="102.0" prefHeight="24.0" prefWidth="92.0" styleClass="tempLabel" text="SURNAME">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserGenderLabel" alignment="CENTER_RIGHT" layoutX="2.0" layoutY="182.0" prefHeight="24.0" prefWidth="92.0" styleClass="tempLabel" text="GENDER">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserBirthdayLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="142.0" prefHeight="24.0" prefWidth="92.0" styleClass="tempLabel" text="BIRTHDAY">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserUserNameLabel" alignment="CENTER_RIGHT" layoutX="308.0" layoutY="66.0" prefHeight="24.0" prefWidth="182.0" styleClass="tempLabel" text="USER NAME">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserPasswordLabel" alignment="CENTER_RIGHT" layoutX="307.0" layoutY="106.0" prefHeight="24.0" prefWidth="182.0" styleClass="tempLabel" text="PASSWORD">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserPasswordVerifyLabel" alignment="CENTER_RIGHT" layoutX="308.0" layoutY="146.0" prefHeight="24.0" prefWidth="182.0" styleClass="tempLabel" text="PASSWORD VERIFY">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserUserTypeLabel" alignment="CENTER_RIGHT" layoutX="350.0" layoutY="186.0" prefHeight="24.0" prefWidth="139.0" styleClass="tempLabel" text="USER TYPE">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserThemeLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="222.0" prefHeight="24.0" prefWidth="90.0" styleClass="tempLabel" text="THEME">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="createUserLanguageLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="262.0" prefHeight="24.0" prefWidth="90.0" styleClass="tempLabel" text="LANGUAGE">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="createUserConfirmButton" layoutX="374.0" layoutY="383.0" onAction="#createUserPaneAction" prefHeight="50.0" prefWidth="50.0" styleClass="verifyAddUserButton" text="completeAdd" textFill="TRANSPARENT" />
+                        <JFXTextField fx:id="createUserNameTextField" alignment="CENTER" layoutX="108.0" layoutY="62.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="createUserSurnameTextField" alignment="CENTER" layoutX="108.0" layoutY="102.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="createUserBirthdayTextField" alignment="CENTER" layoutX="108.0" layoutY="142.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXRadioButton fx:id="createUserMaleOption" layoutX="108.0" layoutY="186.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="MALE">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserFemaleOption" layoutX="191.0" layoutY="186.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="92.0" styleClass="changeThemeSaveRadioButton" text="FEMALE">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserDarkThemeOption" layoutX="108.0" layoutY="226.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="DARK">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserLightThemeOption" layoutX="187.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="73.0" styleClass="changeThemeSaveRadioButton" text="LIGHT">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserSmoothThemeOption" layoutX="262.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="86.0" styleClass="changeThemeSaveRadioButton" text="SMOOTH">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserCartoonThemeOption" layoutX="348.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="116.0" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserEnglishOption" layoutX="108.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="ENGLISH">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserTurkishOption" layoutX="187.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="TÜRKÇE">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserGermanOption" layoutX="262.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="DEUTSCH">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXTextField fx:id="createUserUserNameTextField" alignment="CENTER" layoutX="504.0" layoutY="66.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="createUserPasswordField" alignment="CENTER" layoutX="504.0" layoutY="106.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="createUserPasswordVerifyField" alignment="CENTER" layoutX="504.0" layoutY="146.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXRadioButton fx:id="createUserParentOption" layoutX="504.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="92.0" styleClass="changeThemeSaveRadioButton" text="PARENT">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="createUserChildOption" layoutX="597.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="90.0" styleClass="changeThemeSaveRadioButton" text="CHILD">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXButton fx:id="createUserGoBack" layoutX="282.0" layoutY="383.0" onAction="#createUserPaneAction" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBack" textFill="TRANSPARENT" />
+                        <Label fx:id="createUserWarningLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="361.0" prefHeight="22.0" prefWidth="491.0" styleClass="tempLabel">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="deleteUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="addRemoveUserPane" visible="false">
+                     <children>
+                        <Label fx:id="removeAnUser" alignment="CENTER" layoutX="183.0" layoutY="14.0" prefHeight="32.0" prefWidth="334.0" styleClass="tempLabel" text="REMOVE AN USER">
+                           <font>
+                              <Font name="Agency FB" size="26.0" />
+                           </font>
+                        </Label>
+                        <JFXPasswordField fx:id="removeUserTextField" alignment="CENTER" layoutX="275.0" layoutY="86.0" onAction="#removeUserPaneAction" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <Label fx:id="removeUserFirstWarning" alignment="CENTER" layoutY="151.0" prefHeight="26.0" prefWidth="700.0" styleClass="settingTopPaneLabels" text=" WARNING! AFTER THE DELETING, EVERTHING ABOUT THIS USER CAN NOT BRING BACK">
+                           <font>
+                              <Font name="Agency FB" size="21.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="removeUserConfirm" layoutX="325.0" layoutY="187.0" onAction="#removeUserPaneAction" prefHeight="50.0" prefWidth="50.0" styleClass="verifyRemove" text="goBack" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="removeUserGoBack" layoutX="325.0" layoutY="386.0" onAction="#removeUserPaneAction" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBack" textFill="TRANSPARENT" />
+                        <Label fx:id="removeUserHideWarning" alignment="CENTER" layoutX="72.0" layoutY="250.0" prefHeight="20.0" prefWidth="557.0" styleClass="tempLabel">
+                           <font>
+                              <Font name="Agency FB" size="16.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
