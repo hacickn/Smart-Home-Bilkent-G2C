@@ -18,13 +18,13 @@ Tarık Buğra Karali 21703937
 
 
 
-### Pc User Interface 
+## Pc User Interface 
 
 
-### Android User Interface
+## Android User Interface
 
 
-### Arduino
+## Arduino
 
 
-### Proteus
+## Proteus
