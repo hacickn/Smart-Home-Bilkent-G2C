@@ -22,10 +22,10 @@ Tarık Buğra Karali 21703937
 > (Until Today)
 To experience the program there are three users in the program
 ```
-UserName    Password
- david       cs102
- nasuh       nasuh
- mete         mete
+ UserName    Password
+- david       cs102
+- nasuh       nasuh
+- mete        mete
 ```
 - [Materials Used](#MaterialsUsed)
 - [Features](#Features)
@@ -52,7 +52,7 @@ UserName    Password
 * [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) - SQLite JDBC Driver
 
 #### Features
-- To communicate with database, Singleton patters is used
+- To communicate with database, Singleton patters is used.
 
 ## Android User Interface
 
