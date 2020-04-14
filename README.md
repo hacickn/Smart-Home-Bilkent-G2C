@@ -20,8 +20,8 @@ Tarık Buğra Karali 21703937
 
 ## Pc User Interface 
 > (Until Today)
-- [Program Used](#Program Used)
-- [Material Used](#Material Used)
+- [Program Used](#ProgramUsed)
+- [Material Used](#MaterialUsed)
 - [Features](#Features)
 
 #### Program Used
