@@ -53,6 +53,7 @@ To experience the program there are three users in the program
 
 #### Features
 - To communicate with database, Singleton patters is used.
+-(to be continued)
 
 ## Android User Interface
 
