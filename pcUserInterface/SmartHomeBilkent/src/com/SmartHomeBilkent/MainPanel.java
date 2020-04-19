@@ -422,15 +422,13 @@ public class MainPanel implements Initializable {
         audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
         audioClip.setVolume(((double)Integer.parseInt(volume))/200);
         audioClip.setRate(1.1);
-        //audioClip.play();
     }
 
     void sound(String file, Boolean check){
-        if(!audioClip.isPlaying() && check){
-            audioClip = new AudioClip(this.getClass().getResource("music/" + bundle.getString("pathLang") + file + bundle.getString("mp3Lang")).toString());
-            audioClip.setRate(1);
-            audioClip.play();
-        }
+         audioClip.stop();
+         audioClip = new AudioClip(this.getClass().getResource("music/" + bundle.getString("pathLang") + file + bundle.getString("mp3Lang")).toString());
+         audioClip.setRate(1);
+         audioClip.play();
     }
 
     public User getLoginUser(){
