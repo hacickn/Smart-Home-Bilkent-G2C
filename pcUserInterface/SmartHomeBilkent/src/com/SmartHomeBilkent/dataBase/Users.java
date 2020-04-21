@@ -17,9 +17,9 @@ public class Users {
     public static final String TABLE_GENDER_COLUMN = "GENDER";
     public static final String TABLE_USERNAME_COLUMN = "USERNAME";
     public static final String TABLE_PASSWORD_COLUMN = "PASSWORD";
-    public static final String TABLE_USERTYPE_COLUMN = "USERTYPE";
-    public static final String TABLE_PREFERREDTHEME_COLUMN = "PREFERREDTHEME";
-    public static final String TABLE_PREFERREDLANGUAGE_COLUMN = "PREFERREDLANGUAGE";
+    public static final String TABLE_USER_TYPE_COLUMN = "USERTYPE";
+    public static final String TABLE_PREFERRED_THEME_COLUMN = "PREFERREDTHEME";
+    public static final String TABLE_PREFERRED_LANGUAGE_COLUMN = "PREFERREDLANGUAGE";
     public static final String TABLE_ENTER_COLUMN = "ENTER";
     public static final String TABLE_TEXT_COLUMN = "TEXT";
     public static final String TABLE_SOUND_COLUMN = "SOUND";
@@ -64,9 +64,9 @@ public class Users {
                     resultSet.getString(TABLE_GENDER_COLUMN),
                     resultSet.getString(TABLE_USERNAME_COLUMN),
                     resultSet.getString(TABLE_PASSWORD_COLUMN),
-                    resultSet.getString(TABLE_USERTYPE_COLUMN),
-                    resultSet.getString(TABLE_PREFERREDTHEME_COLUMN),
-                    resultSet.getString(TABLE_PREFERREDLANGUAGE_COLUMN),
+                    resultSet.getString(TABLE_USER_TYPE_COLUMN),
+                    resultSet.getString(TABLE_PREFERRED_THEME_COLUMN),
+                    resultSet.getString(TABLE_PREFERRED_LANGUAGE_COLUMN),
                     resultSet.getString(TABLE_ENTER_COLUMN),
                     resultSet.getString(TABLE_TEXT_COLUMN),
                     resultSet.getString(TABLE_SOUND_COLUMN)));
@@ -124,7 +124,7 @@ public class Users {
         number = 0;
         try(Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(" SELECT * FROM " + TABLE_USERS + " WHERE " +
-                    TABLE_USERTYPE_COLUMN + "='" + "PARENT'" )){
+                    TABLE_USER_TYPE_COLUMN + "='" + "PARENT'" )){
             while (resultSet.next()){
                 number++;
             }

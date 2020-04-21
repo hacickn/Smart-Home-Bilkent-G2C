@@ -51,7 +51,7 @@ public class MainPanel implements Initializable {
             userProfileButtonActive,
             settingsButton,
             settingsButtonActive,
-            logoutButtpn,
+            logoutButton,
             menuElecButton,
             menuGasButton,
             menuWaterButton,
@@ -70,7 +70,7 @@ public class MainPanel implements Initializable {
     private BorderPane menuBorderPane;
 
     @FXML
-    private JFXProgressBar mennuElecProgress,
+    private JFXProgressBar menuElecProgress,
             menuGasProgress,
             menuWaterProgress;
 
@@ -92,9 +92,9 @@ public class MainPanel implements Initializable {
             elecSubPaneCloseValueLabelActive,
             gasSubPaneLabelPassive,
             gasSubPaneLabelActive,
-            aquiarumSubPaneLabelPassive,
+            aquariumSubPaneLabelPassive,
             heaterSubPaneLabelPassive,
-            aquiarumSubPaneLabelActive,
+            aquariumSubPaneLabelActive,
             greenHouseSubPaneLabelPassive,
             ghTempSubPaneLabelActive,
             menuUserProfileLabel,
@@ -106,7 +106,7 @@ public class MainPanel implements Initializable {
 
     @FXML
     private Pane connectionPane,
-            menuEmptPane,
+            menuEmptyPane,
             menuElecPane,
             menuGasPane,
             menuWaterPane,
@@ -132,12 +132,12 @@ public class MainPanel implements Initializable {
             normalChangeBirthdayLabel,
             normalChangeGenderLabel,
             userNameLabel,
-            newPasswrodLabel,
-            verfifyNewPasswordLabel,
+            newPasswordLabel,
+            verifyNewPasswordLabel,
             currentPasswordLabel,
             userChangerInfoLabel,
             changeUserInfoLabel,
-            changeUserPrivInfoLabel;
+            changeUserPrivateInfoLabel;
 
     @FXML
     private StackPane userProfileStackPane;
@@ -148,7 +148,7 @@ public class MainPanel implements Initializable {
     @FXML
     private Pane userProfilePane,
             changeUserNormalInfoPane,
-            changeUserPrivInfoPane;
+            changeUserPrivateInfoPane;
 
     @FXML
     private JFXTextField userProfileNameField,
@@ -161,18 +161,18 @@ public class MainPanel implements Initializable {
             surnameTextField,
             birthdayTextField,
             userNameTextField,
-            newPasswrodTextField,
-            verfifyNewPasswordField,
+            newPasswordTextField,
+            verifyNewPasswordField,
             currentPasswordField;
 
     @FXML
     private JFXButton changeUserNormalInfoButton,
-            changeUserPrivInfoButton,
+            changeUserPrivateInfoButton,
             userChangerButton,
             saveUserNormalInfo,
             backToUserProfileFromNormalInfo,
-            saveUserPrivInfo,
-            backToUserProfileFromPrivInfo;
+            saveUserPrivateInfo,
+            backToUserProfileFromPrivateInfo;
 
     @FXML
     private JFXRadioButton maleRadioOption,
@@ -252,7 +252,7 @@ public class MainPanel implements Initializable {
 
     //settings pane ----view pane----emergency setting
     @FXML
-    private Pane settingEmergenyPane;
+    private Pane settingEmergencyPane;
 
     @FXML
     private Label languageTopLabel,
@@ -358,7 +358,7 @@ public class MainPanel implements Initializable {
             homeAquSettingTopLabel,homeGreenHouseSettingTopLabel,
             homeRfidSettingTopLabel,homeSubPaneELecLabel,
             homeSubPaneGasLabel,homeSubPaneAquLabel,
-            homeSubPaneGreenHouseLabel,homeSubPaneRfidLabel;
+            homeSubPaneGreenHouseLabel, homeSubPaneRFIDLabel;
 
     //settings pane ----subView pane----application settings sub menus
 
@@ -425,10 +425,12 @@ public class MainPanel implements Initializable {
     }
 
     void sound(String file, Boolean check){
+        if(check){
          audioClip.stop();
          audioClip = new AudioClip(this.getClass().getResource("music/" + bundle.getString("pathLang") + file + bundle.getString("mp3Lang")).toString());
          audioClip.setRate(1);
          audioClip.play();
+        }
     }
 
     public User getLoginUser(){
@@ -538,7 +540,7 @@ public class MainPanel implements Initializable {
             openMenuPane();
         }else if(event.getSource() == settingsButton){
             openSettingsPane();
-        }else if(event.getSource() == logoutButtpn){
+        }else if(event.getSource() == logoutButton){
             Platform.exit();
         }
     }
@@ -560,7 +562,7 @@ public class MainPanel implements Initializable {
         }else if(event.getSource() == settingsButton || event.getSource() == settingsButtonActive){
             labelOpener(menuSettingLabel,textCheck);
             sound("settingLang", soundCheck);
-        }else if(event.getSource() == logoutButtpn){
+        }else if(event.getSource() == logoutButton){
             sound("closeAppLang", soundCheck);
         }else if(event.getSource() == tempImage){
             sound("homeTemperatureLang", soundCheck);
@@ -799,7 +801,7 @@ public class MainPanel implements Initializable {
                 elecSubPaneOpenValueLabelActive.setVisible(true);
                 elecSubPaneCloseLabelActive.setVisible(true);
                 elecSubPaneCloseValueLabelActive.setVisible(true);
-                mennuElecProgress.setVisible(true);
+                menuElecProgress.setVisible(true);
             }
             else {
                 //communicate =  "00" + communicate.substring(2,4) + "00";
@@ -814,7 +816,7 @@ public class MainPanel implements Initializable {
                 elecSubPaneOpenValueLabelActive.setVisible(false);
                 elecSubPaneCloseLabelActive.setVisible(false);
                 elecSubPaneCloseValueLabelActive.setVisible(false);
-                mennuElecProgress.setVisible(false);
+                menuElecProgress.setVisible(false);
             }
         }
         else if(event.getSource() == gasSubMenuToggleButton){
@@ -848,7 +850,7 @@ public class MainPanel implements Initializable {
                 //String gir = arduino.serialRead(6);
                 //System.out.println(gir);
 
-                aquiarumSubPaneLabelActive.setVisible(true);
+                aquariumSubPaneLabelActive.setVisible(true);
                 waterSubMenuButtonActive.setVisible(true);
                 menuWaterProgress.setVisible(true);
             }
@@ -860,7 +862,7 @@ public class MainPanel implements Initializable {
                 //System.out.println(gir);
 
 
-                aquiarumSubPaneLabelActive.setVisible(false);
+                aquariumSubPaneLabelActive.setVisible(false);
                 waterSubMenuButtonActive.setVisible(false);
                 menuWaterProgress.setVisible(false);
             }
@@ -877,9 +879,9 @@ public class MainPanel implements Initializable {
             userProfilePane.setEffect(new BoxBlur(10,3,3));
             changeUserNormalInfoPane.setVisible(true);
             userProfilePane.setDisable(true);
-        }else if(event.getSource() == changeUserPrivInfoButton){
+        }else if(event.getSource() == changeUserPrivateInfoButton){
             userProfilePane.setEffect(new BoxBlur(10,3,3));
-            changeUserPrivInfoPane.setVisible(true);
+            changeUserPrivateInfoPane.setVisible(true);
             userProfilePane.setDisable(true);
         }else if(event.getSource() == userChangerButton){
             try{
@@ -908,12 +910,12 @@ public class MainPanel implements Initializable {
             labelOpener(changeUserInfoLabel,textCheck);
             sound("changeUserInfoLang", soundCheck);
         }
-        else if(event.getSource() == changeUserPrivInfoButton) {
-            labelOpener(changeUserPrivInfoLabel,textCheck);
+        else if(event.getSource() == changeUserPrivateInfoButton) {
+            labelOpener(changeUserPrivateInfoLabel,textCheck);
             sound("changeUserInfoLang", soundCheck);
-        }else if(event.getSource() == saveUserNormalInfo || event.getSource() == saveUserPrivInfo){
+        }else if(event.getSource() == saveUserNormalInfo || event.getSource() == saveUserPrivateInfo){
             sound("saveChangesLang", soundCheck);
-        }else if(event.getSource() == backToUserProfileFromNormalInfo || event.getSource() == backToUserProfileFromPrivInfo){
+        }else if(event.getSource() == backToUserProfileFromNormalInfo || event.getSource() == backToUserProfileFromPrivateInfo){
             sound("goBackLang", soundCheck);
         }
     }
@@ -924,8 +926,8 @@ public class MainPanel implements Initializable {
             userChangerInfoLabel.setVisible(false);
         else if(event.getSource() == changeUserNormalInfoButton)
             changeUserInfoLabel.setVisible(false);
-        else if(event.getSource() == changeUserPrivInfoButton)
-            changeUserPrivInfoLabel.setVisible(false);
+        else if(event.getSource() == changeUserPrivateInfoButton)
+            changeUserPrivateInfoLabel.setVisible(false);
     }
 
     //user profiles user info changer panels
@@ -933,7 +935,7 @@ public class MainPanel implements Initializable {
         userProfilePane.setEffect(new BoxBlur(0,0,0));
         userProfilePane.setDisable(false);
         changeUserNormalInfoPane.setVisible(false);
-        changeUserPrivInfoPane.setVisible(false);
+        changeUserPrivateInfoPane.setVisible(false);
     }
 
     @FXML
@@ -971,11 +973,11 @@ public class MainPanel implements Initializable {
             updateUsersTable();
             toGoBackUserProfile();
             }
-        }else if (event.getSource() == saveUserPrivInfo){
+        }else if (event.getSource() == saveUserPrivateInfo){
             User user;
-            if(userNameTextField.getText().length() > 0 && currentPasswordField.getText().length() > 0 && newPasswrodTextField.getText().length() > 0 && verfifyNewPasswordField.getText().length() > 0) {
+            if(userNameTextField.getText().length() > 0 && currentPasswordField.getText().length() > 0 && newPasswordTextField.getText().length() > 0 && verifyNewPasswordField.getText().length() > 0) {
                 //for database
-                if( !newPasswrodTextField.getText().equals(verfifyNewPasswordField.getText())){
+                if( !newPasswordTextField.getText().equals(verifyNewPasswordField.getText())){
                     privateInfoWarning.setVisible(true);
                     privateInfoWarning.setText(bundle.getString("passwordConflictLang"));
                 }
@@ -990,7 +992,7 @@ public class MainPanel implements Initializable {
                             , birthdayTextField.getText()
                             , loginUser.getGender()
                             , userNameTextField.getText()
-                            , newPasswrodTextField.getText()
+                            , newPasswordTextField.getText()
                             , loginUser.getUserType()
                             , loginUser.getPreferredTheme()
                             , loginUser.getPreferredLanguage()
@@ -1013,7 +1015,7 @@ public class MainPanel implements Initializable {
         }else if(event.getSource() == backToUserProfileFromNormalInfo){
             toGoBackUserProfile();
             normalInfoWarning.setVisible(false);
-        }else if( event.getSource() == backToUserProfileFromPrivInfo){
+        }else if( event.getSource() == backToUserProfileFromPrivateInfo){
             toGoBackUserProfile();
             privateInfoWarning.setVisible(false);
         }
@@ -1267,8 +1269,8 @@ public class MainPanel implements Initializable {
         elecSubPaneCloseValueLabelActive.setText(bundle.getString("yesterday2Lang"));
         gasSubPaneLabelPassive.setText(bundle.getString("gasLang"));
         gasSubPaneLabelActive.setText(bundle.getString("gasLang"));
-        aquiarumSubPaneLabelPassive.setText(bundle.getString("aquiarumLang"));
-        aquiarumSubPaneLabelActive.setText(bundle.getString("aquiarumLang"));
+        aquariumSubPaneLabelPassive.setText(bundle.getString("aquiarumLang"));
+        aquariumSubPaneLabelActive.setText(bundle.getString("aquiarumLang"));
         greenHouseSubPaneLabelPassive.setText(bundle.getString("greenHouse"));
         ghTempSubPaneLabelActive.setText(bundle.getString("tempLang"));
         ghHumidityTempLabel.setText(bundle.getString("humidity"));
@@ -1281,15 +1283,15 @@ public class MainPanel implements Initializable {
         userProfilePasswordLabel.setText(bundle.getString("passwordLang"));
         userChangerInfoLabel.setText(bundle.getString("userChangerLang"));
         changeUserInfoLabel.setText(bundle.getString("changeUserInfoLang"));
-        changeUserPrivInfoLabel.setText(bundle.getString("changeUserInfoLang"));
+        changeUserPrivateInfoLabel.setText(bundle.getString("changeUserInfoLang"));
         normalChangeNameLabel.setText(bundle.getString("nameLang"));
         normalChangeSurnameLabel.setText(bundle.getString("surnameLang"));
         normalChangeBirthdayLabel.setText(bundle.getString("birthdayLang"));
         normalChangeGenderLabel.setText(bundle.getString("genderLang"));
         normalInfoWarning.setText(bundle.getString("normalInfoWarningLang"));
         userNameLabel.setText(bundle.getString("userNameLang"));
-        newPasswrodLabel.setText(bundle.getString("newPasswordLang"));
-        verfifyNewPasswordLabel.setText(bundle.getString("verifyNewPasswordLang"));
+        newPasswordLabel.setText(bundle.getString("newPasswordLang"));
+        verifyNewPasswordLabel.setText(bundle.getString("verifyNewPasswordLang"));
         currentPasswordLabel.setText(bundle.getString("currentPasswordLang"));
         applicationSettingButtonLabel.setText(bundle.getString("applicationSettingLang"));
         usersSettingButtonLabel.setText(bundle.getString("usersSettingLang"));
@@ -1351,7 +1353,7 @@ public class MainPanel implements Initializable {
         homeSubPaneGasLabel.setText(bundle.getString("gasLang"));
         homeSubPaneAquLabel.setText(bundle.getString("aquiarumLang"));
         homeSubPaneGreenHouseLabel.setText(bundle.getString("greenHouse"));
-        homeSubPaneRfidLabel.setText(bundle.getString("rfidLang"));
+        homeSubPaneRFIDLabel.setText(bundle.getString("rfidLang"));
         interactiveTextModeLabel.setText(bundle.getString("interactiveTextLang"));
         interactiveSoundModeLabel.setText(bundle.getString("interactiveSoundLang"));
         soundHelperLabel.setText(bundle.getString("soundHelper"));
@@ -1505,7 +1507,7 @@ public class MainPanel implements Initializable {
             homeSubPaneGreenHouseLabel.setVisible(true);
         }else if(event.getSource() == homeSettingRFIDButton || event.getSource() == homeSettingRFIDButtonActive) {
             sound("rfidSettingsLang", soundCheck);
-            homeSubPaneRfidLabel.setVisible(true);
+            homeSubPaneRFIDLabel.setVisible(true);
         }
     }
 
@@ -1538,7 +1540,7 @@ public class MainPanel implements Initializable {
         else if(event.getSource() == homeSettingGreenHouseButton || event.getSource() == homeSettingGreenHouseButtonActive)
             homeSubPaneGreenHouseLabel.setVisible(false);
         else if(event.getSource() == homeSettingRFIDButton || event.getSource() == homeSettingRFIDButtonActive)
-            homeSubPaneRfidLabel.setVisible(false);
+            homeSubPaneRFIDLabel.setVisible(false);
 
     }
 
@@ -1564,12 +1566,12 @@ public class MainPanel implements Initializable {
 
     void openEmergencySetting() {
         emergencySettingButtonActive.setVisible(true);
-        settingEmergenyPane.setVisible(true);
+        settingEmergencyPane.setVisible(true);
     }
 
     void closeEmergencySetting() {
         emergencySettingButtonActive.setVisible(false);
-        settingEmergenyPane.setVisible(false);
+        settingEmergencyPane.setVisible(false);
     }
 
     void openPhoneNotificationSetting() {
