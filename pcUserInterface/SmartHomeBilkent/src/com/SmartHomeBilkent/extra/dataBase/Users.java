@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.dataBase;
+package com.SmartHomeBilkent.extra.dataBase;
 
 import com.SmartHomeBilkent.User;
 import javafx.collections.FXCollections;

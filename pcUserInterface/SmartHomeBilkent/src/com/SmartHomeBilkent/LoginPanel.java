@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.dataBase.Users;
+import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -29,6 +29,7 @@ public class LoginPanel implements Initializable {
     private Label waningLabel,
             capslockOpen;
     private Boolean capsLock;
+
 
     //methods
     @FXML

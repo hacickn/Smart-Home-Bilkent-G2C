@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.dataBase.Users;
+import com.SmartHomeBilkent.extra.dataBase.Users;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.dataBase.Users;
+import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
