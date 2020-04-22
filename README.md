@@ -22,10 +22,11 @@ Tarık Buğra Karali 21703937
 > (Until Today)
 To experience the program there are three users in the program
 ```
- UserName    Password
-- david       cs102
-- nasuh       nasuh
-- mete        mete
+ UserName       Password      User Type
+- david     |    cs102    |    Parent
+- nasuh     |    nasuh    |    Child
+- mete      |    mete     |    Child
+- ilke      |    ilke     |    Elder
 ```
 - [Materials Used](#MaterialsUsed)
 - [Features](#Features)

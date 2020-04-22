@@ -313,7 +313,7 @@ public class MainPanel implements Initializable {
             createUserDarkThemeOption,createUserLightThemeOption,
             createUserSmoothThemeOption,createUserCartoonThemeOption,
             createUserEnglishOption,createUserTurkishOption,createUserGermanOption,
-            createUserParentOption,createUserChildOption;
+            createUserParentOption,createUserChildOption,createUserElderOption;
 
     @FXML
     private JFXPasswordField createUserPasswordField,createUserPasswordVerifyField;
@@ -1344,6 +1344,7 @@ public class MainPanel implements Initializable {
         createUserCartoonThemeOption.setText(bundle.getString("cartoonThemeLang"));
         createUserParentOption.setText(bundle.getString("parentOptionLang"));
         createUserChildOption.setText(bundle.getString("childOptionLang"));
+        createUserElderOption.setText(bundle.getString("elderOptionLang"));
         homeElecSettingTopLabel.setText(bundle.getString("elecSettingTopLang"));
         homeGasSettingTopLabel.setText(bundle.getString("gasSettingTopLang"));
         homeAquSettingTopLabel.setText(bundle.getString("aquSettingTopLang"));
@@ -1680,7 +1681,7 @@ public class MainPanel implements Initializable {
             createUserGermanOption.setSelected(false);
             ((JFXRadioButton)(event.getSource())).setSelected(true);
             addUserLanguage = (JFXRadioButton)(event.getSource());
-        }else if(event.getSource() == createUserParentOption || event.getSource() ==createUserChildOption){
+        }else if(event.getSource() == createUserParentOption || event.getSource() ==createUserChildOption || event.getSource() ==createUserElderOption){
             createUserParentOption.setSelected(false);
             createUserChildOption.setSelected(false);
             ((JFXRadioButton)(event.getSource())).setSelected(true);
@@ -1696,7 +1697,7 @@ public class MainPanel implements Initializable {
             || (!createUserDarkThemeOption.isSelected() && !createUserLightThemeOption.isSelected() && !createUserSmoothThemeOption.isSelected() && !createUserCartoonThemeOption.isSelected())
             || ( !createUserEnglishOption.isSelected() && !createUserGermanOption.isSelected() && !createUserTurkishOption.isSelected())
             || createUserUserNameTextField.getText().isEmpty() || createUserPasswordField.getText().isEmpty()
-            || createUserPasswordVerifyField.getText().isEmpty() || (!createUserParentOption.isSelected() && !createUserChildOption.isSelected())){
+            || createUserPasswordVerifyField.getText().isEmpty() || (!createUserParentOption.isSelected() && !createUserChildOption.isSelected() && !createUserElderOption.isSelected())){
                 createUserWarningLabel.setText(bundle.getString("normalInfoWarningLang"));
                 sound("normalInfoWarningLang", soundCheck);
             }

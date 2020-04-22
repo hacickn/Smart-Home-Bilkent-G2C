@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.net.URL;
@@ -38,8 +37,13 @@ public class LoginPanel implements Initializable {
             for (User s : Users.getInstance().getUserList()) {
                 if (userNameField.getText().equals(s.getUserName()) && passwordField.getText().equals(s.getPassword())) {
                     try {
+                        String fxmlAddress;
+                        if(s.getUserType().equals("ELDER") || s.getUserType().equals("ÄLTERE") || s.getUserType().equals("YASLI") || s.getUserType().equals("YASLİ"))
+                            fxmlAddress = "elderMainPanel.fxml";
+                        else
+                            fxmlAddress = "mainPanel.fxml";
                         s.setEnter("true");
-                        FXMLLoader load = new FXMLLoader(getClass().getResource("mainPanel.fxml"));
+                        FXMLLoader load = new FXMLLoader(getClass().getResource(fxmlAddress));
                         Parent root = load.load();
                         Stage stage = new Stage();
                         stage.setTitle("SMART HOME");

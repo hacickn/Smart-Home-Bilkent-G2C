@@ -915,17 +915,17 @@
                               <Font name="Agency FB" size="16.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserLightThemeOption" layoutX="187.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="73.0" styleClass="changeThemeSaveRadioButton" text="LIGHT">
+                        <JFXRadioButton fx:id="createUserLightThemeOption" layoutX="190.0" layoutY="226.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="103.0" styleClass="changeThemeSaveRadioButton" text="LIGHT">
                            <font>
                               <Font name="Agency FB" size="16.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserSmoothThemeOption" layoutX="262.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="86.0" styleClass="changeThemeSaveRadioButton" text="SMOOTH">
+                        <JFXRadioButton fx:id="createUserSmoothThemeOption" layoutX="276.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="SMOOTH">
                            <font>
                               <Font name="Agency FB" size="16.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserCartoonThemeOption" layoutX="348.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="116.0" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                        <JFXRadioButton fx:id="createUserCartoonThemeOption" layoutX="371.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="116.0" styleClass="changeThemeSaveRadioButton" text="CARTOON">
                            <font>
                               <Font name="Agency FB" size="16.0" />
                            </font>
@@ -935,12 +935,12 @@
                               <Font name="Agency FB" size="16.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserTurkishOption" layoutX="187.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="TÜRKÇE">
+                        <JFXRadioButton fx:id="createUserTurkishOption" layoutX="192.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="TÜRKÇE">
                            <font>
                               <Font name="Agency FB" size="16.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserGermanOption" layoutX="262.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="DEUTSCH">
+                        <JFXRadioButton fx:id="createUserGermanOption" layoutX="277.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="DEUTSCH">
                            <font>
                               <Font name="Agency FB" size="16.0" />
                            </font>
@@ -960,12 +960,12 @@
                               <Font name="Agency FB" size="15.0" />
                            </font>
                         </JFXPasswordField>
-                        <JFXRadioButton fx:id="createUserParentOption" layoutX="504.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="92.0" styleClass="changeThemeSaveRadioButton" text="PARENT">
+                        <JFXRadioButton fx:id="createUserParentOption" layoutX="504.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="140.0" styleClass="changeThemeSaveRadioButton" text="PARENT">
                            <font>
                               <Font name="Agency FB" size="15.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton fx:id="createUserChildOption" layoutX="597.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="90.0" styleClass="changeThemeSaveRadioButton" text="CHILD">
+                        <JFXRadioButton fx:id="createUserChildOption" layoutX="505.0" layoutY="218.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="CHILD">
                            <font>
                               <Font name="Agency FB" size="15.0" />
                            </font>
@@ -976,6 +976,11 @@
                               <Font name="Agency FB" size="18.0" />
                            </font>
                         </Label>
+                        <JFXRadioButton fx:id="createUserElderOption" layoutX="505.0" layoutY="244.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="143.0" styleClass="changeThemeSaveRadioButton" text="ELDER">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </JFXRadioButton>
                      </children>
                   </Pane>
                   <Pane fx:id="deleteUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="addRemoveUserPane" visible="false">
