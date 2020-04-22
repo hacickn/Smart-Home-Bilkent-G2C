@@ -1,8 +1,11 @@
 package com.SmartHomeBilkent;
 
 import com.SmartHomeBilkent.extra.dataBase.Users;
+import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -407,6 +410,7 @@ public class MainPanel implements Initializable {
     private  Boolean soundCheckEx;
     private  Boolean textCheck;
     private  String volume;
+    private SpeechUtils speechUtils;
 
 
     //initialize method(it runs before the program start to run)
@@ -422,6 +426,8 @@ public class MainPanel implements Initializable {
         audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
         audioClip.setVolume(((double)Integer.parseInt(volume))/200);
         audioClip.setRate(1.1);
+        speechUtils = new SpeechUtils();
+        //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
     }
 
     void sound(String file, Boolean check){

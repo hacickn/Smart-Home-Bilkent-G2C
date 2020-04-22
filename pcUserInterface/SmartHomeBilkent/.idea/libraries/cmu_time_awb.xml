@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="cmu_time_awb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lib/speech/cmu_time_awb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lib/speech/cmu_us_kal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lib/speech/en_us.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lib/speech/freetts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lib/speech/jsapi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
