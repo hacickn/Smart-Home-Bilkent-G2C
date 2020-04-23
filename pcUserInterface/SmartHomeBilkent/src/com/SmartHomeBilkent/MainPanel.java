@@ -1937,9 +1937,9 @@ public class MainPanel implements Initializable {
         }
 
         //for database
-        user = new User(loginUser.getText()
-                , loginUser.getText()
-                , loginUser.getText()
+        user = new User(loginUser.getName()
+                , loginUser.getSurname()
+                , loginUser.getBirthday()
                 , loginUser.getGender()
                 , loginUser.getUserName()
                 , loginUser.getPassword()
