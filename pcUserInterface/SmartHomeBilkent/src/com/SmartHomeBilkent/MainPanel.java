@@ -307,12 +307,14 @@ public class MainPanel implements Initializable {
             createUserUserTypeLabel,createUserThemeLabel,
             createUserLanguageLabel,createUserWarningLabel;
 
+    @FXML
+    private JFXDatePicker createDatePicker;
 
     @FXML
     private JFXButton createUserConfirmButton,createUserGoBack;
 
     @FXML
-    private JFXTextField createUserNameTextField,createUserSurnameTextField,createUserBirthdayTextField,
+    private JFXTextField createUserNameTextField,createUserSurnameTextField,
             createUserUserNameTextField;
 
     @FXML
@@ -999,9 +1001,9 @@ public class MainPanel implements Initializable {
                 }
                 else {
                     privateInfoWarning.setVisible(false);
-                    user = new User(nameTextField.getText()
-                            , surnameTextField.getText()
-                            , loginUser.getText()
+                    user = new User(loginUser.getName()
+                            , loginUser.getSurname()
+                            , loginUser.getBirthday()
                             , loginUser.getGender()
                             , userNameTextField.getText()
                             , newPasswordTextField.getText()
@@ -1706,7 +1708,7 @@ public class MainPanel implements Initializable {
     void createUserPaneAction(ActionEvent event) throws SQLException {
         if((event.getSource()) == createUserConfirmButton){
             if(createUserNameTextField.getText().isEmpty() || createUserSurnameTextField.getText().isEmpty()
-            || createUserBirthdayTextField.getText().isEmpty() || (!createUserMaleOption.isSelected() && !createUserFemaleOption.isSelected())
+            || createDatePicker.getValue() == null || (!createUserMaleOption.isSelected() && !createUserFemaleOption.isSelected())
             || (!createUserDarkThemeOption.isSelected() && !createUserLightThemeOption.isSelected() && !createUserSmoothThemeOption.isSelected() && !createUserCartoonThemeOption.isSelected())
             || ( !createUserEnglishOption.isSelected() && !createUserGermanOption.isSelected() && !createUserTurkishOption.isSelected())
             || createUserUserNameTextField.getText().isEmpty() || createUserPasswordField.getText().isEmpty()
@@ -1720,7 +1722,7 @@ public class MainPanel implements Initializable {
             }else{
                 User user = new User(createUserNameTextField.getText(),
                         createUserSurnameTextField.getText(),
-                        createUserBirthdayTextField.getText(),
+                        createDatePicker.getValue().format(dateTimeFormatter),
                         addUserGender.getText(),
                         createUserUserNameTextField.getText(),
                         createUserPasswordField.getText(),
@@ -1751,7 +1753,6 @@ public class MainPanel implements Initializable {
     public void clearAddPane(){
         createUserNameTextField.setText("");
         createUserSurnameTextField.setText("");
-        createUserBirthdayTextField.setText("");
         createUserMaleOption.setSelected(false);
         createUserFemaleOption.setSelected(false);
         createUserUserNameTextField.setText("");
@@ -1766,6 +1767,7 @@ public class MainPanel implements Initializable {
         createUserTurkishOption.setSelected(false);
         createUserParentOption.setSelected(false);
         createUserChildOption.setSelected(false);
+        createDatePicker.setValue(null);
 
         addUserGender = null;
         addUserLanguage = null;
@@ -1885,9 +1887,9 @@ public class MainPanel implements Initializable {
 
         modsSound = loginUser.getSound().substring(0,loginUser.getSound().length()-3) + volume;
 
-        user = new User(loginUser.getText()
-                , loginUser.getText()
-                , loginUser.getText()
+        user = new User(loginUser.getName()
+                , loginUser.getSurname()
+                , loginUser.getBirthday()
                 , loginUser.getGender()
                 , loginUser.getUserName()
                 , loginUser.getPassword()

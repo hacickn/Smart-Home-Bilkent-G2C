@@ -896,11 +896,6 @@
                               <Font name="Agency FB" size="15.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="createUserBirthdayTextField" alignment="CENTER" layoutX="108.0" layoutY="142.0" prefWidth="150.0" styleClass="changeUserInfoTextField">
-                           <font>
-                              <Font name="Agency FB" size="15.0" />
-                           </font>
-                        </JFXTextField>
                         <JFXRadioButton fx:id="createUserMaleOption" layoutX="108.0" layoutY="186.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="MALE">
                            <font>
                               <Font name="Agency FB" size="16.0" />
@@ -982,6 +977,7 @@
                               <Font name="Agency FB" size="15.0" />
                            </font>
                         </JFXRadioButton>
+                        <JFXDatePicker fx:id="createDatePicker" layoutX="105.0" layoutY="146.0" prefHeight="25.0" prefWidth="190.0" styleClass="datePicker" />
                      </children>
                   </Pane>
                   <Pane fx:id="deleteUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="addRemoveUserPane" visible="false">

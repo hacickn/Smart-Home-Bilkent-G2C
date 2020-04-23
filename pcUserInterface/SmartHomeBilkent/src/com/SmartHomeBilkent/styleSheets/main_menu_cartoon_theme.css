@@ -239,7 +239,7 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
-     -fx-text-fill: darkBlue;
+     -fx-text-fill: blue;
      -jfx-focus-color:darkBlue;
      -jfx-unfocus-color: black;
 }
@@ -401,7 +401,7 @@
 }
 //////settings
 .settingTopPaneLabels{
-     -fx-text-fill: darkBlue;
+     -fx-text-fill: red;
 }
 .deutsch{
            -fx-background-image: url("images/germany.png");
@@ -525,6 +525,6 @@
         -fx-border-color: #4682B4;
 }
 .datePicker{
-    -jfx-default-color:darkGray;
+    -jfx-default-color:gray;
 }
 
