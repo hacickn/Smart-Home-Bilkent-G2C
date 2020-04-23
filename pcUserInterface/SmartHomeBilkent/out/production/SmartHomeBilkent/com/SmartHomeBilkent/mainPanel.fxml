@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXRadioButton?>
@@ -381,7 +382,6 @@
                         </Label>
                         <JFXTextField fx:id="nameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="83.0" styleClass="changeUserInfoTextField" />
                         <JFXTextField fx:id="surnameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="118.0" styleClass="changeUserInfoTextField" />
-                        <JFXTextField fx:id="birthdayTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="153.0" styleClass="changeUserInfoTextField" />
                         <JFXRadioButton fx:id="maleRadioOption" alignment="CENTER_LEFT" layoutX="105.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="86.0" styleClass="changeUserInforRadioButton" text="MALE" />
                         <JFXRadioButton fx:id="femaleRadioOption" alignment="CENTER_LEFT" layoutX="194.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="92.0" styleClass="changeUserInforRadioButton" text="FEMALE" />
                         <Label fx:id="normalInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0" prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels" text="PLEASE FILL TAL GAPS" visible="false">
@@ -389,6 +389,7 @@
                               <Font name="Agency FB" size="15.0" />
                            </font>
                         </Label>
+                        <JFXDatePicker fx:id="birthdayDateField" defaultColor="#004601" layoutX="106.0" layoutY="153.0" showWeekNumbers="true" styleClass="datePicker" />
                      </children>
                   </Pane>
                   <Pane fx:id="changeUserPrivateInfoPane" layoutX="370.0" layoutY="70.0" prefHeight="330.0" prefWidth="290.0" style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;" styleClass="changeUserInfoPane" visible="false">

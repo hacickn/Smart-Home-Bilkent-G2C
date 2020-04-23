@@ -29,6 +29,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -162,11 +164,13 @@ public class MainPanel implements Initializable {
             userProfilePasswordField,
             nameTextField,
             surnameTextField,
-            birthdayTextField,
             userNameTextField,
             newPasswordTextField,
             verifyNewPasswordField,
             currentPasswordField;
+
+    @FXML
+    private JFXDatePicker birthdayDateField;
 
     @FXML
     private JFXButton changeUserNormalInfoButton,
@@ -411,7 +415,8 @@ public class MainPanel implements Initializable {
     private  Boolean textCheck;
     private  String volume;
     private SpeechUtils speechUtils;
-
+    private LocalDate localDate;
+    private DateTimeFormatter dateTimeFormatter;
 
     //initialize method(it runs before the program start to run)
     @Override
@@ -451,6 +456,9 @@ public class MainPanel implements Initializable {
     }
 
     void userPreferenceUpdate(User user){
+        dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        localDate = LocalDate.parse(user.getBirthday(),dateTimeFormatter);
+        birthdayDateField.setValue(localDate);
         userProfileNameField.setText(user.getName());
         userProfileSurnameField.setText(user.getSurname());
         userProfileAgeField.setText(user.getBirthday());
@@ -458,7 +466,6 @@ public class MainPanel implements Initializable {
         userProfileUserNameField.setText(user.getUserName());
         nameTextField.setText(user.getName());
         surnameTextField.setText(user.getSurname());
-        birthdayTextField.setText(user.getBirthday());
         if(user.getGender().equals("MALE") || user.getGender().equals("ERKEK") || user.getGender().equals("MÄNNLICH")){
             maleRadioOption.setSelected(true);
             femaleRadioOption.setSelected(false);
@@ -947,7 +954,7 @@ public class MainPanel implements Initializable {
     @FXML
     void changeUserInfoButtons(ActionEvent event) throws SQLException {
         if(event.getSource() == saveUserNormalInfo) {
-            if(nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayTextField.getText().isEmpty()){
+            if(nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue()== null){
                 normalInfoWarning.setVisible(true);
             }else{
             String gender;
@@ -960,7 +967,7 @@ public class MainPanel implements Initializable {
             }
             user = new User(nameTextField.getText()
                     , surnameTextField.getText()
-                    , birthdayTextField.getText()
+                    , birthdayDateField.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                     , gender
                     , loginUser.getUserName()
                     , loginUser.getPassword()
@@ -971,10 +978,9 @@ public class MainPanel implements Initializable {
                     , loginUser.getText()
                     , loginUser.getSound());
             Users.getInstance().updateUser(loginUser, user);
-
+            //System.out.println());
             //for userlist
             loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
-
             userPreferenceUpdate(loginUser);
             updateUsersTable();
             toGoBackUserProfile();
@@ -995,7 +1001,7 @@ public class MainPanel implements Initializable {
                     privateInfoWarning.setVisible(false);
                     user = new User(nameTextField.getText()
                             , surnameTextField.getText()
-                            , birthdayTextField.getText()
+                            , loginUser.getText()
                             , loginUser.getGender()
                             , userNameTextField.getText()
                             , newPasswordTextField.getText()
@@ -1021,6 +1027,7 @@ public class MainPanel implements Initializable {
         }else if(event.getSource() == backToUserProfileFromNormalInfo){
             toGoBackUserProfile();
             normalInfoWarning.setVisible(false);
+            birthdayDateField.setValue(localDate);
         }else if( event.getSource() == backToUserProfileFromPrivateInfo){
             toGoBackUserProfile();
             privateInfoWarning.setVisible(false);
@@ -1878,9 +1885,9 @@ public class MainPanel implements Initializable {
 
         modsSound = loginUser.getSound().substring(0,loginUser.getSound().length()-3) + volume;
 
-        user = new User(nameTextField.getText()
-                , surnameTextField.getText()
-                , birthdayTextField.getText()
+        user = new User(loginUser.getText()
+                , loginUser.getText()
+                , loginUser.getText()
                 , loginUser.getGender()
                 , loginUser.getUserName()
                 , loginUser.getPassword()
@@ -1928,9 +1935,9 @@ public class MainPanel implements Initializable {
         }
 
         //for database
-        user = new User(nameTextField.getText()
-                , surnameTextField.getText()
-                , birthdayTextField.getText()
+        user = new User(loginUser.getText()
+                , loginUser.getText()
+                , loginUser.getText()
                 , loginUser.getGender()
                 , loginUser.getUserName()
                 , loginUser.getPassword()

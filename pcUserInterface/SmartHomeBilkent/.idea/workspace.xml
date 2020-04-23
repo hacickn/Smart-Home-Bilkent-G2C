@@ -7,11 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/cmu_time_awb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartHomeBilkent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartHomeBilkent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/mainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,25 +289,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1587582344490">
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1587659962207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1587582344490" />
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1587659962207" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1587582344490">
+    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1587659962207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1587582344490" />
+    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1587659962207" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1587582344490">
+    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1587659962207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1587582344490" />
+    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1587659962207" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1587582344490">
+    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1587659962207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1587582344490" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1587659962207" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state x="1020" y="286" key="IDE.errors.dialog" timestamp="1586287390382">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -321,11 +329,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587291682537" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1587579480718">
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1587659895568">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="673" y="267" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1585492186960" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587579480718" />
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587659895568" />
     <state x="310" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586874027429">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

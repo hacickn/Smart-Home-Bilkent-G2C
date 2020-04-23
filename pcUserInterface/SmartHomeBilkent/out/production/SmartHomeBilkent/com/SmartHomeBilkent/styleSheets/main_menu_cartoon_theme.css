@@ -524,4 +524,7 @@
     -fx-border-width: 0 2 0 1;
         -fx-border-color: #4682B4;
 }
+.datePicker{
+    -jfx-default-color:darkGray;
+}
 
