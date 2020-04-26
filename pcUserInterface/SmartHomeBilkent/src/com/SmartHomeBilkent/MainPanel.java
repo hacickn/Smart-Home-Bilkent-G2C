@@ -69,7 +69,8 @@ public class MainPanel implements Initializable {
             greenhouseSubMenuButtonPassive,
             greenhouseSubMenuButtonActive,
             elecSubMenuButtonPassive,
-            elecSubMenuButtonActive;
+            elecSubMenuButtonActive,
+            weatherButton;
 
     @FXML
     private BorderPane menuBorderPane;

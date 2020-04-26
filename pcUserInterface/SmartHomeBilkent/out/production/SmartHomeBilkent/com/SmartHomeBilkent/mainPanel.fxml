@@ -15,6 +15,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -28,6 +29,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
 
 <StackPane fx:id="firstStackPane" maxHeight="1600.0" maxWidth="1600.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" stylesheets="@styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
    <children>
@@ -94,18 +96,18 @@
                            <children>
                               <Pane fx:id="menuHeaterTempPane" prefHeight="100.0" prefWidth="417.0">
                                  <children>
-                                    <Label layoutX="60.0" layoutY="21.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="HOME">
+                                    <Label layoutX="60.0" layoutY="8.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="HOME">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER_RIGHT" layoutX="208.0" layoutY="21.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="WEATHER">
+                                    <Label alignment="CENTER_RIGHT" layoutX="209.0" layoutY="9.0" prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="WEATHER">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>
                                     </Label>
-                                    <ImageView fx:id="weatherImage" fitHeight="60.0" fitWidth="60.0" layoutX="343.0" layoutY="20.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="weather" />
-                                    <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="20.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
+                                    <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0" prefHeight="60.0" prefWidth="60.0" styleClass="weather" textFill="TRANSPARENT" />
+                                    <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
                                  </children></Pane>
                            </children>
                         </HBox>
@@ -260,7 +262,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0">
+      <StackPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" visible="false">
          <children>
             <AnchorPane fx:id="userProfileAnchorPane" maxHeight="550.0" prefHeight="550.0" prefWidth="700.0">
                <children>
@@ -430,7 +432,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" StackPane.alignment="CENTER">
+      <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" visible="false" StackPane.alignment="CENTER">
          <children>
             <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                <children>
@@ -1009,5 +1011,19 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="480.0">
+          <header>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </header>
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </content>
+          <expandableContent>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+          </expandableContent>
+         <graphic>
+            <CheckComboBox />
+         </graphic>
+      </DialogPane>
    </children>
 </StackPane>

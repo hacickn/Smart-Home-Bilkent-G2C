@@ -150,11 +150,11 @@
         -fx-background-size: cover;
  }
   .weather{
-          -fx-image: url("images/cloudy4.png");
+          -fx-background-image: url("images/cloudy4.png");
            -fx-background-size: cover;
   }
   .weather:hover{
-          -fx-image: url("images/cloudy5.png");
+          -fx-background-image: url("images/cloudy5.png");
           -fx-background-size: cover;
    }
 .tempLabel{
