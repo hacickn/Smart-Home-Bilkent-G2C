@@ -133,4 +133,79 @@ public class Users {
             return 0;
         }
     }
+
+    public void updateUserNormalInfo(User user,String name, String surname, String birthday, String gender) throws SQLException {
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_NAME_COLUMN + " = '" + name + "' , " +
+                TABLE_SURNAME_COLUMN + " = '" + surname + "' , " +
+                TABLE_BIRTHDAY_COLUMN + " = '" + birthday + "' , " +
+                TABLE_GENDER_COLUMN + " = '" + gender + "' " +
+                " WHERE " +
+                TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+                TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+        user.setName(name);
+        user.setSurname(surname);
+        user.setBirthday(birthday);
+        user.setGender(gender);
+    }
+
+    public void updatePrivateInfo(User user, String username, String password) throws SQLException {
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_USERNAME_COLUMN + " = '" + username + "' , " +
+                TABLE_PASSWORD_COLUMN + " = '" + password + "' " +
+                " WHERE " +
+                TABLE_NAME_COLUMN + "='" + user.getName() + "' AND " +
+                TABLE_BIRTHDAY_COLUMN + "='" + user.getBirthday() + "' AND " +
+                TABLE_SURNAME_COLUMN + "='" + user.getSurname() + "'");
+        user.setUserName(username);
+        user.setPassword(password);
+    }
+
+    public void updateUsersTheme(User user, String theme) throws SQLException{
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_PREFERRED_THEME_COLUMN + " = '" + theme + "' " +
+                " WHERE " +
+                TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+                TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+        user.setPreferredTheme(theme);
+    }
+
+    public void updateLanguage(User user, String language) throws SQLException{
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_PREFERRED_LANGUAGE_COLUMN + " = '" + language + "' " +
+                " WHERE " +
+                TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+                TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+        user.setPreferredLanguage(language);
+    }
+
+    public void updateVolume(User user, String sound) throws SQLException{
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_SOUND_COLUMN + " = '" + sound + "' " +
+                " WHERE " +
+                TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+                TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+        user.setSound(sound);
+    }
+
+    public void updateText(User user, String text) throws SQLException{
+        Statement statement = connection.createStatement();
+        statement.execute(" UPDATE " +
+                TABLE_USERS + " SET " +
+                TABLE_TEXT_COLUMN + " = '" + text + "' " +
+                " WHERE " +
+                TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+                TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+        user.setText(text);
+    }
 }

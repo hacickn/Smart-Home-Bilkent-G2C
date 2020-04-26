@@ -956,39 +956,24 @@ public class MainPanel implements Initializable {
     @FXML
     void changeUserInfoButtons(ActionEvent event) throws SQLException {
         if(event.getSource() == saveUserNormalInfo) {
+            String gender;
             if(nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue()== null){
                 normalInfoWarning.setVisible(true);
             }else{
-            String gender;
-            User user;
-            //for database
+
             if (maleRadioOption.isSelected()) {
                 gender = "MALE";
             } else {
                 gender = "FEMALE";
             }
-            user = new User(nameTextField.getText()
-                    , surnameTextField.getText()
-                    , birthdayDateField.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-                    , gender
-                    , loginUser.getUserName()
-                    , loginUser.getPassword()
-                    , loginUser.getUserType()
-                    , loginUser.getPreferredTheme()
-                    , loginUser.getPreferredLanguage()
-                    , loginUser.getEnter()
-                    , loginUser.getText()
-                    , loginUser.getSound());
-            Users.getInstance().updateUser(loginUser, user);
-            //System.out.println());
-            //for userlist
-            loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
+            Users.getInstance().updateUserNormalInfo(loginUser,nameTextField.getText()
+                    ,surnameTextField.getText(),birthdayDateField.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                    ,gender);
             userPreferenceUpdate(loginUser);
             updateUsersTable();
             toGoBackUserProfile();
             }
         }else if (event.getSource() == saveUserPrivateInfo){
-            User user;
             if(userNameTextField.getText().length() > 0 && currentPasswordField.getText().length() > 0 && newPasswordTextField.getText().length() > 0 && verifyNewPasswordField.getText().length() > 0) {
                 //for database
                 if( !newPasswordTextField.getText().equals(verifyNewPasswordField.getText())){
@@ -1001,23 +986,7 @@ public class MainPanel implements Initializable {
                 }
                 else {
                     privateInfoWarning.setVisible(false);
-                    user = new User(loginUser.getName()
-                            , loginUser.getSurname()
-                            , loginUser.getBirthday()
-                            , loginUser.getGender()
-                            , userNameTextField.getText()
-                            , newPasswordTextField.getText()
-                            , loginUser.getUserType()
-                            , loginUser.getPreferredTheme()
-                            , loginUser.getPreferredLanguage()
-                            , loginUser.getEnter()
-                            , loginUser.getText()
-                            , loginUser.getSound());
-                    Users.getInstance().updateUser(loginUser, user);
-
-                    //for userlist
-                    loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
-
+                    Users.getInstance().updatePrivateInfo(loginUser,userNameTextField.getText(),newPasswordTextField.getText());
                     userPreferenceUpdate(loginUser);
                     toGoBackUserProfile();
                     updateUsersTable();
@@ -1080,25 +1049,7 @@ public class MainPanel implements Initializable {
                 themeName ="cartoon";
 
             changeTheme(themeName);
-
-            //for user settings
-            User user;
-            user = new User(loginUser.getName()
-                    , loginUser.getSurname()
-                    , loginUser.getBirthday()
-                    , loginUser.getGender()
-                    , loginUser.getUserName()
-                    , loginUser.getPassword()
-                    , loginUser.getUserType()
-                    , themeName
-                    , loginUser.getPreferredLanguage()
-                    , "false"
-                    , loginUser.getText()
-                    , loginUser.getSound());
-            Users.getInstance().updateUser(loginUser, user);
-
-            //for userlist
-            loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
+            Users.getInstance().updateUsersTheme(loginUser,themeName);
             userPreferenceUpdate(loginUser);
         }
     }
@@ -1244,29 +1195,13 @@ public class MainPanel implements Initializable {
             languageSetter("tr");
             language = "TÜRKÇE";
         }
-
-        User user;
-        user = new User(loginUser.getName()
-                , loginUser.getSurname()
-                , loginUser.getBirthday()
-                , loginUser.getGender()
-                , loginUser.getUserName()
-                , loginUser.getPassword()
-                , loginUser.getUserType()
-                , loginUser.getPreferredTheme()
-                , language
-                , loginUser.getEnter()
-                , loginUser.getText()
-                , loginUser.getSound());
-        Users.getInstance().updateUser(loginUser, user);
-
-        loginUser = user;
+        Users.getInstance().updateLanguage(loginUser,language);
         userPreferenceUpdate(loginUser);
     }
 
     private void languageSetter(String language){
         try{
-            Locale locale = new Locale(language);
+        Locale locale = new Locale(language);
         bundle = ResourceBundle.getBundle("com.SmartHomeBilkent.language.lang", locale);
         menuUserProfileLabel.setText(bundle.getString("userProfileLang"));
         menuMenuLabel.setText(bundle.getString("menuLang"));
@@ -1720,7 +1655,7 @@ public class MainPanel implements Initializable {
                 createUserWarningLabel.setText(bundle.getString("passwordConflictLang"));
                 sound("passwordConflictLang", soundCheck);
             }else{
-                User user = new User(createUserNameTextField.getText(),
+                Users.getInstance().addUser( new User (createUserNameTextField.getText(),
                         createUserSurnameTextField.getText(),
                         createDatePicker.getValue().format(dateTimeFormatter),
                         addUserGender.getText(),
@@ -1732,8 +1667,7 @@ public class MainPanel implements Initializable {
                         "false",
                         "true",
                         "true050"
-                );
-                Users.getInstance().addUser(user);
+                ));
                 updateUsersTable();
                 addUserPane.setVisible(false);
                 clearAddPane();
@@ -1869,7 +1803,6 @@ public class MainPanel implements Initializable {
     //settings----mods settings menu
     @FXML
     void volumeAdjust() throws SQLException {
-        User user;
         String modsSound;
 
         if(soundVolumeSlider.getValue() < 10){
@@ -1886,29 +1819,13 @@ public class MainPanel implements Initializable {
         audioClip.play(((double)Integer.parseInt(volume))/200);
 
         modsSound = loginUser.getSound().substring(0,loginUser.getSound().length()-3) + volume;
-
-        user = new User(loginUser.getName()
-                , loginUser.getSurname()
-                , loginUser.getBirthday()
-                , loginUser.getGender()
-                , loginUser.getUserName()
-                , loginUser.getPassword()
-                , loginUser.getUserType()
-                , loginUser.getPreferredTheme()
-                , loginUser.getPreferredLanguage()
-                , loginUser.getEnter()
-                , loginUser.getText()
-                , modsSound);
-
-        Users.getInstance().updateUser(loginUser, user);
-        loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
+        Users.getInstance().updateVolume(loginUser,modsSound);
         userPreferenceUpdate(loginUser);
         updateUsersTable();
     }
 
     @FXML
     void modsToggleButtons(ActionEvent event) throws SQLException {
-        User user;
         String modsSound;
         String modsText;
 
@@ -1935,23 +1852,8 @@ public class MainPanel implements Initializable {
                 modsSound = soundCheck + volume;
             }
         }
-
-        //for database
-        user = new User(loginUser.getName()
-                , loginUser.getSurname()
-                , loginUser.getBirthday()
-                , loginUser.getGender()
-                , loginUser.getUserName()
-                , loginUser.getPassword()
-                , loginUser.getUserType()
-                , loginUser.getPreferredTheme()
-                , loginUser.getPreferredLanguage()
-                , loginUser.getEnter()
-                , modsText
-                , modsSound);
-
-        Users.getInstance().updateUser(loginUser, user);
-        loginUser = Users.getInstance().getUserList().get(Users.getInstance().getUserList().indexOf(user));
+        Users.getInstance().updateVolume(loginUser,modsSound);
+        Users.getInstance().updateText(loginUser,modsText);
         userPreferenceUpdate(loginUser);
         updateUsersTable();
     }
