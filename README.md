@@ -2,7 +2,7 @@
 [Computer Engineering Department, Bilkent University](http://w3.cs.bilkent.edu.tr/en/).  
 The information and code in this repository are submitted in partial fulfillment of the CS102 Semester Design Project. Except where explicitly stated, the work is that of the group members listed below (who are expected to follow ethical academic & professional practice).
 ****
-## gSL ~~ Project Title ~~
+## SMART HOME
 ****
 ### ~ optional group name ~
 
@@ -34,5 +34,5 @@ The information and code in this repository are submitted in partial fulfillment
 - [NASUH DİNÇER](group/nasuh_dincer_log.md)
 
 ****
-**Instructor:** _(name)_   **TA:**  _(name)_
+**Instructor:** DAVID DAVENPORT   **TA:**  SEVİL ÇALIŞKAN
 ****

@@ -16,10 +16,10 @@ To experience the program there are three users in the program
 
 #### Materials Used
 1) Programs
-* IntelliJ IDEA Community Edition v2019.3.3
-* JavaFX Scene Builder v8.5.0
-* Java v1.8.0_171-b11
-* DB Browser(SQLite) v3.11.2
+* [IntelliJ IDEA Community Edition v2019.3.3](https://www.jetbrains.com/idea/)
+* [JavaFX Scene Builder v8.5.0](https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html)
+* [Java v1.8.0_171-b11](https://www.java.com/en/)
+* [DB Browser(SQLite) v3.11.2](https://sqlitebrowser.org/)
 
 2) Web Sites
 * [FLATICON](https://www.flaticon.com/) - The vector icons webpage
