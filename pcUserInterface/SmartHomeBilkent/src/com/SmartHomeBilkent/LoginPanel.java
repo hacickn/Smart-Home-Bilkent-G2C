@@ -12,78 +12,86 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+
 import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * a LoginPanel class implemented by Initializable
+ *
+ * @author Hacı Çakın
+ * @version 28.04.2020
+ */
 public class LoginPanel implements Initializable {
 
-    //properties
-    @FXML
-    private JFXTextField userNameField;
-
-    @FXML
-    private JFXPasswordField passwordField;
-
-    @FXML
-    private Label waningLabel,
-            capslockOpen;
-    private Boolean capsLock;
+   //properties
+   @FXML
+   private JFXTextField userNameField;
+   @FXML
+   private JFXPasswordField passwordField;
+   @FXML
+   private Label waningLabel,
+         capslockOpen;
+   private Boolean capsLock;
 
 
-    //methods
-    @FXML
-    void toLogin() {
-        if (userNameField.getText().length() > 0 && passwordField.getText().length() > 0) {
-            for (User s : Users.getInstance().getUserList()) {
-                if (userNameField.getText().equals(s.getUserName()) && passwordField.getText().equals(s.getPassword())) {
-                    try {
-                        String fxmlAddress;
-                        if(s.getUserType().equals("ELDER") || s.getUserType().equals("ÄLTERE") || s.getUserType().equals("YASLI") || s.getUserType().equals("YASLİ"))
-                            fxmlAddress = "elderMainPanel.fxml";
-                        else
-                            fxmlAddress = "mainPanel.fxml";
-                        s.setEnter("true");
-                        FXMLLoader load = new FXMLLoader(getClass().getResource(fxmlAddress));
-                        Parent root = load.load();
-                        Stage stage = new Stage();
-                        stage.setTitle("SMART HOME");
-                        stage.setScene(new Scene(root, 800, 800));
-                        stage.setResizable(false);
-                        stage.show();
-                        userNameField.getScene().getWindow().hide();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+   //methods
+   @FXML
+   void toLogin() {
+      if (userNameField.getText().length() > 0 && passwordField.getText().length() > 0) {
+         for (User s : Users.getInstance().getUserList()) {
+            if (userNameField.getText().equals(s.getUserName()) && passwordField.getText().equals(s.getPassword())) {
+               try {
+                  String fxmlAddress;
+                  FXMLLoader load;
+                  Parent root;
+                  Stage stage;
+                  if (s.getUserType().equals("ELDER") || s.getUserType().equals("ÄLTERE") || s.getUserType().equals("YASLI") || s.getUserType().equals("YASLİ"))
+                     fxmlAddress = "elderMainPanel.fxml";
+                  else
+                     fxmlAddress = "mainPanel.fxml";
+
+                  s.setEnter("true");
+                  load = new FXMLLoader(getClass().getResource(fxmlAddress));
+                  root = load.load();
+                  stage = new Stage();
+                  stage.setTitle("SMART HOME");
+                  stage.setScene(new Scene(root, 800, 800));
+                  stage.setResizable(false);
+                  stage.show();
+                  userNameField.getScene().getWindow().hide();
+               } catch (Exception e) {
+                  e.printStackTrace();
+               }
             }
-            waningLabel.setText("USERNAME/PASSWORD IS WRONG");
-        }else{
-            waningLabel.setText("PLEASE ENTER BOTH PASSWORD AND USERNAME");
-        }
-        waningLabel.setVisible(true);
-    }
+         }
+         waningLabel.setText("USERNAME/PASSWORD IS WRONG");
+      } else {
+         waningLabel.setText("PLEASE ENTER BOTH PASSWORD AND USERNAME");
+      }
+      waningLabel.setVisible(true);
+   }
 
-    @FXML
-    void controlPressedCapslock(KeyEvent event) {
-        if(capsLock && event.getCode() == KeyCode.CAPS ){
-            capslockOpen.setVisible(true);
-            capsLock = false;
-        }
-        else if (!capsLock && event.getCode() == KeyCode.CAPS  ){
-            capslockOpen.setVisible(false);
-            capsLock = true;
-        }
-    }
+   @FXML
+   void controlPressedCapslock(KeyEvent event) {
+      if (capsLock && event.getCode() == KeyCode.CAPS) {
+         capslockOpen.setVisible(true);
+         capsLock = false;
+      } else if (!capsLock && event.getCode() == KeyCode.CAPS) {
+         capslockOpen.setVisible(false);
+         capsLock = true;
+      }
+   }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        capsLock = (Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK));
-        if (capsLock){
-            capslockOpen.setVisible(true);
-            capsLock = false;
-        }else {
-            capsLock = true;
-        }
-    }
+   @Override
+   public void initialize(URL location, ResourceBundle resources) {
+      capsLock = (Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK));
+      if (capsLock) {
+         capslockOpen.setVisible(true);
+         capsLock = false;
+      } else {
+         capsLock = true;
+      }
+   }
 }

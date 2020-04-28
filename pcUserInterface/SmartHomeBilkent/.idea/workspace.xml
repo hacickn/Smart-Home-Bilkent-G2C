@@ -7,15 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/pcUserInterface.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/speech/SpeechUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/speech/SpeechUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/weather/WeatherForecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/weather/WeatherForecast.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -261,6 +261,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586253290749" />
+    <state x="669" y="308" key="#com.intellij.refactoring.memberPushDown.PushDownDialog" timestamp="1588060015633">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="669" y="308" key="#com.intellij.refactoring.memberPushDown.PushDownDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588060015633" />
+    <state x="671" y="249" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1588059101916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="671" y="249" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588059101916" />
     <state x="196" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585650160645">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -273,6 +281,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="294" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586855948778" />
+    <state x="707" y="396" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588060021903">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="707" y="396" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1588060021903" />
     <state x="487" y="134" key="CommitChangelistDialog2" timestamp="1586874103126">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -285,34 +297,34 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1176" height="185" key="GridCell.Tab.0.bottom" timestamp="1588015887605">
+    <state width="1877" height="196" key="GridCell.Tab.0.bottom" timestamp="1588060267133">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1176" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588015887605" />
+    <state width="1877" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267133" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1176" height="185" key="GridCell.Tab.0.center" timestamp="1588015887605">
+    <state width="1877" height="196" key="GridCell.Tab.0.center" timestamp="1588060267132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1176" height="185" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588015887605" />
+    <state width="1877" height="196" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1176" height="185" key="GridCell.Tab.0.left" timestamp="1588015887604">
+    <state width="1877" height="196" key="GridCell.Tab.0.left" timestamp="1588060267132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1176" height="185" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588015887604" />
+    <state width="1877" height="196" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1176" height="185" key="GridCell.Tab.0.right" timestamp="1588015887605">
+    <state width="1877" height="196" key="GridCell.Tab.0.right" timestamp="1588060267132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1176" height="185" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588015887605" />
+    <state width="1877" height="196" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state x="1020" y="286" key="IDE.errors.dialog" timestamp="1586287390382">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1020" y="286" key="IDE.errors.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586287390382" />
-    <state x="0" y="0" width="1040" height="575" key="SettingsEditor" timestamp="1588014997866">
+    <state x="0" y="0" width="1040" height="708" key="SettingsEditor" timestamp="1588059995527">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="0" width="1040" height="575" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588014997866" />
+    <state x="0" y="0" width="1040" height="708" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588059995527" />
     <state x="796" y="320" key="classpath-attribute-editor" timestamp="1586252888694">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -325,11 +337,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587291682537" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588010612544">
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588059778842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="673" y="267" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1585492186960" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588010612544" />
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588059778842" />
     <state x="310" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586874027429">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -338,10 +350,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1182" y="162" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585685342810" />
-    <state x="1096" y="254" key="run.anything.popup" timestamp="1585841199204">
+    <state x="1096" y="254" key="run.anything.popup" timestamp="1588057687104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1096" y="254" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585841199204" />
+    <state x="1096" y="254" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588057687104" />
     <state x="143" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1585923235716">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

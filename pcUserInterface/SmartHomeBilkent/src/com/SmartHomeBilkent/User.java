@@ -4,178 +4,201 @@ import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class User extends RecursiveTreeObject<User>  {
-    //properties
-    private StringProperty name;
-    private StringProperty surname;
-    private StringProperty birthday;
-    private StringProperty gender;
-    private StringProperty userName;
-    private StringProperty password;
-    private StringProperty userType;
-    private StringProperty preferredTheme;
-    private StringProperty preferredLanguage;
-    private StringProperty enter;
-    private StringProperty text;
-    private StringProperty sound;
+/**
+ * a User class that extended by RecursiveTreeObject<User>
+ *
+ * @author Hacı Çakın
+ * @version 28.04.2020
+ */
+public class User extends RecursiveTreeObject<User> {
+   //properties
+   private StringProperty name;
+   private StringProperty surname;
+   private StringProperty birthday;
+   private StringProperty gender;
+   private StringProperty userName;
+   private StringProperty password;
+   private StringProperty userType;
+   private StringProperty preferredTheme;
+   private StringProperty preferredLanguage;
+   private StringProperty enter;
+   private StringProperty text;
+   private StringProperty sound;
 
-    //constructor
-    public User(String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound) {
-        this.name = new SimpleStringProperty(name);
-        this.surname = new SimpleStringProperty(surname);
-        this.birthday = new SimpleStringProperty(birthday);
-        this.gender = new SimpleStringProperty(gender);
-        this.userName = new SimpleStringProperty(userName);
-        this.password = new SimpleStringProperty(password);
-        this.userType = new SimpleStringProperty(userType);
-        this.preferredTheme = new SimpleStringProperty(preferredTheme);
-        this.preferredLanguage = new SimpleStringProperty(preferredLanguage);
-        this.enter = new SimpleStringProperty(enter);
-        this.text = new SimpleStringProperty(text);
-        this.sound = new SimpleStringProperty(sound);
-    }
+   //constructor
 
-    public String getName() {
-        return name.get();
-    }
+   /**
+    * it is a User constructor
+    *
+    * @param name              is a String input parameter
+    * @param surname           is a String input parameter
+    * @param birthday          is a String input parameter
+    * @param gender            is a String input parameter
+    * @param userName          is a String input parameter
+    * @param password          is a String input parameter
+    * @param userType          is a String input parameter
+    * @param preferredTheme    is a String input parameter
+    * @param preferredLanguage is a String input parameter
+    * @param enter             is a String input parameter
+    * @param text              is a String input parameter
+    * @param sound             is a String input parameter
+    */
+   public User(String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound) {
+      this.name = new SimpleStringProperty(name);
+      this.surname = new SimpleStringProperty(surname);
+      this.birthday = new SimpleStringProperty(birthday);
+      this.gender = new SimpleStringProperty(gender);
+      this.userName = new SimpleStringProperty(userName);
+      this.password = new SimpleStringProperty(password);
+      this.userType = new SimpleStringProperty(userType);
+      this.preferredTheme = new SimpleStringProperty(preferredTheme);
+      this.preferredLanguage = new SimpleStringProperty(preferredLanguage);
+      this.enter = new SimpleStringProperty(enter);
+      this.text = new SimpleStringProperty(text);
+      this.sound = new SimpleStringProperty(sound);
+   }
 
-    public String getEnter() {
-        return enter.get();
-    }
+   public String getName() {
+      return name.get();
+   }
 
-    public StringProperty enterProperty() {
-        return enter;
-    }
+   public String getEnter() {
+      return enter.get();
+   }
 
-    public void setEnter(String enter) {
-        this.enter.set(enter);
-    }
+   public StringProperty enterProperty() {
+      return enter;
+   }
 
-    public StringProperty nameProperty() {
-        return name;
-    }
+   public void setEnter(String enter) {
+      this.enter.set(enter);
+   }
 
-    public void setName(String name) {
-        this.name.set(name);
-    }
+   public StringProperty nameProperty() {
+      return name;
+   }
 
-    public String getSurname() {
-        return surname.get();
-    }
+   public void setName(String name) {
+      this.name.set(name);
+   }
 
-    public StringProperty surnameProperty() {
-        return surname;
-    }
+   public String getSurname() {
+      return surname.get();
+   }
 
-    public void setSurname(String surname) {
-        this.surname.set(surname);
-    }
+   public StringProperty surnameProperty() {
+      return surname;
+   }
 
-    public String getBirthday() {
-        return birthday.get();
-    }
+   public void setSurname(String surname) {
+      this.surname.set(surname);
+   }
 
-    public StringProperty birthdayProperty() {
-        return birthday;
-    }
+   public String getBirthday() {
+      return birthday.get();
+   }
 
-    public void setBirthday(String birthday) {
-        this.birthday.set(birthday);
-    }
+   public StringProperty birthdayProperty() {
+      return birthday;
+   }
 
-    public String getGender() {
-        return gender.get();
-    }
+   public void setBirthday(String birthday) {
+      this.birthday.set(birthday);
+   }
 
-    public StringProperty genderProperty() {
-        return gender;
-    }
+   public String getGender() {
+      return gender.get();
+   }
 
-    public void setGender(String gender) {
-        this.gender.set(gender);
-    }
+   public StringProperty genderProperty() {
+      return gender;
+   }
 
-    public String getText() {
-        return text.get();
-    }
+   public void setGender(String gender) {
+      this.gender.set(gender);
+   }
 
-    public StringProperty textProperty() {
-        return text;
-    }
+   public String getText() {
+      return text.get();
+   }
 
-    public void setText(String text) {
-        this.text.set(text);
-    }
+   public StringProperty textProperty() {
+      return text;
+   }
 
-    public String getSound() {
-        return sound.get();
-    }
+   public void setText(String text) {
+      this.text.set(text);
+   }
 
-    public StringProperty soundProperty() {
-        return sound;
-    }
+   public String getSound() {
+      return sound.get();
+   }
 
-    public void setSound(String sound) {
-        this.sound.set(sound);
-    }
+   public StringProperty soundProperty() {
+      return sound;
+   }
 
-    public String getUserName() {
-        return userName.get();
-    }
+   public void setSound(String sound) {
+      this.sound.set(sound);
+   }
 
-    public StringProperty userNameProperty() {
-        return userName;
-    }
+   public String getUserName() {
+      return userName.get();
+   }
 
-    public void setUserName(String userName) {
-        this.userName.set(userName);
-    }
+   public StringProperty userNameProperty() {
+      return userName;
+   }
 
-    public String getPassword() {
-        return password.get();
-    }
+   public void setUserName(String userName) {
+      this.userName.set(userName);
+   }
 
-    public StringProperty passwordProperty() {
-        return password;
-    }
+   public String getPassword() {
+      return password.get();
+   }
 
-    public void setPassword(String password) {
-        this.password.set(password);
-    }
+   public StringProperty passwordProperty() {
+      return password;
+   }
 
-    public String getUserType() {
-        return userType.get();
-    }
+   public void setPassword(String password) {
+      this.password.set(password);
+   }
 
-    public StringProperty userTypeProperty() {
-        return userType;
-    }
+   public String getUserType() {
+      return userType.get();
+   }
 
-    public void setUserType(String userType) {
-        this.userType.set(userType);
-    }
+   public StringProperty userTypeProperty() {
+      return userType;
+   }
 
-    public String getPreferredTheme() {
-        return preferredTheme.get();
-    }
+   public void setUserType(String userType) {
+      this.userType.set(userType);
+   }
 
-    public StringProperty preferredThemeProperty() {
-        return preferredTheme;
-    }
+   public String getPreferredTheme() {
+      return preferredTheme.get();
+   }
 
-    public void setPreferredTheme(String preferredTheme) {
-        this.preferredTheme.set(preferredTheme);
-    }
+   public StringProperty preferredThemeProperty() {
+      return preferredTheme;
+   }
 
-    public String getPreferredLanguage() {
-        return preferredLanguage.get();
-    }
+   public void setPreferredTheme(String preferredTheme) {
+      this.preferredTheme.set(preferredTheme);
+   }
 
-    public StringProperty preferredLanguageProperty() {
-        return preferredLanguage;
-    }
+   public String getPreferredLanguage() {
+      return preferredLanguage.get();
+   }
 
-    public void setPreferredLanguage(String preferredLanguage) {
-        this.preferredLanguage.set(preferredLanguage);
-    }
+   public StringProperty preferredLanguageProperty() {
+      return preferredLanguage;
+   }
+
+   public void setPreferredLanguage(String preferredLanguage) {
+      this.preferredLanguage.set(preferredLanguage);
+   }
 }
