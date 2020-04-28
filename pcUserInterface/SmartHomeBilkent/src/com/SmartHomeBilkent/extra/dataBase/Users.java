@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent.extra.dataBase;
 
-import com.SmartHomeBilkent.User;
+import com.SmartHomeBilkent.extra.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

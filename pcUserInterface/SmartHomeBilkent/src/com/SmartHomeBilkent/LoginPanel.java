@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent;
 
+import com.SmartHomeBilkent.extra.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -48,9 +49,9 @@ public class LoginPanel implements Initializable {
                   Parent root;
                   Stage stage;
                   if (s.getUserType().equals("ELDER") || s.getUserType().equals("ÄLTERE") || s.getUserType().equals("YASLI") || s.getUserType().equals("YASLİ"))
-                     fxmlAddress = "elderMainPanel.fxml";
+                     fxmlAddress = "view/elderMainPanel.fxml";
                   else
-                     fxmlAddress = "mainPanel.fxml";
+                     fxmlAddress = "view/mainPanel.fxml";
 
                   s.setEnter("true");
                   load = new FXMLLoader(getClass().getResource(fxmlAddress));

@@ -29,7 +29,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="firstStackPane" maxHeight="1600.0" maxWidth="1600.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" stylesheets="@styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
+<StackPane fx:id="firstStackPane" maxHeight="1600.0" maxWidth="1600.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" stylesheets="@../styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
    <children>
       <StackPane prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
          <children>
@@ -346,12 +346,12 @@
                         </Label>
                         <ImageView fx:id="userInfoBoyImage" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@styleSheets/images/boy4.png" />
+                              <Image url="@../styleSheets/images/boy4.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="userInfoGirlImage" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
-                              <Image url="@styleSheets/images/girls4.png" />
+                              <Image url="@../styleSheets/images/girls4.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -536,22 +536,22 @@
                         <JFXButton fx:id="settingThemeSaveButton" layoutX="585.0" layoutY="150.0" onAction="#settingsFacilitiesButtons" onMouseEntered="#applicationSettingButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="changeThemeSave" text="saveChanges" textFill="TRANSPARENT" />
                         <ImageView fx:id="settingThemeDarkImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@styleSheets/images/darkMode.PNG" />
+                              <Image url="@../styleSheets/images/darkMode.PNG" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="settingThemeLightImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
-                              <Image url="@styleSheets/images/lightMode.PNG" />
+                              <Image url="@../styleSheets/images/lightMode.PNG" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="settingThemeSmoothImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
-                              <Image url="@styleSheets/images/smoothMode.PNG" />
+                              <Image url="@../styleSheets/images/smoothMode.PNG" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="settingThemeCartoonImage" fitHeight="312.0" fitWidth="280.0" layoutX="210.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
-                              <Image url="@styleSheets/images/cartoonMode.PNG" />
+                              <Image url="@../styleSheets/images/cartoonMode.PNG" />
                            </image>
                         </ImageView>
                      </children>
@@ -739,7 +739,7 @@
                      <children>
                         <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0" fitWidth="700.0" opacity="0.6" pickOnBounds="true">
                            <image>
-                              <Image url="@styleSheets/images/snowy5.png" />
+                              <Image url="@../styleSheets/images/snowy5.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="homeWeatherSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="WEATHER">

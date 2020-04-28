@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent;
 
+import com.SmartHomeBilkent.extra.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -282,7 +283,7 @@ public class MainPanel implements Initializable {
    private SpeechUtils speechUtils;
    private LocalDate localDate;
    private DateTimeFormatter dateTimeFormatter;
-   public User loginUser;
+   public  User loginUser;
    private WeatherForecast weatherForecast;
 
 
@@ -781,7 +782,7 @@ public class MainPanel implements Initializable {
          userProfilePane.setDisable(true);
       } else if (event.getSource() == userChangerButton) {
          try {
-            FXMLLoader load = new FXMLLoader(getClass().getResource("loginPanel.fxml"));
+            FXMLLoader load = new FXMLLoader(getClass().getResource("view/loginPanel.fxml"));
             Parent root = load.load();
             Stage stage = new Stage();
             stage.setTitle("SMART HOME");
@@ -1601,7 +1602,7 @@ public class MainPanel implements Initializable {
                removeUserTextField.setText("");
                removeUserHideWarning.setVisible(false);
 
-               FXMLLoader load = new FXMLLoader(getClass().getResource("loginPanel.fxml"));
+               FXMLLoader load = new FXMLLoader(getClass().getResource("view/loginPanel.fxml"));
                Parent root = load.load();
                Stage stage = new Stage();
                stage.setTitle("SMART HOME");
