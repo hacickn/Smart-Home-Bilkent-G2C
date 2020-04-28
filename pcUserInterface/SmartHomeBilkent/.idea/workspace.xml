@@ -7,11 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SmartHomeBilkent_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/mainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/login_cartoon_theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/login_light_theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/login_smooth_theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/language/lang_tr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/language/lang_tr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
@@ -115,8 +124,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lib/speech/jsapi.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard_Feq_icon.ico" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -243,10 +252,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="210" y="298" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586020434539" />
-    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585935372590">
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588079784125">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585935372590" />
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588079784125" />
     <state x="689" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586249747371">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -259,10 +268,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1588071717711" />
-    <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586253290749">
+    <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588079757880">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586253290749" />
+    <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588079757880" />
     <state x="669" y="308" key="#com.intellij.refactoring.memberPushDown.PushDownDialog" timestamp="1588060015633">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -279,10 +288,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="210" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587903968591" />
-    <state x="690" y="294" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1586855948778">
+    <state x="1251" y="233" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1588083202667">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="294" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586855948778" />
+    <state x="1251" y="233" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588083202667" />
     <state x="707" y="396" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588060021903">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -291,42 +300,58 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="487" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1586874103126" />
-    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1587579520631">
+    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1588080839852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1587579520631" />
+    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1588080839852" />
     <state x="316" y="459" key="Github.CreateGistDialog" timestamp="1586872730862">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1877" height="227" key="GridCell.Tab.0.bottom" timestamp="1588075949451">
+    <state width="914" height="342" key="GridCell.Tab.0.bottom" timestamp="1588088781651">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949451" />
+    <state width="914" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="227" key="GridCell.Tab.0.center" timestamp="1588075949450">
+    <state width="914" height="342" key="GridCell.Tab.0.center" timestamp="1588088781651">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="227" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949450" />
+    <state width="914" height="342" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="227" key="GridCell.Tab.0.left" timestamp="1588075949450">
+    <state width="914" height="342" key="GridCell.Tab.0.left" timestamp="1588088781651">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="227" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949450" />
+    <state width="914" height="342" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1877" height="227" key="GridCell.Tab.0.right" timestamp="1588075949451">
+    <state width="914" height="342" key="GridCell.Tab.0.right" timestamp="1588088781651">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="227" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949451" />
+    <state width="914" height="342" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
+    <state width="914" height="342" key="GridCell.Tab.1.bottom" timestamp="1588088781651">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="914" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
+    <state width="914" height="342" key="GridCell.Tab.1.center" timestamp="1588088781651">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="914" height="342" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
+    <state width="914" height="342" key="GridCell.Tab.1.left" timestamp="1588088781651">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="914" height="342" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
+    <state width="914" height="342" key="GridCell.Tab.1.right" timestamp="1588088781651">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="914" height="342" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588088781651" />
     <state x="1020" y="286" key="IDE.errors.dialog" timestamp="1586287390382">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1020" y="286" key="IDE.errors.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586287390382" />
-    <state x="0" y="0" width="1040" height="708" key="SettingsEditor" timestamp="1588059995527">
+    <state x="394" y="208" width="1040" height="708" key="SettingsEditor" timestamp="1588087530221">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="0" width="1040" height="708" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588059995527" />
+    <state x="394" y="208" width="1040" height="708" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588087530221" />
     <state x="796" y="320" key="classpath-attribute-editor" timestamp="1586252888694">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -339,11 +364,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587291682537" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588061230432">
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588079556108">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="673" y="267" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1585492186960" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588061230432" />
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588079556108" />
     <state x="310" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586874027429">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -249,9 +249,9 @@
      -jfx-unfocus-color: black;
 }
 .changeUserWeather{
-     -fx-text-fill: darkGreen;
+     -fx-text-fill: #ffbb00;
      -jfx-focus-color:darkGreen;
-     -jfx-unfocus-color: black;
+     -jfx-unfocus-color: #ffe100;
 }
 .changeUserInforRadioButton{
      -jfx-selected-color:#DB7093;

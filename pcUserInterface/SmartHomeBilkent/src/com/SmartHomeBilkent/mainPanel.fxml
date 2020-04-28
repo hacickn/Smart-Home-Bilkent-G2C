@@ -739,7 +739,7 @@
                      <children>
                         <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0" fitWidth="700.0" opacity="0.6" pickOnBounds="true">
                            <image>
-                              <Image url="@styleSheets/images/weatherForecast5.png" />
+                              <Image url="@styleSheets/images/snowy5.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="homeWeatherSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="WEATHER">
@@ -747,61 +747,60 @@
                               <Font name="Agency FB" size="29.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="settingWeatherLocationTextField" alignment="CENTER" layoutX="216.0" layoutY="50.0" prefHeight="48.0" prefWidth="341.0" styleClass="changeUserWeather">
+                        <JFXTextField fx:id="settingWeatherLocationTextField" alignment="CENTER" layoutX="180.0" layoutY="63.0" prefHeight="48.0" prefWidth="341.0" promptText="LOCATION" style="-fx-background-radius: 40;" styleClass="changeUserWeather">
                            <font>
-                              <Font size="22.0" />
+                              <Font name="Calibri Bold" size="26.0" />
                            </font></JFXTextField>
-                        <Label fx:id="settingWeatherLocationLabel" layoutX="144.0" layoutY="64.0" styleClass="settingTopPaneLabels" text="LOCATION">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherForecastLabel" layoutX="209.0" layoutY="212.0" styleClass="settingTopPaneLabels" text="WEATHER FORECAST:">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherTemperatureLabel" layoutX="247.0" layoutY="245.0" styleClass="settingTopPaneLabels" text="TEMPERATURE:">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherHumidityLabel" layoutX="271.0" layoutY="279.0" styleClass="settingTopPaneLabels" text="HUMUDITY:">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherWindLabel" layoutX="301.0" layoutY="308.0" styleClass="settingTopPaneLabels" text="WIND:">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="informationTime" alignment="CENTER" layoutX="197.0" layoutY="163.0" prefHeight="24.0" prefWidth="307.0" styleClass="settingTopPaneLabels">
-                           <font>
-                              <Font name="Agency FB" size="20.0" />
-                           </font>
-                        </Label>
-                        <JFXButton fx:id="updateWeatherButton" layoutX="325.0" layoutY="113.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="updateWeather" textFill="TRANSPARENT" />
-                        <Label fx:id="settingWeatherForecastLabelValue" layoutX="342.0" layoutY="209.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
-                           <font>
-                              <Font name="Agency FB" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherTemperatureLabelValue" layoutX="342.0" layoutY="242.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
-                           <font>
-                              <Font name="Agency FB" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherHumidityLabelValue" layoutX="342.0" layoutY="276.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
-                           <font>
-                              <Font name="Agency FB" size="23.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="settingWeatherWindLabelValue" layoutX="342.0" layoutY="305.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
-                           <font>
-                              <Font name="Agency FB" size="23.0" />
-                           </font>
-                        </Label>
+                        <JFXButton fx:id="updateWeatherButton" layoutX="327.0" layoutY="121.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="updateWeather" textFill="TRANSPARENT" />
+                        <Pane layoutX="140.0" layoutY="179.0" opacity="0.6" prefHeight="126.0" prefWidth="426.0" style="-fx-background-color: white; -fx-background-radius: 60;">
+                           <children>
+                              <Label fx:id="settingWeatherForecastLabel" layoutX="57.0" layoutY="29.0" styleClass="tempLabel" text="WEATHER FORECAST:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherForecastLabelValue" layoutX="209.0" layoutY="29.0" prefWidth="200.0" styleClass="tempLabel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherTemperatureLabel" layoutX="98.0" layoutY="51.0" styleClass="tempLabel" text="TEMPERATURE:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherTemperatureLabelValue" layoutX="212.0" layoutY="51.0" prefWidth="200.0" styleClass="tempLabel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherHumidityLabel" layoutX="124.0" layoutY="73.0" styleClass="tempLabel" text="HUMUDITY:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherHumidityLabelValue" layoutX="209.0" layoutY="73.0" prefWidth="200.0" styleClass="tempLabel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherWindLabel" layoutX="162.0" layoutY="95.0" styleClass="tempLabel" text="WIND:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="settingWeatherWindLabelValue" layoutX="209.0" layoutY="95.0" prefWidth="200.0" styleClass="tempLabel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="informationTime" alignment="CENTER" layoutX="52.0" layoutY="5.0" prefHeight="24.0" prefWidth="307.0" styleClass="tempLabel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
                      </children></Pane>
                   <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
                   <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />

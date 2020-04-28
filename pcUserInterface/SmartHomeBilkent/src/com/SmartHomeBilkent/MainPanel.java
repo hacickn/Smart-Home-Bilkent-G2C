@@ -303,6 +303,7 @@ public class MainPanel implements Initializable {
       audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
       audioClip.setVolume(((double) Integer.parseInt(volume)) / 200);
       audioClip.setRate(1.1);
+      //audioClip.play();
       speechUtils = new SpeechUtils();
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );
