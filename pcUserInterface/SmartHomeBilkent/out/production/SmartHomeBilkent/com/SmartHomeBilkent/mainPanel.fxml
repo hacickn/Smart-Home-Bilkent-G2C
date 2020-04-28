@@ -15,7 +15,6 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -29,7 +28,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import org.controlsfx.control.CheckComboBox?>
 
 <StackPane fx:id="firstStackPane" maxHeight="1600.0" maxWidth="1600.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" stylesheets="@styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
    <children>
@@ -262,7 +260,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" visible="false">
+      <StackPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0">
          <children>
             <AnchorPane fx:id="userProfileAnchorPane" maxHeight="550.0" prefHeight="550.0" prefWidth="700.0">
                <children>
@@ -432,7 +430,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" visible="false" StackPane.alignment="CENTER">
+      <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0" StackPane.alignment="CENTER">
          <children>
             <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                <children>
@@ -1011,19 +1009,5 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="480.0">
-          <header>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
-          </header>
-          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
-          </content>
-          <expandableContent>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
-          </expandableContent>
-         <graphic>
-            <CheckComboBox />
-         </graphic>
-      </DialogPane>
    </children>
 </StackPane>

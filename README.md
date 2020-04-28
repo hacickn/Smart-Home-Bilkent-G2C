@@ -1,65 +1,30 @@
-# Smart Home Bilkent G2C
-### Group Members
-Hacı Çakın 21802641
-Erengazi Mutlu 21803676
-Metehan Saçakçı 21802788
-Nasuh Dincer 21702933
-İlke Doğan 21702215
-Tarık Buğra Karali 21703937
-  
-## TABLE OF CONTENTS
+# CS102 ~ Design Project ~ Spring 2019/20
+[Computer Engineering Department, Bilkent University](http://w3.cs.bilkent.edu.tr/en/).  
+The information and code in this repository are submitted in partial fulfillment of the CS102 Semester Design Project. Except where explicitly stated, the work is that of the group members listed below (who are expected to follow ethical academic & professional practice).
+****
+## gSL ~~ Project Title ~~
+****
+### ~ optional group name ~
 
-> There are 4 main part of Smart Home
+## Project Description
+_Include a concise description of your project here. Be sure to include the proposed users, the architecture (eg. desktop, web, mobile, embedded, etc.) & screenshots when available._
+   
+## Project Status
++ **Group/project Selection:** completed (date)
++ **Requirements:** completed (date)
++ **UI Design:** completed (date)
++ **Detailed Design:** in progress
++ **Implementation:** not started!
++ **Reflections:** not yet!
 
-- [Pc User Interface](#PcUserInterface)
-- [Android User Interface](#AndroidUserInterface)
-- [Arduino](#Arduino)
-- [Proteus](#Proteus)
+[Group Meetings Log](group/meetingslog.md)
+#### Group Members
+- [member1](group/member1_log.md)    _(full name & link to personal log file)_
+- [member2](group/member2_log.md)
+- member3
+- member4
+- member5
 
-
-
-## Pc User Interface 
-> (Until Today)
-To experience the program there are three users in the program
-```
- UserName       Password      User Type
-- david     |    cs102    |    Parent
-- nasuh     |    nasuh    |    Child
-- mete      |    mete     |    Child
-- ilke      |    ilke     |    Elder
-```
-- [Materials Used](#MaterialsUsed)
-- [Features](#Features)
-
-
-
-#### Materials Used
-1) Programs
-* IntelliJ IDEA Community Edition v2019.3.3
-* JavaFX Scene Builder v8.5.0
-* Java v1.8.0_171-b11
-* DB Browser(SQLite) v3.11.2
-
-2) Web Sites
-* [FLATICON](https://www.flaticon.com/) - The vector icons webpage
-* [AMAZON POLLY](https://aws.amazon.com/polly/?nc1=h_ls) - Amazon Polly is a service that turns text into lifelike speech
-
-3) Libraries
-* [controlsfx](https://github.com/controlsfx/controlsfx) - Custom controls for JavaFX
-* [jSerialComm](https://fazecast.github.io/jSerialComm/) - jSerialComm is a Java library designed to provide a platform-independent way to access standard serial ports without requiring external libraries
-* [Arduino](https://github.com/arduino/Arduino) - open-source electronics platform 
-* [JFoenix](https://github.com/jfoenixadmin/JFoenix) - JavaFX Material Design Library
-* [rxtx](https://github.com/rxtx/rxtx) - a Java cross platform wrapper library for the serial port
-* [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) - SQLite JDBC Driver
-
-#### Features
-- To communicate with database, Singleton patters is used.
-- (to be continued)
-
-## Android User Interface
-
-
-## Arduino
-
-
-## Proteus
+****
+**Instructor:** _(name)_   **TA:**  _(name)_
+****

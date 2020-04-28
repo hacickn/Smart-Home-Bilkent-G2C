@@ -1853,9 +1853,9 @@ public class MainPanel implements Initializable {
                 modsSound = soundCheck + volume;
             }
         }
-        Users.getInstance().updateVolume(loginUser,modsSound);
-        Users.getInstance().updateText(loginUser,modsText);
-        userPreferenceUpdate(loginUser);
+        Users.getInstance().updateVolume( loginUser, modsSound);
+        Users.getInstance().updateText( loginUser, modsText);
+        userPreferenceUpdate( loginUser );
         updateUsersTable();
     }
 
