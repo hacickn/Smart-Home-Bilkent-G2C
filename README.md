@@ -7,7 +7,14 @@ The information and code in this repository are submitted in partial fulfillment
 ### ~ optional group name ~
 
 ## Project Description
-_Include a concise description of your project here. Be sure to include the proposed users, the architecture (eg. desktop, web, mobile, embedded, etc.) & screenshots when available._
+
+### TABLE OF CONTENTS
+> There are 4 main part of Smart Home
+
+- [Pc User Interface](detailed/PC_USER_INTERFACE_README.md)
+- [Android User Interface](detailed/ANDROID_USER_INTERFACE_README.md)
+- [Arduino](detailed/ARDUINO_README.md)
+- [Proteus](detailed/PROTEUS_README.md)
    
 ## Project Status
 + **Group/project Selection:** completed (date)
