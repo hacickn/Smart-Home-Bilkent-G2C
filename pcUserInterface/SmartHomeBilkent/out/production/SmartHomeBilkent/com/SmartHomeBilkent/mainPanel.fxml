@@ -735,11 +735,71 @@
                           </yAxis>
                         </BarChart>
                      </children></Pane>
-                  <Pane fx:id="settingRFIDSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                  <Pane fx:id="settingWeatherSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false">
                      <children>
-                        <Label fx:id="homeRfidSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="RFID SETTINGS">
+                        <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0" fitWidth="700.0" opacity="0.6" pickOnBounds="true">
+                           <image>
+                              <Image url="@styleSheets/images/weatherForecast5.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="homeWeatherSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefWidth="300.0" styleClass="tempLabel" text="WEATHER">
                            <font>
                               <Font name="Agency FB" size="29.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="settingWeatherLocationTextField" alignment="CENTER" layoutX="216.0" layoutY="50.0" prefHeight="48.0" prefWidth="341.0" styleClass="changeUserWeather">
+                           <font>
+                              <Font size="22.0" />
+                           </font></JFXTextField>
+                        <Label fx:id="settingWeatherLocationLabel" layoutX="144.0" layoutY="64.0" styleClass="settingTopPaneLabels" text="LOCATION">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherForecastLabel" layoutX="209.0" layoutY="212.0" styleClass="settingTopPaneLabels" text="WEATHER FORECAST:">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherTemperatureLabel" layoutX="247.0" layoutY="245.0" styleClass="settingTopPaneLabels" text="TEMPERATURE:">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherHumidityLabel" layoutX="271.0" layoutY="279.0" styleClass="settingTopPaneLabels" text="HUMUDITY:">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherWindLabel" layoutX="301.0" layoutY="308.0" styleClass="settingTopPaneLabels" text="WIND:">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="informationTime" alignment="CENTER" layoutX="197.0" layoutY="163.0" prefHeight="24.0" prefWidth="307.0" styleClass="settingTopPaneLabels">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="updateWeatherButton" layoutX="325.0" layoutY="113.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="updateWeather" textFill="TRANSPARENT" />
+                        <Label fx:id="settingWeatherForecastLabelValue" layoutX="342.0" layoutY="209.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherTemperatureLabelValue" layoutX="342.0" layoutY="242.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherHumidityLabelValue" layoutX="342.0" layoutY="276.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="settingWeatherWindLabelValue" layoutX="342.0" layoutY="305.0" prefWidth="200.0" styleClass="settingTopPaneLabels">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
                            </font>
                         </Label>
                      </children></Pane>
@@ -796,12 +856,12 @@
                         <JFXButton fx:id="homeSettingGasButton" layoutX="157.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButton" text="homeSettingGasButton" textFill="TRANSPARENT" />
                         <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
                         <JFXButton fx:id="homeSettingGreenHouseButton" layoutX="399.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton" textFill="TRANSPARENT" />
-                        <JFXButton fx:id="homeSettingRFIDButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="rfid" text="homeSettingRFIDButton" textFill="TRANSPARENT" />
+                        <JFXButton fx:id="homeSettingWeatherButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="weather" text="homeSettingWeatherButton" textFill="TRANSPARENT" />
                         <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive" textFill="TRANSPARENT" visible="false" />
                         <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive" textFill="TRANSPARENT" visible="false" />
                         <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
                         <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouseActive" text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false" />
-                        <JFXButton fx:id="homeSettingRFIDButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="rfidActive" text="homeSettingRFIDButtonActive" textFill="TRANSPARENT" visible="false" />
+                        <JFXButton fx:id="homeSettingWeatherButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="weatherActive" text="homeSettingWeatherButtonActive" textFill="TRANSPARENT" visible="false" />
                         <Label fx:id="homeSubPaneELecLabel" alignment="CENTER" layoutX="18.0" layoutY="73.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="ELECTRICITY" visible="false">
                            <font>
                               <Font name="Agency FB" size="18.0" />
@@ -822,7 +882,7 @@
                               <Font name="Agency FB" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="homeSubPaneRFIDLabel" alignment="CENTER" layoutX="492.0" layoutY="72.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="RFID" visible="false">
+                        <Label fx:id="homeSubPaneWeatherLabel" alignment="CENTER" layoutX="492.0" layoutY="72.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="RFID" visible="false">
                            <font>
                               <Font name="Agency FB" size="18.0" />
                            </font>

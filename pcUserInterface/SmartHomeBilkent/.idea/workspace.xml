@@ -8,13 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/speech/SpeechUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/speech/SpeechUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/weather/WeatherForecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/weather/WeatherForecast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/mainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,10 +255,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="245" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584888536188" />
-    <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1587567788206">
+    <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1588071717711">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1587567788206" />
+    <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1588071717711" />
     <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586253290749">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -297,25 +299,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1877" height="196" key="GridCell.Tab.0.bottom" timestamp="1588060267133">
+    <state width="1877" height="227" key="GridCell.Tab.0.bottom" timestamp="1588075949451">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267133" />
+    <state width="1877" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949451" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="196" key="GridCell.Tab.0.center" timestamp="1588060267132">
+    <state width="1877" height="227" key="GridCell.Tab.0.center" timestamp="1588075949450">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="196" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
+    <state width="1877" height="227" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949450" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="196" key="GridCell.Tab.0.left" timestamp="1588060267132">
+    <state width="1877" height="227" key="GridCell.Tab.0.left" timestamp="1588075949450">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="196" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
+    <state width="1877" height="227" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949450" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1877" height="196" key="GridCell.Tab.0.right" timestamp="1588060267132">
+    <state width="1877" height="227" key="GridCell.Tab.0.right" timestamp="1588075949451">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="196" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588060267132" />
+    <state width="1877" height="227" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588075949451" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state x="1020" y="286" key="IDE.errors.dialog" timestamp="1586287390382">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -337,11 +339,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587291682537" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588059778842">
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1588061230432">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="673" y="267" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1585492186960" />
-    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588059778842" />
+    <state x="1087" y="361" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588061230432" />
     <state x="310" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586874027429">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

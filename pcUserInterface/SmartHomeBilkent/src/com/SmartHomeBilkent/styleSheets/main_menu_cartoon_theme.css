@@ -157,6 +157,10 @@
           -fx-background-image: url("images/cloudy5.png");
           -fx-background-size: cover;
    }
+.weatherActive{
+           -fx-background-image: url("images/cloudy5.png");
+            -fx-background-size: cover;
+}
 .tempLabel{
       -fx-text-fill: black;
  }
@@ -239,6 +243,11 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
+     -fx-text-fill: blue;
+     -jfx-focus-color:darkBlue;
+     -jfx-unfocus-color: black;
+}
+.changeUserWeather{
      -fx-text-fill: blue;
      -jfx-focus-color:darkBlue;
      -jfx-unfocus-color: black;
@@ -370,6 +379,10 @@
 }
 .settingSubPane{
         -fx-background-color: darkGray;
+        -fx-border-color:darkBlue;
+}
+.settingWeatherPane{
+        -fx-background-image: url("images/homeConnection5.png");
         -fx-border-color:darkBlue;
 }
 .changeThemeSave{
@@ -526,5 +539,13 @@
 }
 .datePicker{
     -jfx-default-color:gray;
+}
+.updateWeather{
+        -fx-background-image: url("images/updateCheck4.png");
+        -fx-background-size: cover;
+}
+.updateWeather:hover{
+        -fx-background-image: url("images/updateCheck5.png");
+        -fx-background-size: cover;
 }
 

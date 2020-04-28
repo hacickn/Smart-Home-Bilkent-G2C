@@ -24,6 +24,7 @@ public class User extends RecursiveTreeObject<User> {
    private StringProperty enter;
    private StringProperty text;
    private StringProperty sound;
+   private StringProperty location;
 
    //constructor
 
@@ -42,8 +43,9 @@ public class User extends RecursiveTreeObject<User> {
     * @param enter             is a String input parameter
     * @param text              is a String input parameter
     * @param sound             is a String input parameter
+    * @param location          is a String input parameter
     */
-   public User(String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound) {
+   public User(String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound, String location) {
       this.name = new SimpleStringProperty(name);
       this.surname = new SimpleStringProperty(surname);
       this.birthday = new SimpleStringProperty(birthday);
@@ -56,6 +58,7 @@ public class User extends RecursiveTreeObject<User> {
       this.enter = new SimpleStringProperty(enter);
       this.text = new SimpleStringProperty(text);
       this.sound = new SimpleStringProperty(sound);
+      this.location = new SimpleStringProperty(location);
    }
 
    public String getName() {
@@ -200,5 +203,17 @@ public class User extends RecursiveTreeObject<User> {
 
    public void setPreferredLanguage(String preferredLanguage) {
       this.preferredLanguage.set(preferredLanguage);
+   }
+
+   public String getLocation() {
+      return location.get();
+   }
+
+   public StringProperty locationProperty() {
+      return location;
+   }
+
+   public void setLocation(String location) {
+      this.location.set(location);
    }
 }

@@ -30,6 +30,7 @@ public class Users {
    public static final String TABLE_ENTER_COLUMN = "ENTER";
    public static final String TABLE_TEXT_COLUMN = "TEXT";
    public static final String TABLE_SOUND_COLUMN = "SOUND";
+   public static final String TABLE_LOCATION_COLUMN = "LOCATION";
    private Connection connection;
    private static Users instance = new Users();
    private static ObservableList<User> usersList;
@@ -47,7 +48,6 @@ public class Users {
 
    /**
     * it is a connectDatabase method that get connection between database and program
-    *
     * @return result as a boolean
     */
    public boolean connectDatabase() {
@@ -75,7 +75,6 @@ public class Users {
 
    /**
     * it is a getAllUsers method that get all user from the USERS table
-    *
     * @return result as a ObservableList<User>
     */
    public ObservableList<User> getAllUsers() {
@@ -98,7 +97,8 @@ public class Users {
                   resultSet.getString(TABLE_PREFERRED_LANGUAGE_COLUMN),
                   resultSet.getString(TABLE_ENTER_COLUMN),
                   resultSet.getString(TABLE_TEXT_COLUMN),
-                  resultSet.getString(TABLE_SOUND_COLUMN)));
+                  resultSet.getString(TABLE_SOUND_COLUMN),
+                  resultSet.getString(TABLE_LOCATION_COLUMN)));
          }
          return usersList;
       } catch (SQLException e) {
@@ -109,7 +109,6 @@ public class Users {
 
    /**
     * it is a addUser method that add new user
-    *
     * @param user is a User input parameter
     * @return result as a String
     */
@@ -129,13 +128,13 @@ public class Users {
             user.getPreferredLanguage() + "', '" +
             user.getEnter() + "', '" +
             user.getText() + "', '" +
-            user.getSound() + "')");
+            user.getSound() + "', '" +
+            user.getLocation() + "')");
       usersList.add(user);
    }
 
    /**
     * it is a removeUser method that remove user
-    *
     * @param user is a User input parameter
     */
    public void removeUser(User user) throws SQLException {
@@ -149,7 +148,6 @@ public class Users {
 
    /**
     * it is a getUserList method that give user list
-    *
     * @return result as a ObservableList<User>
     */
    public ObservableList<User> getUserList() {
@@ -158,7 +156,6 @@ public class Users {
 
    /**
     * it is a getInstance method
-    *
     * @return result as a Users
     */
    public static Users getInstance() {
@@ -167,7 +164,6 @@ public class Users {
 
    /**
     * it is a getParentNumber method give parent number
-    *
     * @return result as a int
     */
    public int getParentNumber() {
@@ -240,7 +236,6 @@ public class Users {
 
    /**
     * it is a updateUsersTheme method update user theme information
-    *
     * @param user  is a String input parameter
     * @param theme is a String input parameter
     */
@@ -258,7 +253,6 @@ public class Users {
 
    /**
     * it is a updateUserNormalInfo method update user language information
-    *
     * @param user     is a String input parameter
     * @param language is a String input parameter
     */
@@ -276,7 +270,6 @@ public class Users {
 
    /**
     * it is a updateVolume method update user volume-sound information
-    *
     * @param user  is a String input parameter
     * @param sound is a String input parameter
     */
@@ -294,7 +287,6 @@ public class Users {
 
    /**
     * it is a updateText method update user text information
-    *
     * @param user is a String input parameter
     * @param text is a String input parameter
     */
@@ -308,5 +300,17 @@ public class Users {
             TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
             TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
       user.setText(text);
+   }
+
+   public void updateLocation(User user, String location) throws SQLException {
+      Statement statement;
+      statement = connection.createStatement();
+      statement.execute(" UPDATE " + TABLE_USERS +
+            " SET " +
+            TABLE_LOCATION_COLUMN + " = '" + location + "' " +
+            " WHERE " +
+            TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+            TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'");
+      user.setLocation(location);
    }
 }

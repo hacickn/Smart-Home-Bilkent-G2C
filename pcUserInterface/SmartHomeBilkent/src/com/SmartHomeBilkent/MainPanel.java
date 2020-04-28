@@ -2,6 +2,7 @@ package com.SmartHomeBilkent;
 
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
+import com.SmartHomeBilkent.extra.weather.WeatherForecast;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
@@ -16,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.effect.BoxBlur;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,6 +28,7 @@ import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -48,136 +51,87 @@ public class MainPanel implements Initializable {
 
    //menu variables
    @FXML
-   private StackPane firstStackPane,
-         menuStackPane;
+   private StackPane firstStackPane, menuStackPane;
    @FXML
    private AnchorPane menuAnchorPane;
    @FXML
-   private JFXButton menuButton,
-         menuButtonActive,
-         userProfileButton,
-         userProfileButtonActive,
-         settingsButton,
-         settingsButtonActive,
-         logoutButton,
-         menuElecButton,
-         menuGasButton,
-         menuWaterButton,
-         menuGreenHouseButton,
-         menuConnectionButton,
-         gasSubMenuButtonPassive,
-         gasSubMenuButtonActive,
-         waterSubMenuButtonPassive,
-         waterSubMenuButtonActive,
-         greenhouseSubMenuButtonPassive,
-         greenhouseSubMenuButtonActive,
-         elecSubMenuButtonPassive,
-         elecSubMenuButtonActive,
+   private JFXButton menuButton, menuButtonActive,
+         userProfileButton, userProfileButtonActive,
+         settingsButton, settingsButtonActive,
+         logoutButton, menuElecButton,
+         menuGasButton, menuWaterButton,
+         menuGreenHouseButton, menuConnectionButton,
+         gasSubMenuButtonPassive, gasSubMenuButtonActive,
+         waterSubMenuButtonPassive, waterSubMenuButtonActive,
+         greenhouseSubMenuButtonPassive, greenhouseSubMenuButtonActive,
+         elecSubMenuButtonPassive, elecSubMenuButtonActive,
          weatherButton;
    @FXML
    private BorderPane menuBorderPane;
    @FXML
-   private JFXProgressBar menuElecProgress,
-         menuGasProgress,
+   private JFXProgressBar menuElecProgress, menuGasProgress,
          menuWaterProgress;
    @FXML
-   private Label ghHumidityTempLabel,
-         ghHumidityValueLabel,
-         menuHomeTempLabel,
-         ghTempValueLabel,
-         menuConnectionWarningLabel,
-         elecSubPaneLabelPassive,
-         elecSubPaneOpenLabelPassive,
-         elecSubPaneCloseLabelPassive,
-         elecSubPaneOpenValueLabelPassive,
-         elecSubPaneCloseValueLabelPassive,
-         elecSubPaneLabelActive,
-         elecSubPaneOpenLabelActive,
-         elecSubPaneCloseLabelActive,
-         elecSubPaneOpenValueLabelActive,
-         elecSubPaneCloseValueLabelActive,
-         gasSubPaneLabelPassive,
-         gasSubPaneLabelActive,
-         aquariumSubPaneLabelPassive,
-         heaterSubPaneLabelPassive,
-         aquariumSubPaneLabelActive,
-         greenHouseSubPaneLabelPassive,
-         ghTempSubPaneLabelActive,
-         menuUserProfileLabel,
-         menuMenuLabel,
+   private Label ghHumidityTempLabel, ghHumidityValueLabel,
+         menuHomeTempLabel, ghTempValueLabel,
+         menuConnectionWarningLabel, elecSubPaneLabelPassive,
+         elecSubPaneOpenLabelPassive, elecSubPaneCloseLabelPassive,
+         elecSubPaneOpenValueLabelPassive, elecSubPaneCloseValueLabelPassive,
+         elecSubPaneLabelActive, elecSubPaneOpenLabelActive,
+         elecSubPaneCloseLabelActive, elecSubPaneOpenValueLabelActive,
+         elecSubPaneCloseValueLabelActive, gasSubPaneLabelPassive,
+         gasSubPaneLabelActive, aquariumSubPaneLabelPassive,
+         heaterSubPaneLabelPassive, aquariumSubPaneLabelActive,
+         greenHouseSubPaneLabelPassive, ghTempSubPaneLabelActive,
+         menuUserProfileLabel, menuMenuLabel,
          menuSettingLabel;
    @FXML
-   private ImageView weatherImage, tempImage;
+   private ImageView weatherImage, tempImage, weatherForecastImage;
    @FXML
-   private Pane connectionPane,
-         menuEmptyPane,
-         menuElecPane,
-         menuGasPane,
-         menuWaterPane,
-         menuTempPane;
+   private Pane connectionPane, menuEmptyPane,
+         menuElecPane, menuGasPane,
+         menuWaterPane, menuTempPane;
    @FXML
-   private JFXToggleButton elecSubMenuToggleButton,
-         gasSubMenuToggleButton,
+   private JFXToggleButton elecSubMenuToggleButton, gasSubMenuToggleButton,
          waterSubMenuToggleButton;
 
    //user profile variables
    @FXML
-   private Label privateInfoWarning,
-         normalInfoWarning,
-         userProfileNameLabel,
-         userProfileSurnameLabel,
-         userProfileGenderLabel,
-         userProfileAgeLabel,
-         userProfileUserNameLabel,
-         userProfilePasswordLabel,
-         normalChangeNameLabel,
-         normalChangeSurnameLabel,
-         normalChangeBirthdayLabel,
-         normalChangeGenderLabel,
-         userNameLabel,
-         newPasswordLabel,
-         verifyNewPasswordLabel,
-         currentPasswordLabel,
-         userChangerInfoLabel,
-         changeUserInfoLabel,
+   private Label privateInfoWarning, normalInfoWarning,
+         userProfileNameLabel, userProfileSurnameLabel,
+         userProfileGenderLabel, userProfileAgeLabel,
+         userProfileUserNameLabel, userProfilePasswordLabel,
+         normalChangeNameLabel, normalChangeSurnameLabel,
+         normalChangeBirthdayLabel, normalChangeGenderLabel,
+         userNameLabel, newPasswordLabel,
+         verifyNewPasswordLabel, currentPasswordLabel,
+         userChangerInfoLabel, changeUserInfoLabel,
          changeUserPrivateInfoLabel;
    @FXML
    private StackPane userProfileStackPane;
    @FXML
    private AnchorPane userProfileAnchorPane;
    @FXML
-   private Pane userProfilePane,
-         changeUserNormalInfoPane,
+   private Pane userProfilePane, changeUserNormalInfoPane,
          changeUserPrivateInfoPane;
    @FXML
-   private JFXTextField userProfileNameField,
-         userProfileSurnameField,
-         userProfileAgeField,
-         userProfileGenderField,
-         userProfileUserNameField,
-         userProfilePasswordField,
-         nameTextField,
-         surnameTextField,
-         userNameTextField,
-         newPasswordTextField,
-         verifyNewPasswordField,
-         currentPasswordField;
+   private JFXTextField userProfileNameField, userProfileSurnameField,
+         userProfileAgeField, userProfileGenderField,
+         userProfileUserNameField, userProfilePasswordField,
+         nameTextField, surnameTextField,
+         userNameTextField, newPasswordTextField,
+         verifyNewPasswordField, currentPasswordField;
    @FXML
    private JFXDatePicker birthdayDateField;
    @FXML
-   private JFXButton changeUserNormalInfoButton,
-         changeUserPrivateInfoButton,
-         userChangerButton,
-         saveUserNormalInfo,
-         backToUserProfileFromNormalInfo,
-         saveUserPrivateInfo,
+   private JFXButton changeUserNormalInfoButton, changeUserPrivateInfoButton,
+         userChangerButton, saveUserNormalInfo,
+         backToUserProfileFromNormalInfo, saveUserPrivateInfo,
          backToUserProfileFromPrivateInfo;
    @FXML
-   private JFXRadioButton maleRadioOption,
-         femaleRadioOption;
+   private JFXRadioButton maleRadioOption, femaleRadioOption;
    @FXML
-   private ImageView userInfoBoyImage,
-         userInfoGirlImage;
+   private ImageView userInfoBoyImage, userInfoGirlImage;
 
    //settings pane variables
    @FXML
@@ -187,28 +141,22 @@ public class MainPanel implements Initializable {
    @FXML
    private Pane settingMainFunctionsPane;
    @FXML
-   private JFXButton applicationSettingButton,
-         settingsUsersSettingButton,
-         modsSettingButton,
-         homeSettingButton,
-         applicationSettingButtonActive,
-         settingsUsersSettingButtonActive,
-         modsSettingButtonActive,
-         homeSettingButtonActive;
+   private JFXButton applicationSettingButton, settingsUsersSettingButton,
+         modsSettingButton, homeSettingButton,
+         applicationSettingButtonActive, settingsUsersSettingButtonActive,
+         modsSettingButtonActive, homeSettingButtonActive;
    @FXML
-   private Label applicationSettingButtonLabel,
-         usersSettingButtonLabel,
-         modsSettingButtonLabel,
-         homeSettingButtonLabel;
+   private Label applicationSettingButtonLabel, usersSettingButtonLabel,
+         modsSettingButtonLabel, homeSettingButtonLabel;
 
    //settings pane ----application settings variables----
    @FXML
-   private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
+   private Pane settingThemePane, settingLanguagePane
+         , settingEmergencyPane, settingNotificationPane
+         , settingConnectionPane;
    @FXML
-   private JFXRadioButton darkThemeRadioButton,
-         lightThemeRadioButton,
-         smoothThemeRadioButton,
-         cartoonThemeRadioButton;
+   private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
+         smoothThemeRadioButton, cartoonThemeRadioButton;
 
    @FXML
    private JFXButton settingThemeSaveButton, englishOption,
@@ -227,7 +175,8 @@ public class MainPanel implements Initializable {
 
    //settings pane ----users settings variables----
    @FXML
-   private Pane settingUsersPane, addUserPane, deleteUserPane;
+   private Pane settingUsersPane, addUserPane,
+         deleteUserPane;
    @FXML
    private JFXTreeTableView<User> settingUserTable;
    @FXML
@@ -259,10 +208,12 @@ public class MainPanel implements Initializable {
    private JFXRadioButton createUserMaleOption, createUserFemaleOption,
          createUserDarkThemeOption, createUserLightThemeOption,
          createUserSmoothThemeOption, createUserCartoonThemeOption,
-         createUserEnglishOption, createUserTurkishOption, createUserGermanOption,
-         createUserParentOption, createUserChildOption, createUserElderOption;
+         createUserEnglishOption, createUserTurkishOption,
+         createUserGermanOption, createUserParentOption,
+         createUserChildOption, createUserElderOption;
    @FXML
-   private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField, removeUserTextField;
+   private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField
+         , removeUserTextField;
 
    //settings pane ----mods setting variables----
    @FXML
@@ -278,15 +229,21 @@ public class MainPanel implements Initializable {
    //settings pane ----home settings variables----
    @FXML
    private Pane settingElecSettingPane, settingGasSettingPane,
-         settingAquSettingPane, settingGreenHouseSettingPane, settingRFIDSettingPane;
+         settingAquSettingPane, settingGreenHouseSettingPane, settingWeatherSettingPane;
    @FXML
    private Label homeElecSettingTopLabel, homeGasSettingTopLabel,
          homeAquSettingTopLabel, homeGreenHouseSettingTopLabel,
-         homeRfidSettingTopLabel, homeSubPaneELecLabel,
+         homeWeatherSettingTopLabel, homeSubPaneELecLabel,
          homeSubPaneGasLabel, homeSubPaneAquLabel,
-         homeSubPaneGreenHouseLabel, homeSubPaneRFIDLabel,
-         themeSubLabel, languageSubLabel, emergencySubLabel,
-         notificationSubLabel, connectionSubLabel;
+         homeSubPaneGreenHouseLabel, homeSubPaneWeatherLabel,
+         themeSubLabel, languageSubLabel,
+         emergencySubLabel, notificationSubLabel,
+         connectionSubLabel, settingWeatherLocationLabel,
+         settingWeatherForecastLabel, settingWeatherTemperatureLabel,
+         settingWeatherHumidityLabel, settingWeatherWindLabel,
+         informationTime, settingWeatherForecastLabelValue,
+         settingWeatherTemperatureLabelValue, settingWeatherHumidityLabelValue,
+         settingWeatherWindLabelValue;
    ;
    @FXML
    private AnchorPane applicationSettingSubPane;
@@ -296,15 +253,22 @@ public class MainPanel implements Initializable {
          smartHomeConnectionSettingButton, themeSettingButtonActive,
          languageSettingButtonActive, emergencySettingButtonActive,
          phoneNotificationSettingButtonActive, smartHomeConnectionSettingButtonActive;
+   @FXML
+   private JFXTextField settingWeatherLocationTextField;
+   @FXML
+   private JFXButton updateWeatherButton;
 
    //settings pane ----sub-menu variables----
    @FXML
    private AnchorPane usersSettingSubPane, modsSettingSubPane, homeSettingSubPane;
    @FXML
-   private JFXButton usersSettingSubPaneAddUser, usersSettingSubPaneRemoveUser, usersSettingSubPaneChangeUserType,
-         homeSettingElecButton, homeSettingGasButton, homeSettingAquButton,
-         homeSettingGreenHouseButton, homeSettingRFIDButton, homeSettingElecButtonActive,
-         homeSettingGasButtonActive, homeSettingAquButtonActive, homeSettingGreenHouseButtonActive, homeSettingRFIDButtonActive;
+   private JFXButton usersSettingSubPaneAddUser, usersSettingSubPaneRemoveUser,
+         usersSettingSubPaneChangeUserType, homeSettingElecButton,
+         homeSettingGasButton, homeSettingAquButton,
+         homeSettingGreenHouseButton, homeSettingWeatherButton,
+         homeSettingElecButtonActive, homeSettingGasButtonActive,
+         homeSettingAquButtonActive, homeSettingGreenHouseButtonActive,
+         homeSettingWeatherButtonActive;
 
    //program variables
    @FXML
@@ -319,6 +283,7 @@ public class MainPanel implements Initializable {
    private LocalDate localDate;
    private DateTimeFormatter dateTimeFormatter;
    public User loginUser;
+   private WeatherForecast weatherForecast;
 
 
    //initialize method(it runs before the program start to run)
@@ -328,20 +293,39 @@ public class MainPanel implements Initializable {
       //communicate = "000000";
 
       //adjust user settings
-      userPreferenceUpdate(getLoginUser());
+      try {
+         userPreferenceUpdate(getLoginUser());
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable(true);
       audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
       audioClip.setVolume(((double) Integer.parseInt(volume)) / 200);
       audioClip.setRate(1.1);
       speechUtils = new SpeechUtils();
+      try {
+         weatherForecast = new WeatherForecast( loginUser.getLocation() );
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+
+      settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+      settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C");
+      settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+      settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+      informationTime.setText( weatherForecast.getLocalTime() );
+      settingWeatherLocationTextField.setText( loginUser.getLocation() );
+      backgroundSetup( weatherForecast.getWeather() );
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
    }
 
    void sound(String file, Boolean check) {
-      if (check) {
+      if (( check && !audioClip.getSource().substring(audioClip.getSource().indexOf("com/SmartHomeBilkent/") + 30, (audioClip.getSource().length() - 6 )).equals(file))) {
          audioClip.stop();
-         audioClip = new AudioClip(this.getClass().getResource("music/" + bundle.getString("pathLang") + file + bundle.getString("mp3Lang")).toString());
+         audioClip = new AudioClip(this.getClass().getResource("music/" +
+               bundle.getString("pathLang") +
+               file + bundle.getString("mp3Lang")).toString());
          audioClip.setRate(1);
          audioClip.play();
       }
@@ -358,7 +342,7 @@ public class MainPanel implements Initializable {
       return null;
    }
 
-   void userPreferenceUpdate(User user) {
+   void userPreferenceUpdate(User user) throws IOException {
       dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
       localDate = LocalDate.parse(user.getBirthday(), dateTimeFormatter);
       birthdayDateField.setValue(localDate);
@@ -369,6 +353,7 @@ public class MainPanel implements Initializable {
       userProfileUserNameField.setText(user.getUserName());
       nameTextField.setText(user.getName());
       surnameTextField.setText(user.getSurname());
+
       if (user.getGender().equals("MALE") || user.getGender().equals("ERKEK") || user.getGender().equals("MÄNNLICH")) {
          maleRadioOption.setSelected(true);
          femaleRadioOption.setSelected(false);
@@ -382,13 +367,16 @@ public class MainPanel implements Initializable {
       }
       userNameTextField.setText(user.getUserName());
 
-      if (loginUser.getPreferredTheme().equals("cartoon") || loginUser.getPreferredTheme().equals("karıkatur") || loginUser.getPreferredTheme().equals("çızgı fılm")) {
+      if (loginUser.getPreferredTheme().equals("cartoon") || loginUser.getPreferredTheme().equals("karıkatur")
+            || loginUser.getPreferredTheme().equals("çızgı fılm")) {
          selectCartoonTheme();
          changeTheme("cartoon");
-      } else if (loginUser.getPreferredTheme().equals("light") || loginUser.getPreferredTheme().equals("lıght") || loginUser.getPreferredTheme().equals("aydınlık") || loginUser.getPreferredTheme().equals("lıcht")) {
+      } else if (loginUser.getPreferredTheme().equals("light") || loginUser.getPreferredTheme().equals("lıght")
+            || loginUser.getPreferredTheme().equals("aydınlık") || loginUser.getPreferredTheme().equals("lıcht")) {
          selectLightTheme();
          changeTheme("light");
-      } else if (loginUser.getPreferredTheme().equals("smooth") || loginUser.getPreferredTheme().equals("puruzsuz") || loginUser.getPreferredTheme().equals("glatt")) {
+      } else if (loginUser.getPreferredTheme().equals("smooth") || loginUser.getPreferredTheme().equals("puruzsuz")
+            || loginUser.getPreferredTheme().equals("glatt")) {
          selectSmoothTheme();
          changeTheme("smooth");
       } else {
@@ -440,7 +428,8 @@ public class MainPanel implements Initializable {
       settingUserTableTheme.setCellValueFactory(param -> param.getValue().getValue().preferredThemeProperty());
       settingUserTableLanguage.setCellValueFactory(param -> param.getValue().getValue().preferredLanguageProperty());
 
-      settingUserTable.setRoot(new RecursiveTreeItem<>(Users.getInstance().getUserList(), RecursiveTreeObject::getChildren));
+      settingUserTable.setRoot(new RecursiveTreeItem<>(Users.getInstance().getUserList()
+            ,RecursiveTreeObject::getChildren));
       settingUserTable.setShowRoot(false);
    }
 
@@ -843,7 +832,7 @@ public class MainPanel implements Initializable {
    }
 
    @FXML
-   void changeUserInfoButtons(ActionEvent event) throws SQLException {
+   void changeUserInfoButtons(ActionEvent event) throws SQLException, IOException {
       if (event.getSource() == saveUserNormalInfo) {
          String gender;
          if (nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue() == null) {
@@ -912,7 +901,7 @@ public class MainPanel implements Initializable {
    //settings
    //settings ---------top pane
    @FXML
-   void settingsFacilitiesButtons(ActionEvent event) throws SQLException {
+   void settingsFacilitiesButtons(ActionEvent event) throws SQLException, IOException {
       if (event.getSource() == applicationSettingButton) {
          openApplicationPanes();
       } else if (event.getSource() == settingsUsersSettingButton) {
@@ -1061,7 +1050,7 @@ public class MainPanel implements Initializable {
    //language pane buttons
 
    @FXML
-   void selectLanguage(ActionEvent event) throws SQLException {
+   void selectLanguage(ActionEvent event) throws SQLException, IOException {
       String language;
       language = "";
       if (event.getSource() == englishOption) {
@@ -1181,12 +1170,12 @@ public class MainPanel implements Initializable {
          homeGasSettingTopLabel.setText(bundle.getString("gasSettingTopLang"));
          homeAquSettingTopLabel.setText(bundle.getString("aquSettingTopLang"));
          homeGreenHouseSettingTopLabel.setText(bundle.getString("greenHouseSettingTopLang"));
-         homeRfidSettingTopLabel.setText(bundle.getString("rfidSettingTopLang"));
+         homeWeatherSettingTopLabel.setText(bundle.getString("weatherLang"));
          homeSubPaneELecLabel.setText(bundle.getString("elecLang"));
          homeSubPaneGasLabel.setText(bundle.getString("gasLang"));
          homeSubPaneAquLabel.setText(bundle.getString("aquiarumLang"));
          homeSubPaneGreenHouseLabel.setText(bundle.getString("greenHouse"));
-         homeSubPaneRFIDLabel.setText(bundle.getString("rfidLang"));
+         homeSubPaneWeatherLabel.setText(bundle.getString("weatherLang"));
          interactiveTextModeLabel.setText(bundle.getString("interactiveTextLang"));
          interactiveSoundModeLabel.setText(bundle.getString("interactiveSoundLang"));
          soundHelperLabel.setText(bundle.getString("soundHelper"));
@@ -1333,9 +1322,9 @@ public class MainPanel implements Initializable {
       } else if (event.getSource() == homeSettingGreenHouseButton || event.getSource() == homeSettingGreenHouseButtonActive) {
          sound("greenHouseSettingsLang", soundCheck);
          homeSubPaneGreenHouseLabel.setVisible(true);
-      } else if (event.getSource() == homeSettingRFIDButton || event.getSource() == homeSettingRFIDButtonActive) {
+      } else if (event.getSource() == homeSettingWeatherButton || event.getSource() == homeSettingWeatherButtonActive) {
          sound("rfidSettingsLang", soundCheck);
-         homeSubPaneRFIDLabel.setVisible(true);
+         homeSubPaneWeatherLabel.setVisible(true);
       }
    }
 
@@ -1367,8 +1356,8 @@ public class MainPanel implements Initializable {
          homeSubPaneAquLabel.setVisible(false);
       else if (event.getSource() == homeSettingGreenHouseButton || event.getSource() == homeSettingGreenHouseButtonActive)
          homeSubPaneGreenHouseLabel.setVisible(false);
-      else if (event.getSource() == homeSettingRFIDButton || event.getSource() == homeSettingRFIDButtonActive)
-         homeSubPaneRFIDLabel.setVisible(false);
+      else if (event.getSource() == homeSettingWeatherButton || event.getSource() == homeSettingWeatherButtonActive)
+         homeSubPaneWeatherLabel.setVisible(false);
 
    }
 
@@ -1542,7 +1531,8 @@ public class MainPanel implements Initializable {
                   addUserLanguage.getText(),
                   "false",
                   "true",
-                  "true050"
+                  "true050",
+                  "Ankara"
             ));
             updateUsersTable();
             addUserPane.setVisible(false);
@@ -1665,7 +1655,7 @@ public class MainPanel implements Initializable {
 
    public void closeHomeSettingPane() {
       settingElecSettingPane.setVisible(false);
-      settingRFIDSettingPane.setVisible(false);
+      settingWeatherSettingPane.setVisible(false);
       settingGasSettingPane.setVisible(false);
       settingAquSettingPane.setVisible(false);
       settingGreenHouseSettingPane.setVisible(false);
@@ -1676,7 +1666,7 @@ public class MainPanel implements Initializable {
 
    //settings----mods settings menu
    @FXML
-   void volumeAdjust() throws SQLException {
+   void volumeAdjust() throws SQLException, IOException {
       String modsSound;
 
       if (soundVolumeSlider.getValue() < 10) {
@@ -1699,7 +1689,7 @@ public class MainPanel implements Initializable {
    }
 
    @FXML
-   void modsToggleButtons(ActionEvent event) throws SQLException {
+   void modsToggleButtons(ActionEvent event) throws SQLException, IOException {
       String modsSound;
       String modsText;
 
@@ -1742,7 +1732,7 @@ public class MainPanel implements Initializable {
 
    //settings pane----home settings pane
    @FXML
-   void homeSettingButtons(ActionEvent event) {
+   void homeSettingButtons(ActionEvent event) throws IOException, SQLException {
       if (event.getSource() == homeSettingElecButton) {
          closeAllHomeSetting();
          settingElecSettingPane.setVisible(true);
@@ -1763,12 +1753,38 @@ public class MainPanel implements Initializable {
          settingGreenHouseSettingPane.setVisible(true);
          openHomeSetting();
          homeSettingGreenHouseButtonActive.setVisible(true);
-      } else if (event.getSource() == homeSettingRFIDButton) {
+      } else if (event.getSource() == homeSettingWeatherButton) {
          closeAllHomeSetting();
-         settingRFIDSettingPane.setVisible(true);
+         settingWeatherSettingPane.setVisible(true);
          openHomeSetting();
-         homeSettingRFIDButtonActive.setVisible(true);
+         homeSettingWeatherButtonActive.setVisible(true);
+      } else if (event.getSource() == updateWeatherButton) {
+         if( settingWeatherLocationTextField.getText().length() > 0 ) {
+            weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+            weatherForecast.getWeatherCase();
+            settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+            settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C");
+            settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+            settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+            informationTime.setText( weatherForecast.getLocalTime() );
+            Users.getInstance().updateLocation(loginUser, settingWeatherLocationTextField.getText());
+            backgroundSetup( weatherForecast.getWeather() );
+         }else{
+            informationTime.setText( "Please enter the location" );
+         }
       }
+   }
+
+   public void backgroundSetup( String weather ){
+      if( weather.equals( "Cloudy" ))
+         weatherForecastImage.setImage(new Image(getClass().getResourceAsStream("styleSheets/images/cloudy.jpg")));
+      else if( weather.equals( "Partly cloudy" ))
+         weatherForecastImage.setImage(new Image(getClass().getResourceAsStream("styleSheets/images/partlyCloudy1.jpg")));
+      else if( weather.equals( "Sunny" ))
+         weatherForecastImage.setImage(new Image(getClass().getResourceAsStream("styleSheets/images/sunny1.jpg")));
+      else if( weather.equals( "Snowy" ))
+         weatherForecastImage.setImage(new Image(getClass().getResourceAsStream("styleSheets/images/snowy.jpg")));
+
    }
 
    public void openHomeSetting() {
@@ -1781,12 +1797,12 @@ public class MainPanel implements Initializable {
       settingGasSettingPane.setVisible(false);
       settingAquSettingPane.setVisible(false);
       settingGreenHouseSettingPane.setVisible(false);
-      settingRFIDSettingPane.setVisible(false);
+      settingWeatherSettingPane.setVisible(false);
       homeSettingElecButtonActive.setVisible(false);
       homeSettingGasButtonActive.setVisible(false);
       homeSettingAquButtonActive.setVisible(false);
       homeSettingGreenHouseButtonActive.setVisible(false);
-      homeSettingRFIDButtonActive.setVisible(false);
+      homeSettingWeatherButtonActive.setVisible(false);
       homeSettingSubPane.setVisible(false);
       homeSettingButtonActive.setVisible(false);
    }

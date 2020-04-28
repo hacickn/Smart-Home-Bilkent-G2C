@@ -142,6 +142,10 @@
          -fx-background-image: url("images/cloudy3.png");
          -fx-background-size: cover;
   }
+.weatherActive{
+           -fx-background-image: url("images/cloudy3.png");
+            -fx-background-size: cover;
+}
 .rfid{
            -fx-background-image: url("images/rfid1.png");
             -fx-background-size: cover;
@@ -232,6 +236,11 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
+     -fx-text-fill: white;
+     -jfx-focus-color:white;
+     -jfx-unfocus-color: black;
+}
+.changeUserWeather{
      -fx-text-fill: white;
      -jfx-focus-color:white;
      -jfx-unfocus-color: black;
@@ -362,6 +371,10 @@
      -fx-background-size: cover;
 }
 .settingSubPane{
+        -fx-background-color: Gray;
+        -fx-border-color:white;
+}
+.settingWeatherPane{
         -fx-background-color: Gray;
         -fx-border-color:white;
 }
@@ -519,4 +532,12 @@
 }
 .datePicker{
     -jfx-default-color:gray;
+}
+.updateWeather{
+        -fx-background-image: url("images/updateCheck1.png");
+        -fx-background-size: cover;
+}
+.updateWeather:hover{
+        -fx-background-image: url("images/updateCheck3.png");
+        -fx-background-size: cover;
 }

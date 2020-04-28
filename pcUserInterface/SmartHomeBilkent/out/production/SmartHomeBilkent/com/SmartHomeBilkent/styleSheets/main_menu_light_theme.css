@@ -158,6 +158,10 @@
           -fx-background-image: url("images/cloudy3.png");
           -fx-background-size: cover;
    }
+   .weatherActive{
+              -fx-background-image: url("images/cloudy3.png");
+               -fx-background-size: cover;
+   }
 .tempLabel{
       -fx-text-fill: black;
  }
@@ -242,6 +246,11 @@
 .changeUserInfoTextField{
      -fx-text-fill: #DB7093;
      -jfx-focus-color:#DB7093;
+     -jfx-unfocus-color: black;
+}
+.changeUserWeather{
+     -fx-text-fill: darkGreen;
+     -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: black;
 }
 .changeUserInforRadioButton{
@@ -370,6 +379,10 @@
      -fx-background-size: cover;
 }
 .settingSubPane{
+        -fx-background-color: #DCDCDC;
+        -fx-border-color:#E6E6FA;
+}
+.settingWeatherPane{
         -fx-background-color: #DCDCDC;
         -fx-border-color:#E6E6FA;
 }
@@ -526,6 +539,14 @@
 }
 .datePicker{
     -jfx-default-color:#DB7093;
+}
+.updateWeather{
+        -fx-background-image: url("images/updateCheck1.png");
+        -fx-background-size: cover;
+}
+.updateWeather:hover{
+        -fx-background-image: url("images/updateCheck3.png");
+        -fx-background-size: cover;
 }
 
 
