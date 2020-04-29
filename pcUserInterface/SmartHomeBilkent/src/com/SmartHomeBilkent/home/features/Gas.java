@@ -3,6 +3,11 @@ package com.SmartHomeBilkent.home.features;
 import arduino.Arduino;
 import javafx.collections.ObservableList;
 
+/**
+ * a Gas class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Gas extends Communication {
    //properties
    private final String GAS_ON = "gas_on#:";

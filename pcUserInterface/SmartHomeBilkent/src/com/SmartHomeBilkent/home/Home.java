@@ -3,6 +3,11 @@ package com.SmartHomeBilkent.home;
 import arduino.Arduino;
 import com.SmartHomeBilkent.home.features.*;
 
+/**
+ * a Home class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Home {
    //properties
    private Electricity electricity;

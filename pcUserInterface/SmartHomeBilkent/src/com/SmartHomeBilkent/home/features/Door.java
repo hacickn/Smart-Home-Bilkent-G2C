@@ -2,6 +2,11 @@ package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
 
+/**
+ * a Door class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Door extends Communication {
    //properties
    private final String DOOR_ON = "door_on#:";

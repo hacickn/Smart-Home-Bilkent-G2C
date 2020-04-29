@@ -1,5 +1,10 @@
 package com.SmartHomeBilkent.home.features;
 
+/**
+ * a GreenHouse class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class GreenHouse {
    //properties
    private String[] incomingWaterTime;

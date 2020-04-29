@@ -83,6 +83,10 @@
             -fx-background-size: cover;
  }
 .waterButtonActive{
+           -fx-background-image: url("images/water5.png");
+           -fx-background-size: cover;
+}
+.aquariumButtonActive{
            -fx-background-image: url("images/aquarium5.png");
            -fx-background-size: cover;
 }
@@ -92,6 +96,26 @@
 }
 .elecButton:hover{
            -fx-background-image: url("images/elec5.png");
+           -fx-background-size: cover;
+}
+.doorButton{
+           -fx-background-image: url("images/door2.png");
+           -fx-background-size: cover;
+}
+.doorButton:hover{
+           -fx-background-image: url("images/door5.png");
+           -fx-background-size: cover;
+}
+.lightButton{
+           -fx-background-image: url("images/idea2.png");
+           -fx-background-size: cover;
+}
+.lightButton:hover{
+           -fx-background-image: url("images/idea5.png");
+           -fx-background-size: cover;
+}
+.lightButtonActive{
+           -fx-background-image: url("images/idea5.png");
            -fx-background-size: cover;
 }
 .greenHouse{
@@ -111,10 +135,18 @@
            -fx-background-size: cover;
 }
 .waterButton{
-           -fx-background-image: url("images/aquarium2.png");
+           -fx-background-image: url("images/water2.png");
            -fx-background-size: cover;
 }
 .waterButton:hover{
+           -fx-background-image: url("images/water5.png");
+           -fx-background-size: cover;
+}
+.aquariumButton{
+           -fx-background-image: url("images/aquarium2.png");
+           -fx-background-size: cover;
+}
+.aquariumButton:hover{
            -fx-background-image: url("images/aquarium5.png");
            -fx-background-size: cover;
 }

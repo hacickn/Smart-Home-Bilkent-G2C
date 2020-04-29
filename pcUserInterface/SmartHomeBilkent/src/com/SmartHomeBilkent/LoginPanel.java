@@ -59,7 +59,7 @@ public class LoginPanel implements Initializable {
                   stage = new Stage();
                   stage.setTitle("SMART HOME");
                   stage.setScene(new Scene(root, 800, 800));
-                  stage.setResizable(false);
+                  stage.setResizable(true);
                   stage.show();
                   userNameField.getScene().getWindow().hide();
                } catch (Exception e) {

@@ -2,6 +2,11 @@ package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
 
+/**
+ * a GardenLight class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class GardenLight extends Communication {
    //properties
    private final String GARDEN_LIGHTS_ON = "garden_lights_on#:";

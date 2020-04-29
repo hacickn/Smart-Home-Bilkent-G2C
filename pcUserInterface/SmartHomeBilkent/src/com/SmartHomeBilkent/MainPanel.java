@@ -4,6 +4,7 @@ import com.SmartHomeBilkent.extra.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
+import com.fazecast.jSerialComm.SerialPort;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
@@ -41,7 +42,7 @@ import java.util.ResourceBundle;
  * a MainPanel class
  *
  * @author Hacı Çakın
- * @version 28.04.2020
+ * @version 29.04.2020
  */
 public class MainPanel implements Initializable {
 
@@ -60,18 +61,22 @@ public class MainPanel implements Initializable {
          userProfileButton, userProfileButtonActive,
          settingsButton, settingsButtonActive,
          logoutButton, menuElecButton,
-         menuGasButton, menuWaterButton,
+         menuGasButton, menuAquariumButton,
          menuGreenHouseButton, menuConnectionButton,
          gasSubMenuButtonPassive, gasSubMenuButtonActive,
-         waterSubMenuButtonPassive, waterSubMenuButtonActive,
+         aquariumSubMenuButtonPassive, aquariumSubMenuButtonActive,
          greenhouseSubMenuButtonPassive, greenhouseSubMenuButtonActive,
          elecSubMenuButtonPassive, elecSubMenuButtonActive,
-         weatherButton;
+         weatherButton, menuWaterButton,
+         doorButton, menuGardenLightButton,
+         waterSubMenuButtonActive, waterSubMenuButtonPassive,
+         gardenLightSubMenuButtonActive, gardenLightSubMenuButtonPassive;
    @FXML
    private BorderPane menuBorderPane;
    @FXML
    private JFXProgressBar menuElecProgress, menuGasProgress,
-         menuWaterProgress;
+         menuAquariumProgress, menuWaterProgress,
+         menuGardenLightProgress;
    @FXML
    private Label ghHumidityTempLabel, ghHumidityValueLabel,
          menuHomeTempLabel, ghTempValueLabel,
@@ -85,16 +90,21 @@ public class MainPanel implements Initializable {
          heaterSubPaneLabelPassive, aquariumSubPaneLabelActive,
          greenHouseSubPaneLabelPassive, ghTempSubPaneLabelActive,
          menuUserProfileLabel, menuMenuLabel,
-         menuSettingLabel;
+         menuSettingLabel, menuWeatherValue,
+         menuHomeTempValue, menuOpenDoorLabel,
+         waterSubPaneLabelActive, waterSubPaneLabelPassive,
+         gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive;
    @FXML
    private ImageView weatherImage, tempImage, weatherForecastImage;
    @FXML
    private Pane connectionPane, menuEmptyPane,
          menuElecPane, menuGasPane,
-         menuWaterPane, menuTempPane;
+         menuAquariumPane, menuGreenHousePane,
+         menuWaterPane, menuGardenLightPane;
    @FXML
    private JFXToggleButton elecSubMenuToggleButton, gasSubMenuToggleButton,
-         waterSubMenuToggleButton;
+         AquariumSubMenuToggleButton, waterSubMenuToggleButton,
+         gardenLightSubMenuToggleButton;
 
    //user profile variables
    @FXML
@@ -273,7 +283,7 @@ public class MainPanel implements Initializable {
 
    //program variables
    @FXML
-   private JFXComboBox<?> portChooser;
+   private JFXComboBox<String> portChooser;
    private ResourceBundle bundle;
    private AudioClip audioClip;
    private Boolean soundCheck;
@@ -286,7 +296,6 @@ public class MainPanel implements Initializable {
    public  User loginUser;
    private WeatherForecast weatherForecast;
 
-
    //initialize method(it runs before the program start to run)
    @Override
    public void initialize(URL location, ResourceBundle resources) {
@@ -294,18 +303,15 @@ public class MainPanel implements Initializable {
       //communicate = "000000";
 
       //adjust user settings
-      try {
-         userPreferenceUpdate(getLoginUser());
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
+      userPreferenceUpdate(getLoginUser());
+
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable(true);
       audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
       audioClip.setVolume(((double) Integer.parseInt(volume)) / 200);
       audioClip.setRate(1.1);
-      //audioClip.play();
       speechUtils = new SpeechUtils();
+
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );
       } catch (IOException e) {
@@ -319,7 +325,9 @@ public class MainPanel implements Initializable {
       informationTime.setText( weatherForecast.getLocalTime() );
       settingWeatherLocationTextField.setText( loginUser.getLocation() );
       backgroundSetup( weatherForecast.getWeather() );
+      menuWeatherValue.setText( weatherForecast.getWeather() + " " + weatherForecast.getTemperature() + "°C" );
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
+      refreshMenu();
    }
 
    void sound(String file, Boolean check) {
@@ -344,7 +352,7 @@ public class MainPanel implements Initializable {
       return null;
    }
 
-   void userPreferenceUpdate(User user) throws IOException {
+   void userPreferenceUpdate(User user)  {
       dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
       localDate = LocalDate.parse(user.getBirthday(), dateTimeFormatter);
       birthdayDateField.setValue(localDate);
@@ -420,6 +428,15 @@ public class MainPanel implements Initializable {
       soundVolumeSlider.setValue(Double.parseDouble(volume));
    }
 
+   void refreshMenu(){
+      SerialPort[] portNames;
+      portChooser.getItems().removeAll(portChooser.getItems());
+      portNames = SerialPort.getCommPorts();
+
+      for( int k = 0; k < portNames.length; k++)
+         portChooser.getItems().add(portNames[k].getSystemPortName());
+   }
+
    void updateUsersTable() {
       //initialize column
       settingUserTableName.setCellValueFactory(param -> param.getValue().getValue().nameProperty());
@@ -478,7 +495,7 @@ public class MainPanel implements Initializable {
          sound("elecLang", soundCheck);
       } else if (event.getSource() == menuGasButton) {
          sound("gasLang", soundCheck);
-      } else if (event.getSource() == menuWaterButton) {
+      } else if (event.getSource() == menuAquariumButton) {
          sound("aquiarumLang", soundCheck);
       } else if (event.getSource() == menuGreenHouseButton) {
          sound("greenHouseLang", soundCheck);
@@ -486,10 +503,12 @@ public class MainPanel implements Initializable {
          sound("elecSettingsLang", soundCheck);
       } else if (event.getSource() == gasSubMenuButtonPassive || event.getSource() == gasSubMenuButtonActive) {
          sound("gasSettingsLang", soundCheck);
-      } else if (event.getSource() == waterSubMenuButtonPassive || event.getSource() == waterSubMenuButtonActive) {
+      } else if (event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive) {
          sound("aquSettingsLang", soundCheck);
       } else if (event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == greenhouseSubMenuButtonActive) {
          sound("greenHouseSettingsLang", soundCheck);
+      } else if(event.getSource() == doorButton){
+         menuOpenDoorLabel.setVisible(true);
       }
    }
 
@@ -501,6 +520,8 @@ public class MainPanel implements Initializable {
          menuMenuLabel.setVisible(false);
       } else if (event.getSource() == settingsButton || event.getSource() == settingsButtonActive) {
          menuSettingLabel.setVisible(false);
+      } else if(event.getSource() == doorButton){
+         menuOpenDoorLabel.setVisible(false);
       }
    }
 
@@ -629,7 +650,7 @@ public class MainPanel implements Initializable {
          openHomeSettingPane();
          settingGasSettingPane.setVisible(true);
          homeSettingGasButtonActive.setVisible(true);
-      } else if (event.getSource() == waterSubMenuButtonPassive || event.getSource() == waterSubMenuButtonActive) {
+      } else if (event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive) {
          closeMenuPane();
          openSettingsPane();
          closeAllApplicationPanes();
@@ -637,7 +658,7 @@ public class MainPanel implements Initializable {
          openHomeSettingPane();
          settingAquSettingPane.setVisible(true);
          homeSettingAquButtonActive.setVisible(true);
-      } else if (event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == waterSubMenuButtonActive) {
+      } else if (event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive) {
          closeMenuPane();
          openSettingsPane();
          closeAllApplicationPanes();
@@ -645,6 +666,14 @@ public class MainPanel implements Initializable {
          openHomeSettingPane();
          settingGreenHouseSettingPane.setVisible(true);
          homeSettingGreenHouseButtonActive.setVisible(true);
+      } else if (event.getSource() == weatherButton){
+         closeMenuPane();
+         openSettingsPane();
+         closeAllApplicationPanes();
+         closeAllHomeSetting();
+         openHomeSettingPane();
+         settingWeatherSettingPane.setVisible(true);
+         homeSettingWeatherButtonActive.setVisible(true);
       } else if (event.getSource() == menuConnectionButton) {
          closeMenuPane();
          openSettingsPane();
@@ -656,33 +685,41 @@ public class MainPanel implements Initializable {
          openSmartHomeConnectionSetting();
          labelOpener(connectionSubLabel, textCheck);
       }
-
    }
 
    //this controls which pane will be visible by fallowing buttons
    @FXML
    void openMenuPaneViewButtons(ActionEvent event) {
       if (event.getSource() == menuElecButton) {
-         menuTempPane.setVisible(false);
+         closeAllMenuView();
          menuElecPane.setVisible(true);
-         menuGasPane.setVisible(false);
-         menuWaterPane.setVisible(false);
       } else if (event.getSource() == menuGasButton) {
-         menuTempPane.setVisible(false);
-         menuElecPane.setVisible(false);
+         closeAllMenuView();
          menuGasPane.setVisible(true);
-         menuWaterPane.setVisible(false);
-      } else if (event.getSource() == menuWaterButton) {
-         menuTempPane.setVisible(false);
-         menuElecPane.setVisible(false);
-         menuGasPane.setVisible(false);
-         menuWaterPane.setVisible(true);
+      } else if (event.getSource() == menuAquariumButton) {
+         closeAllMenuView();
+         menuAquariumPane.setVisible(true);
       } else if (event.getSource() == menuGreenHouseButton) {
-         menuTempPane.setVisible(true);
-         menuElecPane.setVisible(false);
-         menuGasPane.setVisible(false);
-         menuWaterPane.setVisible(false);
+         closeAllMenuView();
+         menuGreenHousePane.setVisible(true);
+      } else if (event.getSource() == menuWaterButton) {
+         closeAllMenuView();
+         menuWaterPane.setVisible(true);
+      } else if (event.getSource() == menuGardenLightButton){
+         closeAllMenuView();
+         menuGardenLightPane.setVisible(true);
+      } else if (event.getSource() == doorButton){
+         //
       }
+   }
+
+   void closeAllMenuView(){
+      menuElecPane.setVisible(false);
+      menuGasPane.setVisible(false);
+      menuAquariumPane.setVisible(false);
+      menuGreenHousePane.setVisible(false);
+      menuWaterPane.setVisible(false);
+      menuGardenLightPane.setVisible(false);
    }
 
    //it controls whether facilities are opened or closed
@@ -690,12 +727,6 @@ public class MainPanel implements Initializable {
    void openMenuPaneToggles(ActionEvent event) {
       if (event.getSource() == elecSubMenuToggleButton) {
          if (elecSubMenuToggleButton.isSelected()) {
-            //communicate =  1 + communicate.substring(1);
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
             elecSubPaneLabelActive.setVisible(true);
             elecSubMenuButtonActive.setVisible(true);
             elecSubPaneOpenLabelActive.setVisible(true);
@@ -703,13 +734,8 @@ public class MainPanel implements Initializable {
             elecSubPaneCloseLabelActive.setVisible(true);
             elecSubPaneCloseValueLabelActive.setVisible(true);
             menuElecProgress.setVisible(true);
+            gardenLightSubMenuToggleButton.setDisable(false);
          } else {
-            //communicate =  "00" + communicate.substring(2,4) + "00";
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
             elecSubPaneLabelActive.setVisible(false);
             elecSubMenuButtonActive.setVisible(false);
             elecSubPaneOpenLabelActive.setVisible(false);
@@ -717,57 +743,55 @@ public class MainPanel implements Initializable {
             elecSubPaneCloseLabelActive.setVisible(false);
             elecSubPaneCloseValueLabelActive.setVisible(false);
             menuElecProgress.setVisible(false);
+            gardenLightSubMenuToggleButton.setDisable(true);
+            gardenLightSubPaneLabelActive.setVisible(false);
+            gardenLightSubMenuButtonActive.setVisible(false);
+            menuGardenLightProgress.setVisible(false);
+            gardenLightSubMenuToggleButton.setSelected(false);
          }
       } else if (event.getSource() == gasSubMenuToggleButton) {
          if (gasSubMenuToggleButton.isSelected()) {
-            //communicate = communicate.substring(0,2) + 1 + communicate.substring(3);
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
             gasSubPaneLabelActive.setVisible(true);
             gasSubMenuButtonActive.setVisible(true);
             menuGasProgress.setVisible(true);
          } else {
-            //communicate = communicate.substring(0,2) + 0 + communicate.substring(3,4) + 0 + communicate.substring(5);
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
             gasSubPaneLabelActive.setVisible(false);
             gasSubMenuButtonActive.setVisible(false);
             menuGasProgress.setVisible(false);
          }
-      } else if (event.getSource() == waterSubMenuToggleButton) {
-         if (waterSubMenuToggleButton.isSelected()) {
-            //communicate = communicate.substring(0,3) + 1 + communicate.substring(4);
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
+      } else if (event.getSource() == AquariumSubMenuToggleButton) {
+         if (AquariumSubMenuToggleButton.isSelected()) {
             aquariumSubPaneLabelActive.setVisible(true);
-            waterSubMenuButtonActive.setVisible(true);
-            menuWaterProgress.setVisible(true);
+            aquariumSubMenuButtonActive.setVisible(true);
+            menuAquariumProgress.setVisible(true);
          } else {
-            //communicate = communicate.substring(0,3) + 0 + communicate.substring(4);
-            //System.out.println(communicate);
-            //arduino.serialWrite(communicate);
-            //String gir = arduino.serialRead(6);
-            //System.out.println(gir);
-
-
             aquariumSubPaneLabelActive.setVisible(false);
-            waterSubMenuButtonActive.setVisible(false);
+            aquariumSubMenuButtonActive.setVisible(false);
+            menuAquariumProgress.setVisible(false);
+         }
+      } else if (event.getSource() == waterSubMenuToggleButton){
+         if(waterSubMenuToggleButton.isSelected() ){
+            waterSubPaneLabelActive.setVisible(true);
+            aquariumSubMenuButtonActive.setVisible(true);
+            menuWaterProgress.setVisible(true);
+         }else{
+            waterSubPaneLabelActive.setVisible(false);
+            aquariumSubMenuButtonActive.setVisible(false);
             menuWaterProgress.setVisible(false);
+         }
+      } else if (event.getSource() == gardenLightSubMenuToggleButton){
+         if(gardenLightSubMenuToggleButton.isSelected() ){
+            gardenLightSubPaneLabelActive.setVisible(true);
+            gardenLightSubMenuButtonActive.setVisible(true);
+            menuGardenLightProgress.setVisible(true);
+         }else{
+            gardenLightSubPaneLabelActive.setVisible(false);
+            gardenLightSubMenuButtonActive.setVisible(false);
+            menuGardenLightProgress.setVisible(false);
          }
       }
 
    }
-
-   //userProfile
 
    //user profiles main buttons (normal info change button, priv info change button, user changer button)
    @FXML
@@ -1406,6 +1430,7 @@ public class MainPanel implements Initializable {
    void openSmartHomeConnectionSetting() {
       smartHomeConnectionSettingButtonActive.setVisible(true);
       settingConnectionPane.setVisible(true);
+      refreshMenu();
    }
 
    void closeSmartHomeConnectionSetting() {

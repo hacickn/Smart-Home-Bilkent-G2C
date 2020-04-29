@@ -3,6 +3,11 @@ package com.SmartHomeBilkent.home.features;
 import arduino.Arduino;
 import javafx.collections.ObservableList;
 
+/**
+ * a Electricity class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Electricity extends Communication {
 
    //properties

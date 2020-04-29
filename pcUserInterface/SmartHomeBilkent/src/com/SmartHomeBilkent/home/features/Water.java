@@ -2,6 +2,11 @@ package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
 
+/**
+ * a Water class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Water extends Communication {
    //properties
    private final String WATER_ON = "water_valve_on#:";

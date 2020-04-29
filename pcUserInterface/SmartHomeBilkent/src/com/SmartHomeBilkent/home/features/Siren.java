@@ -2,6 +2,11 @@ package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
 
+/**
+ * a Siren class
+ * @author Hacı Çakın
+ * @version 29.03.2020
+ */
 public class Siren extends Communication {
    //properties
    private final String SIREN_ON = "external_siren_on#:";
