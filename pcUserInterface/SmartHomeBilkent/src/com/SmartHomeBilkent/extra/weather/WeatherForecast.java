@@ -15,13 +15,13 @@ import java.net.URL;
 public class WeatherForecast {
 
    //properties
-   public String locationName;
-   public String location;
-   public String weather;
-   public String temperature;
-   public String wind;
-   public String humidity;
-   public String localTime;
+   private String locationName;
+   private String location;
+   private String weather;
+   private String temperature;
+   private String wind;
+   private String humidity;
+   private String localTime;
 
    //constructor
 
