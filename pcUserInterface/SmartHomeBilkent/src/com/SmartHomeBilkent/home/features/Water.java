@@ -23,13 +23,11 @@ public class Water extends Communication {
       return check;
    }
 
-   public void open() {
-      arduino.serialWrite( WATER_ON );
-      check = true;
-   }
-
-   public void close() {
-      arduino.serialWrite( WATER_OFF );
-      check = false;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( WATER_ON );
+      else
+         arduino.serialWrite( WATER_OFF );
+      check = control;
    }
 }

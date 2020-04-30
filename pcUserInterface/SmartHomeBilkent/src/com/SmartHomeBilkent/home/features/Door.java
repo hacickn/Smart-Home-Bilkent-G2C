@@ -23,13 +23,11 @@ public class Door extends Communication {
       return check;
    }
 
-   public void open() {
-      arduino.serialWrite( DOOR_ON );
-      check = true;
-   }
-
-   public void close() {
-      arduino.serialWrite( DOOR_OFF );
-      check = false;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( DOOR_ON );
+      else
+         arduino.serialWrite( DOOR_OFF );
+      check = control;
    }
 }

@@ -23,13 +23,11 @@ public class GardenLight extends Communication {
       return check;
    }
 
-   public void open() {
-      arduino.serialWrite( GARDEN_LIGHTS_ON );
-      check = true;
-   }
-
-   public void close() {
-      arduino.serialWrite( GARDEN_LIGHTS_OFF );
-      check = false;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( GARDEN_LIGHTS_ON );
+      else
+         arduino.serialWrite( GARDEN_LIGHTS_OFF );
+      check = control;
    }
 }

@@ -11,9 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class FishSpecies {
+
    //properties
-   private static final String DB_NAME = "smarthome.db";
-   private static final String CONNECTION_STRING = "jdbc:sqlite:" + DB_NAME;
    private static final String TABLE_FISHES = "FISHES";
    private static final String TABLE_SPECIES_COLUMN = "SPECIES";
    private static final String TABLE_FEEDING_TIME_COLUMN = "FEEDINGTIME";
@@ -26,6 +25,7 @@ public class FishSpecies {
    //constructor
    private FishSpecies() {
       fishes = FXCollections.observableArrayList();
+      connection = DatabaseConnection.getInstance().getConnection();
    }
 
    //methods

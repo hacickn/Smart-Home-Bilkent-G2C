@@ -26,14 +26,12 @@ public class Electricity extends Communication {
       return check;
    }
 
-   public void close() {
-      arduino.serialWrite(ELECTRICITY_OFF);
-      check = false;
-   }
-
-   public void open() {
-      arduino.serialWrite(ELECTRICITY_ON);
-      check = true;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( ELECTRICITY_ON );
+      else
+         arduino.serialWrite( ELECTRICITY_OFF );
+      check = control;
    }
 }
 

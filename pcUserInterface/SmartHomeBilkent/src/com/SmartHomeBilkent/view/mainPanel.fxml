@@ -139,12 +139,8 @@
                                  <top>
                                     <Pane fx:id="connectionPane" maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton fx:id="menuConnectionButton" layoutX="315.0" layoutY="2.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
-                                          <Label fx:id="menuConnectionWarningLabel" alignment="CENTER" layoutX="179.0" layoutY="72.0" prefHeight="23.0" prefWidth="342.0" styleClass="connectionInfo" text="menuConnectionWarningLabel" visible="false">
-                                             <font>
-                                                <Font name="Agency FB" size="19.0" />
-                                             </font>
-                                          </Label>
+                                          <JFXButton fx:id="menuConnectionButton" layoutX="268.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuConnectionButton1" layoutX="382.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
                                        </children>
                                     </Pane>
                                  </top>
@@ -675,7 +671,7 @@
                                     <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="134.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="bluImageActive" visible="false" />
                                     <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="483.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="usbImageActive" visible="false" />
                                     <JFXButton layoutX="144.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="bluConnection" textFill="TRANSPARENT" />
-                                    <JFXButton layoutX="493.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT" />
+                                    <JFXButton fx:id="portConnectionButton" layoutX="493.0" layoutY="295.0" onAction="#applicationSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT" />
                                     <JFXComboBox fx:id="portChooser" editable="true" layoutX="415.0" layoutY="137.0" prefHeight="25.0" prefWidth="206.0" promptText="CHOOSE THE PORT" />
                                  </children>
                               </Pane>
@@ -758,12 +754,13 @@
                                        </font>
                                     </Label>
                                     <ChoiceBox layoutX="297.0" layoutY="117.0" prefWidth="150.0" />
-                                    <JFXTimePicker layoutX="297.0" layoutY="160.0" />
-                                    <JFXTimePicker layoutX="500.0" layoutY="213.0" />
-                                    <JFXTimePicker layoutX="500.0" layoutY="258.0" />
-                                    <JFXComboBox layoutX="298.0" layoutY="213.0" prefHeight="25.0" prefWidth="171.0" />
-                                    <JFXSlider blockIncrement="24.0" layoutX="313.0" layoutY="270.0" max="24.0" minorTickCount="24" showTickMarks="true" />
+                                    <JFXTimePicker fx:id="feedingTime" layoutX="297.0" layoutY="160.0" />
+                                    <JFXTimePicker fx:id="waterExchangeTime" layoutX="500.0" layoutY="213.0" />
+                                    <JFXTimePicker fx:id="airMotorStartTime" layoutX="500.0" layoutY="258.0" />
+                                    <JFXComboBox fx:id="waterExchangeDay" layoutX="298.0" layoutY="213.0" prefHeight="25.0" prefWidth="171.0" />
+                                    <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="313.0" layoutY="270.0" max="24.0" minorTickCount="24" showTickMarks="true" />
                                     <JFXToggleButton layoutX="311.0" layoutY="50.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                    <JFXButton fx:id="saveAquariumChangesButton" layoutX="325.0" layoutY="301.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="changeThemeSave" textFill="TRANSPARENT" />
                                  </children>
                               </Pane>
                               <Pane fx:id="settingGreenHouseSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">

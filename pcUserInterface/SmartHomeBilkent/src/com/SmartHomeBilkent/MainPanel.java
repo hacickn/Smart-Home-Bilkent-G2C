@@ -1,9 +1,11 @@
 package com.SmartHomeBilkent;
 
+import arduino.Arduino;
 import com.SmartHomeBilkent.extra.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
+import com.SmartHomeBilkent.home.Home;
 import com.fazecast.jSerialComm.SerialPort;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
@@ -34,9 +36,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import static com.fazecast.jSerialComm.SerialPortEvent.*;
 
 /**
  * a MainPanel class
@@ -48,7 +53,7 @@ public class MainPanel implements Initializable {
 
    //properties
 
-   //public static Arduino arduino = new Arduino("COM3",9600);
+   public  Arduino arduino;
    //String communicate;
 
    //menu variables
@@ -79,8 +84,7 @@ public class MainPanel implements Initializable {
          menuGardenLightProgress;
    @FXML
    private Label ghHumidityTempLabel, ghHumidityValueLabel,
-         menuHomeTempLabel, ghTempValueLabel,
-         menuConnectionWarningLabel, elecSubPaneLabelPassive,
+         menuHomeTempLabel, ghTempValueLabel, elecSubPaneLabelPassive,
          elecSubPaneOpenLabelPassive, elecSubPaneCloseLabelPassive,
          elecSubPaneOpenValueLabelPassive, elecSubPaneCloseValueLabelPassive,
          elecSubPaneLabelActive, elecSubPaneOpenLabelActive,
@@ -155,7 +159,8 @@ public class MainPanel implements Initializable {
    private JFXButton applicationSettingButton, settingsUsersSettingButton,
          modsSettingButton, homeSettingButton,
          applicationSettingButtonActive, settingsUsersSettingButtonActive,
-         modsSettingButtonActive, homeSettingButtonActive;
+         modsSettingButtonActive, homeSettingButtonActive,
+         portConnectionButton;
    @FXML
    private Label applicationSettingButtonLabel, usersSettingButtonLabel,
          modsSettingButtonLabel, homeSettingButtonLabel;
@@ -263,7 +268,8 @@ public class MainPanel implements Initializable {
          emergencySettingButton, phoneNotificationSettingButton,
          smartHomeConnectionSettingButton, themeSettingButtonActive,
          languageSettingButtonActive, emergencySettingButtonActive,
-         phoneNotificationSettingButtonActive, smartHomeConnectionSettingButtonActive;
+         phoneNotificationSettingButtonActive, smartHomeConnectionSettingButtonActive,
+         saveAquariumChangesButton;
    @FXML
    private JFXTextField settingWeatherLocationTextField;
    @FXML
@@ -281,6 +287,17 @@ public class MainPanel implements Initializable {
          homeSettingAquButtonActive, homeSettingGreenHouseButtonActive,
          homeSettingWeatherButtonActive;
 
+   @FXML
+   private JFXTimePicker feedingTime, airMotorStartTime,
+         waterExchangeTime;
+
+   @FXML
+   private JFXComboBox<String> waterExchangeDay;
+
+   @FXML
+   private JFXSlider airMotorRunTime;
+
+
    //program variables
    @FXML
    private JFXComboBox<String> portChooser;
@@ -295,16 +312,13 @@ public class MainPanel implements Initializable {
    private DateTimeFormatter dateTimeFormatter;
    public  User loginUser;
    private WeatherForecast weatherForecast;
+   private Home home;
 
    //initialize method(it runs before the program start to run)
    @Override
    public void initialize(URL location, ResourceBundle resources) {
-      //arduino.openConnection();
-      //communicate = "000000";
-
       //adjust user settings
       userPreferenceUpdate(getLoginUser());
-
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable(true);
       audioClip = new AudioClip(this.getClass().getResource("music/suprise.mp3").toString());
@@ -328,6 +342,10 @@ public class MainPanel implements Initializable {
       menuWeatherValue.setText( weatherForecast.getWeather() + " " + weatherForecast.getTemperature() + "°C" );
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
+
+      for ( int k = 1; k <= 7 ; k++ ){
+         waterExchangeDay.getItems().add( k + ". DAY OF WEEK" );
+      }
    }
 
    void sound(String file, Boolean check) {
@@ -337,6 +355,7 @@ public class MainPanel implements Initializable {
                bundle.getString("pathLang") +
                file + bundle.getString("mp3Lang")).toString());
          audioClip.setRate(1);
+         audioClip.setVolume(((double) Integer.parseInt(volume)) / 200);
          audioClip.play();
       }
    }
@@ -430,11 +449,11 @@ public class MainPanel implements Initializable {
 
    void refreshMenu(){
       SerialPort[] portNames;
-      portChooser.getItems().removeAll(portChooser.getItems());
+      portChooser.getItems().removeAll( portChooser.getItems() );
       portNames = SerialPort.getCommPorts();
 
       for( int k = 0; k < portNames.length; k++)
-         portChooser.getItems().add(portNames[k].getSystemPortName());
+         portChooser.getItems().add( portNames[k].getSystemPortName() );
    }
 
    void updateUsersTable() {
@@ -709,7 +728,7 @@ public class MainPanel implements Initializable {
          closeAllMenuView();
          menuGardenLightPane.setVisible(true);
       } else if (event.getSource() == doorButton){
-         //
+         home.getDoor().open( true );
       }
    }
 
@@ -725,72 +744,62 @@ public class MainPanel implements Initializable {
    //it controls whether facilities are opened or closed
    @FXML
    void openMenuPaneToggles(ActionEvent event) {
-      if (event.getSource() == elecSubMenuToggleButton) {
-         if (elecSubMenuToggleButton.isSelected()) {
-            elecSubPaneLabelActive.setVisible(true);
-            elecSubMenuButtonActive.setVisible(true);
-            elecSubPaneOpenLabelActive.setVisible(true);
-            elecSubPaneOpenValueLabelActive.setVisible(true);
-            elecSubPaneCloseLabelActive.setVisible(true);
-            elecSubPaneCloseValueLabelActive.setVisible(true);
-            menuElecProgress.setVisible(true);
-            gardenLightSubMenuToggleButton.setDisable(false);
-         } else {
-            elecSubPaneLabelActive.setVisible(false);
-            elecSubMenuButtonActive.setVisible(false);
-            elecSubPaneOpenLabelActive.setVisible(false);
-            elecSubPaneOpenValueLabelActive.setVisible(false);
-            elecSubPaneCloseLabelActive.setVisible(false);
-            elecSubPaneCloseValueLabelActive.setVisible(false);
-            menuElecProgress.setVisible(false);
-            gardenLightSubMenuToggleButton.setDisable(true);
-            gardenLightSubPaneLabelActive.setVisible(false);
-            gardenLightSubMenuButtonActive.setVisible(false);
-            menuGardenLightProgress.setVisible(false);
-            gardenLightSubMenuToggleButton.setSelected(false);
-         }
-      } else if (event.getSource() == gasSubMenuToggleButton) {
-         if (gasSubMenuToggleButton.isSelected()) {
-            gasSubPaneLabelActive.setVisible(true);
-            gasSubMenuButtonActive.setVisible(true);
-            menuGasProgress.setVisible(true);
-         } else {
-            gasSubPaneLabelActive.setVisible(false);
-            gasSubMenuButtonActive.setVisible(false);
-            menuGasProgress.setVisible(false);
-         }
-      } else if (event.getSource() == AquariumSubMenuToggleButton) {
-         if (AquariumSubMenuToggleButton.isSelected()) {
-            aquariumSubPaneLabelActive.setVisible(true);
-            aquariumSubMenuButtonActive.setVisible(true);
-            menuAquariumProgress.setVisible(true);
-         } else {
-            aquariumSubPaneLabelActive.setVisible(false);
-            aquariumSubMenuButtonActive.setVisible(false);
-            menuAquariumProgress.setVisible(false);
-         }
-      } else if (event.getSource() == waterSubMenuToggleButton){
-         if(waterSubMenuToggleButton.isSelected() ){
-            waterSubPaneLabelActive.setVisible(true);
-            aquariumSubMenuButtonActive.setVisible(true);
-            menuWaterProgress.setVisible(true);
-         }else{
-            waterSubPaneLabelActive.setVisible(false);
-            aquariumSubMenuButtonActive.setVisible(false);
-            menuWaterProgress.setVisible(false);
-         }
-      } else if (event.getSource() == gardenLightSubMenuToggleButton){
-         if(gardenLightSubMenuToggleButton.isSelected() ){
-            gardenLightSubPaneLabelActive.setVisible(true);
-            gardenLightSubMenuButtonActive.setVisible(true);
-            menuGardenLightProgress.setVisible(true);
-         }else{
-            gardenLightSubPaneLabelActive.setVisible(false);
-            gardenLightSubMenuButtonActive.setVisible(false);
-            menuGardenLightProgress.setVisible(false);
-         }
+      if ( event.getSource() == elecSubMenuToggleButton ) {
+         openElectricity( elecSubMenuToggleButton.isSelected() );
+      } else if (event.getSource() == gasSubMenuToggleButton ) {
+         openGas( gasSubMenuToggleButton.isSelected() );
+      } else if ( event.getSource() == AquariumSubMenuToggleButton ) {
+         openAquarium( AquariumSubMenuToggleButton.isSelected() );
+      } else if (event.getSource() == waterSubMenuToggleButton ){
+         openWater( waterSubMenuToggleButton.isSelected() );
+      } else if ( event.getSource() == gardenLightSubMenuToggleButton ){
+         openGardenLight( gardenLightSubMenuToggleButton.isSelected() );
       }
+   }
 
+   public void openElectricity( boolean control ) {
+      elecSubPaneLabelActive.setVisible( control );
+      elecSubMenuButtonActive.setVisible( control );
+      elecSubPaneOpenLabelActive.setVisible( control );
+      elecSubPaneOpenValueLabelActive.setVisible( control );
+      elecSubPaneCloseLabelActive.setVisible( control );
+      elecSubPaneCloseValueLabelActive.setVisible( control );
+      menuElecProgress.setVisible( control );
+      gardenLightSubMenuToggleButton.setDisable( !control );
+      home.getElectricity().open( control );
+
+      if( !control ) {
+         openGardenLight(false );
+         gardenLightSubMenuToggleButton.setSelected( false );
+      }
+   }
+
+   public void openGas( boolean control ) {
+      gasSubPaneLabelActive.setVisible( control );
+      gasSubMenuButtonActive.setVisible( control );
+      menuGasProgress.setVisible( control );
+      home.getGas().open( control );
+   }
+
+   public void openAquarium( boolean control ) {
+      aquariumSubPaneLabelActive.setVisible( control );
+      aquariumSubMenuButtonActive.setVisible( control );
+      menuAquariumProgress.setVisible( control );
+      home.getAquarium().open( control );
+   }
+
+   public void openWater( boolean control ) {
+      waterSubPaneLabelActive.setVisible( control );
+      aquariumSubMenuButtonActive.setVisible( control );
+      menuWaterProgress.setVisible( control );
+      home.getWater().open( control );
+   }
+
+   public void openGardenLight( boolean control ) {
+      gardenLightSubPaneLabelActive.setVisible( control );
+      gardenLightSubMenuButtonActive.setVisible( control );
+      menuGardenLightProgress.setVisible( control );
+      home.getGardenLight().open( control );
    }
 
    //user profiles main buttons (normal info change button, priv info change button, user changer button)
@@ -850,7 +859,7 @@ public class MainPanel implements Initializable {
    }
 
    //user profiles user info changer panels
-   void toGoBackUserProfile() {
+   public void toGoBackUserProfile() {
       userProfilePane.setEffect(new BoxBlur(0, 0, 0));
       userProfilePane.setDisable(false);
       changeUserNormalInfoPane.setVisible(false);
@@ -1103,7 +1112,6 @@ public class MainPanel implements Initializable {
          menuUserProfileLabel.setText(bundle.getString("userProfileLang"));
          menuMenuLabel.setText(bundle.getString("menuLang"));
          menuSettingLabel.setText(bundle.getString("settingLang"));
-         menuConnectionWarningLabel.setText(bundle.getString("connectionWarningLang"));
          elecSubPaneLabelPassive.setText(bundle.getString("elecLang"));
          elecSubPaneLabelActive.setText(bundle.getString("elecLang"));
          elecSubPaneOpenLabelPassive.setText(bundle.getString("lastOpenLang"));
@@ -1314,6 +1322,15 @@ public class MainPanel implements Initializable {
          closeEmergencySetting();
          closePhoneNotificationSetting();
          openSmartHomeConnectionSetting();
+      } else if (event.getSource() == portConnectionButton ) {
+         arduino = new Arduino( portChooser.getValue(),9600);
+         if( arduino.openConnection() ){
+            portConnectionButton.setDisable( true );
+            home = new Home( arduino );
+            home.adjustCollective("manual_on#:");
+         }else{
+            portChooser.setValue("");
+         }
       }
    }
 
@@ -1799,7 +1816,27 @@ public class MainPanel implements Initializable {
          }else{
             informationTime.setText( "Please enter the location" );
          }
+      } else if ( event.getSource() == saveAquariumChangesButton ) {
+         if( feedingTime.getValue() == null ||
+               waterExchangeTime.getValue() == null ||
+               airMotorStartTime.getValue() == null ||
+               waterExchangeDay.getValue() == null) {
+         }
+      else{
+         String hoursOfWorkOfAirMotor;
+         hoursOfWorkOfAirMotor = "" + (int) airMotorRunTime.getValue();
+
+         if (airMotorRunTime.getValue() < 10)
+            hoursOfWorkOfAirMotor = "0" + hoursOfWorkOfAirMotor;
+
+         home.getAquarium().setAquariumSettings(feedingTime.getValue().getHour() + "" +
+                     feedingTime.getValue().getMinute() + feedingTime.getValue().getSecond() + 0,
+               waterExchangeTime.getValue().getHour() + "" +
+                     waterExchangeTime.getValue().getMinute() + waterExchangeTime.getValue().getSecond() + 0 + waterExchangeDay.getValue().charAt(0),
+               airMotorStartTime.getValue().getHour() + "" +
+                     airMotorStartTime.getValue().getMinute() + airMotorStartTime.getValue().getSecond() + 0 + hoursOfWorkOfAirMotor);
       }
+   }
    }
 
    public void backgroundSetup( String weather ){

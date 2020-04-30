@@ -25,13 +25,11 @@ public class Gas extends Communication {
       return check;
    }
 
-   public void open () {
-      arduino.serialWrite( GAS_ON );
-      check = true;
-   }
-
-   public void close () {
-      arduino.serialWrite( GAS_OFF );
-      check = false;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( GAS_ON );
+      else
+         arduino.serialWrite( GAS_OFF );
+      check = control;
    }
 }

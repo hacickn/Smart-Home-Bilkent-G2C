@@ -23,13 +23,11 @@ public class Siren extends Communication {
       return check;
    }
 
-   public void open() {
-      arduino.serialWrite( SIREN_ON );
-      check = true;
-   }
-
-   public void close() {
-      arduino.serialWrite( SIREN_OFF );
-      check = false;
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( SIREN_ON );
+      else
+         arduino.serialWrite( SIREN_OFF );
+      check = control;
    }
 }

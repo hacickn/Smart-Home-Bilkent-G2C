@@ -15,8 +15,6 @@ import java.sql.*;
 public class Users {
 
    //properties
-   public static final String DB_NAME = "smarthome.db";
-   public static final String CONNECTION_STRING = "jdbc:sqlite:" + DB_NAME;
    public static final String TABLE_USERS = "USERS";
    public static final String TABLE_NAME_COLUMN = "NAME";
    public static final String TABLE_SURNAME_COLUMN = "SURNAME";
@@ -42,36 +40,10 @@ public class Users {
     */
    private Users() {
       usersList = FXCollections.observableArrayList();
+      connection = DatabaseConnection.getInstance().getConnection();
    }
 
    //methods
-
-   /**
-    * it is a connectDatabase method that get connection between database and program
-    * @return result as a boolean
-    */
-   public boolean connectDatabase() {
-      try {
-         connection = DriverManager.getConnection(CONNECTION_STRING);
-         return true;
-      } catch (SQLException e) {
-         e.printStackTrace();
-         return false;
-      }
-   }
-
-   /**
-    * it is a closeConnectionDatabase method that close the connection
-    */
-   public void closeConnectionDatabase() {
-      try {
-         if (connection != null) {
-            connection.close();
-         }
-      } catch (SQLException e) {
-         e.printStackTrace();
-      }
-   }
 
    /**
     * it is a getAllUsers method that get all user from the USERS table

@@ -1,6 +1,7 @@
 package com.SmartHomeBilkent.home;
 
 import arduino.Arduino;
+import com.SmartHomeBilkent.MainPanel;
 import com.SmartHomeBilkent.home.features.*;
 
 /**
@@ -35,5 +36,45 @@ public class Home {
 
 
    //methods
+   public void adjustCollective( String message ) {
+      arduino.serialWrite( message );
+   }
+
+
+   public Electricity getElectricity() {
+      return electricity;
+   }
+
+   public Gas getGas() {
+      return gas;
+   }
+
+   public GardenLight getGardenLight() {
+      return gardenLight;
+   }
+
+   public Siren getSiren() {
+      return siren;
+   }
+
+   public Water getWater() {
+      return water;
+   }
+
+   public GreenHouse getGreenHouse() {
+      return greenHouse;
+   }
+
+   public Door getDoor() {
+      return door;
+   }
+
+   public Arduino getArduino() {
+      return arduino;
+   }
+
+   public Aquarium getAquarium() {
+      return aquarium;
+   }
 
 }

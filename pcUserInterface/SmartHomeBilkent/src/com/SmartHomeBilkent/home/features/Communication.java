@@ -1,6 +1,7 @@
 package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
+import com.SmartHomeBilkent.MainPanel;
 
 /**
  * Aquarium class
@@ -17,9 +18,7 @@ public abstract class Communication {
    }
 
    //methods
-   abstract void open();
-
-   abstract void close();
+   abstract void open( boolean control );
 
    abstract boolean isActive();
 }

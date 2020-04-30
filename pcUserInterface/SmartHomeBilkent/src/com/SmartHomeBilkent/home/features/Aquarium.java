@@ -12,6 +12,7 @@ import java.time.LocalDate;
  * @version 29.03.2020
  */
 public class Aquarium extends Communication{
+
    //properties
    private final String AIR_MOTOR_ON = "air_motor_on#:";
    private final String AIR_MOTOR_OFF = "air_motor_off#:";
@@ -38,21 +39,21 @@ public class Aquarium extends Communication{
       return check;
    }
 
-   public void open() {
-      arduino.serialWrite( AIR_MOTOR_ON );
+   public void open ( boolean control ) {
+      if( control )
+         arduino.serialWrite( AIR_MOTOR_ON );
+      else
+         arduino.serialWrite( AIR_MOTOR_OFF );
+      check = control;
    }
 
-   public void close() {
-      arduino.serialWrite( AIR_MOTOR_OFF );
+   public void feedingOpen( boolean control ) {
+      if( control )
+         arduino.serialWrite( FEEDING_ON );
+      else
+         arduino.serialWrite( FEEDING_OFF );
    }
 
-   public void feedingOpen() {
-      arduino.serialWrite( FEEDING_ON );
-   }
-
-   public void feedingClose() {
-      arduino.serialWrite( FEEDING_OFF );
-   }
 
    public void setAquariumSettings() {
       detailedMessage = "aquarium#" + fish.getFeedingTime() +
@@ -66,19 +67,29 @@ public class Aquarium extends Communication{
       arduino.serialWrite( detailedMessage );
    }
 
-   public void openIncomingWater() {
-      arduino.serialWrite( INCOMING_WATER_ON );
+   public void openIncomingWater( boolean control ) {
+      if( control )
+         arduino.serialWrite( INCOMING_WATER_ON );
+      else
+         arduino.serialWrite( INCOMING_WATER_OFF );
    }
 
-   public void closeIncomingWater() {
-      arduino.serialWrite( INCOMING_WATER_OFF );
+   public void openOutgoingWater( boolean control ) {
+      if( control )
+         arduino.serialWrite( OUTGOING_WATER_ON );
+      else
+         arduino.serialWrite( OUTGOING_WATER_OFF );
    }
 
    public void openOutgoingWater() {
-      arduino.serialWrite( OUTGOING_WATER_ON );
+
    }
 
    public void closeOutgoingWater() {
-      arduino.serialWrite( OUTGOING_WATER_OFF );
+
+   }
+
+   public void setFish( Fish fish ) {
+      this.fish = fish;
    }
 }
