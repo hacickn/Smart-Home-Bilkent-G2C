@@ -8,8 +8,8 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 ### ~ 03.04.2020 ~
 This week I started to work about our project's pc interface. My aim is design a special interface for elder people. I basically design first panel of the elderMainPanel. I completed the basic labels that shows time, date and the welcome message. Also, I wrote required methods to control these labels and the first panel's buttons.
 
-### ~ date ~
-This week I helped abc brainstorm ideas for...
+### ~ 09.04.2020 ~
+After I completed the elder interface's first panel, I started to design "house menu" panel which make it possible for user to control house's specific attributes such as aquarium, electricity control. As a group, before we start to learn how to connect pc interface with simulation, I would like to be sure about elder interface's "house menu" panel should work properly. Whether I am not 100% sure about the "house panel"s appearance, I believe that it is functional and next week probably that appearance problem will be solved. 
 
 ### ~ date ~
 blah, blah, blah...
