@@ -837,7 +837,7 @@ public class MainPanel implements Initializable {
             else
                message.append( menuTimePicker.getValue().getMinute() );
 
-            message.append( "00" + menuDatePicker.getValue().getDayOfWeek().getValue() );
+            message.append( "000" + menuDatePicker.getValue().getDayOfWeek().getValue() );
 
             if ( menuDatePicker.getValue().getDayOfMonth() < 10 )
                message.append( "0" + menuDatePicker.getValue().getDayOfMonth() );

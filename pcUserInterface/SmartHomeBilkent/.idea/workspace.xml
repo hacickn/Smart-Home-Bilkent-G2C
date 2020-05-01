@@ -7,30 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SmartHomeBilkent_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/SmartHomeBilkent_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/view/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/com/SmartHomeBilkent/view/mainPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartHomeBilkent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartHomeBilkent.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Communication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Communication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Electricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Electricity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GardenLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GardenLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Gas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Gas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GreenHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GreenHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Siren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Siren.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_cartoon_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_dark_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_light_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/styleSheets/main_menu_smooth_themee.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/mainPanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +110,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard_Feq_icon.ico" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -323,28 +304,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1588357421916">
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1588370256594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588357421916" />
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588370256594" />
     <state width="1877" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1588357421916">
+    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1588370256594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588357421916" />
+    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588370256594" />
     <state width="1877" height="151" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1588357421916">
+    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1588370256594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588357421916" />
+    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588370256594" />
     <state width="1877" height="151" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245916" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1588357421916">
+    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1588370256594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588357421916" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588370256594" />
     <state width="1877" height="151" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state width="914" height="342" key="GridCell.Tab.1.bottom" timestamp="1588088781651">
@@ -371,10 +352,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="PlantUMLSettings/0.0.1920.1040@0.0.1920.1040" timestamp="1588151404015" />
-    <state x="966" y="160" width="919" height="708" key="SettingsEditor" timestamp="1588182129826">
+    <state x="297" y="190" width="919" height="708" key="SettingsEditor" timestamp="1588371047862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="966" y="160" width="919" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588182129826" />
+    <state x="297" y="190" width="919" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588371047862" />
     <state x="394" y="208" width="1040" height="708" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588087530221" />
     <state x="796" y="320" key="classpath-attribute-editor" timestamp="1586252888694">
       <screen x="0" y="0" width="1920" height="1080" />

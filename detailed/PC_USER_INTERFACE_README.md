@@ -16,7 +16,7 @@ To experience the program there are three users in the program
 
 #### Materials Used
 1) Programs
-* [IntelliJ IDEA Community Edition v2019.3.3](https://www.jetbrains.com/idea/)
+* [IntelliJ IDEA Community Edition v2020.1](https://www.jetbrains.com/idea/)
 * [JavaFX Scene Builder v8.5.0](https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html)
 * [Java v1.8.0_171-b11](https://www.java.com/en/)
 * [DB Browser(SQLite) v3.11.2](https://sqlitebrowser.org/)
@@ -35,4 +35,3 @@ To experience the program there are three users in the program
 
 #### Features
 - To communicate with database, Singleton patters is used.
-- (to be continued)

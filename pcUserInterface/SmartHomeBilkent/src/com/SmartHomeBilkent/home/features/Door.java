@@ -10,7 +10,6 @@ import arduino.Arduino;
 public class Door extends Communication {
    //properties
    private final String DOOR_ON = "door_on#:";
-   private final String DOOR_OFF = "door_off#:";
    private boolean check;
 
    //constructor
@@ -26,8 +25,6 @@ public class Door extends Communication {
    public void open ( boolean control ) {
       if( control )
          arduino.serialWrite( DOOR_ON );
-      else
-         arduino.serialWrite( DOOR_OFF );
       check = control;
    }
 }
