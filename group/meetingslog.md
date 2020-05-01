@@ -3,7 +3,7 @@
 Below is a record of our project group meetings. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (25.02.2020, 60 min)
 ****
 **Present:** x, y, z...   _**Absent:**_  a, b.
 
@@ -13,14 +13,40 @@ We reviewed progress. Member1 & member2 reported back, explaining that they had 
 **ToDo:** x & y will do this by ???, z & a will do that by ???, etc.
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (03.03.2020, 40 min)
 ****
 This week I helped abc brainstorm ideas for...
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (09.03.2020, 90 min)
 ****
 blah, blah, blah...
 
 ****
+### Meeting ~ (10.03.2020, 60 min)
+****
+
+****
+### Meeting ~ (17.03.2020, 60 min)
+****
+
+****
+### Meeting ~ (24.03.2020, 60 min)
+****
+
+
+****
+### Meeting ~ (30.03.2020, 40 min)
+****
+
+****
+### Meeting ~ (12.04.2020, 70 min)
+****
+
+****
+### Meeting ~ (19.04.2020, 20 min)
+****
+
+****
+### Meeting ~ (26.04.2020, 50 min)
 ****

@@ -866,6 +866,8 @@ public class MainPanel implements Initializable {
       changeUserPrivateInfoPane.setVisible(false);
    }
 
+
+
    @FXML
    void changeUserInfoButtons(ActionEvent event) throws SQLException, IOException {
       if (event.getSource() == saveUserNormalInfo) {
