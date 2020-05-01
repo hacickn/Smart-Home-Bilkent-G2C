@@ -98,6 +98,22 @@
            -fx-background-image: url("images/idea3.png");
            -fx-background-size: cover;
 }
+.bulkChangeButton{
+           -fx-background-image: url("images/bulkChange2.png");
+           -fx-background-size: cover;
+}
+.bulkChangeButton:hover{
+           -fx-background-image: url("images/bulkChange3.png");
+           -fx-background-size: cover;
+}
+.timeConfigurationButton{
+           -fx-background-image: url("images/data2.png");
+           -fx-background-size: cover;
+}
+.timeConfigurationButton:hover{
+           -fx-background-image: url("images/data3.png");
+           -fx-background-size: cover;
+}
 .greenHouseActive{
            -fx-background-image: url("images/greenhouse3.png");
            -fx-background-size: cover;
@@ -573,4 +589,55 @@
 .updateWeather:hover{
         -fx-background-image: url("images/updateCheck3.png");
         -fx-background-size: cover;
+}
+.electricityImage{
+        -fx-image: url("images/elec1.png");
+         -fx-background-size: cover;
+}
+.gasImage{
+        -fx-image: url("images/gas1.png");
+         -fx-background-size: cover;
+}
+.waterImage{
+        -fx-image: url("images/water1.png");
+         -fx-background-size: cover;
+}
+.aquariumImage{
+        -fx-image: url("images/aquarium1.png");
+         -fx-background-size: cover;
+}
+.gardenLightImage{
+        -fx-image: url("images/idea1.png");
+         -fx-background-size: cover;
+}
+.clockImage{
+        -fx-image: url("images/clock1.png");
+         -fx-background-size: cover;
+}
+.calenderImage{
+        -fx-image: url("images/calender1.png");
+         -fx-background-size: cover;
+}
+.buzzerImage{
+        -fx-image: url("images/siren1.png");
+         -fx-background-size: cover;
+}
+.incomingWaterImage{
+        -fx-image: url("images/incomingWater1.png");
+         -fx-background-size: cover;
+}
+.outgoingWaterImage{
+        -fx-image: url("images/outgoingWater1.png");
+         -fx-background-size: cover;
+}
+.doorImage{
+        -fx-image: url("images/door1.png");
+         -fx-background-size: cover;
+}
+.feedingImage{
+        -fx-image: url("images/feeding1.png");
+         -fx-background-size: cover;
+}
+.calenderDatePicker{
+    -jfx-default-color:#b85c00;
 }

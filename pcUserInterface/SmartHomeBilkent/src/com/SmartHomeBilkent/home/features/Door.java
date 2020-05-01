@@ -4,7 +4,7 @@ import arduino.Arduino;
 
 /**
  * a Door class
- * @author Hacı Çakın
+ * @author METEHAN SAÇAKÇI
  * @version 29.03.2020
  */
 public class Door extends Communication {

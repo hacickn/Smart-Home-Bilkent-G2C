@@ -4,10 +4,11 @@ import arduino.Arduino;
 
 /**
  * a Siren class
- * @author Hacı Çakın
+ * @author İLKE DOĞAN
  * @version 29.03.2020
  */
 public class Siren extends Communication {
+
    //properties
    private final String SIREN_ON = "external_siren_on#:";
    private final String SIREN_OFF = "external_siren_off#:";

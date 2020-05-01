@@ -1,15 +1,15 @@
 package com.SmartHomeBilkent.home;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.MainPanel;
 import com.SmartHomeBilkent.home.features.*;
 
 /**
  * a Home class
- * @author Hacı Çakın
+ * @author İlke Doğan
  * @version 29.03.2020
  */
 public class Home {
+
    //properties
    private Electricity electricity;
    private Gas gas;
@@ -39,7 +39,6 @@ public class Home {
    public void adjustCollective( String message ) {
       arduino.serialWrite( message );
    }
-
 
    public Electricity getElectricity() {
       return electricity;

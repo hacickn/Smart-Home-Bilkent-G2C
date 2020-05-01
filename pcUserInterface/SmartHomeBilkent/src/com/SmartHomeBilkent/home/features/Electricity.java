@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 
 /**
  * a Electricity class
- * @author Hacı Çakın
+ * @author METEHAN SAÇAKÇI
  * @version 29.03.2020
  */
 public class Electricity extends Communication {

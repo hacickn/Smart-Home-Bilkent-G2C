@@ -37,38 +37,36 @@
             <AnchorPane prefHeight="800.0" prefWidth="800.0">
                <children>
                   <StackPane prefHeight="800.0" prefWidth="800.0">
-                     <children>
-                        <AnchorPane fx:id="generalAnchorPane" prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
-                           <children>
-                              <JFXButton fx:id="logoutButton" layoutX="366.0" layoutY="696.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00" AnchorPane.bottomAnchor="34.0">
-                                 <font>
-                                    <Font size="1.0" />
-                                 </font>
-                              </JFXButton>
-                              <JFXButton fx:id="settingsButton" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButton" text="settingsButton" textFill="#ffffff00" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                              <JFXButton fx:id="settingsButtonActive" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButtonActive" text="settingsButtonActive" textFill="#ffffff00" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                              <JFXButton fx:id="userProfileButton" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoy" text="userProfileButton" textFill="#ffffff00" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                              <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                              <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
-                              <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
-                              <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="settingTopPaneLabels" text="USER PROFILE" visible="false">
-                                 <font>
-                                    <Font name="Arial Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="menuMenuLabel" alignment="CENTER" layoutX="294.0" layoutY="105.0" prefHeight="22.0" prefWidth="213.0" styleClass="settingTopPaneLabels" text="MENU" visible="false">
-                                 <font>
-                                    <Font name="Arial Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="menuSettingLabel" alignment="CENTER" layoutX="574.0" layoutY="105.0" prefHeight="22.0" prefWidth="182.0" styleClass="settingTopPaneLabels" text="SETTINGS" visible="false" AnchorPane.rightAnchor="44.0">
-                                 <font>
-                                    <Font name="Arial Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
+                     <AnchorPane fx:id="generalAnchorPane" prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
+                        <children>
+                           <JFXButton fx:id="logoutButton" layoutX="366.0" layoutY="696.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00" AnchorPane.bottomAnchor="34.0">
+                              <font>
+                                 <Font size="1.0" />
+                              </font>
+                           </JFXButton>
+                           <JFXButton fx:id="settingsButton" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButton" text="settingsButton" textFill="#ffffff00" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                           <JFXButton fx:id="settingsButtonActive" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButtonActive" text="settingsButtonActive" textFill="#ffffff00" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                           <JFXButton fx:id="userProfileButton" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoy" text="userProfileButton" textFill="#ffffff00" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                           <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                           <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                           <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                           <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="settingTopPaneLabels" text="USER PROFILE" visible="false">
+                              <font>
+                                 <Font name="Arial Bold" size="13.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="menuMenuLabel" alignment="CENTER" layoutX="294.0" layoutY="105.0" prefHeight="22.0" prefWidth="213.0" styleClass="settingTopPaneLabels" text="MENU" visible="false">
+                              <font>
+                                 <Font name="Arial Bold" size="13.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="menuSettingLabel" alignment="CENTER" layoutX="574.0" layoutY="105.0" prefHeight="22.0" prefWidth="182.0" styleClass="settingTopPaneLabels" text="SETTINGS" visible="false" AnchorPane.rightAnchor="44.0">
+                              <font>
+                                 <Font name="Arial Bold" size="13.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </AnchorPane>
                   </StackPane>
                   <StackPane fx:id="menuStackPane" layoutX="50.0" layoutY="140.0" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0">
                      <children>
@@ -78,11 +76,11 @@
                                  <left>
                                     <VBox fx:id="menuLeffVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton fx:id="menuElecButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuElecButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT" />
                                           <JFXProgressBar fx:id="menuElecProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
-                                          <JFXButton fx:id="menuGasButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuGasButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT" />
                                           <JFXProgressBar fx:id="menuGasProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
-                                          <JFXButton fx:id="menuWaterButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuWaterButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT" />
                                           <JFXProgressBar fx:id="menuWaterProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
                                        </children>
                                     </VBox>
@@ -90,10 +88,10 @@
                                  <right>
                                     <VBox fx:id="menuRightVBox" alignment="CENTER" prefHeight="316.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton fx:id="menuAquariumButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuAquariumButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT" />
                                           <JFXProgressBar fx:id="menuAquariumProgress" prefWidth="50.0" visible="false" />
-                                          <JFXButton fx:id="menuGreenHouseButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT" />
-                                          <JFXButton fx:id="menuGardenLightButton" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="lightButton" text="menuTempButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuGreenHouseButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuGardenLightButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="70.0" prefWidth="70.0" styleClass="lightButton" text="menuTempButton" textFill="TRANSPARENT" />
                                           <JFXProgressBar fx:id="menuGardenLightProgress" prefWidth="50.0" visible="false" />
                                        </children>
                                     </VBox>
@@ -115,7 +113,7 @@
                                                 </Label>
                                                 <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0" onAction="#goToSettingFromMenuView" prefHeight="60.0" prefWidth="60.0" styleClass="weather" textFill="TRANSPARENT" />
                                                 <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0" onMouseEntered="#paneChangerButtonsMov" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
-                                                <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0" onAction="#openMenuPaneViewButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="doorButton" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="doorButton" textFill="TRANSPARENT" />
                                                 <Label fx:id="menuHomeTempValue" alignment="CENTER" layoutX="60.0" layoutY="31.0" prefHeight="26.0" prefWidth="94.0" styleClass="tempLabel">
                                                    <font>
                                                       <Font name="Agency FB" size="21.0" />
@@ -139,8 +137,9 @@
                                  <top>
                                     <Pane fx:id="connectionPane" maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton fx:id="menuConnectionButton" layoutX="268.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
-                                          <JFXButton fx:id="menuConnectionButton1" layoutX="382.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuConnectionButton" layoutX="325.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuBulkChange" layoutX="200.0" layoutY="25.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="bulkChangeButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                          <JFXButton fx:id="menuTimeConfigurationButton" layoutX="450.0" layoutY="25.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" prefHeight="50.0" prefWidth="50.0" styleClass="timeConfigurationButton" text="menuConnectionButton" textFill="TRANSPARENT" />
                                        </children>
                                     </Pane>
                                  </top>
@@ -205,21 +204,19 @@
                                              </children>
                                           </Pane>
                                           <Pane fx:id="menuGasPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
-                                             <children>
-                                                <Label fx:id="gasSubPaneLabelPassive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextPassive" text="GAS">
-                                                   <font>
-                                                      <Font name="Agency FB" size="35.0" />
-                                                   </font>
-                                                </Label>
-                                                <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gasSubMenuButtonPassive" textFill="TRANSPARENT" />
-                                                <Label fx:id="gasSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GAS" visible="false">
-                                                   <font>
-                                                      <Font name="Agency FB" size="35.0" />
-                                                   </font>
-                                                </Label>
-                                                <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gasSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
-                                             </children>
+                                             <Label fx:id="gasSubPaneLabelPassive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextPassive" text="GAS">
+                                                <font>
+                                                   <Font name="Agency FB" size="35.0" />
+                                                </font>
+                                             </Label>
+                                             <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
+                                             <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gasSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                             <Label fx:id="gasSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GAS" visible="false">
+                                                <font>
+                                                   <Font name="Agency FB" size="35.0" />
+                                                </font>
+                                             </Label>
+                                             <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gasSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                           </Pane>
                                           <Pane fx:id="menuWaterPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
                                              <children>
@@ -245,7 +242,7 @@
                                                       <Font name="Agency FB" size="35.0" />
                                                    </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="AquariumSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="waterSubMenuToggleButton" textFill="TRANSPARENT" />
+                                                <JFXToggleButton fx:id="aquariumSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="waterSubMenuToggleButton" textFill="TRANSPARENT" />
                                                 <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" />
                                                 <Label fx:id="aquariumSubPaneLabelActive" alignment="CENTER" layoutX="96.0" layoutY="14.0" prefWidth="300.0" styleClass="contextActive" text="AQUARIUM" visible="false">
                                                    <font>
@@ -306,6 +303,93 @@
                                                    </font>
                                                 </Label>
                                                 <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="menuBulkChangePane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane">
+                                             <children>
+                                                <Label fx:id="menuBulkChangeSubLabel" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextPassive" text="BULK CHANGES">
+                                                   <font>
+                                                      <Font name="Agency FB" size="35.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="33.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" styleClass="electricityImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="120.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" styleClass="gasImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="315.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" styleClass="waterImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="225.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" styleClass="aquariumImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="405.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" styleClass="gardenLightImage" />
+                                                <JFXRadioButton fx:id="electricityRadioButton" layoutX="10.0" layoutY="109.0" prefHeight="17.0" prefWidth="103.0" styleClass="changeThemeSaveRadioButton" text="Elektricity" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font></JFXRadioButton>
+                                                <JFXRadioButton fx:id="gasRadioButton" layoutX="109.0" layoutY="110.0" prefHeight="17.0" prefWidth="85.0" styleClass="changeThemeSaveRadioButton" text="GAS" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font></JFXRadioButton>
+                                                <JFXRadioButton fx:id="waterRadioButton" layoutX="300.0" layoutY="110.0" prefHeight="17.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="WATER" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font></JFXRadioButton>
+                                                <JFXRadioButton fx:id="aquariumRadioButton" layoutX="213.0" layoutY="110.0" prefHeight="17.0" prefWidth="86.0" styleClass="changeThemeSaveRadioButton" text="AIR MOTOR" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font></JFXRadioButton>
+                                                <JFXRadioButton fx:id="gardenLightRadioButton" layoutX="393.0" layoutY="109.0" prefHeight="17.0" prefWidth="94.0" styleClass="changeThemeSaveRadioButton" text="GARDEN LIGHT" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font></JFXRadioButton>
+                                                <JFXButton fx:id="bulkChangesSaveButton" layoutX="210.0" layoutY="242.0" onAction="#menuPaneOpenerButtonsOnAction" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
+                                                   <font>
+                                                      <Font name="Agency FB" size="21.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="126.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="36.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="incomingWaterImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="outgoingWaterImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="doorImage" />
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="212.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="feedingImage" />
+                                                <JFXRadioButton fx:id="sirenRadioButton" layoutX="118.0" layoutY="206.0" prefHeight="17.0" prefWidth="67.0" styleClass="changeUserInforRadioButton" text="SIREN" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="incomingWaterRadioButton" layoutX="10.0" layoutY="206.0" prefHeight="17.0" prefWidth="103.0" styleClass="changeUserInforRadioButton" text="INCOMING WATER" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="outgoingWaterRadioButton" layoutX="379.0" layoutY="206.0" prefHeight="17.0" prefWidth="103.0" styleClass="changeUserInforRadioButton" text="OUTGOING WATER" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="feedRadioButton" layoutX="209.0" layoutY="206.0" prefHeight="17.0" prefWidth="78.0" styleClass="changeUserInforRadioButton" text="FEED" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="doorRadioButton" layoutX="289.0" layoutY="206.0" prefHeight="17.0" prefWidth="73.0" styleClass="changeUserInforRadioButton" text="DOOR" textFill="#030303">
+                                                   <font>
+                                                      <Font name="Agency FB" size="14.0" />
+                                                   </font>
+                                                </JFXRadioButton>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="menuTimeConfigurationPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" styleClass="clockImage" />
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" styleClass="calenderImage" />
+                                                <JFXButton fx:id="dateTimeSaveButton" layoutX="218.0" layoutY="232.0" onAction="#menuPaneOpenerButtonsOnAction" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
+                                                   <font>
+                                                      <Font name="Agency FB" size="21.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXDatePicker fx:id="menuDatePicker" layoutX="187.0" layoutY="87.0" styleClass="calenderDatePicker" />
+                                                <JFXTimePicker fx:id="menuTimePicker" layoutX="187.0" layoutY="150.0" styleClass="calenderDatePicker" />
+                                                <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="43.0" prefWidth="353.0" styleClass="contextPassive" text="TIME CONFIGURATION">
+                                                   <font>
+                                                      <Font name="Agency FB" size="35.0" />
+                                                   </font>
+                                                </Label>
                                              </children>
                                           </Pane>
                                        </children>
@@ -697,7 +781,7 @@
                                           <Font name="Agency FB" size="29.0" />
                                        </font>
                                     </Label>
-                                    <JFXToggleButton layoutX="311.0" layoutY="50.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                    <JFXToggleButton fx:id="settingElectricityToggleButton" layoutX="311.0" layoutY="50.0" onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                                     <BarChart layoutX="152.0" layoutY="108.0" prefHeight="220.0" prefWidth="396.0">
                                       <xAxis>
                                         <CategoryAxis label="DAYS OF MONTH" side="BOTTOM" />
@@ -715,7 +799,7 @@
                                           <Font name="Agency FB" size="29.0" />
                                        </font>
                                     </Label>
-                                    <JFXToggleButton layoutX="311.0" layoutY="59.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                    <JFXToggleButton fx:id="settingGasToggleButton" layoutX="311.0" layoutY="59.0" onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                                     <BarChart layoutX="152.0" layoutY="115.0" prefHeight="220.0" prefWidth="396.0">
                                        <xAxis>
                                           <CategoryAxis label="DAYS OF MONTH" side="BOTTOM" />
@@ -759,7 +843,7 @@
                                     <JFXTimePicker fx:id="airMotorStartTime" layoutX="500.0" layoutY="258.0" />
                                     <JFXComboBox fx:id="waterExchangeDay" layoutX="298.0" layoutY="213.0" prefHeight="25.0" prefWidth="171.0" />
                                     <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="313.0" layoutY="270.0" max="24.0" minorTickCount="24" showTickMarks="true" />
-                                    <JFXToggleButton layoutX="311.0" layoutY="50.0" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                    <JFXToggleButton fx:id="settingAquariumToggleButton" layoutX="311.0" layoutY="50.0" onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                                     <JFXButton fx:id="saveAquariumChangesButton" layoutX="325.0" layoutY="301.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="changeThemeSave" textFill="TRANSPARENT" />
                                  </children>
                               </Pane>

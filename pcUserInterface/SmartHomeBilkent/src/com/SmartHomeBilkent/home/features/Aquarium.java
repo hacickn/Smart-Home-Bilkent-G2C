@@ -2,13 +2,10 @@ package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
 import com.SmartHomeBilkent.extra.Fish;
-import javafx.collections.ObservableList;
-
-import java.time.LocalDate;
 
 /**
  * a Aquarium class
- * @author Hacı Çakın
+ * @author HACI ÇAKIN
  * @version 29.03.2020
  */
 public class Aquarium extends Communication{

@@ -5,10 +5,11 @@ import com.SmartHomeBilkent.MainPanel;
 
 /**
  * Aquarium class
- * @author Hacı Çakın
+ * @author HACI ÇAKIN
  * @version 29.03.2020
  */
 public abstract class Communication {
+
    //properties
    Arduino arduino;
 

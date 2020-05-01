@@ -5,10 +5,11 @@ import javafx.collections.ObservableList;
 
 /**
  * a Gas class
- * @author Hacı Çakın
+ * @author METEHAN SAÇAKÇI
  * @version 29.03.2020
  */
 public class Gas extends Communication {
+
    //properties
    private final String GAS_ON = "gas_on#:";
    private final String GAS_OFF = "gas_off#:";

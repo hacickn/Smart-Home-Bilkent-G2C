@@ -4,10 +4,11 @@ import arduino.Arduino;
 
 /**
  * a GardenLight class
- * @author Hacı Çakın
+ * @author METEHAN SAÇAKÇI
  * @version 29.03.2020
  */
 public class GardenLight extends Communication {
+
    //properties
    private final String GARDEN_LIGHTS_ON = "garden_lights_on#:";
    private final String GARDEN_LIGHTS_OFF = "garden_lights_off#:";
