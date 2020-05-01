@@ -14,5 +14,10 @@ After I completed the elder interface's first panel, I started to design "house 
 ### ~ 16.04.2020 ~
 This week I decided and applied the design of the "house panel"s appearance. I also design "settings panel" appearance and whether it is not functional at this point, it has a proper interface. The current problem about the "settings panel" is that I need to determine and design its function. Next week, I will design the "user" panel which give freedom to user to edit he's or she's username, password, name, surname, birthday, gender, etc. 
 
-### ~ 16.04.2020 ~
+### ~ 24.04.2020 ~
+This week I succesfully design the "user" panel and finished it. At this point, our current "elderMainPanel" which is the interface for elder people is mostly designed but still I have not finished "settings panel" properly. The another problem that I need to fix is to investigate my java code and make it more well designed as much as possible. Next week, I will learn how I can connect this interface with simulation.
+
+### ~ DATE ~
+
+
 ****
