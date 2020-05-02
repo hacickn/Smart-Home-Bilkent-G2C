@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeTableColumn;
@@ -108,7 +109,8 @@ public class MainPanel implements Initializable {
          menuHomeTempValue, menuOpenDoorLabel,
          waterSubPaneLabelActive, waterSubPaneLabelPassive,
          gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive,
-         menuBulkChangeSubLabel;
+         menuBulkChangeSubLabel, timeConfigurationLabel,
+         mainMenuHomeLabel, mainMenuWeatherLabel;
    @FXML
    private ImageView weatherImage, tempImage, weatherForecastImage;
    @FXML
@@ -271,7 +273,10 @@ public class MainPanel implements Initializable {
          settingWeatherHumidityLabel, settingWeatherWindLabel,
          informationTime, settingWeatherForecastLabelValue,
          settingWeatherTemperatureLabelValue, settingWeatherHumidityLabelValue,
-         settingWeatherWindLabelValue;
+         settingWeatherWindLabelValue, speciesOfFishLabel,
+         feedingStartLabel, waterExchangeLabel,
+         airMotorRunTimeLabel, greenHouseTemperatureLabel,
+         greenHouseHumidityLabel, latestWaterLabel;
    ;
    @FXML
    private AnchorPane applicationSettingSubPane;
@@ -291,6 +296,8 @@ public class MainPanel implements Initializable {
          settingAquariumToggleButton;
    @FXML
    private BarChart<Number, Number> electricityUsageTable, gasUsageTable;
+   @FXML
+   private CategoryAxis elecBarChartX, gasBarChartX;
 
    //settings pane ----sub-menu variables----
    @FXML
@@ -1364,6 +1371,41 @@ public class MainPanel implements Initializable {
          interactiveSoundModeLabel.setText(bundle.getString("interactiveSoundLang"));
          soundHelperLabel.setText(bundle.getString("soundHelper"));
          soundVolumeLabel.setText(bundle.getString("soundVolume"));
+         electricityRadioButton.setText(bundle.getString("elecLang"));
+         gasRadioButton.setText(bundle.getString("gasLang"));
+         aquariumRadioButton.setText(bundle.getString("airMotorLang"));
+         waterRadioButton.setText(bundle.getString("waterLang"));
+         gardenLightRadioButton.setText(bundle.getString("gardenLightLang"));
+         incomingWaterRadioButton.setText(bundle.getString("incomingWaterLang"));
+         sirenRadioButton.setText(bundle.getString("sirenLang"));
+         feedRadioButton.setText(bundle.getString("feedLang"));
+         doorRadioButton.setText(bundle.getString("doorLang"));
+         outgoingWaterRadioButton.setText(bundle.getString("outgoingWaterLang"));
+         bulkChangesSaveButton.setText(bundle.getString("saveLang"));
+         dateTimeSaveButton.setText(bundle.getString("saveLang"));
+         waterSubPaneLabelPassive.setText(bundle.getString("waterLang"));
+         waterSubPaneLabelActive.setText(bundle.getString("waterLang"));
+         gardenLightSubPaneLabelPassive.setText(bundle.getString("gardenLightLang"));
+         gardenLightSubPaneLabelActive.setText(bundle.getString("gardenLightLang"));
+         timeConfigurationLabel.setText(bundle.getString("timeConfigurationLang"));
+         elecBarChartX.setLabel(bundle.getString("hoursLang"));
+         gasBarChartX.setLabel(bundle.getString("hoursLang"));
+         speciesOfFishLabel.setText(bundle.getString("speciesOfFishLang"));
+         feedingStartLabel.setText(bundle.getString("feedingStartTimeLang"));
+         waterExchangeLabel.setText(bundle.getString("waterExchangeDayTimeLang"));
+         airMotorRunTimeLabel.setText(bundle.getString("airEngineRunTimeStartTimeLang"));
+         greenHouseTemperatureLabel.setText(bundle.getString("tempLang"));
+         greenHouseHumidityLabel.setText(bundle.getString("humidity"));
+         latestWaterLabel.setText(bundle.getString("latestWaterFromAquariumLang"));
+         settingWeatherForecastLabel.setText(bundle.getString("weatherForecastLang"));
+         settingWeatherTemperatureLabel.setText(bundle.getString("tempLang"));
+         settingWeatherHumidityLabel.setText(bundle.getString("humidity"));
+         settingWeatherWindLabel.setText(bundle.getString("windLang"));
+         settingWeatherLocationTextField.setPromptText(bundle.getString("locationLang"));
+         menuOpenDoorLabel.setText(bundle.getString("openDoorLang"));
+         menuBulkChangeSubLabel.setText(bundle.getString("bulkChangesLang"));
+         mainMenuWeatherLabel.setText(bundle.getString("weatherLang"));
+         mainMenuHomeLabel.setText(bundle.getString("homeLang"));
       } catch (Exception e) {
          e.printStackTrace();
       }
