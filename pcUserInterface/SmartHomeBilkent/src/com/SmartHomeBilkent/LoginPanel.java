@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.extra.User;
+import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;

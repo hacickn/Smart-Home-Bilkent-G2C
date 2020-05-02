@@ -1,7 +1,7 @@
 package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.extra.Fish;
+import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 
 /**
  * a Aquarium class

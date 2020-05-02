@@ -1,7 +1,9 @@
 package com.SmartHomeBilkent;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.extra.User;
+import com.SmartHomeBilkent.extra.dataBase.fields.User;
+import com.SmartHomeBilkent.extra.dataBase.ElectricityUsage;
+import com.SmartHomeBilkent.extra.dataBase.GasUsage;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -17,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeTableColumn;
@@ -286,6 +289,8 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXToggleButton settingElectricityToggleButton, settingGasToggleButton,
          settingAquariumToggleButton;
+   @FXML
+   private BarChart<Number, Number> electricityUsageTable, gasUsageTable;
 
    //settings pane ----sub-menu variables----
    @FXML
@@ -340,6 +345,11 @@ public class MainPanel implements Initializable {
       audioClip.setVolume(((double) Integer.parseInt(volume)) / 200);
       audioClip.setRate(1.1);
       speechUtils = new SpeechUtils();
+
+      ElectricityUsage.getInstance().getElectricityUsage();
+      ElectricityUsage.getInstance().getTable( electricityUsageTable );
+      GasUsage.getInstance().getGasUsage();
+      GasUsage.getInstance().getTable( gasUsageTable );
 
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );

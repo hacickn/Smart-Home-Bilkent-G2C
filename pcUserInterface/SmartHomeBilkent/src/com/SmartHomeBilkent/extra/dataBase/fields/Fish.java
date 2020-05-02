@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra;
+package com.SmartHomeBilkent.extra.dataBase.fields;
 
 public class Fish {
    //properties

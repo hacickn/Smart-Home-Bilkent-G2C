@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra;
+package com.SmartHomeBilkent.extra.dataBase.fields;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.SimpleStringProperty;

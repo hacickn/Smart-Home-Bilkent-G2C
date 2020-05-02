@@ -1,7 +1,6 @@
 package com.SmartHomeBilkent.extra.dataBase;
 
-import com.SmartHomeBilkent.extra.Fish;
-import com.SmartHomeBilkent.extra.User;
+import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

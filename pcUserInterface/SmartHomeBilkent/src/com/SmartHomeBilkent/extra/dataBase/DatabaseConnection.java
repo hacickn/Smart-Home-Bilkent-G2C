@@ -9,8 +9,9 @@ public class DatabaseConnection {
    //properties
    public static final String DB_NAME = "smarthome.db";
    public static final String CONNECTION_STRING = "jdbc:sqlite:" + DB_NAME;
-   private Connection connection;
    private static DatabaseConnection instance = new DatabaseConnection();
+   private Connection connection;
+
 
    //constructor
    private DatabaseConnection () {

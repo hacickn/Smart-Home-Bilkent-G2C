@@ -40,6 +40,7 @@ public class WeatherForecast {
       humidity = "";
       localTime = "";
       getWeatherCase();
+      System.out.println(weather);
    }
 
    //methods
