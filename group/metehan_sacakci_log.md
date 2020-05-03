@@ -17,7 +17,7 @@ This week I decided and applied the design of the "house panel"s appearance. I a
 ### ~ 24.04.2020 ~
 This week I succesfully design the "user" panel and finished it. At this point, our current "elderMainPanel" which is the interface for elder people is mostly designed but still I have not finished "settings panel" properly. The another problem that I need to fix is to investigate my java code and make it more well designed as much as possible. Next week, I will learn how I can connect this interface with simulation.
 
-### ~ DATE ~
+### ~ 02.05.2020 ~
 
 
 ****
