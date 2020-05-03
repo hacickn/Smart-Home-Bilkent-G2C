@@ -32,10 +32,7 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -61,7 +58,9 @@ public class MainPanel implements Initializable {
    //properties
    //menu variables
    @FXML
-   private StackPane firstStackPane, menuStackPane;
+   private BorderPane firstStackPane;
+   @FXML
+   private StackPane  menuStackPane;
    @FXML
    private AnchorPane menuAnchorPane;
    @FXML
@@ -142,7 +141,7 @@ public class MainPanel implements Initializable {
          userChangerInfoLabel, changeUserInfoLabel,
          changeUserPrivateInfoLabel;
    @FXML
-   private StackPane userProfileStackPane;
+   private AnchorPane userProfileStackPane;
    @FXML
    private AnchorPane userProfileAnchorPane;
    @FXML
@@ -928,6 +927,7 @@ public class MainPanel implements Initializable {
       if( !control ) {
          openGardenLight( false );
          gardenLightSubMenuToggleButton.setSelected( false );
+         openGardenLight( false );
       }
    }
 
@@ -1434,7 +1434,6 @@ public class MainPanel implements Initializable {
       germanOption.setLayoutY( 105 );
       turkishOption.setLayoutX( 501 );
       turkishOption.setLayoutY( 105 );
-
    }
 
    void selectGermanOption() {
