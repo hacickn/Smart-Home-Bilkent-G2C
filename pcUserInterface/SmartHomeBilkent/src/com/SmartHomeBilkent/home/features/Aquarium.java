@@ -5,10 +5,11 @@ import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 
 /**
  * a Aquarium class
+ *
  * @author HACI ÇAKIN
  * @version 29.03.2020
  */
-public class Aquarium extends Communication{
+public class Aquarium extends Communication {
 
    //properties
    private final String AIR_MOTOR_ON = "air_motor_on#:";
@@ -36,7 +37,7 @@ public class Aquarium extends Communication{
       return check;
    }
 
-   public void open ( boolean control ) {
+   public void open( boolean control ) {
       if( control )
          arduino.serialWrite( AIR_MOTOR_ON );
       else
@@ -58,7 +59,7 @@ public class Aquarium extends Communication{
       arduino.serialWrite( detailedMessage );
    }
 
-   public void setAquariumSettings( String feeding, String waterExchange, String airMotor) {
+   public void setAquariumSettings( String feeding, String waterExchange, String airMotor ) {
       detailedMessage = "aquarium#" + feeding +
             waterExchange + airMotor + ":";
       arduino.serialWrite( detailedMessage );

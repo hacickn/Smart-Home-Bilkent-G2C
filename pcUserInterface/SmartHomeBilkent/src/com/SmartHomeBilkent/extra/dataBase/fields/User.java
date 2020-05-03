@@ -10,7 +10,7 @@ import javafx.beans.property.StringProperty;
  * @author Hacı Çakın
  * @version 28.04.2020
  */
-public class User extends RecursiveTreeObject<User> {
+public class User extends RecursiveTreeObject< User > {
    //properties
    private StringProperty name;
    private StringProperty surname;
@@ -45,20 +45,20 @@ public class User extends RecursiveTreeObject<User> {
     * @param sound             is a String input parameter
     * @param location          is a String input parameter
     */
-   public User(String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound, String location) {
-      this.name = new SimpleStringProperty(name);
-      this.surname = new SimpleStringProperty(surname);
-      this.birthday = new SimpleStringProperty(birthday);
-      this.gender = new SimpleStringProperty(gender);
-      this.userName = new SimpleStringProperty(userName);
-      this.password = new SimpleStringProperty(password);
-      this.userType = new SimpleStringProperty(userType);
-      this.preferredTheme = new SimpleStringProperty(preferredTheme);
-      this.preferredLanguage = new SimpleStringProperty(preferredLanguage);
-      this.enter = new SimpleStringProperty(enter);
-      this.text = new SimpleStringProperty(text);
-      this.sound = new SimpleStringProperty(sound);
-      this.location = new SimpleStringProperty(location);
+   public User( String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound, String location ) {
+      this.name = new SimpleStringProperty( name );
+      this.surname = new SimpleStringProperty( surname );
+      this.birthday = new SimpleStringProperty( birthday );
+      this.gender = new SimpleStringProperty( gender );
+      this.userName = new SimpleStringProperty( userName );
+      this.password = new SimpleStringProperty( password );
+      this.userType = new SimpleStringProperty( userType );
+      this.preferredTheme = new SimpleStringProperty( preferredTheme );
+      this.preferredLanguage = new SimpleStringProperty( preferredLanguage );
+      this.enter = new SimpleStringProperty( enter );
+      this.text = new SimpleStringProperty( text );
+      this.sound = new SimpleStringProperty( sound );
+      this.location = new SimpleStringProperty( location );
    }
 
    public String getName() {
@@ -73,16 +73,16 @@ public class User extends RecursiveTreeObject<User> {
       return enter;
    }
 
-   public void setEnter(String enter) {
-      this.enter.set(enter);
+   public void setEnter( String enter ) {
+      this.enter.set( enter );
    }
 
    public StringProperty nameProperty() {
       return name;
    }
 
-   public void setName(String name) {
-      this.name.set(name);
+   public void setName( String name ) {
+      this.name.set( name );
    }
 
    public String getSurname() {
@@ -93,8 +93,8 @@ public class User extends RecursiveTreeObject<User> {
       return surname;
    }
 
-   public void setSurname(String surname) {
-      this.surname.set(surname);
+   public void setSurname( String surname ) {
+      this.surname.set( surname );
    }
 
    public String getBirthday() {
@@ -105,8 +105,8 @@ public class User extends RecursiveTreeObject<User> {
       return birthday;
    }
 
-   public void setBirthday(String birthday) {
-      this.birthday.set(birthday);
+   public void setBirthday( String birthday ) {
+      this.birthday.set( birthday );
    }
 
    public String getGender() {
@@ -117,8 +117,8 @@ public class User extends RecursiveTreeObject<User> {
       return gender;
    }
 
-   public void setGender(String gender) {
-      this.gender.set(gender);
+   public void setGender( String gender ) {
+      this.gender.set( gender );
    }
 
    public String getText() {
@@ -129,8 +129,8 @@ public class User extends RecursiveTreeObject<User> {
       return text;
    }
 
-   public void setText(String text) {
-      this.text.set(text);
+   public void setText( String text ) {
+      this.text.set( text );
    }
 
    public String getSound() {
@@ -141,8 +141,8 @@ public class User extends RecursiveTreeObject<User> {
       return sound;
    }
 
-   public void setSound(String sound) {
-      this.sound.set(sound);
+   public void setSound( String sound ) {
+      this.sound.set( sound );
    }
 
    public String getUserName() {
@@ -153,8 +153,8 @@ public class User extends RecursiveTreeObject<User> {
       return userName;
    }
 
-   public void setUserName(String userName) {
-      this.userName.set(userName);
+   public void setUserName( String userName ) {
+      this.userName.set( userName );
    }
 
    public String getPassword() {
@@ -165,8 +165,8 @@ public class User extends RecursiveTreeObject<User> {
       return password;
    }
 
-   public void setPassword(String password) {
-      this.password.set(password);
+   public void setPassword( String password ) {
+      this.password.set( password );
    }
 
    public String getUserType() {
@@ -177,8 +177,8 @@ public class User extends RecursiveTreeObject<User> {
       return userType;
    }
 
-   public void setUserType(String userType) {
-      this.userType.set(userType);
+   public void setUserType( String userType ) {
+      this.userType.set( userType );
    }
 
    public String getPreferredTheme() {
@@ -189,8 +189,8 @@ public class User extends RecursiveTreeObject<User> {
       return preferredTheme;
    }
 
-   public void setPreferredTheme(String preferredTheme) {
-      this.preferredTheme.set(preferredTheme);
+   public void setPreferredTheme( String preferredTheme ) {
+      this.preferredTheme.set( preferredTheme );
    }
 
    public String getPreferredLanguage() {
@@ -201,8 +201,8 @@ public class User extends RecursiveTreeObject<User> {
       return preferredLanguage;
    }
 
-   public void setPreferredLanguage(String preferredLanguage) {
-      this.preferredLanguage.set(preferredLanguage);
+   public void setPreferredLanguage( String preferredLanguage ) {
+      this.preferredLanguage.set( preferredLanguage );
    }
 
    public String getLocation() {
@@ -213,7 +213,7 @@ public class User extends RecursiveTreeObject<User> {
       return location;
    }
 
-   public void setLocation(String location) {
-      this.location.set(location);
+   public void setLocation( String location ) {
+      this.location.set( location );
    }
 }

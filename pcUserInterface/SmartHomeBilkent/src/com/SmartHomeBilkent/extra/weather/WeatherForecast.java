@@ -30,17 +30,17 @@ public class WeatherForecast {
     *
     * @param location is a String input parameter
     */
-   public WeatherForecast(String location) throws IOException {
+   public WeatherForecast( String location ) throws IOException {
       locationName = location;
-      this.location = findLocationXY(location);
-      System.out.println(this.location);
+      this.location = findLocationXY( location );
+      System.out.println( this.location );
       weather = "";
       wind = "";
       temperature = "";
       humidity = "";
       localTime = "";
       getWeatherCase();
-      System.out.println(weather);
+      System.out.println( weather );
    }
 
    //methods
@@ -51,7 +51,7 @@ public class WeatherForecast {
     * @param location is a String input parameter
     * @return result as a String
     */
-   public String findLocationXY(String location) throws IOException {
+   public String findLocationXY( String location ) throws IOException {
       String XY;
       String inputLine;
       URL url;
@@ -60,37 +60,37 @@ public class WeatherForecast {
       int number;
 
       XY = "";
-      url = new URL("https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + location + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1");
-      con = (HttpURLConnection) url.openConnection();
-      con.setRequestMethod("GET");
-      con.setRequestProperty("User-Agent", "Mozilla/5.0");
+      url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + location + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
+      con = ( HttpURLConnection ) url.openConnection();
+      con.setRequestMethod( "GET" );
+      con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
       responseCode = con.getResponseCode();
 
-      if (responseCode == HttpURLConnection.HTTP_OK) {
-         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+      if( responseCode == HttpURLConnection.HTTP_OK ) {
+         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( con.getInputStream() ) );
          StringBuilder response;
          response = new StringBuilder();
 
-         while ((inputLine = bufferedReader.readLine()) != null) {
-            response.append(inputLine);
+         while( ( inputLine = bufferedReader.readLine() ) != null ) {
+            response.append( inputLine );
          }
          bufferedReader.close();
 
          // print result
-         for (int k = 0; k < response.length() - 15; k++) {
-            if (response.substring(k, k + 11).equals("coordinates")) {
-               while (!(response.charAt(k + 14) == ']')) {
-                  XY = XY + response.charAt(k + 14);
+         for( int k = 0; k < response.length() - 15; k++ ) {
+            if( response.substring( k, k + 11 ).equals( "coordinates" ) ) {
+               while( !( response.charAt( k + 14 ) == ']' ) ) {
+                  XY = XY + response.charAt( k + 14 );
                   k++;
                }
             }
          }
-         number = XY.indexOf(',');
-         XY = XY.substring(number + 1) + "," + XY.substring(0, number);
+         number = XY.indexOf( ',' );
+         XY = XY.substring( number + 1 ) + "," + XY.substring( 0, number );
          this.location = XY;
          return XY;
       } else {
-         System.out.println("GET request not worked");
+         System.out.println( "GET request not worked" );
          return null;
       }
    }
@@ -104,67 +104,67 @@ public class WeatherForecast {
       String[] weatherInfo;
       String inputLine;
       StringBuilder response;
-      weatherInfo = new String[5];
+      weatherInfo = new String[ 5 ];
       URL url;
       HttpURLConnection con;
       int responseCode;
 
-      url = new URL("http://api.weatherstack.com/current?access_key=c3606cc969e14ee977079a6e2ab290bf&query=" + getLocation());
-      con = (HttpURLConnection) url.openConnection();
-      con.setRequestMethod("GET");
-      con.setRequestProperty("User-Agent", "Mozilla/5.0");
+      url = new URL( "http://api.weatherstack.com/current?access_key=c3606cc969e14ee977079a6e2ab290bf&query=" + getLocation() );
+      con = ( HttpURLConnection ) url.openConnection();
+      con.setRequestMethod( "GET" );
+      con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
       responseCode = con.getResponseCode();
 
-      if (responseCode == HttpURLConnection.HTTP_OK) {
-         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+      if( responseCode == HttpURLConnection.HTTP_OK ) {
+         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( con.getInputStream() ) );
          response = new StringBuilder();
 
-         while ((inputLine = bufferedReader.readLine()) != null) {
-            response.append(inputLine);
+         while( ( inputLine = bufferedReader.readLine() ) != null ) {
+            response.append( inputLine );
          }
          bufferedReader.close();
 
 
-         for (int k = 0; k < response.length() - 25; k++) {
-            if (response.substring(k, k + 20).equals("weather_descriptions")) {
-               while (!(response.charAt(k + 24) == '"')) {
-                  weatherInfo[0] = weatherInfo[0] + response.charAt(k + 24);
+         for( int k = 0; k < response.length() - 25; k++ ) {
+            if( response.substring( k, k + 20 ).equals( "weather_descriptions" ) ) {
+               while( !( response.charAt( k + 24 ) == '"' ) ) {
+                  weatherInfo[ 0 ] = weatherInfo[ 0 ] + response.charAt( k + 24 );
                   k++;
                }
-               weather = weatherInfo[0].substring(4);
+               weather = weatherInfo[ 0 ].substring( 4 );
             }
-            if (response.substring(k, k + 11).equals("temperature")) {
-               while (!(response.charAt(k + 13) == ',')) {
-                  weatherInfo[1] = weatherInfo[1] + response.charAt(k + 13);
+            if( response.substring( k, k + 11 ).equals( "temperature" ) ) {
+               while( !( response.charAt( k + 13 ) == ',' ) ) {
+                  weatherInfo[ 1 ] = weatherInfo[ 1 ] + response.charAt( k + 13 );
                   k++;
                }
-               temperature = weatherInfo[1].substring(4);
+               temperature = weatherInfo[ 1 ].substring( 4 );
             }
-            if (response.substring(k, k + 10).equals("wind_speed")) {
-               while (!(response.charAt(k + 12) == ',')) {
-                  weatherInfo[2] = weatherInfo[2] + response.charAt(k + 12);
+            if( response.substring( k, k + 10 ).equals( "wind_speed" ) ) {
+               while( !( response.charAt( k + 12 ) == ',' ) ) {
+                  weatherInfo[ 2 ] = weatherInfo[ 2 ] + response.charAt( k + 12 );
                   k++;
                }
-               wind = weatherInfo[2].substring(4);
+               wind = weatherInfo[ 2 ].substring( 4 );
             }
-            if (response.substring(k, k + 8).equals("humidity")) {
-               while (!(response.charAt(k + 10) == ',')) {
-                  weatherInfo[3] = weatherInfo[3] + response.charAt(k + 10);
+            if( response.substring( k, k + 8 ).equals( "humidity" ) ) {
+               while( !( response.charAt( k + 10 ) == ',' ) ) {
+                  weatherInfo[ 3 ] = weatherInfo[ 3 ] + response.charAt( k + 10 );
                   k++;
                }
-               humidity = weatherInfo[3].substring(4);
+               humidity = weatherInfo[ 3 ].substring( 4 );
             }
-            if (response.substring(k, k + 10).equals("localtime\"")) {
-               while (!(response.charAt(k + 12) == '"')) {
-                  weatherInfo[4] = weatherInfo[4] + response.charAt(k + 12);
+            if( response.substring( k, k + 10 ).equals( "localtime\"" ) ) {
+               while( !( response.charAt( k + 12 ) == '"' ) ) {
+                  weatherInfo[ 4 ] = weatherInfo[ 4 ] + response.charAt( k + 12 );
                   k++;
                }
-               localTime = weatherInfo[4].substring(4);
+               localTime = weatherInfo[ 4 ].substring( 4 );
             }
          }
          return weatherInfo;
       } else {
-         System.out.println("GET request not worked");
+         System.out.println( "GET request not worked" );
          return null;
       }
    }
@@ -192,7 +192,7 @@ public class WeatherForecast {
     *
     * @param locationName is a String input parameter
     */
-   public void setLocationName(String locationName) {
+   public void setLocationName( String locationName ) {
       this.locationName = locationName;
    }
 
@@ -201,7 +201,7 @@ public class WeatherForecast {
     *
     * @param location is a String input parameter
     */
-   public void setLocation(String location) {
+   public void setLocation( String location ) {
       this.location = location;
    }
 

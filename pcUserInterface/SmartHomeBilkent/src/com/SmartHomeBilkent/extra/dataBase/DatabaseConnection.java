@@ -14,20 +14,22 @@ public class DatabaseConnection {
 
 
    //constructor
-   private DatabaseConnection () {
+   private DatabaseConnection() {
 
    }
 
    //methods
+
    /**
     * it is a connectDatabase method that get connection between database and program
+    *
     * @return result as a boolean
     */
    public boolean connectDatabase() {
       try {
-         connection = DriverManager.getConnection(CONNECTION_STRING);
+         connection = DriverManager.getConnection( CONNECTION_STRING );
          return true;
-      } catch (SQLException e) {
+      } catch( SQLException e ) {
          e.printStackTrace();
          return false;
       }
@@ -38,10 +40,10 @@ public class DatabaseConnection {
     */
    public void closeConnectionDatabase() {
       try {
-         if (connection != null) {
+         if( connection != null ) {
             connection.close();
          }
-      } catch (SQLException e) {
+      } catch( SQLException e ) {
          e.printStackTrace();
       }
    }

@@ -9,7 +9,7 @@ public class Usage {
    private String activity;
 
    //constructor
-   public Usage ( LocalDate day, String activity ) {
+   public Usage( LocalDate day, String activity ) {
       this.day = day;
       this.activity = activity;
    }
@@ -19,7 +19,7 @@ public class Usage {
       return day;
    }
 
-   public void setDay(LocalDate day) {
+   public void setDay( LocalDate day ) {
       this.day = day;
    }
 
@@ -27,7 +27,7 @@ public class Usage {
       return activity;
    }
 
-   public void setActivity(String activity) {
+   public void setActivity( String activity ) {
       this.activity = activity;
    }
 }

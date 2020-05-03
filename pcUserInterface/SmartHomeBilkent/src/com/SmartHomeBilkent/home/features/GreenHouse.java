@@ -2,6 +2,7 @@ package com.SmartHomeBilkent.home.features;
 
 /**
  * a GreenHouse class
+ *
  * @author İLKE DOĞAN
  * @version 29.03.2020
  */

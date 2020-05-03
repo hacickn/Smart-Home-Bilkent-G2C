@@ -4,6 +4,7 @@ import arduino.Arduino;
 
 /**
  * a GardenLight class
+ *
  * @author METEHAN SAÇAKÇI
  * @version 29.03.2020
  */
@@ -15,16 +16,16 @@ public class GardenLight extends Communication {
    private boolean check;
 
    //constructor
-   public  GardenLight ( Arduino arduino ) {
+   public GardenLight( Arduino arduino ) {
       super( arduino );
    }
 
    //methods
-   public boolean isActive(){
+   public boolean isActive() {
       return check;
    }
 
-   public void open ( boolean control ) {
+   public void open( boolean control ) {
       if( control )
          arduino.serialWrite( GARDEN_LIGHTS_ON );
       else

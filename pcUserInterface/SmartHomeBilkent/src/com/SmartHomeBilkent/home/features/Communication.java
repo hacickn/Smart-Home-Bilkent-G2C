@@ -1,10 +1,10 @@
 package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.MainPanel;
 
 /**
  * Aquarium class
+ *
  * @author HACI ÇAKIN
  * @version 29.03.2020
  */
@@ -14,7 +14,7 @@ public abstract class Communication {
    Arduino arduino;
 
    //constructor
-   public Communication ( Arduino arduino) {
+   public Communication( Arduino arduino ) {
       this.arduino = arduino;
    }
 

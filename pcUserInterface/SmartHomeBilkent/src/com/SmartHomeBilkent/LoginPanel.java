@@ -1,7 +1,7 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.dataBase.Users;
+import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -40,56 +40,56 @@ public class LoginPanel implements Initializable {
    //methods
    @FXML
    void toLogin() {
-      if (userNameField.getText().length() > 0 && passwordField.getText().length() > 0) {
-         for (User s : Users.getInstance().getUserList()) {
-            if (userNameField.getText().equals(s.getUserName()) && passwordField.getText().equals(s.getPassword())) {
+      if( userNameField.getText().length() > 0 && passwordField.getText().length() > 0 ) {
+         for( User s : Users.getInstance().getUserList() ) {
+            if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
                try {
                   String fxmlAddress;
                   FXMLLoader load;
                   Parent root;
                   Stage stage;
-                  if (s.getUserType().equals("ELDER") || s.getUserType().equals("ÄLTERE") || s.getUserType().equals("YASLI") || s.getUserType().equals("YASLİ"))
+                  if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
                      fxmlAddress = "view/elderMainPanel.fxml";
                   else
                      fxmlAddress = "view/mainPanel.fxml";
 
-                  s.setEnter("true");
-                  load = new FXMLLoader(getClass().getResource(fxmlAddress));
+                  s.setEnter( "true" );
+                  load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
                   root = load.load();
                   stage = new Stage();
-                  stage.setTitle("SMART HOME");
-                  stage.setScene(new Scene(root, 800, 800));
-                  stage.setResizable(true);
+                  stage.setTitle( "SMART HOME" );
+                  stage.setScene( new Scene( root, 800, 800 ) );
+                  stage.setResizable( true );
                   stage.show();
                   userNameField.getScene().getWindow().hide();
-               } catch (Exception e) {
+               } catch( Exception e ) {
                   e.printStackTrace();
                }
             }
          }
-         waningLabel.setText("USERNAME/PASSWORD IS WRONG");
+         waningLabel.setText( "USERNAME/PASSWORD IS WRONG" );
       } else {
-         waningLabel.setText("PLEASE ENTER BOTH PASSWORD AND USERNAME");
+         waningLabel.setText( "PLEASE ENTER BOTH PASSWORD AND USERNAME" );
       }
-      waningLabel.setVisible(true);
+      waningLabel.setVisible( true );
    }
 
    @FXML
-   void controlPressedCapslock(KeyEvent event) {
-      if (capsLock && event.getCode() == KeyCode.CAPS) {
-         capslockOpen.setVisible(true);
+   void controlPressedCapslock( KeyEvent event ) {
+      if( capsLock && event.getCode() == KeyCode.CAPS ) {
+         capslockOpen.setVisible( true );
          capsLock = false;
-      } else if (!capsLock && event.getCode() == KeyCode.CAPS) {
-         capslockOpen.setVisible(false);
+      } else if( !capsLock && event.getCode() == KeyCode.CAPS ) {
+         capslockOpen.setVisible( false );
          capsLock = true;
       }
    }
 
    @Override
-   public void initialize(URL location, ResourceBundle resources) {
-      capsLock = (Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK));
-      if (capsLock) {
-         capslockOpen.setVisible(true);
+   public void initialize( URL location, ResourceBundle resources ) {
+      capsLock = ( Toolkit.getDefaultToolkit().getLockingKeyState( java.awt.event.KeyEvent.VK_CAPS_LOCK ) );
+      if( capsLock ) {
+         capslockOpen.setVisible( true );
          capsLock = false;
       } else {
          capsLock = true;

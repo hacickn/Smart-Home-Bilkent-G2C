@@ -9,7 +9,7 @@ public class Fish {
 
    //constructor
 
-   public Fish(String species, String feedingTime, String waterExchangeTime, String airMotorWorkTime) {
+   public Fish( String species, String feedingTime, String waterExchangeTime, String airMotorWorkTime ) {
       this.species = species;
       this.feedingTime = feedingTime;
       this.waterExchangeTime = waterExchangeTime;

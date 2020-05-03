@@ -5,6 +5,7 @@ import com.SmartHomeBilkent.home.features.*;
 
 /**
  * a Home class
+ *
  * @author İlke Doğan
  * @version 29.03.2020
  */
@@ -22,7 +23,7 @@ public class Home {
    private Aquarium aquarium;
 
    //constructors
-   public Home(Arduino arduino) {
+   public Home( Arduino arduino ) {
       this.arduino = arduino;
       electricity = new Electricity( arduino );
       gas = new Gas( arduino );
