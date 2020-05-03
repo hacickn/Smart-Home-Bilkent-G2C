@@ -9,13 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * a FishSpecies class
+ *
+ * @author METEHAN SAÇAKÇI
+ * @version 01.05.2020
+ */
 public class FishSpecies {
 
    //properties
    private static final String TABLE_FISHES = "FISHES";
    private static final String TABLE_SPECIES_COLUMN = "SPECIES";
-   private static final String TABLE_FEEDING_TIME_COLUMN = "FEEDINGTIME";
-   private static final String TABLE_WATER_TIME_COLUMN = "WATERTIME";
    private static final String TABLE_AIR_MOTOR_TIME_COLUMN = "AIRMOTORTIME";
    private Connection connection;
    private static FishSpecies instance = new FishSpecies();
@@ -42,8 +46,6 @@ public class FishSpecies {
 
          while( resultSet.next() ) {
             fishes.add( new Fish( resultSet.getString( TABLE_SPECIES_COLUMN ),
-                  resultSet.getString( TABLE_FEEDING_TIME_COLUMN ),
-                  resultSet.getString( TABLE_WATER_TIME_COLUMN ),
                   resultSet.getString( TABLE_AIR_MOTOR_TIME_COLUMN ) ) );
          }
          return fishes;

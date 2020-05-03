@@ -7,7 +7,7 @@ import com.SmartHomeBilkent.home.features.*;
  * a Home class
  *
  * @author İlke Doğan
- * @version 29.03.2020
+ * @version 29.04.2020
  */
 public class Home {
 

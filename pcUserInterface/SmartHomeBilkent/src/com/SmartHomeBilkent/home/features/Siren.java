@@ -6,7 +6,7 @@ import arduino.Arduino;
  * a Siren class
  *
  * @author İLKE DOĞAN
- * @version 29.03.2020
+ * @version 29.04.2020
  */
 public class Siren extends Communication {
 

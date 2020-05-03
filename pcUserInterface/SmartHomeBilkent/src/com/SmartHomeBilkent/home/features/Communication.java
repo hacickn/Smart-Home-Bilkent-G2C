@@ -6,7 +6,7 @@ import arduino.Arduino;
  * Aquarium class
  *
  * @author HACI ÇAKIN
- * @version 29.03.2020
+ * @version 29.04.2020
  */
 public abstract class Communication {
 

@@ -2,11 +2,11 @@
        -fx-background-color: #F0FFFF  ;
 }
 .menuBorderPane{
-           -fx-background-color:#DCDCDC;
+           -fx-background-color:#bbb7cc;
            -fx-border-color: #E6E6FA;
 }
 .homeFacilityPane{
-       -fx-background-color: #FFE4C4;
+       -fx-background-color: #ffebd6;
       -fx-border-color: #E6E6FA;
  }
  .userInfoPane{
@@ -22,192 +22,192 @@
        -fx-border-color: #E6E6FA;
   }
 .userProfileButtonBoy{
-           -fx-background-image: url("images/userSetting1.png");
+           -fx-background-image: url("images/userSetting5.png");
            -fx-background-size: cover;
 }
 .userProfileButtonBoy:hover{
-           -fx-background-image: url("images/userSetting3.png");
+           -fx-background-image: url("images/userSetting4.png");
            -fx-background-size: cover;
 }
 .userProfileButtonBoyActive{
-           -fx-background-image: url("images/userSetting3.png");
+           -fx-background-image: url("images/userSetting4.png");
            -fx-background-size: cover;
 }
 .menuButton{
-           -fx-background-image: url("images/menu1.png");
+           -fx-background-image: url("images/menu5.png");
            -fx-background-size: cover;
 }
 .menuButton:hover{
-           -fx-background-image: url("images/menu3.png");
+           -fx-background-image: url("images/menu4.png");
            -fx-background-size: cover;
 }
 .menuButtonActive{
-           -fx-background-image: url("images/menu3.png");
+           -fx-background-image: url("images/menu4.png");
            -fx-background-size: cover;
 }
 .settingButton{
-           -fx-background-image: url("images/engineer1.png");
+           -fx-background-image: url("images/engineer5.png");
            -fx-background-size: cover;
 }
 .settingButton:hover{
-           -fx-background-image: url("images/engineer3.png");
+           -fx-background-image: url("images/engineer4.png");
            -fx-background-size: cover;
 }
 .settingButtonActive{
-           -fx-background-image: url("images/engineer3.png");
+           -fx-background-image: url("images/engineer4.png");
            -fx-background-size: cover;
 }
 .logoutButton{
-           -fx-background-image: url("images/logout1.png");
+           -fx-background-image: url("images/logout5.png");
            -fx-background-size: cover;
 }
 .logoutButton:hover{
-           -fx-background-image: url("images/logout3.png");
+           -fx-background-image: url("images/logout4.png");
            -fx-background-size: cover;
 }
 .elecButtonActive{
-           -fx-background-image: url("images/elec3.png");
+           -fx-background-image: url("images/elec4.png");
            -fx-background-size: cover;
 }
 .greenHouseActive{
-           -fx-background-image: url("images/greenhouse3.png");
+           -fx-background-image: url("images/greenhouse4.png");
            -fx-background-size: cover;
 }
 .gasButtonActive{
-           -fx-background-image: url("images/gas3.png");
+           -fx-background-image: url("images/gas4.png");
            -fx-background-size: cover;
 }
 .rfidActive{
-           -fx-background-image: url("images/rfid3.png");
+           -fx-background-image: url("images/rfid4.png");
             -fx-background-size: cover;
  }
 .waterButtonActive{
-           -fx-background-image: url("images/water3.png");
+           -fx-background-image: url("images/water4.png");
            -fx-background-size: cover;
 }
 .aquariumButtonActive{
-           -fx-background-image: url("images/aquarium3.png");
+           -fx-background-image: url("images/aquarium4.png");
            -fx-background-size: cover;
 }
 .elecButton{
-           -fx-background-image: url("images/elec1.png");
+           -fx-background-image: url("images/elec5.png");
            -fx-background-size: cover;
 }
 .elecButton:hover{
-           -fx-background-image: url("images/elec3.png");
+           -fx-background-image: url("images/elec4.png");
            -fx-background-size: cover;
 }
 .doorButton{
-           -fx-background-image: url("images/door1.png");
+           -fx-background-image: url("images/door5.png");
            -fx-background-size: cover;
 }
 .doorButton:hover{
-           -fx-background-image: url("images/door3.png");
+           -fx-background-image: url("images/door4.png");
            -fx-background-size: cover;
 }
 .lightButton{
-           -fx-background-image: url("images/idea1.png");
+           -fx-background-image: url("images/idea5.png");
            -fx-background-size: cover;
 }
 .lightButton:hover{
-           -fx-background-image: url("images/idea3.png");
+           -fx-background-image: url("images/idea4.png");
            -fx-background-size: cover;
 }
 .lightButtonActive{
-           -fx-background-image: url("images/idea3.png");
+           -fx-background-image: url("images/idea4.png");
            -fx-background-size: cover;
 }
 .bulkChangeButton{
-           -fx-background-image: url("images/bulkChange1.png");
+           -fx-background-image: url("images/bulkChange5.png");
            -fx-background-size: cover;
 }
 .bulkChangeButton:hover{
-           -fx-background-image: url("images/bulkChange3.png");
+           -fx-background-image: url("images/bulkChange4.png");
            -fx-background-size: cover;
 }
 .timeConfigurationButton{
-           -fx-background-image: url("images/data1.png");
+           -fx-background-image: url("images/data5.png");
            -fx-background-size: cover;
 }
 .timeConfigurationButton:hover{
-           -fx-background-image: url("images/data3.png");
+           -fx-background-image: url("images/data4.png");
            -fx-background-size: cover;
 }
 .greenHouse{
-           -fx-background-image: url("images/greenhouse1.png");
+           -fx-background-image: url("images/greenhouse5.png");
            -fx-background-size: cover;
 }
 .greenHouse:hover{
-           -fx-background-image: url("images/greenhouse3.png");
+           -fx-background-image: url("images/greenhouse4.png");
            -fx-background-size: cover;
 }
 .gasButton{
-           -fx-background-image: url("images/gas1.png");
+           -fx-background-image: url("images/gas5.png");
            -fx-background-size: cover;
 }
 .gasButton:hover{
-           -fx-background-image: url("images/gas3.png");
+           -fx-background-image: url("images/gas4.png");
            -fx-background-size: cover;
 }
 .waterButton{
-           -fx-background-image: url("images/water1.png");
+           -fx-background-image: url("images/water5.png");
            -fx-background-size: cover;
 }
 .waterButton:hover{
-           -fx-background-image: url("images/water3.png");
+           -fx-background-image: url("images/water4.png");
            -fx-background-size: cover;
 }
 .aquariumButton{
-           -fx-background-image: url("images/aquarium1.png");
+           -fx-background-image: url("images/aquarium5.png");
            -fx-background-size: cover;
 }
 .aquariumButton:hover{
-           -fx-background-image: url("images/aquarium3.png");
+           -fx-background-image: url("images/aquarium4.png");
            -fx-background-size: cover;
 }
 .rfid{
-           -fx-background-image: url("images/rfid1.png");
+           -fx-background-image: url("images/rfid5.png");
             -fx-background-size: cover;
  }
 .rfid:hover{
-           -fx-background-image: url("images/rfid3.png");
+           -fx-background-image: url("images/rfid4.png");
            -fx-background-size: cover;
  }
 .coolerButton{
-           -fx-background-image: url("images/airconditioner1.png");
+           -fx-background-image: url("images/airconditioner5.png");
            -fx-background-size: cover;
 }
 .coolerButton:hover{
-           -fx-background-image: url("images/airconditioner3.png");
+           -fx-background-image: url("images/airconditioner4.png");
            -fx-background-size: cover;
 }
 
 .connectionButton{
-        -fx-background-image: url("images/connection1.png");
+        -fx-background-image: url("images/connection5.png");
         -fx-background-size: cover;
 }
 .connectionButton:hover{
-        -fx-background-image: url("images/connection3.png");
+        -fx-background-image: url("images/connection4.png");
         -fx-background-size: cover;
 }
 .temperatureButton{
-        -fx-image: url("images/cold1.png");
+        -fx-image: url("images/cold5.png");
          -fx-background-size: cover;
 }
 .temperatureButton:hover{
-        -fx-image: url("images/cold3.png");
+        -fx-image: url("images/cold4.png");
         -fx-background-size: cover;
  }
   .weather{
-          -fx-background-image: url("images/cloudy1.png");
+          -fx-background-image: url("images/cloudy5.png");
            -fx-background-size: cover;
   }
   .weather:hover{
-          -fx-background-image: url("images/cloudy3.png");
+          -fx-background-image: url("images/cloudy4.png");
           -fx-background-size: cover;
    }
    .weatherActive{
-              -fx-background-image: url("images/cloudy3.png");
+              -fx-background-image: url("images/cloudy4.png");
                -fx-background-size: cover;
    }
 .tempLabel{
@@ -239,36 +239,35 @@
       -fx-border-color: darkGreen;
 }
 .gearPassive{
-    -fx-background-image: url("images/gear1.png");
+    -fx-background-image: url("images/gear5.png");
     -fx-background-size: cover;
 }
 .gearPassive:hover{
-    -fx-background-image: url("images/gear3.png");
+    -fx-background-image: url("images/gear4.png");
     -fx-background-size: cover;
 }
 .gearActive{
-    -fx-background-image: url("images/gear6.png");
+    -fx-background-image: url("images/gear5.png");
     -fx-background-size: cover;
 }
 .gearActive:hover{
-    -fx-background-image: url("images/gear3.png");
+    -fx-background-image: url("images/gear4.png");
     -fx-background-size: cover;
 }
-////////////////////////////////////////////////////
 .userInfoChange{
-    -fx-background-image: url("images/change1.png");
+    -fx-background-image: url("images/change5.png");
     -fx-background-size: cover;
 }
 .userInfoChange:hover{
-    -fx-background-image: url("images/change3.png");
+    -fx-background-image: url("images/change4.png");
     -fx-background-size: cover;
 }
 .userChange{
-     -fx-background-image: url("images/userChange1.png");
+     -fx-background-image: url("images/userChange5.png");
      -fx-background-size: cover;
 }
 .userChange:hover{
-     -fx-background-image: url("images/userChange3.png");
+     -fx-background-image: url("images/userChange4.png");
      -fx-background-size: cover;
 }
 .changeUserInfoPane{
@@ -276,19 +275,19 @@
       -fx-border-color: #E6E6FA;
 }
 .changeUserInfoSave{
-    -fx-background-image: url("images/save1.png");
+    -fx-background-image: url("images/save5.png");
     -fx-background-size: cover;
 }
 .changeUserInfoSave:hover{
-    -fx-background-image: url("images/save2.png");
+    -fx-background-image: url("images/save4.png");
     -fx-background-size: cover;
 }
 .changeUserInfoBack{
-    -fx-background-image: url("images/arrow1.png");
+    -fx-background-image: url("images/arrow5.png");
     -fx-background-size: cover;
 }
 .changeUserInfoBack:hover{
-    -fx-background-image: url("images/arrow2.png");
+    -fx-background-image: url("images/arrow4.png");
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
@@ -314,116 +313,116 @@
      -jfx-unfocus-color: black;
 }
 .applicationSettings{
-     -fx-background-image: url("images/monitor1.png");
+     -fx-background-image: url("images/monitor5.png");
      -fx-background-size: cover;
 }
 .applicationSettings:hover{
-     -fx-background-image: url("images/monitor3.png");
+     -fx-background-image: url("images/monitor4.png");
      -fx-background-size: cover;
 }
 .applicationSettingsActive{
-     -fx-background-image: url("images/monitor3.png");
+     -fx-background-image: url("images/monitor4.png");
      -fx-background-size: cover;
 }
 .userSettings{
-     -fx-background-image: url("images/users1.png");
+     -fx-background-image: url("images/users5.png");
      -fx-background-size: cover;
 }
 .userSettings:hover{
-     -fx-background-image: url("images/users3.png");
+     -fx-background-image: url("images/users4.png");
      -fx-background-size: cover;
 }
 .userSettingsActive{
-     -fx-background-image: url("images/users3.png");
+     -fx-background-image: url("images/users4.png");
      -fx-background-size: cover;
 }
 .modsSettings{
-     -fx-background-image: url("images/mods1.png");
+     -fx-background-image: url("images/mods5.png");
      -fx-background-size: cover;
 }
 .modsSettings:hover{
-     -fx-background-image: url("images/mods3.png");
+     -fx-background-image: url("images/mods4.png");
      -fx-background-size: cover;
 }
 .modsSettingsActive{
-     -fx-background-image: url("images/mods3.png");
+     -fx-background-image: url("images/mods4.png");
      -fx-background-size: cover;
 }
 .homeSettings{
-     -fx-background-image: url("images/homeSetting1.png");
+     -fx-background-image: url("images/homeSetting5.png");
      -fx-background-size: cover;
 }
 .homeSettings:hover{
-     -fx-background-image: url("images/homeSetting3.png");
+     -fx-background-image: url("images/homeSetting4.png");
      -fx-background-size: cover;
 }
 .homeSettingsActive{
-     -fx-background-image: url("images/homeSetting3.png");
+     -fx-background-image: url("images/homeSetting4.png");
      -fx-background-size: cover;
 }
 
 .themeSettings{
-     -fx-background-image: url("images/theme1.png");
+     -fx-background-image: url("images/theme5.png");
      -fx-background-size: cover;
 }
 .themeSettings:hover{
-     -fx-background-image: url("images/theme3.png");
+     -fx-background-image: url("images/theme4.png");
      -fx-background-size: cover;
 }
 .themeSettingsActive{
-     -fx-background-image: url("images/theme3.png");
+     -fx-background-image: url("images/theme4.png");
      -fx-background-size: cover;
 }
 
 .languageSettings{
-     -fx-background-image: url("images/language1.png");
+     -fx-background-image: url("images/language5.png");
      -fx-background-size: cover;
 }
 .languageSettings:hover{
-     -fx-background-image: url("images/language3.png");
+     -fx-background-image: url("images/language4.png");
      -fx-background-size: cover;
 }
 .languageSettingsActive{
-     -fx-background-image: url("images/language3.png");
+     -fx-background-image: url("images/language4.png");
      -fx-background-size: cover;
 }
 
 .phoneNotificationSettings{
-     -fx-background-image: url("images/phoneNotification1.png");
+     -fx-background-image: url("images/phoneNotification5.png");
      -fx-background-size: cover;
 }
 .phoneNotificationSettings:hover{
-     -fx-background-image: url("images/phoneNotification3.png");
+     -fx-background-image: url("images/phoneNotification4.png");
      -fx-background-size: cover;
 }
 .phoneNotificationSettingsActive{
-     -fx-background-image: url("images/phoneNotification3.png");
+     -fx-background-image: url("images/phoneNotification4.png");
      -fx-background-size: cover;
 }
 
 .emergencySettings{
-     -fx-background-image: url("images/alarm1.png");
+     -fx-background-image: url("images/alarm5.png");
      -fx-background-size: cover;
 }
 .emergencySettings:hover{
-     -fx-background-image: url("images/alarm3.png");
+     -fx-background-image: url("images/alarm4.png");
      -fx-background-size: cover;
 }
 .emergencySettingsActive{
-     -fx-background-image: url("images/alarm3.png");
+     -fx-background-image: url("images/alarm4.png");
      -fx-background-size: cover;
 }
 
 .connectionSettings{
-     -fx-background-image: url("images/homeConnection1.png");
+     -fx-background-image: url("images/homeConnection5.png");
      -fx-background-size: cover;
 }
 .connectionSettings:hover{
-     -fx-background-image: url("images/homeConnection3.png");
+     -fx-background-image: url("images/homeConnection4.png");
      -fx-background-size: cover;
 }
 .connectionSettingsActive{
-     -fx-background-image: url("images/homeConnection3.png");
+     -fx-background-image: url("images/homeConnection4.png");
      -fx-background-size: cover;
 }
 .settingSubPane{
@@ -435,11 +434,11 @@
         -fx-border-color:#E6E6FA;
 }
 .changeThemeSave{
-    -fx-background-image: url("images/save1.png");
+    -fx-background-image: url("images/save5.png");
     -fx-background-size: cover;
 }
 .changeThemeSave:hover{
-    -fx-background-image: url("images/save3.png");
+    -fx-background-image: url("images/save4.png");
     -fx-background-size: cover;
 }
 .changeThemeSaveRadioButton{
@@ -450,15 +449,15 @@
      -fx-text-fill: #b85c00;
 }
 .userProfileButtonGirls{
-           -fx-background-image: url("images/girls2.png");
+           -fx-background-image: url("images/girls5.png");
            -fx-background-size: cover;
 }
 .userProfileButtonGirls:hover{
-           -fx-background-image: url("images/girls3.png");
+           -fx-background-image: url("images/girls4.png");
            -fx-background-size: cover;
 }
 .userProfileButtonGirlsActive{
-           -fx-background-image: url("images/girls3.png");
+           -fx-background-image: url("images/girls4.png");
            -fx-background-size: cover;
 }
 .settingTopPaneLabels{
@@ -477,45 +476,45 @@
            -fx-background-size: cover;
 }
 .wifiImage{
-        -fx-image: url("images/wifiConnection1.png");
+        -fx-image: url("images/wifiConnection5.png");
 }
 .wifiImageActive{
-        -fx-image: url("images/wifiConnection6.png");
+        -fx-image: url("images/wifiConnection4.png");
 }
 .usbImage{
-        -fx-image: url("images/usbConnection1.png");
+        -fx-image: url("images/usbConnection5.png");
 }
 .usbImageActive{
-        -fx-image: url("images/usbConnection6.png");
+        -fx-image: url("images/usbConnection4.png");
 }
 .bluImage{
-        -fx-image: url("images/computerBlu1.png");
+        -fx-image: url("images/computerBlu5.png");
 }
 .bluImageActive{
-        -fx-image: url("images/computerBlu6.png");
+        -fx-image: url("images/computerBlu4.png");
 }
 .addUserButton{
-         -fx-background-image: url("images/addUser1.png");
+         -fx-background-image: url("images/addUser5.png");
          -fx-background-size: cover;
  }
  .addUserButton:hover{
-         -fx-background-image: url("images/addUser3.png");
+         -fx-background-image: url("images/addUser4.png");
          -fx-background-size: cover;
  }
 .removeUserButton{
-        -fx-background-image: url("images/removeUser1.png");
+        -fx-background-image: url("images/removeUser5.png");
         -fx-background-size: cover;
 }
 .removeUserButton:hover{
-        -fx-background-image: url("images/removeUser3.png");
+        -fx-background-image: url("images/removeUser4.png");
         -fx-background-size: cover;
 }
 .verifyAddUserButton{
-        -fx-background-image: url("images/verifyAdd1.png");
+        -fx-background-image: url("images/verifyAdd5.png");
         -fx-background-size: cover;
 }
 .verifyAddUserButton:hover{
-        -fx-background-image: url("images/verifyAdd3.png");
+        -fx-background-image: url("images/verifyAdd4.png");
         -fx-background-size: cover;
 }
 .addRemoveUserPane{
@@ -523,19 +522,19 @@
            -fx-border-color: #E6E6FA;
 }
 .changeUserType{
-        -fx-background-image: url("images/userType1.png");
+        -fx-background-image: url("images/userType5.png");
         -fx-background-size: cover;
 }
 .changeUserType:hover{
-        -fx-background-image: url("images/userType3.png");
+        -fx-background-image: url("images/userType4.png");
         -fx-background-size: cover;
 }
 .verifyRemove{
-        -fx-background-image: url("images/verifyRemove1.png");
+        -fx-background-image: url("images/verifyRemove5.png");
         -fx-background-size: cover;
 }
 .verifyRemove:hover{
-        -fx-background-image: url("images/verifyRemove3.png");
+        -fx-background-image: url("images/verifyRemove4.png");
         -fx-background-size: cover;
 }
 //for table
@@ -589,59 +588,59 @@
     -jfx-default-color:#DB7093;
 }
 .updateWeather{
-        -fx-background-image: url("images/updateCheck1.png");
+        -fx-background-image: url("images/updateCheck5.png");
         -fx-background-size: cover;
 }
 .updateWeather:hover{
-        -fx-background-image: url("images/updateCheck3.png");
+        -fx-background-image: url("images/updateCheck4.png");
         -fx-background-size: cover;
 }
 .electricityImage{
-        -fx-image: url("images/elec1.png");
+        -fx-image: url("images/elec5.png");
          -fx-background-size: cover;
 }
 .gasImage{
-        -fx-image: url("images/gas1.png");
+        -fx-image: url("images/gas5.png");
          -fx-background-size: cover;
 }
 .waterImage{
-        -fx-image: url("images/water1.png");
+        -fx-image: url("images/water5.png");
          -fx-background-size: cover;
 }
 .aquariumImage{
-        -fx-image: url("images/aquarium1.png");
+        -fx-image: url("images/aquarium5.png");
          -fx-background-size: cover;
 }
 .gardenLightImage{
-        -fx-image: url("images/idea1.png");
+        -fx-image: url("images/idea5.png");
          -fx-background-size: cover;
 }
 .clockImage{
-        -fx-image: url("images/clock1.png");
+        -fx-image: url("images/clock5.png");
          -fx-background-size: cover;
 }
 .calenderImage{
-        -fx-image: url("images/calender1.png");
+        -fx-image: url("images/calender5.png");
          -fx-background-size: cover;
 }
 .buzzerImage{
-        -fx-image: url("images/siren1.png");
+        -fx-image: url("images/siren5.png");
          -fx-background-size: cover;
 }
 .incomingWaterImage{
-        -fx-image: url("images/incomingWater1.png");
+        -fx-image: url("images/incomingWater5.png");
          -fx-background-size: cover;
 }
 .outgoingWaterImage{
-        -fx-image: url("images/outgoingWater1.png");
+        -fx-image: url("images/outgoingWater5.png");
          -fx-background-size: cover;
 }
 .doorImage{
-        -fx-image: url("images/door1.png");
+        -fx-image: url("images/door5.png");
          -fx-background-size: cover;
 }
 .feedingImage{
-        -fx-image: url("images/feeding1.png");
+        -fx-image: url("images/feeding5.png");
          -fx-background-size: cover;
 }
 .calenderDatePicker{

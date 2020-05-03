@@ -7,7 +7,7 @@ import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
  * a Aquarium class
  *
  * @author HACI ÇAKIN
- * @version 29.03.2020
+ * @version 29.04.2020
  */
 public class Aquarium extends Communication {
 
@@ -20,7 +20,6 @@ public class Aquarium extends Communication {
    private final String INCOMING_WATER_OFF = "incoming_water_off#:";
    private final String OUTGOING_WATER_ON = "outgoing_water_on#:";
    private final String OUTGOING_WATER_OFF = "outgoing_water_off#:";
-   private Fish fish;
    private String detailedMessage;
    private String lastIncomingWaterTime;
    private String lastOutgoingWaterTime;
@@ -53,10 +52,8 @@ public class Aquarium extends Communication {
    }
 
 
-   public void setAquariumSettings() {
-      detailedMessage = "aquarium#" + fish.getFeedingTime() +
-            fish.getWaterExchangeTime() + fish.getAirMotorWorkTime() + ":";
-      arduino.serialWrite( detailedMessage );
+   public void setAquariumSettings( String message ) {
+      arduino.serialWrite( message );
    }
 
    public void setAquariumSettings( String feeding, String waterExchange, String airMotor ) {
@@ -85,9 +82,5 @@ public class Aquarium extends Communication {
 
    public void closeOutgoingWater() {
 
-   }
-
-   public void setFish( Fish fish ) {
-      this.fish = fish;
    }
 }

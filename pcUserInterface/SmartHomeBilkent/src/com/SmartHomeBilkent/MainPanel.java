@@ -3,12 +3,15 @@ package com.SmartHomeBilkent;
 import arduino.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.ElectricityUsage;
 import com.SmartHomeBilkent.extra.dataBase.GasUsage;
+import com.SmartHomeBilkent.extra.dataBase.GreenHouseDatas;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
 import com.SmartHomeBilkent.home.Home;
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortDataListener;
+import com.fazecast.jSerialComm.SerialPortEvent;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
@@ -21,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeTableColumn;
@@ -44,6 +48,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 /**
  * a MainPanel class
@@ -294,6 +299,8 @@ public class MainPanel implements Initializable {
    @FXML
    private BarChart< Number, Number > electricityUsageTable, gasUsageTable;
    @FXML
+   private LineChart<Number, Number> greenHouseValuesChart;
+   @FXML
    private CategoryAxis elecBarChartX, gasBarChartX;
 
    //settings pane ----sub-menu variables----
@@ -354,6 +361,8 @@ public class MainPanel implements Initializable {
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getGasUsage();
       GasUsage.getInstance().getTable( gasUsageTable );
+      GreenHouseDatas.getInstance().getGreenHouseValues();
+      GreenHouseDatas.getInstance().getTable( greenHouseValuesChart );
 
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );
@@ -890,7 +899,7 @@ public class MainPanel implements Initializable {
          home.getElectricity().open( elecSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == gasSubMenuToggleButton ) {
          openGas( gasSubMenuToggleButton.isSelected() );
-         home.getGas().open( event.getSource() == gasSubMenuToggleButton );
+         home.getGas().open( gasSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == aquariumSubMenuToggleButton ) {
          openAquarium( aquariumSubMenuToggleButton.isSelected() );
          home.getAquarium().open( aquariumSubMenuToggleButton.isSelected() );
@@ -1102,22 +1111,24 @@ public class MainPanel implements Initializable {
          openHomeSettingPane();
          settingElecSettingPane.setVisible( true );
          homeSettingElecButtonActive.setVisible( true );
-      } else if( event.getSource() == settingThemeSaveButton ) {
-         String themeName;
-         themeName = "";
-         if( darkThemeRadioButton.isSelected() )
-            themeName = "dark";
-         else if( lightThemeRadioButton.isSelected() )
-            themeName = "light";
-         else if( smoothThemeRadioButton.isSelected() )
-            themeName = "smooth";
-         else if( cartoonThemeRadioButton.isSelected() )
-            themeName = "cartoon";
-
-         changeTheme( themeName );
-         Users.getInstance().updateUsersTheme( loginUser, themeName );
-         userPreferenceUpdate( loginUser );
       }
+   }
+
+   public void saveTheme() throws SQLException {
+      String themeName;
+      themeName = "";
+      if( darkThemeRadioButton.isSelected() )
+         themeName = "dark";
+      else if( lightThemeRadioButton.isSelected() )
+         themeName = "light";
+      else if( smoothThemeRadioButton.isSelected() )
+         themeName = "smooth";
+      else if( cartoonThemeRadioButton.isSelected() )
+         themeName = "cartoon";
+
+      changeTheme( themeName );
+      Users.getInstance().updateUsersTheme( loginUser, themeName );
+      userPreferenceUpdate( loginUser );
    }
 
    //all settings buttons ( app settings(theme-language-emergency-notification-connection), users settings( add-remove user), home settings())
@@ -1154,7 +1165,7 @@ public class MainPanel implements Initializable {
    //settings ---------view pane----theme pane
 
    @FXML
-   void selectTheme( ActionEvent event ) {
+   void selectTheme( ActionEvent event ) throws SQLException {
       if( event.getSource() == darkThemeRadioButton )
          selectDarkTheme();
       else if( event.getSource() == lightThemeRadioButton )
@@ -1163,6 +1174,7 @@ public class MainPanel implements Initializable {
          selectSmoothTheme();
       else if( event.getSource() == cartoonThemeRadioButton )
          selectCartoonTheme();
+      saveTheme();
    }
 
    void selectDarkTheme() {
@@ -1216,6 +1228,7 @@ public class MainPanel implements Initializable {
 
    void changeTheme( String themeName ) {
       String css;
+
       if( themeName.equals( "light" ) || themeName.equals( "aydınlık" ) || themeName.equals( "licht" ) )
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
       else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) )
@@ -1243,6 +1256,7 @@ public class MainPanel implements Initializable {
    void selectLanguage( ActionEvent event ) throws SQLException, IOException {
       String language;
       language = "";
+
       if( event.getSource() == englishOption ) {
          selectEnglishOption();
          languageSetter( "en" );
@@ -1379,7 +1393,7 @@ public class MainPanel implements Initializable {
          feedRadioButton.setText( bundle.getString( "feedLang" ) );
          doorRadioButton.setText( bundle.getString( "doorLang" ) );
          outgoingWaterRadioButton.setText( bundle.getString( "outgoingWaterLang" ) );
-         bulkChangesSaveButton.setText( bundle.getString( "saveLang" ) );
+         bulkChangesSaveButton.setText( bundle.getString( "runLang" ) );
          dateTimeSaveButton.setText( bundle.getString( "saveLang" ) );
          waterSubPaneLabelPassive.setText( bundle.getString( "waterLang" ) );
          waterSubPaneLabelActive.setText( bundle.getString( "waterLang" ) );
@@ -1414,10 +1428,8 @@ public class MainPanel implements Initializable {
       englishOption.setPrefSize( 150, 150 );
       englishOption.setLayoutX( 80 );
       englishOption.setLayoutY( 105 );
-
       germanOption.setPrefSize( 90, 90 );
       turkishOption.setPrefSize( 90, 90 );
-
       germanOption.setLayoutX( 304 );
       germanOption.setLayoutY( 105 );
       turkishOption.setLayoutX( 501 );
@@ -1429,10 +1441,8 @@ public class MainPanel implements Initializable {
       germanOption.setPrefSize( 150, 150 );
       germanOption.setLayoutX( 274 );
       germanOption.setLayoutY( 105 );
-
       englishOption.setPrefSize( 90, 90 );
       turkishOption.setPrefSize( 90, 90 );
-
       englishOption.setLayoutX( 110 );
       englishOption.setLayoutY( 105 );
       turkishOption.setLayoutX( 501 );
@@ -1444,10 +1454,8 @@ public class MainPanel implements Initializable {
       turkishOption.setPrefSize( 150, 150 );
       turkishOption.setLayoutX( 471 );
       turkishOption.setLayoutY( 105 );
-
       englishOption.setPrefSize( 90, 90 );
       germanOption.setPrefSize( 90, 90 );
-
       englishOption.setLayoutX( 110 );
       englishOption.setLayoutY( 105 );
       germanOption.setLayoutX( 304 );
@@ -1494,10 +1502,33 @@ public class MainPanel implements Initializable {
          openSmartHomeConnectionSetting();
       } else if( event.getSource() == portConnectionButton ) {
          arduino = new Arduino( portChooser.getValue(), 9600 );
+
          if( arduino.openConnection() ) {
             portConnectionButton.setDisable( true );
             home = new Home( arduino );
             home.adjustCollective( "manual_on#:" );
+            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
+               @Override
+               public int getListeningEvents() {
+                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
+               }
+
+               @Override
+               public void serialEvent( SerialPortEvent serialPortEvent ) {
+                  if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
+                     return;
+                  home.getArduino().getSerialPort().setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
+                  String out="";
+                  Scanner in = new Scanner(home.getArduino().getSerialPort().getInputStream());
+                  try
+                  {
+                     while(in.hasNext())
+                        out += (in.next());
+                     //in.close();
+                  } catch (Exception e) { e.printStackTrace(); }
+                  System.out.println( out );
+               }
+            } );
          } else {
             portChooser.setValue( "" );
          }
@@ -2013,19 +2044,50 @@ public class MainPanel implements Initializable {
                airMotorStartTime.getValue() == null ||
                waterExchangeDay.getValue() == null ) {
          } else {
-            String hoursOfWorkOfAirMotor;
-            hoursOfWorkOfAirMotor = "" + ( int ) airMotorRunTime.getValue();
+            StringBuilder message;
+
+            message = new StringBuilder( "aquarium#" );
+
+            if( feedingTime.getValue().getHour() < 10 )
+               message.append( "0" + feedingTime.getValue().getHour() );
+            else
+               message.append( feedingTime.getValue().getHour() );
+
+            if( feedingTime.getValue().getMinute() < 10 )
+               message.append( "0" + feedingTime.getValue().getMinute() + "00" );
+            else
+               message.append( feedingTime.getValue().getMinute() + "00" );
+
+            if( waterExchangeTime.getValue().getHour() < 10 )
+               message.append( "0" + waterExchangeTime.getValue().getHour() );
+            else
+               message.append( waterExchangeTime.getValue().getHour() );
+
+            if( waterExchangeTime.getValue().getMinute() < 10 )
+               message.append( "0" + waterExchangeTime.getValue().getMinute() + "00" );
+            else
+               message.append( waterExchangeTime.getValue().getMinute() + "00" );
+
+            message.append( "0" + waterExchangeDay.getValue().charAt( 0 ) );
+
+            if( airMotorStartTime.getValue().getHour() < 10 )
+               message.append( "0" + airMotorStartTime.getValue().getHour() );
+            else
+               message.append( airMotorStartTime.getValue().getHour() );
+
+            if( airMotorStartTime.getValue().getMinute() < 10 )
+               message.append( "0" + airMotorStartTime.getValue().getMinute() + "00" );
+            else
+               message.append( airMotorStartTime.getValue().getMinute() + "00" );
 
             if( airMotorRunTime.getValue() < 10 )
-               hoursOfWorkOfAirMotor = "0" + hoursOfWorkOfAirMotor;
+               message.append( "0" + (int)airMotorRunTime.getValue() + ":" );
+            else
+               message.append( (int)airMotorRunTime.getValue() + ":" );
 
-            home.getAquarium().setAquariumSettings( feedingTime.getValue().getHour() + "" +
-                        feedingTime.getValue().getMinute() + feedingTime.getValue().getSecond() + 0,
-                  waterExchangeTime.getValue().getHour() + "" +
-                        waterExchangeTime.getValue().getMinute() + waterExchangeTime.getValue().getSecond() + 0 + waterExchangeDay.getValue().charAt( 0 ),
-                  airMotorStartTime.getValue().getHour() + "" +
-                        airMotorStartTime.getValue().getMinute() + airMotorStartTime.getValue().getSecond() + 0 + hoursOfWorkOfAirMotor );
-         }
+            home.getAquarium().setAquariumSettings( message.toString() );
+            System.out.println( message.toString() );
+          }
       }
    }
 

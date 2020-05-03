@@ -6,7 +6,7 @@ import arduino.Arduino;
  * a GardenLight class
  *
  * @author METEHAN SAÇAKÇI
- * @version 29.03.2020
+ * @version 29.04.2020
  */
 public class GardenLight extends Communication {
 

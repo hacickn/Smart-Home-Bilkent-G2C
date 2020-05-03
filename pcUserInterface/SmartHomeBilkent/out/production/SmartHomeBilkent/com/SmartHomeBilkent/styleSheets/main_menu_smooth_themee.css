@@ -1,9 +1,9 @@
 .root{
-       -fx-background-color: #667454 ;
+       -fx-background-color: #f2dada;
 }
 
 .menuBorderPane{
-           -fx-background-color:#DEB887;
+           -fx-background-color:#db9090;
            -fx-border-color: #F5F5DC;
 }
 .userInfoPane{
@@ -15,7 +15,7 @@
        -fx-border-color: #F5F5DC;
 }
 .homeFacilityPane{
-       -fx-background-color: #DEB887;
+       -fx-background-color: #F5F5DC;
        -fx-border-color: #F5F5DC;
 }
 .settingFacilitiesPane{
