@@ -1,10 +1,8 @@
 package com.SmartHomeBilkent;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.extra.dataBase.ElectricityUsage;
-import com.SmartHomeBilkent.extra.dataBase.GasUsage;
-import com.SmartHomeBilkent.extra.dataBase.GreenHouseDatas;
-import com.SmartHomeBilkent.extra.dataBase.Users;
+import com.SmartHomeBilkent.extra.dataBase.*;
+import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -327,7 +325,8 @@ public class MainPanel implements Initializable {
 
    //program variables
    @FXML
-   private JFXComboBox< String > portChooser;
+   private JFXComboBox< String > portChooser, speciesOfFishComboBox;
+   
    private ResourceBundle bundle;
    private AudioClip audioClip;
    private Boolean soundCheck;
@@ -336,8 +335,6 @@ public class MainPanel implements Initializable {
    private String volume;
    private SpeechUtils speechUtils;
    private LocalDate localDate;
-   private LocalDate embeddedLocalDate;
-   private LocalTime embeddedLocalTime;
    private DateTimeFormatter dateTimeFormatter;
    public User loginUser;
    private WeatherForecast weatherForecast;
@@ -362,6 +359,8 @@ public class MainPanel implements Initializable {
       GasUsage.getInstance().getTable( gasUsageTable );
       GreenHouseDatas.getInstance().getGreenHouseValues();
       GreenHouseDatas.getInstance().getTable( greenHouseValuesChart );
+      FishSpecies.getInstance().getFishes();
+      FishSpecies.getInstance().addFishToComboBox( speciesOfFishComboBox );
 
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );

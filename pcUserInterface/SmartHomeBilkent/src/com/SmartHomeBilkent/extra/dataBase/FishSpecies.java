@@ -1,6 +1,8 @@
 package com.SmartHomeBilkent.extra.dataBase;
 
 import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
+import com.fazecast.jSerialComm.SerialPort;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -53,5 +55,10 @@ public class FishSpecies {
          e.printStackTrace();
          return null;
       }
+   }
+
+   public void addFishToComboBox ( JFXComboBox< String > comboBox) {
+      for( int k = 0; k < fishes.size() ; k++ )
+         comboBox.getItems().add( fishes.get( k ).getSpecies() );
    }
 }
