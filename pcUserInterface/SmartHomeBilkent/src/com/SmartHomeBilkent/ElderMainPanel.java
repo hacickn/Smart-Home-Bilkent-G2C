@@ -826,6 +826,7 @@ public class ElderMainPanel implements Initializable {
          applicationElderPanel.setDisable( false );
       }
       // applicationSettingsElderButton END -MS 04.05.2020-
+      //SS MS - 04.05.2020-
    }
 
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
