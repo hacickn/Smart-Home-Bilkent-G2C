@@ -393,6 +393,11 @@ public class MainPanel implements Initializable {
          audioClip.setRate( 1 );
          audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
          audioClip.play();
+      } else {
+         audioClip.stop();
+         audioClip = new AudioClip( this.getClass().getResource( "music/" +
+               bundle.getString( "pathLang" ) +
+               file + bundle.getString( "mp3Lang" ) ).toString() );
       }
    }
 
@@ -542,7 +547,7 @@ public class MainPanel implements Initializable {
          sound( "closeAppLang", soundCheck );
       } else if( event.getSource() == tempImage ) {
          sound( "homeTemperatureLang", soundCheck );
-      } else if( event.getSource() == weatherImage ) {
+      } else if( event.getSource() == weatherButton ) {
          sound( "weatherLang", soundCheck );
       } else if( event.getSource() == menuConnectionButton ) {
          sound( "connectionLang", soundCheck );
@@ -562,6 +567,14 @@ public class MainPanel implements Initializable {
          sound( "aquSettingsLang", soundCheck );
       } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == greenhouseSubMenuButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
+      } else if( event.getSource() == menuWaterButton){
+
+      } else if( event.getSource() == menuGardenLightButton){
+
+      } else if( event.getSource() == menuBulkChange){
+
+      } else if( event.getSource() == menuTimeConfigurationButton){
+
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( true );
       }
@@ -578,6 +591,8 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( false );
       }
+
+      sound( "saveChangesLang", false );
    }
 
    //it opens menu
@@ -1018,6 +1033,8 @@ public class MainPanel implements Initializable {
          changeUserInfoLabel.setVisible( false );
       else if( event.getSource() == changeUserPrivateInfoButton )
          changeUserPrivateInfoLabel.setVisible( false );
+
+      sound( "gasLang", false );
    }
 
    //user profiles user info changer panels
@@ -1033,6 +1050,7 @@ public class MainPanel implements Initializable {
    void changeUserInfoButtons( ActionEvent event ) throws SQLException, IOException {
       if( event.getSource() == saveUserNormalInfo ) {
          String gender;
+
          if( nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue() == null ) {
             normalInfoWarning.setVisible( true );
          } else {
@@ -1042,6 +1060,7 @@ public class MainPanel implements Initializable {
             } else {
                gender = "FEMALE";
             }
+
             Users.getInstance().updateUserNormalInfo( loginUser, nameTextField.getText()
                   , surnameTextField.getText(), birthdayDateField.getValue().format( DateTimeFormatter.ofPattern( "dd.MM.yyyy" ) )
                   , gender );
@@ -1050,8 +1069,9 @@ public class MainPanel implements Initializable {
             toGoBackUserProfile();
          }
       } else if( event.getSource() == saveUserPrivateInfo ) {
+
          if( userNameTextField.getText().length() > 0 && currentPasswordField.getText().length() > 0 && newPasswordTextField.getText().length() > 0 && verifyNewPasswordField.getText().length() > 0 ) {
-            //for database
+
             if( !newPasswordTextField.getText().equals( verifyNewPasswordField.getText() ) ) {
                privateInfoWarning.setVisible( true );
                privateInfoWarning.setText( bundle.getString( "passwordConflictLang" ) );
@@ -1158,6 +1178,7 @@ public class MainPanel implements Initializable {
          modsSettingButtonLabel.setVisible( false );
       else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive )
          homeSettingButtonLabel.setVisible( false );
+      sound( "gasLang", false );
    }
 
    //settings ---------view pane
@@ -1269,6 +1290,7 @@ public class MainPanel implements Initializable {
          languageSetter( "tr" );
          language = "TÜRKÇE";
       }
+
       Users.getInstance().updateLanguage( loginUser, language );
       userPreferenceUpdate( loginUser );
    }
@@ -1478,6 +1500,7 @@ public class MainPanel implements Initializable {
          germanLabel.setVisible( false );
       else if( event.getSource() == turkishOption )
          turkishLabel.setVisible( false );
+      sound( "gasLang", false );
    }
 
    //settings----application settings menu
@@ -1561,23 +1584,23 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == homeSettingElecButton
             || event.getSource() == homeSettingElecButtonActive ) {
          sound( "elecSettingsLang", soundCheck );
-         homeSubPaneELecLabel.setVisible( true );
+         labelOpener( homeSubPaneELecLabel, textCheck );
       } else if( event.getSource() == homeSettingGasButton
             || event.getSource() == homeSettingGasButtonActive ) {
          sound( "gasSettingsLang", soundCheck );
-         homeSubPaneGasLabel.setVisible( true );
+         labelOpener( homeSubPaneGasLabel, textCheck );
       } else if( event.getSource() == homeSettingAquButton
             || event.getSource() == homeSettingAquButtonActive ) {
          sound( "aquSettingsLang", soundCheck );
-         homeSubPaneAquLabel.setVisible( true );
+         labelOpener( homeSubPaneAquLabel, textCheck );
       } else if( event.getSource() == homeSettingGreenHouseButton
             || event.getSource() == homeSettingGreenHouseButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
-         homeSubPaneGreenHouseLabel.setVisible( true );
+         labelOpener( homeSubPaneGreenHouseLabel, textCheck );
       } else if( event.getSource() == homeSettingWeatherButton
             || event.getSource() == homeSettingWeatherButtonActive ) {
          sound( "rfidSettingsLang", soundCheck );
-         homeSubPaneWeatherLabel.setVisible( true );
+         labelOpener( homeSubPaneWeatherLabel, textCheck );
       }
    }
 
@@ -1608,7 +1631,7 @@ public class MainPanel implements Initializable {
       else if( event.getSource() == homeSettingWeatherButton
             || event.getSource() == homeSettingWeatherButtonActive )
          homeSubPaneWeatherLabel.setVisible( false );
-
+      sound( "gasLang", false );
    }
 
    void openThemeSetting() {
