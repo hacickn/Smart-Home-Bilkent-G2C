@@ -234,34 +234,13 @@
          </children></Pane>
       <Pane fx:id="settingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
          <children>
-            <JFXButton fx:id="applicationSettingsElderButton" layoutX="14.0" layoutY="150.0" onMouseEntered="#applicationSettingsElderButtonActivate" onMouseExited="#applicationSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
+            <JFXButton fx:id="applicationSettingsElderButton" layoutX="14.0" layoutY="150.0" onAction="#actionPerformed" onMouseEntered="#applicationSettingsElderButtonActivate" onMouseExited="#applicationSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
             <Label fx:id="applicationSettingsElderLabel" alignment="CENTER" disable="true" layoutX="14.0" layoutY="259.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="Application" textFill="WHITE" visible="false">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </Label>
             <Line fx:id="applicationSettingsElderLine" disable="true" endX="33.29289245605469" layoutX="130.0" layoutY="259.0" opacity="0.99" startX="-116.00001525878906" visible="false" />
-            <JFXButton fx:id="modsSettingsElderButton" layoutX="325.0" layoutY="150.0" onMouseEntered="#modsSettingsElderButtonActivate" onMouseExited="#modsSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
-            <Label fx:id="modsSettingsElderLabel" alignment="CENTER" disable="true" layoutX="325.0" layoutY="259.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="Mods" textFill="WHITE" visible="false">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="24.0" />
-               </font>
-            </Label>
-            <Line fx:id="modsSettingsElderLine" disable="true" endX="100.0" layoutX="376.0" layoutY="259.0" opacity="0.99" startX="-50.70709228515625" visible="false" />
-            <JFXButton fx:id="themeSettingsElderButton" layoutX="636.0" layoutY="150.0" onMouseEntered="#themeSettingsElderButtonActivate" onMouseExited="#themeSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
-            <Label fx:id="themeSettingsElderLabel" alignment="CENTER" disable="true" layoutX="636.0" layoutY="259.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="Theme" textFill="WHITE" visible="false">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="24.0" />
-               </font>
-            </Label>
-            <Line fx:id="themeSettingsElderLine" disable="true" endX="27.79290771484375" layoutX="756.0" layoutY="259.0" opacity="0.99" startX="-119.99993896484375" visible="false" />
-            <JFXButton fx:id="usersSettingsElderButton" layoutX="170.0" layoutY="150.0" onMouseEntered="#usersSettingsElderButtonActivate" onMouseExited="#usersSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
-            <Label fx:id="usersSettingsElderLabel" alignment="CENTER" disable="true" layoutX="170.0" layoutY="259.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="User Settings" textFill="WHITE" visible="false">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="24.0" />
-               </font>
-            </Label>
-            <Line fx:id="usersSettingsElderLine" disable="true" endX="22.29290771484375" layoutX="296.0" layoutY="259.0" opacity="0.99" startX="-126.00001525878906" visible="false" />
             <JFXButton fx:id="homeSettingsElderButton" layoutX="480.0" layoutY="150.0" onMouseEntered="#homeSettingsElderButtonActivate" onMouseExited="#homeSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
             <Label fx:id="homeSettingsElderLabel" alignment="CENTER" disable="true" layoutX="480.0" layoutY="259.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="House" textFill="WHITE" visible="false">
                <font>
@@ -283,13 +262,6 @@
                </font>
             </Label>
             <Line fx:id="emergencySettingsElderLine" disable="true" endX="59.29290771484375" layoutX="260.0" layoutY="468.0" opacity="0.99" startX="-90.00001525878906" visible="false" />
-            <JFXButton fx:id="notificationSettingsElderButton" layoutX="325.0" layoutY="359.0" onMouseEntered="#notificationSettingsElderButtonActivate" onMouseExited="#notificationSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
-            <Label fx:id="notificationSettingsElderLabel" alignment="CENTER" disable="true" layoutX="325.0" layoutY="468.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="Notifications" textFill="WHITE" visible="false">
-               <font>
-                  <Font name="Microsoft JhengHei Light" size="24.0" />
-               </font>
-            </Label>
-            <Line fx:id="notificationSettingsElderLine" disable="true" endX="60.29290771484375" layoutX="414.0" layoutY="468.0" opacity="0.99" startX="-88.70709228515625" visible="false" />
             <JFXButton fx:id="connectionSettingsElderButton" layoutX="480.0" layoutY="359.0" onMouseEntered="#connectionSettingsElderButtonActivate" onMouseExited="#connectionSettingsElderButtonDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
             <Label fx:id="connectionSettingsElderLabel" alignment="CENTER" disable="true" layoutX="480.0" layoutY="468.0" opacity="0.8" prefHeight="41.0" prefWidth="150.0" text="Connection" textFill="WHITE" visible="false">
                <font>
@@ -307,12 +279,31 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="houseMenuFirstLabelElder1" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+            <Label fx:id="houseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
                <font>
                   <Font name="Microsoft YaHei Light" size="36.0" />
                </font>
             </Label>
          </children></Pane>
+      <Pane fx:id="applicationElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <JFXButton fx:id="applicationBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#applicationBackButtonElderActivate" onMouseExited="#applicationBackButtonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="applicationMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="applicationBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Pane fx:id="userSettingsElderPanelMenu" disable="true" prefHeight="606.0" prefWidth="801.0" visible="false">
          <children>
             <JFXButton fx:id="userProfileBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#userProfileBackButtonElderActivate" onMouseExited="#userProfileBackButtonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">

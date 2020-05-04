@@ -223,33 +223,6 @@ public class ElderMainPanel implements Initializable {
    private Line applicationSettingsElderLine;
 
    @FXML
-   private JFXButton modsSettingsElderButton;
-
-   @FXML
-   private Label modsSettingsElderLabel;
-
-   @FXML
-   private Line modsSettingsElderLine;
-
-   @FXML
-   private JFXButton themeSettingsElderButton;
-
-   @FXML
-   private Label themeSettingsElderLabel;
-
-   @FXML
-   private Line themeSettingsElderLine;
-
-   @FXML
-   private JFXButton usersSettingsElderButton;
-
-   @FXML
-   private Label usersSettingsElderLabel;
-
-   @FXML
-   private Line usersSettingsElderLine;
-
-   @FXML
    private JFXButton homeSettingsElderButton;
 
    @FXML
@@ -277,15 +250,6 @@ public class ElderMainPanel implements Initializable {
    private Line emergencySettingsElderLine;
 
    @FXML
-   private JFXButton notificationSettingsElderButton;
-
-   @FXML
-   private Label notificationSettingsElderLabel;
-
-   @FXML
-   private Line notificationSettingsElderLine;
-
-   @FXML
    private JFXButton connectionSettingsElderButton;
 
    @FXML
@@ -301,7 +265,16 @@ public class ElderMainPanel implements Initializable {
    private Label settingsBackButtonSubLabel;
 
    @FXML
-   private Label houseMenuFirstLabelElder1;
+   private Pane applicationElderPanel;
+
+   @FXML
+   private JFXButton applicationBackButtonElder;
+
+   @FXML
+   private Label applicationMenuFirstLabelElder;
+
+   @FXML
+   private Label applicationBackButtonSubLabel;
 
    @FXML
    private Pane userSettingsElderPanelMenu;
@@ -622,7 +595,7 @@ public class ElderMainPanel implements Initializable {
    private Label speciesOfFishLabel;
 
    @FXML
-   private ChoiceBox< ? > speciesOfFishChoice;
+   private ChoiceBox<?> speciesOfFishChoice;
 
    @FXML
    private Label FeedingStartTimeLabel;
@@ -634,7 +607,7 @@ public class ElderMainPanel implements Initializable {
    private Label weeklyWaterExchangeDayAndTimeLabel;
 
    @FXML
-   private ChoiceBox< ? > weeklyWaterExchangeDayAndTimeChoice;
+   private ChoiceBox<?> weeklyWaterExchangeDayAndTimeChoice;
 
    @FXML
    private JFXTimePicker weeklyWaterExchangeDayAndTimeTimePicker;
@@ -833,6 +806,26 @@ public class ElderMainPanel implements Initializable {
          aquariumSettingsPanel.setDisable( false );
       }
       // aquariumPanelElderSettingsButton -MS 03.05.2020-
+
+      // applicationBackButtonElder -MS 04.05.2020-
+      else if ( event.getSource() == applicationBackButtonElder )
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         settingsElderPanel.setVisible( true );
+         settingsElderPanel.setDisable( false );
+      }
+      // applicationBackButtonElder END -MS 04.05.2020-
+
+      // applicationSettingsElderButton -MS 04.05.2020-
+      else if( event.getSource() == applicationSettingsElderButton )
+      {
+         settingsElderPanel.setDisable( true );
+         settingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+      // applicationSettingsElderButton END -MS 04.05.2020-
    }
 
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
@@ -1088,35 +1081,35 @@ public class ElderMainPanel implements Initializable {
    }
    //applicationSettingsElderButton -MS 23.04.2020-
 
-   //usersSettingsElder -MS 23.04.2020-
-   @FXML
-   public void usersSettingsElderButtonActivate( MouseEvent event ) {
-      usersSettingsElderLabel.setVisible( true );
-      usersSettingsElderLine.setVisible( true );
+   ////usersSettingsElder -MS 23.04.2020-
+   //@FXML
+   //public void usersSettingsElderButtonActivate( MouseEvent event ) {
+   //   usersSettingsElderLabel.setVisible( true );
+   //   usersSettingsElderLine.setVisible( true );
+   //
+   //}
+   //
+   //@FXML
+   //public void usersSettingsElderButtonDeactivate( MouseEvent event ) {
+   //   usersSettingsElderLabel.setVisible( false );
+   //   usersSettingsElderLine.setVisible( false );
+   //}
+   ////usersSettingsElder -MS 23.04.2020-
 
-   }
-
-   @FXML
-   public void usersSettingsElderButtonDeactivate( MouseEvent event ) {
-      usersSettingsElderLabel.setVisible( false );
-      usersSettingsElderLine.setVisible( false );
-   }
-   //usersSettingsElder -MS 23.04.2020-
-
-   //modsSettingsElder -MS 23.04.2020-
-   @FXML
-   public void modsSettingsElderButtonActivate( MouseEvent event ) {
-      modsSettingsElderLabel.setVisible( true );
-      modsSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void modsSettingsElderButtonDeactivate( MouseEvent event ) {
-      modsSettingsElderLabel.setVisible( false );
-      modsSettingsElderLine.setVisible( false );
-   }
-   //modsSettingsElder -MS 23.04.2020-
+   ////modsSettingsElder -MS 23.04.2020-
+   //@FXML
+   //public void modsSettingsElderButtonActivate( MouseEvent event ) {
+   //   modsSettingsElderLabel.setVisible( true );
+   //   modsSettingsElderLine.setVisible( true );
+   //
+   //}
+   //
+   //@FXML
+   //public void modsSettingsElderButtonDeactivate( MouseEvent event ) {
+   //   modsSettingsElderLabel.setVisible( false );
+   //   modsSettingsElderLine.setVisible( false );
+   //}
+   ////modsSettingsElder -MS 23.04.2020-
 
    //homeSettingsElder -MS 23.04.2020-
    @FXML
@@ -1133,20 +1126,20 @@ public class ElderMainPanel implements Initializable {
    }
    //homeSettingsElder -MS 23.04.2020-
 
-   //themeSettingsElder -MS 23.04.2020-
-   @FXML
-   public void themeSettingsElderButtonActivate( MouseEvent event ) {
-      themeSettingsElderLabel.setVisible( true );
-      themeSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void themeSettingsElderButtonDeactivate( MouseEvent event ) {
-      themeSettingsElderLabel.setVisible( false );
-      themeSettingsElderLine.setVisible( false );
-   }
-   //themeSettingsElder -MS 23.04.2020-
+   ////themeSettingsElder -MS 23.04.2020-
+   //@FXML
+   //public void themeSettingsElderButtonActivate( MouseEvent event ) {
+   //   themeSettingsElderLabel.setVisible( true );
+   //   themeSettingsElderLine.setVisible( true );
+   //
+   //}
+   //
+   //@FXML
+   //public void themeSettingsElderButtonDeactivate( MouseEvent event ) {
+   //   themeSettingsElderLabel.setVisible( false );
+   //   themeSettingsElderLine.setVisible( false );
+   //}
+   ////themeSettingsElder -MS 23.04.2020-
 
    //languageSettingsElder -MS 23.04.2020-
    @FXML
@@ -1178,19 +1171,19 @@ public class ElderMainPanel implements Initializable {
    }
    //emergencySettingsElder -MS 23.04.2020-
 
-   //notificationSettingsElder -MS 23.04.2020-
-   @FXML
-   public void notificationSettingsElderButtonActivate( MouseEvent event ) {
-      notificationSettingsElderLabel.setVisible( true );
-      notificationSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void notificationSettingsElderButtonDeactivate( MouseEvent event ) {
-      notificationSettingsElderLabel.setVisible( false );
-      notificationSettingsElderLine.setVisible( false );
-   }
+   ////notificationSettingsElder -MS 23.04.2020-
+   //@FXML
+   //public void notificationSettingsElderButtonActivate( MouseEvent event ) {
+   //   notificationSettingsElderLabel.setVisible( true );
+   //   notificationSettingsElderLine.setVisible( true );
+   //
+   //}
+   //
+   //@FXML
+   //public void notificationSettingsElderButtonDeactivate( MouseEvent event ) {
+   //   notificationSettingsElderLabel.setVisible( false );
+   //   notificationSettingsElderLine.setVisible( false );
+   //}
    //notificationSettingsElder -MS 23.04.2020-
 
    //connectionSettingsElderButton -MS 23.04.2020-
@@ -1545,4 +1538,19 @@ public class ElderMainPanel implements Initializable {
       aquariumMenuBackButtonSubLabel.setVisible( false );
    }
    //aquariumMenuBackButtonElder -MS 03.05.2020-
+
+   // applicationBackButtonElder -MS 04.05.2020-
+   @FXML
+   void applicationBackButtonElderActivate ( MouseEvent event)
+   {
+      applicationBackButtonSubLabel.setVisible( true );
+   }
+
+   @FXML
+   void applicationBackButtonElderDeactivate ( MouseEvent event)
+   {
+      applicationBackButtonSubLabel.setVisible( false );
+   }
+   // applicationBackButtonElder END -MS 04.05.2020-
+   
 }
