@@ -15,7 +15,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,6 +25,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
@@ -207,6 +207,11 @@ public class MainPanel implements Initializable {
          languageTopLabel, emergencyTopLabel,
          notificationTopLabel, connectionTopLabel,
          removeAnUser;
+   @FXML
+   private ToggleButton internalSirenToggle, externalSirenToggle,
+         fireButtonVisualToggle, gasSensorVisualToggle,
+         smokeSensorVisualToggle, fireButtonSoundToggle,
+         smokeSensorSoundToggle, gasSensorSoundToggle;
 
    //settings pane ----users settings variables----
    @FXML
@@ -334,20 +339,19 @@ public class MainPanel implements Initializable {
 
    private ResourceBundle bundle;
    private AudioClip audioClip;
-   private Boolean soundCheck;
-   private Boolean soundCheckEx;
-   private Boolean textCheck;
+   private boolean soundCheck;
+   private boolean textCheck;
    private String volume;
    private SpeechUtils speechUtils;
    private LocalDate localDate;
    private DateTimeFormatter dateTimeFormatter;
-   public User loginUser;
+   private User loginUser;
    private WeatherForecast weatherForecast;
    private Home home;
    private Arduino arduino;
    private Rectangle rectangle;
    private FillTransition fillTransition;
-   private boolean emergencyControl;
+   private boolean isArduinoConnect;
 
    //initialize method(it runs before the program start to run)
    @Override
@@ -360,7 +364,7 @@ public class MainPanel implements Initializable {
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
       audioClip.setRate( 1.1 );
       speechUtils = new SpeechUtils();
-      emergencyControl = true;
+      isArduinoConnect = false;
 
       ElectricityUsage.getInstance().getElectricityUsage();
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
@@ -373,18 +377,26 @@ public class MainPanel implements Initializable {
 
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );
+         settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+         settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+         settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+         settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+         informationTime.setText( weatherForecast.getLocalTime() );
+         settingWeatherLocationTextField.setText( loginUser.getLocation() );
+         backgroundSetup( weatherForecast.getWeather() );
+         menuWeatherValue.setText( weatherForecast.getWeather() + " " + weatherForecast.getTemperature() + "°C" );
       } catch( IOException e ) {
-         e.printStackTrace();
+         settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+         settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+         settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+         settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+         informationTime.setText( bundle.getString( "netConnectionLang" ) );
+         settingWeatherLocationTextField.setText( loginUser.getLocation() );
+         backgroundSetup( "weather" );
+         menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
 
-      settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
-      settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
-      settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
-      settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
-      informationTime.setText( weatherForecast.getLocalTime() );
-      settingWeatherLocationTextField.setText( loginUser.getLocation() );
-      backgroundSetup( weatherForecast.getWeather() );
-      menuWeatherValue.setText( weatherForecast.getWeather() + " " + weatherForecast.getTemperature() + "°C" );
+
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
 
@@ -499,18 +511,16 @@ public class MainPanel implements Initializable {
          portChooser.getItems().add( portNames[ k ].getSystemPortName() );
    }
 
-   void createEmergencyAnimation(  ) {
-         emergencyControl = false;
-         rectangle = new Rectangle( 0, 0, 800, 800 );
-         rectangle.setDisable( true );
-         fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
-         fillTransition.setCycleCount( 20 );
-         fillTransition.setAutoReverse( true );
-         firstStackPane.getChildren().add( rectangle );
-         rectangle.setVisible( false );
+   void createEmergencyAnimation() {
+      rectangle = new Rectangle( 0, 0, 800, 800 );
+      rectangle.setDisable( true );
+      fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
+      fillTransition.setCycleCount( 20 );
+      fillTransition.setAutoReverse( true );
+      firstStackPane.getChildren().add( rectangle );
+      rectangle.setVisible( false );
 
    }
-
 
 
    void updateUsersTable() {
@@ -791,7 +801,8 @@ public class MainPanel implements Initializable {
          closeAllMenuView();
          menuGardenLightPane.setVisible( true );
       } else if( event.getSource() == doorButton ) {
-         home.getDoor().open( true );
+         if( isArduinoConnect )
+            home.getDoor().open( true );
       } else if( event.getSource() == menuBulkChange ) {
          closeAllMenuView();
          menuBulkChangePane.setVisible( true );
@@ -859,7 +870,8 @@ public class MainPanel implements Initializable {
             message.append( "R0" );
 
          message.append( ":" );
-         home.adjustCollective( message.toString() );
+         if( isArduinoConnect )
+            home.adjustCollective( message.toString() );
 
          openGardenLight( gardenLightRadioButton.isSelected() );
          openWater( waterRadioButton.isSelected() );
@@ -897,7 +909,8 @@ public class MainPanel implements Initializable {
                message.append( menuDatePicker.getValue().getMonthValue() );
             message.append( menuDatePicker.getValue().getYear() + ":" );
 
-            home.adjustCollective( message.toString() );
+            if( isArduinoConnect )
+               home.adjustCollective( message.toString() );
             System.out.println( message.toString() );
          }
       } else if( event.getSource() == incomingWaterRadioButton ) {
@@ -925,19 +938,24 @@ public class MainPanel implements Initializable {
    void openMenuPaneToggles( ActionEvent event ) {
       if( event.getSource() == elecSubMenuToggleButton ) {
          openElectricity( elecSubMenuToggleButton.isSelected() );
-         home.getElectricity().open( elecSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getElectricity().open( elecSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == gasSubMenuToggleButton ) {
          openGas( gasSubMenuToggleButton.isSelected() );
-         home.getGas().open( gasSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getGas().open( gasSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == aquariumSubMenuToggleButton ) {
          openAquarium( aquariumSubMenuToggleButton.isSelected() );
-         home.getAquarium().open( aquariumSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getAquarium().open( aquariumSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == waterSubMenuToggleButton ) {
          openWater( waterSubMenuToggleButton.isSelected() );
-         home.getWater().open( waterSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getWater().open( waterSubMenuToggleButton.isSelected() );
       } else if( event.getSource() == gardenLightSubMenuToggleButton ) {
          openGardenLight( gardenLightSubMenuToggleButton.isSelected() );
-         home.getGardenLight().open( gardenLightSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getGardenLight().open( gardenLightSubMenuToggleButton.isSelected() );
       }
    }
 
@@ -1541,6 +1559,7 @@ public class MainPanel implements Initializable {
 
          if( arduino.openConnection() ) {
             String out;
+            isArduinoConnect = true;
             portConnectionButton.setDisable( true );
             home = new Home( arduino );
             home.adjustCollective( "manual_on#:" );
@@ -1567,7 +1586,7 @@ public class MainPanel implements Initializable {
                   out = out.replace( "\n", "" ).replace( "\r", "" );
 
                   if( !out.isEmpty() ) {
-                     System.out.println(out);
+                     System.out.println( out );
                      if( out.equals( "FireButon" )
                            || out.equals( "SmokeAlarm" )
                            || out.equals( "GasAlarm" )
@@ -1575,7 +1594,7 @@ public class MainPanel implements Initializable {
                            || out.equals( "Gas+Smokealarm" )
                            || out.equals( "Gas+Smoke" )
                            || out.equals( "Gas+Smoke+Fire" ) ) {
-                        if( fillTransition.getCurrentRate()==0.0d) {
+                        if( fillTransition.getCurrentRate() == 0.0d ) {
                            fillTransition.play();
                            rectangle.setVisible( true );
                         }
@@ -1665,6 +1684,11 @@ public class MainPanel implements Initializable {
             || event.getSource() == homeSettingWeatherButtonActive )
          homeSubPaneWeatherLabel.setVisible( false );
       sound( "gasLang", false );
+   }
+
+   @FXML
+   void applicationSettingToggleButtonsOnAction( ActionEvent event ){
+
    }
 
    void openThemeSetting() {
@@ -2024,7 +2048,6 @@ public class MainPanel implements Initializable {
             soundControl( true );
          } else {
             soundControl( false );
-            soundCheckEx = false;
          }
          modsSound = soundCheck + volume;
       }
@@ -2043,7 +2066,7 @@ public class MainPanel implements Initializable {
 
    //settings pane----home settings pane
    @FXML
-   void homeSettingButtons( ActionEvent event ) throws IOException, SQLException {
+   void homeSettingButtons( ActionEvent event ) throws SQLException {
       if( event.getSource() == homeSettingElecButton ) {
          closeAllHomeSetting();
          settingElecSettingPane.setVisible( true );
@@ -2071,15 +2094,29 @@ public class MainPanel implements Initializable {
          homeSettingWeatherButtonActive.setVisible( true );
       } else if( event.getSource() == updateWeatherButton ) {
          if( settingWeatherLocationTextField.getText().length() > 0 ) {
-            weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
-            weatherForecast.getWeatherCase();
-            settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
-            settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
-            settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
-            settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
-            informationTime.setText( weatherForecast.getLocalTime() );
-            Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-            backgroundSetup( weatherForecast.getWeather() );
+            try {
+               if( weatherForecast == null )
+                  weatherForecast = new WeatherForecast( loginUser.getLocation() );
+               else {
+                  weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+                  weatherForecast.getWeatherCase();
+               }
+               settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+               settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+               settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+               settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+               informationTime.setText( weatherForecast.getLocalTime() );
+               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+               backgroundSetup( weatherForecast.getWeather() );
+            } catch( IOException exception ) {
+               settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+               settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+               settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+               settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+               informationTime.setText( bundle.getString( "netConnectionLang" ) );
+               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+               backgroundSetup( "weather" );
+            }
          } else {
             informationTime.setText( "Please enter the location" );
          }
@@ -2130,8 +2167,8 @@ public class MainPanel implements Initializable {
             else
                message.append( ( int ) airMotorRunTime.getValue() + ":" );
 
+            if( isArduinoConnect )
             home.getAquarium().setAquariumSettings( message.toString() );
-            System.out.println( message.toString() );
          }
       }
    }
@@ -2155,18 +2192,23 @@ public class MainPanel implements Initializable {
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
       else if( weather.equals( "Moderate or heavy rain shower" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
+      else if( weather.equals( "weather" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
 
    }
 
    @FXML
    void settingToggleButtonsAction( ActionEvent event ) {
       if( event.getSource() == settingElectricityToggleButton ) {
+         if( isArduinoConnect )
          home.getElectricity().open( settingElectricityToggleButton.isSelected() );
          openElectricity( settingElectricityToggleButton.isSelected() );
       } else if( event.getSource() == settingGasToggleButton ) {
+         if( isArduinoConnect )
          home.getGas().open( settingElectricityToggleButton.isSelected() );
          openGas( settingElectricityToggleButton.isSelected() );
       } else if( event.getSource() == settingAquariumToggleButton ) {
+         if( isArduinoConnect )
          home.getAquarium().open( settingAquariumToggleButton.isSelected() );
          openAquarium( settingAquariumToggleButton.isSelected() );
       }

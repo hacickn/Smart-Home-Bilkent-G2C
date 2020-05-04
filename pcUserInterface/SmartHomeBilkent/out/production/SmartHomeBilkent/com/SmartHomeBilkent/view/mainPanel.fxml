@@ -57,7 +57,7 @@
             </AnchorPane>
 
             <AnchorPane layoutX="50.0" layoutY="136.0" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
-                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0">
+                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0" visible="false">
                     <children>
                         <BorderPane fx:id="menuBorderPane" opacity="0.9" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane">
                             <left>
@@ -557,7 +557,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
+                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                             <children>
@@ -631,7 +631,7 @@
                                     <children>
                                         <Label fx:id="themeTopLabel" alignment="CENTER" layoutX="197.0" layoutY="14.0" prefHeight="31.0" prefWidth="307.0" styleClass="tempLabel" text="THEMES">
                                             <font>
-                                                <Font name="Agency FB" size="25.0" />
+                                                <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
                                         <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="51.0" layoutY="65.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="150.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
@@ -676,11 +676,11 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                                <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
                                     <children>
                                         <Label fx:id="languageTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="31.0" prefWidth="299.0" styleClass="tempLabel" text="LANGUAGES">
                                             <font>
-                                                <Font name="Agency FB" size="25.0" />
+                                                <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
                                         <JFXButton fx:id="englishOption" layoutX="80.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 100;" styleClass="english" text="english" textFill="TRANSPARENT" />
@@ -703,29 +703,72 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingEmergencyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                                <Pane fx:id="settingEmergencyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
                                     <children>
                                         <Label fx:id="emergencyTopLabel" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="31.0" prefWidth="551.0" styleClass="tempLabel" text="EMERGENCY">
                                             <font>
-                                                <Font name="Agency FB" size="25.0" />
+                                                <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
+                              <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="INTERNAL SIREN">
+                                 <font>
+                                    <Font name="Agency FB" size="21.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="EXTERNAL SIREN">
+                                 <font>
+                                    <Font name="Agency FB" size="21.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="308.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage" />
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
                                     <children>
                                         <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="31.0" prefWidth="353.0" styleClass="tempLabel" text="NOTIFICATIONS">
                                             <font>
-                                                <Font name="Agency FB" size="25.0" />
+                                                <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="-27.0" layoutY="150.0" prefHeight="23.0" prefWidth="227.0" styleClass="tempLabel" text="FIRE BUTTON">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="-15.0" layoutY="207.0" prefHeight="23.0" prefWidth="216.0" styleClass="tempLabel" text="GAS SENSOR">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="-13.0" layoutY="260.0" prefHeight="23.0" prefWidth="214.0" styleClass="tempLabel" text="SMOKE SENSOR">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="236.0" layoutY="106.0" styleClass="tempLabel" text="VISUAL WARNING">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="386.0" layoutY="106.0" styleClass="tempLabel" text="AUDITORY WARNING">
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font>
+                              </Label>
+                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0" startY="144.0" />
                                     </children>
                                 </Pane>
                                 <Pane fx:id="settingConnectionPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <Label fx:id="connectionTopLabel" alignment="CENTER" layoutX="179.0" layoutY="14.0" prefHeight="31.0" prefWidth="341.0" styleClass="tempLabel" text="CONNECTIONS">
                                             <font>
-                                                <Font name="Agency FB" size="25.0" />
+                                                <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
                                         <Line endX="-3.0" endY="-9.0" layoutX="353.0" layoutY="73.0" startX="-3.0" startY="255.0" />
@@ -937,12 +980,12 @@
                                         <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettings" text="themeSetting" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="languageSettingButton" layoutX="160.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettings" text="languageSetting" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="emergencySettingButton" layoutX="281.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettings" text="emergencySetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="phoneNotificationSettingButton" layoutX="413.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="phoneNotificationSettings" text="phoneNotificationSetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="phoneNotificationSettingButton" layoutX="413.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettings" text="phoneNotificationSetting" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="smartHomeConnectionSettingButton" layoutX="517.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettings" text="smartHomeConnectionSetting" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="themeSettingButtonActive" layoutX="39.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettingsActive" text="themeSettingActive" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="languageSettingButtonActive" layoutX="160.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettingsActive" text="languageSettingActive" textFill="TRANSPARENT" visible="false" />
                                         <JFXButton fx:id="emergencySettingButtonActive" layoutX="281.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettingsActive" text="emergencySettingActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="phoneNotificationSettingsActive" text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettingsActive" text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false" />
                                         <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettingsActive" text="smartHomeConnectionSettingActive" textFill="TRANSPARENT" visible="false" />
                                         <Label fx:id="themeSubLabel" alignment="CENTER" layoutX="-3.0" layoutY="67.0" prefHeight="18.0" prefWidth="135.0" styleClass="tempLabel" text="THEME" visible="false">
                                             <font>

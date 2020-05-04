@@ -387,16 +387,16 @@
      -fx-background-size: cover;
 }
 
-.phoneNotificationSettings{
-     -fx-background-image: url("images/phoneNotification5.png");
+.notificationSettings{
+     -fx-background-image: url("images/notification5.png");
      -fx-background-size: cover;
 }
-.phoneNotificationSettings:hover{
-     -fx-background-image: url("images/phoneNotification4.png");
+.notificationSettings:hover{
+     -fx-background-image: url("images/notification4.png");
      -fx-background-size: cover;
 }
-.phoneNotificationSettingsActive{
-     -fx-background-image: url("images/phoneNotification4.png");
+.notificationSettingsActive{
+     -fx-background-image: url("images/notification4.png");
      -fx-background-size: cover;
 }
 
