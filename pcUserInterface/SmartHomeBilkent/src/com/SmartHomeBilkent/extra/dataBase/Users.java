@@ -287,6 +287,12 @@ public class Users {
       user.setText( text );
    }
 
+   /**
+    * it is a updateLocation method update user location information
+    *
+    * @param user     is a String input parameter
+    * @param location is a String input parameter
+    */
    public void updateLocation( User user, String location ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();

@@ -1,7 +1,6 @@
 package com.SmartHomeBilkent.home.features;
 
 import arduino.Arduino;
-import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 
 /**
  * a Aquarium class
@@ -27,15 +26,32 @@ public class Aquarium extends Communication {
 
 
    //constructor
+
+   /**
+    * it is a Aquarium constructor
+    *
+    * @param arduino is an Arduino input parameter
+    */
    public Aquarium( Arduino arduino ) {
       super( arduino );
    }
 
    //methods
+
+   /**
+    * it is a isActive method
+    *
+    * @return result as a boolean
+    */
    public boolean isActive() {
       return check;
    }
 
+   /**
+    * it is a open method that open air motor according to input parameter
+    *
+    * @param control is a boolean input parameter
+    */
    public void open( boolean control ) {
       if( control )
          arduino.serialWrite( AIR_MOTOR_ON );
@@ -44,6 +60,11 @@ public class Aquarium extends Communication {
       check = control;
    }
 
+   /**
+    * it is a feedingOpen that open feed motor according to input parameter
+    *
+    * @param control is a boolean input parameter
+    */
    public void feedingOpen( boolean control ) {
       if( control )
          arduino.serialWrite( FEEDING_ON );
@@ -51,17 +72,33 @@ public class Aquarium extends Communication {
          arduino.serialWrite( FEEDING_OFF );
    }
 
-
+   /**
+    * it is a setAquariumSettings method
+    *
+    * @param message is a String input parameter
+    */
    public void setAquariumSettings( String message ) {
       arduino.serialWrite( message );
    }
 
+   /**
+    * it is a setAquariumSettings method
+    *
+    * @param feeding       is a String input parameter
+    * @param waterExchange is a String input parameter
+    * @param airMotor      is a String input parameter
+    */
    public void setAquariumSettings( String feeding, String waterExchange, String airMotor ) {
       detailedMessage = "aquarium#" + feeding +
             waterExchange + airMotor + ":";
       arduino.serialWrite( detailedMessage );
    }
 
+   /**
+    * it is a openIncomingWater that open incoming water according to input parameter
+    *
+    * @param control is a boolean input parameter
+    */
    public void openIncomingWater( boolean control ) {
       if( control )
          arduino.serialWrite( INCOMING_WATER_ON );
@@ -69,6 +106,11 @@ public class Aquarium extends Communication {
          arduino.serialWrite( INCOMING_WATER_OFF );
    }
 
+   /**
+    * it is a openOutgoingWater that open outgoing water according to input parameter
+    *
+    * @param control is a boolean input parameter
+    */
    public void openOutgoingWater( boolean control ) {
       if( control )
          arduino.serialWrite( OUTGOING_WATER_ON );
@@ -76,11 +118,4 @@ public class Aquarium extends Communication {
          arduino.serialWrite( OUTGOING_WATER_OFF );
    }
 
-   public void openOutgoingWater() {
-
-   }
-
-   public void closeOutgoingWater() {
-
-   }
 }

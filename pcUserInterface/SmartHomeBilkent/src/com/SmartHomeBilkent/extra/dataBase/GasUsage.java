@@ -15,10 +15,12 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * a GreenHouse class
+ * it is a GasUsage class
+ * this class get statistics of usage of gas from database
+ * and working these statistics
  *
- * @author İLKE DOĞAN
- * @version 29.04.2020
+ * @author Hacı Çakın
+ * @version 01.05.2020
  */
 public class GasUsage {
 
@@ -36,16 +38,32 @@ public class GasUsage {
    private String localTime;
 
    //constructor
+
+   /**
+    * it is a GasUsage constructor
+    */
    private GasUsage() {
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
 
    //methods
+
+   /**
+    * it is a getInstance method that provide the access to ElectricityUsage
+    *
+    * @return result as a GasUsage
+    */
    public static GasUsage getInstance() {
       return instance;
    }
 
+   /**
+    * it is a getGasUsage method that get all data from database
+    * and put it in ObservableList
+    *
+    * @return result as a ObservableList< Usage >
+    */
    public ObservableList< Usage > getGasUsage() {
       usageList = FXCollections.observableArrayList();
       try {
@@ -66,11 +84,16 @@ public class GasUsage {
       }
    }
 
+   /**
+    * it is a calculateUsage method that calculate the total usage per day
+    *
+    * @return result as a ObservableList< Integer >
+    */
    public ObservableList< Integer > calculateUsage() {
       daysOfUsage = FXCollections.observableArrayList();
       int hours;
 
-      for( int m = 0; m < usageList.size(); m++) {
+      for( int m = 0; m < usageList.size(); m++ ) {
          hours = 0;
 
          if( !usageList.get( m ).getActivity().isEmpty() ) {
@@ -94,8 +117,8 @@ public class GasUsage {
                         ( Integer.parseInt( detailUsage[ k ].substring( 4 ) ) ) ) / 60 );
                }
             }
-         }else {
-            if ( usageList.get( m - 1 ).getActivity().charAt( usageList.get( m - 1 ).getActivity().length() - 6 ) == 'O' )
+         } else {
+            if( usageList.get( m - 1 ).getActivity().charAt( usageList.get( m - 1 ).getActivity().length() - 6 ) == 'O' )
                hours = 24;
             else {
                hours = 0;
@@ -106,6 +129,11 @@ public class GasUsage {
       return daysOfUsage;
    }
 
+   /**
+    * it is a getTable method that add all data to given chart
+    *
+    * @param barChart is a BarChart< Number, Number > input parameter
+    */
    public void getTable( BarChart< Number, Number > barChart ) {
       XYChart.Series dataSeries;
       dataSeries = new XYChart.Series();
@@ -117,6 +145,12 @@ public class GasUsage {
 
    }
 
+   /**
+    * it is a updateGas method that watching activities( opening or closing )
+    * and write them to database according to suitable way
+    *
+    * @param control as a boolean input parameter
+    */
    public void updateGas( boolean control ) {
       localDate = LocalDate.now().format( dateTimeFormatter );
       if( LocalTime.now().getHour() < 0 )
@@ -134,27 +168,27 @@ public class GasUsage {
       else
          localTime = "C" + localTime;
 
-      try{
+      try {
          Statement statement;
          ResultSet resultSet;
 
          statement = connection.createStatement();
          resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_GAS +
-               " WHERE " + TABLE_DAY_COLUMN + "='" + localDate + "'");
+               " WHERE " + TABLE_DAY_COLUMN + "='" + localDate + "'" );
 
          if( !resultSet.next() ) {
             statement.execute( "INSERT INTO " +
                   TABLE_GAS + " VALUES ('" +
                   localDate + "', '" +
                   localTime + "')" );
-         }else{
+         } else {
             statement.execute( " UPDATE " + TABLE_GAS +
                   " SET " +
                   TABLE_USAGE_COLUMN + " = '" + resultSet.getString( TABLE_USAGE_COLUMN ) + "@" + localTime + "' " +
                   " WHERE " +
                   TABLE_DAY_COLUMN + "='" + localDate + "'" );
          }
-      }catch( SQLException exception ) {
+      } catch( SQLException exception ) {
          exception.printStackTrace();
       }
    }

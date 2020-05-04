@@ -1,5 +1,11 @@
 package com.SmartHomeBilkent.extra.dataBase.fields;
 
+/**
+ * a Fish class
+ *
+ * @author METEHAN SAÇAKÇI
+ * @version 01.05.2020
+ */
 public class Fish {
    //properties
    private String species;

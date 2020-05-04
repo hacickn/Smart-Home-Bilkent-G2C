@@ -61,158 +61,290 @@ public class User extends RecursiveTreeObject< User > {
       this.location = new SimpleStringProperty( location );
    }
 
+   /**
+    * it is a getName method
+    *
+    * @return result as a String
+    */
    public String getName() {
       return name.get();
    }
 
+   /**
+    * it is a getEnter method
+    *
+    * @return result as a String
+    */
    public String getEnter() {
       return enter.get();
    }
 
-   public StringProperty enterProperty() {
-      return enter;
-   }
-
+   /**
+    * it is a setEnter method
+    *
+    * @param enter is a String input parameter
+    */
    public void setEnter( String enter ) {
       this.enter.set( enter );
    }
 
+   /**
+    * it is a nameProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty nameProperty() {
       return name;
    }
 
+   /**
+    * it is a setName method
+    *
+    * @return result as a String
+    */
    public void setName( String name ) {
       this.name.set( name );
    }
 
+   /**
+    * it is a getSurname method
+    *
+    * @return result as a String
+    */
    public String getSurname() {
       return surname.get();
    }
 
+   /**
+    * it is a surnameProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty surnameProperty() {
       return surname;
    }
 
+   /**
+    * it is a setSurname method
+    *
+    * @param surname is a String input parameter
+    */
    public void setSurname( String surname ) {
       this.surname.set( surname );
    }
 
+   /**
+    * it is a getBirthday method
+    *
+    * @return result as a String
+    */
    public String getBirthday() {
       return birthday.get();
    }
 
+   /**
+    * it is a birthdayProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty birthdayProperty() {
       return birthday;
    }
 
+   /**
+    * it is a setBirthday method
+    *
+    * @param birthday is a String input parameter
+    */
    public void setBirthday( String birthday ) {
       this.birthday.set( birthday );
    }
 
+   /**
+    * it is a getGender method
+    *
+    * @return result as a String
+    */
    public String getGender() {
       return gender.get();
    }
 
+   /**
+    * it is a genderProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty genderProperty() {
       return gender;
    }
 
+   /**
+    * it is a setGender method
+    *
+    * @param gender is a String input parameter
+    */
    public void setGender( String gender ) {
       this.gender.set( gender );
    }
 
+   /**
+    * it is a getText method
+    *
+    * @return result as a String
+    */
    public String getText() {
       return text.get();
    }
 
-   public StringProperty textProperty() {
-      return text;
-   }
-
+   /**
+    * it is a setText method
+    *
+    * @param text is a String input parameter
+    */
    public void setText( String text ) {
       this.text.set( text );
    }
 
+   /**
+    * it is a getSound method
+    *
+    * @return result as a String
+    */
    public String getSound() {
       return sound.get();
    }
 
-   public StringProperty soundProperty() {
-      return sound;
-   }
-
+   /**
+    * it is a setSound method
+    *
+    * @param sound is a String input parameter
+    */
    public void setSound( String sound ) {
       this.sound.set( sound );
    }
 
+   /**
+    * it is a getUserName method
+    *
+    * @return result as a String
+    */
    public String getUserName() {
       return userName.get();
    }
 
+   /**
+    * it is a userNameProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty userNameProperty() {
       return userName;
    }
 
+   /**
+    * it is a setUserName method
+    *
+    * @param userName is a String input parameter
+    */
    public void setUserName( String userName ) {
       this.userName.set( userName );
    }
 
+   /**
+    * it is a getPassword method
+    *
+    * @return result as a String
+    */
    public String getPassword() {
       return password.get();
    }
 
-   public StringProperty passwordProperty() {
-      return password;
-   }
-
+   /**
+    * it is a setPassword method
+    *
+    * @param password is a String input parameter
+    */
    public void setPassword( String password ) {
       this.password.set( password );
    }
 
+   /**
+    * it is a getUserType method
+    *
+    * @return result as a String
+    */
    public String getUserType() {
       return userType.get();
    }
 
-   public StringProperty userTypeProperty() {
-      return userType;
-   }
-
-   public void setUserType( String userType ) {
-      this.userType.set( userType );
-   }
-
+   /**
+    * it is a getPreferredTheme method
+    *
+    * @return result as a String
+    */
    public String getPreferredTheme() {
       return preferredTheme.get();
    }
 
+   /**
+    * it is a preferredThemeProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty preferredThemeProperty() {
       return preferredTheme;
    }
 
+   /**
+    * it is a setPreferredTheme method
+    *
+    * @param preferredTheme is a String input parameter
+    */
    public void setPreferredTheme( String preferredTheme ) {
       this.preferredTheme.set( preferredTheme );
    }
 
+   /**
+    * it is a getPreferredLanguage method
+    *
+    * @return result as a String
+    */
    public String getPreferredLanguage() {
       return preferredLanguage.get();
    }
 
+   /**
+    * it is a preferredLanguageProperty method
+    *
+    * @return result as a StringProperty
+    */
    public StringProperty preferredLanguageProperty() {
       return preferredLanguage;
    }
 
+   /**
+    * it is a setPreferredLanguage method
+    *
+    * @param preferredLanguage is a String input parameter
+    */
    public void setPreferredLanguage( String preferredLanguage ) {
       this.preferredLanguage.set( preferredLanguage );
    }
 
+   /**
+    * it is a getLocation method
+    *
+    * @return result as a String
+    */
    public String getLocation() {
       return location.get();
    }
 
-   public StringProperty locationProperty() {
-      return location;
-   }
-
+   /**
+    * it is a setLocation method
+    *
+    * @param location is a String input parameter
+    */
    public void setLocation( String location ) {
       this.location.set( location );
    }

@@ -13,7 +13,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ * a GreenHouseDatas class
+ *
+ * @author İLKE DOĞAN
+ * @version 01.05.2020
+ */
 public class GreenHouseDatas {
    //properties
    private static final String TABLE_GREEN_HOUSE = "GREENHOUSE";

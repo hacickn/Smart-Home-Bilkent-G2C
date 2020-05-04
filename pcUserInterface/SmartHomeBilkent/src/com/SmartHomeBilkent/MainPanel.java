@@ -2,7 +2,6 @@ package com.SmartHomeBilkent;
 
 import arduino.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
-import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -30,7 +29,10 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -39,7 +41,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -58,7 +59,7 @@ public class MainPanel implements Initializable {
    @FXML
    private BorderPane firstStackPane;
    @FXML
-   private StackPane  menuStackPane;
+   private StackPane menuStackPane;
    @FXML
    private AnchorPane menuAnchorPane;
    @FXML
@@ -248,10 +249,10 @@ public class MainPanel implements Initializable {
    @FXML
    private SplitPane settingModePane;
    @FXML
-   private JFXToggleButton textModeToggle, soundModeToggle ;
+   private JFXToggleButton textModeToggle, soundModeToggle;
    @FXML
-   private Label  soundVolumeLabel, interactiveTextModeLabel,
-           interactiveSoundModeLabel;
+   private Label soundVolumeLabel, interactiveTextModeLabel,
+         interactiveSoundModeLabel;
    @FXML
    private JFXSlider soundVolumeSlider;
 
@@ -296,7 +297,7 @@ public class MainPanel implements Initializable {
    @FXML
    private BarChart< Number, Number > electricityUsageTable, gasUsageTable;
    @FXML
-   private LineChart<Number, Number> greenHouseValuesChart;
+   private LineChart< Number, Number > greenHouseValuesChart;
    @FXML
    private CategoryAxis elecBarChartX, gasBarChartX;
 
@@ -326,7 +327,7 @@ public class MainPanel implements Initializable {
    //program variables
    @FXML
    private JFXComboBox< String > portChooser, speciesOfFishComboBox;
-   
+
    private ResourceBundle bundle;
    private AudioClip audioClip;
    private Boolean soundCheck;
@@ -559,13 +560,13 @@ public class MainPanel implements Initializable {
          sound( "aquSettingsLang", soundCheck );
       } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == greenhouseSubMenuButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
-      } else if( event.getSource() == menuWaterButton){
+      } else if( event.getSource() == menuWaterButton ) {
          sound( "waterLang", soundCheck );
-      } else if( event.getSource() == menuGardenLightButton){
+      } else if( event.getSource() == menuGardenLightButton ) {
          sound( "gardenLightLang", soundCheck );
-      } else if( event.getSource() == menuBulkChange){
+      } else if( event.getSource() == menuBulkChange ) {
          sound( "bulkChangesLang", soundCheck );
-      } else if( event.getSource() == menuTimeConfigurationButton){
+      } else if( event.getSource() == menuTimeConfigurationButton ) {
          sound( "timeConfigurationLang", soundCheck );
       } else if( event.getSource() == doorButton ) {
          sound( "doorLang", soundCheck );
@@ -1529,15 +1530,16 @@ public class MainPanel implements Initializable {
                public void serialEvent( SerialPortEvent serialPortEvent ) {
                   if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
                      return;
-                  home.getArduino().getSerialPort().setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
-                  String out="";
-                  Scanner in = new Scanner(home.getArduino().getSerialPort().getInputStream());
-                  try
-                  {
-                     while(in.hasNext())
-                        out += (in.next());
+                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0 );
+                  String out = "";
+                  Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+                  try {
+                     while( in.hasNext() )
+                        out += ( in.next() );
                      //in.close();
-                  } catch (Exception e) { e.printStackTrace(); }
+                  } catch( Exception e ) {
+                     e.printStackTrace();
+                  }
                   System.out.println( out );
                }
             } );
@@ -2084,13 +2086,13 @@ public class MainPanel implements Initializable {
                message.append( airMotorStartTime.getValue().getMinute() + "00" );
 
             if( airMotorRunTime.getValue() < 10 )
-               message.append( "0" + (int)airMotorRunTime.getValue() + ":" );
+               message.append( "0" + ( int ) airMotorRunTime.getValue() + ":" );
             else
-               message.append( (int)airMotorRunTime.getValue() + ":" );
+               message.append( ( int ) airMotorRunTime.getValue() + ":" );
 
             home.getAquarium().setAquariumSettings( message.toString() );
             System.out.println( message.toString() );
-          }
+         }
       }
    }
 
@@ -2105,11 +2107,11 @@ public class MainPanel implements Initializable {
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
       else if( weather.equals( "Patches Of Fog" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
-      else if( weather.equals( "Light Rain Shower" ) ||  weather.equals( "Light rain shower" ) || weather.equals( "Patchy rain possible" ) )
+      else if( weather.equals( "Light Rain Shower" ) || weather.equals( "Light rain shower" ) || weather.equals( "Patchy rain possible" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
       else if( weather.equals( "Mist" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
-      else if( weather.equals( "Light Rain With Thunderstorm" ) || weather.equals( "Light Rain Shower" ))
+      else if( weather.equals( "Light Rain With Thunderstorm" ) || weather.equals( "Light Rain Shower" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
       else if( weather.equals( "Moderate or heavy rain shower" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );

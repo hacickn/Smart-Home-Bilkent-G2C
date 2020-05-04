@@ -14,6 +14,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * it is a ElectricityUsage class
+ * this class get statistics of usage of electricity from database
+ * and working these statistics
+ *
+ * @author Hacı Çakın
+ * @version 01.05.2020
+ */
 public class ElectricityUsage {
 
    //properties
@@ -31,16 +39,32 @@ public class ElectricityUsage {
 
 
    //constructor
+
+   /**
+    * it is a ElectricityUsage constructor
+    */
    private ElectricityUsage() {
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
 
    //methods
+
+   /**
+    * it is a getInstance method that provide the access to ElectricityUsage
+    *
+    * @return result as a ElectricityUsage
+    */
    public static ElectricityUsage getInstance() {
       return instance;
    }
 
+   /**
+    * it is a getElectricityUsage method that get all data from database
+    * and put it in ObservableList
+    *
+    * @return result as a ObservableList< Usage >
+    */
    public ObservableList< Usage > getElectricityUsage() {
       usageList = FXCollections.observableArrayList();
       try {
@@ -61,6 +85,11 @@ public class ElectricityUsage {
       }
    }
 
+   /**
+    * it is a calculateUsage method that calculate the total usage per day
+    *
+    * @return result as a ObservableList< Integer >
+    */
    public ObservableList< Integer > calculateUsage() {
       daysOfUsage = FXCollections.observableArrayList();
       int hours;
@@ -101,6 +130,11 @@ public class ElectricityUsage {
       return daysOfUsage;
    }
 
+   /**
+    * it is a getTable method that add all data to given chart
+    *
+    * @param barChart is a BarChart< Number, Number > input parameter
+    */
    public void getTable( BarChart< Number, Number > barChart ) {
       XYChart.Series dataSeries;
       dataSeries = new XYChart.Series();
@@ -112,6 +146,12 @@ public class ElectricityUsage {
 
    }
 
+   /**
+    * it is a updateElectricity method that watching activities( opening or closing )
+    * and write them to database according to suitable way
+    *
+    * @param control as a boolean input parameter
+    */
    public void updateElectricity( boolean control ) {
       localDate = LocalDate.now().format( dateTimeFormatter );
       if( LocalTime.now().getHour() < 0 )
@@ -129,27 +169,27 @@ public class ElectricityUsage {
       else
          localTime = "C" + localTime;
 
-      try{
+      try {
          Statement statement;
          ResultSet resultSet;
 
          statement = connection.createStatement();
          resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_ELECTRICITY +
-               " WHERE " + TABLE_DAY_COLUMN + "='" + localDate + "'");
+               " WHERE " + TABLE_DAY_COLUMN + "='" + localDate + "'" );
 
          if( !resultSet.next() ) {
             statement.execute( "INSERT INTO " +
                   TABLE_ELECTRICITY + " VALUES ('" +
                   localDate + "', '" +
                   localTime + "')" );
-         }else{
+         } else {
             statement.execute( " UPDATE " + TABLE_ELECTRICITY +
                   " SET " +
                   TABLE_USAGE_COLUMN + " = '" + resultSet.getString( TABLE_USAGE_COLUMN ) + "@" + localTime + "' " +
                   " WHERE " +
                   TABLE_DAY_COLUMN + "='" + localDate + "'" );
          }
-      }catch( SQLException exception ) {
+      } catch( SQLException exception ) {
          exception.printStackTrace();
       }
    }

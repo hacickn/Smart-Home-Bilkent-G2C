@@ -2,6 +2,12 @@ package com.SmartHomeBilkent.extra.dataBase.fields;
 
 import java.time.LocalDate;
 
+/**
+ * a GreenHouseValues class
+ *
+ * @author İLKE DOĞAN
+ * @version 01.05.2020
+ */
 public class GreenHouseValues {
 
    //properties
