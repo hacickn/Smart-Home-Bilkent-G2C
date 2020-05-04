@@ -560,15 +560,16 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == greenhouseSubMenuButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
       } else if( event.getSource() == menuWaterButton){
-
+         sound( "waterLang", soundCheck );
       } else if( event.getSource() == menuGardenLightButton){
-
+         sound( "gardenLightLang", soundCheck );
       } else if( event.getSource() == menuBulkChange){
-
+         sound( "bulkChangesLang", soundCheck );
       } else if( event.getSource() == menuTimeConfigurationButton){
-
+         sound( "timeConfigurationLang", soundCheck );
       } else if( event.getSource() == doorButton ) {
-         menuOpenDoorLabel.setVisible( true );
+         sound( "doorLang", soundCheck );
+         labelOpener( menuOpenDoorLabel, textCheck );
       }
    }
 
@@ -583,7 +584,6 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( false );
       }
-
       sound( "saveChangesLang", false );
    }
 
@@ -1590,7 +1590,7 @@ public class MainPanel implements Initializable {
          labelOpener( homeSubPaneGreenHouseLabel, textCheck );
       } else if( event.getSource() == homeSettingWeatherButton
             || event.getSource() == homeSettingWeatherButtonActive ) {
-         sound( "rfidSettingsLang", soundCheck );
+         sound( "weatherForecastLang", soundCheck );
          labelOpener( homeSubPaneWeatherLabel, textCheck );
       }
    }
