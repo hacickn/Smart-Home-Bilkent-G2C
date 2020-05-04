@@ -12,8 +12,10 @@ import com.fazecast.jSerialComm.SerialPortEvent;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
+import javafx.animation.FillTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,6 +36,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -341,6 +345,9 @@ public class MainPanel implements Initializable {
    private WeatherForecast weatherForecast;
    private Home home;
    private Arduino arduino;
+   private Rectangle rectangle;
+   private FillTransition fillTransition;
+   private boolean emergencyControl;
 
    //initialize method(it runs before the program start to run)
    @Override
@@ -353,6 +360,7 @@ public class MainPanel implements Initializable {
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
       audioClip.setRate( 1.1 );
       speechUtils = new SpeechUtils();
+      emergencyControl = true;
 
       ElectricityUsage.getInstance().getElectricityUsage();
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
@@ -383,6 +391,7 @@ public class MainPanel implements Initializable {
       for( int k = 1; k <= 7; k++ ) {
          waterExchangeDay.getItems().add( k + ". DAY OF WEEK" );
       }
+      createEmergencyAnimation();
    }
 
    void sound( String file, Boolean check ) {
@@ -489,6 +498,20 @@ public class MainPanel implements Initializable {
       for( int k = 0; k < portNames.length; k++ )
          portChooser.getItems().add( portNames[ k ].getSystemPortName() );
    }
+
+   void createEmergencyAnimation(  ) {
+         emergencyControl = false;
+         rectangle = new Rectangle( 0, 0, 800, 800 );
+         rectangle.setDisable( true );
+         fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
+         fillTransition.setCycleCount( 20 );
+         fillTransition.setAutoReverse( true );
+         firstStackPane.getChildren().add( rectangle );
+         rectangle.setVisible( false );
+
+   }
+
+
 
    void updateUsersTable() {
       //initialize column
@@ -1517,6 +1540,7 @@ public class MainPanel implements Initializable {
          arduino = new Arduino( portChooser.getValue(), 9600 );
 
          if( arduino.openConnection() ) {
+            String out;
             portConnectionButton.setDisable( true );
             home = new Home( arduino );
             home.adjustCollective( "manual_on#:" );
@@ -1534,13 +1558,29 @@ public class MainPanel implements Initializable {
                   String out = "";
                   Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
                   try {
-                     while( in.hasNext() )
-                        out += ( in.next() );
-                     //in.close();
+                     while( in.hasNextLine() )
+                        out = out + in.nextLine();
                   } catch( Exception e ) {
                      e.printStackTrace();
                   }
-                  System.out.println( out );
+                  out = out.replaceAll( "\\s", "" );
+                  out = out.replace( "\n", "" ).replace( "\r", "" );
+
+                  if( !out.isEmpty() ) {
+                     System.out.println(out);
+                     if( out.equals( "FireButon" )
+                           || out.equals( "SmokeAlarm" )
+                           || out.equals( "GasAlarm" )
+                           || out.equals( "Gas+Fire" )
+                           || out.equals( "Gas+Smokealarm" )
+                           || out.equals( "Gas+Smoke" )
+                           || out.equals( "Gas+Smoke+Fire" ) ) {
+                        if( fillTransition.getCurrentRate()==0.0d) {
+                           fillTransition.play();
+                           rectangle.setVisible( true );
+                        }
+                     }
+                  }
                }
             } );
          } else {
