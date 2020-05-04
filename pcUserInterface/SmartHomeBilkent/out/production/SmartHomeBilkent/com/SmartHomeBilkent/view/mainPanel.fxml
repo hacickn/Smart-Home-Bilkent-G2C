@@ -57,7 +57,7 @@
             </AnchorPane>
 
             <AnchorPane layoutX="50.0" layoutY="136.0" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
-                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0" visible="false">
+                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0">
                     <children>
                         <BorderPane fx:id="menuBorderPane" opacity="0.9" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane">
                             <left>
@@ -557,7 +557,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
+                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                             <children>
@@ -676,7 +676,7 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                                <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <Label fx:id="languageTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="31.0" prefWidth="299.0" styleClass="tempLabel" text="LANGUAGES">
                                             <font>
@@ -703,19 +703,19 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingEmergencyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                                <Pane fx:id="settingEmergencyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <Label fx:id="emergencyTopLabel" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="31.0" prefWidth="551.0" styleClass="tempLabel" text="EMERGENCY">
                                             <font>
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                              <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="INTERNAL SIREN">
+                              <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0" onAction="#applicationSettingButtons" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="INTERNAL SIREN">
                                  <font>
                                     <Font name="Agency FB" size="21.0" />
                                  </font>
                               </JFXToggleButton>
-                              <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="EXTERNAL SIREN">
+                              <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0" onAction="#applicationSettingButtons" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="EXTERNAL SIREN">
                                  <font>
                                     <Font name="Agency FB" size="21.0" />
                                  </font>
@@ -723,7 +723,7 @@
                               <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="308.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage" />
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="31.0" prefWidth="353.0" styleClass="tempLabel" text="NOTIFICATIONS">
                                             <font>
@@ -755,12 +755,12 @@
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingToggleButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                               <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0" startY="144.0" />
                                     </children>
                                 </Pane>
@@ -974,7 +974,6 @@
                                     </children>
                                 </Pane>
                                 <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
-                                <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
                                 <AnchorPane fx:id="applicationSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="610.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane">
                                     <children>
                                         <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettings" text="themeSetting" textFill="TRANSPARENT" />
@@ -1018,6 +1017,7 @@
                                     <children>
                                         <JFXButton fx:id="usersSettingSubPaneAddUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="addUserButton" text="addUser" textFill="TRANSPARENT" AnchorPane.leftAnchor="167.0" />
                                         <JFXButton fx:id="usersSettingSubPaneRemoveUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="removeUserButton" text="removeUser" textFill="TRANSPARENT" AnchorPane.rightAnchor="167.0" />
+                              <JFXButton fx:id="usersSettingSubPanePermissionButton" layoutX="270.0" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="permissionButton" text="permission" textFill="TRANSPARENT" />
                                     </children>
                                 </AnchorPane>
                                 <AnchorPane fx:id="homeSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="625.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane" visible="false">
@@ -1237,6 +1237,50 @@
                                         </Label>
                                     </children>
                                 </Pane>
+                                <Pane fx:id="permissionPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false">
+                           <children>
+                              <Label fx:id="permissionPaneTopLabel" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="42.0" prefWidth="411.0" text="PERMISSIONS FOR ACCESS">
+                                 <font>
+                                    <Font name="Agency FB" size="32.0" />
+                                 </font>
+                              </Label>
+                              <JFXToggleButton fx:id="permissionPaneElectricityToggle" alignment="CENTER_LEFT" layoutX="32.0" layoutY="87.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="ELEKTRICITY">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneGasToggle" alignment="CENTER_LEFT" layoutX="456.0" layoutY="87.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="GAS">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneWaterToggle" alignment="CENTER_LEFT" layoutX="32.0" layoutY="145.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="WATER">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneNotificationToggle" alignment="CENTER_LEFT" layoutX="244.0" layoutY="203.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="NOTIFICATION">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneAquariumToggle" alignment="CENTER_LEFT" layoutX="243.0" layoutY="145.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="AQUARIUM">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneGardenLightToggle" alignment="CENTER_LEFT" layoutX="244.0" layoutY="87.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="GARDEN LIGHT">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXToggleButton fx:id="permissionPaneSirenToggle" alignment="CENTER_LEFT" layoutX="456.0" layoutY="145.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0" prefWidth="212.0" styleClass="toggleButtons" text="SIREN">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                                 </font>
+                              </JFXToggleButton>
+                              <JFXButton fx:id="permissionPaneGoBackButton" layoutX="320.0" layoutY="374.0" onAction="#permissionPaneButtonsOnAction" prefHeight="60.0" prefWidth="60.0" styleClass="changeUserInfoBack" text="Button" textFill="TRANSPARENT" />
+                           </children></Pane>
                             </children>
                         </AnchorPane>
                     </children>

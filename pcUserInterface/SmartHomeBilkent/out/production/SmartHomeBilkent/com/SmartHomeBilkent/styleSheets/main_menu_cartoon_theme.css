@@ -510,6 +510,14 @@
         -fx-background-image: url("images/removeUser5.png");
         -fx-background-size: cover;
 }
+.permissionButton{
+         -fx-background-image: url("images/permission4.png");
+         -fx-background-size: cover;
+ }
+ .permissionButton:hover{
+         -fx-background-image: url("images/permission5.png");
+         -fx-background-size: cover;
+ }
 .verifyAddUserButton{
         -fx-background-image: url("images/verifyAdd4.png");
         -fx-background-size: cover;

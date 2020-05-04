@@ -2,6 +2,7 @@ package com.SmartHomeBilkent;
 
 import arduino.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
+import com.SmartHomeBilkent.extra.dataBase.fields.HomeSettings;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -216,7 +217,7 @@ public class MainPanel implements Initializable {
    //settings pane ----users settings variables----
    @FXML
    private Pane settingUsersPane, addUserPane,
-         deleteUserPane;
+         deleteUserPane, permissionPane;
    @FXML
    private JFXTreeTableView< User > settingUserTable;
    @FXML
@@ -234,16 +235,17 @@ public class MainPanel implements Initializable {
          createUserPasswordLabel, createUserPasswordVerifyLabel,
          createUserUserTypeLabel, createUserThemeLabel,
          createUserLanguageLabel, createUserWarningLabel,
-         removeUserFirstWarning, removeUserHideWarning;
+         removeUserFirstWarning, removeUserHideWarning,
+         permissionPaneTopLabel;
    @FXML
    private JFXDatePicker createDatePicker;
    @FXML
    private JFXButton createUserConfirmButton, createUserGoBack,
-         removeUserConfirm, removeUserGoBack;
+         removeUserConfirm, removeUserGoBack,
+         usersSettingSubPanePermissionButton, permissionPaneGoBackButton;
    @FXML
    private JFXTextField createUserNameTextField, createUserSurnameTextField,
          createUserUserNameTextField;
-
    @FXML
    private JFXRadioButton createUserMaleOption, createUserFemaleOption,
          createUserDarkThemeOption, createUserLightThemeOption,
@@ -252,7 +254,13 @@ public class MainPanel implements Initializable {
          createUserGermanOption, createUserParentOption,
          createUserChildOption, createUserElderOption;
    @FXML
-   private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField, removeUserTextField;
+   private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
+         removeUserTextField;
+   @FXML
+   ToggleButton permissionPaneElectricityToggle, permissionPaneWaterToggle,
+         permissionPaneGardenLightToggle, permissionPaneAquariumToggle,
+         permissionPaneNotificationToggle, permissionPaneGasToggle,
+         permissionPaneSirenToggle;
 
    //settings pane ----mods setting variables----
    @FXML
@@ -352,11 +360,23 @@ public class MainPanel implements Initializable {
    private Rectangle rectangle;
    private FillTransition fillTransition;
    private boolean isArduinoConnect;
+   private String[] sensors;
+   private String[] permissions;
+   private HomeSettings homeSettings;
 
    //initialize method(it runs before the program start to run)
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
-      //adjust user settings
+      ElectricityUsage.getInstance().getElectricityUsage();
+      ElectricityUsage.getInstance().getTable( electricityUsageTable );
+      GasUsage.getInstance().getGasUsage();
+      GasUsage.getInstance().getTable( gasUsageTable );
+      GreenHouseData.getInstance().getGreenHouseValues();
+      GreenHouseData.getInstance().getTable( greenHouseValuesChart );
+      FishSpecies.getInstance().getFishes();
+      FishSpecies.getInstance().addFishToComboBox( speciesOfFishComboBox );
+      HomeSettingData.getInstance().getAllHome();
+
       userPreferenceUpdate( getLoginUser() );
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable( true );
@@ -366,14 +386,47 @@ public class MainPanel implements Initializable {
       speechUtils = new SpeechUtils();
       isArduinoConnect = false;
 
-      ElectricityUsage.getInstance().getElectricityUsage();
-      ElectricityUsage.getInstance().getTable( electricityUsageTable );
-      GasUsage.getInstance().getGasUsage();
-      GasUsage.getInstance().getTable( gasUsageTable );
-      GreenHouseDatas.getInstance().getGreenHouseValues();
-      GreenHouseDatas.getInstance().getTable( greenHouseValuesChart );
-      FishSpecies.getInstance().getFishes();
-      FishSpecies.getInstance().addFishToComboBox( speciesOfFishComboBox );
+      homeSettings = HomeSettingData.getInstance().getHomeList().get( 0 );
+      sensors = HomeSettingData.getInstance().getSensors( homeSettings );
+      permissions = HomeSettingData.getInstance().getPermission( homeSettings );
+
+      if( loginUser.getUserType().equals( "PARENT" ) ) {
+         fireButtonVisualToggle.setSelected( sensors[ 0 ].charAt( 0 ) == 'O' );
+         fireButtonSoundToggle.setSelected( sensors[ 0 ].charAt( 1 ) == 'O' );
+         gasSensorVisualToggle.setSelected( sensors[ 1 ].charAt( 0 ) == 'O' );
+         gasSensorSoundToggle.setSelected( sensors[ 1 ].charAt( 1 ) == 'O' );
+         smokeSensorVisualToggle.setSelected( sensors[ 2 ].charAt( 0 ) == 'O' );
+         smokeSensorSoundToggle.setSelected( sensors[ 2 ].charAt( 1 ) == 'O' );
+
+         permissionPaneElectricityToggle.setSelected( permissions[ 0 ].charAt( 0 ) == 'O' );
+         permissionPaneGasToggle.setSelected( permissions[ 1 ].charAt( 0 ) == 'O' );
+         permissionPaneWaterToggle.setSelected( permissions[ 2 ].charAt( 0 ) == 'O' );
+         permissionPaneGardenLightToggle.setSelected( permissions[ 3 ].charAt( 0 ) == 'O' );
+         permissionPaneAquariumToggle.setSelected( permissions[ 4 ].charAt( 0 ) == 'O' );
+         permissionPaneNotificationToggle.setSelected( permissions[ 5 ].charAt( 0 ) == 'O' );
+         permissionPaneSirenToggle.setSelected( permissions[ 6 ].charAt( 0 ) == 'O' );
+      } else if( loginUser.getUserType().equals( "CHILD" ) ) {
+         usersSettingSubPanePermissionButton.setVisible( false );
+         menuBulkChange.setVisible( false );
+         menuTimeConfigurationButton.setVisible( false );
+         settingElectricityToggleButton.setDisable( permissions[ 0 ].charAt( 0 ) == 'C' );
+         elecSubMenuToggleButton.setDisable( permissions[ 0 ].charAt( 0 ) == 'C' );
+         gasSubMenuToggleButton.setDisable( permissions[ 1 ].charAt( 0 ) == 'C' );
+         settingGasToggleButton.setDisable( permissions[ 1 ].charAt( 0 ) == 'C' );
+         waterSubMenuToggleButton.setDisable(  permissions[ 2 ].charAt( 0 ) == 'C' );
+         gardenLightSubMenuToggleButton.setDisable(  permissions[ 3 ].charAt( 0 ) == 'C' );
+         aquariumSubMenuToggleButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
+         settingAquariumToggleButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
+         saveAquariumChangesButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
+         fireButtonVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         fireButtonSoundToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         gasSensorVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         gasSensorSoundToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         smokeSensorVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         smokeSensorSoundToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
+         internalSirenToggle.setDisable( permissions[ 6 ].charAt( 0 ) == 'C' );
+         externalSirenToggle.setDisable( permissions[ 6 ].charAt( 0 ) == 'C' );
+      }
 
       try {
          weatherForecast = new WeatherForecast( loginUser.getLocation() );
@@ -1538,7 +1591,7 @@ public class MainPanel implements Initializable {
 
    //settings----application settings menu
    @FXML
-   void applicationSettingButtons( ActionEvent event ) {
+   void applicationSettingButtons( ActionEvent event ) throws SQLException {
       if( event.getSource() == themeSettingButton ) {
          closeAllApplicationSettingSubPanes();
          openThemeSetting();
@@ -1558,7 +1611,6 @@ public class MainPanel implements Initializable {
          arduino = new Arduino( portChooser.getValue(), 9600 );
 
          if( arduino.openConnection() ) {
-            String out;
             isArduinoConnect = true;
             portConnectionButton.setDisable( true );
             home = new Home( arduino );
@@ -1605,6 +1657,48 @@ public class MainPanel implements Initializable {
          } else {
             portChooser.setValue( "" );
          }
+      } else if( event.getSource() == externalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren().open( externalSirenToggle.isSelected() );
+      } else if( event.getSource() == internalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
+      } else if( event.getSource() == fireButtonVisualToggle ) {
+         if( fireButtonVisualToggle.isSelected() )
+            sensors[0] = "O" + sensors[0].charAt( 1 );
+         else
+            sensors[0] = "C" + sensors[0].charAt( 1 );
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+      } else if( event.getSource() == gasSensorVisualToggle ) {
+         if( gasSensorVisualToggle.isSelected() )
+            sensors[1] = "O" + sensors[1].charAt( 1 );
+         else
+            sensors[1] = "C" + sensors[1].charAt( 1 );
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+      } else if( event.getSource() == smokeSensorVisualToggle ) {
+         if( smokeSensorVisualToggle.isSelected() )
+            sensors[2] = "O" + sensors[2].charAt( 1 );
+         else
+            sensors[2] = "C" + sensors[2].charAt( 1 );
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+      } else if( event.getSource() == fireButtonSoundToggle ) {
+         if( fireButtonSoundToggle.isSelected() )
+            sensors[0] = sensors[0].charAt( 0 ) + "O" ;
+         else
+            sensors[0] = sensors[0].charAt( 0 ) + "C";
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+      } else if( event.getSource() == gasSensorSoundToggle ) {
+         if( gasSensorSoundToggle.isSelected() )
+            sensors[1] = sensors[1].charAt( 0 ) + "O" ;
+         else
+            sensors[1] = sensors[1].charAt( 0 ) + "C";
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+      } else if( event.getSource() == smokeSensorSoundToggle ) {
+         if( smokeSensorSoundToggle.isSelected() )
+            sensors[2] = sensors[2].charAt( 0 ) + "O" ;
+         else
+            sensors[2] = sensors[2].charAt( 0 ) + "C";
+         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
       }
    }
 
@@ -1684,11 +1778,6 @@ public class MainPanel implements Initializable {
             || event.getSource() == homeSettingWeatherButtonActive )
          homeSubPaneWeatherLabel.setVisible( false );
       sound( "gasLang", false );
-   }
-
-   @FXML
-   void applicationSettingToggleButtonsOnAction( ActionEvent event ){
-
    }
 
    void openThemeSetting() {
@@ -1776,11 +1865,18 @@ public class MainPanel implements Initializable {
       if( event.getSource() == usersSettingSubPaneAddUser ) {
          addUserPane.setVisible( true );
          deleteUserPane.setVisible( false );
+         permissionPane.setVisible( false );
          sound( "createUserLang", soundCheck );
       } else if( event.getSource() == usersSettingSubPaneRemoveUser ) {
          deleteUserPane.setVisible( true );
          addUserPane.setVisible( false );
+         permissionPane.setVisible( false );
          sound( "removeAnUserLang", soundCheck );
+      } else if( event.getSource() == usersSettingSubPanePermissionButton ) {
+         deleteUserPane.setVisible( false );
+         addUserPane.setVisible( false );
+         permissionPane.setVisible( true );
+         //sound
       }
    }
 
@@ -1971,6 +2067,48 @@ public class MainPanel implements Initializable {
       }
    }
 
+   @FXML
+   void permissionPaneButtonsOnAction( ActionEvent event ) throws SQLException {
+      if( event.getSource() == permissionPaneElectricityToggle ) {
+         if( permissionPaneElectricityToggle.isSelected() )
+            permissions[0] = "O";
+         else
+            permissions[0] = "C";
+      } else if( event.getSource() == permissionPaneGasToggle ) {
+         if( permissionPaneGasToggle.isSelected() )
+            permissions[1] = "O";
+         else
+            permissions[1] = "C";
+      } else if( event.getSource() == permissionPaneWaterToggle ) {
+         if( permissionPaneWaterToggle.isSelected() )
+            permissions[2] = "O";
+         else
+            permissions[2] = "C";
+      } else if( event.getSource() == permissionPaneGardenLightToggle ) {
+         if( permissionPaneGardenLightToggle.isSelected() )
+            permissions[3] = "O";
+         else
+            permissions[3] = "C";
+      } else if( event.getSource() == permissionPaneAquariumToggle ) {
+         if( permissionPaneAquariumToggle.isSelected() )
+            permissions[4] = "O";
+         else
+            permissions[4] = "C";
+      } else if( event.getSource() == permissionPaneNotificationToggle ) {
+         if( permissionPaneNotificationToggle.isSelected() )
+            permissions[5] = "O";
+         else
+            permissions[5] = "C";
+      } else if( event.getSource() == permissionPaneSirenToggle ) {
+         if( permissionPaneSirenToggle.isSelected() )
+            permissions[6] = "O";
+         else
+            permissions[6] = "C";
+      } else if( event.getSource() == permissionPaneGoBackButton ) {
+         permissionPane.setVisible( false );
+      }
+      HomeSettingData.getInstance().updatePermission( homeSettings, permissions );
+   }
    //settings----mods settings menu
 
    public void openModsPane() {
@@ -2168,7 +2306,7 @@ public class MainPanel implements Initializable {
                message.append( ( int ) airMotorRunTime.getValue() + ":" );
 
             if( isArduinoConnect )
-            home.getAquarium().setAquariumSettings( message.toString() );
+               home.getAquarium().setAquariumSettings( message.toString() );
          }
       }
    }
@@ -2201,15 +2339,15 @@ public class MainPanel implements Initializable {
    void settingToggleButtonsAction( ActionEvent event ) {
       if( event.getSource() == settingElectricityToggleButton ) {
          if( isArduinoConnect )
-         home.getElectricity().open( settingElectricityToggleButton.isSelected() );
+            home.getElectricity().open( settingElectricityToggleButton.isSelected() );
          openElectricity( settingElectricityToggleButton.isSelected() );
       } else if( event.getSource() == settingGasToggleButton ) {
          if( isArduinoConnect )
-         home.getGas().open( settingElectricityToggleButton.isSelected() );
+            home.getGas().open( settingElectricityToggleButton.isSelected() );
          openGas( settingElectricityToggleButton.isSelected() );
       } else if( event.getSource() == settingAquariumToggleButton ) {
          if( isArduinoConnect )
-         home.getAquarium().open( settingAquariumToggleButton.isSelected() );
+            home.getAquarium().open( settingAquariumToggleButton.isSelected() );
          openAquarium( settingAquariumToggleButton.isSelected() );
       }
    }

@@ -3,7 +3,6 @@ package com.SmartHomeBilkent.extra.dataBase;
 import com.SmartHomeBilkent.extra.dataBase.fields.GreenHouseValues;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
@@ -14,18 +13,19 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
- * a GreenHouseDatas class
+ * a GreenHouseData class
  *
  * @author İLKE DOĞAN
  * @version 01.05.2020
  */
-public class GreenHouseDatas {
+public class GreenHouseData {
+
    //properties
    private static final String TABLE_GREEN_HOUSE = "GREENHOUSE";
    private static final String TABLE_DAY_COLUMN = "DAY";
    private static final String TABLE_TEMPERATURE_COLUMN = "TEMPERATURE";
    private static final String TABLE_HUMIDITY_COLUMN = "HUMIDITY";
-   private static GreenHouseDatas instance = new GreenHouseDatas();
+   private static GreenHouseData instance = new GreenHouseData();
    private static ObservableList< Integer > temperaturesPerDay;
    private static ObservableList< Integer > humidityPerDay;
    private static ObservableList< GreenHouseValues > valuesList;
@@ -34,13 +34,13 @@ public class GreenHouseDatas {
    private String[] detailUsage;
 
    //constructor
-   private GreenHouseDatas() {
+   private GreenHouseData() {
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
 
    //methods
-   public static GreenHouseDatas getInstance() {
+   public static GreenHouseData getInstance() {
       return instance;
    }
 
