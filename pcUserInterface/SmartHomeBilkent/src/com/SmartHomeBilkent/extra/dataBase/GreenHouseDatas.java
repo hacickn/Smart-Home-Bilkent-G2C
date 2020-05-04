@@ -27,14 +27,9 @@ public class GreenHouseDatas {
    private Connection connection;
    private DateTimeFormatter dateTimeFormatter;
    private String[] detailUsage;
-   private String localDate;
-   private String localTime;
 
    //constructor
    private GreenHouseDatas() {
-      valuesList = FXCollections.observableArrayList();
-      temperaturesPerDay = FXCollections.observableArrayList();
-      humidityPerDay = FXCollections.observableArrayList();
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
@@ -45,6 +40,7 @@ public class GreenHouseDatas {
    }
 
    public ObservableList< GreenHouseValues > getGreenHouseValues() {
+      valuesList = FXCollections.observableArrayList();
       try {
          Statement statement;
          ResultSet resultSet;
@@ -65,6 +61,7 @@ public class GreenHouseDatas {
    }
 
    public ObservableList< Integer > calculateAverageTemperature() {
+      temperaturesPerDay = FXCollections.observableArrayList();
       int temperature;
 
       for( GreenHouseValues values : valuesList ) {
@@ -81,6 +78,7 @@ public class GreenHouseDatas {
    }
 
    public ObservableList< Integer > calculateAverageHumidity() {
+      humidityPerDay = FXCollections.observableArrayList();
       int humidity;
 
       for( GreenHouseValues values : valuesList ) {

@@ -248,10 +248,10 @@ public class MainPanel implements Initializable {
    @FXML
    private SplitPane settingModePane;
    @FXML
-   private JFXToggleButton textModeToggle, soundModeToggle, soundExtraToggle;
+   private JFXToggleButton textModeToggle, soundModeToggle ;
    @FXML
-   private Label soundHelperLabel, soundVolumeLabel,
-         interactiveTextModeLabel, interactiveSoundModeLabel;
+   private Label  soundVolumeLabel, interactiveTextModeLabel,
+           interactiveSoundModeLabel;
    @FXML
    private JFXSlider soundVolumeSlider;
 
@@ -467,19 +467,11 @@ public class MainPanel implements Initializable {
 
       if( loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ).equals( "false" ) ) {
          soundCheck = false;
-         soundCheckEx = false;
          soundControl( false );
-         soundCheckEx = false;
       } else if( loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ).equals( "true" ) ) {
          soundCheck = true;
-         soundCheckEx = false;
          soundControl( true );
          soundModeToggle.setSelected( true );
-      } else if( loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ).equals( "trueEx" ) ) {
-         soundCheck = true;
-         soundCheckEx = true;
-         soundModeToggle.setSelected( true );
-         soundExtraToggle.setSelected( true );
       }
 
       textCheck = !loginUser.getText().equals( "false" );
@@ -1402,7 +1394,6 @@ public class MainPanel implements Initializable {
          homeSubPaneWeatherLabel.setText( bundle.getString( "weatherLang" ) );
          interactiveTextModeLabel.setText( bundle.getString( "interactiveTextLang" ) );
          interactiveSoundModeLabel.setText( bundle.getString( "interactiveSoundLang" ) );
-         soundHelperLabel.setText( bundle.getString( "soundHelper" ) );
          soundVolumeLabel.setText( bundle.getString( "soundVolume" ) );
          electricityRadioButton.setText( bundle.getString( "elecLang" ) );
          gasRadioButton.setText( bundle.getString( "gasLang" ) );
@@ -1994,15 +1985,8 @@ public class MainPanel implements Initializable {
             soundCheckEx = false;
          }
          modsSound = soundCheck + volume;
-      } else if( event.getSource() == soundExtraToggle ) {
-         if( soundExtraToggle.isSelected() ) {
-            soundCheckEx = true;
-            modsSound = "trueEx" + volume;
-         } else {
-            soundCheckEx = false;
-            modsSound = soundCheck + volume;
-         }
       }
+
       Users.getInstance().updateVolume( loginUser, modsSound );
       Users.getInstance().updateText( loginUser, modsText );
       userPreferenceUpdate( loginUser );
@@ -2010,8 +1994,6 @@ public class MainPanel implements Initializable {
    }
 
    public void soundControl( Boolean check ) {
-      soundHelperLabel.setVisible( check );
-      soundExtraToggle.setVisible( check );
       soundVolumeSlider.setVisible( check );
       soundVolumeLabel.setVisible( check );
       soundCheck = check;
@@ -2121,6 +2103,16 @@ public class MainPanel implements Initializable {
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
       else if( weather.equals( "Snowy" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
+      else if( weather.equals( "Patches Of Fog" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
+      else if( weather.equals( "Light Rain Shower" ) ||  weather.equals( "Light rain shower" ) || weather.equals( "Patchy rain possible" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
+      else if( weather.equals( "Mist" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
+      else if( weather.equals( "Light Rain With Thunderstorm" ) || weather.equals( "Light Rain Shower" ))
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
+      else if( weather.equals( "Moderate or heavy rain shower" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
 
    }
 

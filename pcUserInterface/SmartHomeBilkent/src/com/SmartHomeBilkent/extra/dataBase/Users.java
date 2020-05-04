@@ -42,7 +42,6 @@ public class Users {
     * it is a Users constructor
     */
    private Users() {
-      usersList = FXCollections.observableArrayList();
       connection = DatabaseConnection.getInstance().getConnection();
    }
 
@@ -54,6 +53,7 @@ public class Users {
     * @return result as a ObservableList<User>
     */
    public ObservableList< User > getAllUsers() {
+      usersList = FXCollections.observableArrayList();
       try {
          Statement statement;
          ResultSet resultSet;

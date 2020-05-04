@@ -29,7 +29,6 @@ public class FishSpecies {
 
    //constructor
    private FishSpecies() {
-      fishes = FXCollections.observableArrayList();
       connection = DatabaseConnection.getInstance().getConnection();
    }
 
@@ -39,6 +38,7 @@ public class FishSpecies {
    }
 
    public ObservableList< Fish > getFishes() {
+      fishes = FXCollections.observableArrayList();
       try {
          Statement statement;
          ResultSet resultSet;

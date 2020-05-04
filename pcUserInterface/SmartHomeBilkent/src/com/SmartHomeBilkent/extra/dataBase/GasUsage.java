@@ -37,8 +37,6 @@ public class GasUsage {
 
    //constructor
    private GasUsage() {
-      usageList = FXCollections.observableArrayList();
-      daysOfUsage = FXCollections.observableArrayList();
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
@@ -49,6 +47,7 @@ public class GasUsage {
    }
 
    public ObservableList< Usage > getGasUsage() {
+      usageList = FXCollections.observableArrayList();
       try {
          Statement statement;
          ResultSet resultSet;
@@ -68,6 +67,7 @@ public class GasUsage {
    }
 
    public ObservableList< Integer > calculateUsage() {
+      daysOfUsage = FXCollections.observableArrayList();
       int hours;
 
       for( int m = 0; m < usageList.size(); m++) {
