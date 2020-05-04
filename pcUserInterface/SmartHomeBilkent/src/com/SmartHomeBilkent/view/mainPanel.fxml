@@ -213,7 +213,7 @@
                                                     </font>
                                                 </Label>
                                                 <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="waterSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="waterSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                                 <Label fx:id="waterSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="WATER" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />
@@ -283,7 +283,7 @@
                                                     </font>
                                                 </Label>
                                                 <JFXToggleButton fx:id="gardenLightSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gardenLightSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="gardenLightSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="gardenLightSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                                 <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GARDEN LIGHT" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />

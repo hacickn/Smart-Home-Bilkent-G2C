@@ -184,7 +184,7 @@
 }
 
 .connectionButton{
-        -fx-background-image: url("images/connection2.png");
+        -fx-background-image: url("images/connection1.png");
         -fx-background-size: cover;
 }
 .connectionButton:hover{
@@ -236,11 +236,11 @@
       -fx-border-color: black;
  }
 .contextDetailActive{
-      -fx-text-fill:	#336600;
-      -fx-border-color: 	#336600;
+      -fx-text-fill:#336600;
+      -fx-border-color: #336600;
 }
 .gearPassive{
-    -fx-background-image: url("images/gear2.png");
+    -fx-background-image: url("images/gear1.png");
     -fx-background-size: cover;
 }
 .gearPassive:hover{
@@ -255,7 +255,6 @@
     -fx-background-image: url("images/gear5.png");
     -fx-background-size: cover;
 }
-/////////////////////////////////////////////////
 .userInfoChange{
     -fx-background-image: url("images/change1.png");
     -fx-background-size: cover;

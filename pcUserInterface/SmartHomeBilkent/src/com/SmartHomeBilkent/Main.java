@@ -28,8 +28,6 @@ public class Main extends Application {
    @Override
    public void init() throws Exception {
       super.init();
-      //Users.getInstance().connectDatabase();
-      //Users.getInstance().getAllUsers();
       DatabaseConnection.getInstance().connectDatabase();
       Users.getInstance().getAllUsers();
    }
@@ -37,7 +35,6 @@ public class Main extends Application {
    @Override
    public void stop() throws Exception {
       super.stop();
-      //Users.getInstance().closeConnectionDatabase();
       DatabaseConnection.getInstance().closeConnectionDatabase();
    }
 

@@ -2,7 +2,7 @@ package com.SmartHomeBilkent;
 
 import arduino.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
-import com.SmartHomeBilkent.extra.dataBase.fields.HomeSettings;
+import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
@@ -362,7 +362,7 @@ public class MainPanel implements Initializable {
    private boolean isArduinoConnect;
    private String[] sensors;
    private String[] permissions;
-   private HomeSettings homeSettings;
+   private CommonSetting commonSetting;
 
    //initialize method(it runs before the program start to run)
    @Override
@@ -375,7 +375,7 @@ public class MainPanel implements Initializable {
       GreenHouseData.getInstance().getTable( greenHouseValuesChart );
       FishSpecies.getInstance().getFishes();
       FishSpecies.getInstance().addFishToComboBox( speciesOfFishComboBox );
-      HomeSettingData.getInstance().getAllHome();
+      CommonSettingData.getInstance().getAllHome();
 
       userPreferenceUpdate( getLoginUser() );
       updateUsersTable();
@@ -386,9 +386,9 @@ public class MainPanel implements Initializable {
       speechUtils = new SpeechUtils();
       isArduinoConnect = false;
 
-      homeSettings = HomeSettingData.getInstance().getHomeList().get( 0 );
-      sensors = HomeSettingData.getInstance().getSensors( homeSettings );
-      permissions = HomeSettingData.getInstance().getPermission( homeSettings );
+      commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
+      sensors = CommonSettingData.getInstance().getSensors( commonSetting );
+      permissions = CommonSettingData.getInstance().getPermission( commonSetting );
 
       if( loginUser.getUserType().equals( "PARENT" ) ) {
          fireButtonVisualToggle.setSelected( sensors[ 0 ].charAt( 0 ) == 'O' );
@@ -413,11 +413,11 @@ public class MainPanel implements Initializable {
          elecSubMenuToggleButton.setDisable( permissions[ 0 ].charAt( 0 ) == 'C' );
          gasSubMenuToggleButton.setDisable( permissions[ 1 ].charAt( 0 ) == 'C' );
          settingGasToggleButton.setDisable( permissions[ 1 ].charAt( 0 ) == 'C' );
-         waterSubMenuToggleButton.setDisable(  permissions[ 2 ].charAt( 0 ) == 'C' );
-         gardenLightSubMenuToggleButton.setDisable(  permissions[ 3 ].charAt( 0 ) == 'C' );
-         aquariumSubMenuToggleButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
-         settingAquariumToggleButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
-         saveAquariumChangesButton.setDisable(  permissions[ 4 ].charAt( 0 ) == 'C' );
+         waterSubMenuToggleButton.setDisable( permissions[ 2 ].charAt( 0 ) == 'C' );
+         gardenLightSubMenuToggleButton.setDisable( permissions[ 3 ].charAt( 0 ) == 'C' );
+         aquariumSubMenuToggleButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
+         settingAquariumToggleButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
+         saveAquariumChangesButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
          fireButtonVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
          fireButtonSoundToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
          gasSensorVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
@@ -1665,40 +1665,40 @@ public class MainPanel implements Initializable {
             home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
       } else if( event.getSource() == fireButtonVisualToggle ) {
          if( fireButtonVisualToggle.isSelected() )
-            sensors[0] = "O" + sensors[0].charAt( 1 );
+            sensors[ 0 ] = "O" + sensors[ 0 ].charAt( 1 );
          else
-            sensors[0] = "C" + sensors[0].charAt( 1 );
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 0 ] = "C" + sensors[ 0 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       } else if( event.getSource() == gasSensorVisualToggle ) {
          if( gasSensorVisualToggle.isSelected() )
-            sensors[1] = "O" + sensors[1].charAt( 1 );
+            sensors[ 1 ] = "O" + sensors[ 1 ].charAt( 1 );
          else
-            sensors[1] = "C" + sensors[1].charAt( 1 );
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 1 ] = "C" + sensors[ 1 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       } else if( event.getSource() == smokeSensorVisualToggle ) {
          if( smokeSensorVisualToggle.isSelected() )
-            sensors[2] = "O" + sensors[2].charAt( 1 );
+            sensors[ 2 ] = "O" + sensors[ 2 ].charAt( 1 );
          else
-            sensors[2] = "C" + sensors[2].charAt( 1 );
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 2 ] = "C" + sensors[ 2 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       } else if( event.getSource() == fireButtonSoundToggle ) {
          if( fireButtonSoundToggle.isSelected() )
-            sensors[0] = sensors[0].charAt( 0 ) + "O" ;
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "O";
          else
-            sensors[0] = sensors[0].charAt( 0 ) + "C";
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       } else if( event.getSource() == gasSensorSoundToggle ) {
          if( gasSensorSoundToggle.isSelected() )
-            sensors[1] = sensors[1].charAt( 0 ) + "O" ;
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "O";
          else
-            sensors[1] = sensors[1].charAt( 0 ) + "C";
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       } else if( event.getSource() == smokeSensorSoundToggle ) {
          if( smokeSensorSoundToggle.isSelected() )
-            sensors[2] = sensors[2].charAt( 0 ) + "O" ;
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "O";
          else
-            sensors[2] = sensors[2].charAt( 0 ) + "C";
-         HomeSettingData.getInstance().updateSensors( homeSettings, sensors );
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
       }
    }
 
@@ -2071,43 +2071,43 @@ public class MainPanel implements Initializable {
    void permissionPaneButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == permissionPaneElectricityToggle ) {
          if( permissionPaneElectricityToggle.isSelected() )
-            permissions[0] = "O";
+            permissions[ 0 ] = "O";
          else
-            permissions[0] = "C";
+            permissions[ 0 ] = "C";
       } else if( event.getSource() == permissionPaneGasToggle ) {
          if( permissionPaneGasToggle.isSelected() )
-            permissions[1] = "O";
+            permissions[ 1 ] = "O";
          else
-            permissions[1] = "C";
+            permissions[ 1 ] = "C";
       } else if( event.getSource() == permissionPaneWaterToggle ) {
          if( permissionPaneWaterToggle.isSelected() )
-            permissions[2] = "O";
+            permissions[ 2 ] = "O";
          else
-            permissions[2] = "C";
+            permissions[ 2 ] = "C";
       } else if( event.getSource() == permissionPaneGardenLightToggle ) {
          if( permissionPaneGardenLightToggle.isSelected() )
-            permissions[3] = "O";
+            permissions[ 3 ] = "O";
          else
-            permissions[3] = "C";
+            permissions[ 3 ] = "C";
       } else if( event.getSource() == permissionPaneAquariumToggle ) {
          if( permissionPaneAquariumToggle.isSelected() )
-            permissions[4] = "O";
+            permissions[ 4 ] = "O";
          else
-            permissions[4] = "C";
+            permissions[ 4 ] = "C";
       } else if( event.getSource() == permissionPaneNotificationToggle ) {
          if( permissionPaneNotificationToggle.isSelected() )
-            permissions[5] = "O";
+            permissions[ 5 ] = "O";
          else
-            permissions[5] = "C";
+            permissions[ 5 ] = "C";
       } else if( event.getSource() == permissionPaneSirenToggle ) {
          if( permissionPaneSirenToggle.isSelected() )
-            permissions[6] = "O";
+            permissions[ 6 ] = "O";
          else
-            permissions[6] = "C";
+            permissions[ 6 ] = "C";
       } else if( event.getSource() == permissionPaneGoBackButton ) {
          permissionPane.setVisible( false );
       }
-      HomeSettingData.getInstance().updatePermission( homeSettings, permissions );
+      CommonSettingData.getInstance().updatePermission( commonSetting, permissions );
    }
    //settings----mods settings menu
 

@@ -58,9 +58,9 @@ public class LoginPanel implements Initializable {
                   root = load.load();
                   stage = new Stage();
                   stage.setTitle( "SMART HOME" );
-                  if( fxmlAddress.equals( "view/elderMainPanel.fxml") )
+                  if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
                      stage.setScene( new Scene( root, 800, 600 ) );
-                  else if( fxmlAddress.equals("view/mainPanel.fxml"))
+                  else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
                      stage.setScene( new Scene( root, 800, 800 ) );
                   stage.setResizable( true );
                   stage.show();
