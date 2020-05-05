@@ -8,9 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SmartHomeBilkent/META-INF/SmartHomeBilkent.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SmartHomeBilkent/META-INF/SmartHomeBilkent.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,13 +128,19 @@
       <recent name="C:\Users\coding\IdeaProjects\SmartHomeBilkent\src\com\SmartHomeBilkent\styleSheets" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -144,6 +152,12 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -231,6 +245,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
