@@ -9,6 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AppSettings"></activity>
+        <activity android:name=".HomeSettings" />
+        <activity android:name=".Settings" />
+        <activity android:name=".elecPop"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
+        <activity android:name=".WeatherPop"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
+        <activity android:name=".aquaPop"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
+        <activity android:name=".gasPop"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
+        <activity android:name=".ghPop"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
+        <activity android:name=".alarmPop"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
+        <activity android:name=".blutPop"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
+        <activity android:name=".notiPop"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,10 +40,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_screen"></activity>
-        <activity android:name=".connection_settings"></activity>
-        <activity android:name=".gas"></activity>
-
+        <activity android:name=".main_screen" />
+        <activity android:name=".connection_settings" />
+        <activity android:name=".gas" />
     </application>
 
 </manifest>

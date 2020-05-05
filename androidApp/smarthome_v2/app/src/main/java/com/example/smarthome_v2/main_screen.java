@@ -12,6 +12,7 @@ public class main_screen extends AppCompatActivity {
     public ToggleButton gas_control;
     public ToggleButton electricity_control;
     public boolean gasOnOff;
+    private ImageButton weather, settings;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +42,25 @@ public class main_screen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //ImageButton initialize
+        weather = findViewById(R.id.weather);
+        settings = findViewById(R.id.settings);
 
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toWeather = new Intent(main_screen.this,WeatherPop.class);
+                startActivity(toWeather);
+            }
+        });
 
-
-
-
-
-
-
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toSettings = new Intent(main_screen.this,Settings.class);
+                startActivity(toSettings);
+            }
+        });
 
     }
 }
