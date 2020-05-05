@@ -1286,13 +1286,14 @@
                     </children>
                 </AnchorPane>
             </AnchorPane>
-            <AnchorPane layoutY="703.0" prefHeight="70.0" prefWidth="800.0">
+            <AnchorPane layoutY="703.0" prefHeight="98.0" prefWidth="800.0">
                 <children>
                     <JFXButton fx:id="logoutButton" layoutX="365.0" maxHeight="70.0" maxWidth="70.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00">
                         <font>
                             <Font size="1.0" />
                         </font>
                     </JFXButton>
+               <JFXButton fx:id="helpButton" layoutX="723.0" layoutY="25.0" onAction="#paneChangerButtons" prefHeight="70.0" prefWidth="70.0" styleClass="helpButton" textFill="TRANSPARENT" />
                 </children>
             </AnchorPane>
         </Pane>

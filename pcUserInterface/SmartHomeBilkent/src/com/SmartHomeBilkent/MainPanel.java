@@ -604,7 +604,17 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == logoutButton ) {
          Platform.exit();
       } else if( event.getSource() == helpButton ) {
-
+         try {
+            FXMLLoader load = new FXMLLoader( getClass().getResource( "view/helpPanel.fxml" ) );
+            Parent root = load.load();
+            Stage stage = new Stage();
+            stage.setTitle( "HELP" );
+            stage.setScene( new Scene( root, 600, 600 ) );
+            stage.setResizable( false );
+            stage.show();
+         } catch( Exception e ) {
+            e.printStackTrace();
+         }
       }
    }
 
