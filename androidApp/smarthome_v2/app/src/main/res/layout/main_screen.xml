@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/connection"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/ic_connection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintStart_toEndOf="@+id/connection"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_tap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connection" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_aquarium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
+
+    <ImageButton
+        android:id="@+id/gas"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_gas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/electricity" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/electricity"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <ImageButton
+        android:id="@+id/electricity"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_electricity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/gas_control"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/electricity"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton4" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_green_house"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gas" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/toggle_switch"
+        android:text="ToggleButton"
+        android:textColor="@drawable/toggle_colour"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/gas_control" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/ic_options"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/ic_weather"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton7" />
+</androidx.constraintlayout.widget.ConstraintLayout>
