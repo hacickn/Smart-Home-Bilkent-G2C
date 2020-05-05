@@ -71,19 +71,6 @@ public class Aquarium extends Communication {
    }
 
    /**
-    * it is a setAquariumSettings method
-    *
-    * @param feeding       is a String input parameter
-    * @param waterExchange is a String input parameter
-    * @param airMotor      is a String input parameter
-    */
-   public void setAquariumSettings( String feeding, String waterExchange, String airMotor ) {
-      detailedMessage = "aquarium#" + feeding +
-            waterExchange + airMotor + ":";
-      arduino.serialWrite( detailedMessage );
-   }
-
-   /**
     * it is a openIncomingWater that open incoming water according to input parameter
     *
     * @param control is a boolean input parameter

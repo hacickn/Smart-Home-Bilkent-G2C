@@ -8,17 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Aquarium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Communication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Communication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Electricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Electricity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GardenLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GardenLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Gas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Gas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GreenHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/GreenHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Siren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Siren.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/home/features/Water.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +67,8 @@
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="UML Sequence" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -105,6 +98,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/out/artifacts/smartHomeApp/smartHomeApp.apk" />
+    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -279,6 +273,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588079757880" />
+    <state x="779" y="211" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1588676719194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="779" y="211" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588676719194" />
     <state x="926" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1588178274051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -370,10 +368,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1020" y="286" key="IDE.errors.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586287390382" />
-    <state x="552" y="178" key="PlantUMLSettings" timestamp="1588151404015">
+    <state x="552" y="178" key="PlantUMLSettings" timestamp="1588676528249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="PlantUMLSettings/0.0.1920.1040@0.0.1920.1040" timestamp="1588151404015" />
+    <state x="552" y="178" key="PlantUMLSettings/0.0.1920.1040@0.0.1920.1040" timestamp="1588676528249" />
     <state x="270" y="116" width="1160" height="708" key="SettingsEditor" timestamp="1588544675028">
       <screen x="0" y="0" width="1600" height="870" />
     </state>
