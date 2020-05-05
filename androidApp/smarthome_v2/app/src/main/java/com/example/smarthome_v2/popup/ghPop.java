@@ -1,15 +1,17 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.popup;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
+import com.example.smarthome_v2.R;
 
-public class blutPop extends Activity {
+
+public class ghPop extends Activity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bluetooth_pop);
+        setContentView(R.layout.greenhouse_pop);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

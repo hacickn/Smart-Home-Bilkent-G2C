@@ -8,6 +8,9 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smarthome_v2.popup.WeatherPop;
+import com.example.smarthome_v2.settings.Settings;
+
 public class main_screen extends AppCompatActivity {
     public ToggleButton gas_control;
     public ToggleButton electricity_control;
@@ -49,7 +52,7 @@ public class main_screen extends AppCompatActivity {
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toWeather = new Intent(main_screen.this,WeatherPop.class);
+                Intent toWeather = new Intent(main_screen.this, WeatherPop.class);
                 startActivity(toWeather);
             }
         });
@@ -57,7 +60,7 @@ public class main_screen extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toSettings = new Intent(main_screen.this,Settings.class);
+                Intent toSettings = new Intent(main_screen.this, Settings.class);
                 startActivity(toSettings);
             }
         });

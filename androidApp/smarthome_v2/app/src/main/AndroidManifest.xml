@@ -9,29 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppSettings"></activity>
-        <activity android:name=".HomeSettings" />
-        <activity android:name=".Settings" />
-        <activity android:name=".elecPop"
+        <activity android:name=".settings.AppSettings"></activity>
+        <activity android:name=".settings.HomeSettings" />
+        <activity android:name=".settings.Settings" />
+        <activity android:name=".popup.elecPop"
             android:theme="@style/AppTheme.CustomTheme"
             />
-        <activity android:name=".WeatherPop"
+        <activity android:name=".popup.WeatherPop"
             android:theme="@style/AppTheme.CustomTheme"
             />
-        <activity android:name=".aquaPop"
+        <activity android:name=".popup.aquaPop"
             android:theme="@style/AppTheme.CustomTheme"
             />
-        <activity android:name=".gasPop"
+        <activity android:name=".popup.gasPop"
             android:theme="@style/AppTheme.CustomTheme"
             />
-        <activity android:name=".ghPop"
+        <activity android:name=".popup.ghPop"
             android:theme="@style/AppTheme.CustomTheme"
             />
-        <activity android:name=".alarmPop"
+        <activity android:name=".popup.alarmPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".blutPop"
+        <activity android:name=".popup.blutPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".notiPop"
+        <activity android:name=".popup.notiPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
