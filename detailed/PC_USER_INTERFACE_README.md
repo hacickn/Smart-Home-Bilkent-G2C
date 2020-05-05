@@ -28,7 +28,6 @@ To experience the program there are three users in the program
 3) Libraries
 * [controlsfx](https://github.com/controlsfx/controlsfx) - Custom controls for JavaFX
 * [jSerialComm](https://fazecast.github.io/jSerialComm/) - jSerialComm is a Java library designed to provide a platform-independent way to access standard serial ports without requiring external libraries
-* [Arduino](https://github.com/arduino/Arduino) - open-source electronics platform 
 * [JFoenix](https://github.com/jfoenixadmin/JFoenix) - JavaFX Material Design Library
 * [rxtx](https://github.com/rxtx/rxtx) - a Java cross platform wrapper library for the serial port
 * [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) - SQLite JDBC Driver
