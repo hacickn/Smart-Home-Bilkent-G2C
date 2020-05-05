@@ -33,12 +33,12 @@
     <center>
         <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
             <AnchorPane fx:id="generalAnchorPane" prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
-                <JFXButton fx:id="settingsButton" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButton" text="settingsButton" textFill="#ffffff00" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                <JFXButton fx:id="settingsButtonActive" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="settingButtonActive" text="settingsButtonActive" textFill="#ffffff00" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                <JFXButton fx:id="userProfileButton" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoy" text="userProfileButton" textFill="#ffffff00" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
-                <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
-                <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="settingsButton" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#commonButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="settingButton" text="settingsButton" textFill="#ffffff00" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="settingsButtonActive" layoutX="630.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="settingButtonActive" text="settingsButtonActive" textFill="#ffffff00" visible="false" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="userProfileButton" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#commonButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoy" text="userProfileButton" textFill="#ffffff00" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#commonButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
+                <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
                 <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="settingTopPaneLabels" text="USER PROFILE" visible="false">
                     <font>
                         <Font name="Arial Bold" size="13.0" />
@@ -63,11 +63,11 @@
                             <left>
                                 <VBox fx:id="menuLeffVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <JFXButton fx:id="menuElecButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuElecButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT" />
                                         <JFXProgressBar fx:id="menuElecProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
-                                        <JFXButton fx:id="menuGasButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuGasButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT" />
                                         <JFXProgressBar fx:id="menuGasProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
-                                        <JFXButton fx:id="menuWaterButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuWaterButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT" />
                                         <JFXProgressBar fx:id="menuWaterProgress" prefHeight="0.0" prefWidth="50.0" visible="false" />
                                     </children>
                                 </VBox>
@@ -75,10 +75,10 @@
                             <right>
                                 <VBox fx:id="menuRightVBox" alignment="CENTER" prefHeight="316.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <JFXButton fx:id="menuAquariumButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuAquariumButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT" />
                                         <JFXProgressBar fx:id="menuAquariumProgress" prefWidth="50.0" visible="false" />
-                                        <JFXButton fx:id="menuGreenHouseButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="menuGardenLightButton" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="lightButton" text="menuTempButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuGreenHouseButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuGardenLightButton" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="lightButton" text="menuTempButton" textFill="TRANSPARENT" />
                                         <JFXProgressBar fx:id="menuGardenLightProgress" prefWidth="50.0" visible="false" />
                                     </children>
                                 </VBox>
@@ -98,9 +98,9 @@
                                                         <Font name="Agency FB" size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="weather" textFill="TRANSPARENT" />
-                                                <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
-                                                <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="doorButton" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="weather" textFill="TRANSPARENT" />
+                                                <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" pickOnBounds="true" preserveRatio="true" styleClass="temperatureButton" />
+                                                <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="doorButton" textFill="TRANSPARENT" />
                                                 <Label fx:id="menuHomeTempValue" alignment="CENTER" layoutX="60.0" layoutY="31.0" prefHeight="26.0" prefWidth="94.0" styleClass="tempLabel">
                                                     <font>
                                                         <Font name="Agency FB" size="21.0" />
@@ -124,9 +124,9 @@
                             <top>
                                 <Pane fx:id="connectionPane" maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <JFXButton fx:id="menuConnectionButton" layoutX="325.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="menuBulkChange" layoutX="200.0" layoutY="25.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="bulkChangeButton" text="menuConnectionButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="menuTimeConfigurationButton" layoutX="450.0" layoutY="25.0" onAction="#menuPaneOpenerButtonsOnAction" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="timeConfigurationButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuConnectionButton" layoutX="325.0" layoutY="25.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuBulkChange" layoutX="200.0" layoutY="25.0" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="bulkChangeButton" text="menuConnectionButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="menuTimeConfigurationButton" layoutX="450.0" layoutY="25.0" onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="timeConfigurationButton" text="menuConnectionButton" textFill="TRANSPARENT" />
                                     </children>
                                 </Pane>
                             </top>
@@ -140,7 +140,7 @@
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="elecSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="elecSubMenuToggleButton" textFill="TRANSPARENT" />
+                                                <JFXToggleButton fx:id="elecSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="elecSubMenuToggleButton" textFill="TRANSPARENT" />
                                                 <Label fx:id="elecSubPaneOpenLabelPassive" alignment="CENTER" layoutX="30.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0" styleClass="contextPassive" text="LAST OPENING">
                                                     <font>
                                                         <Font name="Agency FB" size="21.0" />
@@ -161,7 +161,7 @@
                                                         <Font name="Agency FB" size="17.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="elecSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="elecSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="elecSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="elecSubMenuButtonPassive" textFill="TRANSPARENT" />
                                                 <Label fx:id="elecSubPaneLabelActive" alignment="CENTER" layoutX="100.0" layoutY="14.0" prefWidth="300.0" styleClass="contextActive" text="ELECTRICITY" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />
@@ -187,7 +187,7 @@
                                                         <Font name="Agency FB" size="17.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="elecSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="elecSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXButton fx:id="elecSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="elecSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                             </children>
                                         </Pane>
                                         <Pane fx:id="menuGasPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
@@ -196,14 +196,14 @@
                                                     <Font name="Agency FB" size="35.0" />
                                                 </font>
                                             </Label>
-                                            <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
-                                            <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gasSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                            <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
+                                            <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gasSubMenuButtonPassive" textFill="TRANSPARENT" />
                                             <Label fx:id="gasSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GAS" visible="false">
                                                 <font>
                                                     <Font name="Agency FB" size="35.0" />
                                                 </font>
                                             </Label>
-                                            <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gasSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                            <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gasSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                         </Pane>
                                         <Pane fx:id="menuWaterPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
                                             <children>
@@ -212,14 +212,14 @@
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="waterSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="waterSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                                 <Label fx:id="waterSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="WATER" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                             </children>
                                         </Pane>
                                         <Pane fx:id="menuAquariumPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
@@ -229,14 +229,14 @@
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="aquariumSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="waterSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                                <JFXToggleButton fx:id="aquariumSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="waterSubMenuToggleButton" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" />
                                                 <Label fx:id="aquariumSubPaneLabelActive" alignment="CENTER" layoutX="96.0" layoutY="14.0" prefWidth="300.0" styleClass="contextActive" text="AQUARIUM" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="aquariumSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXButton fx:id="aquariumSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                             </children>
                                         </Pane>
                                         <Pane fx:id="menuGreenHousePane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
@@ -271,8 +271,8 @@
                                                         <Font name="Agency FB" size="27.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="greenhouseSubMenuButtonPassive" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="greenhouseSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="greenhouseSubMenuButtonPassive" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="greenhouseSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                             </children>
                                         </Pane>
                                         <Pane fx:id="menuGardenLightPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
@@ -282,14 +282,14 @@
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="gardenLightSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#openMenuPaneToggles" styleClass="toggleButtons" text="gardenLightSubMenuToggleButton" textFill="TRANSPARENT" />
-                                                <JFXButton fx:id="gardenLightSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXToggleButton fx:id="gardenLightSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="gardenLightSubMenuToggleButton" textFill="TRANSPARENT" />
+                                                <JFXButton fx:id="gardenLightSubMenuButtonPassive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                                 <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActive" text="GARDEN LIGHT" visible="false">
                                                     <font>
                                                         <Font name="Agency FB" size="35.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#paneChangerButtonsMov" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
+                                                <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                             </children>
                                         </Pane>
                                         <Pane fx:id="menuBulkChangePane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
@@ -329,7 +329,7 @@
                                                         <Font name="Trebuchet MS" size="11.0" />
                                                     </font>
                                                 </JFXRadioButton>
-                                                <JFXButton fx:id="bulkChangesSaveButton" layoutX="128.0" layoutY="246.0" onAction="#menuPaneOpenerButtonsOnAction" prefHeight="40.0" prefWidth="245.0" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
+                                                <JFXButton fx:id="bulkChangesSaveButton" layoutX="128.0" layoutY="246.0" onAction="#menuPaneButtonsOnAction" prefHeight="40.0" prefWidth="245.0" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
                                                     <font>
                                                         <Font name="Marlett" size="21.0" />
                                                     </font>
@@ -344,12 +344,12 @@
                                                         <Font name="Trebuchet MS" size="11.0" />
                                                     </font>
                                                 </JFXRadioButton>
-                                                <JFXRadioButton fx:id="incomingWaterRadioButton" layoutX="10.0" layoutY="206.0" onAction="#menuPaneOpenerButtonsOnAction" prefHeight="17.0" prefWidth="90.0" styleClass="changeUserInforRadioButton" text="INCOMING W." textFill="#030303">
+                                                <JFXRadioButton fx:id="incomingWaterRadioButton" layoutX="10.0" layoutY="206.0" onAction="#menuPaneButtonsOnAction" prefHeight="17.0" prefWidth="90.0" styleClass="changeUserInforRadioButton" text="INCOMING W." textFill="#030303">
                                                     <font>
                                                         <Font name="Trebuchet MS" size="11.0" />
                                                     </font>
                                                 </JFXRadioButton>
-                                                <JFXRadioButton fx:id="outgoingWaterRadioButton" layoutX="367.0" layoutY="206.0" onAction="#menuPaneOpenerButtonsOnAction" prefHeight="17.0" prefWidth="162.0" styleClass="changeUserInforRadioButton" text="OUTGOING WATER" textFill="#030303">
+                                                <JFXRadioButton fx:id="outgoingWaterRadioButton" layoutX="367.0" layoutY="206.0" onAction="#menuPaneButtonsOnAction" prefHeight="17.0" prefWidth="162.0" styleClass="changeUserInforRadioButton" text="OUTGOING WATER" textFill="#030303">
                                                     <font>
                                                         <Font name="Trebuchet MS" size="11.0" />
                                                     </font>
@@ -370,7 +370,7 @@
                                             <children>
                                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" styleClass="clockImage" />
                                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" styleClass="calenderImage" />
-                                                <JFXButton fx:id="dateTimeSaveButton" layoutX="218.0" layoutY="232.0" onAction="#menuPaneOpenerButtonsOnAction" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
+                                                <JFXButton fx:id="dateTimeSaveButton" layoutX="218.0" layoutY="232.0" onAction="#menuPaneButtonsOnAction" ripplerFill="#b85c0000" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;" text="SAVE">
                                                     <font>
                                                         <Font name="Agency FB" size="21.0" />
                                                     </font>
@@ -454,9 +454,9 @@
                                         <Font name="Arial Narrow" size="15.0" />
                                     </font>
                                 </JFXTextField>
-                                <JFXButton fx:id="changeUserNormalInfoButton" layoutX="192.0" layoutY="296.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserNormalnfo" textFill="TRANSPARENT" />
-                                <JFXButton fx:id="changeUserPrivateInfoButton" layoutX="524.0" layoutY="196.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserPrivInfo" textFill="TRANSPARENT" />
-                                <JFXButton fx:id="userChangerButton" layoutX="315.0" layoutY="14.0" onAction="#userInfoPanelBasicButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="userChange" text="changeUserButton" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="changeUserNormalInfoButton" layoutX="192.0" layoutY="296.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserNormalnfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="changeUserPrivateInfoButton" layoutX="524.0" layoutY="196.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="userInfoChange" text="changeUserPrivInfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="userChangerButton" layoutX="315.0" layoutY="14.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="userChange" text="changeUserButton" textFill="TRANSPARENT" />
                                 <Label fx:id="userChangerInfoLabel" alignment="CENTER" layoutX="259.0" layoutY="84.0" prefHeight="17.0" prefWidth="182.0" styleClass="userProfileInfoLabel" text="CHANGE USER" visible="false">
                                     <font>
                                         <Font name="Agency FB" size="14.0" />
@@ -486,8 +486,8 @@
                         </Pane>
                         <Pane fx:id="changeUserNormalInfoPane" layoutX="40.0" layoutY="70.0" prefHeight="330.0" prefWidth="290.0" style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;" styleClass="changeUserInfoPane" visible="false">
                             <children>
-                                <JFXButton fx:id="saveUserNormalInfo" layoutX="120.0" layoutY="14.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="saveNormalInfo" textFill="TRANSPARENT" />
-                                <JFXButton fx:id="backToUserProfileFromNormalInfo" layoutX="120.0" layoutY="266.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackNormalnfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="saveUserNormalInfo" layoutX="120.0" layoutY="14.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="saveNormalInfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="backToUserProfileFromNormalInfo" layoutX="120.0" layoutY="266.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackNormalnfo" textFill="TRANSPARENT" />
                                 <Label fx:id="normalChangeNameLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="90.0" prefHeight="21.0" prefWidth="92.0" styleClass="changeUserInfoLabels" text="NAME">
                                     <font>
                                         <Font name="Agency FB" size="17.0" />
@@ -510,8 +510,8 @@
                                 </Label>
                                 <JFXTextField fx:id="nameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="83.0" styleClass="changeUserInfoTextField" />
                                 <JFXTextField fx:id="surnameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0" layoutY="118.0" styleClass="changeUserInfoTextField" />
-                                <JFXRadioButton fx:id="maleRadioOption" alignment="CENTER_LEFT" layoutX="105.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="86.0" styleClass="changeUserInforRadioButton" text="MALE" />
-                                <JFXRadioButton fx:id="femaleRadioOption" alignment="CENTER_LEFT" layoutX="194.0" layoutY="197.0" onAction="#userInfoChangeGenderOptions" prefHeight="17.0" prefWidth="92.0" styleClass="changeUserInforRadioButton" text="FEMALE" />
+                                <JFXRadioButton fx:id="maleRadioOption" alignment="CENTER_LEFT" layoutX="105.0" layoutY="197.0" onAction="#userProfileButtonsOnAction" prefHeight="17.0" prefWidth="86.0" styleClass="changeUserInforRadioButton" text="MALE" />
+                                <JFXRadioButton fx:id="femaleRadioOption" alignment="CENTER_LEFT" layoutX="194.0" layoutY="197.0" onAction="#userProfileButtonsOnAction" prefHeight="17.0" prefWidth="92.0" styleClass="changeUserInforRadioButton" text="FEMALE" />
                                 <Label fx:id="normalInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0" prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels" text="PLEASE FILL TAL GAPS" visible="false">
                                     <font>
                                         <Font name="Agency FB" size="15.0" />
@@ -522,8 +522,8 @@
                         </Pane>
                         <Pane fx:id="changeUserPrivateInfoPane" layoutX="370.0" layoutY="70.0" prefHeight="330.0" prefWidth="290.0" style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;" styleClass="changeUserInfoPane" visible="false">
                             <children>
-                                <JFXButton fx:id="saveUserPrivateInfo" layoutX="120.0" layoutY="14.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="savePrivInfo" textFill="TRANSPARENT" />
-                                <JFXButton fx:id="backToUserProfileFromPrivateInfo" layoutX="120.0" layoutY="266.0" onAction="#changeUserInfoButtons" onMouseEntered="#userInfoPanelBasicButtonsMov" onMouseExited="#userInfoPanelBasicButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackPrivInfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="saveUserPrivateInfo" layoutX="120.0" layoutY="14.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoSave" text="savePrivInfo" textFill="TRANSPARENT" />
+                                <JFXButton fx:id="backToUserProfileFromPrivateInfo" layoutX="120.0" layoutY="266.0" onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement" onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="changeUserInfoBack" text="goBackPrivInfo" textFill="TRANSPARENT" />
                                 <Label fx:id="userNameLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="90.0" prefHeight="21.0" prefWidth="150.0" styleClass="changeUserInfoLabels" text="USER NAME">
                                     <font>
                                         <Font name="Agency FB" size="17.0" />
@@ -634,22 +634,22 @@
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                                        <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="51.0" layoutY="65.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="150.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
+                                        <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="51.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="201.0" layoutY="65.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="LIGHT ">
+                                        <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="201.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="LIGHT ">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="351.0" layoutY="65.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
+                                        <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="351.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="501.0" layoutY="65.0" onAction="#selectTheme" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                                        <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="501.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="CARTOON">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
@@ -683,9 +683,9 @@
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                                        <JFXButton fx:id="englishOption" layoutX="80.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 100;" styleClass="english" text="english" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="germanOption" layoutX="304.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="deutsch" text="deutsch" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="turkishOption" layoutX="501.0" layoutY="105.0" onAction="#selectLanguage" onMouseExited="#selectLanguageMovEx" onMouseMoved="#selectLanguageMov" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="turkce" text="turkce" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="englishOption" layoutX="80.0" layoutY="105.0" onAction="#languagePaneButtonsOnAction" onMouseExited="#languagePaneButtonsOnExit" onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 100;" styleClass="english" text="english" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="germanOption" layoutX="304.0" layoutY="105.0" onAction="#languagePaneButtonsOnAction" onMouseExited="#languagePaneButtonsOnExit" onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="deutsch" text="deutsch" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="turkishOption" layoutX="501.0" layoutY="105.0" onAction="#languagePaneButtonsOnAction" onMouseExited="#languagePaneButtonsOnExit" onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="turkce" text="turkce" textFill="TRANSPARENT" />
                                         <Label fx:id="englishLabel" layoutX="120.0" layoutY="66.0" styleClass="settingTopPaneLabels" text="ENGLISH" visible="false">
                                             <font>
                                                 <Font name="Agency FB" size="28.0" />
@@ -710,12 +710,12 @@
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                              <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0" onAction="#applicationSettingButtons" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="INTERNAL SIREN">
+                              <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="INTERNAL SIREN">
                                  <font>
                                     <Font name="Agency FB" size="21.0" />
                                  </font>
                               </JFXToggleButton>
-                              <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0" onAction="#applicationSettingButtons" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="EXTERNAL SIREN">
+                              <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="64.0" prefWidth="300.0" styleClass="toggleButtons" text="EXTERNAL SIREN">
                                  <font>
                                     <Font name="Agency FB" size="21.0" />
                                  </font>
@@ -755,12 +755,12 @@
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingButtons" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                               <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0" startY="144.0" />
                                     </children>
                                 </Pane>
@@ -777,7 +777,7 @@
                                         <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="134.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="bluImageActive" visible="false" />
                                         <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="483.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" styleClass="usbImageActive" visible="false" />
                                         <JFXButton layoutX="144.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="bluConnection" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="portConnectionButton" layoutX="493.0" layoutY="295.0" onAction="#applicationSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="portConnectionButton" layoutX="493.0" layoutY="295.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT" />
                                         <JFXComboBox fx:id="portChooser" editable="true" layoutX="415.0" layoutY="137.0" prefHeight="25.0" prefWidth="206.0" promptText="CHOOSE THE PORT" />
                                     </children>
                                 </Pane>
@@ -976,16 +976,16 @@
                                 <Pane maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="settingSubPane" visible="false" />
                                 <AnchorPane fx:id="applicationSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="610.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane">
                                     <children>
-                                        <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettings" text="themeSetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="languageSettingButton" layoutX="160.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettings" text="languageSetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="emergencySettingButton" layoutX="281.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettings" text="emergencySetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="phoneNotificationSettingButton" layoutX="413.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettings" text="phoneNotificationSetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="smartHomeConnectionSettingButton" layoutX="517.0" layoutY="9.0" onAction="#applicationSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettings" text="smartHomeConnectionSetting" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="themeSettingButtonActive" layoutX="39.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettingsActive" text="themeSettingActive" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="languageSettingButtonActive" layoutX="160.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettingsActive" text="languageSettingActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="emergencySettingButtonActive" layoutX="281.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettingsActive" text="emergencySettingActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettingsActive" text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0" layoutY="9.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettingsActive" text="smartHomeConnectionSettingActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0" onAction="#applicationSettingsButtonsOnAction" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettings" text="themeSetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="languageSettingButton" layoutX="160.0" layoutY="9.0" onAction="#applicationSettingsButtonsOnAction" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettings" text="languageSetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="emergencySettingButton" layoutX="281.0" layoutY="9.0" onAction="#applicationSettingsButtonsOnAction" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettings" text="emergencySetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="phoneNotificationSettingButton" layoutX="413.0" layoutY="9.0" onAction="#applicationSettingsButtonsOnAction" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettings" text="phoneNotificationSetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="smartHomeConnectionSettingButton" layoutX="517.0" layoutY="9.0" onAction="#applicationSettingsButtonsOnAction" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettings" text="smartHomeConnectionSetting" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="themeSettingButtonActive" layoutX="39.0" layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="themeSettingsActive" text="themeSettingActive" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="languageSettingButtonActive" layoutX="160.0" layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="languageSettingsActive" text="languageSettingActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="emergencySettingButtonActive" layoutX="281.0" layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="emergencySettingsActive" text="emergencySettingActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="notificationSettingsActive" text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0" layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0" prefWidth="50.0" styleClass="connectionSettingsActive" text="smartHomeConnectionSettingActive" textFill="TRANSPARENT" visible="false" />
                                         <Label fx:id="themeSubLabel" alignment="CENTER" layoutX="-3.0" layoutY="67.0" prefHeight="18.0" prefWidth="135.0" styleClass="tempLabel" text="THEME" visible="false">
                                             <font>
                                                 <Font name="Agency FB" size="15.0" />
@@ -1015,23 +1015,23 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="usersSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="610.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane" visible="false">
                                     <children>
-                                        <JFXButton fx:id="usersSettingSubPaneAddUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="addUserButton" text="addUser" textFill="TRANSPARENT" AnchorPane.leftAnchor="167.0" />
-                                        <JFXButton fx:id="usersSettingSubPaneRemoveUser" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="removeUserButton" text="removeUser" textFill="TRANSPARENT" AnchorPane.rightAnchor="167.0" />
-                              <JFXButton fx:id="usersSettingSubPanePermissionButton" layoutX="270.0" layoutY="15.0" onAction="#usersSettingSubPaneButtons" prefHeight="70.0" prefWidth="70.0" styleClass="permissionButton" text="permission" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="usersSettingSubPaneAddUser" layoutY="15.0" onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0" styleClass="addUserButton" text="addUser" textFill="TRANSPARENT" AnchorPane.leftAnchor="167.0" />
+                                        <JFXButton fx:id="usersSettingSubPaneRemoveUser" layoutY="15.0" onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0" styleClass="removeUserButton" text="removeUser" textFill="TRANSPARENT" AnchorPane.rightAnchor="167.0" />
+                              <JFXButton fx:id="usersSettingSubPanePermissionButton" layoutX="270.0" layoutY="15.0" onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0" styleClass="permissionButton" text="permission" textFill="TRANSPARENT" />
                                     </children>
                                 </AnchorPane>
                                 <AnchorPane fx:id="homeSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0" prefWidth="625.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;" styleClass="settingBorderPane" visible="false">
                                     <children>
-                                        <JFXButton fx:id="homeSettingElecButton" layoutX="43.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="elecButton" text="homeSettingElecButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingGasButton" layoutX="157.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButton" text="homeSettingGasButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingGreenHouseButton" layoutX="399.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingWeatherButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="weather" text="homeSettingWeatherButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="waterButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouseActive" text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="homeSettingWeatherButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingButtonsMov" onMouseExited="#applicationSettingButtonsMovEx" prefHeight="65.0" prefWidth="65.0" styleClass="weatherActive" text="homeSettingWeatherButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingElecButton" layoutX="43.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="elecButton" text="homeSettingElecButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingGasButton" layoutX="157.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="gasButton" text="homeSettingGasButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="waterButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingGreenHouseButton" layoutX="399.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingWeatherButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="weather" text="homeSettingWeatherButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="waterButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouseActive" text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingWeatherButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="weatherActive" text="homeSettingWeatherButtonActive" textFill="TRANSPARENT" visible="false" />
                                         <Label fx:id="homeSubPaneELecLabel" alignment="CENTER" layoutX="18.0" layoutY="73.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="ELECTRICITY" visible="false">
                                             <font>
                                                 <Font name="Agency FB" size="18.0" />
@@ -1127,47 +1127,47 @@
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>
                                         </JFXTextField>
-                                        <JFXRadioButton fx:id="createUserMaleOption" layoutX="108.0" layoutY="186.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="MALE">
+                                        <JFXRadioButton fx:id="createUserMaleOption" layoutX="108.0" layoutY="186.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="MALE">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserFemaleOption" layoutX="191.0" layoutY="186.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="92.0" styleClass="changeThemeSaveRadioButton" text="FEMALE">
+                                        <JFXRadioButton fx:id="createUserFemaleOption" layoutX="191.0" layoutY="186.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="92.0" styleClass="changeThemeSaveRadioButton" text="FEMALE">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserDarkThemeOption" layoutX="108.0" layoutY="226.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="DARK">
+                                        <JFXRadioButton fx:id="createUserDarkThemeOption" layoutX="108.0" layoutY="226.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="80.0" styleClass="changeThemeSaveRadioButton" text="DARK">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserLightThemeOption" layoutX="190.0" layoutY="226.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="103.0" styleClass="changeThemeSaveRadioButton" text="LIGHT">
+                                        <JFXRadioButton fx:id="createUserLightThemeOption" layoutX="190.0" layoutY="226.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="103.0" styleClass="changeThemeSaveRadioButton" text="LIGHT">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserSmoothThemeOption" layoutX="276.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="SMOOTH">
+                                        <JFXRadioButton fx:id="createUserSmoothThemeOption" layoutX="276.0" layoutY="227.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="SMOOTH">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserCartoonThemeOption" layoutX="371.0" layoutY="227.0" onAction="#createUserControlSelections" prefHeight="20.0" prefWidth="116.0" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                                        <JFXRadioButton fx:id="createUserCartoonThemeOption" layoutX="371.0" layoutY="227.0" onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="116.0" styleClass="changeThemeSaveRadioButton" text="CARTOON">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserEnglishOption" layoutX="108.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="ENGLISH">
+                                        <JFXRadioButton fx:id="createUserEnglishOption" layoutX="108.0" layoutY="266.0" onAction="#createUserPaneAction" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="ENGLISH">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserTurkishOption" layoutX="192.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="TÜRKÇE">
+                                        <JFXRadioButton fx:id="createUserTurkishOption" layoutX="192.0" layoutY="266.0" onAction="#createUserPaneAction" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="TÜRKÇE">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserGermanOption" layoutX="277.0" layoutY="266.0" onAction="#createUserControlSelections" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="DEUTSCH">
+                                        <JFXRadioButton fx:id="createUserGermanOption" layoutX="277.0" layoutY="266.0" onAction="#createUserPaneAction" prefWidth="50.0" styleClass="changeThemeSaveRadioButton" text="DEUTSCH">
                                             <font>
                                                 <Font name="Agency FB" size="16.0" />
                                             </font>
@@ -1187,12 +1187,12 @@
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>
                                         </JFXPasswordField>
-                                        <JFXRadioButton fx:id="createUserParentOption" layoutX="504.0" layoutY="192.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="140.0" styleClass="changeThemeSaveRadioButton" text="PARENT">
+                                        <JFXRadioButton fx:id="createUserParentOption" layoutX="504.0" layoutY="192.0" onAction="#createUserPaneAction" prefHeight="18.0" prefWidth="140.0" styleClass="changeThemeSaveRadioButton" text="PARENT">
                                             <font>
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="createUserChildOption" layoutX="505.0" layoutY="218.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="CHILD">
+                                        <JFXRadioButton fx:id="createUserChildOption" layoutX="505.0" layoutY="218.0" onAction="#createUserPaneAction" prefHeight="18.0" prefWidth="135.0" styleClass="changeThemeSaveRadioButton" text="CHILD">
                                             <font>
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>
@@ -1203,7 +1203,7 @@
                                                 <Font name="Agency FB" size="18.0" />
                                             </font>
                                         </Label>
-                                        <JFXRadioButton fx:id="createUserElderOption" layoutX="505.0" layoutY="244.0" onAction="#createUserControlSelections" prefHeight="18.0" prefWidth="143.0" styleClass="changeThemeSaveRadioButton" text="ELDER">
+                                        <JFXRadioButton fx:id="createUserElderOption" layoutX="505.0" layoutY="244.0" onAction="#createUserPaneAction" prefHeight="18.0" prefWidth="143.0" styleClass="changeThemeSaveRadioButton" text="ELDER">
                                             <font>
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>
@@ -1288,12 +1288,12 @@
             </AnchorPane>
             <AnchorPane layoutY="703.0" prefHeight="98.0" prefWidth="800.0">
                 <children>
-                    <JFXButton fx:id="logoutButton" layoutX="365.0" maxHeight="70.0" maxWidth="70.0" minHeight="52.75" minWidth="52.75" onAction="#paneChangerButtons" onMouseEntered="#paneChangerButtonsMov" onMouseExited="#paneChangerButtonsMovEx" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00">
+                    <JFXButton fx:id="logoutButton" layoutX="365.0" maxHeight="70.0" maxWidth="70.0" minHeight="52.75" minWidth="52.75" onAction="#commonButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="logoutButton" text="logoutButtpn" textFill="#ffffff00">
                         <font>
                             <Font size="1.0" />
                         </font>
                     </JFXButton>
-               <JFXButton fx:id="helpButton" layoutX="723.0" layoutY="25.0" onAction="#paneChangerButtons" prefHeight="70.0" prefWidth="70.0" styleClass="helpButton" textFill="TRANSPARENT" />
+               <JFXButton fx:id="helpButton" layoutX="723.0" layoutY="25.0" onAction="#commonButtonsOnAction" prefHeight="70.0" prefWidth="70.0" styleClass="helpButton" textFill="TRANSPARENT" />
                 </children>
             </AnchorPane>
         </Pane>

@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent;
 
-import arduino.Arduino;
+import com.SmartHomeBilkent.extra.connection.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
 import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
@@ -60,7 +60,18 @@ import java.util.Scanner;
 public class MainPanel implements Initializable {
 
    //properties
-   //menu variables
+   /**
+    * PROPERTIES
+    * 1)menu variables
+    * 2)user profile variables
+    * 3)settings variables
+    * 3.1)setting - application settings variables
+    * 3.2)setting - users settings variables
+    * 3.3)setting - mods settings variables
+    * 3.4)setting - home settings variables
+    * 3.5)setting - sub menu variables
+    * 4)Some independent variables( various objects )
+    */
    @FXML
    private BorderPane firstStackPane;
    @FXML
@@ -133,7 +144,9 @@ public class MainPanel implements Initializable {
          aquariumSubMenuToggleButton, waterSubMenuToggleButton,
          gardenLightSubMenuToggleButton;
 
-   //user profile variables
+   /**
+    * 2)user profile variables
+    */
    @FXML
    private Label privateInfoWarning, normalInfoWarning,
          userProfileNameLabel, userProfileSurnameLabel,
@@ -171,7 +184,9 @@ public class MainPanel implements Initializable {
    @FXML
    private ImageView userInfoBoyImage, userInfoGirlImage;
 
-   //settings pane variables
+   /**
+    * 3)settings variables
+    */
    @FXML
    private AnchorPane settingAnchorPane;
    @FXML
@@ -188,7 +203,9 @@ public class MainPanel implements Initializable {
    private Label applicationSettingButtonLabel, usersSettingButtonLabel,
          modsSettingButtonLabel, homeSettingButtonLabel;
 
-   //settings pane ----application settings variables----
+   /**
+    * 3.1)setting - application settings variables
+    */
    @FXML
    private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
    @FXML
@@ -196,8 +213,8 @@ public class MainPanel implements Initializable {
          smoothThemeRadioButton, cartoonThemeRadioButton;
 
    @FXML
-   private JFXButton settingThemeSaveButton, englishOption,
-         germanOption, turkishOption;
+   private JFXButton englishOption, germanOption,
+         turkishOption;
    @FXML
    private ImageView settingThemeDarkImage,
          settingThemeLightImage,
@@ -215,7 +232,9 @@ public class MainPanel implements Initializable {
          smokeSensorVisualToggle, fireButtonSoundToggle,
          smokeSensorSoundToggle, gasSensorSoundToggle;
 
-   //settings pane ----users settings variables----
+   /**
+    * 3.2)setting - users settings variables
+    */
    @FXML
    private Pane settingUsersPane, addUserPane,
          deleteUserPane, permissionPane;
@@ -258,12 +277,14 @@ public class MainPanel implements Initializable {
    private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
          removeUserTextField;
    @FXML
-   ToggleButton permissionPaneElectricityToggle, permissionPaneWaterToggle,
+   private ToggleButton permissionPaneElectricityToggle, permissionPaneWaterToggle,
          permissionPaneGardenLightToggle, permissionPaneAquariumToggle,
          permissionPaneNotificationToggle, permissionPaneGasToggle,
          permissionPaneSirenToggle;
 
-   //settings pane ----mods setting variables----
+   /**
+    * 3.3)setting - mods settings variables
+    */
    @FXML
    private SplitPane settingModePane;
    @FXML
@@ -274,7 +295,9 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXSlider soundVolumeSlider;
 
-   //settings pane ----home settings variables----
+   /**
+    * 3.4)setting - home settings variables
+    */
    @FXML
    private Pane settingElecSettingPane, settingGasSettingPane,
          settingAquSettingPane, settingGreenHouseSettingPane, settingWeatherSettingPane;
@@ -295,7 +318,6 @@ public class MainPanel implements Initializable {
          feedingStartLabel, waterExchangeLabel,
          airMotorRunTimeLabel, greenHouseTemperatureLabel,
          greenHouseHumidityLabel, latestWaterLabel;
-   ;
    @FXML
    private AnchorPane applicationSettingSubPane;
    @FXML
@@ -318,8 +340,12 @@ public class MainPanel implements Initializable {
    private LineChart< Number, Number > greenHouseValuesChart;
    @FXML
    private CategoryAxis elecBarChartX, gasBarChartX;
+   @FXML
+   private JFXComboBox< String > portChooser, speciesOfFishComboBox;
 
-   //settings pane ----sub-menu variables----
+   /**
+    * 3.5)setting - sub menu variables
+    */
    @FXML
    private AnchorPane usersSettingSubPane, modsSettingSubPane, homeSettingSubPane;
    @FXML
@@ -342,10 +368,9 @@ public class MainPanel implements Initializable {
    private JFXSlider airMotorRunTime;
 
 
-   //program variables
-   @FXML
-   private JFXComboBox< String > portChooser, speciesOfFishComboBox;
-
+   /**
+    * 4)Some independent variables
+    */
    private ResourceBundle bundle;
    private AudioClip audioClip;
    private boolean soundCheck;
@@ -364,6 +389,7 @@ public class MainPanel implements Initializable {
    private String[] sensors;
    private String[] permissions;
    private CommonSetting commonSetting;
+
 
    //initialize method(it runs before the program start to run)
    @Override
@@ -450,7 +476,6 @@ public class MainPanel implements Initializable {
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
 
-
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
 
@@ -515,20 +540,18 @@ public class MainPanel implements Initializable {
 
       if( loginUser.getPreferredTheme().equals( "cartoon" ) || loginUser.getPreferredTheme().equals( "karıkatur" )
             || loginUser.getPreferredTheme().equals( "çızgı fılm" ) ) {
-         selectCartoonTheme();
          changeTheme( "cartoon" );
       } else if( loginUser.getPreferredTheme().equals( "light" ) || loginUser.getPreferredTheme().equals( "lıght" )
             || loginUser.getPreferredTheme().equals( "aydınlık" ) || loginUser.getPreferredTheme().equals( "lıcht" ) ) {
-         selectLightTheme();
          changeTheme( "light" );
       } else if( loginUser.getPreferredTheme().equals( "smooth" ) || loginUser.getPreferredTheme().equals( "puruzsuz" )
             || loginUser.getPreferredTheme().equals( "glatt" ) ) {
-         selectSmoothTheme();
          changeTheme( "smooth" );
       } else {
-         selectDarkTheme();
          changeTheme( "dark" );
       }
+
+      unSelectAllLanguage();
 
       if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) ) {
          languageSetter( "en" );
@@ -573,7 +596,6 @@ public class MainPanel implements Initializable {
       fillTransition.setAutoReverse( true );
       firstStackPane.getChildren().add( rectangle );
       rectangle.setVisible( false );
-
    }
 
 
@@ -586,7 +608,6 @@ public class MainPanel implements Initializable {
       settingUserTableUserName.setCellValueFactory( param -> param.getValue().getValue().userNameProperty() );
       settingUserTableTheme.setCellValueFactory( param -> param.getValue().getValue().preferredThemeProperty() );
       settingUserTableLanguage.setCellValueFactory( param -> param.getValue().getValue().preferredLanguageProperty() );
-
       settingUserTable.setRoot( new RecursiveTreeItem<>( Users.getInstance().getUserList()
             , RecursiveTreeObject::getChildren ) );
       settingUserTable.setShowRoot( false );
@@ -594,7 +615,7 @@ public class MainPanel implements Initializable {
 
    //these are helps to switch between three main pane(user profile, menu, setting)
    @FXML
-   void paneChangerButtons( ActionEvent event ) {
+   void commonButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == userProfileButton ) {
          openUserProfilePane();
       } else if( event.getSource() == menuButton ) {
@@ -618,22 +639,16 @@ public class MainPanel implements Initializable {
       }
    }
 
-   public void labelOpener( Label label, Boolean b ) {
-      if( b ) {
-         label.setVisible( true );
-      }
-   }
-
    @FXML
-   void paneChangerButtonsMov( MouseEvent event ) {
+   void commonButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
-         labelOpener( menuUserProfileLabel, textCheck );
+         menuUserProfileLabel.setVisible( textCheck );
          sound( "userProfileLang", soundCheck );
       } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
-         labelOpener( menuMenuLabel, textCheck );
+         menuMenuLabel.setVisible( textCheck );
          sound( "menuLang", soundCheck );
       } else if( event.getSource() == settingsButton || event.getSource() == settingsButtonActive ) {
-         labelOpener( menuSettingLabel, textCheck );
+         menuSettingLabel.setVisible( textCheck );
          sound( "settingLang", soundCheck );
       } else if( event.getSource() == logoutButton ) {
          sound( "closeAppLang", soundCheck );
@@ -669,12 +684,12 @@ public class MainPanel implements Initializable {
          sound( "timeConfigurationLang", soundCheck );
       } else if( event.getSource() == doorButton ) {
          sound( "doorLang", soundCheck );
-         labelOpener( menuOpenDoorLabel, textCheck );
+         menuOpenDoorLabel.setVisible( textCheck );
       }
    }
 
    @FXML
-   void paneChangerButtonsMovEx( MouseEvent event ) {
+   void commonButtonsOnExit( MouseEvent event ) {
       if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
          menuUserProfileLabel.setVisible( false );
       } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
@@ -841,39 +856,39 @@ public class MainPanel implements Initializable {
          openSettingsPane();
          closeAllApplicationSettingSubPanes();
          openSmartHomeConnectionSetting();
-         labelOpener( connectionSubLabel, textCheck );
+         connectionSubLabel.setVisible( textCheck );
       }
    }
 
    //this controls which pane will be visible by fallowing buttons
    @FXML
-   void menuPaneOpenerButtonsOnAction( ActionEvent event ) {
+   void menuPaneButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == menuElecButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuElecPane.setVisible( true );
       } else if( event.getSource() == menuGasButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuGasPane.setVisible( true );
       } else if( event.getSource() == menuAquariumButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuAquariumPane.setVisible( true );
       } else if( event.getSource() == menuGreenHouseButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuGreenHousePane.setVisible( true );
       } else if( event.getSource() == menuWaterButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuWaterPane.setVisible( true );
       } else if( event.getSource() == menuGardenLightButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuGardenLightPane.setVisible( true );
       } else if( event.getSource() == doorButton ) {
          if( isArduinoConnect )
             home.getDoor().open( true );
       } else if( event.getSource() == menuBulkChange ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuBulkChangePane.setVisible( true );
       } else if( event.getSource() == menuTimeConfigurationButton ) {
-         closeAllMenuView();
+         closeAllMenuPane();
          menuTimeConfigurationPane.setVisible( true );
       } else if( event.getSource() == bulkChangesSaveButton ) {
          StringBuilder message;
@@ -945,7 +960,6 @@ public class MainPanel implements Initializable {
          openGas( gasRadioButton.isSelected() );
          openElectricity( electricityRadioButton.isSelected() );
 
-
       } else if( event.getSource() == dateTimeSaveButton ) {
          if( menuDatePicker.getValue() == null ||
                menuTimePicker.getValue() == null ) {
@@ -988,7 +1002,7 @@ public class MainPanel implements Initializable {
       }
    }
 
-   void closeAllMenuView() {
+   void closeAllMenuPane() {
       menuElecPane.setVisible( false );
       menuGasPane.setVisible( false );
       menuAquariumPane.setVisible( false );
@@ -1001,7 +1015,7 @@ public class MainPanel implements Initializable {
 
    //it controls whether facilities are opened or closed
    @FXML
-   void openMenuPaneToggles( ActionEvent event ) {
+   void menuPaneToggleButtonOnAction( ActionEvent event ) {
       if( event.getSource() == elecSubMenuToggleButton ) {
          openElectricity( elecSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
@@ -1081,7 +1095,7 @@ public class MainPanel implements Initializable {
 
    //user profiles main buttons (normal info change button, priv info change button, user changer button)
    @FXML
-   void userInfoPanelBasicButtons( ActionEvent event ) {
+   void userProfileButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == changeUserNormalInfoButton ) {
          userProfilePane.setEffect( new BoxBlur( 10, 3, 3 ) );
          changeUserNormalInfoPane.setVisible( true );
@@ -1100,55 +1114,12 @@ public class MainPanel implements Initializable {
             stage.setResizable( false );
             stage.show();
             firstStackPane.getScene().getWindow().hide();
+            if( isArduinoConnect )
+               arduino.closeConnection();
          } catch( Exception e ) {
             e.printStackTrace();
          }
-      }
-   }
-
-   //user profiles main buttons' helper labels animation
-   @FXML
-   void userInfoPanelBasicButtonsMov( MouseEvent event ) {
-      if( event.getSource() == userChangerButton ) {
-         labelOpener( userChangerInfoLabel, textCheck );
-         sound( "userChangerLang", soundCheck );
-      } else if( event.getSource() == changeUserNormalInfoButton ) {
-         labelOpener( changeUserInfoLabel, textCheck );
-         sound( "changeUserInfoLang", soundCheck );
-      } else if( event.getSource() == changeUserPrivateInfoButton ) {
-         labelOpener( changeUserPrivateInfoLabel, textCheck );
-         sound( "changeUserInfoLang", soundCheck );
-      } else if( event.getSource() == saveUserNormalInfo || event.getSource() == saveUserPrivateInfo ) {
-         sound( "saveChangesLang", soundCheck );
-      } else if( event.getSource() == backToUserProfileFromNormalInfo || event.getSource() == backToUserProfileFromPrivateInfo ) {
-         sound( "goBackLang", soundCheck );
-      }
-   }
-
-   @FXML
-   void userInfoPanelBasicButtonsMovEx( MouseEvent event ) {
-      if( event.getSource() == userChangerButton )
-         userChangerInfoLabel.setVisible( false );
-      else if( event.getSource() == changeUserNormalInfoButton )
-         changeUserInfoLabel.setVisible( false );
-      else if( event.getSource() == changeUserPrivateInfoButton )
-         changeUserPrivateInfoLabel.setVisible( false );
-
-      sound( "gasLang", false );
-   }
-
-   //user profiles user info changer panels
-   public void toGoBackUserProfile() {
-      userProfilePane.setEffect( new BoxBlur( 0, 0, 0 ) );
-      userProfilePane.setDisable( false );
-      changeUserNormalInfoPane.setVisible( false );
-      changeUserPrivateInfoPane.setVisible( false );
-   }
-
-
-   @FXML
-   void changeUserInfoButtons( ActionEvent event ) throws SQLException, IOException {
-      if( event.getSource() == saveUserNormalInfo ) {
+      } else if( event.getSource() == saveUserNormalInfo ) {
          String gender;
 
          if( nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue() == null ) {
@@ -1196,12 +1167,7 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == backToUserProfileFromPrivateInfo ) {
          toGoBackUserProfile();
          privateInfoWarning.setVisible( false );
-      }
-   }
-
-   @FXML
-   void userInfoChangeGenderOptions( ActionEvent event ) {
-      if( event.getSource() == maleRadioOption ) {
+      } else if( event.getSource() == maleRadioOption ) {
          if( maleRadioOption.isSelected() ) {
             femaleRadioOption.setSelected( false );
          } else {
@@ -1215,6 +1181,46 @@ public class MainPanel implements Initializable {
          }
       }
    }
+
+   //user profiles main buttons' helper labels animation
+   @FXML
+   void userProfileButtonsOnMovement( MouseEvent event ) {
+      if( event.getSource() == userChangerButton ) {
+         userChangerInfoLabel.setVisible( textCheck );
+         sound( "userChangerLang", soundCheck );
+      } else if( event.getSource() == changeUserNormalInfoButton ) {
+         changeUserInfoLabel.setVisible( textCheck );
+         sound( "changeUserInfoLang", soundCheck );
+      } else if( event.getSource() == changeUserPrivateInfoButton ) {
+         changeUserPrivateInfoLabel.setVisible( textCheck );
+         sound( "changeUserInfoLang", soundCheck );
+      } else if( event.getSource() == saveUserNormalInfo || event.getSource() == saveUserPrivateInfo ) {
+         sound( "saveChangesLang", soundCheck );
+      } else if( event.getSource() == backToUserProfileFromNormalInfo || event.getSource() == backToUserProfileFromPrivateInfo ) {
+         sound( "goBackLang", soundCheck );
+      }
+   }
+
+   @FXML
+   void userProfileButtonsOnExit( MouseEvent event ) {
+      if( event.getSource() == userChangerButton )
+         userChangerInfoLabel.setVisible( false );
+      else if( event.getSource() == changeUserNormalInfoButton )
+         changeUserInfoLabel.setVisible( false );
+      else if( event.getSource() == changeUserPrivateInfoButton )
+         changeUserPrivateInfoLabel.setVisible( false );
+
+      sound( "gasLang", false );
+   }
+
+   //user profiles user info changer panels
+   public void toGoBackUserProfile() {
+      userProfilePane.setEffect( new BoxBlur( 0, 0, 0 ) );
+      userProfilePane.setDisable( false );
+      changeUserNormalInfoPane.setVisible( false );
+      changeUserPrivateInfoPane.setVisible( false );
+   }
+
 
    //settings
    //settings ---------top pane
@@ -1231,6 +1237,310 @@ public class MainPanel implements Initializable {
          settingElecSettingPane.setVisible( true );
          homeSettingElecButtonActive.setVisible( true );
       }
+   }
+
+
+   //all settings buttons ( app settings(theme-language-emergency-notification-connection), users settings( add-remove user), home settings())
+   @FXML
+   void settingsFacilitiesButtonsMov( MouseEvent event ) {
+      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive ) {
+         applicationSettingButtonLabel.setVisible( textCheck );
+         sound( "applicationSettingLang", soundCheck );
+      } else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive ) {
+         usersSettingButtonLabel.setVisible( textCheck );
+         sound( "usersSettingLang", soundCheck );
+      } else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive ) {
+         modsSettingButtonLabel.setVisible( textCheck );
+         sound( "modsSettingLang", soundCheck );
+      } else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive ) {
+         homeSettingButtonLabel.setVisible( textCheck );
+         sound( "homeLang", soundCheck );
+      }
+   }
+
+   @FXML
+   void settingsFacilitiesButtonsMovEx( MouseEvent event ) {
+      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive )
+         applicationSettingButtonLabel.setVisible( false );
+      else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive )
+         usersSettingButtonLabel.setVisible( false );
+      else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive )
+         modsSettingButtonLabel.setVisible( false );
+      else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive )
+         homeSettingButtonLabel.setVisible( false );
+      sound( "gasLang", false );
+   }
+
+   //settings -----application settings
+   @FXML
+   void applicationSettingsButtonsOnAction( ActionEvent event ) throws SQLException {
+      if( event.getSource() == themeSettingButton ) {
+         closeAllApplicationSettingSubPanes();
+         openThemeSetting();
+      } else if( event.getSource() == languageSettingButton ) {
+         closeAllApplicationSettingSubPanes();
+         openLanguageSetting();
+      } else if( event.getSource() == emergencySettingButton ) {
+         closeAllApplicationSettingSubPanes();
+         openEmergencySetting();
+      } else if( event.getSource() == phoneNotificationSettingButton ) {
+         closeAllApplicationSettingSubPanes();
+         openPhoneNotificationSetting();
+      } else if( event.getSource() == smartHomeConnectionSettingButton ) {
+         closeAllApplicationSettingSubPanes();
+         openSmartHomeConnectionSetting();
+      } else if( event.getSource() == portConnectionButton ) {
+         arduino = new Arduino( portChooser.getValue(), 9600 );
+
+         if( arduino.openConnection() ) {
+            isArduinoConnect = true;
+            portConnectionButton.setDisable( true );
+            home = new Home( arduino );
+            home.adjustCollective( "manual_on#:" );
+            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
+               @Override
+               public int getListeningEvents() {
+                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
+               }
+
+               @Override
+               public void serialEvent( SerialPortEvent serialPortEvent ) {
+                  if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
+                     return;
+                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING, 0, 0 );
+                  String out = "";
+                  Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+
+                  try {
+                     while( in.hasNextLine() )
+                        out = out + in.nextLine();
+                  } catch( Exception e ) {
+                     e.printStackTrace();
+                  }
+                  out = out.replaceAll( "\\s", "" );
+                  out = out.replace( "\n", "" ).replace( "\r", "" );
+
+                  if( !out.isEmpty() ) {
+                     System.out.println( out );
+                     if( out.equals( "FireButon" )
+                           || out.equals( "SmokeAlarm" )
+                           || out.equals( "GasAlarm" )
+                           || out.equals( "Gas+Fire" )
+                           || out.equals( "Gas+Smokealarm" )
+                           || out.equals( "Gas+Smoke" )
+                           || out.equals( "Gas+Smoke+Fire" ) ) {
+                        if( fillTransition.getCurrentRate() == 0.0d ) {
+                           fillTransition.play();
+                           rectangle.setVisible( true );
+                        }
+                     }
+                  }
+               }
+            } );
+         } else {
+            portChooser.setValue( "" );
+         }
+      } else if( event.getSource() == externalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren().open( externalSirenToggle.isSelected() );
+      } else if( event.getSource() == internalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
+      } else if( event.getSource() == fireButtonVisualToggle ) {
+         if( fireButtonVisualToggle.isSelected() )
+            sensors[ 0 ] = "O" + sensors[ 0 ].charAt( 1 );
+         else
+            sensors[ 0 ] = "C" + sensors[ 0 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      } else if( event.getSource() == gasSensorVisualToggle ) {
+         if( gasSensorVisualToggle.isSelected() )
+            sensors[ 1 ] = "O" + sensors[ 1 ].charAt( 1 );
+         else
+            sensors[ 1 ] = "C" + sensors[ 1 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      } else if( event.getSource() == smokeSensorVisualToggle ) {
+         if( smokeSensorVisualToggle.isSelected() )
+            sensors[ 2 ] = "O" + sensors[ 2 ].charAt( 1 );
+         else
+            sensors[ 2 ] = "C" + sensors[ 2 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      } else if( event.getSource() == fireButtonSoundToggle ) {
+         if( fireButtonSoundToggle.isSelected() )
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "O";
+         else
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      } else if( event.getSource() == gasSensorSoundToggle ) {
+         if( gasSensorSoundToggle.isSelected() )
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "O";
+         else
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      } else if( event.getSource() == smokeSensorSoundToggle ) {
+         if( smokeSensorSoundToggle.isSelected() )
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "O";
+         else
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      }
+   }
+
+   @FXML
+   void applicationSettingsButtonsOnMovement( MouseEvent event ) {
+
+      if( event.getSource() == themeSettingButton
+            || event.getSource() == themeSettingButtonActive ) {
+         themeSubLabel.setVisible( textCheck );
+         sound( "themeLang", soundCheck );
+      } else if( event.getSource() == languageSettingButton
+            || event.getSource() == languageSettingButtonActive ) {
+         languageSubLabel.setVisible( textCheck );
+         sound( "languageLang", soundCheck );
+      } else if( event.getSource() == emergencySettingButton
+            || event.getSource() == emergencySettingButtonActive ) {
+         emergencySubLabel.setVisible( textCheck );
+         sound( "emergencyLang", soundCheck );
+      } else if( event.getSource() == phoneNotificationSettingButton
+            || event.getSource() == phoneNotificationSettingButtonActive ) {
+         notificationSubLabel.setVisible( textCheck );
+         sound( "notificationLang", soundCheck );
+      } else if( event.getSource() == smartHomeConnectionSettingButton
+            || event.getSource() == smartHomeConnectionSettingButtonActive ) {
+         connectionSubLabel.setVisible( textCheck );
+         sound( "connectionLang", soundCheck );
+      } else if( event.getSource() == homeSettingElecButton
+            || event.getSource() == homeSettingElecButtonActive ) {
+         sound( "elecSettingsLang", soundCheck );
+         homeSubPaneELecLabel.setVisible( textCheck );
+      } else if( event.getSource() == homeSettingGasButton
+            || event.getSource() == homeSettingGasButtonActive ) {
+         sound( "gasSettingsLang", soundCheck );
+         homeSubPaneGasLabel.setVisible( textCheck );
+      } else if( event.getSource() == homeSettingAquButton
+            || event.getSource() == homeSettingAquButtonActive ) {
+         sound( "aquSettingsLang", soundCheck );
+         homeSubPaneAquLabel.setVisible( textCheck );
+      } else if( event.getSource() == homeSettingGreenHouseButton
+            || event.getSource() == homeSettingGreenHouseButtonActive ) {
+         sound( "greenHouseSettingsLang", soundCheck );
+         homeSubPaneGreenHouseLabel.setVisible( textCheck );
+      } else if( event.getSource() == homeSettingWeatherButton
+            || event.getSource() == homeSettingWeatherButtonActive ) {
+         sound( "weatherForecastLang", soundCheck );
+         homeSubPaneWeatherLabel.setVisible( textCheck );
+      }
+   }
+
+   @FXML
+   void applicationSettingsButtonsOnExit( MouseEvent event ) {
+      if( event.getSource() == themeSettingButton )
+         themeSubLabel.setVisible( false );
+      else if( event.getSource() == languageSettingButton )
+         languageSubLabel.setVisible( false );
+      else if( event.getSource() == emergencySettingButton )
+         emergencySubLabel.setVisible( false );
+      else if( event.getSource() == phoneNotificationSettingButton )
+         notificationSubLabel.setVisible( false );
+      else if( event.getSource() == smartHomeConnectionSettingButton )
+         connectionSubLabel.setVisible( false );
+      else if( event.getSource() == homeSettingElecButton
+            || event.getSource() == homeSettingElecButtonActive )
+         homeSubPaneELecLabel.setVisible( false );
+      else if( event.getSource() == homeSettingGasButton
+            || event.getSource() == homeSettingGasButtonActive )
+         homeSubPaneGasLabel.setVisible( false );
+      else if( event.getSource() == homeSettingAquButton
+            || event.getSource() == homeSettingAquButtonActive )
+         homeSubPaneAquLabel.setVisible( false );
+      else if( event.getSource() == homeSettingGreenHouseButton
+            || event.getSource() == homeSettingGreenHouseButtonActive )
+         homeSubPaneGreenHouseLabel.setVisible( false );
+      else if( event.getSource() == homeSettingWeatherButton
+            || event.getSource() == homeSettingWeatherButtonActive )
+         homeSubPaneWeatherLabel.setVisible( false );
+      sound( "gasLang", false );
+   }
+
+   void openThemeSetting() {
+      themeSettingButtonActive.setVisible( true );
+      settingThemePane.setVisible( true );
+   }
+
+   void openLanguageSetting() {
+      languageSettingButtonActive.setVisible( true );
+      settingLanguagePane.setVisible( true );
+   }
+
+   void openEmergencySetting() {
+      emergencySettingButtonActive.setVisible( true );
+      settingEmergencyPane.setVisible( true );
+   }
+
+   void openPhoneNotificationSetting() {
+      phoneNotificationSettingButtonActive.setVisible( true );
+      settingNotificationPane.setVisible( true );
+   }
+
+
+   void openSmartHomeConnectionSetting() {
+      smartHomeConnectionSettingButtonActive.setVisible( true );
+      settingConnectionPane.setVisible( true );
+      refreshMenu();
+   }
+
+   void closeAllApplicationSettingSubPanes() {
+      themeSettingButtonActive.setVisible( false );
+      settingThemePane.setVisible( false );
+      languageSettingButtonActive.setVisible( false );
+      settingLanguagePane.setVisible( false );
+      emergencySettingButtonActive.setVisible( false );
+      settingEmergencyPane.setVisible( false );
+      phoneNotificationSettingButtonActive.setVisible( false );
+      settingNotificationPane.setVisible( false );
+      smartHomeConnectionSettingButtonActive.setVisible( false );
+      settingConnectionPane.setVisible( false );
+      themeSubLabel.setVisible( false );
+      languageSubLabel.setVisible( false );
+      emergencySubLabel.setVisible( false );
+      notificationSubLabel.setVisible( false );
+      connectionSubLabel.setVisible( false );
+   }
+
+   void closeApplicationSettingPane() {
+      applicationSettingButtonActive.setVisible( false );
+      applicationSettingSubPane.setVisible( false );
+      closeAllApplicationSettingSubPanes();
+      themeSubLabel.setVisible( textCheck );
+   }
+
+   void openApplicationPanes() {
+      applicationSettingButtonActive.setVisible( true );
+      applicationSettingSubPane.setVisible( true );
+      openThemeSetting();
+      closeAllUsersPane();
+      closeModsPane();
+      closeHomeSettingPane();
+   }
+
+   //settings ---------view pane----theme pane
+
+   @FXML
+   void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
+      unSelectAllTheme();
+      ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
+      saveTheme();
+   }
+
+   public void unSelectAllTheme() {
+      cartoonThemeRadioButton.setSelected( false );
+      lightThemeRadioButton.setSelected( false );
+      smoothThemeRadioButton.setSelected( false );
+      darkThemeRadioButton.setSelected( false );
+
+      settingThemeDarkImage.setVisible( false );
+      settingThemeLightImage.setVisible( false );
+      settingThemeSmoothImage.setVisible( false );
+      settingThemeCartoonImage.setVisible( false );
    }
 
    public void saveTheme() throws SQLException {
@@ -1250,114 +1560,27 @@ public class MainPanel implements Initializable {
       userPreferenceUpdate( loginUser );
    }
 
-   //all settings buttons ( app settings(theme-language-emergency-notification-connection), users settings( add-remove user), home settings())
-   @FXML
-   void settingsFacilitiesButtonsMov( MouseEvent event ) {
-      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive ) {
-         labelOpener( applicationSettingButtonLabel, textCheck );
-         sound( "applicationSettingLang", soundCheck );
-      } else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive ) {
-         labelOpener( usersSettingButtonLabel, textCheck );
-         sound( "usersSettingLang", soundCheck );
-      } else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive ) {
-         labelOpener( modsSettingButtonLabel, textCheck );
-         sound( "modsSettingLang", soundCheck );
-      } else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive ) {
-         labelOpener( homeSettingButtonLabel, textCheck );
-         sound( "homeLang", soundCheck );
-      }
-   }
-
-   @FXML
-   void settingsFacilitiesButtonsMovEx( MouseEvent event ) {
-      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive )
-         applicationSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive )
-         usersSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive )
-         modsSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive )
-         homeSettingButtonLabel.setVisible( false );
-      sound( "gasLang", false );
-   }
-
-   //settings ---------view pane
-   //settings ---------view pane----theme pane
-
-   @FXML
-   void selectTheme( ActionEvent event ) throws SQLException {
-      if( event.getSource() == darkThemeRadioButton )
-         selectDarkTheme();
-      else if( event.getSource() == lightThemeRadioButton )
-         selectLightTheme();
-      else if( event.getSource() == smoothThemeRadioButton )
-         selectSmoothTheme();
-      else if( event.getSource() == cartoonThemeRadioButton )
-         selectCartoonTheme();
-      saveTheme();
-   }
-
-   void selectDarkTheme() {
-      cartoonThemeRadioButton.setSelected( false );
-      lightThemeRadioButton.setSelected( false );
-      smoothThemeRadioButton.setSelected( false );
-      darkThemeRadioButton.setSelected( true );
-
-      settingThemeDarkImage.setVisible( true );
-      settingThemeLightImage.setVisible( false );
-      settingThemeSmoothImage.setVisible( false );
-      settingThemeCartoonImage.setVisible( false );
-
-   }
-
-   void selectLightTheme() {
-      cartoonThemeRadioButton.setSelected( false );
-      smoothThemeRadioButton.setSelected( false );
-      darkThemeRadioButton.setSelected( false );
-      lightThemeRadioButton.setSelected( true );
-
-      settingThemeLightImage.setVisible( true );
-      settingThemeSmoothImage.setVisible( false );
-      settingThemeCartoonImage.setVisible( false );
-      settingThemeDarkImage.setVisible( false );
-   }
-
-   void selectSmoothTheme() {
-      cartoonThemeRadioButton.setSelected( false );
-      lightThemeRadioButton.setSelected( false );
-      darkThemeRadioButton.setSelected( false );
-      smoothThemeRadioButton.setSelected( true );
-
-      settingThemeLightImage.setVisible( false );
-      settingThemeSmoothImage.setVisible( true );
-      settingThemeCartoonImage.setVisible( false );
-      settingThemeDarkImage.setVisible( false );
-   }
-
-   void selectCartoonTheme() {
-      lightThemeRadioButton.setSelected( false );
-      smoothThemeRadioButton.setSelected( false );
-      darkThemeRadioButton.setSelected( false );
-      cartoonThemeRadioButton.setSelected( true );
-
-      settingThemeLightImage.setVisible( false );
-      settingThemeSmoothImage.setVisible( false );
-      settingThemeCartoonImage.setVisible( true );
-      settingThemeDarkImage.setVisible( false );
-   }
-
    void changeTheme( String themeName ) {
       String css;
+      unSelectAllTheme();
 
-      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" ) || themeName.equals( "licht" ) )
+      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" ) || themeName.equals( "licht" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
-      else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) )
+         lightThemeRadioButton.setSelected( true );
+         settingThemeLightImage.setVisible( true );
+      } else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
-      else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" ) || themeName.equals( "glatt" ) )
+         darkThemeRadioButton.setSelected( true );
+         settingThemeDarkImage.setVisible( true );
+      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" ) || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
-      else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" ) || themeName.equals( "karikatur" ) )
+         smoothThemeRadioButton.setSelected( true );
+         settingThemeSmoothImage.setVisible( true );
+      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" ) || themeName.equals( "karikatur" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
-      else
+         cartoonThemeRadioButton.setSelected( true );
+         settingThemeCartoonImage.setVisible( true );
+      } else
          css = "";
 
       try {
@@ -1373,10 +1596,11 @@ public class MainPanel implements Initializable {
    //language pane buttons
 
    @FXML
-   void selectLanguage( ActionEvent event ) throws SQLException, IOException {
+   void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException, IOException {
       String language;
       language = "";
 
+      unSelectAllLanguage();
       if( event.getSource() == englishOption ) {
          selectEnglishOption();
          languageSetter( "en" );
@@ -1543,56 +1767,48 @@ public class MainPanel implements Initializable {
       }
    }
 
+   void unSelectAllLanguage() {
+      englishOption.setPrefSize( 90, 90 );
+      englishOption.setLayoutX( 110 );
+      englishOption.setLayoutY( 105 );
+      germanOption.setPrefSize( 90, 90 );
+      germanOption.setLayoutX( 304 );
+      germanOption.setLayoutY( 105 );
+      turkishOption.setPrefSize( 90, 90 );
+      turkishOption.setLayoutX( 501 );
+      turkishOption.setLayoutY( 105 );
+   }
 
    void selectEnglishOption() {
       englishOption.setPrefSize( 150, 150 );
       englishOption.setLayoutX( 80 );
       englishOption.setLayoutY( 105 );
-      germanOption.setPrefSize( 90, 90 );
-      turkishOption.setPrefSize( 90, 90 );
-      germanOption.setLayoutX( 304 );
-      germanOption.setLayoutY( 105 );
-      turkishOption.setLayoutX( 501 );
-      turkishOption.setLayoutY( 105 );
    }
 
    void selectGermanOption() {
       germanOption.setPrefSize( 150, 150 );
       germanOption.setLayoutX( 274 );
       germanOption.setLayoutY( 105 );
-      englishOption.setPrefSize( 90, 90 );
-      turkishOption.setPrefSize( 90, 90 );
-      englishOption.setLayoutX( 110 );
-      englishOption.setLayoutY( 105 );
-      turkishOption.setLayoutX( 501 );
-      turkishOption.setLayoutY( 105 );
-
    }
 
    void selectTurkishOption() {
       turkishOption.setPrefSize( 150, 150 );
       turkishOption.setLayoutX( 471 );
       turkishOption.setLayoutY( 105 );
-      englishOption.setPrefSize( 90, 90 );
-      germanOption.setPrefSize( 90, 90 );
-      englishOption.setLayoutX( 110 );
-      englishOption.setLayoutY( 105 );
-      germanOption.setLayoutX( 304 );
-      germanOption.setLayoutY( 105 );
    }
 
    @FXML
-   void selectLanguageMov( MouseEvent event ) {
+   void languagePaneButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == englishOption )
-         labelOpener( englishLabel, textCheck );
+         englishLabel.setVisible( textCheck );
       else if( event.getSource() == germanOption )
-         labelOpener( germanLabel, textCheck );
+         germanLabel.setVisible( textCheck );
       else if( event.getSource() == turkishOption )
-         labelOpener( turkishLabel, textCheck );
+         turkishLabel.setVisible( textCheck );
    }
 
    @FXML
-   void selectLanguageMovEx( MouseEvent event ) {
+   void languagePaneButtonsOnExit( MouseEvent event ) {
       if( event.getSource() == englishOption )
          englishLabel.setVisible( false );
       else if( event.getSource() == germanOption )
@@ -1600,259 +1816,6 @@ public class MainPanel implements Initializable {
       else if( event.getSource() == turkishOption )
          turkishLabel.setVisible( false );
       sound( "gasLang", false );
-   }
-
-   //settings----application settings menu
-   @FXML
-   void applicationSettingButtons( ActionEvent event ) throws SQLException {
-      if( event.getSource() == themeSettingButton ) {
-         closeAllApplicationSettingSubPanes();
-         openThemeSetting();
-      } else if( event.getSource() == languageSettingButton ) {
-         closeAllApplicationSettingSubPanes();
-         openLanguageSetting();
-      } else if( event.getSource() == emergencySettingButton ) {
-         closeAllApplicationSettingSubPanes();
-         openEmergencySetting();
-      } else if( event.getSource() == phoneNotificationSettingButton ) {
-         closeAllApplicationSettingSubPanes();
-         openPhoneNotificationSetting();
-      } else if( event.getSource() == smartHomeConnectionSettingButton ) {
-         closeAllApplicationSettingSubPanes();
-         openSmartHomeConnectionSetting();
-      } else if( event.getSource() == portConnectionButton ) {
-         arduino = new Arduino( portChooser.getValue(), 9600 );
-
-         if( arduino.openConnection() ) {
-            isArduinoConnect = true;
-            portConnectionButton.setDisable( true );
-            home = new Home( arduino );
-            home.adjustCollective( "manual_on#:" );
-            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
-               @Override
-               public int getListeningEvents() {
-                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
-               }
-
-               @Override
-               public void serialEvent( SerialPortEvent serialPortEvent ) {
-                  if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
-                     return;
-                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,0, 0 );
-                  String out = "";
-                  Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
-
-                  try {
-                     while( in.hasNextLine() )
-                        out = out + in.nextLine();
-                  } catch( Exception e ) {
-                     e.printStackTrace();
-                  }
-                  out = out.replaceAll( "\\s", "" );
-                  out = out.replace( "\n", "" ).replace( "\r", "" );
-
-                  if( !out.isEmpty() ) {
-                     System.out.println( out );
-                     if( out.equals( "FireButon" )
-                           || out.equals( "SmokeAlarm" )
-                           || out.equals( "GasAlarm" )
-                           || out.equals( "Gas+Fire" )
-                           || out.equals( "Gas+Smokealarm" )
-                           || out.equals( "Gas+Smoke" )
-                           || out.equals( "Gas+Smoke+Fire" ) ) {
-                        if( fillTransition.getCurrentRate() == 0.0d ) {
-                           fillTransition.play();
-                           rectangle.setVisible( true );
-                        }
-                     }
-                  }
-               }
-            } );
-         } else {
-            portChooser.setValue( "" );
-         }
-      } else if( event.getSource() == externalSirenToggle ) {
-         if( isArduinoConnect )
-            home.getSiren().open( externalSirenToggle.isSelected() );
-      } else if( event.getSource() == internalSirenToggle ) {
-         if( isArduinoConnect )
-            home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
-      } else if( event.getSource() == fireButtonVisualToggle ) {
-         if( fireButtonVisualToggle.isSelected() )
-            sensors[ 0 ] = "O" + sensors[ 0 ].charAt( 1 );
-         else
-            sensors[ 0 ] = "C" + sensors[ 0 ].charAt( 1 );
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      } else if( event.getSource() == gasSensorVisualToggle ) {
-         if( gasSensorVisualToggle.isSelected() )
-            sensors[ 1 ] = "O" + sensors[ 1 ].charAt( 1 );
-         else
-            sensors[ 1 ] = "C" + sensors[ 1 ].charAt( 1 );
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      } else if( event.getSource() == smokeSensorVisualToggle ) {
-         if( smokeSensorVisualToggle.isSelected() )
-            sensors[ 2 ] = "O" + sensors[ 2 ].charAt( 1 );
-         else
-            sensors[ 2 ] = "C" + sensors[ 2 ].charAt( 1 );
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      } else if( event.getSource() == fireButtonSoundToggle ) {
-         if( fireButtonSoundToggle.isSelected() )
-            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "O";
-         else
-            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "C";
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      } else if( event.getSource() == gasSensorSoundToggle ) {
-         if( gasSensorSoundToggle.isSelected() )
-            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "O";
-         else
-            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "C";
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      } else if( event.getSource() == smokeSensorSoundToggle ) {
-         if( smokeSensorSoundToggle.isSelected() )
-            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "O";
-         else
-            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "C";
-         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
-      }
-   }
-
-   @FXML
-   void applicationSettingButtonsMov( MouseEvent event ) {
-
-      if( event.getSource() == themeSettingButton
-            || event.getSource() == themeSettingButtonActive ) {
-         labelOpener( themeSubLabel, textCheck );
-         sound( "themeLang", soundCheck );
-      } else if( event.getSource() == settingThemeSaveButton ) {
-         sound( "saveChangesLang", soundCheck );
-      } else if( event.getSource() == languageSettingButton
-            || event.getSource() == languageSettingButtonActive ) {
-         labelOpener( languageSubLabel, textCheck );
-         sound( "languageLang", soundCheck );
-      } else if( event.getSource() == emergencySettingButton
-            || event.getSource() == emergencySettingButtonActive ) {
-         labelOpener( emergencySubLabel, textCheck );
-         sound( "emergencyLang", soundCheck );
-      } else if( event.getSource() == phoneNotificationSettingButton
-            || event.getSource() == phoneNotificationSettingButtonActive ) {
-         labelOpener( notificationSubLabel, textCheck );
-         sound( "notificationLang", soundCheck );
-      } else if( event.getSource() == smartHomeConnectionSettingButton
-            || event.getSource() == smartHomeConnectionSettingButtonActive ) {
-         labelOpener( connectionSubLabel, textCheck );
-         sound( "connectionLang", soundCheck );
-      } else if( event.getSource() == homeSettingElecButton
-            || event.getSource() == homeSettingElecButtonActive ) {
-         sound( "elecSettingsLang", soundCheck );
-         labelOpener( homeSubPaneELecLabel, textCheck );
-      } else if( event.getSource() == homeSettingGasButton
-            || event.getSource() == homeSettingGasButtonActive ) {
-         sound( "gasSettingsLang", soundCheck );
-         labelOpener( homeSubPaneGasLabel, textCheck );
-      } else if( event.getSource() == homeSettingAquButton
-            || event.getSource() == homeSettingAquButtonActive ) {
-         sound( "aquSettingsLang", soundCheck );
-         labelOpener( homeSubPaneAquLabel, textCheck );
-      } else if( event.getSource() == homeSettingGreenHouseButton
-            || event.getSource() == homeSettingGreenHouseButtonActive ) {
-         sound( "greenHouseSettingsLang", soundCheck );
-         labelOpener( homeSubPaneGreenHouseLabel, textCheck );
-      } else if( event.getSource() == homeSettingWeatherButton
-            || event.getSource() == homeSettingWeatherButtonActive ) {
-         sound( "weatherForecastLang", soundCheck );
-         labelOpener( homeSubPaneWeatherLabel, textCheck );
-      }
-   }
-
-   @FXML
-   void applicationSettingButtonsMovEx( MouseEvent event ) {
-      if( event.getSource() == themeSettingButton )
-         themeSubLabel.setVisible( false );
-      else if( event.getSource() == languageSettingButton )
-         languageSubLabel.setVisible( false );
-      else if( event.getSource() == emergencySettingButton )
-         emergencySubLabel.setVisible( false );
-      else if( event.getSource() == phoneNotificationSettingButton )
-         notificationSubLabel.setVisible( false );
-      else if( event.getSource() == smartHomeConnectionSettingButton )
-         connectionSubLabel.setVisible( false );
-      else if( event.getSource() == homeSettingElecButton
-            || event.getSource() == homeSettingElecButtonActive )
-         homeSubPaneELecLabel.setVisible( false );
-      else if( event.getSource() == homeSettingGasButton
-            || event.getSource() == homeSettingGasButtonActive )
-         homeSubPaneGasLabel.setVisible( false );
-      else if( event.getSource() == homeSettingAquButton
-            || event.getSource() == homeSettingAquButtonActive )
-         homeSubPaneAquLabel.setVisible( false );
-      else if( event.getSource() == homeSettingGreenHouseButton
-            || event.getSource() == homeSettingGreenHouseButtonActive )
-         homeSubPaneGreenHouseLabel.setVisible( false );
-      else if( event.getSource() == homeSettingWeatherButton
-            || event.getSource() == homeSettingWeatherButtonActive )
-         homeSubPaneWeatherLabel.setVisible( false );
-      sound( "gasLang", false );
-   }
-
-   void openThemeSetting() {
-      themeSettingButtonActive.setVisible( true );
-      settingThemePane.setVisible( true );
-   }
-
-   void openLanguageSetting() {
-      languageSettingButtonActive.setVisible( true );
-      settingLanguagePane.setVisible( true );
-   }
-
-   void openEmergencySetting() {
-      emergencySettingButtonActive.setVisible( true );
-      settingEmergencyPane.setVisible( true );
-   }
-
-   void openPhoneNotificationSetting() {
-      phoneNotificationSettingButtonActive.setVisible( true );
-      settingNotificationPane.setVisible( true );
-   }
-
-
-   void openSmartHomeConnectionSetting() {
-      smartHomeConnectionSettingButtonActive.setVisible( true );
-      settingConnectionPane.setVisible( true );
-      refreshMenu();
-   }
-
-   void closeAllApplicationSettingSubPanes() {
-      themeSettingButtonActive.setVisible( false );
-      settingThemePane.setVisible( false );
-      languageSettingButtonActive.setVisible( false );
-      settingLanguagePane.setVisible( false );
-      emergencySettingButtonActive.setVisible( false );
-      settingEmergencyPane.setVisible( false );
-      phoneNotificationSettingButtonActive.setVisible( false );
-      settingNotificationPane.setVisible( false );
-      smartHomeConnectionSettingButtonActive.setVisible( false );
-      settingConnectionPane.setVisible( false );
-      themeSubLabel.setVisible( false );
-      languageSubLabel.setVisible( false );
-      emergencySubLabel.setVisible( false );
-      notificationSubLabel.setVisible( false );
-      connectionSubLabel.setVisible( false );
-   }
-
-   void closeApplicationSettingPane() {
-      applicationSettingButtonActive.setVisible( false );
-      applicationSettingSubPane.setVisible( false );
-      closeAllApplicationSettingSubPanes();
-      labelOpener( themeSubLabel, textCheck );
-   }
-
-   void openApplicationPanes() {
-      applicationSettingButtonActive.setVisible( true );
-      applicationSettingSubPane.setVisible( true );
-      openThemeSetting();
-      closeAllUsersPane();
-      closeModsPane();
-      closeHomeSettingPane();
    }
 
    //settings----users settings menu
@@ -1875,7 +1838,7 @@ public class MainPanel implements Initializable {
    }
 
    @FXML
-   void usersSettingSubPaneButtons( ActionEvent event ) {
+   void usersSettingsPaneButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == usersSettingSubPaneAddUser ) {
          addUserPane.setVisible( true );
          deleteUserPane.setVisible( false );
@@ -1908,38 +1871,7 @@ public class MainPanel implements Initializable {
    //settings ---------sub view pane----users settings menu---- add new user pane
    @FXML
    void createUserControlSelections( ActionEvent event ) {
-      if( event.getSource() == createUserMaleOption
-            || event.getSource() == createUserFemaleOption ) {
-         createUserMaleOption.setSelected( false );
-         createUserFemaleOption.setSelected( false );
-         ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
-         addUserGender = ( JFXRadioButton ) event.getSource();
-      } else if( event.getSource() == createUserDarkThemeOption
-            || event.getSource() == createUserLightThemeOption
-            || event.getSource() == createUserSmoothThemeOption
-            || event.getSource() == createUserCartoonThemeOption ) {
-         createUserDarkThemeOption.setSelected( false );
-         createUserLightThemeOption.setSelected( false );
-         createUserSmoothThemeOption.setSelected( false );
-         createUserCartoonThemeOption.setSelected( false );
-         ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
-         addUserTheme = ( JFXRadioButton ) ( event.getSource() );
-      } else if( event.getSource() == createUserEnglishOption
-            || event.getSource() == createUserGermanOption
-            || event.getSource() == createUserTurkishOption ) {
-         createUserEnglishOption.setSelected( false );
-         createUserTurkishOption.setSelected( false );
-         createUserGermanOption.setSelected( false );
-         ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
-         addUserLanguage = ( JFXRadioButton ) ( event.getSource() );
-      } else if( event.getSource() == createUserParentOption
-            || event.getSource() == createUserChildOption
-            || event.getSource() == createUserElderOption ) {
-         createUserParentOption.setSelected( false );
-         createUserChildOption.setSelected( false );
-         ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
-         addUserType = ( JFXRadioButton ) event.getSource();
-      }
+
    }
 
    @FXML
@@ -1996,6 +1928,37 @@ public class MainPanel implements Initializable {
          closeAllUsersPane();
          openUsersPane();
          clearAddPane();
+      } else if( event.getSource() == createUserMaleOption
+            || event.getSource() == createUserFemaleOption ) {
+         createUserMaleOption.setSelected( false );
+         createUserFemaleOption.setSelected( false );
+         ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
+         addUserGender = ( JFXRadioButton ) event.getSource();
+      } else if( event.getSource() == createUserDarkThemeOption
+            || event.getSource() == createUserLightThemeOption
+            || event.getSource() == createUserSmoothThemeOption
+            || event.getSource() == createUserCartoonThemeOption ) {
+         createUserDarkThemeOption.setSelected( false );
+         createUserLightThemeOption.setSelected( false );
+         createUserSmoothThemeOption.setSelected( false );
+         createUserCartoonThemeOption.setSelected( false );
+         ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
+         addUserTheme = ( JFXRadioButton ) ( event.getSource() );
+      } else if( event.getSource() == createUserEnglishOption
+            || event.getSource() == createUserGermanOption
+            || event.getSource() == createUserTurkishOption ) {
+         createUserEnglishOption.setSelected( false );
+         createUserTurkishOption.setSelected( false );
+         createUserGermanOption.setSelected( false );
+         ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
+         addUserLanguage = ( JFXRadioButton ) ( event.getSource() );
+      } else if( event.getSource() == createUserParentOption
+            || event.getSource() == createUserChildOption
+            || event.getSource() == createUserElderOption ) {
+         createUserParentOption.setSelected( false );
+         createUserChildOption.setSelected( false );
+         ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
+         addUserType = ( JFXRadioButton ) event.getSource();
       }
    }
 
@@ -2338,21 +2301,21 @@ public class MainPanel implements Initializable {
       else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "Light Rain Shower" ) || weather.equalsIgnoreCase( "Patchy rain possible" )
-              || weather.equalsIgnoreCase("rain") || weather.equalsIgnoreCase("Light Rain")
-              || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" ) || weather.equalsIgnoreCase("light drizzle")
-              || weather.equalsIgnoreCase( "Shower In Vicinity") )
+            || weather.equalsIgnoreCase( "rain" ) || weather.equalsIgnoreCase( "Light Rain" )
+            || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" ) || weather.equalsIgnoreCase( "light drizzle" )
+            || weather.equalsIgnoreCase( "Shower In Vicinity" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "Mist" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
-               || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
-               || weather.equalsIgnoreCase("Rain With Thunderstorm") )
+            || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
+            || weather.equalsIgnoreCase( "Rain With Thunderstorm" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "Clear" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase("Overcast"))
+      else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
       else if( weather.equalsIgnoreCase( "weather" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );

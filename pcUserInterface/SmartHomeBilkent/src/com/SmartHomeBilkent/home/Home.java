@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent.home;
 
-import arduino.Arduino;
+import com.SmartHomeBilkent.extra.connection.Arduino;
 import com.SmartHomeBilkent.home.features.*;
 
 /**
