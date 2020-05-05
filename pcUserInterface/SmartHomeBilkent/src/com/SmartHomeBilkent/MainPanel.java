@@ -1625,9 +1625,10 @@ public class MainPanel implements Initializable {
                public void serialEvent( SerialPortEvent serialPortEvent ) {
                   if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
                      return;
-                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0 );
+                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,0, 0 );
                   String out = "";
                   Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+
                   try {
                      while( in.hasNextLine() )
                         out = out + in.nextLine();
@@ -2009,6 +2010,7 @@ public class MainPanel implements Initializable {
       addUserTheme = null;
       addUserType = null;
    }
+
 
    //settings ---------sub view pane----users settings menu---- remove user pane
    @FXML
