@@ -83,7 +83,8 @@ public class MainPanel implements Initializable {
          waterSubMenuButtonActive, waterSubMenuButtonPassive,
          gardenLightSubMenuButtonActive, gardenLightSubMenuButtonPassive,
          menuBulkChange, bulkChangesSaveButton,
-         dateTimeSaveButton, menuTimeConfigurationButton;
+         dateTimeSaveButton, menuTimeConfigurationButton,
+         helpButton;
 
    @FXML
    private JFXRadioButton electricityRadioButton, gasRadioButton,
@@ -602,6 +603,8 @@ public class MainPanel implements Initializable {
          openSettingsPane();
       } else if( event.getSource() == logoutButton ) {
          Platform.exit();
+      } else if( event.getSource() == helpButton ) {
+
       }
    }
 
