@@ -837,129 +837,6 @@ public class ElderMainPanel implements Initializable {
       }
    }
 
-   // When mouse entered the button area, labels will be activated. -MSACAKCI 03.04.2020-
-   @FXML
-   public void userProfileSubLabelActivate( MouseEvent event ) {
-      userProfileSubLabelActive.setVisible( true );
-      userProfileSubLabelNotActive.setVisible( false );
-      userProfileElderActiveImage.setVisible( true );
-   }
-
-   @FXML
-   public void userProfileSubLabelDeactivate( MouseEvent event ) {
-      userProfileSubLabelActive.setVisible( false );
-      userProfileSubLabelNotActive.setVisible( true );
-      userProfileElderActiveImage.setVisible( false );
-   }
-
-   @FXML
-   public void menuSubLabelActivate( MouseEvent event ) {
-      menuSubLabelActive.setVisible( true );
-      menuSubLabelNotActive.setVisible( false );
-      houseMenuElderActiveImage.setVisible( true );
-   }
-
-   @FXML
-   public void menuSubLabelDeactivate( MouseEvent event ) {
-      menuSubLabelActive.setVisible( false );
-      menuSubLabelNotActive.setVisible( true );
-      houseMenuElderActiveImage.setVisible( false );
-   }
-
-   //Settings Button -MS 05.04.2020-
-   @FXML
-   public void settingsSubLabelActivate( MouseEvent event ) {
-      settingsSubLabelActive.setVisible( true );
-      settingsSubLabelNotActive.setVisible( false );
-      settingsButtonElderActiveImage.setVisible( true );
-   }
-
-   @FXML
-   public void settingsSubLabelDeactivate( MouseEvent event ) {
-      settingsSubLabelActive.setVisible( false );
-      settingsSubLabelNotActive.setVisible( true );
-      settingsButtonElderActiveImage.setVisible( false );
-   }
-   //Setting Button END -MS 05.04.2020-
-
-   //Electricity Button -MS 09.04.2020-
-   @FXML
-   public void electricityButtonElderActivate( MouseEvent event ) {
-      electricityLabelElder.setVisible( true );
-      electricityLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void electricityButtonElderDeactivate( MouseEvent event ) {
-      electricityLabelElder.setVisible( false );
-      electricityLineElder.setVisible( false );
-   }
-   //Electricity Button END -MS 09.04.2020-
-
-   //Lights Button -MS 09.04.2020-
-   @FXML
-   public void lightingButtonElderActivate( MouseEvent event ) {
-      lightsLabelElder.setVisible( true );
-      lightsLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void lightingButtonElderDeactivate( MouseEvent event ) {
-      lightsLabelElder.setVisible( false );
-      lightsLineElder.setVisible( false );
-   }
-   //Lights Button -MS 09.04.2020-
-
-   //Water Control Button -MS 09.04.2020-
-   @FXML
-   public void waterButtonElderActivate( MouseEvent event ) {
-      waterLabelElder.setVisible( true );
-      waterLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void waterButtonElderDeactivate( MouseEvent event ) {
-      waterLabelElder.setVisible( false );
-      waterLineElder.setVisible( false );
-   }
-   //Gas Button END -MS 09.04.2020-
-
-   //Temperature Button -MS 09.04.2020-
-   public void temperatureButtonElderActivate( MouseEvent event ) {
-      temperatureLabelElder.setVisible( true );
-      temperatureLineElder.setVisible( true );
-   }
-
-   public void temperatureButtonElderDeactivate( MouseEvent event ) {
-      temperatureLabelElder.setVisible( false );
-      temperatureLineElder.setVisible( false );
-   }
-   //Temperature Button END -MS 09.04.2020-
-
-   //Back Button -MS 09.04.2020-
-   @FXML
-   public void houseMenuBackButtonActivate( MouseEvent event ) {
-      houseMenuBackButtonSubLabel.setVisible( true );
-   }
-
-   @FXML
-   public void houseMenuBackButtonDeactivate( MouseEvent event ) {
-      houseMenuBackButtonSubLabel.setVisible( false );
-   }
-   //Back Button END -MS 09.04.2020-
-
-   //Back 2 Button -MS 02.05.2020-
-   @FXML
-   public void houseMenuBackButton2Activate( MouseEvent event ) {
-      houseMenuBackButtonSubLabel2.setVisible( true );
-   }
-
-   @FXML
-   public void houseMenuBackButton2Deactivate( MouseEvent event ) {
-      houseMenuBackButtonSubLabel2.setVisible( false );
-   }
-   //Back Button END -MS 02.05.2020-
-
    //Set the time -MS 09.04.2020-
    @FXML
    public void clock( MouseEvent event ) {
@@ -989,66 +866,6 @@ public class ElderMainPanel implements Initializable {
    }
    //Set the time END -MS 09.04.2020-
 
-   //Electricity panel elder back button -MS 10.04.2020-
-   @FXML
-   public void electricityPanelElderCloseButtonActivate( MouseEvent event ) {
-      electricityPanelElderCloseButtonActive.setVisible( true );
-
-   }
-
-   @FXML
-   public void electricityPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      electricityPanelElderCloseButtonActive.setVisible( false );
-   }
-   //Electricity panel elder END -MS 10.04.2020-
-
-   //Water panel elder back button -MS 10.04.2020-
-   @FXML
-   public void waterPanelElderCloseButtonActivate( MouseEvent event ) {
-      waterPanelElderCloseButtonActive.setVisible( true );
-
-   }
-
-   @FXML
-   public void waterPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      waterPanelElderCloseButtonActive.setVisible( false );
-   }
-   //Water panel elder END -MS 10.04.2020-
-
-   //Temperature panel elder back button -MS 10.04.2020-
-   @FXML
-   public void temperaturePanelElderCloseButtonActivate( MouseEvent event ) {
-      temperaturePanelElderCloseButtonActive.setVisible( true );
-
-   }
-
-   @FXML
-   public void temperaturePanelElderCloseButtonDeactivate( MouseEvent event ) {
-      temperaturePanelElderCloseButtonActive.setVisible( false );
-   }
-   //Temperature panel elder END -MS 10.04.2020-
-
-   //Lights panel elder back button -MS 10.04.2020-
-   @FXML
-   public void lightsPanelElderCloseButtonActivate( MouseEvent event ) {
-      lightsPanelElderCloseButtonActive.setVisible( true );
-
-   }
-
-   @FXML
-   public void lightsPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      lightsPanelElderCloseButtonActive.setVisible( false );
-   }
-
-   @FXML
-   public void setLightsSwitchStatus( ) {
-      if( !electricityPanelElderSwitch.isSelected( ) )
-         lightsPanelElderSwitch.setDisable( true );
-      else
-         lightsPanelElderSwitch.setDisable( false );
-   }
-
-   //Temperature panel elder END -MS 10.04.2020-
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       userTextFieldController( getLoginUser( ) );
@@ -1067,139 +884,7 @@ public class ElderMainPanel implements Initializable {
    }
    // user after login panel END -MS 24.03.2020-
 
-   //applicationSettingsElderButton -MS 23.04.2020-
-   @FXML
-   public void applicationSettingsElderButtonActivate( MouseEvent event ) {
-      applicationSettingsElderLabel.setVisible( true );
-      applicationSettingsElderLine.setVisible( true );
-   }
 
-   @FXML
-   public void applicationSettingsElderButtonDeactivate( MouseEvent event ) {
-      applicationSettingsElderLabel.setVisible( false );
-      applicationSettingsElderLine.setVisible( false );
-   }
-   //applicationSettingsElderButton -MS 23.04.2020-
-
-   ////usersSettingsElder -MS 23.04.2020-
-   //@FXML
-   //public void usersSettingsElderButtonActivate( MouseEvent event ) {
-   //   usersSettingsElderLabel.setVisible( true );
-   //   usersSettingsElderLine.setVisible( true );
-   //
-   //}
-   //
-   //@FXML
-   //public void usersSettingsElderButtonDeactivate( MouseEvent event ) {
-   //   usersSettingsElderLabel.setVisible( false );
-   //   usersSettingsElderLine.setVisible( false );
-   //}
-   ////usersSettingsElder -MS 23.04.2020-
-
-   ////modsSettingsElder -MS 23.04.2020-
-   //@FXML
-   //public void modsSettingsElderButtonActivate( MouseEvent event ) {
-   //   modsSettingsElderLabel.setVisible( true );
-   //   modsSettingsElderLine.setVisible( true );
-   //
-   //}
-   //
-   //@FXML
-   //public void modsSettingsElderButtonDeactivate( MouseEvent event ) {
-   //   modsSettingsElderLabel.setVisible( false );
-   //   modsSettingsElderLine.setVisible( false );
-   //}
-   ////modsSettingsElder -MS 23.04.2020-
-
-   //homeSettingsElder -MS 23.04.2020-
-   @FXML
-   public void homeSettingsElderButtonActivate( MouseEvent event ) {
-      homeSettingsElderLabel.setVisible( true );
-      homeSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void homeSettingsElderButtonDeactivate( MouseEvent event ) {
-      homeSettingsElderLabel.setVisible( false );
-      homeSettingsElderLine.setVisible( false );
-   }
-   //homeSettingsElder -MS 23.04.2020-
-
-   ////themeSettingsElder -MS 23.04.2020-
-   //@FXML
-   //public void themeSettingsElderButtonActivate( MouseEvent event ) {
-   //   themeSettingsElderLabel.setVisible( true );
-   //   themeSettingsElderLine.setVisible( true );
-   //
-   //}
-   //
-   //@FXML
-   //public void themeSettingsElderButtonDeactivate( MouseEvent event ) {
-   //   themeSettingsElderLabel.setVisible( false );
-   //   themeSettingsElderLine.setVisible( false );
-   //}
-   ////themeSettingsElder -MS 23.04.2020-
-
-   //languageSettingsElder -MS 23.04.2020-
-   @FXML
-   public void languageSettingsElderButtonActivate( MouseEvent event ) {
-      languageSettingsElderLabel.setVisible( true );
-      languageSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void languageSettingsElderButtonDeactivate( MouseEvent event ) {
-      languageSettingsElderLabel.setVisible( false );
-      languageSettingsElderLine.setVisible( false );
-   }
-   //languageSettingsElder -MS 23.04.2020-
-
-   //emergencySettingsElder -MS 23.04.2020-
-   @FXML
-   public void emergencySettingsElderButtonActivate( MouseEvent event ) {
-      emergencySettingsElderLabel.setVisible( true );
-      emergencySettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void emergencySettingsElderButtonDeactivate( MouseEvent event ) {
-      emergencySettingsElderLabel.setVisible( false );
-      emergencySettingsElderLine.setVisible( false );
-   }
-   //emergencySettingsElder -MS 23.04.2020-
-
-   ////notificationSettingsElder -MS 23.04.2020-
-   //@FXML
-   //public void notificationSettingsElderButtonActivate( MouseEvent event ) {
-   //   notificationSettingsElderLabel.setVisible( true );
-   //   notificationSettingsElderLine.setVisible( true );
-   //
-   //}
-   //
-   //@FXML
-   //public void notificationSettingsElderButtonDeactivate( MouseEvent event ) {
-   //   notificationSettingsElderLabel.setVisible( false );
-   //   notificationSettingsElderLine.setVisible( false );
-   //}
-   //notificationSettingsElder -MS 23.04.2020-
-
-   //connectionSettingsElderButton -MS 23.04.2020-
-   @FXML
-   public void connectionSettingsElderButtonActivate( MouseEvent event ) {
-      connectionSettingsElderLabel.setVisible( true );
-      connectionSettingsElderLine.setVisible( true );
-
-   }
-
-   @FXML
-   public void connectionSettingsElderButtonDeactivate( MouseEvent event ) {
-      connectionSettingsElderLabel.setVisible( false );
-      connectionSettingsElderLine.setVisible( false );
-   }
-   //connectionSettingsElderButton -MS 23.04.2020-
 
    //User textFieldController -MS 24.04.2020-
    void userTextFieldController( User user ) {
@@ -1212,31 +897,6 @@ public class ElderMainPanel implements Initializable {
    }
    //User textFieldController END -MS 24.04.2020-
 
-   //user settings change info panel -MS 24.04.2020-
-   @FXML
-   void userSettingsChangeBackButtonActivate( MouseEvent event ) {
-      userSettingsChangeBackButtonSubLabel.setVisible( true );
-      userSettingsChangeBackButtonImage.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsChangeBackButtonDeactivate( MouseEvent event ) {
-      userSettingsChangeBackButtonSubLabel.setVisible( false );
-      userSettingsChangeBackButtonImage.setVisible( false );
-   }
-
-   @FXML
-   void userSettingsChangeSaveActivate( MouseEvent event ) {
-      userSettingsChangeSaveSubLabel.setVisible( true );
-      userSettingsChangeSaveImage.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsChangeSaveDeactivate( MouseEvent event ) {
-      userSettingsChangeSaveSubLabel.setVisible( false );
-      userSettingsChangeSaveImage.setVisible( false );
-   }
-   //user settings change info panel END -MS 24.04.2020-
 
    ///////////////
    @FXML
@@ -1274,20 +934,6 @@ public class ElderMainPanel implements Initializable {
       }
    }
 
-   // userSettingsChangeInfoButton -MS 24.04.2020-
-   @FXML
-   void userSettingsChangeInfoButtonActivate( MouseEvent event ) {
-      userSettingsChangeInfoButtonImage.setVisible( true );
-      userSettingsChangeInfoButtonSubLabel.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsChangeInfoButtonDeactivate( MouseEvent event ) {
-      userSettingsChangeInfoButtonImage.setVisible( false );
-      userSettingsChangeInfoButtonSubLabel.setVisible( false );
-   }
-   // userSettingsChangeInfoButton END -MS 24.04.2020
-
    /////////////////////// -MS 26.04.2020-
    @FXML
    void toUserElderChanger( ActionEvent event ) {
@@ -1308,48 +954,6 @@ public class ElderMainPanel implements Initializable {
       }
    }
    /////////////////////// END -MS 26.04.2020-
-
-   // userSettingsUPChangeButton -MS 26.04.2020-
-   @FXML
-   void userSettingsUPChangeButtonActivate( MouseEvent event ) {
-      userSettingsUPChangeButtonImage.setVisible( true );
-      userSettingsUPChangeLabel.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsUPChangeButtonDeactivate( MouseEvent event ) {
-      userSettingsUPChangeButtonImage.setVisible( false );
-      userSettingsUPChangeLabel.setVisible( false );
-   }
-   // userSettingsUPChangeButton END -MS 26.04.2020-
-
-   // userSettingsPanelTwoChangeSaveButton -MS 26.04.2020-
-   @FXML
-   void userSettingsPanelTwoChangeSaveButtonActivate( MouseEvent event ) {
-      userSettingsPanelTwoChangeSaveButtonImage.setVisible( true );
-      userSettingsPanelTwoChangeSaveLabel.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsPanelTwoChangeSaveButtonDeactivate( MouseEvent event ) {
-      userSettingsPanelTwoChangeSaveButtonImage.setVisible( false );
-      userSettingsPanelTwoChangeSaveLabel.setVisible( false );
-   }
-   // userSettingsPanelTwoChangeSaveButton END -MS 26.04.2020-
-
-   // userSettingsPanelTwoChangeBackButton -MS 26.04.2020-
-   @FXML
-   void userSettingsPanelTwoChangeBackButtonActivate( MouseEvent event ) {
-      userSettingsPanelTwoChangeBackButtonImage.setVisible( true );
-      userSettingsPanelTwoChangeBackLabel.setVisible( true );
-   }
-
-   @FXML
-   void userSettingsPanelTwoChangeBackButtonDeactivate( MouseEvent event ) {
-      userSettingsPanelTwoChangeBackButtonImage.setVisible( true );
-      userSettingsPanelTwoChangeBackLabel.setVisible( true );
-   }
-   // userSettingsPanelTwoChangeBackButton END -MS 26.04.2020-
 
    /////////////// -MS 26.04.2020-
    @FXML
@@ -1379,178 +983,573 @@ public class ElderMainPanel implements Initializable {
    }
    /////////////// END -MS 26.04.2020-
 
-   // Day message edit -MS 01.05.2020-
    @FXML
-   void dayMessageEdit( ActionEvent event ) {
-
-   }
-   // Day message edit END -MS 01.05.2020-
-
-   // userProfileBackButtonElder -MS 01.05.2020-
-   @FXML
-   void userProfileBackButtonElderActivate( MouseEvent event ) {
-      userProfileBackButtonElderSubLabel.setVisible( true );
-   }
-
-   @FXML
-   void userProfileBackButtonElderDeactivate( MouseEvent event ) {
-      userProfileBackButtonElderSubLabel.setVisible( false );
-   }
-   // userProfileBackButtonElder END -MS 01.05.2020-
-
-   // settingsBackButtonElder -MS 01.05.2020-
-   @FXML
-   void settingsBackButtonElderActivate( MouseEvent event ) {
-      settingsBackButtonSubLabel.setVisible( true );
-   }
-
-   @FXML
-   void settingsBackButtonElderDeactivate( MouseEvent event ) {
-      settingsBackButtonSubLabel.setVisible( false );
-   }
-   // settingsBackButtonElder END -MS 01.05.2020-
-
-   //aquarium Button -MS 02.05.2020-
-   @FXML
-   public void aquariumButtonElderActivate( MouseEvent event ) {
-      aquariumLabelElder.setVisible( true );
-      aquariumLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void aquariumButtonElderDeactivate( MouseEvent event ) {
-      aquariumLabelElder.setVisible( false );
-      aquariumLineElder.setVisible( false );
-   }
-   //aquarium Button END -MS 02.05.2020-
-
-   // aquarium panel elder back button -MS 02.05.2020-
-   @FXML
-   public void aquariumPanelElderCloseButtonActivate( MouseEvent event ) {
-      aquariumPanelElderCloseButtonActive.setVisible( true );
-
-   }
-
-   @FXML
-   public void aquariumPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      aquariumPanelElderCloseButtonActive.setVisible( false );
-   }
-   // aquarium panel elder END -MS 02.05.2020-
-
-   //greenhouse Button -MS 02.05.2020-
-   @FXML
-   public void greenhouseButtonElderActivate( MouseEvent event ) {
-      greenhouseLabelElder.setVisible( true );
-      greenhouseLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void greenhouseButtonElderDeactivate( MouseEvent event ) {
-      greenhouseLabelElder.setVisible( false );
-      greenhouseLineElder.setVisible( false );
-   }
-   //greenhouse Button END -MS 02.05.2020-
-
-   // greenhouse panel elder back button -MS 02.05.2020-
-   @FXML
-   public void greenhousePanelElderCloseButtonActivate( MouseEvent event ) {
-      greenhousePanelElderCloseButtonActive.setVisible( true );
-   }
-
-   @FXML
-   public void greenhousePanelElderCloseButtonDeactivate( MouseEvent event ) {
-      greenhousePanelElderCloseButtonActive.setVisible( false );
-   }
-   // greenhouse panel elder END -MS 02.05.2020-
-
-   //gas Button -MS 02.05.2020-
-   @FXML
-   public void gasButtonElderActivate( MouseEvent event ) {
-      gasLabelElder.setVisible( true );
-      gasLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void gasButtonElderDeactivate( MouseEvent event ) {
-      gasLabelElder.setVisible( false );
-      gasLineElder.setVisible( false );
-   }
-   //gas Button END -MS 02.05.2020-
-
-   // gas panel elder back button -MS 02.05.2020-
-   @FXML
-   public void gasPanelElderCloseButtonActivate( MouseEvent event ) {
-      gasPanelElderCloseButtonActive.setVisible( true );
-   }
-
-   @FXML
-   public void gasPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      gasPanelElderCloseButtonActive.setVisible( false );
-   }
-   // gas panel elder END -MS 02.05.2020-
-
-   //door Button -MS 02.05.2020-
-   @FXML
-   public void doorButtonElderActivate( MouseEvent event ) {
-      doorLabelElder.setVisible( true );
-      doorLineElder.setVisible( true );
-   }
-
-   @FXML
-   public void doorButtonElderDeactivate( MouseEvent event ) {
-      doorLabelElder.setVisible( false );
-      doorLineElder.setVisible( false );
-   }
-   //door Button END -MS 02.05.2020-
-
-   // door panel elder back button -MS 02.05.2020-
-   @FXML
-   public void doorPanelElderCloseButtonActivate( MouseEvent event ) {
-      doorPanelElderCloseButtonActive.setVisible( true );
-   }
-
-   @FXML
-   public void doorPanelElderCloseButtonDeactivate( MouseEvent event ) {
-      doorPanelElderCloseButtonActive.setVisible( false );
-   }
-   // door panel elder END -MS 02.05.2020-
-
-   // aquariumSaveButton -MS 03.05.2020-
-   @FXML
-   void aquariumSaveButtonActivate( MouseEvent event ) {
-      aquariumSaveButtonLabel.setVisible( true );
-   }
-
-   @FXML
-   void aquariumSaveButtonDeactivate( MouseEvent event ) {
-      aquariumSaveButtonLabel.setVisible( false );
-   }
-   // aquariumSaveButton END -MS 03.05.2020-
-
-   //aquariumMenuBackButtonElder -MS 03.05.2020-
-   @FXML
-   void aquariumMenuBackButtonElderActivate( MouseEvent event ) {
-      aquariumMenuBackButtonSubLabel.setVisible( true );
-   }
-
-   @FXML
-   void aquariumMenuBackButtonElderDeactivate( MouseEvent event ) {
-      aquariumMenuBackButtonSubLabel.setVisible( false );
-   }
-   //aquariumMenuBackButtonElder -MS 03.05.2020-
-
-   // applicationBackButtonElder -MS 04.05.2020-
-   @FXML
-   void applicationBackButtonElderActivate ( MouseEvent event)
+   void buttonElderActivate ( MouseEvent event )
    {
-      applicationBackButtonSubLabel.setVisible( true );
-   }
+      // userProfileButtonElderActivate -MS 03.04.2020-
+      if ( event.getSource() == userProfileButtonElder )
+      {
+         userProfileSubLabelActive.setVisible( true );
+         userProfileSubLabelNotActive.setVisible( false );
+         userProfileElderActiveImage.setVisible( true );
+      }
+      // userProfileButtonElderActivate END -MS 03.04.2020-
+      else if ( event.getSource() == houseMenuButtonElder )
+      {
+         menuSubLabelActive.setVisible( true );
+         menuSubLabelNotActive.setVisible( false );
+         houseMenuElderActiveImage.setVisible( true );
+      }
 
-   @FXML
-   void applicationBackButtonElderDeactivate ( MouseEvent event)
-   {
-      applicationBackButtonSubLabel.setVisible( false );
+      //Settings Button Activate -MS 05.04.2020-
+      else if ( event.getSource() == settingsButtonElder )
+      {
+         settingsSubLabelActive.setVisible( true );
+         settingsSubLabelNotActive.setVisible( false );
+         settingsButtonElderActiveImage.setVisible( true );
+      }
+      //Settings Button Activate END -MS 05.04.2020-
+
+      //Electricity Button Activate -MS 09.04.2020-
+      else if ( ( event.getSource() == electricityButtonElder ) || ( event.getSource() == electricityLabelElder ) )
+      {
+         electricityLabelElder.setVisible( true );
+         electricityLineElder.setVisible( true );
+      }
+      //Electricity Button Activate END -MS 09.04.2020-
+
+      //Lights Button -MS 09.04.2020-
+      else if ( ( event.getSource() == lightsButtonElder ) || ( event.getSource() == lightsLabelElder) )
+      {
+         lightsLabelElder.setVisible( true );
+         lightsLineElder.setVisible( true );
+      }
+      //Lights Button Activate END -MS 09.04.2020-
+
+      //Water Control Button Activate -MS 09.04.2020-
+      else if ( (event.getSource() == waterButtonElder ) )
+      {
+         waterLabelElder.setVisible( true );
+         waterLineElder.setVisible( true );
+      }
+      //Water Control Button Activate END -MS 09.04.2020-
+
+      //Temperature Button Activate -MS 09.04.2020-
+      else if ( event.getSource() == temperatureButtonElder )
+      {
+         temperatureLabelElder.setVisible( true );
+         temperatureLineElder.setVisible( true );
+      }
+      //Temperature Button Activate END -MS 09.04.2020-
+
+      //Back Button Activate -MS 09.04.2020-
+      else if ( event.getSource() == houseMenuBackButtonElder )
+      {
+         houseMenuBackButtonSubLabel.setVisible( true );
+      }
+      //Back Button Activate END -MS 09.04.2020-
+
+      //Back 2 Button Activate -MS 02.05.2020-
+      else if ( event.getSource() == houseMenuBackButtonElder2 )
+      {
+         houseMenuBackButtonSubLabel2.setVisible( true );
+      }
+      //Back 2 Button Activate END -MS 02.05.2020-
+
+      //Electricity panel elder back button Activate -MS 10.04.2020-
+      else if ( event.getSource() == electricityPanelElderCloseButton )
+      {
+         electricityPanelElderCloseButtonActive.setVisible( true );
+      }
+      //Electricity panel elder back button Activate END -MS 10.04.2020-
+
+      //Water panel elder back button Activate -MS 10.04.2020-
+      else if ( event.getSource() == waterPanelElderCloseButton )
+      {
+         waterPanelElderCloseButtonActive.setVisible( true );
+      }
+      //Water panel elder back button Activate END -MS 10.04.2020-
+
+      //Temperature panel elder back button Activate -MS 10.04.2020-
+      else if ( event.getSource() == temperaturePanelElderCloseButton )
+      {
+         temperaturePanelElderCloseButtonActive.setVisible( true );
+      }
+      //Temperature panel elder back button Activate END -MS 10.04.2020-
+
+      //Lights panel elder back button Activate -MS 10.04.2020-
+      else if ( event.getSource() == lightsPanelElderCloseButton )
+      {
+         lightsPanelElderCloseButtonActive.setVisible( true );
+      }
+      //Lights panel elder back button Activate END -MS 10.04.2020-
+
+      //applicationSettingsElderButton Activate -MS 23.04.2020-
+      else if ( event.getSource() == applicationSettingsElderButton )
+      {
+         applicationSettingsElderLabel.setVisible( true );
+         applicationSettingsElderLine.setVisible( true );
+      }
+      //applicationSettingsElderButton Activate END -MS 23.04.2020-
+
+      //homeSettingsElder Activate -MS 23.04.2020-
+      else if ( event.getSource() == homeSettingsElderButton )
+      {
+         homeSettingsElderLabel.setVisible( true );
+         homeSettingsElderLine.setVisible( true );
+      }
+      //homeSettingsElder Activate END -MS 23.04.2020-
+
+      //languageSettingsElder Activate -MS 23.04.2020-
+      else if ( event.getSource() == languageSettingsElderButton )
+      {
+         languageSettingsElderLabel.setVisible( true );
+         languageSettingsElderLine.setVisible( true );
+      }
+      //languageSettingsElder Activate END -MS 23.04.2020-
+
+      //emergencySettingsElder Activate -MS 23.04.2020-
+      else if ( event.getSource() == emergencySettingsElderButton )
+      {
+         emergencySettingsElderLabel.setVisible( true );
+         emergencySettingsElderLine.setVisible( true );
+      }
+      //emergencySettingsElder Activate END -MS 23.04.2020-
+
+      //connectionSettingsElderButton Activate -MS 23.04.2020-
+      else if ( event.getSource() == connectionSettingsElderButton )
+      {
+         connectionSettingsElderLabel.setVisible( true );
+         connectionSettingsElderLine.setVisible( true );
+      }
+      //connectionSettingsElderButton Activate -MS 23.04.2020-
+
+      //user settings change info panel Activate -MS 24.04.2020-
+      else if ( event.getSource() == userSettingsChangeBackButton )
+      {
+         userSettingsChangeBackButtonSubLabel.setVisible( true );
+         userSettingsChangeBackButtonImage.setVisible( true );
+      }
+      //user settings change info panel Activate END -MS 24.04.2020-
+
+      else if ( event.getSource() == userSettingsChangeSave )
+      {
+         userSettingsChangeSaveSubLabel.setVisible( true );
+         userSettingsChangeSaveImage.setVisible( true );
+      }
+
+      // userSettingsChangeInfoButton Activate -MS 24.04.2020-
+      else if ( event.getSource() == userSettingsChangeInfoButton )
+      {
+         userSettingsChangeInfoButtonImage.setVisible( true );
+         userSettingsChangeInfoButtonSubLabel.setVisible( true );
+      }
+      // userSettingsChangeInfoButton Activate END -MS 24.04.2020-
+
+      // userSettingsUPChangeButton Activate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsUPChangeButton )
+      {
+         userSettingsUPChangeButtonImage.setVisible( true );
+         userSettingsUPChangeLabel.setVisible( true );
+      }
+      // userSettingsUPChangeButton Activate END -MS 26.04.2020-
+
+      // userSettingsPanelTwoChangeSaveButton Activate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsPanelTwoChangeSaveButton )
+      {
+         userSettingsPanelTwoChangeSaveButtonImage.setVisible( true );
+         userSettingsPanelTwoChangeSaveLabel.setVisible( true );
+      }
+      // userSettingsPanelTwoChangeSaveButton Activate END -MS 26.04.2020-
+
+      // userSettingsPanelTwoChangeBackButton Activate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsPanelTwoChangeBackButton )
+      {
+         userSettingsPanelTwoChangeBackButtonImage.setVisible( true );
+         userSettingsPanelTwoChangeBackLabel.setVisible( true );
+      }
+      // userSettingsPanelTwoChangeBackButton Activate END -MS 26.04.2020-
+
+      // userProfileBackButtonElder Activate -MS 01.05.2020-
+      else if ( event.getSource() == userProfileBackButtonElder )
+      {
+         userProfileBackButtonElderSubLabel.setVisible( true );
+      }
+      // userProfileBackButtonElder Activate END -MS 01.05.2020-
+
+      // settingsBackButtonElder Activate -MS 01.05.2020-
+      else if ( event.getSource() == settingsBackButtonElder )
+      {
+         settingsBackButtonSubLabel.setVisible( true );
+      }
+      // settingsBackButtonElder Activate END -MS 01.05.2020-
+
+      //aquarium Button Activate -MS 02.05.2020-
+      else if ( event.getSource() == aquariumButtonElder)
+      {
+         aquariumLabelElder.setVisible( true );
+         aquariumLineElder.setVisible( true );
+      }
+      //aquarium Button Activate END -MS 02.05.2020-
+
+      // aquarium panel elder back button Activate -MS 02.05.2020-
+      else if ( event.getSource() == aquariumPanelElderCloseButton)
+      {
+         aquariumPanelElderCloseButtonActive.setVisible( true );
+      }
+      // aquarium panel elder back button Activate END -MS 02.05.2020-
+
+      //greenhouse Button Activate -MS 02.05.2020-
+      else if ( event.getSource() == greenhouseButtonElder )
+      {
+         greenhouseLabelElder.setVisible( true );
+         greenhouseLineElder.setVisible( true );
+      }
+      //greenhouse Button Activate END -MS 02.05.2020-
+
+      // greenhouse panel elder back button -MS 02.05.2020-
+      else if ( event.getSource() == greenhousePanelElderCloseButton )
+      {
+         greenhousePanelElderCloseButtonActive.setVisible( true );
+      }
+      // greenhouse panel elder back button END -MS 02.05.2020-
+
+      //gas Button Activate -MS 02.05.2020-
+      else if ( event.getSource() == gasButtonElder )
+      {
+         gasLabelElder.setVisible( true );
+         gasLineElder.setVisible( true );
+      }
+      //gas Button Activate END -MS 02.05.2020-
+
+      // gas panel elder back button Activate -MS 02.05.2020-
+      else if ( event.getSource() == gasPanelElderCloseButton )
+      {
+         gasPanelElderCloseButtonActive.setVisible( true );
+      }
+      // gas panel elder back button Activate END -MS 02.05.2020-
+
+      //door Button Activate -MS 02.05.2020-
+      else if ( event.getSource() == doorButtonElder )
+      {
+         doorLabelElder.setVisible( true );
+         doorLineElder.setVisible( true );
+      }
+      //door Button Activate END -MS 02.05.2020-
+
+      // door panel elder back button Activate -MS 02.05.2020-
+      else if ( event.getSource() == doorPanelElderCloseButton )
+      {
+         doorPanelElderCloseButtonActive.setVisible( true );
+      }
+      // door panel elder back button Activate END -MS 02.05.2020-
+
+      // aquariumSaveButton Activate -MS 03.05.2020-
+      else if ( event.getSource() == aquariumSaveButton )
+      {
+         aquariumSaveButtonLabel.setVisible( true );
+      }
+      // aquariumSaveButton Activate END -MS 03.05.2020-
+
+      //aquariumMenuBackButtonElder Activate -MS 03.05.2020-
+      else if ( event.getSource() == aquariumMenuBackButtonElder )
+      {
+         aquariumMenuBackButtonSubLabel.setVisible( true );
+      }
+      //aquariumMenuBackButtonElder Activate END -MS 03.05.2020-
+
+      // applicationBackButtonElder Activate  -MS 04.05.2020-
+      else if ( event.getSource() == applicationBackButtonElder )
+      {
+         applicationBackButtonSubLabel.setVisible( true );
+      }
+      // applicationBackButtonElder Activate END -MS 04.05.2020-
    }
-   // applicationBackButtonElder END -MS 04.05.2020-
+   // buttonElderActivate END -MS 05.05.2020-
+
+   // buttonElderActivate -MS 05.05.2020-
+   @FXML
+   void buttonElderDeactivate ( MouseEvent event )
+   {
+      // userProfileButtonElderDeactivate -MS 03.04.2020-
+      if ( event.getSource() == userProfileButtonElder )
+      {
+         userProfileSubLabelActive.setVisible( false );
+         userProfileSubLabelNotActive.setVisible( true );
+         userProfileElderActiveImage.setVisible( false );
+      }
+      // userProfileButtonElderDeactivate END -MS 03.04.2020-
+      else if ( event.getSource() == houseMenuButtonElder )
+      {
+         menuSubLabelActive.setVisible( false );
+         menuSubLabelNotActive.setVisible( true );
+         houseMenuElderActiveImage.setVisible( false );
+      }
+
+      //Settings Button Deactivate -MS 05.04.2020-
+      else if ( event.getSource() == settingsButtonElder )
+      {
+         settingsSubLabelActive.setVisible( false );
+         settingsSubLabelNotActive.setVisible( true );
+         settingsButtonElderActiveImage.setVisible( false );
+      }
+      //Settings Button Deactivate END -MS 05.04.2020-
+
+      //Electricity Button Deactivate -MS 09.04.2020-
+      else if ( ( event.getSource() == electricityButtonElder ) || ( event.getSource() == electricityLabelElder ) )
+      {
+         electricityLabelElder.setVisible( false );
+         electricityLineElder.setVisible( false );
+      }
+      //Electricity Button Deactivate END -MS 09.04.2020-
+
+      //Lights Button -MS 09.04.2020-
+      else if ( ( event.getSource() == lightsButtonElder ) || ( event.getSource() == lightsLabelElder) )
+      {
+         lightsLabelElder.setVisible( false );
+         lightsLineElder.setVisible( false );
+      }
+      //Lights Button Deactivate END -MS 09.04.2020-
+
+      //Water Control Button Deactivate -MS 09.04.2020-
+      else if ( (event.getSource() == waterButtonElder ) )
+      {
+         waterLabelElder.setVisible( false );
+         waterLineElder.setVisible( false );
+      }
+      //Water Control Button Deactivate END -MS 09.04.2020-
+
+      //Temperature Button Deactivate -MS 09.04.2020-
+      else if ( event.getSource() == temperatureButtonElder )
+      {
+         temperatureLabelElder.setVisible( false );
+         temperatureLineElder.setVisible( false );
+      }
+      //Temperature Button Deactivate END -MS 09.04.2020-
+
+      //Back Button Deactivate -MS 09.04.2020-
+      else if ( event.getSource() == houseMenuBackButtonElder )
+      {
+         houseMenuBackButtonSubLabel.setVisible( false );
+      }
+      //Back Button Deactivate END -MS 09.04.2020-
+
+      //Back 2 Button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == houseMenuBackButtonElder2 )
+      {
+         houseMenuBackButtonSubLabel2.setVisible( false );
+      }
+      //Back 2 Button Deactivate END -MS 02.05.2020-
+
+      //Electricity panel elder back button Deactivate -MS 10.04.2020-
+      else if ( event.getSource() == electricityPanelElderCloseButton )
+      {
+         electricityPanelElderCloseButtonActive.setVisible( false );
+      }
+      //Electricity panel elder back button Deactivate END -MS 10.04.2020-
+
+      //Water panel elder back button Deactivate -MS 10.04.2020-
+      else if ( event.getSource() == waterPanelElderCloseButton )
+      {
+         waterPanelElderCloseButtonActive.setVisible( false );
+      }
+      //Water panel elder back button Deactivate END -MS 10.04.2020-
+
+      //Temperature panel elder back button Deactivate -MS 10.04.2020-
+      else if ( event.getSource() == temperaturePanelElderCloseButton )
+      {
+         temperaturePanelElderCloseButtonActive.setVisible( false );
+      }
+      //Temperature panel elder back button Deactivate END -MS 10.04.2020-
+
+      //Lights panel elder back button Deactivate -MS 10.04.2020-
+      else if ( event.getSource() == lightsPanelElderCloseButton )
+      {
+         lightsPanelElderCloseButtonActive.setVisible( false );
+      }
+      //Lights panel elder back button Deactivate END -MS 10.04.2020-
+
+      //applicationSettingsElderButton Deactivate -MS 23.04.2020-
+      else if ( event.getSource() == applicationSettingsElderButton )
+      {
+         applicationSettingsElderLabel.setVisible( false );
+         applicationSettingsElderLine.setVisible( false );
+      }
+      //applicationSettingsElderButton Deactivate END -MS 23.04.2020-
+
+      //homeSettingsElder Deactivate -MS 23.04.2020-
+      else if ( event.getSource() == homeSettingsElderButton )
+      {
+         homeSettingsElderLabel.setVisible( false );
+         homeSettingsElderLine.setVisible( false );
+      }
+      //homeSettingsElder Deactivate END -MS 23.04.2020-
+
+      //languageSettingsElder Deactivate -MS 23.04.2020-
+      else if ( event.getSource() == languageSettingsElderButton )
+      {
+         languageSettingsElderLabel.setVisible( false );
+         languageSettingsElderLine.setVisible( false );
+      }
+      //languageSettingsElder Deactivate END -MS 23.04.2020-
+
+      //emergencySettingsElder Deactivate -MS 23.04.2020-
+      else if ( event.getSource() == emergencySettingsElderButton )
+      {
+         emergencySettingsElderLabel.setVisible( false );
+         emergencySettingsElderLine.setVisible( false );
+      }
+      //emergencySettingsElder Deactivate END -MS 23.04.2020-
+
+      //connectionSettingsElderButton Deactivate -MS 23.04.2020-
+      else if ( event.getSource() == connectionSettingsElderButton )
+      {
+         connectionSettingsElderLabel.setVisible( false );
+         connectionSettingsElderLine.setVisible( false );
+      }
+      //connectionSettingsElderButton Deactivate -MS 23.04.2020-
+
+      //user settings change info panel Deactivate -MS 24.04.2020-
+      else if ( event.getSource() == userSettingsChangeBackButton )
+      {
+         userSettingsChangeBackButtonSubLabel.setVisible( false );
+         userSettingsChangeBackButtonImage.setVisible( false );
+      }
+      //user settings change info panel Deactivate END -MS 24.04.2020-
+
+      else if ( event.getSource() == userSettingsChangeSave )
+      {
+         userSettingsChangeSaveSubLabel.setVisible( false );
+         userSettingsChangeSaveImage.setVisible( false );
+      }
+
+      // userSettingsChangeInfoButton Deactivate -MS 24.04.2020-
+      else if ( event.getSource() == userSettingsChangeInfoButton )
+      {
+         userSettingsChangeInfoButtonImage.setVisible( false );
+         userSettingsChangeInfoButtonSubLabel.setVisible( false );
+      }
+      // userSettingsChangeInfoButton Deactivate END -MS 24.04.2020-
+
+      // userSettingsUPChangeButton Deactivate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsUPChangeButton )
+      {
+         userSettingsUPChangeButtonImage.setVisible( false );
+         userSettingsUPChangeLabel.setVisible( false );
+      }
+      // userSettingsUPChangeButton Deactivate END -MS 26.04.2020-
+
+      // userSettingsPanelTwoChangeSaveButton Deactivate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsPanelTwoChangeSaveButton )
+      {
+         userSettingsPanelTwoChangeSaveButtonImage.setVisible( false );
+         userSettingsPanelTwoChangeSaveLabel.setVisible( false );
+      }
+      // userSettingsPanelTwoChangeSaveButton Deactivate END -MS 26.04.2020-
+
+      // userSettingsPanelTwoChangeBackButton Deactivate -MS 26.04.2020-
+      else if ( event.getSource() == userSettingsPanelTwoChangeBackButton )
+      {
+         userSettingsPanelTwoChangeBackButtonImage.setVisible( false );
+         userSettingsPanelTwoChangeBackLabel.setVisible( false );
+      }
+      // userSettingsPanelTwoChangeBackButton Deactivate END -MS 26.04.2020-
+
+      // userProfileBackButtonElder Deactivate -MS 01.05.2020-
+      else if ( event.getSource() == userProfileBackButtonElder )
+      {
+         userProfileBackButtonElderSubLabel.setVisible( false );
+      }
+      // userProfileBackButtonElder Deactivate END -MS 01.05.2020-
+
+      // settingsBackButtonElder Deactivate -MS 01.05.2020-
+      else if ( event.getSource() == settingsBackButtonElder )
+      {
+         settingsBackButtonSubLabel.setVisible( false );
+      }
+      // settingsBackButtonElder Deactivate END -MS 01.05.2020-
+
+      //aquarium Button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == aquariumButtonElder)
+      {
+         aquariumLabelElder.setVisible( false );
+         aquariumLineElder.setVisible( false );
+      }
+      //aquarium Button Deactivate END -MS 02.05.2020-
+
+      // aquarium panel elder back button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == aquariumPanelElderCloseButton)
+      {
+         aquariumPanelElderCloseButtonActive.setVisible( false );
+      }
+      // aquarium panel elder back button Deactivate END -MS 02.05.2020-
+
+      //greenhouse Button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == greenhouseButtonElder )
+      {
+         greenhouseLabelElder.setVisible( false );
+         greenhouseLineElder.setVisible( false );
+      }
+      //greenhouse Button Deactivate END -MS 02.05.2020-
+
+      // greenhouse panel elder back button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == greenhousePanelElderCloseButton )
+      {
+         greenhousePanelElderCloseButtonActive.setVisible( false );
+      }
+      // greenhouse panel elder back button Deactivate END -MS 02.05.2020-
+
+      //gas Button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == gasButtonElder )
+      {
+         gasLabelElder.setVisible( false );
+         gasLineElder.setVisible( false );
+      }
+      //gas Button Deactivate END -MS 02.05.2020-
+
+      // gas panel elder back button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == gasPanelElderCloseButton )
+      {
+         gasPanelElderCloseButtonActive.setVisible( false );
+      }
+      // gas panel elder back button Deactivate END -MS 02.05.2020-
+
+      //door Button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == doorButtonElder )
+      {
+         doorLabelElder.setVisible( false );
+         doorLineElder.setVisible( false );
+      }
+      //door Button Deactivate END -MS 02.05.2020-
+
+      // door panel elder back button Deactivate -MS 02.05.2020-
+      else if ( event.getSource() == doorPanelElderCloseButton )
+      {
+         doorPanelElderCloseButtonActive.setVisible( false );
+      }
+      // door panel elder back button Deactivate END -MS 02.05.2020-
+
+      // aquariumSaveButton Deactivate -MS 03.05.2020-
+      else if ( event.getSource() == aquariumSaveButton )
+      {
+         aquariumSaveButtonLabel.setVisible( false );
+      }
+      // aquariumSaveButton Deactivate END -MS 03.05.2020-
+
+      //aquariumMenuBackButtonElder Deactivate -MS 03.05.2020-
+      else if ( event.getSource() == aquariumMenuBackButtonElder )
+      {
+         aquariumMenuBackButtonSubLabel.setVisible( false );
+      }
+      //aquariumMenuBackButtonElder Deactivate END -MS 03.05.2020-
+
+      // applicationBackButtonElder Deactivate  -MS 04.05.2020-
+      else if ( event.getSource() == applicationBackButtonElder )
+      {
+         applicationBackButtonSubLabel.setVisible( false );
+      }
+      // applicationBackButtonElder Deactivate END -MS 04.05.2020-
+   }
+   // buttonElderDeactivate END -MS 05.05.2020-
    
 }
