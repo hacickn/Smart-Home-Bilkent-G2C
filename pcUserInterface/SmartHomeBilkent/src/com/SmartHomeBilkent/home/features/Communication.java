@@ -32,11 +32,4 @@ public abstract class Communication {
     * @param control is a boolean input parameter
     */
    abstract void open( boolean control );
-
-   /**
-    * it is a open abstract method
-    *
-    * @return result as a boolean
-    */
-   abstract boolean isActive();
 }

@@ -31,7 +31,7 @@ public class Home {
       siren = new Siren( arduino );
       water = new Water( arduino );
       door = new Door( arduino );
-      greenHouse = new GreenHouse();
+      greenHouse = new GreenHouse( arduino );
       aquarium = new Aquarium( arduino );
    }
 

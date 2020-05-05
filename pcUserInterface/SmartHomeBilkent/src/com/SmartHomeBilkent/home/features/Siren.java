@@ -15,7 +15,6 @@ public class Siren extends Communication {
    private final String SIREN_OFF = "external_siren_off#:";
    private final String BUZZER_ON = "buzzer_on#:";
    private final String BUZZER_OFF = "buzzer_off#:";
-   private boolean check;
 
    //constructor
    public Siren( Arduino arduino ) {
@@ -23,16 +22,11 @@ public class Siren extends Communication {
    }
 
    //methods
-   public boolean isActive() {
-      return check;
-   }
-
    public void open( boolean control ) {
       if( control )
          arduino.serialWrite( SIREN_ON );
       else
          arduino.serialWrite( SIREN_OFF );
-      check = control;
    }
 
    public void buzzerOpen( boolean control ) {
@@ -40,7 +34,6 @@ public class Siren extends Communication {
          arduino.serialWrite( BUZZER_ON );
       else
          arduino.serialWrite( BUZZER_OFF );
-      check = control;
    }
 
 }

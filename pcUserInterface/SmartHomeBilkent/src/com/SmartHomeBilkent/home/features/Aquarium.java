@@ -22,7 +22,6 @@ public class Aquarium extends Communication {
    private String detailedMessage;
    private String lastIncomingWaterTime;
    private String lastOutgoingWaterTime;
-   private boolean check;
 
 
    //constructor
@@ -39,15 +38,6 @@ public class Aquarium extends Communication {
    //methods
 
    /**
-    * it is a isActive method
-    *
-    * @return result as a boolean
-    */
-   public boolean isActive() {
-      return check;
-   }
-
-   /**
     * it is a open method that open air motor according to input parameter
     *
     * @param control is a boolean input parameter
@@ -57,7 +47,6 @@ public class Aquarium extends Communication {
          arduino.serialWrite( AIR_MOTOR_ON );
       else
          arduino.serialWrite( AIR_MOTOR_OFF );
-      check = control;
    }
 
    /**
