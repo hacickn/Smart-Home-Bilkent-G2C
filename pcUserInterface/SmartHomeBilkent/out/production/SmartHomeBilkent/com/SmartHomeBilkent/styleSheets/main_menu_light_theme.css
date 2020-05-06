@@ -213,7 +213,25 @@
 .tempLabel{
       -fx-text-fill: black;
     -fx-font-family:  'Patrick Hand', cursive;
+          -fx-font-size: 18px;
  }
+  .aquariumSettingsLabel{
+        -fx-text-fill: black;
+        -fx-font-family:  'Patrick Hand', cursive;
+        -fx-font-size: 14px;
+   }
+   .timePickerAquarium{
+        -jfx-default-color: #b85c00;
+        -fx-text-fill: black;
+        -fx-font-family:  'Patrick Hand', cursive;
+        -fx-font-size: 13px;
+   }
+     .timePicker{
+          -jfx-default-color: #b85c00;
+          -fx-text-fill: black;
+          -fx-font-family:  'Patrick Hand', cursive;
+          -fx-font-size: 13px;
+     }
 .tempValueLabel{
     -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
@@ -223,28 +241,55 @@
     -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: darkRed;
  }
-.contextPassive{
+.contextPassiveTop{
     -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: black;
+      -fx-font-size: 35px;
  }
-.contextActive{
+ .contextPassiveSub{
+     -fx-font-family:  'Patrick Hand', cursive;
+       -fx-text-fill: black;
+       -fx-font-size: 20px;
+  }
+.contextActiveTop{
     -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill:darkGreen;
+      -fx-font-size: 35px;
+}
+.contextActiveSub{
+    -fx-font-family:  'Patrick Hand', cursive;
+      -fx-text-fill:darkGreen;
+             -fx-font-size: 20px;
 }
 .toggleButtons{
-    -fx-font-family:  'Patrick Hand', cursive;
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
+}
+.toggleButtonsMiddle{
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+    -fx-font-family:  'Patrick Hand', cursive;
+    -fx-font-size: 18px;
+}
+.permissionButtonsMiddle{
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+    -fx-font-family:  'Patrick Hand', cursive;
+    -fx-font-size: 15px;
 }
 .contextDetailPassive{
     -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: black;
       -fx-border-color: black;
+       -fx-font-size: 20px;
  }
 .contextDetailActive{
     -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill:darkGreen;
       -fx-border-color: darkGreen;
+       -fx-font-size: 20px;
 }
 .gearPassive{
     -fx-background-image: url("images/gear5.png");
@@ -303,27 +348,72 @@
      -fx-text-fill: #DB7093;
      -jfx-focus-color:#DB7093;
      -jfx-unfocus-color: black;
+     -fx-font-size: 12px;
+}
+.addUserInfoTextField{
+    -fx-font-family:  'Patrick Hand', cursive;
+     -fx-text-fill: #DB7093;
+     -jfx-focus-color:#DB7093;
+     -jfx-unfocus-color: black;
+     -fx-font-size: 14px;
 }
 .changeUserWeather{
     -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #ffbb00;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: #ffe100;
+     -fx-font-size: 20
+
 }
 .changeUserInforRadioButton{
     -fx-font-family:  'Patrick Hand', cursive;
      -jfx-selected-color:#DB7093;
      -jfx-unselected-color: black;
+     -fx-font-size: 12px;
+}
+.bulkChangesRadioButton{
+ -fx-font-family:  'Patrick Hand', cursive;
+     -jfx-selected-color:#b85c00;
+     -jfx-unselected-color: black;
+     -fx-font-size: 10px;
 }
 .changeUserInfoLabels{
     -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
+  -fx-font-size:20px;
 }
+.changeUserSubInfoLabels{
+-fx-font-family:  'Patrick Hand', cursive;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.settingsTopLabels{
+-fx-font-family:  'Patrick Hand', cursive;
+       -fx-text-fill: black;
+       -fx-font-size:27px;
+}
+.settingMiddleLabels{
+-fx-font-family:  'Patrick Hand', cursive;
+       -fx-text-fill: black;
+       -fx-font-size:18px;
+}
+.settingLittleLabels{
+-fx-font-family:  'Patrick Hand', cursive;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.addUserLabel{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:15px;
+}
+
 .userInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: black;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
+         -fx-font-size: 14px;
 }
 .applicationSettings{
      -fx-background-image: url("images/monitor5.png");
@@ -457,10 +547,21 @@
 .changeThemeSaveRadioButton{
      -jfx-selected-color:#DB7093;
      -jfx-unselected-color: black;
+    -fx-font-family:  'Patrick Hand', cursive;
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}
+.addUserRadioButton{
+     -jfx-selected-color:#DB7093;
+     -jfx-unselected-color: black;
+    -fx-font-family:  'Patrick Hand', cursive;
+          -fx-text-fill: black;
+          -fx-font-size: 13px;
 }
 .userProfileInfoLabel{
     -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #b85c00;
+     -fx-font-size: 12px;
 }
 .userProfileButtonGirls{
            -fx-background-image: url("images/girls5.png");
@@ -477,6 +578,7 @@
 .settingTopPaneLabels{
     -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #b85c00;
+     -fx-font-size: 14px;
 }
 .deutsch{
            -fx-background-image: url("images/germany.png");
@@ -612,6 +714,7 @@
 .datePicker{
     -fx-font-family:  'Patrick Hand', cursive;
     -jfx-default-color:#DB7093;
+     -fx-font-size: 12px;
 }
 .updateWeather{
         -fx-background-image: url("images/updateCheck5.png");

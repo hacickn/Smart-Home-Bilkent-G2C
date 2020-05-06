@@ -206,7 +206,25 @@
 .tempLabel{
       -fx-text-fill: black;
       -fx-font-family:  'Oswald', sans-serif;
+      -fx-font-size: 18px;
  }
+ .aquariumSettingsLabel{
+       -fx-text-fill: black;
+       -fx-font-family:  'Oswald', sans-serif;
+       -fx-font-size: 14px;
+  }
+  .timePickerAquarium{
+       -jfx-default-color: #b85c00;
+       -fx-text-fill: black;
+       -fx-font-family:  'Oswald', sans-serif;
+       -fx-font-size: 13px;
+  }
+    .timePicker{
+         -jfx-default-color: #b85c00;
+         -fx-text-fill: black;
+         -fx-font-family:  'Oswald', sans-serif;
+         -fx-font-size: 13px;
+    }
 .tempValueLabel{
        -fx-text-fill: black;
        -fx-border-color: black;
@@ -216,27 +234,55 @@
       -fx-text-fill: darkRed;
        -fx-font-family:  'Oswald', sans-serif;
  }
-.contextPassive{
+.contextPassiveTop{
       -fx-text-fill: black;
        -fx-font-family:  'Oswald', sans-serif;
+       -fx-font-size: 35px;
  }
-.contextActive{
+ .contextPassiveSub{
+       -fx-text-fill: black;
+        -fx-font-family:  'Oswald', sans-serif;
+        -fx-font-size: 20px;
+  }
+.contextActiveTop{
       -fx-text-fill:darkGreen;
        -fx-font-family:  'Oswald', sans-serif;
+        -fx-font-size: 35px;
+}
+.contextActiveSub{
+      -fx-text-fill:darkGreen;
+       -fx-font-family:  'Oswald', sans-serif;
+        -fx-font-size: 20px;
 }
 .toggleButtons{
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
 }
+.toggleButtonsMiddle{
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+    -fx-font-family:  'Oswald', sans-serif;
+    -fx-font-size: 18px;
+}
+.permissionButtonsMiddle{
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+    -fx-font-family:  'Oswald', sans-serif;
+    -fx-font-size: 15px;
+}
 .contextDetailPassive{
       -fx-text-fill: black;
        -fx-font-family:  'Oswald', sans-serif;
       -fx-border-color: black;
+              -fx-font-size: 20px;
  }
 .contextDetailActive{
       -fx-text-fill:darkGreen;
        -fx-font-family:  'Oswald', sans-serif;
       -fx-border-color: darkGreen;
+              -fx-font-size: 20px;
 }
 .gearPassive{
     -fx-background-image: url("images/gear1.png");
@@ -296,26 +342,71 @@
      -fx-text-fill: white;
      -jfx-focus-color:white;
      -jfx-unfocus-color: black;
+     -fx-font-size: 12px;
+}
+.addUserInfoTextField{
+ -fx-font-family:  'Oswald', sans-serif;
+     -fx-text-fill: white;
+     -jfx-focus-color:white;
+     -jfx-unfocus-color: black;
+     -fx-font-size: 14px;
 }
 .changeUserWeather{
  -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #ffbb00;
      -jfx-focus-color: white;
      -jfx-unfocus-color: #ffe100;
+     -fx-font-size: 20
 }
 .changeUserInforRadioButton{
+    -fx-font-family:  'Oswald', sans-serif;
      -jfx-selected-color:white;
      -jfx-unselected-color: black;
+     -fx-font-size: 12px;
+}
+.bulkChangesRadioButton{
+ -fx-font-family:  'Oswald', sans-serif;
+     -jfx-selected-color:#b85c00;
+     -jfx-unselected-color: black;
+     -fx-font-size: 10px;
 }
 .changeUserInfoLabels{
     -fx-font-family:  'Oswald', sans-serif;
        -fx-text-fill: black;
+       -fx-font-size:20px;
 }
+.changeUserSubInfoLabels{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.settingsTopLabels{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:27px;
+}
+.settingMiddleLabels{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:18px;
+}
+.settingLittleLabels{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.addUserLabel{
+    -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:15px;
+}
+
 .userInfoTextField{
     -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: black;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
+     -fx-font-size: 14px;
 }
 .applicationSettings{
      -fx-background-image: url("images/monitor1.png");
@@ -449,10 +540,21 @@
 .changeThemeSaveRadioButton{
      -jfx-selected-color:#b85c00;
      -jfx-unselected-color: black;
+         -fx-font-family:  'Oswald', sans-serif;
+          -fx-text-fill: black;
+          -fx-font-size: 15px;
+}
+.addUserRadioButton{
+     -jfx-selected-color:#b85c00;
+     -jfx-unselected-color: black;
+         -fx-font-family:  'Oswald', sans-serif;
+          -fx-text-fill: black;
+          -fx-font-size: 13px;
 }
 .userProfileInfoLabel{
     -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
+     -fx-font-size: 12px;
 }
 .userProfileButtonGirls{
            -fx-background-image: url("images/girls2.png");
@@ -466,10 +568,10 @@
            -fx-background-image: url("images/girls3.png");
            -fx-background-size: cover;
 }
-//////settings
 .settingTopPaneLabels{
     -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
+     -fx-font-size: 14px;
 }
 .deutsch{
            -fx-background-image: url("images/germany.png");
@@ -604,6 +706,7 @@
 }
 .datePicker{
     -fx-font-family:  'Oswald', sans-serif;
+    -fx-font-size: 12px;
     -jfx-default-color:gray;
 }
 .updateWeather{
