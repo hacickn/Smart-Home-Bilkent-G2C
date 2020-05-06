@@ -1,7 +1,6 @@
 .root{
        -fx-background-color: #f2dada;
 }
-
 .menuBorderPane{
            -fx-background-color:#db9090;
            -fx-border-color: #F5F5DC;
@@ -213,57 +212,84 @@
    }
 .tempLabel{
       -fx-text-fill: black;
-          -fx-font-family:  'Bahiana', cursive;
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-font-size: 18px;
-
  }
   .aquariumSettingsLabel{
         -fx-text-fill: black;
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
         -fx-font-size: 14px;
    }
    .timePickerAquarium{
         -jfx-default-color: #b85c00;
         -fx-text-fill: black;
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
         -fx-font-size: 13px;
    }
      .timePicker{
           -jfx-default-color: #b85c00;
           -fx-text-fill: black;
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
           -fx-font-size: 13px;
      }
 .tempValueLabel{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
        -fx-text-fill: black;
        -fx-border-color: black;
 }
 .connectionInfo{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill: darkRed;
  }
-.contextPassive{
-          -fx-font-family:  'Bahiana', cursive;
-      -fx-text-fill: black;
+.contextPassiveTop{
+-fx-font-family:  'Oswald', sans-serif;
+      -fx-font-size: 35px;
+    -fx-text-fill: black;
  }
-.contextActive{
-          -fx-font-family:  'Bahiana', cursive;
+ .contextPassiveSub{
+-fx-font-family:  'Oswald', sans-serif;
+       -fx-font-size: 20px;
+      -fx-text-fill: black;
+  }
+.contextActiveTop{
+-fx-font-family:  'Oswald', sans-serif;
+      -fx-font-size: 35px;
       -fx-text-fill:	#336600;
+}
+.contextActiveSub{
+-fx-font-family:  'Oswald', sans-serif;
+      -fx-font-size: 20px;
+     -fx-text-fill:	#336600;
 }
 .toggleButtons{
     -jfx-toggle-color: 	#336600;
     -jfx-untoggle-color: black;
 }
+.toggleButtonsMiddle{
+    -jfx-toggle-color: #336600;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+-fx-font-family:  'Oswald', sans-serif;
+    -fx-font-size: 18px;
+}
+.permissionButtonsMiddle{
+    -jfx-toggle-color: #336600;
+    -jfx-untoggle-color: black;
+    -fx-text-fill:black;
+-fx-font-family:  'Oswald', sans-serif;
+    -fx-font-size: 15px;
+}
 .contextDetailPassive{
-               -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill: black;
       -fx-border-color: black;
+       -fx-font-size: 20px;
  }
 .contextDetailActive{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill:#336600;
       -fx-border-color: #336600;
+       -fx-font-size: 20px;
 }
 .gearPassive{
     -fx-background-image: url("images/gear1.png");
@@ -318,30 +344,74 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: darkGreen;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: black;
+     -fx-font-size: 12px;
+}
+.addUserInfoTextField{
+-fx-font-family:  'Oswald', sans-serif;
+     -fx-text-fill: darkGreen;
+     -jfx-focus-color:darkGreen;
+     -jfx-unfocus-color: black;
+     -fx-font-size: 14px;
 }
 .changeUserWeather{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #ffbb00;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: #ffe100;
+        -fx-font-size: 20px;
 }
 .changeUserInforRadioButton{
      -jfx-selected-color:darkGreen;
      -jfx-unselected-color: black;
+     -fx-font-size: 12px;
+     -fx-font-family:  'Oswald', sans-serif;
+}
+.bulkChangesRadioButton{
+     -fx-font-family:  'Oswald', sans-serif;
+     -jfx-selected-color:#b85c00;
+     -jfx-unselected-color: black;
+     -fx-font-size: 10px;
 }
 .changeUserInfoLabels{
-          -fx-font-family:  'Bahiana', cursive;
+     -fx-font-family:  'Oswald', sans-serif;
        -fx-text-fill: black;
+  -fx-font-size:20px;
+}
+.changeUserSubInfoLabels{
+     -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.settingsTopLabels{
+     -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:27px;
+}
+.settingMiddleLabels{
+     -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:18px;
+}
+.settingLittleLabels{
+     -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:13px;
+}
+.addUserLabel{
+     -fx-font-family:  'Oswald', sans-serif;
+       -fx-text-fill: black;
+       -fx-font-size:15px;
 }
 .userInfoTextField{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: black;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
+           -fx-font-size: 14px;
 }
 .applicationSettings{
      -fx-background-image: url("images/monitor1.png");
@@ -475,10 +545,21 @@
 .changeThemeSaveRadioButton{
      -jfx-selected-color:#b85c00;
      -jfx-unselected-color: black;
+    -fx-background-image: url("images/save5.png");
+     -fx-text-fill: black;
+     -fx-font-size: 15px;
+}
+.addUserRadioButton{
+     -jfx-selected-color:#DB7093;
+     -jfx-unselected-color: black;
+    -fx-background-image: url("images/save5.png");
+          -fx-text-fill: black;
+          -fx-font-size: 13px;
 }
 .userProfileInfoLabel{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
+      -fx-font-size: 12px;
 }
 .userProfileButtonGirls{
            -fx-background-image: url("images/girls2.png");
@@ -492,10 +573,10 @@
            -fx-background-image: url("images/girls5.png");
            -fx-background-size: cover;
 }
-//////settings
 .settingTopPaneLabels{
-                -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
+     -fx-font-size: 14px;
 }
 .deutsch{
            -fx-background-image: url("images/germany.png");
@@ -592,7 +673,7 @@
 }
 
 .tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
     -fx-text-fill: white;
     -fx-border-color:#556B2F;
 }
@@ -615,7 +696,7 @@
 }
 
 .tree-table-view .column-header .label {
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
     -fx-text-fill : #F0E68C;
     -fx-padding : 16 0 16 0 ;
 }
@@ -629,7 +710,7 @@
     -fx-border-color: #556B2F;
 }
 .datePicker{
-          -fx-font-family:  'Bahiana', cursive;
+-fx-font-family:  'Oswald', sans-serif;
     -jfx-default-color: darkGreen;
 }
 .updateWeather{
