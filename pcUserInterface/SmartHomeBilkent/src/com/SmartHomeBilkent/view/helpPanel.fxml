@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.SmartHomeBilkent.HelpPanel"
-            prefHeight="600.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@../styleSheets/help_panel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.HelpPanel">
+   <children>
+      <Pane layoutX="50.0" layoutY="50.0" opacity="0.66" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: #00126b; -fx-border-width: 3;" />
+      <AnchorPane fx:id="helpMainPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <JFXButton fx:id="helpExitButton" layoutX="53.0" layoutY="96.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="exitHelp" textFill="TRANSPARENT" />
+            <JFXButton fx:id="helpMenuButton" layoutX="53.0" layoutY="215.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="menuHelp" textFill="TRANSPARENT" />
+            <JFXButton fx:id="helpUserProfileButton" layoutX="257.0" layoutY="96.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="userProfileHelp" textFill="TRANSPARENT" />
+            <JFXButton fx:id="helpSettingsButton" layoutX="257.0" layoutY="215.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="settingsHelp" textFill="TRANSPARENT" />
+            <Label alignment="CENTER" layoutX="27.0" layoutY="61.0" prefHeight="17.0" prefWidth="347.0" styleClass="warningHelpLabel" text="PLEASE CHOOSE WHERE YOU STACK" textFill="#002f5e" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="helpExitPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
+      <AnchorPane fx:id="helpUserProfilePane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
+      <AnchorPane fx:id="helpMenuPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
+      <AnchorPane fx:id="helpSettingsPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
+   </children>
 </AnchorPane>

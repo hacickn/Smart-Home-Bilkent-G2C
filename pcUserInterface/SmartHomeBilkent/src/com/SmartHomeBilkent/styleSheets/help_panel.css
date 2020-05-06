@@ -1,0 +1,40 @@
+.root{
+     -fx-background-image : url("images/helpImage.jpg");
+     -fx-background-size: cover;
+}
+.exitHelp{
+     -fx-background-image: url("images/logout4.png");
+     -fx-background-size: cover;
+}
+.exitHelp:hover{
+     -fx-background-image: url("images/logout5.png");
+     -fx-background-size: cover;
+}
+.userProfileHelp{
+     -fx-background-image: url("images/userSetting4.png");
+     -fx-background-size: cover;
+}
+.userProfileHelp:hover{
+     -fx-background-image: url("images/userSetting5.png");
+     -fx-background-size: cover;
+}
+.menuHelp{
+     -fx-background-image: url("images/menu4.png");
+     -fx-background-size: cover;
+}
+.menuHelp:hover{
+     -fx-background-image: url("images/menu5.png");
+     -fx-background-size: cover;
+}
+.settingsHelp{
+     -fx-background-image: url("images/engineer4.png");
+     -fx-background-size: cover;
+}
+.settingsHelp:hover{
+     -fx-background-image: url("images/engineer5.png");
+     -fx-background-size: cover;
+}
+ .warningHelpLabel{
+       -fx-font-family:  'Patrick Hand', cursive;
+       -fx-font-size: 15px;
+  }
