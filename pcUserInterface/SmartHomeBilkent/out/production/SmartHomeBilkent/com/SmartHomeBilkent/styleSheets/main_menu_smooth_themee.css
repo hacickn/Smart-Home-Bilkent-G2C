@@ -213,18 +213,23 @@
    }
 .tempLabel{
       -fx-text-fill: black;
+      -fx-font-family:  'Oswald', sans-serif;
  }
 .tempValueLabel{
+      -fx-font-family:  'Oswald', sans-serif;
        -fx-text-fill: black;
        -fx-border-color: black;
 }
 .connectionInfo{
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill: darkRed;
  }
 .contextPassive{
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill: black;
  }
 .contextActive{
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill:	#336600;
 }
 .toggleButtons{
@@ -232,10 +237,12 @@
     -jfx-untoggle-color: black;
 }
 .contextDetailPassive{
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill: black;
       -fx-border-color: black;
  }
 .contextDetailActive{
+      -fx-font-family:  'Oswald', sans-serif;
       -fx-text-fill:#336600;
       -fx-border-color: #336600;
 }
@@ -292,11 +299,13 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
+      -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: darkGreen;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: black;
 }
 .changeUserWeather{
+      -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #ffbb00;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: #ffe100;
@@ -306,9 +315,11 @@
      -jfx-unselected-color: black;
 }
 .changeUserInfoLabels{
+      -fx-font-family:  'Oswald', sans-serif;
        -fx-text-fill: black;
 }
 .userInfoTextField{
+      -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: black;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
@@ -447,6 +458,7 @@
      -jfx-unselected-color: black;
 }
 .userProfileInfoLabel{
+      -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
 }
 .userProfileButtonGirls{
@@ -463,6 +475,7 @@
 }
 //////settings
 .settingTopPaneLabels{
+      -fx-font-family:  'Oswald', sans-serif;
      -fx-text-fill: #b85c00;
 }
 .deutsch{
@@ -560,6 +573,7 @@
 }
 
 .tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
+      -fx-font-family:  'Oswald', sans-serif;
     -fx-text-fill: white;
     -fx-border-color:#556B2F;
 }
@@ -582,6 +596,7 @@
 }
 
 .tree-table-view .column-header .label {
+      -fx-font-family:  'Oswald', sans-serif;
     -fx-text-fill : #F0E68C;
     -fx-padding : 16 0 16 0 ;
 }
@@ -595,6 +610,7 @@
         -fx-border-color: #556B2F;
 }
 .datePicker{
+      -fx-font-family:  'Oswald', sans-serif;
     -jfx-default-color: darkGreen;
 }
 .updateWeather{
@@ -663,4 +679,12 @@
 .helpButton:hover{
            -fx-background-image: url("images/help5.png");
            -fx-background-size: cover;
+}
+.soundHelperImage{
+        -fx-image: url("images/soundHelper1.png");
+         -fx-background-size: cover;
+}
+.textHelperImage{
+        -fx-image: url("images/textHelper1.png");
+     -fx-background-size: cover;
 }

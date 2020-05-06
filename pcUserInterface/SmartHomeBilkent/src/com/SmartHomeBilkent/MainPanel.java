@@ -39,6 +39,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
@@ -532,6 +533,7 @@ public class MainPanel implements Initializable {
    }
 
    void userPreferenceUpdate( User user ) {
+
       dateTimeFormatter = DateTimeFormatter.ofPattern( "dd.MM.yyyy" );
       localDate = LocalDate.parse( user.getBirthday(), dateTimeFormatter );
       birthdayDateField.setValue( localDate );

@@ -211,6 +211,7 @@
 }
 .tempLabel{
       -fx-text-fill: black;
+     //*-fx-font-family:  'Handlee', cursive;*/
  }
 .tempValueLabel{
        -fx-text-fill: black;
@@ -662,4 +663,12 @@
 .helpButton:hover{
            -fx-background-image: url("images/help5.png");
            -fx-background-size: cover;
+}
+.soundHelperImage{
+        -fx-image: url("images/soundHelper4.png");
+         -fx-background-size: cover;
+}
+.textHelperImage{
+        -fx-image: url("images/textHelper4.png");
+        -fx-background-size: cover;
 }

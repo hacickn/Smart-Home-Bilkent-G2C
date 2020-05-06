@@ -58,7 +58,7 @@
             </AnchorPane>
 
             <AnchorPane layoutX="50.0" layoutY="136.0" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
-                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0" visible="false">
+                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0">
                     <children>
                         <BorderPane fx:id="menuBorderPane" opacity="0.9" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane">
                             <left>
@@ -558,7 +558,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
+                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                             <children>
@@ -598,32 +598,34 @@
                         </AnchorPane>
                         <AnchorPane fx:id="settingSubAnchorBottom" layoutY="108.0" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" opacity="0.9" prefHeight="450.0" prefWidth="700.0">
                             <children>
-                                <SplitPane fx:id="settingModePane" dividerPositions="0.3108108108108108" orientation="VERTICAL" prefHeight="450.0" prefWidth="700.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2;" styleClass="settingSubPane">
+                                <SplitPane fx:id="settingModePane" dividerPositions="0.4752252252252252" orientation="VERTICAL" prefHeight="450.0" prefWidth="700.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2;" styleClass="settingSubPane">
                                     <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="355.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="694.0">
                                             <children>
                                                 <Label fx:id="interactiveTextModeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0" prefWidth="396.0" styleClass="tempLabel" text="INTERACTIVE TEXT MODE">
                                                     <font>
                                                         <Font name="Agency FB" size="25.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="textModeToggle" layoutX="308.0" layoutY="44.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="13.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                                <JFXToggleButton fx:id="textModeToggle" layoutX="314.0" layoutY="44.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="13.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                                    <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="307.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true" styleClass="textHelperImage" />
                                             </children>
                                         </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="694.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="694.0">
                                             <children>
                                                 <Label fx:id="interactiveSoundModeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0" prefWidth="396.0" styleClass="tempLabel" text="INTERACTIVE SOUND MODE">
                                                     <font>
                                                         <Font name="Agency FB" size="25.0" />
                                                     </font>
                                                 </Label>
-                                                <JFXToggleButton fx:id="soundModeToggle" layoutX="309.0" layoutY="40.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="150.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
-                                                <JFXSlider fx:id="soundVolumeSlider" blockIncrement="100.0" layoutX="276.0" layoutY="187.0" onMouseReleased="#volumeAdjust" showTickMarks="true" value="50.0" />
-                                                <Label fx:id="soundVolumeLabel" alignment="CENTER" layoutX="162.0" layoutY="152.0" prefHeight="24.0" prefWidth="370.0" styleClass="tempLabel" text="VOLUME">
+                                                <JFXToggleButton fx:id="soundModeToggle" layoutX="316.0" layoutY="41.0" onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="37.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                                                <JFXSlider fx:id="soundVolumeSlider" blockIncrement="100.0" layoutX="277.0" layoutY="127.0" onMouseReleased="#volumeAdjust" showTickMarks="true" value="50.0" />
+                                                <Label fx:id="soundVolumeLabel" alignment="CENTER" layoutX="162.0" layoutY="103.0" prefHeight="24.0" prefWidth="370.0" styleClass="tempLabel" text="VOLUME">
                                                     <font>
                                                         <Font name="Agency FB" size="20.0" />
                                                     </font>
                                                 </Label>
+                                    <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="307.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" styleClass="soundHelperImage" />
                                             </children>
                                         </AnchorPane>
                                     </items>
@@ -724,7 +726,7 @@
                               <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="308.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage" />
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="31.0" prefWidth="353.0" styleClass="tempLabel" text="NOTIFICATIONS">
                                             <font>

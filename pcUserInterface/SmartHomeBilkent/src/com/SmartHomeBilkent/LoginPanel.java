@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -114,5 +115,22 @@ public class LoginPanel implements Initializable {
       } else {
          capsLock = true;
       }
+
+      Font.loadFont(
+            LoginPanel.class.getResource("styleSheets/font/Oswald-VariableFont_wght.ttf").toExternalForm(),
+            10
+      );
+      Font.loadFont(
+            LoginPanel.class.getResource("styleSheets/font/PatrickHand-Regular.ttf").toExternalForm(),
+            10
+      );
+      Font.loadFont(
+            LoginPanel.class.getResource("styleSheets/font/IndieFlower-Regular.ttf").toExternalForm(),
+            10
+      );
+      Font.loadFont(
+            LoginPanel.class.getResource("styleSheets/font/Handlee-Regular.ttf").toExternalForm(),
+            10
+      );
    }
 }

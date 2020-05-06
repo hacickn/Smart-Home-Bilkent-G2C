@@ -212,29 +212,37 @@
    }
 .tempLabel{
       -fx-text-fill: black;
+    -fx-font-family:  'Patrick Hand', cursive;
  }
 .tempValueLabel{
+    -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
        -fx-border-color: black;
 }
 .connectionInfo{
+    -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: darkRed;
  }
 .contextPassive{
+    -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: black;
  }
 .contextActive{
+    -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill:darkGreen;
 }
 .toggleButtons{
+    -fx-font-family:  'Patrick Hand', cursive;
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
 }
 .contextDetailPassive{
+    -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill: black;
       -fx-border-color: black;
  }
 .contextDetailActive{
+    -fx-font-family:  'Patrick Hand', cursive;
       -fx-text-fill:darkGreen;
       -fx-border-color: darkGreen;
 }
@@ -291,23 +299,28 @@
     -fx-background-size: cover;
 }
 .changeUserInfoTextField{
+    -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #DB7093;
      -jfx-focus-color:#DB7093;
      -jfx-unfocus-color: black;
 }
 .changeUserWeather{
+    -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #ffbb00;
      -jfx-focus-color:darkGreen;
      -jfx-unfocus-color: #ffe100;
 }
 .changeUserInforRadioButton{
+    -fx-font-family:  'Patrick Hand', cursive;
      -jfx-selected-color:#DB7093;
      -jfx-unselected-color: black;
 }
 .changeUserInfoLabels{
+    -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
 }
 .userInfoTextField{
+    -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: black;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
@@ -446,6 +459,7 @@
      -jfx-unselected-color: black;
 }
 .userProfileInfoLabel{
+    -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #b85c00;
 }
 .userProfileButtonGirls{
@@ -461,6 +475,7 @@
            -fx-background-size: cover;
 }
 .settingTopPaneLabels{
+    -fx-font-family:  'Patrick Hand', cursive;
      -fx-text-fill: #b85c00;
 }
 .deutsch{
@@ -558,6 +573,7 @@
 }
 
 .tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
+    -fx-font-family:  'Patrick Hand', cursive;
     -fx-text-fill: black;
     -fx-border-color:#F0FFFF;
 }
@@ -580,6 +596,7 @@
 }
 
 .tree-table-view .column-header .label {
+    -fx-font-family:  'Patrick Hand', cursive;
     -fx-text-fill : #DEB887;
     -fx-padding : 16 0 16 0 ;
 }
@@ -593,6 +610,7 @@
         -fx-border-color: #DEB887;
 }
 .datePicker{
+    -fx-font-family:  'Patrick Hand', cursive;
     -jfx-default-color:#DB7093;
 }
 .updateWeather{
@@ -662,6 +680,13 @@
            -fx-background-image: url("images/help4.png");
            -fx-background-size: cover;
 }
-
+.soundHelperImage{
+        -fx-image: url("images/soundHelper5.png");
+         -fx-background-size: cover;
+}
+.textHelperImage{
+        -fx-image: url("images/textHelper5.png");
+         -fx-background-size: cover;
+}
 
 
