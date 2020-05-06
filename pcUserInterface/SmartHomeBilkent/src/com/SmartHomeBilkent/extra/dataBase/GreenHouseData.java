@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
+
 /**
  * a GreenHouseData class
  *
@@ -99,13 +101,13 @@ public class GreenHouseData {
       return humidityPerDay;
    }
 
-   public void getTable( LineChart< Number, Number > lineChart ) {
+   public void getTable( LineChart< Number, Number > lineChart, ResourceBundle bundle ) {
       XYChart.Series dataSeries;
       dataSeries = new XYChart.Series();
-      dataSeries.setName( "°C" );
+      dataSeries.setName( "°C " + bundle.getString( "tempLang" ) );
       XYChart.Series dataSeries2;
       dataSeries2 = new XYChart.Series();
-      dataSeries2.setName( "%" );
+      dataSeries2.setName( "% " + bundle.getString( "humidity" ) );
       calculateAverageHumidity();
       calculateAverageTemperature();
       for( int k = 0; k < valuesList.size(); k++ ) {

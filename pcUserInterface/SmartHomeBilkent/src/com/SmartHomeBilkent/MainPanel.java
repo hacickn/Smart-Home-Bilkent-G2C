@@ -227,7 +227,9 @@ public class MainPanel implements Initializable {
          turkishLabel, themeTopLabel,
          languageTopLabel, emergencyTopLabel,
          notificationTopLabel, connectionTopLabel,
-         removeAnUser;
+         removeAnUser, settingFireButtonLabel,
+         settingGasSensorLabel, settingSmokeSensorLabel,
+         settingVisualWarningLabel, settingAuditoryWarningLabel;
    @FXML
    private ToggleButton internalSirenToggle, externalSirenToggle,
          fireButtonVisualToggle, gasSensorVisualToggle,
@@ -399,17 +401,17 @@ public class MainPanel implements Initializable {
    //initialize method(it runs before the program start to run)
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
+      userPreferenceUpdate( getLoginUser() );
       ElectricityUsage.getInstance().getElectricityUsage();
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getGasUsage();
       GasUsage.getInstance().getTable( gasUsageTable );
       GreenHouseData.getInstance().getGreenHouseValues();
-      GreenHouseData.getInstance().getTable( greenHouseValuesChart );
+      GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
       FishSpecies.getInstance().getFishes();
       FishSpecies.getInstance().addFishToComboBox( checkComboBox );
       CommonSettingData.getInstance().getAllHome();
 
-      userPreferenceUpdate( getLoginUser() );
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable( true );
       audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
@@ -419,8 +421,9 @@ public class MainPanel implements Initializable {
       isArduinoConnect = false;
 
       for( int k = 1; k <= 7; k++ ) {
-         waterExchangeDay.getItems().add( k + ". DAY OF WEEK" );
+         waterExchangeDay.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
       }
+
 
       commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
       sensors = CommonSettingData.getInstance().getSensors( commonSetting );
@@ -1781,6 +1784,21 @@ public class MainPanel implements Initializable {
          mainMenuWeatherLabel.setText( bundle.getString( "weatherLang" ) );
          mainMenuHomeLabel.setText( bundle.getString( "homeLang" ) );
          removeUserTextField.setPromptText( bundle.getString( "passwordLang" ) );
+         internalSirenToggle.setText( bundle.getString( "internalSirenLang" ) );
+         externalSirenToggle.setText( bundle.getString( "externalSirenLang" ) );
+         settingFireButtonLabel.setText( bundle.getString( "fireButtonLang" ) );
+         settingGasSensorLabel.setText( bundle.getString( "gasSensorLang" ) );
+         settingSmokeSensorLabel.setText( bundle.getString( "smokeSensor" ) );
+         settingVisualWarningLabel.setText( bundle.getString( "visualWarningLang" ) );
+         settingAuditoryWarningLabel.setText( bundle.getString( "auditoryWarning" ) );
+         permissionPaneTopLabel.setText( bundle.getString( "childPermissionLang" ) );
+         permissionPaneElectricityToggle.setText( bundle.getString( "elecLang" ) );
+         permissionPaneWaterToggle.setText( bundle.getString( "waterLang" ) );
+         permissionPaneGardenLightToggle.setText( bundle.getString( "gardenLightLang" ) );
+         permissionPaneAquariumToggle.setText( bundle.getString( "aquiarumLang" ) );
+         permissionPaneNotificationToggle.setText( bundle.getString( "notificationLang" ) );
+         permissionPaneGasToggle.setText( bundle.getString( "gasLang" ) );
+         permissionPaneSirenToggle.setText( bundle.getString( "sirenLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }

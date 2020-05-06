@@ -58,7 +58,7 @@
             </AnchorPane>
 
             <AnchorPane layoutX="50.0" layoutY="136.0" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
-                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0">
+                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" opacity="0.95" prefHeight="500.0" prefWidth="700.0" visible="false">
                     <children>
                         <BorderPane fx:id="menuBorderPane" opacity="0.9" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane">
                             <left>
@@ -558,7 +558,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
+                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" opacity="0.9" prefHeight="112.0" prefWidth="700.0">
                             <children>
@@ -724,44 +724,44 @@
                               <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="308.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage" />
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
+                                <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
                                     <children>
                                         <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="31.0" prefWidth="353.0" styleClass="tempLabel" text="NOTIFICATIONS">
                                             <font>
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                              <Label alignment="CENTER_RIGHT" layoutX="-27.0" layoutY="150.0" prefHeight="23.0" prefWidth="227.0" styleClass="tempLabel" text="FIRE BUTTON">
+                              <Label fx:id="settingFireButtonLabel" alignment="CENTER_RIGHT" layoutX="-46.0" layoutY="150.0" prefHeight="23.0" prefWidth="227.0" styleClass="tempLabel" text="FIRE BUTTON">
                                  <font>
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" layoutX="-15.0" layoutY="207.0" prefHeight="23.0" prefWidth="216.0" styleClass="tempLabel" text="GAS SENSOR">
+                              <Label fx:id="settingGasSensorLabel" alignment="CENTER_RIGHT" layoutX="-34.0" layoutY="207.0" prefHeight="23.0" prefWidth="216.0" styleClass="tempLabel" text="GAS SENSOR">
                                  <font>
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" layoutX="-13.0" layoutY="260.0" prefHeight="23.0" prefWidth="214.0" styleClass="tempLabel" text="SMOKE SENSOR">
+                              <Label fx:id="settingSmokeSensorLabel" alignment="CENTER_RIGHT" layoutX="-32.0" layoutY="260.0" prefHeight="23.0" prefWidth="214.0" styleClass="tempLabel" text="SMOKE SENSOR">
                                  <font>
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="236.0" layoutY="106.0" styleClass="tempLabel" text="VISUAL WARNING">
+                              <Label fx:id="settingVisualWarningLabel" alignment="CENTER" layoutX="143.0" layoutY="107.0" prefHeight="23.0" prefWidth="218.0" styleClass="tempLabel" text="VISUAL WARNING">
                                  <font>
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="386.0" layoutY="106.0" styleClass="tempLabel" text="AUDITORY WARNING">
+                              <Label fx:id="settingAuditoryWarningLabel" alignment="CENTER" layoutX="361.0" layoutY="107.0" prefHeight="23.0" prefWidth="246.0" styleClass="tempLabel" text="AUDITORY WARNING">
                                  <font>
                                     <Font name="Agency FB" size="19.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="247.0" layoutY="130.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="246.0" layoutY="187.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="247.0" layoutY="240.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="406.0" layoutY="131.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="406.0" layoutY="241.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
-                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="406.0" layoutY="188.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="214.0" layoutY="134.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="213.0" layoutY="191.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="214.0" layoutY="244.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="445.0" layoutY="132.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="445.0" layoutY="242.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
+                              <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="445.0" layoutY="189.0" onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0" prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                               <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0" startY="144.0" />
                                     </children>
                                 </Pane>
