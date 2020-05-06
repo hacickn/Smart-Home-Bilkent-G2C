@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -101,6 +102,9 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private ImageView electricityPanelElderCloseButtonActive;
+
+   @FXML
+   private JFXButton electricityPanelElderSettingsButton;
 
    @FXML
    private Label electricityLabelElder;
@@ -232,33 +236,6 @@ public class ElderMainPanel implements Initializable {
    private Line homeSettingsElderLine;
 
    @FXML
-   private JFXButton languageSettingsElderButton;
-
-   @FXML
-   private Label languageSettingsElderLabel;
-
-   @FXML
-   private Line languageSettingsElderLine;
-
-   @FXML
-   private JFXButton emergencySettingsElderButton;
-
-   @FXML
-   private Label emergencySettingsElderLabel;
-
-   @FXML
-   private Line emergencySettingsElderLine;
-
-   @FXML
-   private JFXButton connectionSettingsElderButton;
-
-   @FXML
-   private Label connectionSettingsElderLabel;
-
-   @FXML
-   private Line connectionSettingsElderLine;
-
-   @FXML
    private JFXButton settingsBackButtonElder;
 
    @FXML
@@ -275,6 +252,33 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private Label applicationBackButtonSubLabel;
+
+   @FXML
+   private JFXButton languageSettingsElderButton;
+
+   @FXML
+   private Label languageSettingsElderLabel;
+
+   @FXML
+   private Line languageSettingsElderLine;
+
+   @FXML
+   private JFXButton connectionSettingsElderButton;
+
+   @FXML
+   private Label connectionSettingsElderLabel;
+
+   @FXML
+   private Line connectionSettingsElderLine;
+
+   @FXML
+   private JFXButton emergencySettingsElderButton;
+
+   @FXML
+   private Label emergencySettingsElderLabel;
+
+   @FXML
+   private Line emergencySettingsElderLine;
 
    @FXML
    private Pane userSettingsElderPanelMenu;
@@ -502,6 +506,9 @@ public class ElderMainPanel implements Initializable {
    private ImageView greenhousePanelElderCloseButtonActive;
 
    @FXML
+   private JFXButton greenhousePanelElderSettingsButton;
+
+   @FXML
    private Label greenhouseLabelElder;
 
    @FXML
@@ -530,6 +537,9 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private ImageView gasPanelElderCloseButtonActive;
+
+   @FXML
+   private JFXButton gasPanelElderSettingsButton;
 
    @FXML
    private Label gasLabelElder;
@@ -624,8 +634,109 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Label aquariumSaveButtonLabel;
 
+   @FXML
+   private Pane languageSettingsElderPanel;
+
+   @FXML
+   private Label languagePanelFirstLabelElder;
+
+   @FXML
+   private JFXButton languageElderPanelBackButtonElder;
+
+   @FXML
+   private Label languageElderPanelBackButtonSubLabel;
+
+   @FXML
+   private JFXButton englishElderButton;
+
+   @FXML
+   private Label englishElderButtonSubLabelPassive;
+
+   @FXML
+   private Label englishElderButtonSubLabelActive;
+
+   @FXML
+   private JFXButton turkishElderButton;
+
+   @FXML
+   private Label turkishElderButtonSubLabelPassive;
+
+   @FXML
+   private Label turkishElderButtonSubLabelActive;
+
+   @FXML
+   private Pane electiricitySettingsPanel;
+
+   @FXML
+   private Label electiricityMenuFirstLabelElder;
+
+   @FXML
+   private JFXButton electiricityMenuBackButtonElder;
+
+   @FXML
+   private Label electiricityMenuBackButtonSubLabel;
+
+   @FXML
+   private BarChart<?, ?> electiricitySettingsPanelChart;
+
+   @FXML
+   private JFXToggleButton electiricitySettingsPanelCloseOpenSwitch;
+
+   @FXML
+   private Pane gasSettingsPanel;
+
+   @FXML
+   private Label gasMenuFirstLabelElder;
+
+   @FXML
+   private JFXButton gasMenuBackButtonElder;
+
+   @FXML
+   private Label gasMenuBackButtonSubLabel;
+
+   @FXML
+   private BarChart<?, ?> gasSettingsPanelChart;
+
+   @FXML
+   private JFXToggleButton gasSettingsPanelCloseOpenSwitch;
+
+   @FXML
+   private Pane greenhouseSettingsPanel;
+
+   @FXML
+   private Label greenhouseMenuFirstLabelElder;
+
+   @FXML
+   private JFXButton greenhouseMenuBackButtonElder;
+
+   @FXML
+   private Label greenhouseMenuBackButtonSubLabel;
+
+   @FXML
+   private BarChart<?, ?> greenhouseSettingsPanelChart;
+
+   @FXML
+   private Label latesWaterFromAquariumLabel;
+
+   @FXML
+   private Label latesWaterFromAquariumVariable;
+
+   @FXML
+   private Label humidityLabel;
+
+   @FXML
+   private Label humidityVariable;
+
+   @FXML
+   private Label greenhouseTemperatureLabel;
+
+   @FXML
+   private Label greenhouseTemperatureVariable;
+
 
    public User loginUser;
+
+   private Boolean languageStatusElder;
    //constructors
    //public ElderMainPanel()
    //{
@@ -826,6 +937,106 @@ public class ElderMainPanel implements Initializable {
          applicationElderPanel.setDisable( false );
       }
       // applicationSettingsElderButton END -MS 04.05.2020-
+
+      // languageSettingsElderButton -MS 06.05.2020-
+      else if( event.getSource() == languageSettingsElderButton )
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         languageSettingsElderPanel.setVisible( true );
+         languageSettingsElderPanel.setDisable( false );
+      }
+      // languageSettingsElderButton END -MS 06.05.2020-
+
+      // languageElderPanelBackButtonElder -MS 06.05.2020-
+      else if ( event.getSource() == languageElderPanelBackButtonElder )
+      {
+         languageSettingsElderPanel.setDisable( true );
+         languageSettingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+      // languageElderPanelBackButtonElder END -MS 06.05.2020-
+
+      // turkishElderButton -MS 06.05.2020-
+      else if ( event.getSource() == turkishElderButton )
+      {
+         englishElderButtonSubLabelActive.setVisible( false );
+         turkishElderButtonSubLabelActive.setVisible( true );
+         languageStatusElder = true;
+         changeLanguageElder(languageStatusElder );
+      }
+      // turkishElderButton END -MS 06.05.2020-
+
+      // englishElderButton -MS 06.05.2020-
+      else if ( event.getSource() == englishElderButton )
+      {
+         turkishElderButtonSubLabelActive.setVisible( false );
+         englishElderButtonSubLabelActive.setVisible( true );
+         languageStatusElder = false;
+         changeLanguageElder( languageStatusElder );
+      }
+      // englishElderButton END -MS 06.05.2020-
+
+      // electricityPanelElderSettingsButton -MS 06.05.2020-
+      else if( event.getSource() == electricityPanelElderSettingsButton )
+      {
+         houseMenuElderPane.setDisable( true );
+         houseMenuElderPane.setVisible( false );
+         electiricitySettingsPanel.setVisible( true );
+         electiricitySettingsPanel.setDisable( false );
+      }
+      // electricityPanelElderSettingsButton END -MS 06.05.2020-
+
+      // electiricityMenuBackButtonElder -MS 06.05.2020-
+      else if( event.getSource() == electiricityMenuBackButtonElder )
+      {
+         electiricitySettingsPanel.setDisable( true );
+         electiricitySettingsPanel.setVisible( false );
+         houseMenuElderPane.setVisible( true );
+         houseMenuElderPane.setDisable( false );
+      }
+      // electiricityMenuBackButtonElder END -MS 06.05.2020-
+
+      // gasPanelElderSettingsButton -MS 06.05.2020-
+      else if( event.getSource() == gasPanelElderSettingsButton )
+      {
+         houseMenuElderPane2.setDisable( true );
+         houseMenuElderPane2.setVisible( false );
+         gasSettingsPanel.setVisible( true );
+         gasSettingsPanel.setDisable( false );
+      }
+      // gasPanelElderSettingsButton END -MS 06.05.2020-
+
+      // gasMenuBackButtonElder -MS 07.05.2020-
+      else if ( event.getSource() == gasMenuBackButtonElder )
+      {
+         gasSettingsPanel.setDisable( true );
+         gasSettingsPanel.setVisible( false );
+         houseMenuElderPane2.setVisible( true );
+         houseMenuElderPane2.setDisable( false );
+      }
+      // gasMenuBackButtonElder END -MS 07.05.2020-
+
+      // greenhousePanelElderSettingsButton -MS 07.05.2020-
+      else if ( event.getSource() == greenhousePanelElderSettingsButton )
+      {
+         houseMenuElderPane2.setDisable( true );
+         houseMenuElderPane2.setVisible( false );
+         greenhouseSettingsPanel.setVisible( true );
+         greenhouseSettingsPanel.setDisable( false );
+      }
+      // greenhousePanelElderSettingsButton END -MS 07.05.2020-
+
+      // greenhouseMenuBackButtonElder -MS 07.05.2020-
+      else if ( event.getSource() == greenhouseMenuBackButtonElder )
+      {
+         greenhouseSettingsPanel.setDisable( true );
+         greenhouseSettingsPanel.setVisible( false );
+         houseMenuElderPane2.setVisible( true );
+         houseMenuElderPane2.setDisable( false );
+      }
+      // greenhouseMenuBackButtonElder END -MS 07.05.2020-
    }
 
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
@@ -869,6 +1080,9 @@ public class ElderMainPanel implements Initializable {
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       userTextFieldController( getLoginUser( ) );
+      turkishElderButtonSubLabelActive.setVisible( false );
+      englishElderButtonSubLabelActive.setVisible( true );
+      languageStatusElder = false;
    }
 
    // user after login panel -MS 24.03.2020-
@@ -1264,10 +1478,54 @@ public class ElderMainPanel implements Initializable {
          applicationBackButtonSubLabel.setVisible( true );
       }
       // applicationBackButtonElder Activate END -MS 04.05.2020-
+
+      // applicationBackButtonElder Activate  -MS 06.05.2020-
+      else if ( event.getSource() == languageElderPanelBackButtonElder )
+      {
+         languageElderPanelBackButtonSubLabel.setVisible( true );
+      }
+      // applicationBackButtonElder Activate END -MS 06.05.2020-
+
+      // englishElderButton Activate -MS 06.05.2020-
+      else if ( event.getSource() == englishElderButton )
+      {
+         englishElderButtonSubLabelActive.setVisible( true );
+         englishElderButtonSubLabelPassive.setVisible( false );
+      }
+      // englishElderButton Activate END -MS 06.05.2020-
+
+      // turkishElderButton Activate -MS 06.05.2020-
+      else if ( event.getSource() == turkishElderButton )
+      {
+         turkishElderButtonSubLabelActive.setVisible( true );
+         turkishElderButtonSubLabelPassive.setVisible( false );
+      }
+      // turkishElderButton Activate END -MS 06.05.2020-
+
+      // electiricityMenuBackButtonElder Activate -MS 06.05.2020-
+      else if( event.getSource() == electiricityMenuBackButtonElder )
+      {
+         electiricityMenuBackButtonSubLabel.setVisible( true );
+      }
+      // electiricityMenuBackButtonElder Activate END -MS 06.05.2020-
+
+      // gasMenuBackButtonElder Activate -MS 07.05.2020-
+      else if ( event.getSource() == gasMenuBackButtonElder )
+      {
+         gasMenuBackButtonSubLabel.setVisible( true );
+      }
+      // gasMenuBackButtonElder Activate END -MS 07.05.2020-
+
+      // greenhouseSettingsPanel Activate -MS 07.05.2020-
+      else if ( event.getSource() == greenhouseMenuBackButtonElder )
+      {
+         greenhouseMenuBackButtonSubLabel.setVisible( true );
+      }
+      // greenhouseSettingsPanel Activate END -MS 07.05.2020-
    }
    // buttonElderActivate END -MS 05.05.2020-
 
-   // buttonElderActivate -MS 05.05.2020-
+   // buttonElderDeactivate -MS 05.05.2020-
    @FXML
    void buttonElderDeactivate ( MouseEvent event )
    {
@@ -1549,7 +1807,226 @@ public class ElderMainPanel implements Initializable {
          applicationBackButtonSubLabel.setVisible( false );
       }
       // applicationBackButtonElder Deactivate END -MS 04.05.2020-
+
+      // applicationBackButtonElder Deactivate  -MS 06.05.2020-
+      else if ( event.getSource() == languageElderPanelBackButtonElder )
+      {
+         languageElderPanelBackButtonSubLabel.setVisible( false );
+      }
+      // applicationBackButtonElder Deactivate END -MS 06.05.2020-
+
+      // englishElderButton Deactivate -MS 06.05.2020-
+      else if ( event.getSource() == englishElderButton )
+      {
+         if( languageStatusElder) {
+            englishElderButtonSubLabelActive.setVisible( false );
+            englishElderButtonSubLabelPassive.setVisible( true );
+         }
+         else {
+            englishElderButtonSubLabelActive.setVisible( true );
+         }
+      }
+      // englishElderButton Deactivate END -MS 06.05.2020-
+
+      // turkishElderButton Deactivate -MS 06.05.2020-
+      else if ( event.getSource() == turkishElderButton )
+      {
+         if( !languageStatusElder) {
+            turkishElderButtonSubLabelActive.setVisible( false );
+            turkishElderButtonSubLabelPassive.setVisible( true );
+         }
+         else {
+            turkishElderButtonSubLabelActive.setVisible( true );
+         }
+      }
+      // turkishElderButton Deactivate END -MS 06.05.2020-
+
+      // electiricityMenuBackButtonElder Deactivate -MS 06.05.2020-
+      else if( event.getSource() == electiricityMenuBackButtonElder )
+      {
+         electiricityMenuBackButtonSubLabel.setVisible( false );
+      }
+      // electiricityMenuBackButtonElder Deactivate END -MS 06.05.2020-
+
+      // gasMenuBackButtonElder Deactivate -MS 07.05.2020-
+      else if ( event.getSource() == gasMenuBackButtonElder )
+      {
+         gasMenuBackButtonSubLabel.setVisible( false );
+      }
+      // gasMenuBackButtonElder Deactivate END -MS 07.05.2020-
+
+      // greenhouseSettingsPanel Deactivate -MS 07.05.2020-
+      else if ( event.getSource() == greenhouseMenuBackButtonElder )
+      {
+         greenhouseMenuBackButtonSubLabel.setVisible( false );
+      }
+      // greenhouseSettingsPanel Deactivate END -MS 07.05.2020-
    }
    // buttonElderDeactivate END -MS 05.05.2020-
-   
+
+   // changeLanguageElder -MS 06.05.2020-
+   public void changeLanguageElder ( Boolean b) {
+      if( b ) {
+         userProfileSubLabelNotActive.setText( "Kullanıcı Ayarları" );
+         userProfileSubLabelActive.setText( "Kullanıcı Ayarları" );
+         menuSubLabelNotActive.setText( "Ev Ayarları" );
+         menuSubLabelActive.setText( "Ev Ayarları" );
+         settingsSubLabelNotActive.setText( "Ayarlar" );
+         settingsSubLabelActive.setText( "Ayarlar" );
+         electricityPanelElderLabel.setText( "Elektrik" );
+         electricityLabelElder.setText( "Elektrik" );
+         lightsPanelElderLabel.setText( "Işıklandırma" );
+         lightsLabelElder.setText( "Işıklandırma" );
+         waterPanelElderLabel.setText( "Su" );
+         waterLabelElder.setText( "Su Ayarları" );
+         temperaturePanelElderLabel.setText( "Sıcaklık" );
+         temperatureLabelElder.setText( "Sıcaklık" );
+         houseMenuBackButtonElder.setText( "Geri Dön" );
+         houseMenuBackButtonSubLabel.setText( "Ana menüye dön" );
+         houseMenuFirstLabelElder.setText( "Ev ayarlarındasınız." );
+         applicationSettingsElderLabel.setText( "Uygulama" );
+         homeSettingsElderLabel.setText( "Ev" );
+         settingsBackButtonElder.setText( "Geri Dön" );
+         settingsBackButtonSubLabel.setText( "Ana menüye geri dön" );
+         houseMenuFirstLabelElder.setText( "Genel ayarlarındasınız." );
+         applicationBackButtonElder.setText( "Geri Dön" );
+         applicationMenuFirstLabelElder.setText( "Uygulama ayarlarındasınız." );
+         applicationBackButtonSubLabel.setText( "Ayarlara geri dön" );
+         languageSettingsElderLabel.setText( "Dil" );
+         connectionSettingsElderLabel.setText( "Bağlantılar" );
+         emergencySettingsElderLabel.setText( "Acil Durumlar" );
+         userProfileBackButtonElder.setText( "Geri Dön" );
+         userProfileBackButtonElderSubLabel.setText( "Ana menüye geri dön" );
+         userSettingsFirstLabelElder.setText( "Kullanıcı ayarlarındasınız." );
+         userSettingsNameElder.setText( "İsim:" );
+         userSettingsSurnameElder.setText( "Soyisim:" );
+         userSettingsDateElder.setText( "Doğum Tarihi:" );
+         userSettingsGenderElder.setText( "Cinsiyet" );
+         userSettingsUsernameElder.setText( "Kullanıcı adı:" );
+         userSettingsPasswordElder.setText( "Parola:" );
+         userSettingsChangeInfoButtonSubLabel.setText( "Bilgi Güncelle" );
+         userSettingsChangeUserElderButton.setText( "Kullanıcı Değiştir" );
+         userSettingsUPChangeLabel.setText( "Kullanıcı Adı / Parola Değiştir" );
+         userSettingsNameElderChange.setText( "İsim:" );
+         userSettingsSurnameElderChange.setText( "Soyisim:" );
+         userSettingsDateElderChange.setText( "Doğum Tarihi:" );
+         userSettingsGenderElderChange.setText( "Cinsiyet:" );
+         userSettingsGenderMale.setText( "Erkek" );
+         userSettingsGenderFemale.setText( "Kadın" );
+         userSettingsChangeSaveSubLabel.setText( "Kaydet" );
+         userSettingsChangeBackButtonSubLabel.setText( "Geri Dön" );
+         userSettingsUNElderChange.setText( "Kullanıcı Adı:" );
+         userSettingsPasswordChangeElderCurrent.setText( "Mevcut Parola:" );
+         userSettingsPasswordChangeElderNew.setText( "Yeni Parola:" );
+         userSettingsPasswordChangeElderNewConfirm.setText( "Yeni Parolayı Doğrula:" );
+         userSettingsPanelTwoChangeSaveLabel.setText( "Kaydet" );
+         userSettingsPanelTwoChangeBackLabel.setText( "Geri Dön" );
+         aquariumPanelElderLabel.setText( "Akvaryum" );
+         aquariumLabelElder.setText( "Akvaryum" );
+         greenhousePanelElderLabel.setText( "Sera" );
+         greenhouseLabelElder.setText( "Sera" );
+         gasPanelElderLabel.setText( "Gaz" );
+         gasLabelElder.setText( "Gaz Kontrol" );
+         doorPanelElderLabel.setText( "Kapı" );
+         doorLabelElder.setText( "Kapı" );
+         houseMenuBackButtonElder2.setText( "Geri Dön" );
+         houseMenuBackButtonSubLabel2.setText( "Ana menüye geri dön" );
+         houseMenuFirstLabelElder2.setText( "Ev ayarlarındasınız." );
+         aquariumMenuFirstLabelElder.setText( "Akvaryum ayarlarındasınız." );
+         aquariumMenuBackButtonElder.setText( "Geri Dön" );
+         aquariumMenuBackButtonSubLabel.setText( "Ev ayarlarına geri dön" );
+         speciesOfFishLabel.setText( "Balık Türleri:" );
+         FeedingStartTimeLabel.setText( "Besleme başlama zamanları (Her gün):" );
+         weeklyWaterExchangeDayAndTimeLabel.setText( "Haftalık su değişim zamanları:" );
+         dailyAirEngineRunTimeandStartTimeLabel.setText( "Hava motoru başlangıç zamanları:" );
+         aquariumSaveButtonLabel.setText( "Kaydet" );
+         languagePanelFirstLabelElder.setText( "Dil ayarlarındasınız." );
+         languageElderPanelBackButtonElder.setText( "Geri Dön" );
+         englishElderButtonSubLabelPassive.setText( "İngilizce" );
+         englishElderButtonSubLabelActive.setText( "İngilizce" );
+         turkishElderButtonSubLabelPassive.setText( "Türkçe" );
+         turkishElderButtonSubLabelActive.setText( "Türkçe" );
+      } else {
+         userProfileSubLabelNotActive.setText( "User Settings" );
+         userProfileSubLabelActive.setText( "User Settings" );
+         menuSubLabelNotActive.setText( "House Settings" );
+         menuSubLabelActive.setText( "House Settings" );
+         settingsSubLabelNotActive.setText( "Settings" );
+         settingsSubLabelActive.setText( "Settings" );
+         electricityPanelElderLabel.setText( "Electricity" );
+         electricityLabelElder.setText( "Electricity" );
+         lightsPanelElderLabel.setText( "Lights" );
+         lightsLabelElder.setText( "Lights" );
+         waterPanelElderLabel.setText( "Water" );
+         waterLabelElder.setText( "Water Settings" );
+         temperaturePanelElderLabel.setText( "Temperature" );
+         temperatureLabelElder.setText( "Temperature" );
+         houseMenuBackButtonElder.setText( "Back" );
+         houseMenuBackButtonSubLabel.setText( "Return to main menu" );
+         houseMenuFirstLabelElder.setText( "You are in the house settings." );
+         applicationSettingsElderLabel.setText( "Application" );
+         homeSettingsElderLabel.setText( "House" );
+         settingsBackButtonElder.setText( "Back" );
+         settingsBackButtonSubLabel.setText( "Return to main menu" );
+         houseMenuFirstLabelElder.setText( "You are in the general settings." );
+         applicationBackButtonElder.setText( "Back" );
+         applicationMenuFirstLabelElder.setText( "You are in application settings." );
+         applicationBackButtonSubLabel.setText( "Return to settings" );
+         languageSettingsElderLabel.setText( "Language" );
+         connectionSettingsElderLabel.setText( "Connection" );
+         emergencySettingsElderLabel.setText( "Emergency" );
+         userProfileBackButtonElder.setText( "Back" );
+         userProfileBackButtonElderSubLabel.setText( "Return to main menu" );
+         userSettingsFirstLabelElder.setText( "You are in the user settings." );
+         userSettingsNameElder.setText( "Name:" );
+         userSettingsSurnameElder.setText( "Surname:" );
+         userSettingsDateElder.setText( "Date:" );
+         userSettingsGenderElder.setText( "Gender" );
+         userSettingsUsernameElder.setText( "User:" );
+         userSettingsPasswordElder.setText( "Password:" );
+         userSettingsChangeInfoButtonSubLabel.setText( "Change Info" );
+         userSettingsChangeUserElderButton.setText( "Change User" );
+         userSettingsUPChangeLabel.setText( "User Name / Password Change" );
+         userSettingsNameElderChange.setText( "NAME:" );
+         userSettingsSurnameElderChange.setText( "SURNAME:" );
+         userSettingsDateElderChange.setText( "DATE:" );
+         userSettingsGenderElderChange.setText( "GENDER:" );
+         userSettingsGenderMale.setText( "MALE" );
+         userSettingsGenderFemale.setText( "FEMALE" );
+         userSettingsChangeSaveSubLabel.setText( "SAVE" );
+         userSettingsChangeBackButtonSubLabel.setText( "BACK" );
+         userSettingsUNElderChange.setText( "USERNAME:" );
+         userSettingsPasswordChangeElderCurrent.setText( "CURRENT PASSWORD:" );
+         userSettingsPasswordChangeElderNew.setText( "NEW PASSWORD:" );
+         userSettingsPasswordChangeElderNewConfirm.setText( "CONFIRM NEW PASSWORD:" );
+         userSettingsPanelTwoChangeSaveLabel.setText( "SAVE" );
+         userSettingsPanelTwoChangeBackLabel.setText( "BACK" );
+         aquariumPanelElderLabel.setText( "Aquarium" );
+         aquariumLabelElder.setText( "Aquarium" );
+         greenhousePanelElderLabel.setText( "Greenhouse" );
+         greenhouseLabelElder.setText( "Greenhouse" );
+         gasPanelElderLabel.setText( "Gas" );
+         gasLabelElder.setText( "Gas Control" );
+         doorPanelElderLabel.setText( "Door" );
+         doorLabelElder.setText( "Door" );
+         houseMenuBackButtonElder2.setText( "BACK" );
+         houseMenuBackButtonSubLabel2.setText( "Return to main menu" );
+         houseMenuFirstLabelElder2.setText( "You are in the house settings." );
+         aquariumMenuFirstLabelElder.setText( "You are in the aquarium settings." );
+         aquariumMenuBackButtonElder.setText( "BACK" );
+         aquariumMenuBackButtonSubLabel.setText( "Return to house settings" );
+         speciesOfFishLabel.setText( "Species of Fish:" );
+         FeedingStartTimeLabel.setText( "Feeding Start Time( Each Day): " );
+         weeklyWaterExchangeDayAndTimeLabel.setText( "Weekly Water Exchange Day And Time: " );
+         dailyAirEngineRunTimeandStartTimeLabel.setText( "Daily Air Engine Run Time and Start Time:" );
+         aquariumSaveButtonLabel.setText( "SAVE" );
+         languagePanelFirstLabelElder.setText( "You are in the language settings." );
+         languageElderPanelBackButtonElder.setText( "BACK" );
+         englishElderButtonSubLabelPassive.setText( "ENGLISH" );
+         englishElderButtonSubLabelActive.setText( "ENGLISH" );
+         turkishElderButtonSubLabelPassive.setText( "TURKISH" );
+         turkishElderButtonSubLabelActive.setText( "TURKISH" );
+      }
+   }
+   // changeLanguageElder END -MS 06.05.2020-
 }
