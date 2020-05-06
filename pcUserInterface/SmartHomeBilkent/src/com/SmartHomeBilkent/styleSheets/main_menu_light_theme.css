@@ -383,7 +383,7 @@
   -fx-font-size:20px;
 }
 .changeUserSubInfoLabels{
--fx-font-family:  'Patrick Hand', cursive;
+    -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
        -fx-font-size:13px;
 }
