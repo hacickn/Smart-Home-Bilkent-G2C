@@ -14,7 +14,7 @@ import java.sql.Statement;
  * this class provide settings from databases
  *
  * @author Hacı Çakın
- * @version 05.05.2020
+ * @version 06.05.2020
  */
 public class CommonSettingData {
 
@@ -23,8 +23,8 @@ public class CommonSettingData {
    private static final String TABLE_HOME_ID = "ID";
    private static final String TABLE_SENSOR_SETTINGS = "SENSORS";
    private static final String TABLE_PERMISSION_SETTING = "PERMISSIONS";
-   private static final String TABLE_AQUARIUM_SETTING= "AQUARIUM";
-   private static final String TABLE_FISH_SPECIES= "FISHES";
+   private static final String TABLE_AQUARIUM_SETTING = "AQUARIUM";
+   private static final String TABLE_FISH_SPECIES = "FISHES";
    private static CommonSettingData instance = new CommonSettingData();
    private static ObservableList< CommonSetting > homeList;
    private Connection connection;
@@ -69,7 +69,7 @@ public class CommonSettingData {
                   resultSet.getString( TABLE_SENSOR_SETTINGS ),
                   resultSet.getString( TABLE_PERMISSION_SETTING ),
                   resultSet.getString( TABLE_AQUARIUM_SETTING ),
-                  resultSet.getString( TABLE_FISH_SPECIES )) );
+                  resultSet.getString( TABLE_FISH_SPECIES ) ) );
          }
          return homeList;
       } catch( SQLException e ) {
@@ -145,31 +145,48 @@ public class CommonSettingData {
    /**
     * it is a getHomeList method
     *
-    * @return result as a bservableList< CommonSetting >
+    * @return result as an ObservableList< CommonSetting >
     */
    public ObservableList< CommonSetting > getHomeList() {
       return homeList;
    }
 
+   /**
+    * it is a getSelectedFishes method
+    *
+    * @param commonSetting is a CommonSetting input parameter
+    * @return result as a String[]
+    */
    public String[] getSelectedFishes( CommonSetting commonSetting ) {
       return commonSetting.getFishSpecies().split( "@" );
    }
 
-
-   public String[] getAquariumSettings( CommonSetting commonSetting ){
-      return commonSetting.getAquariumSettings().split( "@" );
+   /**
+    * it is a getAquariumSettings method
+    *
+    * @param commonSetting is a CommonSetting input parameter
+    * @return result as a String
+    */
+   public String getAquariumSettings( CommonSetting commonSetting ) {
+      return commonSetting.getAquariumSettings();
    }
 
-   public void updateSelectedFishes( CommonSetting commonSetting, String[] fishList ) throws SQLException {
+   /**
+    * it is a updateSelectedFishes method
+    *
+    * @param commonSetting as a CommonSetting input parameter
+    * @param fishList      as an ObservableList< String > input parameter
+    */
+   public void updateSelectedFishes( CommonSetting commonSetting, ObservableList< String > fishList ) throws SQLException {
       String message;
       statement = connection.createStatement();
       message = "";
 
-      if( fishList.length > 0 )
-         message = fishList[0];
+      if( fishList.size() > 0 )
+         message = fishList.get( 0 );
 
-      for( int k = 1; k < fishList.length; k++ )
-         message = "@" + fishList[k];
+      for( int k = 1; k < fishList.size(); k++ )
+         message = "@" + fishList.get( k );
 
       statement.execute( " UPDATE " + TABLE_HOME_SETTINGS +
             " SET " +
@@ -178,7 +195,13 @@ public class CommonSettingData {
             TABLE_HOME_ID + "='" + commonSetting.getHomeID() + "'" );
    }
 
-   public void updateAquariumSettings(  CommonSetting commonSetting, String aquariumSetting ) throws SQLException {
+   /**
+    * it is a updateAquariumSettings method
+    *
+    * @param commonSetting   as a CommonSetting input parameter
+    * @param aquariumSetting as a String input parameter
+    */
+   public void updateAquariumSettings( CommonSetting commonSetting, String aquariumSetting ) throws SQLException {
       statement = connection.createStatement();
 
       statement.execute( " UPDATE " + TABLE_HOME_SETTINGS +

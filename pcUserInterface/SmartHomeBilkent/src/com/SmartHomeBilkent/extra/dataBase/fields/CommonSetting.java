@@ -4,7 +4,7 @@ package com.SmartHomeBilkent.extra.dataBase.fields;
  * it is a CommonSetting class
  *
  * @author Hacı Çakın
- * @version 05.05.2020
+ * @version 06.05.2020
  */
 public class CommonSetting {
 
@@ -36,6 +36,7 @@ public class CommonSetting {
 
 
    //methods
+
    /**
     * it is a getAquariumSettings method
     *
@@ -44,6 +45,7 @@ public class CommonSetting {
    public String getAquariumSettings() {
       return aquariumSettings;
    }
+
    /**
     * it is a setAquariumSettings method
     *
@@ -52,6 +54,7 @@ public class CommonSetting {
    public void setAquariumSettings( String aquariumSettings ) {
       this.aquariumSettings = aquariumSettings;
    }
+
    /**
     * it is a getFishSpecies method
     *
@@ -60,6 +63,7 @@ public class CommonSetting {
    public String getFishSpecies() {
       return fishSpecies;
    }
+
    /**
     * it is a setFishSpecies method
     *

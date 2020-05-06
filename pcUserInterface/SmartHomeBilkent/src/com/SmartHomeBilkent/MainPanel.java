@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -344,7 +345,7 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXComboBox< String > portChooser;
    @FXML
-   private CheckComboBox<String> checkComboBox;
+   private CheckComboBox< String > checkComboBox;
    /**
     * 3.5)setting - sub menu variables
     */
@@ -380,6 +381,7 @@ public class MainPanel implements Initializable {
    private String volume;
    private SpeechUtils speechUtils;
    private LocalDate localDate;
+   private LocalTime localTime;
    private DateTimeFormatter dateTimeFormatter;
    private User loginUser;
    private WeatherForecast weatherForecast;
@@ -391,6 +393,7 @@ public class MainPanel implements Initializable {
    private String[] sensors;
    private String[] permissions;
    private CommonSetting commonSetting;
+   private String flowAquariumSetting;
 
 
    //initialize method(it runs before the program start to run)
@@ -415,11 +418,23 @@ public class MainPanel implements Initializable {
       speechUtils = new SpeechUtils();
       isArduinoConnect = false;
 
+      for( int k = 1; k <= 7; k++ ) {
+         waterExchangeDay.getItems().add( k + ". DAY OF WEEK" );
+      }
+
       commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
       sensors = CommonSettingData.getInstance().getSensors( commonSetting );
       permissions = CommonSettingData.getInstance().getPermission( commonSetting );
-      for(String s: CommonSettingData.getInstance().getSelectedFishes( commonSetting ))
+
+      for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
+
+      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
+      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ), Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
+      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ), Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
+      waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
+      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ), Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
+      airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
       if( loginUser.getUserType().equals( "PARENT" ) ) {
          fireButtonVisualToggle.setSelected( sensors[ 0 ].charAt( 0 ) == 'O' );
@@ -482,10 +497,6 @@ public class MainPanel implements Initializable {
 
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
-
-      for( int k = 1; k <= 7; k++ ) {
-         waterExchangeDay.getItems().add( k + ". DAY OF WEEK" );
-      }
       createEmergencyAnimation();
    }
 
@@ -1303,6 +1314,7 @@ public class MainPanel implements Initializable {
             portConnectionButton.setDisable( true );
             home = new Home( arduino );
             home.adjustCollective( "manual_on#:" );
+
             home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
                @Override
                public int getListeningEvents() {
@@ -2293,6 +2305,8 @@ public class MainPanel implements Initializable {
 
             if( isArduinoConnect )
                home.getAquarium().setAquariumSettings( message.toString() );
+            CommonSettingData.getInstance().updateAquariumSettings( commonSetting, message.toString().substring( 9, 31 ) );
+            CommonSettingData.getInstance().updateSelectedFishes( commonSetting, checkComboBox.getItems() );
          }
       }
    }
