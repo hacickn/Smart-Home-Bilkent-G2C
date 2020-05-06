@@ -41,6 +41,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.CheckComboBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -341,8 +342,9 @@ public class MainPanel implements Initializable {
    @FXML
    private CategoryAxis elecBarChartX, gasBarChartX;
    @FXML
-   private JFXComboBox< String > portChooser, speciesOfFishComboBox;
-
+   private JFXComboBox< String > portChooser;
+   @FXML
+   private CheckComboBox<String> checkComboBox;
    /**
     * 3.5)setting - sub menu variables
     */
@@ -401,7 +403,7 @@ public class MainPanel implements Initializable {
       GreenHouseData.getInstance().getGreenHouseValues();
       GreenHouseData.getInstance().getTable( greenHouseValuesChart );
       FishSpecies.getInstance().getFishes();
-      FishSpecies.getInstance().addFishToComboBox( speciesOfFishComboBox );
+      FishSpecies.getInstance().addFishToComboBox( checkComboBox );
       CommonSettingData.getInstance().getAllHome();
 
       userPreferenceUpdate( getLoginUser() );
@@ -416,6 +418,8 @@ public class MainPanel implements Initializable {
       commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
       sensors = CommonSettingData.getInstance().getSensors( commonSetting );
       permissions = CommonSettingData.getInstance().getPermission( commonSetting );
+      for(String s: CommonSettingData.getInstance().getSelectedFishes( commonSetting ))
+         checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
 
       if( loginUser.getUserType().equals( "PARENT" ) ) {
          fireButtonVisualToggle.setSelected( sensors[ 0 ].charAt( 0 ) == 'O' );
@@ -624,6 +628,8 @@ public class MainPanel implements Initializable {
          openSettingsPane();
       } else if( event.getSource() == logoutButton ) {
          Platform.exit();
+         if( isArduinoConnect )
+            home.getArduino().closeConnection();
       } else if( event.getSource() == helpButton ) {
          try {
             FXMLLoader load = new FXMLLoader( getClass().getResource( "view/helpPanel.fxml" ) );
@@ -1762,6 +1768,7 @@ public class MainPanel implements Initializable {
          menuBulkChangeSubLabel.setText( bundle.getString( "bulkChangesLang" ) );
          mainMenuWeatherLabel.setText( bundle.getString( "weatherLang" ) );
          mainMenuHomeLabel.setText( bundle.getString( "homeLang" ) );
+         removeUserTextField.setPromptText( bundle.getString( "passwordLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -1826,6 +1833,7 @@ public class MainPanel implements Initializable {
       settingsUsersSettingButtonActive.setVisible( false );
       addUserPane.setVisible( false );
       deleteUserPane.setVisible( false );
+      permissionPane.setVisible( false );
    }
 
    void openUsersPane() {

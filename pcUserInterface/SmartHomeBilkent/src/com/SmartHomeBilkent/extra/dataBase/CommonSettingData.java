@@ -23,9 +23,12 @@ public class CommonSettingData {
    private static final String TABLE_HOME_ID = "ID";
    private static final String TABLE_SENSOR_SETTINGS = "SENSORS";
    private static final String TABLE_PERMISSION_SETTING = "PERMISSIONS";
+   private static final String TABLE_AQUARIUM_SETTING= "AQUARIUM";
+   private static final String TABLE_FISH_SPECIES= "FISHES";
    private static CommonSettingData instance = new CommonSettingData();
    private static ObservableList< CommonSetting > homeList;
    private Connection connection;
+   private Statement statement;
 
    //constructor
 
@@ -56,9 +59,7 @@ public class CommonSettingData {
    public ObservableList< CommonSetting > getAllHome() {
       homeList = FXCollections.observableArrayList();
       try {
-         Statement statement;
          ResultSet resultSet;
-
          statement = connection.createStatement();
          resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_HOME_SETTINGS );
 
@@ -66,7 +67,9 @@ public class CommonSettingData {
             homeList.add( new CommonSetting(
                   resultSet.getString( TABLE_HOME_ID ),
                   resultSet.getString( TABLE_SENSOR_SETTINGS ),
-                  resultSet.getString( TABLE_PERMISSION_SETTING ) ) );
+                  resultSet.getString( TABLE_PERMISSION_SETTING ),
+                  resultSet.getString( TABLE_AQUARIUM_SETTING ),
+                  resultSet.getString( TABLE_FISH_SPECIES )) );
          }
          return homeList;
       } catch( SQLException e ) {
@@ -103,7 +106,6 @@ public class CommonSettingData {
     */
    public void updateSensors( CommonSetting commonSetting, String[] sensor ) throws SQLException {
       String message;
-      Statement statement;
       message = sensor[ 0 ];
 
       for( int k = 1; k < sensor.length; k++ )
@@ -126,7 +128,6 @@ public class CommonSettingData {
     */
    public void updatePermission( CommonSetting commonSetting, String[] permission ) throws SQLException {
       String message;
-      Statement statement;
       message = permission[ 0 ];
 
       for( int k = 1; k < permission.length; k++ )
@@ -148,5 +149,42 @@ public class CommonSettingData {
     */
    public ObservableList< CommonSetting > getHomeList() {
       return homeList;
+   }
+
+   public String[] getSelectedFishes( CommonSetting commonSetting ) {
+      return commonSetting.getFishSpecies().split( "@" );
+   }
+
+
+   public String[] getAquariumSettings( CommonSetting commonSetting ){
+      return commonSetting.getAquariumSettings().split( "@" );
+   }
+
+   public void updateSelectedFishes( CommonSetting commonSetting, String[] fishList ) throws SQLException {
+      String message;
+      statement = connection.createStatement();
+      message = "";
+
+      if( fishList.length > 0 )
+         message = fishList[0];
+
+      for( int k = 1; k < fishList.length; k++ )
+         message = "@" + fishList[k];
+
+      statement.execute( " UPDATE " + TABLE_HOME_SETTINGS +
+            " SET " +
+            TABLE_FISH_SPECIES + " = '" + message + "' " +
+            " WHERE " +
+            TABLE_HOME_ID + "='" + commonSetting.getHomeID() + "'" );
+   }
+
+   public void updateAquariumSettings(  CommonSetting commonSetting, String aquariumSetting ) throws SQLException {
+      statement = connection.createStatement();
+
+      statement.execute( " UPDATE " + TABLE_HOME_SETTINGS +
+            " SET " +
+            TABLE_AQUARIUM_SETTING + " = '" + aquariumSetting + "' " +
+            " WHERE " +
+            TABLE_HOME_ID + "='" + commonSetting.getHomeID() + "'" );
    }
 }

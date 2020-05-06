@@ -12,24 +12,62 @@ public class CommonSetting {
    private String homeID;
    private String sensors;
    private String permission;
+   private String aquariumSettings;
+   private String fishSpecies;
 
    //constructor
 
    /**
     * it is a Usage constructor
     *
-    * @param homeID     is a LocalDate input parameter
-    * @param sensors    is a String input parameter
-    * @param permission is a String input parameter
+    * @param homeID           is a LocalDate input parameter
+    * @param sensors          is a String input parameter
+    * @param permission       is a String input parameter
+    * @param aquariumSettings is a String input parameter
+    * @param fishSpecies      is a String input parameter
     */
-   public CommonSetting( String homeID, String sensors, String permission ) {
+   public CommonSetting( String homeID, String sensors, String permission, String aquariumSettings, String fishSpecies ) {
       this.homeID = homeID;
       this.sensors = sensors;
       this.permission = permission;
+      this.aquariumSettings = aquariumSettings;
+      this.fishSpecies = fishSpecies;
    }
 
 
    //methods
+   /**
+    * it is a getAquariumSettings method
+    *
+    * @return result as a String
+    */
+   public String getAquariumSettings() {
+      return aquariumSettings;
+   }
+   /**
+    * it is a setAquariumSettings method
+    *
+    * @param aquariumSettings is a String input parameter
+    */
+   public void setAquariumSettings( String aquariumSettings ) {
+      this.aquariumSettings = aquariumSettings;
+   }
+   /**
+    * it is a getFishSpecies method
+    *
+    * @return result as a String
+    */
+   public String getFishSpecies() {
+      return fishSpecies;
+   }
+   /**
+    * it is a setFishSpecies method
+    *
+    * @param fishSpecies is a String input parameter
+    */
+   public void setFishSpecies( String fishSpecies ) {
+      this.fishSpecies = fishSpecies;
+   }
 
    /**
     * it is a getHomeID method

@@ -28,6 +28,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
 
 <BorderPane fx:id="firstStackPane" prefHeight="800.0" prefWidth="800.0" stylesheets="@../styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
     <center>
@@ -859,14 +860,14 @@
                                                 <Font name="Arial Narrow" size="12.0" />
                                             </font>
                                         </Label>
-                                        <JFXTimePicker fx:id="feedingTime" layoutX="297.0" layoutY="160.0" />
-                                        <JFXTimePicker fx:id="waterExchangeTime" layoutX="500.0" layoutY="213.0" />
-                                        <JFXTimePicker fx:id="airMotorStartTime" layoutX="500.0" layoutY="258.0" />
-                                        <JFXComboBox fx:id="waterExchangeDay" layoutX="298.0" layoutY="213.0" prefHeight="25.0" prefWidth="171.0" />
-                                        <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="313.0" layoutY="270.0" max="24.0" minorTickCount="24" showTickMarks="true" />
+                                        <JFXTimePicker fx:id="feedingTime" layoutX="298.0" layoutY="160.0" />
+                              <CheckComboBox fx:id="checkComboBox" layoutX="297.0" layoutY="117.0" prefHeight="25.0" prefWidth="163.0" />
+                                        <JFXTimePicker fx:id="waterExchangeTime" layoutX="499.0" layoutY="206.0" />
+                                        <JFXTimePicker fx:id="airMotorStartTime" layoutX="499.0" layoutY="258.0" />
+                                        <JFXComboBox fx:id="waterExchangeDay" layoutX="297.0" layoutY="206.0" prefHeight="25.0" prefWidth="171.0" />
+                                        <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="296.0" layoutY="259.0" max="24.0" minorTickCount="24" prefHeight="24.0" prefWidth="174.0" showTickMarks="true" />
                                         <JFXToggleButton fx:id="settingAquariumToggleButton" layoutX="311.0" layoutY="50.0" onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="saveAquariumChangesButton" layoutX="325.0" layoutY="301.0" onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0" styleClass="changeThemeSave" textFill="TRANSPARENT" />
-                              <JFXComboBox fx:id="speciesOfFishComboBox" layoutX="296.0" layoutY="117.0" prefHeight="25.0" prefWidth="171.0" />
                                     </children>
                                 </Pane>
                                 <Pane fx:id="settingGreenHouseSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
@@ -1024,12 +1025,12 @@
                                     <children>
                                         <JFXButton fx:id="homeSettingElecButton" layoutX="43.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="elecButton" text="homeSettingElecButton" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="homeSettingGasButton" layoutX="157.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="gasButton" text="homeSettingGasButton" textFill="TRANSPARENT" />
-                                        <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="waterButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
+                                        <JFXButton fx:id="homeSettingAquButton" layoutX="278.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="aquariumButton" text="homeSettingAquButton" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="homeSettingGreenHouseButton" layoutX="399.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="homeSettingWeatherButton" layoutX="517.0" layoutY="8.0" onAction="#homeSettingButtons" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="weather" text="homeSettingWeatherButton" textFill="TRANSPARENT" />
                                         <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive" textFill="TRANSPARENT" visible="false" />
                                         <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive" textFill="TRANSPARENT" visible="false" />
-                                        <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="waterButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
+                                        <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="aquariumButtonActive" text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false" />
                                         <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="greenHouseActive" text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false" />
                                         <JFXButton fx:id="homeSettingWeatherButtonActive" layoutX="517.0" layoutY="8.0" onMouseEntered="#applicationSettingsButtonsOnMovement" onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0" prefWidth="65.0" styleClass="weatherActive" text="homeSettingWeatherButtonActive" textFill="TRANSPARENT" visible="false" />
                                         <Label fx:id="homeSubPaneELecLabel" alignment="CENTER" layoutX="18.0" layoutY="73.0" prefHeight="22.0" prefWidth="116.0" styleClass="tempLabel" text="ELECTRICITY" visible="false">
@@ -1218,7 +1219,7 @@
                                                 <Font name="Agency FB" size="26.0" />
                                             </font>
                                         </Label>
-                                        <JFXPasswordField fx:id="removeUserTextField" alignment="CENTER" layoutX="275.0" layoutY="86.0" onAction="#removeUserPaneAction" prefWidth="150.0" styleClass="changeUserInfoTextField">
+                                        <JFXPasswordField fx:id="removeUserTextField" alignment="CENTER" labelFloat="true" layoutX="275.0" layoutY="86.0" onAction="#removeUserPaneAction" prefWidth="150.0" promptText="PASSWORD" styleClass="changeUserInfoTextField">
                                             <font>
                                                 <Font name="Agency FB" size="15.0" />
                                             </font>

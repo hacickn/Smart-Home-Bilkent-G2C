@@ -8,14 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/loginPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/loginPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/CommonSettingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/CommonSettingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/FishSpecies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/FishSpecies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/fields/CommonSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/extra/dataBase/fields/CommonSetting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/view/mainPanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,10 +280,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="245" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584888536188" />
-    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1588624424706">
+    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1588768419205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588624424706" />
+    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588768419205" />
     <state x="285" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1588071717711" />
     <state x="249" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588079757880">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -338,32 +336,32 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1588727190604">
+    <state width="1877" height="305" key="GridCell.Tab.0.bottom" timestamp="1588770050775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588727190604" />
+    <state width="1877" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588770050775" />
     <state width="1877" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1588727190604">
+    <state width="1877" height="305" key="GridCell.Tab.0.center" timestamp="1588770050775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588727190604" />
+    <state width="1877" height="305" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588770050775" />
     <state width="1877" height="151" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1588727190604">
+    <state width="1877" height="305" key="GridCell.Tab.0.left" timestamp="1588770050775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588727190604" />
+    <state width="1877" height="305" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588770050775" />
     <state width="1877" height="151" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245916" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1588727190604">
+    <state width="1877" height="305" key="GridCell.Tab.0.right" timestamp="1588770050775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588727190604" />
+    <state width="1877" height="305" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588770050775" />
     <state width="1877" height="151" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state width="914" height="342" key="GridCell.Tab.1.bottom" timestamp="1588088781651">
@@ -431,9 +429,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1182" y="162" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585685342810" />
-    <state x="1096" y="254" key="run.anything.popup" timestamp="1588057687104">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1096" y="245" key="run.anything.popup" timestamp="1588769607539">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="1096" y="245" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588769607539" />
     <state x="1096" y="254" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588057687104" />
     <state x="143" y="231" width="672" height="653" key="search.everywhere.popup" timestamp="1588279713053">
       <screen x="0" y="0" width="1920" height="1040" />
