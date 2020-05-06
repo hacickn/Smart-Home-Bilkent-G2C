@@ -2,8 +2,11 @@ package com.SmartHomeBilkent;
 
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +18,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,6 +31,10 @@ import java.util.ResourceBundle;
 public class LoginPanel implements Initializable {
 
    //properties
+   @FXML
+   private JFXButton loginButton;
+   @FXML
+   private JFXSpinner loginSpinner;
    @FXML
    private JFXTextField userNameField;
    @FXML
@@ -44,27 +52,36 @@ public class LoginPanel implements Initializable {
          for( User s : Users.getInstance().getUserList() ) {
             if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
                try {
-                  String fxmlAddress;
-                  FXMLLoader load;
-                  Parent root;
-                  Stage stage;
-                  if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
-                     fxmlAddress = "view/elderMainPanel.fxml";
-                  else
-                     fxmlAddress = "view/mainPanel.fxml";
+                  Platform.runLater( new Runnable() {
+                     @Override
+                     public void run() {
+                        try {
+                           String fxmlAddress;
+                           FXMLLoader load;
+                           Parent root;
+                           Stage stage;
+                           if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
+                              fxmlAddress = "view/elderMainPanel.fxml";
+                           else
+                              fxmlAddress = "view/mainPanel.fxml";
 
-                  s.setEnter( "true" );
-                  load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
-                  root = load.load();
-                  stage = new Stage();
-                  stage.setTitle( "SMART HOME" );
-                  if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
-                     stage.setScene( new Scene( root, 800, 600 ) );
-                  else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
-                     stage.setScene( new Scene( root, 800, 800 ) );
-                  stage.setResizable( true );
-                  stage.show();
-                  userNameField.getScene().getWindow().hide();
+                           s.setEnter( "true" );
+                           load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
+                           root = load.load();
+                           stage = new Stage();
+                           stage.setTitle( "SMART HOME" );
+                           if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
+                              stage.setScene( new Scene( root, 800, 600 ) );
+                           else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
+                              stage.setScene( new Scene( root, 800, 800 ) );
+                           stage.setResizable( true );
+                           stage.show();
+                        } catch( IOException exception ) {
+                           exception.printStackTrace();
+                        }
+                        userNameField.getScene().getWindow().hide();
+                     }
+                  } );
                } catch( Exception e ) {
                   e.printStackTrace();
                }
