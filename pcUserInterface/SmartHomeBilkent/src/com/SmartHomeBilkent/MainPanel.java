@@ -2330,39 +2330,52 @@ public class MainPanel implements Initializable {
          }
       }
    }
+    /**
+     * Background for Weather Class
+     * @author Hacı Çakın, İlke Doğan
+     */
 
-   public void backgroundSetup( String weather ) {
-      if( weather.equals( "Cloudy" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Partly cloudy" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/partlyCloudy1.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Sunny" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Snowy" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Light Rain Shower" ) || weather.equalsIgnoreCase( "Patchy rain possible" )
-            || weather.equalsIgnoreCase( "rain" ) || weather.equalsIgnoreCase( "Light Rain" )
-            || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" ) || weather.equalsIgnoreCase( "light drizzle" )
-            || weather.equalsIgnoreCase( "Shower In Vicinity" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Mist" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
-            || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
-            || weather.equalsIgnoreCase( "Rain With Thunderstorm" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Clear" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
-      else if( weather.equalsIgnoreCase( "weather" ) )
-         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
+    public void backgroundSetup( String weather ) {
+        if( weather.equalsIgnoreCase( "Cloudy" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Partly cloudy" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/partlyCloudy1.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Sunny" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Snowy" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Light Rain Shower" )
+                || weather.equalsIgnoreCase( "Patchy rain possible" )
+                || weather.equalsIgnoreCase( "rain" )
+                || weather.equalsIgnoreCase( "Light Rain" )
+                || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" )
+                || weather.equalsIgnoreCase( "light drizzle" )
+                || weather.equalsIgnoreCase( "Rain Shower" )
+                || weather.equalsIgnoreCase( "Shower In Vicinity" )
+                || weather.equalsIgnoreCase( "Light Rain Shower, Rain Shower" )
+                || weather.equalsIgnoreCase( "Heavy rain" ))
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Mist" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
+                || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
+                || weather.equalsIgnoreCase( "Rain With Thunderstorm" )
+                || weather.equalsIgnoreCase( "Thunderstorm In Vicinity" ))
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Clear" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Blowing Widespread Dust" ) )
+           weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/dust.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
+        else if( weather.equalsIgnoreCase( "weather" ) )
+            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
 
-   }
+    }
 
    @FXML
    void settingToggleButtonsAction( ActionEvent event ) {
