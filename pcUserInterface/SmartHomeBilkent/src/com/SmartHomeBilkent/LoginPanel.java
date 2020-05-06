@@ -6,7 +6,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,7 +18,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.awt.*;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,36 +51,28 @@ public class LoginPanel implements Initializable {
          for( User s : Users.getInstance().getUserList() ) {
             if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
                try {
-                  Platform.runLater( new Runnable() {
-                     @Override
-                     public void run() {
-                        try {
-                           String fxmlAddress;
-                           FXMLLoader load;
-                           Parent root;
-                           Stage stage;
-                           if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
-                              fxmlAddress = "view/elderMainPanel.fxml";
-                           else
-                              fxmlAddress = "view/mainPanel.fxml";
+                  String fxmlAddress;
+                  FXMLLoader load;
+                  Parent root;
+                  Stage stage;
 
-                           s.setEnter( "true" );
-                           load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
-                           root = load.load();
-                           stage = new Stage();
-                           stage.setTitle( "SMART HOME" );
-                           if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
-                              stage.setScene( new Scene( root, 800, 600 ) );
-                           else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
-                              stage.setScene( new Scene( root, 800, 800 ) );
-                           stage.setResizable( true );
-                           stage.show();
-                        } catch( IOException exception ) {
-                           exception.printStackTrace();
-                        }
-                        userNameField.getScene().getWindow().hide();
-                     }
-                  } );
+                  if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
+                     fxmlAddress = "view/elderMainPanel.fxml";
+                  else
+                     fxmlAddress = "view/mainPanel.fxml";
+                  s.setEnter( "true" );
+                  load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
+                  root = load.load();
+                  stage = new Stage();
+                  stage.setTitle( "SMART HOME" );
+
+                  if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
+                     stage.setScene( new Scene( root, 800, 600 ) );
+                  else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
+                     stage.setScene( new Scene( root, 800, 800 ) );
+                  stage.setResizable( true );
+                  stage.show();
+                  userNameField.getScene().getWindow().hide();
                } catch( Exception e ) {
                   e.printStackTrace();
                }
@@ -117,19 +107,19 @@ public class LoginPanel implements Initializable {
       }
 
       Font.loadFont(
-            LoginPanel.class.getResource("styleSheets/font/Oswald-VariableFont_wght.ttf").toExternalForm(),
+            LoginPanel.class.getResource( "styleSheets/font/Oswald-VariableFont_wght.ttf" ).toExternalForm(),
             10
       );
       Font.loadFont(
-            LoginPanel.class.getResource("styleSheets/font/PatrickHand-Regular.ttf").toExternalForm(),
+            LoginPanel.class.getResource( "styleSheets/font/PatrickHand-Regular.ttf" ).toExternalForm(),
             10
       );
       Font.loadFont(
-            LoginPanel.class.getResource("styleSheets/font/IndieFlower-Regular.ttf").toExternalForm(),
+            LoginPanel.class.getResource( "styleSheets/font/IndieFlower-Regular.ttf" ).toExternalForm(),
             10
       );
       Font.loadFont(
-            LoginPanel.class.getResource("styleSheets/font/Handlee-Regular.ttf").toExternalForm(),
+            LoginPanel.class.getResource( "styleSheets/font/Bahiana-Regular.ttf" ).toExternalForm(),
             10
       );
    }
