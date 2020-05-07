@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".settings.AppSettings"></activity>
+        <activity android:name=".GardenLight"></activity>
+        <activity android:name=".settings.AppSettings" />
         <activity android:name=".settings.HomeSettings" />
         <activity android:name=".settings.Settings" />
         <activity
@@ -34,13 +34,13 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".popup.alarmPop"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".popup.blutPop"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".popup.notiPop"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,12 +51,12 @@
         <activity android:name=".main_screen" />
         <activity android:name=".connection_settings" />
         <activity android:name=".gas" />
-        <activity android:name=".Electricity"></activity>
-        <activity android:name=".Water"></activity>
-        <activity android:name=".Aquarium"></activity>
-        <activity android:name=".AquariumDaylist"></activity>
-        <activity android:name=".FishList"></activity>
-        <activity android:name=".GreenHouse"></activity>
+        <activity android:name=".Electricity" />
+        <activity android:name=".Water" />
+        <activity android:name=".Aquarium" />
+        <activity android:name=".AquariumDaylist" />
+        <activity android:name=".FishList" />
+        <activity android:name=".GreenHouse" />
     </application>
 
 </manifest>

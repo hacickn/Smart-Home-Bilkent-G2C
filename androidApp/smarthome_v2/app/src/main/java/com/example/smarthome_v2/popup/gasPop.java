@@ -10,7 +10,7 @@ public class gasPop extends Activity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gas_pop);
+        setContentView(R.layout.gas_screen);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

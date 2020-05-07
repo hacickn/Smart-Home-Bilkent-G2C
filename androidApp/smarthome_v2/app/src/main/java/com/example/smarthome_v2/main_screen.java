@@ -1,7 +1,6 @@
 package com.example.smarthome_v2;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,24 +11,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.smarthome_v2.popup.WeatherPop;
 import com.example.smarthome_v2.settings.Settings;
 
-import java.util.Objects;
-
 public class main_screen extends AppCompatActivity {
     public ToggleButton gas_control;
     public ToggleButton electricity_control, water_control;
     public boolean gasOnOff, elecOnOff, waterOnOff;
-    private ImageButton weather, settings, elec, water;
+    private ImageButton weather, settings, elec, water,gardenLight;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
 
-        ImageButton connection_settings = findViewById(R.id.connection);
-        connection_settings.setOnClickListener(new View.OnClickListener() {
+        gardenLight = findViewById(R.id.garden_light);
+        gardenLight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, connection_settings.class);
+                Intent main = new Intent(main_screen.this, GardenLight.class);
                 startActivity(main);
             }
         });

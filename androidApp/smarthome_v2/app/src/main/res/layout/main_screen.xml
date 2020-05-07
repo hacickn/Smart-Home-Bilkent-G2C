@@ -18,13 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/connection"
+        android:id="@+id/garden_light"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="220dp"
-        android:background="@drawable/ic_connection"
+        android:background="@drawable/ic_gardening"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +39,7 @@
         android:text="ToggleButton"
         android:textColor="@drawable/toggle_colour"
         android:textSize="11dp"
-        app:layout_constraintStart_toEndOf="@+id/connection"
+        app:layout_constraintStart_toEndOf="@+id/garden_light"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageButton
@@ -51,7 +51,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/ic_tap"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/connection" />
+        app:layout_constraintTop_toBottomOf="@+id/garden_light" />
 
     <ToggleButton
         android:id="@+id/water_controller"
