@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Electricity"
-    android:background="@color/grey">
+    android:background="@color/grey"
+    tools:context=".Electricity">
 
     <ImageView
         android:id="@+id/mainelectiricity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_electricity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/light1" />
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/ic_exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -35,13 +35,13 @@
 
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/toggle_switch"
         android:text="ToggleButton"
         android:textColor="@drawable/toggle_colour"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainelectiricity" />
 
@@ -50,7 +50,7 @@
 
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/ic_eleclight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -62,10 +62,10 @@
 
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/ic_eleclight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/mainelectiricity"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,11 +74,22 @@
 
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/ic_eleclight"
         app:layout_constraintEnd_toStartOf="@+id/mainelectiricity"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/gasChart"
+        android:layout_width="414dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="16dp"
+        android:background="#F10000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elec_control"></com.github.mikephil.charting.charts.BarChart>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
