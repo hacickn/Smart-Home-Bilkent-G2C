@@ -400,7 +400,7 @@
 .settingLittleLabels{
 -fx-font-family:  'Patrick Hand', cursive;
        -fx-text-fill: black;
-       -fx-font-size:13px;
+       -fx-font-size:14px;
 }
 .addUserLabel{
     -fx-font-family:  'Oswald', sans-serif;
@@ -789,6 +789,14 @@
 }
 .textHelperImage{
         -fx-image: url("images/textHelper5.png");
+         -fx-background-size: cover;
+}
+.feedingButton{
+        -fx-background-image: url("images/feeding5.png");
+         -fx-background-size: cover;
+}
+.feedingButton:hover{
+        -fx-background-image: url("images/feeding4.png");
          -fx-background-size: cover;
 }
 

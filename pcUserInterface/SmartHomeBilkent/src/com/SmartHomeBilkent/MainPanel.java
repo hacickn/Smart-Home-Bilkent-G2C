@@ -24,10 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,7 +36,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
@@ -98,7 +94,7 @@ public class MainPanel implements Initializable {
          gardenLightSubMenuButtonActive, gardenLightSubMenuButtonPassive,
          menuBulkChange, bulkChangesSaveButton,
          dateTimeSaveButton, menuTimeConfigurationButton,
-         helpButton;
+         helpButton, menuAquariumFeedButton;
 
    @FXML
    private JFXRadioButton electricityRadioButton, gasRadioButton,
@@ -146,6 +142,8 @@ public class MainPanel implements Initializable {
    private JFXToggleButton elecSubMenuToggleButton, gasSubMenuToggleButton,
          aquariumSubMenuToggleButton, waterSubMenuToggleButton,
          gardenLightSubMenuToggleButton;
+   @FXML
+   private ProgressIndicator menuAquariumIndicator;
 
    /**
     * 2)user profile variables
@@ -337,8 +335,7 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXButton updateWeatherButton;
    @FXML
-   private JFXToggleButton settingElectricityToggleButton, settingGasToggleButton,
-         settingAquariumToggleButton;
+   private JFXToggleButton settingElectricityToggleButton, settingGasToggleButton;
    @FXML
    private BarChart< Number, Number > electricityUsageTable, gasUsageTable;
    @FXML
@@ -466,7 +463,6 @@ public class MainPanel implements Initializable {
          waterSubMenuToggleButton.setDisable( permissions[ 2 ].charAt( 0 ) == 'C' );
          gardenLightSubMenuToggleButton.setDisable( permissions[ 3 ].charAt( 0 ) == 'C' );
          aquariumSubMenuToggleButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
-         settingAquariumToggleButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
          saveAquariumChangesButton.setDisable( permissions[ 4 ].charAt( 0 ) == 'C' );
          fireButtonVisualToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
          fireButtonSoundToggle.setDisable( permissions[ 5 ].charAt( 0 ) == 'C' );
@@ -982,6 +978,26 @@ public class MainPanel implements Initializable {
          openGas( gasRadioButton.isSelected() );
          openElectricity( electricityRadioButton.isSelected() );
 
+         if( feedRadioButton.isSelected() )
+            new Thread( () -> {
+               for( int k = 0; k < 20; k++ ) {
+                  final int j = k;
+                  Platform.runLater( () -> {
+                     menuAquariumIndicator.setVisible( true );
+                     feedRadioButton.setSelected( true );
+                     if( j == 19 ) {
+                        menuAquariumIndicator.setVisible( false );
+                        feedRadioButton.setSelected( false );
+                     }
+                  } );
+                  try {
+                     Thread.sleep( 100 );
+                  } catch( InterruptedException e ) {
+                     e.printStackTrace();
+                  }
+               }
+            } ).start();
+
       } else if( event.getSource() == dateTimeSaveButton ) {
          if( menuDatePicker.getValue() == null ||
                menuTimePicker.getValue() == null ) {
@@ -1021,6 +1037,34 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == outgoingWaterRadioButton ) {
          if( outgoingWaterRadioButton.isSelected() )
             incomingWaterRadioButton.setSelected( false );
+      } else if( event.getSource() == menuAquariumFeedButton ) {
+         if( isArduinoConnect )
+            home.getAquarium().feedingOpen( true );
+
+         new Thread( new Runnable() {
+            @Override
+            public void run() {
+               for( int k = 0; k < 20; k++ ) {
+                  final int j = k;
+                  Platform.runLater( new Runnable() {
+                     @Override
+                     public void run() {
+                        menuAquariumIndicator.setVisible( true );
+                        feedRadioButton.setSelected( true );
+                        if( j == 19 ) {
+                           menuAquariumIndicator.setVisible( false );
+                           feedRadioButton.setSelected( false );
+                        }
+                     }
+                  } );
+                  try {
+                     Thread.sleep( 100 );
+                  } catch( InterruptedException e ) {
+                     e.printStackTrace();
+                  }
+               }
+            }
+         } ).start();
       }
    }
 
@@ -1096,7 +1140,6 @@ public class MainPanel implements Initializable {
       menuAquariumProgress.setVisible( control );
       aquariumSubMenuToggleButton.setSelected( control );
       aquariumRadioButton.setSelected( control );
-      settingAquariumToggleButton.setSelected( control );
    }
 
    public void openWater( boolean control ) {
@@ -1801,6 +1844,7 @@ public class MainPanel implements Initializable {
          permissionPaneNotificationToggle.setText( bundle.getString( "notificationLang" ) );
          permissionPaneGasToggle.setText( bundle.getString( "gasLang" ) );
          permissionPaneSirenToggle.setText( bundle.getString( "sirenLang" ) );
+         aquariumSubMenuToggleButton.setText( bundle.getString( "airMotorLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -2330,52 +2374,54 @@ public class MainPanel implements Initializable {
          }
       }
    }
-    /**
-     * Background for Weather Class
-     * @author Hacı Çakın, İlke Doğan
-     */
 
-    public void backgroundSetup( String weather ) {
-        if( weather.equalsIgnoreCase( "Cloudy" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Partly cloudy" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/partlyCloudy1.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Sunny" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Snowy" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Light Rain Shower" )
-                || weather.equalsIgnoreCase( "Patchy rain possible" )
-                || weather.equalsIgnoreCase( "rain" )
-                || weather.equalsIgnoreCase( "Light Rain" )
-                || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" )
-                || weather.equalsIgnoreCase( "light drizzle" )
-                || weather.equalsIgnoreCase( "Rain Shower" )
-                || weather.equalsIgnoreCase( "Shower In Vicinity" )
-                || weather.equalsIgnoreCase( "Light Rain Shower, Rain Shower" )
-                || weather.equalsIgnoreCase( "Heavy rain" ))
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Mist" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
-                || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
-                || weather.equalsIgnoreCase( "Rain With Thunderstorm" )
-                || weather.equalsIgnoreCase( "Thunderstorm In Vicinity" ))
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Clear" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Blowing Widespread Dust" ) )
-           weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/dust.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
-        else if( weather.equalsIgnoreCase( "weather" ) )
-            weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
+   /**
+    * Background for Weather Class
+    *
+    * @author Hacı Çakın, İlke Doğan
+    */
 
-    }
+   public void backgroundSetup( String weather ) {
+      if( weather.equalsIgnoreCase( "Cloudy" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Partly cloudy" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/partlyCloudy1.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Sunny" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Snowy" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Light Rain Shower" )
+            || weather.equalsIgnoreCase( "Patchy rain possible" )
+            || weather.equalsIgnoreCase( "rain" )
+            || weather.equalsIgnoreCase( "Light Rain" )
+            || weather.equalsIgnoreCase( "Shower In Vicinity, Rain Shower" )
+            || weather.equalsIgnoreCase( "light drizzle" )
+            || weather.equalsIgnoreCase( "Rain Shower" )
+            || weather.equalsIgnoreCase( "Shower In Vicinity" )
+            || weather.equalsIgnoreCase( "Light Rain Shower, Rain Shower" )
+            || weather.equalsIgnoreCase( "Heavy rain" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Mist" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
+            || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
+            || weather.equalsIgnoreCase( "Rain With Thunderstorm" )
+            || weather.equalsIgnoreCase( "Thunderstorm In Vicinity" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Clear" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Blowing Widespread Dust" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/dust.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
+      else if( weather.equalsIgnoreCase( "weather" ) )
+         weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
+
+   }
 
    @FXML
    void settingToggleButtonsAction( ActionEvent event ) {
@@ -2387,10 +2433,6 @@ public class MainPanel implements Initializable {
          if( isArduinoConnect )
             home.getGas().open( settingElectricityToggleButton.isSelected() );
          openGas( settingElectricityToggleButton.isSelected() );
-      } else if( event.getSource() == settingAquariumToggleButton ) {
-         if( isArduinoConnect )
-            home.getAquarium().open( settingAquariumToggleButton.isSelected() );
-         openAquarium( settingAquariumToggleButton.isSelected() );
       }
    }
 

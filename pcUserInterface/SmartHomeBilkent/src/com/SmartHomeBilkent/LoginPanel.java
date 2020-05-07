@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -50,39 +51,53 @@ public class LoginPanel implements Initializable {
       if( userNameField.getText().length() > 0 && passwordField.getText().length() > 0 ) {
          for( User s : Users.getInstance().getUserList() ) {
             if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
-               try {
-                  String fxmlAddress;
-                  FXMLLoader load;
-                  Parent root;
-                  Stage stage;
+               loginButton.setVisible( false );
+               loginSpinner.setVisible( true );
+               new Thread( new Runnable() {
+                  @Override
+                  public void run() {
+                     try {
+                        String fxmlAddress;
+                        FXMLLoader load;
+                        Parent root;
+                        final Stage[] stage = new Stage[ 1 ];
 
-                  if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
-                     fxmlAddress = "view/elderMainPanel.fxml";
-                  else
-                     fxmlAddress = "view/mainPanel.fxml";
-                  s.setEnter( "true" );
-                  load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
-                  root = load.load();
-                  stage = new Stage();
-                  stage.setTitle( "SMART HOME" );
+                        if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
+                           fxmlAddress = "view/elderMainPanel.fxml";
+                        else
+                           fxmlAddress = "view/mainPanel.fxml";
+                        s.setEnter( "true" );
+                        load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
+                        root = load.load();
+                        Platform.runLater( new Runnable() {
+                           @Override
+                           public void run() {
+                              stage[ 0 ] = new Stage();
+                              stage[ 0 ].setTitle( "SMART HOME" );
 
-                  if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
-                     stage.setScene( new Scene( root, 800, 600 ) );
-                  else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
-                     stage.setScene( new Scene( root, 800, 800 ) );
-                  stage.setResizable( true );
-                  stage.show();
-                  userNameField.getScene().getWindow().hide();
-               } catch( Exception e ) {
-                  e.printStackTrace();
-               }
+                              if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
+                                 stage[ 0 ].setScene( new Scene( root, 800, 600 ) );
+                              else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
+                                 stage[ 0 ].setScene( new Scene( root, 800, 800 ) );
+                              stage[ 0 ].setResizable( true );
+                              stage[ 0 ].show();
+                              userNameField.getScene().getWindow().hide();
+                           }
+                        } );
+
+                     } catch( Exception e ) {
+                        e.printStackTrace();
+                     }
+                  }
+               } ).start();
+               waningLabel.setVisible( false );
             }
          }
          waningLabel.setText( "USERNAME/PASSWORD IS WRONG" );
       } else {
+         waningLabel.setVisible( true );
          waningLabel.setText( "PLEASE ENTER BOTH PASSWORD AND USERNAME" );
       }
-      waningLabel.setVisible( true );
    }
 
    @FXML
@@ -99,6 +114,7 @@ public class LoginPanel implements Initializable {
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       capsLock = ( Toolkit.getDefaultToolkit().getLockingKeyState( java.awt.event.KeyEvent.VK_CAPS_LOCK ) );
+      waningLabel.setVisible( true );
       if( capsLock ) {
          capslockOpen.setVisible( true );
          capsLock = false;
