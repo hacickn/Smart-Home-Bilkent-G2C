@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/electricity" />
 
     <ToggleButton
-        android:id="@+id/toggleButton4"
+        android:id="@+id/electricity_control"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -140,7 +140,7 @@
         android:textColor="@drawable/toggle_colour"
         android:textSize="11dp"
         app:layout_constraintEnd_toStartOf="@+id/electricity"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton4" />
+        app:layout_constraintTop_toBottomOf="@+id/electricity_control" />
 
     <ImageButton
         android:id="@+id/imageButton6"

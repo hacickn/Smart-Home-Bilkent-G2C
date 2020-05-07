@@ -14,8 +14,8 @@ import com.example.smarthome_v2.settings.Settings;
 public class main_screen extends AppCompatActivity {
     public ToggleButton gas_control;
     public ToggleButton electricity_control;
-    public boolean gasOnOff;
-    private ImageButton weather, settings;
+    public boolean gasOnOff,elecOnOff;
+    private ImageButton weather, settings,elec;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,21 @@ public class main_screen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent toSettings = new Intent(main_screen.this, Settings.class);
                 startActivity(toSettings);
+            }
+        });
+
+        elec = findViewById(R.id.electricity);
+        elec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(main_screen.this,Electricity.class);
+                startActivity(main);
+                electricity_control = findViewById(R.id.electricity_control);
+                elecOnOff = electricity_control.isChecked();
+                Intent i = new Intent(getApplicationContext(), Electricity.class);
+
+                i.putExtra("elecCondition",elecOnOff);
+                startActivity(i);
             }
         });
 

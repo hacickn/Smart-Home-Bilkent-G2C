@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.smarthome_v2">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,26 +17,29 @@
         <activity android:name=".settings.AppSettings"></activity>
         <activity android:name=".settings.HomeSettings" />
         <activity android:name=".settings.Settings" />
-        <activity android:name=".popup.elecPop"
-            android:theme="@style/AppTheme.CustomTheme"
-            />
-        <activity android:name=".popup.WeatherPop"
-            android:theme="@style/AppTheme.CustomTheme"
-            />
-        <activity android:name=".popup.aquaPop"
-            android:theme="@style/AppTheme.CustomTheme"
-            />
-        <activity android:name=".popup.gasPop"
-            android:theme="@style/AppTheme.CustomTheme"
-            />
-        <activity android:name=".popup.ghPop"
-            android:theme="@style/AppTheme.CustomTheme"
-            />
-        <activity android:name=".popup.alarmPop"
+        <activity
+            android:name=".popup.elecPop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".popup.WeatherPop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".popup.aquaPop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".popup.gasPop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".popup.ghPop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".popup.alarmPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".popup.blutPop"
+        <activity
+            android:name=".popup.blutPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".popup.notiPop"
+        <activity
+            android:name=".popup.notiPop"
             android:theme="@style/AppTheme.CustomTheme"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -46,6 +51,7 @@
         <activity android:name=".main_screen" />
         <activity android:name=".connection_settings" />
         <activity android:name=".gas" />
+        <activity android:name=".Electricity"></activity>
     </application>
 
 </manifest>
