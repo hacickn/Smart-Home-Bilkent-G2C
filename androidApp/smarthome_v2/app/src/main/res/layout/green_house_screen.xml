@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <TextView
+        android:id="@+id/Temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="277dp"
+        android:text="Temperature"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="45dp"
+        android:text="Latest Water From Aquarium"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Temperature" />
+
+    <TextView
+        android:id="@+id/Humudity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="45dp"
+        android:text="Humudity"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Water" />
+
+    <ImageButton
+        android:id="@+id/green_house_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/ic_green_house"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="187dp"
+        android:layout_marginLeft="187dp"
+        android:layout_marginTop="29dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Humudity"
+        app:layout_constraintTop_toBottomOf="@+id/coming_water" />
+
+    <EditText
+        android:id="@+id/coming_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="29dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Water"
+        app:layout_constraintTop_toBottomOf="@+id/hum" />
+
+    <EditText
+        android:id="@+id/hum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
+        android:layout_marginTop="270dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

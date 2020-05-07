@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <ImageView
+        android:id="@+id/imageView6"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/ic_aquarium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="201dp"
+        android:background="@drawable/ic_species"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/ic_fish_food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/ic_water_exhange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/ic_air_engine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <Button
+        android:id="@+id/species"
+
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="59dp"
+        android:background="@color/orange_two"
+        android:paddingHorizontal="5dp"
+        android:text="Select Spicy"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <EditText
+        android:id="@+id/time_feed"
+
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="@color/orange_two"
+        app:layout_constraintStart_toEndOf="@+id/feed_text"
+        app:layout_constraintTop_toBottomOf="@+id/species" />
+
+    <ImageButton
+        android:id="@+id/feed_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/ic_clock"
+        app:layout_constraintStart_toEndOf="@+id/time_feed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feed_text"
+
+        android:layout_width="165dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="82dp"
+        android:text="Feeding Start Time (Each Day)"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/species" />
+
+    <TextView
+        android:id="@+id/exchange_time_text"
+
+        android:layout_width="165dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:text="Water Exchange Time"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/feed_text" />
+
+    <EditText
+        android:id="@+id/time_exhange"
+
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="@color/orange_two"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/exchange_time_text"
+        app:layout_constraintTop_toBottomOf="@+id/time_feed" />
+
+    <ImageButton
+        android:id="@+id/exchange_button"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/ic_clock"
+        app:layout_constraintStart_toEndOf="@+id/time_exhange"
+        app:layout_constraintTop_toBottomOf="@+id/feed_button" />
+
+    <TextView
+        android:id="@+id/exchange_day_text"
+
+        android:layout_width="165dp"
+        android:layout_height="30dp"
+        android:text="Water Exchange Day"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/exchange_time_text" />
+
+    <EditText
+        android:id="@+id/day_exhange"
+
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="@color/orange_two"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/exchange_day_text"
+        app:layout_constraintTop_toBottomOf="@+id/time_exhange" />
+
+    <ImageButton
+        android:id="@+id/exchange_day_button"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/ic_clock"
+        app:layout_constraintStart_toEndOf="@+id/day_exhange"
+        app:layout_constraintTop_toBottomOf="@+id/exchange_button" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+
+        android:layout_width="165dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="48dp"
+        android:progressDrawable="@color/orange_one"
+        android:thumbTint="@color/orange_two"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/exchange_day_text" />
+
+    <TextView
+        android:id="@+id/textView3"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Air Motor Work Amount"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/exchange_day_text" />
+
+    <TextView
+        android:id="@+id/textView4"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Air Motor Start Time"
+        android:textColor="@color/orange_one"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/air_motor_start"
+
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="21dp"
+        android:backgroundTint="@color/orange_two"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="@color/orange_two"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageButton
+        android:id="@+id/air_motor_button"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/ic_clock"
+        app:layout_constraintStart_toEndOf="@+id/air_motor_start"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

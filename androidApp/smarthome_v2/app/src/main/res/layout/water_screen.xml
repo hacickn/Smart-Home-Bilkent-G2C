@@ -36,15 +36,15 @@
 
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginTop="26dp"
         android:background="@drawable/toggle_switch"
         android:text="ToggleButton"
         android:textColor="@drawable/toggle_colour"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drop_1" />
 
     <ImageView
         android:id="@+id/drop_1"
@@ -55,23 +55,21 @@
         android:layout_marginLeft="225dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="47dp"
         android:background="@drawable/ic_rain_drops"
-        app:layout_constraintBottom_toTopOf="@+id/water_control"
         app:layout_constraintEnd_toStartOf="@+id/drop_2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drop_3" />
 
     <ImageView
         android:id="@+id/drop_2"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
         android:background="@drawable/ic_rain_drops"
-        app:layout_constraintBottom_toTopOf="@+id/water_control"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drop_3" />
 
     <ImageView
         android:id="@+id/drop_3"
@@ -80,8 +78,8 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:background="@drawable/ic_rain_drops"
-        app:layout_constraintBottom_toTopOf="@+id/drop_2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tap" />
 
     <ImageView
         android:id="@+id/water_wave"

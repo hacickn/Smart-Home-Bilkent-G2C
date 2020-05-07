@@ -52,6 +52,11 @@
         <activity android:name=".connection_settings" />
         <activity android:name=".gas" />
         <activity android:name=".Electricity"></activity>
+        <activity android:name=".Water"></activity>
+        <activity android:name=".Aquarium"></activity>
+        <activity android:name=".AquariumDaylist"></activity>
+        <activity android:name=".FishList"></activity>
+        <activity android:name=".GreenHouse"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.smarthome_v2;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.smarthome_v2.popup.WeatherPop;
 import com.example.smarthome_v2.settings.Settings;
 
+import java.util.Objects;
+
 public class main_screen extends AppCompatActivity {
     public ToggleButton gas_control;
-    public ToggleButton electricity_control;
-    public boolean gasOnOff,elecOnOff;
-    private ImageButton weather, settings,elec;
+    public ToggleButton electricity_control, water_control;
+    public boolean gasOnOff, elecOnOff, waterOnOff;
+    private ImageButton weather, settings, elec, water;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class main_screen extends AppCompatActivity {
         connection_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this,connection_settings.class);
+                Intent main = new Intent(main_screen.this, connection_settings.class);
                 startActivity(main);
             }
         });
@@ -35,13 +38,13 @@ public class main_screen extends AppCompatActivity {
         gas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this,gas.class);
+                Intent main = new Intent(main_screen.this, gas.class);
                 startActivity(main);
                 gas_control = findViewById(R.id.gas_control);
                 gasOnOff = gas_control.isChecked();
                 Intent i = new Intent(getApplicationContext(), gas.class);
 
-                i.putExtra("gasCondition",gasOnOff);
+                i.putExtra("gasCondition", gasOnOff);
                 startActivity(i);
             }
         });
@@ -69,16 +72,53 @@ public class main_screen extends AppCompatActivity {
         elec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this,Electricity.class);
+                Intent main = new Intent(main_screen.this, Electricity.class);
                 startActivity(main);
                 electricity_control = findViewById(R.id.electricity_control);
                 elecOnOff = electricity_control.isChecked();
                 Intent i = new Intent(getApplicationContext(), Electricity.class);
 
-                i.putExtra("elecCondition",elecOnOff);
+                i.putExtra("elecCondition", elecOnOff);
                 startActivity(i);
             }
         });
 
+        water = findViewById(R.id.water_tap);
+        water.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(main_screen.this, Water.class);
+                startActivity(main);
+                water_control = findViewById(R.id.water_controller);
+                waterOnOff = water_control.isChecked();
+                Intent i = new Intent(getApplicationContext(), Water.class);
+
+                i.putExtra("waterCondition", waterOnOff);
+                startActivity(i);
+            }
+        });
+
+        ImageButton aquarium = findViewById(R.id.aquarium);
+        aquarium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(main_screen.this, Aquarium.class);
+                startActivity(main);
+
+            }
+        });
+
+        ImageButton greenHouse_control = findViewById(R.id.green_house);
+        greenHouse_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(main_screen.this, GreenHouse.class);
+                startActivity(main);
+
+
+            }
+        });
     }
 }
+
