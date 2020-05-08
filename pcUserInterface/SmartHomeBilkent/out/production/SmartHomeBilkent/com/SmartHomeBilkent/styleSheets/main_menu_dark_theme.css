@@ -710,11 +710,11 @@
     -jfx-default-color:gray;
 }
 .updateWeather{
-        -fx-background-image: url("images/updateCheck1.png");
+        -fx-background-image: url("images/updater1.png");
         -fx-background-size: cover;
 }
 .updateWeather:hover{
-        -fx-background-image: url("images/updateCheck3.png");
+        -fx-background-image: url("images/updater3.png");
         -fx-background-size: cover;
 }
 .electricityImage{

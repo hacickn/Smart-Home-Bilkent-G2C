@@ -33,14 +33,12 @@ public class WeatherForecast {
    public WeatherForecast( String location ) throws IOException {
       locationName = location;
       this.location = findLocationXY( location );
-      System.out.println( this.location );
       weather = "";
       wind = "";
       temperature = "";
       humidity = "";
       localTime = "";
       getWeatherCase();
-      System.out.println( weather );
    }
 
    //methods
@@ -86,9 +84,15 @@ public class WeatherForecast {
             }
          }
          number = XY.indexOf( ',' );
-         XY = XY.substring( number + 1 ) + "," + XY.substring( 0, number );
-         this.location = XY;
-         return XY;
+         if( number > 0 ) {
+            XY = XY.substring( number + 1 ) + "," + XY.substring( 0, number );
+            this.location = XY;
+            return XY;
+         } else {
+            this.location = "";
+            return null;
+         }
+
       } else {
          System.out.println( "GET request not worked" );
          return null;

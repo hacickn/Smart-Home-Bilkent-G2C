@@ -11,7 +11,7 @@ public class ghPop extends Activity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.greenhouse_pop);
+        setContentView(R.layout.green_house_screen);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

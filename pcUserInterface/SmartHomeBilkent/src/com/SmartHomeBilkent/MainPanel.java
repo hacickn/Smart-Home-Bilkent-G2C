@@ -28,6 +28,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -71,12 +72,14 @@ public class MainPanel implements Initializable {
     * 3.5)setting - sub menu variables
     * 4)Some independent variables( various objects )
     */
+
+   /**
+    * 1)menu variables
+    */
    @FXML
-   private BorderPane firstStackPane;
+   private BorderPane commonBorderPane;
    @FXML
    private StackPane menuStackPane;
-   @FXML
-   private AnchorPane menuAnchorPane;
    @FXML
    private JFXButton menuButton, menuButtonActive,
          userProfileButton, userProfileButtonActive,
@@ -95,7 +98,6 @@ public class MainPanel implements Initializable {
          menuBulkChange, bulkChangesSaveButton,
          dateTimeSaveButton, menuTimeConfigurationButton,
          helpButton, menuAquariumFeedButton;
-
    @FXML
    private JFXRadioButton electricityRadioButton, gasRadioButton,
          waterRadioButton, aquariumRadioButton,
@@ -211,16 +213,14 @@ public class MainPanel implements Initializable {
    private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
    @FXML
    private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
-         smoothThemeRadioButton, cartoonThemeRadioButton;
+         smoothThemeRadioButton, cartoonThemeRadioButton,
+         spaceThemeRadioButton, forestThemeRadioButton;
 
    @FXML
    private JFXButton englishOption, germanOption,
          turkishOption;
    @FXML
-   private ImageView settingThemeDarkImage,
-         settingThemeLightImage,
-         settingThemeSmoothImage,
-         settingThemeCartoonImage;
+   private ImageView themeImage;
    @FXML
    private Label englishLabel, germanLabel,
          turkishLabel, themeTopLabel,
@@ -275,7 +275,8 @@ public class MainPanel implements Initializable {
          createUserSmoothThemeOption, createUserCartoonThemeOption,
          createUserEnglishOption, createUserTurkishOption,
          createUserGermanOption, createUserParentOption,
-         createUserChildOption, createUserElderOption;
+         createUserChildOption, createUserElderOption,
+         createUserSpaceThemeOption, createUserForestThemeOption;
    @FXML
    private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
          removeUserTextField;
@@ -320,7 +321,8 @@ public class MainPanel implements Initializable {
          settingWeatherWindLabelValue, speciesOfFishLabel,
          feedingStartLabel, waterExchangeLabel,
          airMotorRunTimeLabel, greenHouseTemperatureLabel,
-         greenHouseHumidityLabel, latestWaterLabel;
+         greenHouseHumidityLabel, latestWaterLabel,
+         weatherCharacterWarningLabel;
    @FXML
    private AnchorPane applicationSettingSubPane;
    @FXML
@@ -346,6 +348,9 @@ public class MainPanel implements Initializable {
    private JFXComboBox< String > portChooser;
    @FXML
    private CheckComboBox< String > checkComboBox;
+   @FXML
+   private JFXSpinner weatherUpdateSpinner;
+
    /**
     * 3.5)setting - sub menu variables
     */
@@ -401,40 +406,48 @@ public class MainPanel implements Initializable {
    public void initialize( URL location, ResourceBundle resources ) {
       userPreferenceUpdate( getLoginUser() );
       ElectricityUsage.getInstance().getElectricityUsage();
-      ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getGasUsage();
-      GasUsage.getInstance().getTable( gasUsageTable );
       GreenHouseData.getInstance().getGreenHouseValues();
-      GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
       FishSpecies.getInstance().getFishes();
-      FishSpecies.getInstance().addFishToComboBox( checkComboBox );
       CommonSettingData.getInstance().getAllHome();
 
+
+      GUIUpdate();
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable( true );
       audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
-      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
+      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.setRate( 1.1 );
       speechUtils = new SpeechUtils();
       isArduinoConnect = false;
+      //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
+      refreshMenu();
+      createEmergencyAnimation();
+   }
+
+   public void GUIUpdate() {
+      ElectricityUsage.getInstance().getTable( electricityUsageTable );
+      GasUsage.getInstance().getTable( gasUsageTable );
+      GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
+      FishSpecies.getInstance().addFishToComboBox( checkComboBox );
 
       for( int k = 1; k <= 7; k++ ) {
          waterExchangeDay.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
       }
-
-
       commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
       sensors = CommonSettingData.getInstance().getSensors( commonSetting );
       permissions = CommonSettingData.getInstance().getPermission( commonSetting );
 
       for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
-
       flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ), Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ), Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
+      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
+      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
       waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ), Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
+      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
       airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
       if( loginUser.getUserType().equals( "PARENT" ) ) {
@@ -494,38 +507,6 @@ public class MainPanel implements Initializable {
          backgroundSetup( "weather" );
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
-
-      //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
-      refreshMenu();
-      createEmergencyAnimation();
-   }
-
-   void sound( String file, Boolean check ) {
-      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
-         audioClip.stop();
-         audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
-         audioClip.setRate( 1 );
-         audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
-         audioClip.play();
-      } else {
-         audioClip.stop();
-         audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
-      }
-   }
-
-   public User getLoginUser() {
-      for( User u : Users.getInstance().getUserList() ) {
-         if( u.getEnter().equals( "true" ) ) {
-            u.setEnter( "false" );
-            loginUser = u;
-            return u;
-         }
-      }
-      return null;
    }
 
    void userPreferenceUpdate( User user ) {
@@ -553,19 +534,7 @@ public class MainPanel implements Initializable {
          userInfoGirlImage.setVisible( true );
       }
       userNameTextField.setText( user.getUserName() );
-
-      if( loginUser.getPreferredTheme().equals( "cartoon" ) || loginUser.getPreferredTheme().equals( "karıkatur" )
-            || loginUser.getPreferredTheme().equals( "çızgı fılm" ) ) {
-         changeTheme( "cartoon" );
-      } else if( loginUser.getPreferredTheme().equals( "light" ) || loginUser.getPreferredTheme().equals( "lıght" )
-            || loginUser.getPreferredTheme().equals( "aydınlık" ) || loginUser.getPreferredTheme().equals( "lıcht" ) ) {
-         changeTheme( "light" );
-      } else if( loginUser.getPreferredTheme().equals( "smooth" ) || loginUser.getPreferredTheme().equals( "puruzsuz" )
-            || loginUser.getPreferredTheme().equals( "glatt" ) ) {
-         changeTheme( "smooth" );
-      } else {
-         changeTheme( "dark" );
-      }
+      changeTheme( loginUser.getPreferredTheme().toLowerCase() );
 
       unSelectAllLanguage();
 
@@ -595,6 +564,36 @@ public class MainPanel implements Initializable {
       soundVolumeSlider.setValue( Double.parseDouble( volume ) );
    }
 
+
+   void sound( String file, Boolean check ) {
+      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
+         audioClip.stop();
+         audioClip = new AudioClip( this.getClass().getResource( "music/" +
+               bundle.getString( "pathLang" ) +
+               file + bundle.getString( "mp3Lang" ) ).toString() );
+         audioClip.setRate( 1 );
+         audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
+         audioClip.play();
+      } else {
+         audioClip.stop();
+         audioClip = new AudioClip( this.getClass().getResource( "music/" +
+               bundle.getString( "pathLang" ) +
+               file + bundle.getString( "mp3Lang" ) ).toString() );
+      }
+   }
+
+   public User getLoginUser() {
+      for( User u : Users.getInstance().getUserList() ) {
+         if( u.getEnter().equals( "true" ) ) {
+            u.setEnter( "false" );
+            loginUser = u;
+            return u;
+         }
+      }
+      return null;
+   }
+
+
    void refreshMenu() {
       SerialPort[] portNames;
       portChooser.getItems().removeAll( portChooser.getItems() );
@@ -610,7 +609,7 @@ public class MainPanel implements Initializable {
       fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
       fillTransition.setCycleCount( 20 );
       fillTransition.setAutoReverse( true );
-      firstStackPane.getChildren().add( rectangle );
+      commonBorderPane.getChildren().add( rectangle );
       rectangle.setVisible( false );
    }
 
@@ -919,14 +918,14 @@ public class MainPanel implements Initializable {
             message.append( "B0" );
 
          if( electricityRadioButton.isSelected() )
-            message.append( "E1" );
-         else
             message.append( "E0" );
+         else
+            message.append( "E1" );
 
          if( gasRadioButton.isSelected() )
-            message.append( "G1" );
-         else
             message.append( "G0" );
+         else
+            message.append( "G1" );
 
          if( incomingWaterRadioButton.isSelected() )
             message.append( "I1" );
@@ -939,9 +938,9 @@ public class MainPanel implements Initializable {
             message.append( "U0" );
 
          if( aquariumRadioButton.isSelected() )
-            message.append( "A1" );
-         else
             message.append( "A0" );
+         else
+            message.append( "A1" );
 
          if( doorRadioButton.isSelected() )
             message.append( "D1" );
@@ -949,9 +948,9 @@ public class MainPanel implements Initializable {
             message.append( "D0" );
 
          if( waterRadioButton.isSelected() )
-            message.append( "W1" );
-         else
             message.append( "W0" );
+         else
+            message.append( "W1" );
 
          if( sirenRadioButton.isSelected() )
             message.append( "X1" );
@@ -968,7 +967,7 @@ public class MainPanel implements Initializable {
          else
             message.append( "R0" );
 
-         message.append( ":" );
+         message.append( "S1N1:" );
          if( isArduinoConnect )
             home.adjustCollective( message.toString() );
 
@@ -1178,7 +1177,7 @@ public class MainPanel implements Initializable {
             stage.setScene( new Scene( root, 400, 400 ) );
             stage.setResizable( false );
             stage.show();
-            firstStackPane.getScene().getWindow().hide();
+            commonBorderPane.getScene().getWindow().hide();
             if( isArduinoConnect )
                arduino.closeConnection();
          } catch( Exception e ) {
@@ -1594,7 +1593,8 @@ public class MainPanel implements Initializable {
    void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       unSelectAllTheme();
       ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
-      saveTheme();
+      changeTheme( ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
+      Users.getInstance().updateUsersTheme( loginUser, ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
    }
 
    public void unSelectAllTheme() {
@@ -1602,65 +1602,56 @@ public class MainPanel implements Initializable {
       lightThemeRadioButton.setSelected( false );
       smoothThemeRadioButton.setSelected( false );
       darkThemeRadioButton.setSelected( false );
-
-      settingThemeDarkImage.setVisible( false );
-      settingThemeLightImage.setVisible( false );
-      settingThemeSmoothImage.setVisible( false );
-      settingThemeCartoonImage.setVisible( false );
-   }
-
-   public void saveTheme() throws SQLException {
-      String themeName;
-      themeName = "";
-      if( darkThemeRadioButton.isSelected() )
-         themeName = "dark";
-      else if( lightThemeRadioButton.isSelected() )
-         themeName = "light";
-      else if( smoothThemeRadioButton.isSelected() )
-         themeName = "smooth";
-      else if( cartoonThemeRadioButton.isSelected() )
-         themeName = "cartoon";
-
-      changeTheme( themeName );
-      Users.getInstance().updateUsersTheme( loginUser, themeName );
-      userPreferenceUpdate( loginUser );
+      spaceThemeRadioButton.setSelected( false );
+      forestThemeRadioButton.setSelected( false );
    }
 
    void changeTheme( String themeName ) {
       String css;
       unSelectAllTheme();
 
-      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" ) || themeName.equals( "licht" ) ) {
+      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" )
+            || themeName.equals( "licht" ) || themeName.equals( "lıght" )
+            || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
-         settingThemeLightImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightTheme.png" ) ) );
       } else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
          darkThemeRadioButton.setSelected( true );
-         settingThemeDarkImage.setVisible( true );
-      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" ) || themeName.equals( "glatt" ) ) {
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/darkTheme.png" ) ) );
+      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" )
+            ||themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
-         settingThemeSmoothImage.setVisible( true );
-      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" ) || themeName.equals( "karikatur" ) ) {
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
+      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" )
+            || themeName.equals( "karikatur" ) || themeName.equals( "karıkatur" )
+            || themeName.equals( "çızgı fılm" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
          cartoonThemeRadioButton.setSelected( true );
-         settingThemeCartoonImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
+      } else if( themeName.equals( "forest" ) || themeName.equals( "orman" ) || themeName.equals( "wald" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_forest_theme.css" ).toExternalForm();
+         forestThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
+      } else if( themeName.equals( "uzay" ) || themeName.equals( "space" ) || themeName.equals( "platz" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
+         spaceThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
       } else
          css = "";
 
       try {
-         firstStackPane.getStylesheets().removeAll( firstStackPane.getStylesheets() );
-         firstStackPane.getStylesheets().add( css );
+         commonBorderPane.getStylesheets().removeAll( commonBorderPane.getStylesheets() );
+         commonBorderPane.getStylesheets().add( css );
       } catch( Exception e ) {
          e.printStackTrace();
       }
    }
 
    //settings ----language pane
-
    //language pane buttons
-
    @FXML
    void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException, IOException {
       String language;
@@ -1845,6 +1836,11 @@ public class MainPanel implements Initializable {
          permissionPaneGasToggle.setText( bundle.getString( "gasLang" ) );
          permissionPaneSirenToggle.setText( bundle.getString( "sirenLang" ) );
          aquariumSubMenuToggleButton.setText( bundle.getString( "airMotorLang" ) );
+         weatherCharacterWarningLabel.setText( bundle.getString( "latinCharacterWarningLang" ) );
+         spaceThemeRadioButton.setText( bundle.getString( "spaceThemeLang" ) );
+         createUserSpaceThemeOption.setText( bundle.getString( "spaceThemeLang" ) );
+         forestThemeRadioButton.setText( bundle.getString( "forestThemeLang" ) );
+         createUserForestThemeOption.setText( bundle.getString( "forestThemeLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -1968,6 +1964,8 @@ public class MainPanel implements Initializable {
                && !createUserFemaleOption.isSelected() )
                || ( !createUserDarkThemeOption.isSelected()
                && !createUserLightThemeOption.isSelected()
+               && !createUserForestThemeOption.isSelected()
+               && !createUserSpaceThemeOption.isSelected()
                && !createUserSmoothThemeOption.isSelected()
                && !createUserCartoonThemeOption.isSelected() )
                || ( !createUserEnglishOption.isSelected()
@@ -2021,11 +2019,15 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == createUserDarkThemeOption
             || event.getSource() == createUserLightThemeOption
             || event.getSource() == createUserSmoothThemeOption
+            || event.getSource() == createUserSpaceThemeOption
+            || event.getSource() == createUserForestThemeOption
             || event.getSource() == createUserCartoonThemeOption ) {
          createUserDarkThemeOption.setSelected( false );
          createUserLightThemeOption.setSelected( false );
          createUserSmoothThemeOption.setSelected( false );
          createUserCartoonThemeOption.setSelected( false );
+         createUserSpaceThemeOption.setSelected( false );
+         createUserForestThemeOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserTheme = ( JFXRadioButton ) ( event.getSource() );
       } else if( event.getSource() == createUserEnglishOption
@@ -2058,6 +2060,8 @@ public class MainPanel implements Initializable {
       createUserLightThemeOption.setSelected( false );
       createUserSmoothThemeOption.setSelected( false );
       createUserCartoonThemeOption.setSelected( false );
+      createUserForestThemeOption.setSelected( false );
+      createUserSpaceThemeOption.setSelected( false );
       createUserEnglishOption.setSelected( false );
       createUserGermanOption.setSelected( false );
       createUserTurkishOption.setSelected( false );
@@ -2109,7 +2113,7 @@ public class MainPanel implements Initializable {
                stage.setScene( new Scene( root, 400, 400 ) );
                stage.setResizable( false );
                stage.show();
-               firstStackPane.getScene().getWindow().hide();
+               commonBorderPane.getScene().getWindow().hide();
             } catch( Exception e ) {
                e.printStackTrace();
             }
@@ -2223,8 +2227,8 @@ public class MainPanel implements Initializable {
 
       audioClip.stop();
       audioClip = new AudioClip( this.getClass().getResource( "music/" + bundle.getString( "pathLang" ) + "volumeTryLang" + bundle.getString( "mp3Lang" ) ).toString() );
-      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
-      audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 200 );
+      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
+      audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 500 );
 
       modsSound = loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ) + volume;
       Users.getInstance().updateVolume( loginUser, modsSound );
@@ -2292,31 +2296,62 @@ public class MainPanel implements Initializable {
          settingWeatherSettingPane.setVisible( true );
          openHomeSetting();
          homeSettingWeatherButtonActive.setVisible( true );
-      } else if( event.getSource() == updateWeatherButton ) {
+      } else if( event.getSource() == updateWeatherButton
+            || event.getSource() == settingWeatherLocationTextField ) {
          if( settingWeatherLocationTextField.getText().length() > 0 ) {
-            try {
-               if( weatherForecast == null )
-                  weatherForecast = new WeatherForecast( loginUser.getLocation() );
-               else {
-                  weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
-                  weatherForecast.getWeatherCase();
+            weatherUpdateSpinner.setVisible( true );
+            updateWeatherButton.setVisible( false );
+            new Thread( new Runnable() {
+               @Override
+               public void run() {
+                  try {
+                     if( weatherForecast == null )
+                        weatherForecast = new WeatherForecast( loginUser.getLocation() );
+                     else {
+                        weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+                        weatherForecast.getWeatherCase();
+                     }
+                  } catch( IOException exception ) {
+                     settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     informationTime.setText( bundle.getString( "netConnectionLang" ) );
+                     try {
+                        Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                     } catch( SQLException sqlException ) {
+                     }
+                     backgroundSetup( "weather" );
+                  }
+                  Platform.runLater( new Runnable() {
+                     @Override
+                     public void run() {
+                        weatherUpdateSpinner.setVisible( false );
+                        if( weatherForecast.getLocation().length() == 0 ) {
+                           weatherCharacterWarningLabel.setVisible( true );
+                           settingWeatherForecastLabelValue.setText( "" );
+                           settingWeatherTemperatureLabelValue.setText( "°C" );
+                           settingWeatherHumidityLabelValue.setText( "" );
+                           settingWeatherWindLabelValue.setText( "" );
+                           informationTime.setText( "" );
+                           weatherCharacterWarningLabel.setVisible( true );
+                        } else {
+                           try {
+                              settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+                              settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+                              settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+                              settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+                              informationTime.setText( weatherForecast.getLocalTime() );
+                              Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                              backgroundSetup( weatherForecast.getWeather() );
+                           } catch( SQLException sqlException ) {
+                           }
+                        }
+                     }
+                  } );
                }
-               settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
-               settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
-               settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
-               settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
-               informationTime.setText( weatherForecast.getLocalTime() );
-               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-               backgroundSetup( weatherForecast.getWeather() );
-            } catch( IOException exception ) {
-               settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               informationTime.setText( bundle.getString( "netConnectionLang" ) );
-               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-               backgroundSetup( "weather" );
-            }
+            } ).start();
+
          } else {
             informationTime.setText( "Please enter the location" );
          }
@@ -2373,6 +2408,12 @@ public class MainPanel implements Initializable {
             CommonSettingData.getInstance().updateSelectedFishes( commonSetting, checkComboBox.getItems() );
          }
       }
+   }
+
+   @FXML
+   void onWeatherKeyPressed( KeyEvent event ) {
+      updateWeatherButton.setVisible( true );
+      weatherCharacterWarningLabel.setVisible( false );
    }
 
    /**

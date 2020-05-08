@@ -11,7 +11,7 @@ public class aquaPop extends Activity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.aqua_pop);
+        setContentView(R.layout.aquarium_screen);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
