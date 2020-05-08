@@ -33,14 +33,12 @@ public class WeatherForecast {
    public WeatherForecast( String location ) throws IOException {
       locationName = location;
       this.location = findLocationXY( location );
-      System.out.println( this.location );
       weather = "";
       wind = "";
       temperature = "";
       humidity = "";
       localTime = "";
       getWeatherCase();
-      System.out.println( weather );
    }
 
    //methods

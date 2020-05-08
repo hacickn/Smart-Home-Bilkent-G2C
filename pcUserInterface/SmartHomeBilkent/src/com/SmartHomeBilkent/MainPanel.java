@@ -42,7 +42,6 @@ import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
 import java.io.IOException;
-import java.net.NoRouteToHostException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -221,10 +220,7 @@ public class MainPanel implements Initializable {
    private JFXButton englishOption, germanOption,
          turkishOption;
    @FXML
-   private ImageView settingThemeDarkImage,
-         settingThemeLightImage,
-         settingThemeSmoothImage,
-         settingThemeCartoonImage;
+   private ImageView themeImage;
    @FXML
    private Label englishLabel, germanLabel,
          turkishLabel, themeTopLabel,
@@ -279,7 +275,8 @@ public class MainPanel implements Initializable {
          createUserSmoothThemeOption, createUserCartoonThemeOption,
          createUserEnglishOption, createUserTurkishOption,
          createUserGermanOption, createUserParentOption,
-         createUserChildOption, createUserElderOption;
+         createUserChildOption, createUserElderOption,
+         createUserSpaceThemeOption, createUserForestThemeOption;
    @FXML
    private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
          removeUserTextField;
@@ -1596,8 +1593,6 @@ public class MainPanel implements Initializable {
    void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       unSelectAllTheme();
       ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
-      System.out.println( ( ( JFXRadioButton ) event.getSource() ).getText());
-      //saveTheme();
       changeTheme( ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
       Users.getInstance().updateUsersTheme( loginUser, ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
    }
@@ -1609,11 +1604,6 @@ public class MainPanel implements Initializable {
       darkThemeRadioButton.setSelected( false );
       spaceThemeRadioButton.setSelected( false );
       forestThemeRadioButton.setSelected( false );
-
-      settingThemeDarkImage.setVisible( false );
-      settingThemeLightImage.setVisible( false );
-      settingThemeSmoothImage.setVisible( false );
-      settingThemeCartoonImage.setVisible( false );
    }
 
    void changeTheme( String themeName ) {
@@ -1625,30 +1615,30 @@ public class MainPanel implements Initializable {
             || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
-         settingThemeLightImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightTheme.png" ) ) );
       } else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
          darkThemeRadioButton.setSelected( true );
-         settingThemeDarkImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/darkTheme.png" ) ) );
       } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" )
             ||themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
-         settingThemeSmoothImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
       } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" )
             || themeName.equals( "karikatur" ) || themeName.equals( "karıkatur" )
             || themeName.equals( "çızgı fılm" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
          cartoonThemeRadioButton.setSelected( true );
-         settingThemeCartoonImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
       } else if( themeName.equals( "forest" ) || themeName.equals( "orman" ) || themeName.equals( "wald" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_forest_theme.css" ).toExternalForm();
          forestThemeRadioButton.setSelected( true );
-         //settingThemeCartoonImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
       } else if( themeName.equals( "uzay" ) || themeName.equals( "space" ) || themeName.equals( "platz" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
          spaceThemeRadioButton.setSelected( true );
-         //settingThemeCartoonImage.setVisible( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
       } else
          css = "";
 
@@ -1661,9 +1651,7 @@ public class MainPanel implements Initializable {
    }
 
    //settings ----language pane
-
    //language pane buttons
-
    @FXML
    void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException, IOException {
       String language;
@@ -1849,6 +1837,10 @@ public class MainPanel implements Initializable {
          permissionPaneSirenToggle.setText( bundle.getString( "sirenLang" ) );
          aquariumSubMenuToggleButton.setText( bundle.getString( "airMotorLang" ) );
          weatherCharacterWarningLabel.setText( bundle.getString( "latinCharacterWarningLang" ) );
+         spaceThemeRadioButton.setText( bundle.getString( "spaceThemeLang" ) );
+         createUserSpaceThemeOption.setText( bundle.getString( "spaceThemeLang" ) );
+         forestThemeRadioButton.setText( bundle.getString( "forestThemeLang" ) );
+         createUserForestThemeOption.setText( bundle.getString( "forestThemeLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -1972,6 +1964,8 @@ public class MainPanel implements Initializable {
                && !createUserFemaleOption.isSelected() )
                || ( !createUserDarkThemeOption.isSelected()
                && !createUserLightThemeOption.isSelected()
+               && !createUserForestThemeOption.isSelected()
+               && !createUserSpaceThemeOption.isSelected()
                && !createUserSmoothThemeOption.isSelected()
                && !createUserCartoonThemeOption.isSelected() )
                || ( !createUserEnglishOption.isSelected()
@@ -2025,11 +2019,15 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == createUserDarkThemeOption
             || event.getSource() == createUserLightThemeOption
             || event.getSource() == createUserSmoothThemeOption
+            || event.getSource() == createUserSpaceThemeOption
+            || event.getSource() == createUserForestThemeOption
             || event.getSource() == createUserCartoonThemeOption ) {
          createUserDarkThemeOption.setSelected( false );
          createUserLightThemeOption.setSelected( false );
          createUserSmoothThemeOption.setSelected( false );
          createUserCartoonThemeOption.setSelected( false );
+         createUserSpaceThemeOption.setSelected( false );
+         createUserForestThemeOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserTheme = ( JFXRadioButton ) ( event.getSource() );
       } else if( event.getSource() == createUserEnglishOption
@@ -2062,6 +2060,8 @@ public class MainPanel implements Initializable {
       createUserLightThemeOption.setSelected( false );
       createUserSmoothThemeOption.setSelected( false );
       createUserCartoonThemeOption.setSelected( false );
+      createUserForestThemeOption.setSelected( false );
+      createUserSpaceThemeOption.setSelected( false );
       createUserEnglishOption.setSelected( false );
       createUserGermanOption.setSelected( false );
       createUserTurkishOption.setSelected( false );
