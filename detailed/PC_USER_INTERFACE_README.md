@@ -44,14 +44,18 @@ any location in the world in lightweight JSON format
 2.3) Sound mode can be closed or opended.
 2.4) Each person can adjust sound mode volume level.
 2.5) There are 3 Language for both sound and text modes.
-2.6) Each person can get weather information, no matter where they want to learn about which part of the world.(Internet connection is necessity)
+2.6) Each person can get weather information, no matter where they want to learn 
+about which part of the world.(Internet connection is necessity)
 2.7) Each person has personal information card which can be updated by the users.
 2.8) Each person can see other users' preferences.
-2.9) Elder users have more simple and understandable user interface(bigger buttons, bigger texts).
-3) Parents can restrict access of child users to some home features(Such as opening electricity, notification settings).
+2.9) Elder users have more simple and understandable user interface(bigger
+buttons, bigger texts).
+3) Parents can restrict access of child users to some home features(Such as
+opening electricity, notification settings).
 4) Notification settings can adjust by only parents.
 5) Parents can remove profile of childeren with his password. 
-5.1) Parents also can remove profiles of other parents and elders with their password.
+5.1) Parents also can remove profiles of other parents and elders with their
+password.
 5.2) Childeren can remove only their profiles.
 5.3) If program has only one parent, No one can delete this profile.
 6) In emergency situation, users can regulate visual and auditory warnings.
@@ -69,15 +73,24 @@ any location in the world in lightweight JSON format
 7.11) Open/close external siren.
 7.12) They can set all of these features(7.1-7.12) in one go, or seperately.
 7.13) Set time of embedded system.
-7.14) Make all aquiarum settings to automatic(feeding time, water exchange day and time, air motor work amount and start time).
+7.14) Make all aquiarum settings to automatic(feeding time, water exchange
+day and time, air motor work amount and start time).
 8) In user interface, If program is not connected status(*), users can;
 8.1) See their electricity opening time each day on the graph(hours/day).
 8.2) See their gas opening time each day on the graph(hours/day).
 8.3) See their green house average of each day on the graph.
 8.4) Use weather service.
 8.5) Change personal information
-9) Interface gives chance to choose which port we use when connecting to embedded system.  
-(*)= In this demo, people can experience without connection. Program will not five any error because we prevent it. However, In logic way, users should not able to use this features(7.1-7.14). In order to experience all user interface, we use this way. However, if people want to experince all things working, they have to use simulation program( proteus ) and arduino IDE. If they setup them in their computers, program also can connected and work correctly. As a result, user can use this interface without error when both connecting or not connecting. 
+9) Interface gives chance to choose which port we use when connecting to 
+embedded system.  
+(*)= In this demo, people can experience without connection. Program will
+not five any error because we prevent it. However, In logic way, users 
+should not able to use this features(7.1-7.14). In order to experience all
+user interface, we use this way. However, if people want to experince all
+things working, they have to use simulation program( proteus ) and arduino
+IDE. If they setup them in their computers, program also can connected and 
+work correctly. As a result, user can use this interface without error when
+both connecting or not connecting. 
 ```
 ##### TECHNICAL DETAILS
 ```
