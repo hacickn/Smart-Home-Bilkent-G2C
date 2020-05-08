@@ -395,7 +395,7 @@
                         </BorderPane>
                     </children>
                 </StackPane>
-                <AnchorPane fx:id="userProfileStackPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
+                <AnchorPane fx:id="userProfileStackPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0">
                     <children>
                         <Pane fx:id="userProfilePane" prefHeight="550.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="userInfoPane">
                             <children>
@@ -562,7 +562,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
+                <AnchorPane fx:id="settingAnchorPane" disable="true" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" opacity="0.0" prefHeight="550.0" prefWidth="700.0">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" prefHeight="112.0" prefWidth="700.0">
                             <children>
