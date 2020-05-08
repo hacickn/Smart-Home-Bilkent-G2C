@@ -1,5 +1,9 @@
 package com.SmartHomeBilkent;
 
+import animatefx.animation.FadeInLeftBig;
+import animatefx.animation.FadeInRightBig;
+import animatefx.animation.FadeOutLeftBig;
+import animatefx.animation.FadeOutRightBig;
 import com.SmartHomeBilkent.extra.connection.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
 import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
@@ -756,16 +760,11 @@ public class MainPanel extends Application implements Initializable {
    //it opens menu
    void openMenuPane() {
       menuButtonActive.setVisible( true );
-      menuStackPane.setVisible( true );
       menuStackPane.setDisable( false );
-
-      FadeTransition fadeTransition = new FadeTransition();
-      fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-      fadeTransition.setNode( menuStackPane );
-      fadeTransition.setFromValue( 0 );
-      fadeTransition.setToValue( 0.95 );
-      fadeTransition.play();
-
+      if( userProfileButtonActive.isVisible() )
+         new FadeInRightBig( menuStackPane ).play();
+      else if( settingsButtonActive.isVisible() )
+         new FadeInLeftBig( menuStackPane ).play();
       closeUserProfilePane();
       closeSettingsPane();
    }
@@ -773,32 +772,21 @@ public class MainPanel extends Application implements Initializable {
    //it closes menu
    void closeMenuPane() {
       if( menuButtonActive.isVisible() ) {
-         FadeTransition fadeTransition = new FadeTransition();
-         fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-         fadeTransition.setNode( menuStackPane );
-         fadeTransition.setFromValue( menuStackPane.getOpacity() );
-         fadeTransition.setToValue( 0 );
-         fadeTransition.play();
+         if( settingsButtonActive.isVisible() )
+            new FadeOutLeftBig( menuStackPane ).play();
+         else if( userProfileButtonActive.isVisible() )
+            new FadeOutRightBig( menuStackPane ).play();
       }
-
       menuButtonActive.setVisible( false );
-      menuStackPane.setVisible( false );
       menuStackPane.setDisable( true );
    }
 
    //it opens setting
    void openSettingsPane() {
       settingsButtonActive.setVisible( true );
-      settingAnchorPane.setVisible( true );
       settingAnchorPane.setDisable( false );
       openApplicationPanes();
-      FadeTransition fadeTransition = new FadeTransition();
-      fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-      fadeTransition.setNode( settingAnchorPane );
-      fadeTransition.setFromValue( 0 );
-      fadeTransition.setToValue( 0.95 );
-      fadeTransition.play();
-
+      new FadeInRightBig( settingAnchorPane ).play();
       closeUserProfilePane();
       closeMenuPane();
    }
@@ -806,16 +794,9 @@ public class MainPanel extends Application implements Initializable {
    //it closes setting
    void closeSettingsPane() {
       if( settingsButtonActive.isVisible() ) {
-         FadeTransition fadeTransition = new FadeTransition();
-         fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-         fadeTransition.setNode( settingAnchorPane );
-         fadeTransition.setFromValue( settingAnchorPane.getOpacity() );
-         fadeTransition.setToValue( 0 );
-         fadeTransition.play();
+         new FadeOutRightBig( settingAnchorPane).play();
       }
-
       settingsButtonActive.setVisible( false );
-      settingAnchorPane.setVisible( false );
       settingAnchorPane.setDisable( true );
       closeApplicationSettingPane();
       closeAllHomeSetting();
@@ -826,35 +807,19 @@ public class MainPanel extends Application implements Initializable {
    //it opens user profile
    void openUserProfilePane() {
       userProfileButtonActive.setVisible( true );
-      userProfileStackPane.setVisible( true );
       userProfileStackPane.setDisable( false );
-
-      FadeTransition fadeTransition = new FadeTransition();
-      fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-      fadeTransition.setNode( userProfileStackPane );
-      fadeTransition.setFromValue( 0 );
-      fadeTransition.setToValue( 0.95 );
-      fadeTransition.play();
-
+      new FadeInLeftBig( userProfileStackPane ).play();
       closeSettingsPane();
       closeMenuPane();
    }
 
    //it closes user profile
    void closeUserProfilePane() {
-      if( userProfileButton.isVisible() ) {
-         FadeTransition fadeTransition = new FadeTransition();
-         fadeTransition.setDuration( Duration.seconds( 0.5 ) );
-         fadeTransition.setNode( userProfileStackPane );
-         fadeTransition.setFromValue( userProfileStackPane.getOpacity() );
-         fadeTransition.setToValue( 0 );
-         fadeTransition.play();
+      if( userProfileButtonActive.isVisible() ) {
+         new FadeOutLeftBig( userProfileStackPane).play();
       }
-
       userProfileButtonActive.setVisible( false );
-      userProfileStackPane.setVisible( false );
       userProfileStackPane.setDisable( true );
-
       toGoBackUserProfile();
    }
 

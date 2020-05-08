@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent;
 
+import animatefx.animation.FadeIn;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.jfoenix.controls.JFXButton;
@@ -85,6 +86,7 @@ public class LoginPanel extends Application implements Initializable {
                               stage[ 0 ].setResizable( true );
                               stage[ 0 ].show();
                               userNameField.getScene().getWindow().hide();
+                              new FadeIn( root ).play();
                            }
                         } );
 

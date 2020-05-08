@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent;
 
+import animatefx.animation.FadeIn;
 import com.SmartHomeBilkent.extra.dataBase.DatabaseConnection;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import javafx.application.Application;
@@ -33,7 +34,7 @@ public class Main extends Application {
             System.exit( 0 );
          }
       } );
-
+      new FadeIn(root).play();
    }
 
    @Override
