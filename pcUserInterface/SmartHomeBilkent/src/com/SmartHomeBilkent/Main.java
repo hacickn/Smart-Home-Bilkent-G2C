@@ -3,10 +3,13 @@ package com.SmartHomeBilkent;
 import com.SmartHomeBilkent.extra.dataBase.DatabaseConnection;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * a Main class
@@ -23,6 +26,14 @@ public class Main extends Application {
       primaryStage.setScene( new Scene( root, 400, 400 ) );
       primaryStage.setResizable( false );
       primaryStage.show();
+      primaryStage.setOnCloseRequest( new EventHandler< WindowEvent >() {
+         @Override
+         public void handle( WindowEvent event ) {
+            Platform.exit();
+            System.exit( 0 );
+         }
+      } );
+
    }
 
    @Override

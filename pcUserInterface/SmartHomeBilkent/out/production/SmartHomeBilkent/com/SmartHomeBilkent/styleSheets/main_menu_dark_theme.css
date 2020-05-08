@@ -570,8 +570,18 @@
 }
 .settingTopPaneLabels{
     -fx-font-family:  'Oswald', sans-serif;
-     -fx-text-fill: #b85c00;
+     -fx-text-fill: #003366;
      -fx-font-size: 14px;
+}
+.topPaneLabels{
+    -fx-font-family:  'Patrick Hand', cursive;
+     -fx-text-fill: #b85c00;
+     -fx-font-size: 16px;
+}
+.timeLabel{
+    -fx-font-family:  'Patrick Hand', cursive;
+     -fx-text-fill: #b85c00;
+     -fx-font-size: 20px;
 }
 .deutsch{
            -fx-background-image: url("images/germany.png");

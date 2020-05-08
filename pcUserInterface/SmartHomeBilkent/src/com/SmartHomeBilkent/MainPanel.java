@@ -14,8 +14,10 @@ import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,6 +40,7 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
@@ -57,7 +60,7 @@ import java.util.Scanner;
  * @author Hacı Çakın
  * @version 29.04.2020
  */
-public class MainPanel implements Initializable {
+public class MainPanel extends Application implements Initializable {
 
    //properties
    /**
@@ -131,7 +134,8 @@ public class MainPanel implements Initializable {
          waterSubPaneLabelActive, waterSubPaneLabelPassive,
          gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive,
          menuBulkChangeSubLabel, timeConfigurationLabel,
-         mainMenuHomeLabel, mainMenuWeatherLabel;
+         mainMenuHomeLabel, mainMenuWeatherLabel,
+         timeLabel;
    @FXML
    private ImageView weatherImage, tempImage, weatherForecastImage;
    @FXML
@@ -399,19 +403,19 @@ public class MainPanel implements Initializable {
    private String[] permissions;
    private CommonSetting commonSetting;
    private String flowAquariumSetting;
-
+   private Thread thread;
+   private boolean exit;
 
    //initialize method(it runs before the program start to run)
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
+      exit = false;
       userPreferenceUpdate( getLoginUser() );
       ElectricityUsage.getInstance().getElectricityUsage();
       GasUsage.getInstance().getGasUsage();
       GreenHouseData.getInstance().getGreenHouseValues();
       FishSpecies.getInstance().getFishes();
       CommonSettingData.getInstance().getAllHome();
-
-
       GUIUpdate();
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable( true );
@@ -423,6 +427,14 @@ public class MainPanel implements Initializable {
       //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
       createEmergencyAnimation();
+   }
+
+   @Override
+   public void start( Stage primaryStage ) {
+      primaryStage.setOnCloseRequest( event -> {
+         Platform.exit();
+         System.exit( 0 );
+      } );
    }
 
    public void GUIUpdate() {
@@ -507,7 +519,28 @@ public class MainPanel implements Initializable {
          backgroundSetup( "weather" );
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
+      thread = new Thread( new Runnable() {
+         @Override
+         public void run() {
+            while( !exit ){
+               Platform.runLater( new Runnable() {
+                  @Override
+                  public void run() {
+                     timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
+                           + "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) );
+                  }
+               } );
+               try {
+                  Thread.sleep( 1000 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         }
+      } );
+      thread.start();
    }
+
 
    void userPreferenceUpdate( User user ) {
 
@@ -639,6 +672,7 @@ public class MainPanel implements Initializable {
          openSettingsPane();
       } else if( event.getSource() == logoutButton ) {
          Platform.exit();
+         exit = true;
          if( isArduinoConnect )
             home.getArduino().closeConnection();
       } else if( event.getSource() == helpButton ) {
@@ -2496,4 +2530,5 @@ public class MainPanel implements Initializable {
       homeSettingSubPane.setVisible( false );
       homeSettingButtonActive.setVisible( false );
    }
+
 }

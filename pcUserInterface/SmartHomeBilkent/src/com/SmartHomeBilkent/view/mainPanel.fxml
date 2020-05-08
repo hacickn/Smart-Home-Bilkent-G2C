@@ -1306,6 +1306,7 @@
                         </font>
                     </JFXButton>
                <JFXButton fx:id="helpButton" layoutX="723.0" layoutY="25.0" onAction="#commonButtonsOnAction" prefHeight="70.0" prefWidth="70.0" styleClass="helpButton" textFill="TRANSPARENT" />
+               <Label fx:id="timeLabel" layoutX="14.0" layoutY="70.0" prefHeight="30.0" prefWidth="329.0" styleClass="timeLabel" />
                 </children>
             </AnchorPane>
         </Pane>

@@ -6,7 +6,9 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +19,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.awt.*;
 import java.net.URL;
@@ -28,7 +31,7 @@ import java.util.ResourceBundle;
  * @author Hacı Çakın
  * @version 28.04.2020
  */
-public class LoginPanel implements Initializable {
+public class LoginPanel extends Application implements Initializable {
 
    //properties
    @FXML
@@ -139,4 +142,17 @@ public class LoginPanel implements Initializable {
             10
       );
    }
+
+
+   @Override
+   public void start( Stage primaryStage ) throws Exception {
+      primaryStage.setOnCloseRequest( new EventHandler< WindowEvent >() {
+         @Override
+         public void handle( WindowEvent event ) {
+            Platform.exit();
+            System.exit( 0 );
+         }
+      } );
+   }
+
 }
