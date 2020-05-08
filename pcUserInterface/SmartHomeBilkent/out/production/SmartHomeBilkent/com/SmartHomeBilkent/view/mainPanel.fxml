@@ -42,17 +42,17 @@
                 <JFXButton fx:id="userProfileButtonActive" buttonType="RAISED" layoutX="100.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="userProfileButtonBoyActive" text="userProfileButtonActive" textFill="#ffffff00" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
                 <JFXButton fx:id="menuButton" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onAction="#commonButtonsOnAction" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="menuButton" text="menuButton" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
                 <JFXButton fx:id="menuButtonActive" layoutX="365.0" layoutY="35.0" maxHeight="140.0" maxWidth="140.0" minHeight="52.75" minWidth="52.75" onMouseEntered="#commonButtonsOnMovement" onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0" styleClass="menuButtonActive" text="menuButtonActive" textFill="#ffffff00" AnchorPane.topAnchor="35.0" />
-                <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="settingTopPaneLabels" text="USER PROFILE" visible="false">
+                <Label fx:id="menuUserProfileLabel" alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="22.0" prefWidth="255.0" styleClass="topPaneLabels" text="USER PROFILE" visible="false">
                     <font>
                         <Font name="Arial Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label fx:id="menuMenuLabel" alignment="CENTER" layoutX="294.0" layoutY="105.0" prefHeight="22.0" prefWidth="213.0" styleClass="settingTopPaneLabels" text="MENU" visible="false">
+                <Label fx:id="menuMenuLabel" alignment="CENTER" layoutX="294.0" layoutY="105.0" prefHeight="22.0" prefWidth="213.0" styleClass="topPaneLabels" text="MENU" visible="false">
                     <font>
                         <Font name="Arial Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label fx:id="menuSettingLabel" alignment="CENTER" layoutX="574.0" layoutY="105.0" prefHeight="22.0" prefWidth="182.0" styleClass="settingTopPaneLabels" text="SETTINGS" visible="false" AnchorPane.rightAnchor="44.0">
+                <Label fx:id="menuSettingLabel" alignment="CENTER" layoutX="574.0" layoutY="105.0" prefHeight="22.0" prefWidth="182.0" styleClass="topPaneLabels" text="SETTINGS" visible="false" AnchorPane.rightAnchor="44.0">
                     <font>
                         <Font name="Arial Bold" size="13.0" />
                     </font>
@@ -60,7 +60,7 @@
             </AnchorPane>
 
             <AnchorPane layoutX="50.0" layoutY="136.0" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
-                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0" visible="false">
+                <StackPane fx:id="menuStackPane" maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0">
                     <children>
                         <BorderPane fx:id="menuBorderPane" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 150; -fx-border-radius: 150; -fx-border-width: 4;" styleClass="menuBorderPane">
                             <left>
@@ -562,7 +562,7 @@
                         </Pane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0">
+                <AnchorPane fx:id="settingAnchorPane" maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" visible="false">
                     <children>
                         <AnchorPane fx:id="settingSubAnchorTop" prefHeight="112.0" prefWidth="700.0">
                             <children>
@@ -641,46 +641,56 @@
                                                 <Font name="Agency FB" size="36.0" />
                                             </font>
                                         </Label>
-                                        <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="51.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
+                                        <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="50.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" selected="true" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="201.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="LIGHT ">
+                                        <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="200.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="LIGHT ">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="351.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
+                                        <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="350.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="501.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                                        <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="500.0" layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="CARTOON">
                                             <font>
                                                 <Font name="Agency FB" size="20.0" />
                                             </font>
                                         </JFXRadioButton>
-                                        <ImageView fx:id="settingThemeDarkImage" fitHeight="312.0" fitWidth="240.0" layoutX="231.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="settingThemeDarkImage" fitHeight="312.0" fitWidth="220.0" layoutX="241.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../styleSheets/images/darkMode.PNG" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="settingThemeLightImage" fitHeight="312.0" fitWidth="240.0" layoutX="231.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                        <ImageView fx:id="settingThemeLightImage" fitHeight="312.0" fitWidth="220.0" layoutX="241.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                             <image>
                                                 <Image url="@../styleSheets/images/lightMode.PNG" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="settingThemeSmoothImage" fitHeight="312.0" fitWidth="240.0" layoutX="231.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                        <ImageView fx:id="settingThemeSmoothImage" fitHeight="312.0" fitWidth="220.0" layoutX="241.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                             <image>
                                                 <Image url="@../styleSheets/images/smoothMode.PNG" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="settingThemeCartoonImage" fitHeight="312.0" fitWidth="240.0" layoutX="231.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                        <ImageView fx:id="settingThemeCartoonImage" fitHeight="312.0" fitWidth="220.0" layoutX="241.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                             <image>
                                                 <Image url="@../styleSheets/images/cartoonMode.PNG" />
                                             </image>
                                         </ImageView>
+                              <JFXRadioButton fx:id="spaceThemeRadioButton" layoutX="50.0" layoutY="97.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="SPACE">
+                                 <font>
+                                    <Font name="Agency FB" size="20.0" />
+                                 </font>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="forestThemeRadioButton" layoutX="500.0" layoutY="97.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0" style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton" text="FOREST">
+                                 <font>
+                                    <Font name="Agency FB" size="20.0" />
+                                 </font>
+                              </JFXRadioButton>
                                     </children>
                                 </Pane>
                                 <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
@@ -910,7 +920,7 @@
                                         </LineChart>
                                     </children>
                                 </Pane>
-                                <Pane fx:id="settingWeatherSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane">
+                                <Pane fx:id="settingWeatherSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="settingSubPane" visible="false">
                                     <children>
                                         <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0" fitWidth="700.0" opacity="0.6" pickOnBounds="true">
                                             <image>

@@ -214,7 +214,8 @@ public class MainPanel implements Initializable {
    private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
    @FXML
    private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
-         smoothThemeRadioButton, cartoonThemeRadioButton;
+         smoothThemeRadioButton, cartoonThemeRadioButton,
+         spaceThemeRadioButton, forestThemeRadioButton;
 
    @FXML
    private JFXButton englishOption, germanOption,
@@ -536,19 +537,7 @@ public class MainPanel implements Initializable {
          userInfoGirlImage.setVisible( true );
       }
       userNameTextField.setText( user.getUserName() );
-
-      if( loginUser.getPreferredTheme().equals( "cartoon" ) || loginUser.getPreferredTheme().equals( "karıkatur" )
-            || loginUser.getPreferredTheme().equals( "çızgı fılm" ) ) {
-         changeTheme( "cartoon" );
-      } else if( loginUser.getPreferredTheme().equals( "light" ) || loginUser.getPreferredTheme().equals( "lıght" )
-            || loginUser.getPreferredTheme().equals( "aydınlık" ) || loginUser.getPreferredTheme().equals( "lıcht" ) ) {
-         changeTheme( "light" );
-      } else if( loginUser.getPreferredTheme().equals( "smooth" ) || loginUser.getPreferredTheme().equals( "puruzsuz" )
-            || loginUser.getPreferredTheme().equals( "glatt" ) ) {
-         changeTheme( "smooth" );
-      } else {
-         changeTheme( "dark" );
-      }
+      changeTheme( loginUser.getPreferredTheme().toLowerCase() );
 
       unSelectAllLanguage();
 
@@ -1607,7 +1596,10 @@ public class MainPanel implements Initializable {
    void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       unSelectAllTheme();
       ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
-      saveTheme();
+      System.out.println( ( ( JFXRadioButton ) event.getSource() ).getText());
+      //saveTheme();
+      changeTheme( ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
+      Users.getInstance().updateUsersTheme( loginUser, ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
    }
 
    public void unSelectAllTheme() {
@@ -1615,6 +1607,8 @@ public class MainPanel implements Initializable {
       lightThemeRadioButton.setSelected( false );
       smoothThemeRadioButton.setSelected( false );
       darkThemeRadioButton.setSelected( false );
+      spaceThemeRadioButton.setSelected( false );
+      forestThemeRadioButton.setSelected( false );
 
       settingThemeDarkImage.setVisible( false );
       settingThemeLightImage.setVisible( false );
@@ -1622,28 +1616,13 @@ public class MainPanel implements Initializable {
       settingThemeCartoonImage.setVisible( false );
    }
 
-   public void saveTheme() throws SQLException {
-      String themeName;
-      themeName = "";
-      if( darkThemeRadioButton.isSelected() )
-         themeName = "dark";
-      else if( lightThemeRadioButton.isSelected() )
-         themeName = "light";
-      else if( smoothThemeRadioButton.isSelected() )
-         themeName = "smooth";
-      else if( cartoonThemeRadioButton.isSelected() )
-         themeName = "cartoon";
-
-      changeTheme( themeName );
-      Users.getInstance().updateUsersTheme( loginUser, themeName );
-      userPreferenceUpdate( loginUser );
-   }
-
    void changeTheme( String themeName ) {
       String css;
       unSelectAllTheme();
 
-      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" ) || themeName.equals( "licht" ) ) {
+      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" )
+            || themeName.equals( "licht" ) || themeName.equals( "lıght" )
+            || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
          settingThemeLightImage.setVisible( true );
@@ -1651,14 +1630,25 @@ public class MainPanel implements Initializable {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
          darkThemeRadioButton.setSelected( true );
          settingThemeDarkImage.setVisible( true );
-      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" ) || themeName.equals( "glatt" ) ) {
+      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" )
+            ||themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
          settingThemeSmoothImage.setVisible( true );
-      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" ) || themeName.equals( "karikatur" ) ) {
+      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" )
+            || themeName.equals( "karikatur" ) || themeName.equals( "karıkatur" )
+            || themeName.equals( "çızgı fılm" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
          cartoonThemeRadioButton.setSelected( true );
          settingThemeCartoonImage.setVisible( true );
+      } else if( themeName.equals( "forest" ) || themeName.equals( "orman" ) || themeName.equals( "wald" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_forest_theme.css" ).toExternalForm();
+         forestThemeRadioButton.setSelected( true );
+         //settingThemeCartoonImage.setVisible( true );
+      } else if( themeName.equals( "uzay" ) || themeName.equals( "space" ) || themeName.equals( "platz" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
+         spaceThemeRadioButton.setSelected( true );
+         //settingThemeCartoonImage.setVisible( true );
       } else
          css = "";
 
