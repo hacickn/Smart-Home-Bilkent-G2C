@@ -1,9 +1,6 @@
 package com.SmartHomeBilkent;
 
-import animatefx.animation.FadeInLeftBig;
-import animatefx.animation.FadeInRightBig;
-import animatefx.animation.FadeOutLeftBig;
-import animatefx.animation.FadeOutRightBig;
+import animatefx.animation.*;
 import com.SmartHomeBilkent.extra.connection.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
 import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
@@ -16,12 +13,10 @@ import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -44,7 +39,6 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
@@ -526,7 +520,7 @@ public class MainPanel extends Application implements Initializable {
       thread = new Thread( new Runnable() {
          @Override
          public void run() {
-            while( !exit ){
+            while( !exit ) {
                Platform.runLater( new Runnable() {
                   @Override
                   public void run() {
@@ -794,7 +788,7 @@ public class MainPanel extends Application implements Initializable {
    //it closes setting
    void closeSettingsPane() {
       if( settingsButtonActive.isVisible() ) {
-         new FadeOutRightBig( settingAnchorPane).play();
+         new FadeOutRightBig( settingAnchorPane ).play();
       }
       settingsButtonActive.setVisible( false );
       settingAnchorPane.setDisable( true );
@@ -816,7 +810,7 @@ public class MainPanel extends Application implements Initializable {
    //it closes user profile
    void closeUserProfilePane() {
       if( userProfileButtonActive.isVisible() ) {
-         new FadeOutLeftBig( userProfileStackPane).play();
+         new FadeOutLeftBig( userProfileStackPane ).play();
       }
       userProfileButtonActive.setVisible( false );
       userProfileStackPane.setDisable( true );
@@ -829,14 +823,12 @@ public class MainPanel extends Application implements Initializable {
    @FXML
    void goToSettingFromMenuView( ActionEvent event ) {
       if( event.getSource() == elecSubMenuButtonPassive || event.getSource() == elecSubMenuButtonActive ) {
-         closeMenuPane();
          openSettingsPane();
          closeApplicationSettingPane();
          openHomeSettingPane();
          settingElecSettingPane.setVisible( true );
          homeSettingElecButtonActive.setVisible( true );
       } else if( event.getSource() == gasSubMenuButtonPassive || event.getSource() == gasSubMenuButtonActive ) {
-         closeMenuPane();
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -844,7 +836,6 @@ public class MainPanel extends Application implements Initializable {
          settingGasSettingPane.setVisible( true );
          homeSettingGasButtonActive.setVisible( true );
       } else if( event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
-         closeMenuPane();
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -852,7 +843,6 @@ public class MainPanel extends Application implements Initializable {
          settingAquSettingPane.setVisible( true );
          homeSettingAquButtonActive.setVisible( true );
       } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
-         closeMenuPane();
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -860,7 +850,6 @@ public class MainPanel extends Application implements Initializable {
          settingGreenHouseSettingPane.setVisible( true );
          homeSettingGreenHouseButtonActive.setVisible( true );
       } else if( event.getSource() == weatherButton ) {
-         closeMenuPane();
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -868,7 +857,6 @@ public class MainPanel extends Application implements Initializable {
          settingWeatherSettingPane.setVisible( true );
          homeSettingWeatherButtonActive.setVisible( true );
       } else if( event.getSource() == menuConnectionButton ) {
-         closeMenuPane();
          openSettingsPane();
          closeAllApplicationSettingSubPanes();
          openSmartHomeConnectionSetting();
@@ -882,30 +870,38 @@ public class MainPanel extends Application implements Initializable {
       if( event.getSource() == menuElecButton ) {
          closeAllMenuPane();
          menuElecPane.setVisible( true );
+         new FadeIn( menuElecPane ).play();
       } else if( event.getSource() == menuGasButton ) {
          closeAllMenuPane();
          menuGasPane.setVisible( true );
+         new FadeIn( menuGasPane ).play();
       } else if( event.getSource() == menuAquariumButton ) {
          closeAllMenuPane();
          menuAquariumPane.setVisible( true );
+         new FadeIn( menuAquariumPane ).play();
       } else if( event.getSource() == menuGreenHouseButton ) {
          closeAllMenuPane();
          menuGreenHousePane.setVisible( true );
+         new FadeIn( menuGreenHousePane ).play();
       } else if( event.getSource() == menuWaterButton ) {
          closeAllMenuPane();
          menuWaterPane.setVisible( true );
+         new FadeIn( menuWaterPane ).play();
       } else if( event.getSource() == menuGardenLightButton ) {
          closeAllMenuPane();
          menuGardenLightPane.setVisible( true );
+         new FadeIn( menuGardenLightPane ).play();
       } else if( event.getSource() == doorButton ) {
          if( isArduinoConnect )
             home.getDoor().open( true );
       } else if( event.getSource() == menuBulkChange ) {
          closeAllMenuPane();
          menuBulkChangePane.setVisible( true );
+         new FadeIn( menuBulkChangePane ).play();
       } else if( event.getSource() == menuTimeConfigurationButton ) {
          closeAllMenuPane();
          menuTimeConfigurationPane.setVisible( true );
+         new FadeIn( menuTimeConfigurationPane ).play();
       } else if( event.getSource() == bulkChangesSaveButton ) {
          StringBuilder message;
          message = new StringBuilder();
@@ -1611,7 +1607,7 @@ public class MainPanel extends Application implements Initializable {
 
       if( themeName.equals( "light" ) || themeName.equals( "aydınlık" )
             || themeName.equals( "licht" ) || themeName.equals( "lıght" )
-            || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" )) {
+            || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightTheme.png" ) ) );
@@ -1620,7 +1616,7 @@ public class MainPanel extends Application implements Initializable {
          darkThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/darkTheme.png" ) ) );
       } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" )
-            ||themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
+            || themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
