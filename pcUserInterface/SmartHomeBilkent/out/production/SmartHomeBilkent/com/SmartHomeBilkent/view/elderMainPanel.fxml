@@ -6,6 +6,9 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -18,14 +21,14 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../styleSheets/elderMainPanelLabel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.ElderMainPanel">
    <children>
       <Line endX="800.0000610351562" endY="130.49998474121094" startY="130.5" />
-      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger" onMouseMoved="#clock" prefHeight="600.0" prefWidth="800.0">
+      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger"  prefHeight="600.0" prefWidth="800.0">
          <children>
             <Label fx:id="dayMessage" layoutX="26.0" layoutY="22.0" prefHeight="87.0" prefWidth="452.0" text="Good morning, Metehan!" textFill="#ff5d00">
                <font>
                   <Font name="Microsoft JhengHei Light" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="time" alignment="CENTER" layoutX="495.0" layoutY="34.0" prefHeight="64.0" prefWidth="291.0" text="12.30    03.04.2020" textFill="#ff5d00">
+            <Label fx:id="time" layoutX="495.0" layoutY="34.0" prefHeight="64.0" prefWidth="291.0" textFill="#ff5d00">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
@@ -101,12 +104,13 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="electricityPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
+                  <JFXButton fx:id="electricityPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                   <ImageView fx:id="electricityPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../styleSheets/imagesElder/arrows02.png" />
                      </image>
                   </ImageView>
+                  <JFXButton fx:id="electricityPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="58.0" prefWidth="58.0" />
                </children>
             </Pane>
             <Label fx:id="electricityLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="301.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Electricity" textFill="WHITE" visible="false">
@@ -258,7 +262,7 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="houseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+            <Label fx:id="houseMenuFirstLabelElder1" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
                <font>
                   <Font name="Microsoft YaHei Light" size="36.0" />
                </font>
@@ -271,7 +275,7 @@
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </JFXButton>
-            <Label fx:id="applicationMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+            <Label fx:id="applicationMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in application settings." textFill="#ff3e30">
                <font>
                   <Font name="Microsoft YaHei Light" size="36.0" />
                </font>
@@ -281,7 +285,7 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <JFXButton fx:id="languageSettingsElderButton" layoutX="300.0" layoutY="225.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
+            <JFXButton fx:id="languageSettingsElderButton" layoutX="300.0" layoutY="225.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
             <Label fx:id="languageSettingsElderLabel" alignment="CENTER" disable="true" layoutX="300.0" layoutY="367.0" opacity="0.8" prefHeight="58.0" prefWidth="200.0" text="Language" textFill="WHITE" visible="false">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
@@ -539,12 +543,13 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="greenhousePanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
+                  <JFXButton fx:id="greenhousePanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                   <ImageView fx:id="greenhousePanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../styleSheets/imagesElder/arrows02.png" />
                      </image>
                   </ImageView>
+                  <JFXButton fx:id="greenhousePanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
                </children>
             </Pane>
             <Label id="lightsLabelElder" fx:id="greenhouseLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="518.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Greenhouse" textFill="WHITE" visible="false">
@@ -572,12 +577,13 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="gasPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
+                  <JFXButton fx:id="gasPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                   <ImageView fx:id="gasPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../styleSheets/imagesElder/arrows02.png" />
                      </image>
                   </ImageView>
+                  <JFXButton fx:id="gasPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
                </children>
             </Pane>
             <Label fx:id="gasLabelElder" alignment="CENTER" disable="true" layoutX="480.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Gas Control" textFill="WHITE" visible="false">
@@ -654,7 +660,7 @@
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </JFXButton>
-            <Label fx:id="aquariumMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+            <Label fx:id="aquariumMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
                <font>
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
@@ -686,6 +692,160 @@
             <JFXTimePicker fx:id="dailyAirEngineRunTimeandStartTimeTimePicker" layoutX="629.0" layoutY="399.0" />
             <JFXButton fx:id="aquariumSaveButton" layoutX="340.0" layoutY="438.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="120.0" prefWidth="120.0" />
             <Label fx:id="aquariumSaveButtonLabel" alignment="CENTER" disable="true" layoutX="350.0" layoutY="558.0" prefHeight="34.0" prefWidth="101.0" text="SAVE" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="languageSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="languagePanelFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in the language settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="languageElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="languageElderPanelBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="englishElderButton" layoutX="100.0" layoutY="228.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="250.0" prefWidth="250.0" />
+            <Label fx:id="englishElderButtonSubLabelPassive" alignment="CENTER" layoutX="103.0" layoutY="496.0" prefHeight="54.0" prefWidth="251.0" text="ENGLISH">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="englishElderButtonSubLabelActive" alignment="CENTER" disable="true" layoutX="103.0" layoutY="496.0" opacity="0.9" prefHeight="54.0" prefWidth="251.0" text="ENGLISH" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="turkishElderButton" layoutX="450.0" layoutY="228.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="250.0" prefWidth="250.0" />
+            <Label fx:id="turkishElderButtonSubLabelPassive" alignment="CENTER" layoutX="450.0" layoutY="496.0" prefHeight="54.0" prefWidth="251.0" text="TURKISH">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="turkishElderButtonSubLabelActive" alignment="CENTER" disable="true" layoutX="450.0" layoutY="496.0" opacity="0.9" prefHeight="54.0" prefWidth="251.0" text="TURKISH" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="electiricitySettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="electiricityMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="electiricityMenuBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="electiricityMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="electiricitySettingsPanelChart" layoutX="150.0" layoutY="300.0" prefHeight="243.0" prefWidth="500.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <JFXToggleButton fx:id="electiricitySettingsPanelCloseOpenSwitch" layoutX="321.0" layoutY="154.0" prefHeight="58.0" prefWidth="159.0" text="Close / Open" />
+         </children>
+      </Pane>
+      <Pane fx:id="gasSettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="gasMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="gasMenuBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="gasMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="gasSettingsPanelChart" layoutX="150.0" layoutY="300.0" prefHeight="243.0" prefWidth="500.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <JFXToggleButton fx:id="gasSettingsPanelCloseOpenSwitch" layoutX="321.0" layoutY="154.0" prefHeight="58.0" prefWidth="159.0" text="Close / Open" />
+         </children>
+      </Pane>
+      <Pane fx:id="greenhouseSettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="greenhouseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in greenhouse settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="greenhouseMenuBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="greenhouseMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="greenhouseSettingsPanelChart" layoutX="150.0" layoutY="307.0" prefHeight="243.0" prefWidth="500.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <Label fx:id="latesWaterFromAquariumLabel" alignment="CENTER" layoutX="241.0" layoutY="173.0" prefHeight="41.0" prefWidth="318.0" text="Lates Water From Aquarium">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="latesWaterFromAquariumVariable" alignment="CENTER" layoutX="241.0" layoutY="228.0" prefHeight="41.0" prefWidth="318.0" style="-fx-border-radius: 25; -fx-border-color: #000000;" text="DD.MM.YYYY HH.MM">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityLabel" alignment="CENTER" layoutX="635.0" layoutY="173.0" prefHeight="41.0" prefWidth="120.0" text="Humidity">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityVariable" alignment="CENTER" layoutX="635.0" layoutY="228.0" prefHeight="41.0" prefWidth="120.0" style="-fx-border-radius: 25; -fx-border-color: #000000;" text="??%">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="greenhouseTemperatureLabel" alignment="CENTER" layoutX="37.0" layoutY="173.0" prefHeight="41.0" prefWidth="152.0" text="Temperature">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="greenhouseTemperatureVariable" alignment="CENTER" layoutX="37.0" layoutY="228.0" prefHeight="41.0" prefWidth="152.0" style="-fx-border-color: #000000; -fx-border-radius: 25;" text="??">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>

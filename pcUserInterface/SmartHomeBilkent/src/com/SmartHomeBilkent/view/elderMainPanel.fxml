@@ -21,14 +21,14 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../styleSheets/elderMainPanelLabel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.ElderMainPanel">
    <children>
       <Line endX="800.0000610351562" endY="130.49998474121094" startY="130.5" />
-      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger" onMouseMoved="#clock" prefHeight="600.0" prefWidth="800.0">
+      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger"  prefHeight="600.0" prefWidth="800.0">
          <children>
             <Label fx:id="dayMessage" layoutX="26.0" layoutY="22.0" prefHeight="87.0" prefWidth="452.0" text="Good morning, Metehan!" textFill="#ff5d00">
                <font>
                   <Font name="Microsoft JhengHei Light" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="time" alignment="CENTER" layoutX="495.0" layoutY="34.0" prefHeight="64.0" prefWidth="291.0" text="12.30    03.04.2020" textFill="#ff5d00">
+            <Label fx:id="time" layoutX="495.0" layoutY="34.0" prefHeight="64.0" prefWidth="291.0" textFill="#ff5d00">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
@@ -262,7 +262,7 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="houseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+            <Label fx:id="houseMenuFirstLabelElder1" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
                <font>
                   <Font name="Microsoft YaHei Light" size="36.0" />
                </font>

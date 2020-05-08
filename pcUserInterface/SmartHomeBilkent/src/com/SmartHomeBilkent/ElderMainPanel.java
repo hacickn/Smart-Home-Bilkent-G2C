@@ -3,6 +3,7 @@ package com.SmartHomeBilkent;
 import com.SmartHomeBilkent.extra.dataBase.Users;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
 import com.jfoenix.controls.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,8 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
@@ -735,7 +738,6 @@ public class ElderMainPanel implements Initializable {
 
 
    public User loginUser;
-
    private Boolean languageStatusElder;
    //constructors
    //public ElderMainPanel()
@@ -1048,33 +1050,7 @@ public class ElderMainPanel implements Initializable {
       }
    }
 
-   //Set the time -MS 09.04.2020-
-   @FXML
-   public void clock( MouseEvent event ) {
-      String hourAsString;
-      int hourAsInt;
 
-      hourAsString = "";
-      DateTimeFormatter dtf = DateTimeFormatter.ofPattern( "yyyy/MM/dd | HH:mm" );
-      LocalDateTime now = LocalDateTime.now( );
-      time.setText( dtf.format( now ) );
-
-      for( int index = time.getText( ).length( ) - 4; time.getText( ).length( ) - 6 < index; index-- ) {
-         hourAsString = time.getText( ).charAt( index ) + hourAsString;
-      }
-      hourAsInt = Integer.valueOf( hourAsString );
-
-      if( hourAsInt > 6 && hourAsInt < 11 ) {
-         dayMessage.setText( "Good morning, " + userSettingsNameElderText.getText( ) + "!" );
-      } else if( hourAsInt >= 11 && hourAsInt < 16 ) {
-         dayMessage.setText( "Good afternoon, " + userSettingsNameElderText.getText( ) + "!" );
-      } else if( hourAsInt >= 16 && hourAsInt < 20 ) {
-         dayMessage.setText( "Good evening, " + userSettingsNameElderText.getText( ) + "!" );
-      } else if( ( hourAsInt >= 20 && hourAsInt < 24 ) || ( hourAsInt >= 0 && hourAsInt <= 6 ) ) {
-         dayMessage.setText( "Good night, " + userSettingsNameElderText.getText( ) + "!" );
-      }
-
-   }
    //Set the time END -MS 09.04.2020-
 
    @Override
@@ -1083,6 +1059,38 @@ public class ElderMainPanel implements Initializable {
       turkishElderButtonSubLabelActive.setVisible( false );
       englishElderButtonSubLabelActive.setVisible( true );
       languageStatusElder = false;
+
+      new Thread( new Runnable() {
+         @Override
+         public void run() {
+            while(true){
+               Platform.runLater( new Runnable() {
+                  @Override
+                  public void run() {
+                     time.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
+                           "  |  " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) );
+
+                     if( LocalTime.now().getHour() > 6 && LocalTime.now().getHour() < 11 ) {
+                        dayMessage.setText( "Good morning, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( LocalTime.now().getHour() >= 11 && LocalTime.now().getHour() < 16 ) {
+                        dayMessage.setText( "Good afternoon, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( LocalTime.now().getHour() >= 16 && LocalTime.now().getHour() < 20 ) {
+                        dayMessage.setText( "Good evening, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( ( LocalTime.now().getHour() >= 20 && LocalTime.now().getHour() < 24 )
+                           || ( LocalTime.now().getHour() >= 0 && LocalTime.now().getHour() <= 6 ) ) {
+                        dayMessage.setText( "Good night, " + userSettingsNameElderText.getText( ) + "!" );
+                     }
+                  }
+               } );
+               try {
+                  Thread.sleep( 1000 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         }
+
+      } ).start();
    }
 
    // user after login panel -MS 24.03.2020-
