@@ -716,11 +716,11 @@
     -fx-font-size: 12px;
 }
 .updateWeather{
-        -fx-background-image: url("images/updateCheck4.png");
+        -fx-background-image: url("images/updater4.png");
         -fx-background-size: cover;
 }
 .updateWeather:hover{
-        -fx-background-image: url("images/updateCheck5.png");
+        -fx-background-image: url("images/updater5.png");
         -fx-background-size: cover;
 }
 .electricityImage{

@@ -28,6 +28,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -41,6 +42,7 @@ import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
 import java.io.IOException;
+import java.net.NoRouteToHostException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -71,12 +73,14 @@ public class MainPanel implements Initializable {
     * 3.5)setting - sub menu variables
     * 4)Some independent variables( various objects )
     */
+
+   /**
+    * 1)menu variables
+    */
    @FXML
-   private BorderPane firstStackPane;
+   private BorderPane commonBorderPane;
    @FXML
    private StackPane menuStackPane;
-   @FXML
-   private AnchorPane menuAnchorPane;
    @FXML
    private JFXButton menuButton, menuButtonActive,
          userProfileButton, userProfileButtonActive,
@@ -95,7 +99,6 @@ public class MainPanel implements Initializable {
          menuBulkChange, bulkChangesSaveButton,
          dateTimeSaveButton, menuTimeConfigurationButton,
          helpButton, menuAquariumFeedButton;
-
    @FXML
    private JFXRadioButton electricityRadioButton, gasRadioButton,
          waterRadioButton, aquariumRadioButton,
@@ -320,7 +323,8 @@ public class MainPanel implements Initializable {
          settingWeatherWindLabelValue, speciesOfFishLabel,
          feedingStartLabel, waterExchangeLabel,
          airMotorRunTimeLabel, greenHouseTemperatureLabel,
-         greenHouseHumidityLabel, latestWaterLabel;
+         greenHouseHumidityLabel, latestWaterLabel,
+         weatherCharacterWarningLabel;
    @FXML
    private AnchorPane applicationSettingSubPane;
    @FXML
@@ -346,6 +350,9 @@ public class MainPanel implements Initializable {
    private JFXComboBox< String > portChooser;
    @FXML
    private CheckComboBox< String > checkComboBox;
+   @FXML
+   private JFXSpinner weatherUpdateSpinner;
+
    /**
     * 3.5)setting - sub menu variables
     */
@@ -401,40 +408,48 @@ public class MainPanel implements Initializable {
    public void initialize( URL location, ResourceBundle resources ) {
       userPreferenceUpdate( getLoginUser() );
       ElectricityUsage.getInstance().getElectricityUsage();
-      ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getGasUsage();
-      GasUsage.getInstance().getTable( gasUsageTable );
       GreenHouseData.getInstance().getGreenHouseValues();
-      GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
       FishSpecies.getInstance().getFishes();
-      FishSpecies.getInstance().addFishToComboBox( checkComboBox );
       CommonSettingData.getInstance().getAllHome();
 
+
+      GUIUpdate();
       updateUsersTable();
       usersSettingSubPaneRemoveUser.setDisable( true );
       audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
-      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
+      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.setRate( 1.1 );
       speechUtils = new SpeechUtils();
       isArduinoConnect = false;
+      //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
+      refreshMenu();
+      createEmergencyAnimation();
+   }
+
+   public void GUIUpdate() {
+      ElectricityUsage.getInstance().getTable( electricityUsageTable );
+      GasUsage.getInstance().getTable( gasUsageTable );
+      GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
+      FishSpecies.getInstance().addFishToComboBox( checkComboBox );
 
       for( int k = 1; k <= 7; k++ ) {
          waterExchangeDay.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
       }
-
-
       commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
       sensors = CommonSettingData.getInstance().getSensors( commonSetting );
       permissions = CommonSettingData.getInstance().getPermission( commonSetting );
 
       for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
-
       flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ), Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ), Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
+      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
+      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
       waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ), Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
+      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
+            Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
       airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
       if( loginUser.getUserType().equals( "PARENT" ) ) {
@@ -494,38 +509,6 @@ public class MainPanel implements Initializable {
          backgroundSetup( "weather" );
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
-
-      //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
-      refreshMenu();
-      createEmergencyAnimation();
-   }
-
-   void sound( String file, Boolean check ) {
-      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
-         audioClip.stop();
-         audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
-         audioClip.setRate( 1 );
-         audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
-         audioClip.play();
-      } else {
-         audioClip.stop();
-         audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
-      }
-   }
-
-   public User getLoginUser() {
-      for( User u : Users.getInstance().getUserList() ) {
-         if( u.getEnter().equals( "true" ) ) {
-            u.setEnter( "false" );
-            loginUser = u;
-            return u;
-         }
-      }
-      return null;
    }
 
    void userPreferenceUpdate( User user ) {
@@ -595,6 +578,36 @@ public class MainPanel implements Initializable {
       soundVolumeSlider.setValue( Double.parseDouble( volume ) );
    }
 
+
+   void sound( String file, Boolean check ) {
+      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
+         audioClip.stop();
+         audioClip = new AudioClip( this.getClass().getResource( "music/" +
+               bundle.getString( "pathLang" ) +
+               file + bundle.getString( "mp3Lang" ) ).toString() );
+         audioClip.setRate( 1 );
+         audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
+         audioClip.play();
+      } else {
+         audioClip.stop();
+         audioClip = new AudioClip( this.getClass().getResource( "music/" +
+               bundle.getString( "pathLang" ) +
+               file + bundle.getString( "mp3Lang" ) ).toString() );
+      }
+   }
+
+   public User getLoginUser() {
+      for( User u : Users.getInstance().getUserList() ) {
+         if( u.getEnter().equals( "true" ) ) {
+            u.setEnter( "false" );
+            loginUser = u;
+            return u;
+         }
+      }
+      return null;
+   }
+
+
    void refreshMenu() {
       SerialPort[] portNames;
       portChooser.getItems().removeAll( portChooser.getItems() );
@@ -610,7 +623,7 @@ public class MainPanel implements Initializable {
       fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
       fillTransition.setCycleCount( 20 );
       fillTransition.setAutoReverse( true );
-      firstStackPane.getChildren().add( rectangle );
+      commonBorderPane.getChildren().add( rectangle );
       rectangle.setVisible( false );
    }
 
@@ -919,14 +932,14 @@ public class MainPanel implements Initializable {
             message.append( "B0" );
 
          if( electricityRadioButton.isSelected() )
-            message.append( "E1" );
-         else
             message.append( "E0" );
+         else
+            message.append( "E1" );
 
          if( gasRadioButton.isSelected() )
-            message.append( "G1" );
-         else
             message.append( "G0" );
+         else
+            message.append( "G1" );
 
          if( incomingWaterRadioButton.isSelected() )
             message.append( "I1" );
@@ -939,9 +952,9 @@ public class MainPanel implements Initializable {
             message.append( "U0" );
 
          if( aquariumRadioButton.isSelected() )
-            message.append( "A1" );
-         else
             message.append( "A0" );
+         else
+            message.append( "A1" );
 
          if( doorRadioButton.isSelected() )
             message.append( "D1" );
@@ -949,9 +962,9 @@ public class MainPanel implements Initializable {
             message.append( "D0" );
 
          if( waterRadioButton.isSelected() )
-            message.append( "W1" );
-         else
             message.append( "W0" );
+         else
+            message.append( "W1" );
 
          if( sirenRadioButton.isSelected() )
             message.append( "X1" );
@@ -968,7 +981,7 @@ public class MainPanel implements Initializable {
          else
             message.append( "R0" );
 
-         message.append( ":" );
+         message.append( "S1N1:" );
          if( isArduinoConnect )
             home.adjustCollective( message.toString() );
 
@@ -1178,7 +1191,7 @@ public class MainPanel implements Initializable {
             stage.setScene( new Scene( root, 400, 400 ) );
             stage.setResizable( false );
             stage.show();
-            firstStackPane.getScene().getWindow().hide();
+            commonBorderPane.getScene().getWindow().hide();
             if( isArduinoConnect )
                arduino.closeConnection();
          } catch( Exception e ) {
@@ -1650,8 +1663,8 @@ public class MainPanel implements Initializable {
          css = "";
 
       try {
-         firstStackPane.getStylesheets().removeAll( firstStackPane.getStylesheets() );
-         firstStackPane.getStylesheets().add( css );
+         commonBorderPane.getStylesheets().removeAll( commonBorderPane.getStylesheets() );
+         commonBorderPane.getStylesheets().add( css );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -1845,6 +1858,7 @@ public class MainPanel implements Initializable {
          permissionPaneGasToggle.setText( bundle.getString( "gasLang" ) );
          permissionPaneSirenToggle.setText( bundle.getString( "sirenLang" ) );
          aquariumSubMenuToggleButton.setText( bundle.getString( "airMotorLang" ) );
+         weatherCharacterWarningLabel.setText( bundle.getString( "latinCharacterWarningLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
@@ -2109,7 +2123,7 @@ public class MainPanel implements Initializable {
                stage.setScene( new Scene( root, 400, 400 ) );
                stage.setResizable( false );
                stage.show();
-               firstStackPane.getScene().getWindow().hide();
+               commonBorderPane.getScene().getWindow().hide();
             } catch( Exception e ) {
                e.printStackTrace();
             }
@@ -2223,8 +2237,8 @@ public class MainPanel implements Initializable {
 
       audioClip.stop();
       audioClip = new AudioClip( this.getClass().getResource( "music/" + bundle.getString( "pathLang" ) + "volumeTryLang" + bundle.getString( "mp3Lang" ) ).toString() );
-      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 200 );
-      audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 200 );
+      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
+      audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 500 );
 
       modsSound = loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ) + volume;
       Users.getInstance().updateVolume( loginUser, modsSound );
@@ -2292,31 +2306,62 @@ public class MainPanel implements Initializable {
          settingWeatherSettingPane.setVisible( true );
          openHomeSetting();
          homeSettingWeatherButtonActive.setVisible( true );
-      } else if( event.getSource() == updateWeatherButton ) {
+      } else if( event.getSource() == updateWeatherButton
+            || event.getSource() == settingWeatherLocationTextField ) {
          if( settingWeatherLocationTextField.getText().length() > 0 ) {
-            try {
-               if( weatherForecast == null )
-                  weatherForecast = new WeatherForecast( loginUser.getLocation() );
-               else {
-                  weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
-                  weatherForecast.getWeatherCase();
+            weatherUpdateSpinner.setVisible( true );
+            updateWeatherButton.setVisible( false );
+            new Thread( new Runnable() {
+               @Override
+               public void run() {
+                  try {
+                     if( weatherForecast == null )
+                        weatherForecast = new WeatherForecast( loginUser.getLocation() );
+                     else {
+                        weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+                        weatherForecast.getWeatherCase();
+                     }
+                  } catch( IOException exception ) {
+                     settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                     informationTime.setText( bundle.getString( "netConnectionLang" ) );
+                     try {
+                        Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                     } catch( SQLException sqlException ) {
+                     }
+                     backgroundSetup( "weather" );
+                  }
+                  Platform.runLater( new Runnable() {
+                     @Override
+                     public void run() {
+                        weatherUpdateSpinner.setVisible( false );
+                        if( weatherForecast.getLocation().length() == 0 ) {
+                           weatherCharacterWarningLabel.setVisible( true );
+                           settingWeatherForecastLabelValue.setText( "" );
+                           settingWeatherTemperatureLabelValue.setText( "°C" );
+                           settingWeatherHumidityLabelValue.setText( "" );
+                           settingWeatherWindLabelValue.setText( "" );
+                           informationTime.setText( "" );
+                           weatherCharacterWarningLabel.setVisible( true );
+                        } else {
+                           try {
+                              settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+                              settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+                              settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+                              settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+                              informationTime.setText( weatherForecast.getLocalTime() );
+                              Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                              backgroundSetup( weatherForecast.getWeather() );
+                           } catch( SQLException sqlException ) {
+                           }
+                        }
+                     }
+                  } );
                }
-               settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
-               settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
-               settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
-               settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
-               informationTime.setText( weatherForecast.getLocalTime() );
-               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-               backgroundSetup( weatherForecast.getWeather() );
-            } catch( IOException exception ) {
-               settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-               informationTime.setText( bundle.getString( "netConnectionLang" ) );
-               Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-               backgroundSetup( "weather" );
-            }
+            } ).start();
+
          } else {
             informationTime.setText( "Please enter the location" );
          }
@@ -2373,6 +2418,12 @@ public class MainPanel implements Initializable {
             CommonSettingData.getInstance().updateSelectedFishes( commonSetting, checkComboBox.getItems() );
          }
       }
+   }
+
+   @FXML
+   void onWeatherKeyPressed( KeyEvent event ) {
+      updateWeatherButton.setVisible( true );
+      weatherCharacterWarningLabel.setVisible( false );
    }
 
    /**
