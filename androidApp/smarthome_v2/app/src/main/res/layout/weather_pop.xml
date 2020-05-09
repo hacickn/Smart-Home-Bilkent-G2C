@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A63C3333">
+    android:background="#000000">
 
     <TextView
         android:id="@+id/weatherTopLabel"
