@@ -19,11 +19,6 @@ public class Aquarium extends Communication {
    private final String INCOMING_WATER_OFF = "incoming_water_off#:";
    private final String OUTGOING_WATER_ON = "outgoing_water_on#:";
    private final String OUTGOING_WATER_OFF = "outgoing_water_off#:";
-   private String detailedMessage;
-   private String lastIncomingWaterTime;
-   private String lastOutgoingWaterTime;
-
-
    //constructor
 
    /**

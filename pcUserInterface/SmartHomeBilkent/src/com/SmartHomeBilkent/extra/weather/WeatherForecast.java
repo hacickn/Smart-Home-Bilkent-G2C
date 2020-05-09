@@ -50,14 +50,14 @@ public class WeatherForecast {
     * @return result as a String
     */
    public String findLocationXY( String location ) throws IOException {
-      String XY;
+      StringBuilder XY;
       String inputLine;
       URL url;
       HttpURLConnection con;
       int responseCode;
       int number;
 
-      XY = "";
+      XY = new StringBuilder();
       url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + location + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
       con = ( HttpURLConnection ) url.openConnection();
       con.setRequestMethod( "GET" );
@@ -78,16 +78,16 @@ public class WeatherForecast {
          for( int k = 0; k < response.length() - 15; k++ ) {
             if( response.substring( k, k + 11 ).equals( "coordinates" ) ) {
                while( !( response.charAt( k + 14 ) == ']' ) ) {
-                  XY = XY + response.charAt( k + 14 );
+                  XY.append( response.charAt( k + 14 ) );
                   k++;
                }
             }
          }
-         number = XY.indexOf( ',' );
+         number = XY.toString().indexOf( ',' );
          if( number > 0 ) {
-            XY = XY.substring( number + 1 ) + "," + XY.substring( 0, number );
-            this.location = XY;
-            return XY;
+            XY = new StringBuilder( XY.substring( number + 1 ) + "," + XY.substring( 0, number ) );
+            this.location = XY.toString();
+            return XY.toString();
          } else {
             this.location = "";
             return null;
@@ -102,9 +102,8 @@ public class WeatherForecast {
    /**
     * it is a getWeatherCase method that finds weather forecast of found coordinates
     *
-    * @return result as a String[]
     */
-   public String[] getWeatherCase() throws IOException {
+   public void getWeatherCase() throws IOException {
       String[] weatherInfo;
       String inputLine;
       StringBuilder response;
@@ -166,10 +165,8 @@ public class WeatherForecast {
                localTime = weatherInfo[ 4 ].substring( 4 );
             }
          }
-         return weatherInfo;
       } else {
          System.out.println( "GET request not worked" );
-         return null;
       }
    }
 
@@ -180,33 +177,6 @@ public class WeatherForecast {
     */
    public String getLocation() {
       return location;
-   }
-
-   /**
-    * it is a getLocationName method
-    *
-    * @return result as a String
-    */
-   public String getLocationName() {
-      return locationName;
-   }
-
-   /**
-    * it is a setLocationName method
-    *
-    * @param locationName is a String input parameter
-    */
-   public void setLocationName( String locationName ) {
-      this.locationName = locationName;
-   }
-
-   /**
-    * it is a setLocation method
-    *
-    * @param location is a String input parameter
-    */
-   public void setLocation( String location ) {
-      this.location = location;
    }
 
    /**

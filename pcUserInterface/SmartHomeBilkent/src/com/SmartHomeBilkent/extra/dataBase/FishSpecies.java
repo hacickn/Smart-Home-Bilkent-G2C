@@ -56,8 +56,8 @@ public class FishSpecies {
       }
    }
 
-   public void addFishToComboBox ( CheckComboBox<String> comboBox) {
-      for( int k = 0; k < fishes.size() ; k++ )
+   public void addFishToComboBox( CheckComboBox< String > comboBox ) {
+      for( int k = 0; k < fishes.size(); k++ )
          comboBox.getItems().add( fishes.get( k ).getSpecies() );
    }
 }

@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,7 +19,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.awt.*;
 import java.net.URL;
@@ -73,21 +71,18 @@ public class LoginPanel extends Application implements Initializable {
                         s.setEnter( "true" );
                         load = new FXMLLoader( getClass().getResource( fxmlAddress ) );
                         root = load.load();
-                        Platform.runLater( new Runnable() {
-                           @Override
-                           public void run() {
-                              stage[ 0 ] = new Stage();
-                              stage[ 0 ].setTitle( "SMART HOME" );
+                        Platform.runLater( () -> {
+                           stage[ 0 ] = new Stage();
+                           stage[ 0 ].setTitle( "SMART HOME" );
 
-                              if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
-                                 stage[ 0 ].setScene( new Scene( root, 800, 600 ) );
-                              else if( fxmlAddress.equals( "view/mainPanel.fxml" ) )
-                                 stage[ 0 ].setScene( new Scene( root, 800, 800 ) );
-                              stage[ 0 ].setResizable( true );
-                              stage[ 0 ].show();
-                              userNameField.getScene().getWindow().hide();
-                              new FadeIn( root ).play();
-                           }
+                           if( fxmlAddress.equals( "view/elderMainPanel.fxml" ) )
+                              stage[ 0 ].setScene( new Scene( root, 800, 600 ) );
+                           else
+                              stage[ 0 ].setScene( new Scene( root, 800, 800 ) );
+                           stage[ 0 ].setResizable( true );
+                           stage[ 0 ].show();
+                           userNameField.getScene().getWindow().hide();
+                           new FadeIn( root ).play();
                         } );
 
                      } catch( Exception e ) {
@@ -147,13 +142,10 @@ public class LoginPanel extends Application implements Initializable {
 
 
    @Override
-   public void start( Stage primaryStage ) throws Exception {
-      primaryStage.setOnCloseRequest( new EventHandler< WindowEvent >() {
-         @Override
-         public void handle( WindowEvent event ) {
-            Platform.exit();
-            System.exit( 0 );
-         }
+   public void start( Stage primaryStage ) {
+      primaryStage.setOnCloseRequest( event -> {
+         Platform.exit();
+         System.exit( 0 );
       } );
    }
 

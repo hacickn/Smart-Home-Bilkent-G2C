@@ -11,6 +11,7 @@ import javafx.beans.property.StringProperty;
  * @version 28.04.2020
  */
 public class User extends RecursiveTreeObject< User > {
+
    //properties
    private StringProperty name;
    private StringProperty surname;
@@ -100,7 +101,7 @@ public class User extends RecursiveTreeObject< User > {
    /**
     * it is a setName method
     *
-    * @return result as a String
+    * @param name is a String input parameter
     */
    public void setName( String name ) {
       this.name.set( name );

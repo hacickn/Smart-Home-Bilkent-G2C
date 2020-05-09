@@ -5,7 +5,6 @@ import com.SmartHomeBilkent.extra.connection.Arduino;
 import com.SmartHomeBilkent.extra.dataBase.*;
 import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.extra.dataBase.fields.User;
-import com.SmartHomeBilkent.extra.speech.SpeechUtils;
 import com.SmartHomeBilkent.extra.weather.WeatherForecast;
 import com.SmartHomeBilkent.home.Home;
 import com.fazecast.jSerialComm.SerialPort;
@@ -29,7 +28,6 @@ import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -94,8 +92,7 @@ public class MainPanel extends Application implements Initializable {
          elecSubMenuButtonPassive, elecSubMenuButtonActive,
          weatherButton, menuWaterButton,
          doorButton, menuGardenLightButton,
-         waterSubMenuButtonActive, waterSubMenuButtonPassive,
-         gardenLightSubMenuButtonActive, gardenLightSubMenuButtonPassive,
+         waterSubMenuButtonActive, gardenLightSubMenuButtonActive,
          menuBulkChange, bulkChangesSaveButton,
          dateTimeSaveButton, menuTimeConfigurationButton,
          helpButton, menuAquariumFeedButton;
@@ -110,35 +107,30 @@ public class MainPanel extends Application implements Initializable {
    @FXML
    private JFXTimePicker menuTimePicker;
    @FXML
-   private BorderPane menuBorderPane;
-   @FXML
    private JFXProgressBar menuElecProgress, menuGasProgress,
          menuAquariumProgress, menuWaterProgress,
          menuGardenLightProgress;
    @FXML
-   private Label ghHumidityTempLabel, ghHumidityValueLabel,
-         menuHomeTempLabel, ghTempValueLabel, elecSubPaneLabelPassive,
+   private Label ghHumidityTempLabel, timeConfigurationLabel,
+         menuHomeTempLabel, mainMenuHomeLabel, elecSubPaneLabelPassive,
          elecSubPaneOpenLabelPassive, elecSubPaneCloseLabelPassive,
          elecSubPaneOpenValueLabelPassive, elecSubPaneCloseValueLabelPassive,
          elecSubPaneLabelActive, elecSubPaneOpenLabelActive,
          elecSubPaneCloseLabelActive, elecSubPaneOpenValueLabelActive,
          elecSubPaneCloseValueLabelActive, gasSubPaneLabelPassive,
          gasSubPaneLabelActive, aquariumSubPaneLabelPassive,
-         heaterSubPaneLabelPassive, aquariumSubPaneLabelActive,
+         mainMenuWeatherLabel, aquariumSubPaneLabelActive,
          greenHouseSubPaneLabelPassive, ghTempSubPaneLabelActive,
          menuUserProfileLabel, menuMenuLabel,
          menuSettingLabel, menuWeatherValue,
-         menuHomeTempValue, menuOpenDoorLabel,
+         timeLabel, menuOpenDoorLabel,
          waterSubPaneLabelActive, waterSubPaneLabelPassive,
          gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive,
-         menuBulkChangeSubLabel, timeConfigurationLabel,
-         mainMenuHomeLabel, mainMenuWeatherLabel,
-         timeLabel;
+         menuBulkChangeSubLabel;
    @FXML
-   private ImageView weatherImage, tempImage, weatherForecastImage;
+   private ImageView tempImage, weatherForecastImage;
    @FXML
-   private Pane connectionPane, menuEmptyPane,
-         menuElecPane, menuGasPane,
+   private Pane menuElecPane, menuGasPane,
          menuAquariumPane, menuGreenHousePane,
          menuWaterPane, menuGardenLightPane,
          menuBulkChangePane, menuTimeConfigurationPane;
@@ -166,17 +158,15 @@ public class MainPanel extends Application implements Initializable {
    @FXML
    private AnchorPane userProfileStackPane;
    @FXML
-   private AnchorPane userProfileAnchorPane;
-   @FXML
    private Pane userProfilePane, changeUserNormalInfoPane,
          changeUserPrivateInfoPane;
    @FXML
    private JFXTextField userProfileNameField, userProfileSurnameField,
          userProfileAgeField, userProfileGenderField,
-         userProfileUserNameField, userProfilePasswordField,
-         nameTextField, surnameTextField,
-         userNameTextField, newPasswordTextField,
-         verifyNewPasswordField, currentPasswordField;
+         userProfileUserNameField, nameTextField,
+         surnameTextField, userNameTextField,
+         newPasswordTextField, verifyNewPasswordField,
+         currentPasswordField;
    @FXML
    private JFXDatePicker birthdayDateField;
    @FXML
@@ -194,10 +184,6 @@ public class MainPanel extends Application implements Initializable {
     */
    @FXML
    private AnchorPane settingAnchorPane;
-   @FXML
-   private AnchorPane settingSubAnchorTop, settingSubAnchorBottom;
-   @FXML
-   private Pane settingMainFunctionsPane;
    @FXML
    private JFXButton applicationSettingButton, settingsUsersSettingButton,
          modsSettingButton, homeSettingButton,
@@ -315,7 +301,7 @@ public class MainPanel extends Application implements Initializable {
          homeSubPaneGreenHouseLabel, homeSubPaneWeatherLabel,
          themeSubLabel, languageSubLabel,
          emergencySubLabel, notificationSubLabel,
-         connectionSubLabel, settingWeatherLocationLabel,
+         connectionSubLabel, weatherCharacterWarningLabel,
          settingWeatherForecastLabel, settingWeatherTemperatureLabel,
          settingWeatherHumidityLabel, settingWeatherWindLabel,
          informationTime, settingWeatherForecastLabelValue,
@@ -323,8 +309,7 @@ public class MainPanel extends Application implements Initializable {
          settingWeatherWindLabelValue, speciesOfFishLabel,
          feedingStartLabel, waterExchangeLabel,
          airMotorRunTimeLabel, greenHouseTemperatureLabel,
-         greenHouseHumidityLabel, latestWaterLabel,
-         weatherCharacterWarningLabel;
+         greenHouseHumidityLabel, latestWaterLabel;
    @FXML
    private AnchorPane applicationSettingSubPane;
    @FXML
@@ -357,15 +342,14 @@ public class MainPanel extends Application implements Initializable {
     * 3.5)setting - sub menu variables
     */
    @FXML
-   private AnchorPane usersSettingSubPane, modsSettingSubPane, homeSettingSubPane;
+   private AnchorPane usersSettingSubPane, homeSettingSubPane;
    @FXML
    private JFXButton usersSettingSubPaneAddUser, usersSettingSubPaneRemoveUser,
-         usersSettingSubPaneChangeUserType, homeSettingElecButton,
+         homeSettingWeatherButtonActive, homeSettingElecButton,
          homeSettingGasButton, homeSettingAquButton,
          homeSettingGreenHouseButton, homeSettingWeatherButton,
          homeSettingElecButtonActive, homeSettingGasButtonActive,
-         homeSettingAquButtonActive, homeSettingGreenHouseButtonActive,
-         homeSettingWeatherButtonActive;
+         homeSettingAquButtonActive, homeSettingGreenHouseButtonActive;
 
    @FXML
    private JFXTimePicker feedingTime, airMotorStartTime,
@@ -386,9 +370,7 @@ public class MainPanel extends Application implements Initializable {
    private boolean soundCheck;
    private boolean textCheck;
    private String volume;
-   private SpeechUtils speechUtils;
    private LocalDate localDate;
-   private LocalTime localTime;
    private DateTimeFormatter dateTimeFormatter;
    private User loginUser;
    private WeatherForecast weatherForecast;
@@ -400,8 +382,6 @@ public class MainPanel extends Application implements Initializable {
    private String[] sensors;
    private String[] permissions;
    private CommonSetting commonSetting;
-   private String flowAquariumSetting;
-   private Thread thread;
    private boolean exit;
 
    //initialize method(it runs before the program start to run)
@@ -420,9 +400,7 @@ public class MainPanel extends Application implements Initializable {
       audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.setRate( 1.1 );
-      speechUtils = new SpeechUtils();
       isArduinoConnect = false;
-      //example//speechUtils.SpeakText("Hello, today weather is partly cloudy and, temperature is ,8, celsius degree",true);
       refreshMenu();
       createEmergencyAnimation();
    }
@@ -450,13 +428,13 @@ public class MainPanel extends Application implements Initializable {
 
       for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
-      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
+      String flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
+      feedingTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      waterExchangeTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
+      waterExchangeTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
       waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      airMotorStartTime.setValue( localTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
+      airMotorStartTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
       airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
@@ -517,22 +495,14 @@ public class MainPanel extends Application implements Initializable {
          backgroundSetup( "weather" );
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
-      thread = new Thread( new Runnable() {
-         @Override
-         public void run() {
-            while( !exit ) {
-               Platform.runLater( new Runnable() {
-                  @Override
-                  public void run() {
-                     timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
-                           + "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) );
-                  }
-               } );
-               try {
-                  Thread.sleep( 1000 );
-               } catch( InterruptedException e ) {
-                  e.printStackTrace();
-               }
+      Thread thread = new Thread( () -> {
+         while( !exit ) {
+            Platform.runLater( () -> timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
+                  + "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
+            try {
+               Thread.sleep( 1000 );
+            } catch( InterruptedException e ) {
+               e.printStackTrace();
             }
          }
       } );
@@ -630,8 +600,8 @@ public class MainPanel extends Application implements Initializable {
       portChooser.getItems().removeAll( portChooser.getItems() );
       portNames = SerialPort.getCommPorts();
 
-      for( int k = 0; k < portNames.length; k++ )
-         portChooser.getItems().add( portNames[ k ].getSystemPortName() );
+      for( SerialPort portName : portNames )
+         portChooser.getItems().add( portName.getSystemPortName() );
    }
 
    void createEmergencyAnimation() {
@@ -1000,26 +970,26 @@ public class MainPanel extends Application implements Initializable {
             message = new StringBuilder();
 
             if( menuTimePicker.getValue().getHour() < 10 )
-               message.append( "clock#0" + menuTimePicker.getValue().getHour() );
+               message.append( "clock#0" ).append( menuTimePicker.getValue().getHour() );
             else
-               message.append( "clock#" + menuTimePicker.getValue().getHour() );
+               message.append( "clock#" ).append( menuTimePicker.getValue().getHour() );
 
             if( menuTimePicker.getValue().getMinute() < 10 )
-               message.append( "0" + menuTimePicker.getValue().getMinute() );
+               message.append( "0" ).append( menuTimePicker.getValue().getMinute() );
             else
                message.append( menuTimePicker.getValue().getMinute() );
 
-            message.append( "000" + menuDatePicker.getValue().getDayOfWeek().getValue() );
+            message.append( "000" ).append( menuDatePicker.getValue().getDayOfWeek().getValue() );
 
             if( menuDatePicker.getValue().getDayOfMonth() < 10 )
-               message.append( "0" + menuDatePicker.getValue().getDayOfMonth() );
+               message.append( "0" ).append( menuDatePicker.getValue().getDayOfMonth() );
             else
                message.append( menuDatePicker.getValue().getDayOfMonth() );
             if( menuDatePicker.getValue().getMonthValue() < 10 )
-               message.append( "0" + menuDatePicker.getValue().getMonthValue() );
+               message.append( "0" ).append( menuDatePicker.getValue().getMonthValue() );
             else
                message.append( menuDatePicker.getValue().getMonthValue() );
-            message.append( menuDatePicker.getValue().getYear() + ":" );
+            message.append( menuDatePicker.getValue().getYear() ).append( ":" );
 
             if( isArduinoConnect )
                home.adjustCollective( message.toString() );
@@ -1035,27 +1005,21 @@ public class MainPanel extends Application implements Initializable {
          if( isArduinoConnect )
             home.getAquarium().feedingOpen( true );
 
-         new Thread( new Runnable() {
-            @Override
-            public void run() {
-               for( int k = 0; k < 20; k++ ) {
-                  final int j = k;
-                  Platform.runLater( new Runnable() {
-                     @Override
-                     public void run() {
-                        menuAquariumIndicator.setVisible( true );
-                        feedRadioButton.setSelected( true );
-                        if( j == 19 ) {
-                           menuAquariumIndicator.setVisible( false );
-                           feedRadioButton.setSelected( false );
-                        }
-                     }
-                  } );
-                  try {
-                     Thread.sleep( 100 );
-                  } catch( InterruptedException e ) {
-                     e.printStackTrace();
+         new Thread( () -> {
+            for( int k = 0; k < 20; k++ ) {
+               final int j = k;
+               Platform.runLater( () -> {
+                  menuAquariumIndicator.setVisible( true );
+                  feedRadioButton.setSelected( true );
+                  if( j == 19 ) {
+                     menuAquariumIndicator.setVisible( false );
+                     feedRadioButton.setSelected( false );
                   }
+               } );
+               try {
+                  Thread.sleep( 100 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
                }
             }
          } ).start();
@@ -1227,17 +1191,9 @@ public class MainPanel extends Application implements Initializable {
          toGoBackUserProfile();
          privateInfoWarning.setVisible( false );
       } else if( event.getSource() == maleRadioOption ) {
-         if( maleRadioOption.isSelected() ) {
-            femaleRadioOption.setSelected( false );
-         } else {
-            femaleRadioOption.setSelected( true );
-         }
+         femaleRadioOption.setSelected( !maleRadioOption.isSelected() );
       } else if( event.getSource() == femaleRadioOption ) {
-         if( femaleRadioOption.isSelected() ) {
-            maleRadioOption.setSelected( false );
-         } else {
-            maleRadioOption.setSelected( true );
-         }
+         maleRadioOption.setSelected( !femaleRadioOption.isSelected() );
       }
    }
 
@@ -1284,14 +1240,14 @@ public class MainPanel extends Application implements Initializable {
    //settings
    //settings ---------top pane
    @FXML
-   void settingsFacilitiesButtons( ActionEvent event ) throws SQLException, IOException {
-      if( event.getSource() == applicationSettingButton ) {
+   void settingsFacilitiesButtons( ActionEvent event ) {
+      if( event.getSource() == applicationSettingButton )
          openApplicationPanes();
-      } else if( event.getSource() == settingsUsersSettingButton ) {
+      else if( event.getSource() == settingsUsersSettingButton )
          openUsersPane();
-      } else if( event.getSource() == modsSettingButton ) {
+      else if( event.getSource() == modsSettingButton )
          openModsPane();
-      } else if( event.getSource() == homeSettingButton ) {
+      else if( event.getSource() == homeSettingButton ) {
          openHomeSettingPane();
          settingElecSettingPane.setVisible( true );
          homeSettingElecButtonActive.setVisible( true );
@@ -1368,27 +1324,27 @@ public class MainPanel extends Application implements Initializable {
                   if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
                      return;
                   home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING, 0, 0 );
-                  String out = "";
+                  StringBuilder out = new StringBuilder();
                   Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
 
                   try {
                      while( in.hasNextLine() )
-                        out = out + in.nextLine();
+                        out.append( in.nextLine() );
                   } catch( Exception e ) {
                      e.printStackTrace();
                   }
-                  out = out.replaceAll( "\\s", "" );
-                  out = out.replace( "\n", "" ).replace( "\r", "" );
+                  out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
+                  out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
 
-                  if( !out.isEmpty() ) {
+                  if( out.length() > 0 ) {
                      System.out.println( out );
-                     if( out.equals( "FireButon" )
-                           || out.equals( "SmokeAlarm" )
-                           || out.equals( "GasAlarm" )
-                           || out.equals( "Gas+Fire" )
-                           || out.equals( "Gas+Smokealarm" )
-                           || out.equals( "Gas+Smoke" )
-                           || out.equals( "Gas+Smoke+Fire" ) ) {
+                     if( out.toString().equals( "FireButon" )
+                           || out.toString().equals( "SmokeAlarm" )
+                           || out.toString().equals( "GasAlarm" )
+                           || out.toString().equals( "Gas+Fire" )
+                           || out.toString().equals( "Gas+Smokealarm" )
+                           || out.toString().equals( "Gas+Smoke" )
+                           || out.toString().equals( "Gas+Smoke+Fire" ) ) {
                         if( fillTransition.getCurrentRate() == 0.0d ) {
                            fillTransition.play();
                            rectangle.setVisible( true );
@@ -1648,7 +1604,7 @@ public class MainPanel extends Application implements Initializable {
    //settings ----language pane
    //language pane buttons
    @FXML
-   void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException, IOException {
+   void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       String language;
       language = "";
 
@@ -1936,18 +1892,13 @@ public class MainPanel extends Application implements Initializable {
    void settingUserTableMov() {
       if( settingUserTable.getSelectionModel().isEmpty() )
          usersSettingSubPaneRemoveUser.setDisable( true );
-      else if( settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "PARENT" )
-            && !( Users.getInstance().getParentNumber() > 1 ) )
-         usersSettingSubPaneRemoveUser.setDisable( true );
       else
-         usersSettingSubPaneRemoveUser.setDisable( false );
+         usersSettingSubPaneRemoveUser.setDisable(
+               settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "PARENT" )
+                     && !( Users.getInstance().getParentNumber() > 1 ) );
    }
 
    //settings ---------sub view pane----users settings menu---- add new user pane
-   @FXML
-   void createUserControlSelections( ActionEvent event ) {
-
-   }
 
    @FXML
    void createUserPaneAction( ActionEvent event ) throws SQLException {
@@ -2209,7 +2160,7 @@ public class MainPanel extends Application implements Initializable {
 
    //settings----mods settings menu
    @FXML
-   void volumeAdjust() throws SQLException, IOException {
+   void volumeAdjust() throws SQLException {
       String modsSound;
 
       if( soundVolumeSlider.getValue() < 10 ) {
@@ -2232,7 +2183,7 @@ public class MainPanel extends Application implements Initializable {
    }
 
    @FXML
-   void modsToggleButtons( ActionEvent event ) throws SQLException, IOException {
+   void modsToggleButtons( ActionEvent event ) throws SQLException {
       String modsSound;
       String modsText;
 
@@ -2243,11 +2194,7 @@ public class MainPanel extends Application implements Initializable {
          textCheck = textModeToggle.isSelected();
          modsText = String.valueOf( textCheck );
       } else if( event.getSource() == soundModeToggle ) {
-         if( soundModeToggle.isSelected() ) {
-            soundControl( true );
-         } else {
-            soundControl( false );
-         }
+         soundControl( soundModeToggle.isSelected() );
          modsSound = soundCheck + volume;
       }
 
@@ -2296,55 +2243,51 @@ public class MainPanel extends Application implements Initializable {
          if( settingWeatherLocationTextField.getText().length() > 0 ) {
             weatherUpdateSpinner.setVisible( true );
             updateWeatherButton.setVisible( false );
-            new Thread( new Runnable() {
-               @Override
-               public void run() {
-                  try {
-                     if( weatherForecast == null )
-                        weatherForecast = new WeatherForecast( loginUser.getLocation() );
-                     else {
-                        weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
-                        weatherForecast.getWeatherCase();
-                     }
-                  } catch( IOException exception ) {
-                     settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-                     settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-                     settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-                     settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
-                     informationTime.setText( bundle.getString( "netConnectionLang" ) );
-                     try {
-                        Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-                     } catch( SQLException sqlException ) {
-                     }
-                     backgroundSetup( "weather" );
+            new Thread( () -> {
+               try {
+                  if( weatherForecast == null )
+                     weatherForecast = new WeatherForecast( loginUser.getLocation() );
+                  else {
+                     weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+                     weatherForecast.getWeatherCase();
                   }
-                  Platform.runLater( new Runnable() {
-                     @Override
-                     public void run() {
-                        weatherUpdateSpinner.setVisible( false );
-                        if( weatherForecast.getLocation().length() == 0 ) {
-                           weatherCharacterWarningLabel.setVisible( true );
-                           settingWeatherForecastLabelValue.setText( "" );
-                           settingWeatherTemperatureLabelValue.setText( "°C" );
-                           settingWeatherHumidityLabelValue.setText( "" );
-                           settingWeatherWindLabelValue.setText( "" );
-                           informationTime.setText( "" );
-                           weatherCharacterWarningLabel.setVisible( true );
-                        } else {
-                           try {
-                              settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
-                              settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
-                              settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
-                              settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
-                              informationTime.setText( weatherForecast.getLocalTime() );
-                              Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
-                              backgroundSetup( weatherForecast.getWeather() );
-                           } catch( SQLException sqlException ) {
-                           }
-                        }
-                     }
-                  } );
+               } catch( IOException exception ) {
+                  settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                  settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                  settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                  settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                  informationTime.setText( bundle.getString( "netConnectionLang" ) );
+                  try {
+                     Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                  } catch( SQLException sqlException ) {
+                     sqlException.printStackTrace();
+                  }
+                  backgroundSetup( "weather" );
                }
+               Platform.runLater( () -> {
+                  weatherUpdateSpinner.setVisible( false );
+                  if( weatherForecast.getLocation().length() == 0 ) {
+                     weatherCharacterWarningLabel.setVisible( true );
+                     settingWeatherForecastLabelValue.setText( "" );
+                     settingWeatherTemperatureLabelValue.setText( "°C" );
+                     settingWeatherHumidityLabelValue.setText( "" );
+                     settingWeatherWindLabelValue.setText( "" );
+                     informationTime.setText( "" );
+                     weatherCharacterWarningLabel.setVisible( true );
+                  } else {
+                     try {
+                        settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+                        settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+                        settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+                        settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+                        informationTime.setText( weatherForecast.getLocalTime() );
+                        Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                        backgroundSetup( weatherForecast.getWeather() );
+                     } catch( SQLException sqlException ) {
+                        sqlException.printStackTrace();
+                     }
+                  }
+               } );
             } ).start();
 
          } else {
@@ -2361,41 +2304,41 @@ public class MainPanel extends Application implements Initializable {
             message = new StringBuilder( "aquarium#" );
 
             if( feedingTime.getValue().getHour() < 10 )
-               message.append( "0" + feedingTime.getValue().getHour() );
+               message.append( "0" ).append( feedingTime.getValue().getHour() );
             else
                message.append( feedingTime.getValue().getHour() );
 
             if( feedingTime.getValue().getMinute() < 10 )
-               message.append( "0" + feedingTime.getValue().getMinute() + "00" );
+               message.append( "0" ).append( feedingTime.getValue().getMinute() ).append( "00" );
             else
-               message.append( feedingTime.getValue().getMinute() + "00" );
+               message.append( feedingTime.getValue().getMinute() ).append( "00" );
 
             if( waterExchangeTime.getValue().getHour() < 10 )
-               message.append( "0" + waterExchangeTime.getValue().getHour() );
+               message.append( "0" ).append( waterExchangeTime.getValue().getHour() );
             else
                message.append( waterExchangeTime.getValue().getHour() );
 
             if( waterExchangeTime.getValue().getMinute() < 10 )
-               message.append( "0" + waterExchangeTime.getValue().getMinute() + "00" );
+               message.append( "0" ).append( waterExchangeTime.getValue().getMinute() ).append( "00" );
             else
-               message.append( waterExchangeTime.getValue().getMinute() + "00" );
+               message.append( waterExchangeTime.getValue().getMinute() ).append( "00" );
 
-            message.append( "0" + waterExchangeDay.getValue().charAt( 0 ) );
+            message.append( "0" ).append( waterExchangeDay.getValue().charAt( 0 ) );
 
             if( airMotorStartTime.getValue().getHour() < 10 )
-               message.append( "0" + airMotorStartTime.getValue().getHour() );
+               message.append( "0" ).append( airMotorStartTime.getValue().getHour() );
             else
                message.append( airMotorStartTime.getValue().getHour() );
 
             if( airMotorStartTime.getValue().getMinute() < 10 )
-               message.append( "0" + airMotorStartTime.getValue().getMinute() + "00" );
+               message.append( "0" ).append( airMotorStartTime.getValue().getMinute() ).append( "00" );
             else
-               message.append( airMotorStartTime.getValue().getMinute() + "00" );
+               message.append( airMotorStartTime.getValue().getMinute() ).append( "00" );
 
             if( airMotorRunTime.getValue() < 10 )
-               message.append( "0" + ( int ) airMotorRunTime.getValue() + ":" );
+               message.append( "0" ).append( ( int ) airMotorRunTime.getValue() ).append( ":" );
             else
-               message.append( ( int ) airMotorRunTime.getValue() + ":" );
+               message.append( ( int ) airMotorRunTime.getValue() ).append( ":" );
 
             if( isArduinoConnect )
                home.getAquarium().setAquariumSettings( message.toString() );
@@ -2406,7 +2349,7 @@ public class MainPanel extends Application implements Initializable {
    }
 
    @FXML
-   void onWeatherKeyPressed( KeyEvent event ) {
+   void onWeatherKeyPressed() {
       updateWeatherButton.setVisible( true );
       weatherCharacterWarningLabel.setVisible( false );
    }

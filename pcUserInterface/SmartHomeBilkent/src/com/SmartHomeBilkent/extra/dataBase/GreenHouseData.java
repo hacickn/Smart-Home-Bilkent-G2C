@@ -75,8 +75,8 @@ public class GreenHouseData {
          temperature = 0;
          detailUsage = values.getTemperature().split( "@" );
 
-         if( detailUsage.length > 0 ){
-            for( int k = 0; k < detailUsage.length; k++)
+         if( detailUsage.length > 0 ) {
+            for( int k = 0; k < detailUsage.length; k++ )
                temperature = temperature + Integer.parseInt( detailUsage[ k ] );
             temperaturesPerDay.add( temperature / detailUsage.length );
          }
@@ -92,8 +92,8 @@ public class GreenHouseData {
          humidity = 0;
          detailUsage = values.getHumidity().split( "@" );
 
-         if( detailUsage.length > 0 ){
-            for( int k = 0; k < detailUsage.length; k++)
+         if( detailUsage.length > 0 ) {
+            for( int k = 0; k < detailUsage.length; k++ )
                humidity = humidity + Integer.parseInt( detailUsage[ k ] );
             humidityPerDay.add( humidity / detailUsage.length );
          }
