@@ -103,7 +103,10 @@
                    digitalWrite(external_siren, LOW);
       
                 if (first_data=="feeding_on")                           
-                   {myServo.write(180);  feeding_time=1;} 
+                   {
+                      myServo.write(180); 
+                      feeding_time=1;
+                   } 
                     
                 if (first_data=="garden_lights_on")                           
                     digitalWrite(garden_lights, HIGH);
@@ -131,19 +134,38 @@
                    
        if(last_data.length() > 0)
         {
-          feeding_hour        =last_data.substring(i,i+j); i=i+2;
-          feeding_minute      =last_data.substring(i,i+j); i=i+2;
-          feeding_second      =last_data.substring(i,i+j); i=i+2;
+          feeding_hour        =last_data.substring(i,i+j); 
+          i=i+2;
+          
+          feeding_minute      =last_data.substring(i,i+j);
+          i=i+2;
+          
+          feeding_second      =last_data.substring(i,i+j); 
+          i=i+2;
                   
-          water_change_hour   =last_data.substring(i,i+j); i=i+2;
-          water_change_minute =last_data.substring(i,i+j); i=i+2;
-          water_change_second =last_data.substring(i,i+j); i=i+2;
-          water_change_day    =last_data.substring(i,i+j); i=i+2;
+          water_change_hour   =last_data.substring(i,i+j);
+          i=i+2;
+          
+          water_change_minute =last_data.substring(i,i+j); 
+          i=i+2;
+          
+          water_change_second =last_data.substring(i,i+j);
+          i=i+2;
+          
+          water_change_day    =last_data.substring(i,i+j);
+          i=i+2;
                   
-          air_motor_hour      =last_data.substring(i,i+j); i=i+2;
-          air_motor_minute    =last_data.substring(i,i+j); i=i+2;
-          air_motor_second    =last_data.substring(i,i+j); i=i+2;
-          air_motor_operating =last_data.substring(i,i+j); i=i+2;        
+          air_motor_hour      =last_data.substring(i,i+j);
+          i=i+2;
+          
+          air_motor_minute    =last_data.substring(i,i+j);
+          i=i+2;
+          
+          air_motor_second    =last_data.substring(i,i+j); 
+          i=i+2;
+          
+          air_motor_operating =last_data.substring(i,i+j);
+          i=i+2;        
       /*
       Serial.println(feeding_hour); Serial.println(feeding_minute); Serial.println(feeding_second);
       Serial.println(water_change_hour); Serial.println(water_change_minute); 
@@ -219,19 +241,38 @@
       {       
             byte ee_addr=0; 
       
-            feeding_hour        = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            feeding_minute      = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            feeding_second      = print2digits(EEPROM.read(ee_addr));   ee_addr++;
+            feeding_hour        = print2digits(EEPROM.read(ee_addr));   
+            ee_addr++;
+            
+            feeding_minute      = print2digits(EEPROM.read(ee_addr));  
+            ee_addr++;
+            
+            feeding_second      = print2digits(EEPROM.read(ee_addr));  
+            ee_addr++;
                     
-            water_change_hour   = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            water_change_minute = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            water_change_second = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            water_change_day    = print2digits(EEPROM.read(ee_addr));   ee_addr++;
+            water_change_hour   = print2digits(EEPROM.read(ee_addr));  
+            ee_addr++;
+            
+            water_change_minute = print2digits(EEPROM.read(ee_addr));
+            ee_addr++;
+            
+            water_change_second = print2digits(EEPROM.read(ee_addr));
+            ee_addr++;
+            
+            water_change_day    = print2digits(EEPROM.read(ee_addr)); 
+            ee_addr++;
                     
-            air_motor_hour      = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            air_motor_minute    = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            air_motor_second    = print2digits(EEPROM.read(ee_addr));   ee_addr++;
-            air_motor_operating = print2digits(EEPROM.read(ee_addr));   ee_addr++; 
+            air_motor_hour      = print2digits(EEPROM.read(ee_addr)); 
+            ee_addr++;
+            
+            air_motor_minute    = print2digits(EEPROM.read(ee_addr)); 
+            ee_addr++;
+            
+            air_motor_second    = print2digits(EEPROM.read(ee_addr));  
+            ee_addr++;
+            
+            air_motor_operating = print2digits(EEPROM.read(ee_addr));
+            ee_addr++; 
       
             //EEPROM.update(16,0xff); EEPROM.update(17,0xff);        //*****deneme durumunda******
             //EEPROM.update(18,0xff); EEPROM.update(19,0xff);  
@@ -277,12 +318,16 @@
       
       String print2digits(int number)
       {
-       String temp=(String)number; 
+       String temp = (String)number; 
        
-           if(temp.length()>1)
-           {  return temp;   }
+           if(temp.length() > 1)
+           { 
+            return temp;   
+           }
            else
-           {  return ('0'+ temp); }  
+           {  
+            return ('0'+ temp); 
+           }  
       }
       
       
@@ -292,15 +337,25 @@
                   
                if(last_data.length() > 0)
                  {
-                  _hour   =last_data.substring(i,i+j); i=i+2;
-                  _minute =last_data.substring(i,i+j); i=i+2;
-                  _second =last_data.substring(i,i+j); i=i+2;
-                  
-                  _day_week=last_data.substring(i,i+j); i=i+2;
-                  
-                  _day     =last_data.substring(i,i+j); i=i+2;
-                  _moon    =last_data.substring(i,i+j); i=i+2;
-                  _year    =last_data.substring(i,i+4);  
+                    _hour   =last_data.substring(i,i+j); 
+                    i=i+2;
+                    
+                    _minute =last_data.substring(i,i+j); 
+                    i=i+2;
+                    
+                    _second =last_data.substring(i,i+j);
+                    i=i+2;
+                    
+                    _day_week=last_data.substring(i,i+j);
+                    i=i+2;
+                    
+                    _day     =last_data.substring(i,i+j);
+                    i=i+2;
+                    
+                    _moon    =last_data.substring(i,i+j);
+                    i=i+2;
+                    
+                    _year    =last_data.substring(i,i+4);  
                  }
       
                  tmElements_t tm; 

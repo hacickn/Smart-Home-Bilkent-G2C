@@ -47,18 +47,19 @@
              else
                 bitWrite(alarm_condition,2,0);     
              
-             if((door_encrypted) && digitalRead(Motion_Sensor) && (psw_time==0))
-                 psw_time=1;              
+             if(( door_encrypted ) && digitalRead( Motion_Sensor ) && ( psw_time == 0))
+                 psw_time = 1;              
             
-         if((!digitalRead(Gas_Sensor))&&(!digitalRead(Smoke_Sensor))&&(!digitalRead(Fire_Sensor)))
+         if((!digitalRead( Gas_Sensor ))&&(!digitalRead( Smoke_Sensor )) && ( !digitalRead( Fire_Sensor )))
            {
-             if (manual_on==false)
+             if (manual_on == false)
              {
-              digitalWrite(electricity, LOW);      digitalWrite(gas, LOW);
+              digitalWrite(electricity, LOW);      
+              digitalWrite(gas, LOW);
              }
            }        
       
-             if((!digitalRead(air_motor)) && (water_change==0) && (Distance > Distance_Max))
+             if((!digitalRead( air_motor )) && ( water_change == 0) && ( Distance > Distance_Max ))
              {  // air_motor NK!!!!!
                 digitalWrite(outgoing_water, LOW);    
                 digitalWrite(incoming_water, LOW);

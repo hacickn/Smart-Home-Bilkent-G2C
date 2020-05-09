@@ -28,9 +28,17 @@
       float      temp_green_house;
       float      humid_green_house;
       
-      //Servo derecelerinin değişkenleri
+      /*Servo motor variables
+       * 
+       */
       const int  servoPin = 12; 
       Servo      myServo; 
+      
+      const int  servoPin_Ldr_curtain_Cnt = 8; 
+      Servo      myServo_Ldr_curtain_Cnt;
+      
+      const int  servoPin_Rain_Device_Cnt = 7; 
+      Servo      myServo_Rain_Device_Cnt;
       
       //LiquidCrystal(RS, RW, E, D4, D5, D6, D7)
       //byte = uint8_t 
@@ -122,6 +130,8 @@
       int           air_motor_time=0;
       
       static unsigned int _time = 0;                       // use volatile for shared variabless
+
+      static unsigned int curtain_time=0;
       static unsigned int feeding_time=0;
       static unsigned int door_time=0;
       
@@ -131,13 +141,26 @@
       byte          alarm_condition=0;
       String        alarm_message="";
       bool          manual_on=false;
-      
+
+
+      /* setup()Method
+       *  
+       */ 
       void setup()
       {
         attachInterrupt(0, EchoPinA_ISR, CHANGE);  
       
+        /* attach lib is embedded library in Arduino
+        *  it uses Timer1 digital circuit
+        */ 
         myServo.attach(servoPin);
         myServo.write(0);
+      
+        myServo_Ldr_curtain_Cnt.attach(servoPin_Ldr_curtain_Cnt);
+        myServo_Ldr_curtain_Cnt.write(0);
+      
+        myServo_Rain_Device_Cnt.attach(servoPin_Rain_Device_Cnt);
+        myServo_Rain_Device_Cnt.write(0);
         
         pinMode(soil_moisture_sens, INPUT_PULLUP);
         pinMode(Rain_sens,      INPUT_PULLUP);
@@ -168,11 +191,11 @@
         last_data="B0E0G0I0U0A0D0W0X0F0R0S0N0";      
         Smart_App_Cnt();
         
-       // Serial Port
+       // Serial Port--------------------------------------------------------------------
         Serial.begin(9600);     
         Serial.println("start");
         
-        // Bluetooth 
+        // Bluetooth--------------------------------------------------------------------- 
         Serial3.begin(9600);    
         Serial3.write("start");
       
@@ -187,6 +210,10 @@
         MsTimer2::set(20, timing);//20ms period
         MsTimer2::start();
       }
+
+      /* EchoPinA_ISR() Method
+       *  
+       */ 
       
       void EchoPinA_ISR() 
       {
@@ -212,7 +239,11 @@
               Triger=0;         
           }
       }
+
       
+      /**  timing() 
+       * MsTimer2 Library
+       */
       void timing()  // MsTimer2 => 20ms period
       {        
            _time++;       
@@ -288,7 +319,9 @@
             }   
       }
       
-      
+        /**  Main Method
+         *  loop()
+         */
       void loop()
       {
               unsigned long currentMillis = millis();
@@ -309,6 +342,7 @@
                  Hour_Calendar();  
                  Sensor_Cnt(); 
                  Display_Refresh();    
+                 light_sens_state();
                  
               if (!manual_on)     
                   aquarium_control();   
@@ -322,10 +356,10 @@
                     humid_green_house = dht.readHumidity();
                     temp_green_house  = dht.readTemperature();
                       
-                   if((temp_green_house <= 20 ) && (!digitalRead(Green_House_Heater_Cnt)))   
-                      digitalWrite(Green_House_Heater_Cnt, HIGH);
-                   else if((temp_green_house > 20) && (digitalRead(Green_House_Heater_Cnt)))
-                     digitalWrite(Green_House_Heater_Cnt, LOW);
+             if(temp_green_house <= 20 )    
+                digitalWrite(Green_House_Heater_Cnt, HIGH);
+             else if(temp_green_house > 20) 
+               digitalWrite(Green_House_Heater_Cnt, LOW);
       
             previousMillisTask_3 = currentMillis;  // save current time to Task2 
         }
@@ -333,19 +367,23 @@
         if (Serial.available() > 0 || Serial3.available() > 0)   
         {        
                  MsTimer2::stop();
-                 Serial_House_Cnt();MsTimer2::start();
+                 Serial_House_Cnt();
+                 MsTimer2::start();
         }
-            
-              //light_sens_state();
-      }
-      
+     }
+
+      /*
+       * House_Temp_Humidity()
+       * GreenHouse Humidty data
+       */
+          
       void House_Temp_Humidity()
       {       //SHT21     
               sht.reset();
               temp = sht.getTemperature();  // get temp from SHT 
               sht.reset();
               humidity = sht.getHumidity(); // get temp from SHT 
-         // /*    
+           
               Serial.print("Temp_HS: ");      
               Serial.print(temp);
               Serial.print("\t Humidity_HS: ");
@@ -355,21 +393,43 @@
               Serial.print(temp_green_house);
               Serial.print("\t Humidity_GH: ");
               Serial.println(humid_green_house);
-          //*/    
+           
       }
       
-      void light_sens_state()
-      {   
-              //(0.0048828125*analogRead(light_sens))*1000;//
+                
+         /*
+          * light_sens_state()
+          * curtain control based on ligth amount
+          */
+            void light_sens_state()
+      {       
+              //ADC- A13
               light_sens_value =  analogRead(Ldr_Sensor);
+              /** duyarlılık = Vref / 2^n 
+              * miliV
+              * multipliyng w 1000 to convert it Volt to milivolt
+              */
+              //light_sens_value =( 0.0048828125*analogRead(Ldr_Sensor))*1000;
               light_sens_value = map(light_sens_value,0,1023,0,100);
               Serial.println(light_sens_value);         
-           if(light_sens_value > 250)   
+           if(light_sens_value > 70)   
              {
-               //Serial.print("light_sens_value :");  
-               //Serial.println(light_sens_value);
+               //digitalWrite(curtain, ON); // PERDE
+               //Serial.print("light_sens_value :");  Serial.println(light_sens_value);
+               /*
+                * If we use Stor curtain we will turn the 
+                * curtain 360° in 3 times 
+                */
+               myServo_Ldr_curtain_Cnt.write(0);
+               Serial.println(" myServo_Ldr_curtain_Cnt ON  ");
                digitalWrite(garden_lights, HIGH);
              }
            else
+           {
+                // open curtain
+                myServo_Ldr_curtain_Cnt.write(180);
+                Serial.println(" myServo_Ldr_curtain_Cnt OFF  ");
+               //digitalWrite(curtain, ON);// PERDE
                digitalWrite(garden_lights, LOW);
+           }
       }
