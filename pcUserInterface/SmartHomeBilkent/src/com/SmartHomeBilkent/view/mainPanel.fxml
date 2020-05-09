@@ -98,13 +98,12 @@
                             </VBox>
                         </left>
                         <right>
-                            <VBox alignment="CENTER" prefHeight="316.0" prefWidth="100.0"
-                                  spacing="15.0" BorderPane.alignment="CENTER">
+                            <VBox alignment="CENTER" prefHeight="316.0" prefWidth="100.0" spacing="15.0"
+                                  BorderPane.alignment="CENTER">
                                 <JFXButton fx:id="menuAquariumButton" onAction="#menuPaneButtonsOnAction"
                                            onMouseEntered="#commonButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="aquariumButton" text="menuWaterButton"
-                                           textFill="TRANSPARENT"/>
+                                           styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuAquariumProgress" prefWidth="50.0" visible="false"/>
                                 <JFXButton fx:id="menuGreenHouseButton" onAction="#menuPaneButtonsOnAction"
                                            onMouseEntered="#commonButtonsOnMovement"
@@ -118,19 +117,16 @@
                             </VBox>
                         </right>
                         <bottom>
-                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0"
-                                  BorderPane.alignment="CENTER">
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                 <Pane prefHeight="100.0" prefWidth="417.0">
-                                    <Label fx:id="mainMenuHomeLabel" alignment="CENTER" layoutX="37.0"
-                                           layoutY="8.0" prefHeight="25.0" prefWidth="135.0"
-                                           styleClass="tempLabel" text="HOME">
+                                    <Label fx:id="mainMenuHomeLabel" alignment="CENTER" layoutX="37.0" layoutY="8.0"
+                                           prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="HOME">
                                         <font>
                                             <Font name="Agency FB" size="18.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="mainMenuWeatherLabel" alignment="CENTER" layoutX="225.0"
-                                           layoutY="8.0" prefHeight="25.0" prefWidth="135.0"
-                                           styleClass="tempLabel" text="WEATHER">
+                                    <Label fx:id="mainMenuWeatherLabel" alignment="CENTER" layoutX="225.0" layoutY="8.0"
+                                           prefHeight="25.0" prefWidth="135.0" styleClass="tempLabel" text="WEATHER">
                                         <font>
                                             <Font name="Agency FB" size="18.0"/>
                                         </font>
@@ -138,8 +134,8 @@
                                     <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="weather" textFill="TRANSPARENT"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="weather" textFill="TRANSPARENT"/>
                                     <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0"
                                                onMouseEntered="#commonButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" pickOnBounds="true"
@@ -147,25 +143,23 @@
                                     <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0"
                                                onAction="#menuPaneButtonsOnAction"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="doorButton" textFill="TRANSPARENT"/>
-                                    <Label alignment="CENTER" layoutX="60.0"
-                                           layoutY="31.0" prefHeight="26.0" prefWidth="94.0"
-                                           styleClass="tempLabel">
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="doorButton" textFill="TRANSPARENT"/>
+                                    <Label alignment="CENTER" layoutX="60.0" layoutY="31.0" prefHeight="26.0"
+                                           prefWidth="94.0" styleClass="tempLabel">
                                         <font>
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="menuWeatherValue" alignment="CENTER" layoutX="241.0"
-                                           layoutY="31.0" prefHeight="26.0" prefWidth="103.0"
-                                           styleClass="tempLabel" text="8">
+                                    <Label fx:id="menuWeatherValue" alignment="CENTER" layoutX="241.0" layoutY="31.0"
+                                           prefHeight="26.0" prefWidth="103.0" styleClass="tempLabel" text="8">
                                         <font>
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="menuOpenDoorLabel" alignment="CENTER" layoutX="147.0"
-                                           layoutY="64.0" prefHeight="22.0" prefWidth="111.0"
-                                           styleClass="tempLabel" text="OPEN DOOR" visible="false">
+                                    <Label fx:id="menuOpenDoorLabel" alignment="CENTER" layoutX="147.0" layoutY="64.0"
+                                           prefHeight="22.0" prefWidth="111.0" styleClass="tempLabel" text="OPEN DOOR"
+                                           visible="false">
                                         <font>
                                             <Font name="Agency FB" size="18.0"/>
                                         </font>
@@ -174,31 +168,27 @@
                             </HBox>
                         </bottom>
                         <top>
-                            <Pane maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0"
-                                  prefWidth="692.0" BorderPane.alignment="CENTER">
+                            <Pane maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0"
+                                  BorderPane.alignment="CENTER">
                                 <JFXButton fx:id="menuConnectionButton" layoutX="325.0" layoutY="25.0"
-                                           onAction="#goToSettingFromMenuView"
-                                           onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="connectionButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
                                 <JFXButton fx:id="menuBulkChange" layoutX="200.0" layoutY="25.0"
-                                           onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="bulkChangeButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
                                 <JFXButton fx:id="menuTimeConfigurationButton" layoutX="450.0" layoutY="25.0"
-                                           onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="timeConfigurationButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
                             </Pane>
                         </top>
                         <center>
-                            <Pane minHeight="300.0" minWidth="500.0" prefHeight="300.0"
-                                  prefWidth="500.0"
+                            <Pane minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0"
                                   style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                   styleClass="homeFacilityPane" BorderPane.alignment="CENTER">
                                 <Pane fx:id="menuElecPane" prefHeight="300.0" prefWidth="500.0"
@@ -211,10 +201,9 @@
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <JFXToggleButton fx:id="elecSubMenuToggleButton" layoutX="220.0"
-                                                     layoutY="55.0" onAction="#menuPaneToggleButtonOnAction"
-                                                     styleClass="toggleButtons" text="elecSubMenuToggleButton"
-                                                     textFill="TRANSPARENT"/>
+                                    <JFXToggleButton fx:id="elecSubMenuToggleButton" layoutX="220.0" layoutY="55.0"
+                                                     onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons"
+                                                     text="elecSubMenuToggleButton" textFill="TRANSPARENT"/>
                                     <Label fx:id="elecSubPaneOpenLabelPassive" alignment="CENTER" layoutX="30.0"
                                            layoutY="100.0" prefHeight="0.0" prefWidth="180.0"
                                            styleClass="contextPassiveSub" text="LAST OPENING">
@@ -222,23 +211,23 @@
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneCloseLabelPassive" alignment="CENTER"
-                                           layoutX="306.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneCloseLabelPassive" alignment="CENTER" layoutX="306.0"
+                                           layoutY="100.0" prefHeight="0.0" prefWidth="180.0"
                                            styleClass="contextPassiveSub" text="LAST CLOSURE">
                                         <font>
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneOpenValueLabelPassive" alignment="CENTER"
-                                           layoutX="30.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneOpenValueLabelPassive" alignment="CENTER" layoutX="30.0"
+                                           layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
                                            style="-fx-border-radius: 15;" styleClass="contextDetailPassive"
                                            text="YESTERDAY  14.37">
                                         <font>
                                             <Font name="Agency FB" size="17.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneCloseValueLabelPassive" alignment="CENTER"
-                                           layoutX="306.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneCloseValueLabelPassive" alignment="CENTER" layoutX="306.0"
+                                           layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
                                            style="-fx-border-radius: 15;" styleClass="contextDetailPassive"
                                            text="YESTERDAY 23.45">
                                         <font>
@@ -248,9 +237,9 @@
                                     <JFXButton fx:id="elecSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearPassive"
-                                               text="elecSubMenuButtonPassive" textFill="TRANSPARENT"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearPassive" text="elecSubMenuButtonPassive"
+                                               textFill="TRANSPARENT"/>
                                     <Label fx:id="elecSubPaneLabelActive" alignment="CENTER" layoutX="100.0"
                                            layoutY="14.0" prefWidth="300.0" styleClass="contextActiveTop"
                                            text="ELECTRICITY" visible="false">
@@ -265,23 +254,23 @@
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneCloseLabelActive" alignment="CENTER"
-                                           layoutX="306.0" layoutY="100.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneCloseLabelActive" alignment="CENTER" layoutX="306.0"
+                                           layoutY="100.0" prefHeight="0.0" prefWidth="180.0"
                                            styleClass="contextActiveSub" text="LAST CLOSURE" visible="false">
                                         <font>
                                             <Font name="Agency FB" size="21.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneOpenValueLabelActive" alignment="CENTER"
-                                           layoutX="30.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneOpenValueLabelActive" alignment="CENTER" layoutX="30.0"
+                                           layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
                                            style="-fx-border-radius: 15;" styleClass="contextDetailActive"
                                            text="YESTERDAY  14.37" visible="false">
                                         <font>
                                             <Font name="Agency FB" size="17.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="elecSubPaneCloseValueLabelActive" alignment="CENTER"
-                                           layoutX="306.0" layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
+                                    <Label fx:id="elecSubPaneCloseValueLabelActive" alignment="CENTER" layoutX="306.0"
+                                           layoutY="126.0" prefHeight="0.0" prefWidth="180.0"
                                            style="-fx-border-radius: 15;" styleClass="contextDetailActive"
                                            text="YESTERDAY 23.45" visible="false">
                                         <font>
@@ -291,31 +280,28 @@
                                     <JFXButton fx:id="elecSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearActive"
-                                               text="elecSubMenuButtonActive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearActive" text="elecSubMenuButtonActive"
+                                               textFill="TRANSPARENT" visible="false"/>
                                 </Pane>
                                 <Pane fx:id="menuGasPane" prefHeight="300.0" prefWidth="500.0"
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                       styleClass="homeFacilityPane" visible="false">
                                     <Label fx:id="gasSubPaneLabelPassive" alignment="CENTER" layoutX="145.0"
-                                           layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop"
-                                           text="GAS">
+                                           layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop" text="GAS">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
                                     <JFXToggleButton fx:id="gasSubMenuToggleButton" layoutX="220.0" layoutY="55.0"
-                                                     onAction="#menuPaneToggleButtonOnAction"
-                                                     styleClass="toggleButtons" text="gasSubMenuToggleButton"
-                                                     textFill="TRANSPARENT"/>
+                                                     onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons"
+                                                     text="gasSubMenuToggleButton" textFill="TRANSPARENT"/>
                                     <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearPassive"
-                                               text="gasSubMenuButtonPassive" textFill="TRANSPARENT"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearPassive" text="gasSubMenuButtonPassive"
+                                               textFill="TRANSPARENT"/>
                                     <Label fx:id="gasSubPaneLabelActive" alignment="CENTER" layoutX="145.0"
                                            layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop" text="GAS"
                                            visible="false">
@@ -326,34 +312,29 @@
                                     <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearActive"
-                                               text="gasSubMenuButtonActive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearActive" text="gasSubMenuButtonActive"
+                                               textFill="TRANSPARENT" visible="false"/>
                                 </Pane>
                                 <Pane fx:id="menuWaterPane" prefHeight="300.0" prefWidth="500.0"
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                       styleClass="homeFacilityPane" visible="false">
                                     <Label fx:id="waterSubPaneLabelPassive" alignment="CENTER" layoutX="145.0"
-                                           layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop"
-                                           text="WATER">
+                                           layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop" text="WATER">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0"
-                                                     layoutY="55.0" onAction="#menuPaneToggleButtonOnAction"
-                                                     styleClass="toggleButtons" text="gasSubMenuToggleButton"
-                                                     textFill="TRANSPARENT"/>
-                                    <JFXButton layoutX="216.0" layoutY="226.0"
-                                               onAction="#goToSettingFromMenuView"
+                                    <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0"
+                                                     onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons"
+                                                     text="gasSubMenuToggleButton" textFill="TRANSPARENT"/>
+                                    <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearPassive"
-                                               text="waterSubMenuButtonPassive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false"/>
                                     <Label fx:id="waterSubPaneLabelActive" alignment="CENTER" layoutX="145.0"
-                                           layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop"
-                                           text="WATER" visible="false">
+                                           layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop" text="WATER"
+                                           visible="false">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
@@ -361,9 +342,8 @@
                                     <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearActive"
-                                               text="waterSubMenuButtonActive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive"
+                                               textFill="TRANSPARENT" visible="false"/>
                                 </Pane>
                                 <Pane fx:id="menuAquariumPane" prefHeight="300.0" prefWidth="500.0"
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
@@ -375,16 +355,16 @@
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <JFXToggleButton fx:id="aquariumSubMenuToggleButton" layoutX="109.0"
-                                                     layoutY="65.0" onAction="#menuPaneToggleButtonOnAction"
-                                                     prefHeight="62.0" prefWidth="283.0"
-                                                     styleClass="toggleButtonsMiddle" textFill="TRANSPARENT"/>
-                                    <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                    <JFXToggleButton fx:id="aquariumSubMenuToggleButton" layoutX="109.0" layoutY="65.0"
+                                                     onAction="#menuPaneToggleButtonOnAction" prefHeight="62.0"
+                                                     prefWidth="283.0" styleClass="toggleButtonsMiddle"
+                                                     textFill="TRANSPARENT"/>
+                                    <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
+                                               onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearPassive"
-                                               text="waterSubMenuButtonPassive" textFill="TRANSPARENT"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearPassive" text="waterSubMenuButtonPassive"
+                                               textFill="TRANSPARENT"/>
                                     <Label fx:id="aquariumSubPaneLabelActive" alignment="CENTER" layoutX="96.0"
                                            layoutY="14.0" prefWidth="300.0" styleClass="contextActiveTop"
                                            text="AQUARIUM" visible="false">
@@ -392,26 +372,23 @@
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <JFXButton fx:id="aquariumSubMenuButtonActive" layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                    <JFXButton fx:id="aquariumSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
+                                               onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearActive"
-                                               text="waterSubMenuButtonActive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearActive" text="waterSubMenuButtonActive"
+                                               textFill="TRANSPARENT" visible="false"/>
                                     <JFXButton fx:id="menuAquariumFeedButton" layoutX="221.0" layoutY="133.0"
-                                               onAction="#menuPaneButtonsOnAction" prefHeight="50.0"
-                                               prefWidth="50.0" styleClass="feedingButton"
-                                               textFill="TRANSPARENT"/>
-                                    <ProgressIndicator fx:id="menuAquariumIndicator" layoutX="232.0"
-                                                       layoutY="189.0" prefHeight="27.0" prefWidth="29.0"
-                                                       visible="false"/>
+                                               onAction="#menuPaneButtonsOnAction" prefHeight="50.0" prefWidth="50.0"
+                                               styleClass="feedingButton" textFill="TRANSPARENT"/>
+                                    <ProgressIndicator fx:id="menuAquariumIndicator" layoutX="232.0" layoutY="189.0"
+                                                       prefHeight="27.0" prefWidth="29.0" visible="false"/>
                                 </Pane>
                                 <Pane fx:id="menuGreenHousePane" prefHeight="300.0" prefWidth="500.0"
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                       styleClass="homeFacilityPane" visible="false">
-                                    <Label fx:id="greenHouseSubPaneLabelPassive" alignment="CENTER"
-                                           layoutX="91.0" layoutY="14.0" prefHeight="0.0" prefWidth="310.0"
+                                    <Label fx:id="greenHouseSubPaneLabelPassive" alignment="CENTER" layoutX="91.0"
+                                           layoutY="14.0" prefHeight="0.0" prefWidth="310.0"
                                            styleClass="contextPassiveTop" text="GREEN HOUSE">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
@@ -424,79 +401,74 @@
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="ghHumidityTempLabel" alignment="CENTER" layoutX="283.0"
-                                           layoutY="72.0" prefHeight="0.0" prefWidth="200.0"
-                                           styleClass="contextPassiveSub" text="HUMIDITY">
+                                    <Label fx:id="ghHumidityTempLabel" alignment="CENTER" layoutX="283.0" layoutY="72.0"
+                                           prefHeight="0.0" prefWidth="200.0" styleClass="contextPassiveSub"
+                                           text="HUMIDITY">
                                         <font>
                                             <Font name="Agency FB" size="22.0"/>
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" layoutX="283.0"
-                                           layoutY="112.0" prefHeight="0.0" prefWidth="200.0"
-                                           style="-fx-border-radius: 15;" styleClass="contextDetailPassive"
-                                           text="21">
+                                    <Label alignment="CENTER" layoutX="283.0" layoutY="112.0" prefHeight="0.0"
+                                           prefWidth="200.0" style="-fx-border-radius: 15;"
+                                           styleClass="contextDetailPassive" text="21">
                                         <font>
                                             <Font name="Agency FB" size="27.0"/>
                                         </font>
                                     </Label>
-                                    <Label fx:id="menuHomeTempLabel" alignment="CENTER" layoutX="14.0"
-                                           layoutY="72.0" prefHeight="0.0" prefWidth="200.0"
-                                           styleClass="contextPassiveSub" text="TEMPERATURE">
+                                    <Label fx:id="menuHomeTempLabel" alignment="CENTER" layoutX="14.0" layoutY="72.0"
+                                           prefHeight="0.0" prefWidth="200.0" styleClass="contextPassiveSub"
+                                           text="TEMPERATURE">
                                         <font>
                                             <Font name="Agency FB" size="22.0"/>
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" layoutX="14.0"
-                                           layoutY="110.0" prefHeight="0.0" prefWidth="200.0"
-                                           style="-fx-border-radius: 15;" styleClass="contextDetailPassive"
-                                           text="23">
+                                    <Label alignment="CENTER" layoutX="14.0" layoutY="110.0" prefHeight="0.0"
+                                           prefWidth="200.0" style="-fx-border-radius: 15;"
+                                           styleClass="contextDetailPassive" text="23">
                                         <font>
                                             <Font name="Agency FB" size="27.0"/>
                                         </font>
                                     </Label>
-                                    <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                    <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
+                                               onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearPassive"
-                                               text="greenhouseSubMenuButtonPassive" textFill="TRANSPARENT"/>
-                                    <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearPassive" text="greenhouseSubMenuButtonPassive"
+                                               textFill="TRANSPARENT"/>
+                                    <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
+                                               onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement"
-                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0"
-                                               prefWidth="60.0" styleClass="gearActive"
-                                               text="greenhouseSubMenuButtonActive" textFill="TRANSPARENT"
-                                               visible="false"/>
+                                               onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
+                                               styleClass="gearActive" text="greenhouseSubMenuButtonActive"
+                                               textFill="TRANSPARENT" visible="false"/>
                                 </Pane>
                                 <Pane fx:id="menuGardenLightPane" prefHeight="300.0" prefWidth="500.0"
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                       styleClass="homeFacilityPane" visible="false">
-                                    <Label fx:id="gardenLightSubPaneLabelPassive" alignment="CENTER"
-                                           layoutX="145.0" layoutY="14.0" prefWidth="210.0"
-                                           styleClass="contextPassiveTop" text="GARDEN LIGHT">
+                                    <Label fx:id="gardenLightSubPaneLabelPassive" alignment="CENTER" layoutX="145.0"
+                                           layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop"
+                                           text="GARDEN LIGHT">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
                                     <JFXToggleButton fx:id="gardenLightSubMenuToggleButton" layoutX="220.0"
                                                      layoutY="55.0" onAction="#menuPaneToggleButtonOnAction"
-                                                     styleClass="toggleButtons"
-                                                     text="gardenLightSubMenuToggleButton"
+                                                     styleClass="toggleButtons" text="gardenLightSubMenuToggleButton"
                                                      textFill="TRANSPARENT"/>
-                                    <JFXButton layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                    <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearPassive"
                                                text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT"/>
-                                    <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER"
-                                           layoutX="145.0" layoutY="14.0" prefWidth="210.0"
-                                           styleClass="contextActiveTop" text="GARDEN LIGHT" visible="false">
+                                    <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER" layoutX="145.0"
+                                           layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop"
+                                           text="GARDEN LIGHT" visible="false">
                                         <font>
                                             <Font name="Agency FB" size="35.0"/>
                                         </font>
                                     </Label>
-                                    <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0"
-                                               layoutY="226.0" onAction="#goToSettingFromMenuView"
+                                    <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
+                                               onAction="#goToSettingFromMenuView"
                                                onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearActive"
                                                text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT"
@@ -513,21 +485,17 @@
                                         </font>
                                     </Label>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="33.0" layoutY="55.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="electricityImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="electricityImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="120.0" layoutY="57.0"
                                                pickOnBounds="true" preserveRatio="true" styleClass="gasImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="58.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="waterImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="waterImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="212.0" layoutY="57.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="aquariumImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="aquariumImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="405.0" layoutY="58.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="gardenLightImage"/>
-                                    <JFXRadioButton fx:id="electricityRadioButton" layoutX="10.0"
-                                                    layoutY="109.0" prefHeight="17.0" prefWidth="103.0"
+                                               pickOnBounds="true" preserveRatio="true" styleClass="gardenLightImage"/>
+                                    <JFXRadioButton fx:id="electricityRadioButton" layoutX="10.0" layoutY="109.0"
+                                                    prefHeight="17.0" prefWidth="103.0"
                                                     styleClass="bulkChangesRadioButton" text="Electricity"
                                                     textFill="#030303">
                                         <font>
@@ -536,16 +504,14 @@
                                     </JFXRadioButton>
                                     <JFXRadioButton fx:id="gasRadioButton" layoutX="118.0" layoutY="110.0"
                                                     prefHeight="17.0" prefWidth="65.0"
-                                                    styleClass="bulkChangesRadioButton" text="GAS"
-                                                    textFill="#030303">
+                                                    styleClass="bulkChangesRadioButton" text="GAS" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
                                     <JFXRadioButton fx:id="waterRadioButton" layoutX="285.0" layoutY="110.0"
                                                     prefHeight="17.0" prefWidth="80.0"
-                                                    styleClass="bulkChangesRadioButton" text="WATER"
-                                                    textFill="#030303">
+                                                    styleClass="bulkChangesRadioButton" text="WATER" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
@@ -558,8 +524,8 @@
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
-                                    <JFXRadioButton fx:id="gardenLightRadioButton" layoutX="367.0"
-                                                    layoutY="109.0" prefHeight="17.0" prefWidth="143.0"
+                                    <JFXRadioButton fx:id="gardenLightRadioButton" layoutX="367.0" layoutY="109.0"
+                                                    prefHeight="17.0" prefWidth="143.0"
                                                     styleClass="bulkChangesRadioButton" text="GARDEN LIGHT"
                                                     textFill="#030303">
                                         <font>
@@ -567,8 +533,8 @@
                                         </font>
                                     </JFXRadioButton>
                                     <JFXButton fx:id="bulkChangesSaveButton" layoutX="128.0" layoutY="246.0"
-                                               onAction="#menuPaneButtonsOnAction" prefHeight="40.0"
-                                               prefWidth="245.0" ripplerFill="#b85c0000"
+                                               onAction="#menuPaneButtonsOnAction" prefHeight="40.0" prefWidth="245.0"
+                                               ripplerFill="#b85c0000"
                                                style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;"
                                                text="SAVE">
                                         <font>
@@ -576,8 +542,7 @@
                                         </font>
                                     </JFXButton>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="126.0" layoutY="150.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="buzzerImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="36.0" layoutY="150.0"
                                                pickOnBounds="true" preserveRatio="true"
                                                styleClass="incomingWaterImage"/>
@@ -587,46 +552,40 @@
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0"
                                                pickOnBounds="true" preserveRatio="true" styleClass="doorImage"/>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="212.0" layoutY="150.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="feedingImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="feedingImage"/>
                                     <JFXRadioButton fx:id="sirenRadioButton" layoutX="118.0" layoutY="206.0"
                                                     prefHeight="17.0" prefWidth="67.0"
-                                                    styleClass="bulkChangesRadioButton" text="SIREN"
-                                                    textFill="#030303">
+                                                    styleClass="bulkChangesRadioButton" text="SIREN" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
-                                    <JFXRadioButton fx:id="incomingWaterRadioButton" layoutX="10.0"
-                                                    layoutY="206.0" onAction="#menuPaneButtonsOnAction"
-                                                    prefHeight="17.0" prefWidth="90.0"
-                                                    styleClass="bulkChangesRadioButton" text="INCOMING W."
-                                                    textFill="#030303">
+                                    <JFXRadioButton fx:id="incomingWaterRadioButton" layoutX="10.0" layoutY="206.0"
+                                                    onAction="#menuPaneButtonsOnAction" prefHeight="17.0"
+                                                    prefWidth="90.0" styleClass="bulkChangesRadioButton"
+                                                    text="INCOMING W." textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
-                                    <JFXRadioButton fx:id="outgoingWaterRadioButton" layoutX="367.0"
-                                                    layoutY="206.0" onAction="#menuPaneButtonsOnAction"
-                                                    prefHeight="17.0" prefWidth="162.0"
-                                                    styleClass="bulkChangesRadioButton" text="OUTGOING WATER"
-                                                    textFill="#030303">
+                                    <JFXRadioButton fx:id="outgoingWaterRadioButton" layoutX="367.0" layoutY="206.0"
+                                                    onAction="#menuPaneButtonsOnAction" prefHeight="17.0"
+                                                    prefWidth="162.0" styleClass="bulkChangesRadioButton"
+                                                    text="OUTGOING WATER" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
                                     <JFXRadioButton fx:id="feedRadioButton" layoutX="193.0" layoutY="206.0"
                                                     prefHeight="17.0" prefWidth="86.0"
-                                                    styleClass="bulkChangesRadioButton" text="FEED"
-                                                    textFill="#030303">
+                                                    styleClass="bulkChangesRadioButton" text="FEED" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
                                     </JFXRadioButton>
                                     <JFXRadioButton fx:id="doorRadioButton" layoutX="283.0" layoutY="206.0"
                                                     prefHeight="17.0" prefWidth="73.0"
-                                                    styleClass="bulkChangesRadioButton" text="DOOR"
-                                                    textFill="#030303">
+                                                    styleClass="bulkChangesRadioButton" text="DOOR" textFill="#030303">
                                         <font>
                                             <Font name="Trebuchet MS" size="11.0"/>
                                         </font>
@@ -636,11 +595,9 @@
                                       style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;"
                                       styleClass="homeFacilityPane" visible="false">
                                     <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="143.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="clockImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="clockImage"/>
                                     <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="136.0" layoutY="80.0"
-                                               pickOnBounds="true" preserveRatio="true"
-                                               styleClass="calenderImage"/>
+                                               pickOnBounds="true" preserveRatio="true" styleClass="calenderImage"/>
                                     <JFXButton fx:id="dateTimeSaveButton" layoutX="218.0" layoutY="232.0"
                                                onAction="#menuPaneButtonsOnAction" ripplerFill="#b85c0000"
                                                style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2; -fx-border-color: black;"
@@ -676,37 +633,32 @@
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="userProfileSurnameLabel" alignment="CENTER_RIGHT" layoutX="20.0"
-                               layoutY="165.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels"
-                               text="SURNAME">
+                        <Label fx:id="userProfileSurnameLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="165.0"
+                               prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="SURNAME">
                             <font>
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
                         </Label>
                         <Label fx:id="userProfileAgeLabel" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="215.0"
-                               prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels"
-                               text="BIRTHDAY">
+                               prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="BIRTHDAY">
                             <font>
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="userProfileGenderLabel" alignment="CENTER_RIGHT" layoutX="21.0"
-                               layoutY="265.0" prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels"
-                               text="GENDER">
+                        <Label fx:id="userProfileGenderLabel" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="265.0"
+                               prefHeight="31.0" prefWidth="116.0" styleClass="changeUserInfoLabels" text="GENDER">
                             <font>
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="userProfileUserNameLabel" alignment="CENTER_RIGHT" layoutX="302.0"
-                               layoutY="115.0" prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels"
-                               text="USER NAME">
+                        <Label fx:id="userProfileUserNameLabel" alignment="CENTER_RIGHT" layoutX="302.0" layoutY="115.0"
+                               prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels" text="USER NAME">
                             <font>
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="userProfilePasswordLabel" alignment="CENTER_RIGHT" layoutX="301.0"
-                               layoutY="165.0" prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels"
-                               text="PASSWORD">
+                        <Label fx:id="userProfilePasswordLabel" alignment="CENTER_RIGHT" layoutX="301.0" layoutY="165.0"
+                               prefHeight="31.0" prefWidth="170.0" styleClass="changeUserInfoLabels" text="PASSWORD">
                             <font>
                                 <Font name="Agency FB" size="25.0"/>
                             </font>
@@ -746,38 +698,34 @@
                                 <Font name="Arial Narrow" size="15.0"/>
                             </font>
                         </JFXTextField>
-                        <JFXTextField alignment="CENTER" editable="false"
-                                      focusColor="#b85c00" layoutX="479.0" layoutY="168.0" prefWidth="135.0"
-                                      styleClass="userInfoTextField" text="*******">
+                        <JFXTextField alignment="CENTER" editable="false" focusColor="#b85c00" layoutX="479.0"
+                                      layoutY="168.0" prefWidth="135.0" styleClass="userInfoTextField" text="*******">
                             <font>
                                 <Font name="Arial Narrow" size="15.0"/>
                             </font>
                         </JFXTextField>
                         <JFXButton fx:id="changeUserNormalInfoButton" layoutX="192.0" layoutY="306.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="userInfoChange" text="changeUserNormalnfo" textFill="TRANSPARENT"/>
                         <JFXButton fx:id="changeUserPrivateInfoButton" layoutX="521.0" layoutY="206.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="userInfoChange" text="changeUserPrivInfo" textFill="TRANSPARENT"/>
                         <JFXButton fx:id="userChangerButton" layoutX="315.0" layoutY="14.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
                                    styleClass="userChange" text="changeUserButton" textFill="TRANSPARENT"/>
                         <Label fx:id="userChangerInfoLabel" alignment="CENTER" layoutX="259.0" layoutY="84.0"
-                               prefHeight="17.0" prefWidth="182.0" styleClass="userProfileInfoLabel"
-                               text="CHANGE USER" visible="false">
+                               prefHeight="17.0" prefWidth="182.0" styleClass="userProfileInfoLabel" text="CHANGE USER"
+                               visible="false">
                             <font>
                                 <Font name="Agency FB" size="14.0"/>
                             </font>
                         </Label>
                         <Label fx:id="changeUserInfoLabel" alignment="CENTER" layoutX="100.0" layoutY="355.0"
-                               prefHeight="17.0" prefWidth="233.0" styleClass="userProfileInfoLabel"
-                               text="CHANGE INFO" visible="false">
+                               prefHeight="17.0" prefWidth="233.0" styleClass="userProfileInfoLabel" text="CHANGE INFO"
+                               visible="false">
                             <font>
                                 <Font name="Agency FB" size="14.0"/>
                             </font>
@@ -798,18 +746,16 @@
                             <Image url="@../styleSheets/images/girls4.png"/>
                         </ImageView>
                     </Pane>
-                    <Pane fx:id="changeUserNormalInfoPane" layoutX="40.0" layoutY="70.0" prefHeight="330.0"
-                          prefWidth="290.0"
+                    <Pane fx:id="changeUserNormalInfoPane" disable="true" layoutX="40.0" layoutY="70.0" opacity="0.0"
+                          prefHeight="330.0" prefWidth="290.0"
                           style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;"
-                          styleClass="changeUserInfoPane" visible="false">
+                          styleClass="changeUserInfoPane">
                         <JFXButton fx:id="saveUserNormalInfo" layoutX="120.0" layoutY="14.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="changeUserInfoSave" text="saveNormalInfo" textFill="TRANSPARENT"/>
                         <JFXButton fx:id="backToUserProfileFromNormalInfo" layoutX="120.0" layoutY="266.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="changeUserInfoBack" text="goBackNormalnfo" textFill="TRANSPARENT"/>
                         <Label fx:id="normalChangeNameLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="90.0"
@@ -818,23 +764,20 @@
                                 <Font name="Agency FB" size="17.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="normalChangeSurnameLabel" alignment="CENTER_RIGHT" layoutX="10.0"
-                               layoutY="125.0" prefHeight="21.0" prefWidth="90.0"
-                               styleClass="changeUserSubInfoLabels" text="SURNAME">
+                        <Label fx:id="normalChangeSurnameLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="125.0"
+                               prefHeight="21.0" prefWidth="90.0" styleClass="changeUserSubInfoLabels" text="SURNAME">
                             <font>
                                 <Font name="Agency FB" size="17.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="normalChangeBirthdayLabel" alignment="CENTER_RIGHT" layoutX="7.0"
-                               layoutY="160.0" prefHeight="21.0" prefWidth="92.0"
-                               styleClass="changeUserSubInfoLabels" text="BIRTHDAY">
+                        <Label fx:id="normalChangeBirthdayLabel" alignment="CENTER_RIGHT" layoutX="7.0" layoutY="160.0"
+                               prefHeight="21.0" prefWidth="92.0" styleClass="changeUserSubInfoLabels" text="BIRTHDAY">
                             <font>
                                 <Font name="Agency FB" size="17.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="normalChangeGenderLabel" alignment="CENTER_RIGHT" layoutX="6.0"
-                               layoutY="195.0" prefHeight="21.0" prefWidth="92.0"
-                               styleClass="changeUserSubInfoLabels" text="GENDER">
+                        <Label fx:id="normalChangeGenderLabel" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="195.0"
+                               prefHeight="21.0" prefWidth="92.0" styleClass="changeUserSubInfoLabels" text="GENDER">
                             <font>
                                 <Font name="Agency FB" size="17.0"/>
                             </font>
@@ -843,12 +786,12 @@
                                       layoutY="83.0" prefWidth="125.0" styleClass="changeUserInfoTextField"/>
                         <JFXTextField fx:id="surnameTextField" alignment="CENTER" focusColor="WHITE" layoutX="105.0"
                                       layoutY="118.0" prefWidth="125.0" styleClass="changeUserInfoTextField"/>
-                        <JFXRadioButton fx:id="maleRadioOption" layoutX="105.0"
-                                        layoutY="197.0" onAction="#userProfileButtonsOnAction" prefHeight="17.0"
-                                        prefWidth="86.0" styleClass="changeUserInforRadioButton" text="MALE"/>
-                        <JFXRadioButton fx:id="femaleRadioOption" layoutX="178.0"
-                                        layoutY="197.0" onAction="#userProfileButtonsOnAction" prefHeight="17.0"
-                                        prefWidth="92.0" styleClass="changeUserInforRadioButton" text="FEMALE"/>
+                        <JFXRadioButton fx:id="maleRadioOption" layoutX="105.0" layoutY="197.0"
+                                        onAction="#userProfileButtonsOnAction" prefHeight="17.0" prefWidth="86.0"
+                                        styleClass="changeUserInforRadioButton" text="MALE"/>
+                        <JFXRadioButton fx:id="femaleRadioOption" layoutX="178.0" layoutY="197.0"
+                                        onAction="#userProfileButtonsOnAction" prefHeight="17.0" prefWidth="92.0"
+                                        styleClass="changeUserInforRadioButton" text="FEMALE"/>
                         <Label fx:id="normalInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0"
                                prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels"
                                text="PLEASE FILL TAL GAPS" visible="false">
@@ -856,22 +799,19 @@
                                 <Font name="Agency FB" size="15.0"/>
                             </font>
                         </Label>
-                        <JFXDatePicker fx:id="birthdayDateField" defaultColor="#004601" layoutX="106.0"
-                                       layoutY="153.0" prefWidth="130.0" showWeekNumbers="true"
-                                       styleClass="datePicker"/>
+                        <JFXDatePicker fx:id="birthdayDateField" defaultColor="#004601" layoutX="106.0" layoutY="153.0"
+                                       prefWidth="130.0" showWeekNumbers="true" styleClass="datePicker"/>
                     </Pane>
-                    <Pane fx:id="changeUserPrivateInfoPane" layoutX="370.0" layoutY="70.0" prefHeight="330.0"
-                          prefWidth="290.0"
+                    <Pane fx:id="changeUserPrivateInfoPane" disable="true" layoutX="370.0" layoutY="70.0" opacity="0.0"
+                          prefHeight="330.0" prefWidth="290.0"
                           style="-fx-background-radius: 105; -fx-border-radius: 100; -fx-border-width: 5;"
-                          styleClass="changeUserInfoPane" visible="false">
+                          styleClass="changeUserInfoPane">
                         <JFXButton fx:id="saveUserPrivateInfo" layoutX="120.0" layoutY="14.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="changeUserInfoSave" text="savePrivInfo" textFill="TRANSPARENT"/>
                         <JFXButton fx:id="backToUserProfileFromPrivateInfo" layoutX="120.0" layoutY="266.0"
-                                   onAction="#userProfileButtonsOnAction"
-                                   onMouseEntered="#userProfileButtonsOnMovement"
+                                   onAction="#userProfileButtonsOnAction" onMouseEntered="#userProfileButtonsOnMovement"
                                    onMouseExited="#userProfileButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="changeUserInfoBack" text="goBackPrivInfo" textFill="TRANSPARENT"/>
                         <Label fx:id="userNameLabel" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="90.0"
@@ -902,18 +842,15 @@
                                 <Font name="Agency FB" size="17.0"/>
                             </font>
                         </Label>
-                        <JFXTextField fx:id="userNameTextField" alignment="CENTER" focusColor="WHITE"
-                                      layoutX="157.0" layoutY="83.0" prefWidth="110.0"
-                                      styleClass="changeUserInfoTextField"/>
-                        <JFXTextField fx:id="newPasswordTextField" alignment="CENTER" focusColor="WHITE"
-                                      layoutX="157.0" layoutY="118.0" prefWidth="110.0"
-                                      styleClass="changeUserInfoTextField"/>
+                        <JFXTextField fx:id="userNameTextField" alignment="CENTER" focusColor="WHITE" layoutX="157.0"
+                                      layoutY="83.0" prefWidth="110.0" styleClass="changeUserInfoTextField"/>
+                        <JFXTextField fx:id="newPasswordTextField" alignment="CENTER" focusColor="WHITE" layoutX="157.0"
+                                      layoutY="118.0" prefWidth="110.0" styleClass="changeUserInfoTextField"/>
                         <JFXTextField fx:id="verifyNewPasswordField" alignment="CENTER" focusColor="WHITE"
                                       layoutX="157.0" layoutY="153.0" prefWidth="110.0"
                                       styleClass="changeUserInfoTextField"/>
-                        <JFXTextField fx:id="currentPasswordField" alignment="CENTER" focusColor="WHITE"
-                                      layoutX="157.0" layoutY="188.0" prefWidth="110.0"
-                                      styleClass="changeUserInfoTextField"/>
+                        <JFXTextField fx:id="currentPasswordField" alignment="CENTER" focusColor="WHITE" layoutX="157.0"
+                                      layoutY="188.0" prefWidth="110.0" styleClass="changeUserInfoTextField"/>
                         <Label fx:id="privateInfoWarning" alignment="CENTER" layoutX="18.0" layoutY="64.0"
                                prefHeight="22.0" prefWidth="255.0" styleClass="changeUserInfoLabels">
                             <font>
@@ -932,8 +869,8 @@
                                        onAction="#settingsFacilitiesButtons"
                                        onMouseEntered="#settingsFacilitiesButtonsMov"
                                        onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0"
-                                       prefWidth="60.0" styleClass="applicationSettings"
-                                       text="applicationSettingButton" textFill="TRANSPARENT"/>
+                                       prefWidth="60.0" styleClass="applicationSettings" text="applicationSettingButton"
+                                       textFill="TRANSPARENT"/>
                             <JFXButton fx:id="settingsUsersSettingButton" layoutX="165.0" layoutY="24.0"
                                        onAction="#settingsFacilitiesButtons"
                                        onMouseEntered="#settingsFacilitiesButtonsMov"
@@ -960,97 +897,90 @@
                             <JFXButton fx:id="settingsUsersSettingButtonActive" layoutX="165.0" layoutY="24.0"
                                        onMouseEntered="#settingsFacilitiesButtonsMov"
                                        onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0"
-                                       prefWidth="60.0" styleClass="userSettingsActive"
-                                       text="usersSettingButtonActive" textFill="TRANSPARENT" visible="false"/>
+                                       prefWidth="60.0" styleClass="userSettingsActive" text="usersSettingButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="modsSettingButtonActive" layoutX="285.0" layoutY="24.0"
                                        onMouseEntered="#settingsFacilitiesButtonsMov"
                                        onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0"
-                                       prefWidth="60.0" styleClass="modsSettingsActive"
-                                       text="modsSettingButtonActive" textFill="TRANSPARENT" visible="false"/>
+                                       prefWidth="60.0" styleClass="modsSettingsActive" text="modsSettingButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="homeSettingButtonActive" layoutX="405.0" layoutY="24.0"
                                        onMouseEntered="#settingsFacilitiesButtonsMov"
                                        onMouseExited="#settingsFacilitiesButtonsMovEx" prefHeight="60.0"
-                                       prefWidth="60.0" styleClass="homeSettingsActive"
-                                       text="homeSettingButtonActive" textFill="TRANSPARENT" visible="false"/>
+                                       prefWidth="60.0" styleClass="homeSettingsActive" text="homeSettingButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <Label fx:id="applicationSettingButtonLabel" alignment="CENTER" layoutX="13.0"
-                                   layoutY="80.0" prefHeight="24.0" prefWidth="125.0"
-                                   styleClass="settingTopPaneLabels" text="APPLICATION" visible="false">
+                                   layoutY="80.0" prefHeight="24.0" prefWidth="125.0" styleClass="settingTopPaneLabels"
+                                   text="APPLICATION" visible="false">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="usersSettingButtonLabel" alignment="CENTER" layoutX="126.0"
-                                   layoutY="80.0" prefHeight="24.0" prefWidth="139.0"
-                                   styleClass="settingTopPaneLabels" text="USERS" visible="false">
+                            <Label fx:id="usersSettingButtonLabel" alignment="CENTER" layoutX="126.0" layoutY="80.0"
+                                   prefHeight="24.0" prefWidth="139.0" styleClass="settingTopPaneLabels" text="USERS"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="modsSettingButtonLabel" alignment="CENTER" layoutX="257.0"
-                                   layoutY="79.0" prefHeight="24.0" prefWidth="116.0"
-                                   styleClass="settingTopPaneLabels" text="MODS" visible="false">
+                            <Label fx:id="modsSettingButtonLabel" alignment="CENTER" layoutX="257.0" layoutY="79.0"
+                                   prefHeight="24.0" prefWidth="116.0" styleClass="settingTopPaneLabels" text="MODS"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="homeSettingButtonLabel" alignment="CENTER" layoutX="366.0"
-                                   layoutY="80.0" prefHeight="24.0" prefWidth="139.0"
-                                   styleClass="settingTopPaneLabels" text="HOME" visible="false">
+                            <Label fx:id="homeSettingButtonLabel" alignment="CENTER" layoutX="366.0" layoutY="80.0"
+                                   prefHeight="24.0" prefWidth="139.0" styleClass="settingTopPaneLabels" text="HOME"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
                         </Pane>
                     </AnchorPane>
-                    <AnchorPane layoutY="108.0" maxHeight="450.0" maxWidth="700.0"
-                                minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0">
-                        <SplitPane fx:id="settingModePane" dividerPositions="0.4572072072072072"
+                    <AnchorPane layoutY="108.0" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0"
+                                prefHeight="450.0" prefWidth="700.0">
+                        <SplitPane fx:id="settingModePane" dividerPositions="0.4572072072072072" opacity="0.0"
                                    orientation="VERTICAL" prefHeight="450.0" prefWidth="700.0"
                                    style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 2;"
                                    styleClass="settingSubPane">
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="694.0">
-                                <Label fx:id="interactiveTextModeLabel" alignment="CENTER"
-                                       contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0"
-                                       prefWidth="396.0" styleClass="settingsTopLabels"
-                                       text="INTERACTIVE TEXT MODE">
+                                <Label fx:id="interactiveTextModeLabel" alignment="CENTER" contentDisplay="CENTER"
+                                       layoutX="149.0" prefHeight="60.0" prefWidth="396.0"
+                                       styleClass="settingsTopLabels" text="INTERACTIVE TEXT MODE">
                                     <font>
                                         <Font name="Agency FB" size="25.0"/>
                                     </font>
                                 </Label>
                                 <JFXToggleButton fx:id="textModeToggle" layoutX="314.0" layoutY="44.0"
-                                                 onAction="#modsToggleButtons" prefHeight="70.0"
-                                                 prefWidth="13.0" styleClass="toggleButtons"
-                                                 textFill="TRANSPARENT"/>
+                                                 onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="13.0"
+                                                 styleClass="toggleButtons" textFill="TRANSPARENT"/>
                                 <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="307.0" layoutY="104.0"
-                                           pickOnBounds="true" preserveRatio="true"
-                                           styleClass="textHelperImage"/>
+                                           pickOnBounds="true" preserveRatio="true" styleClass="textHelperImage"/>
                             </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="694.0">
-                                <Label fx:id="interactiveSoundModeLabel" alignment="CENTER"
-                                       contentDisplay="CENTER" layoutX="149.0" prefHeight="60.0"
-                                       prefWidth="396.0" styleClass="settingsTopLabels"
-                                       text="INTERACTIVE SOUND MODE">
+                                <Label fx:id="interactiveSoundModeLabel" alignment="CENTER" contentDisplay="CENTER"
+                                       layoutX="149.0" prefHeight="60.0" prefWidth="396.0"
+                                       styleClass="settingsTopLabels" text="INTERACTIVE SOUND MODE">
                                     <font>
                                         <Font name="Agency FB" size="25.0"/>
                                     </font>
                                 </Label>
                                 <JFXToggleButton fx:id="soundModeToggle" layoutX="316.0" layoutY="41.0"
-                                                 onAction="#modsToggleButtons" prefHeight="70.0"
-                                                 prefWidth="37.0" styleClass="toggleButtons"
-                                                 text="ToggleButton" textFill="TRANSPARENT"/>
+                                                 onAction="#modsToggleButtons" prefHeight="70.0" prefWidth="37.0"
+                                                 styleClass="toggleButtons" text="ToggleButton" textFill="TRANSPARENT"/>
                                 <JFXSlider fx:id="soundVolumeSlider" blockIncrement="100.0" layoutX="277.0"
-                                           layoutY="127.0" onMouseReleased="#volumeAdjust"
-                                           showTickMarks="true" value="50.0"/>
-                                <Label fx:id="soundVolumeLabel" alignment="CENTER" layoutX="162.0"
-                                       layoutY="98.0" prefHeight="24.0" prefWidth="370.0"
-                                       styleClass="tempLabel" text="VOLUME">
+                                           layoutY="127.0" onMouseReleased="#volumeAdjust" showTickMarks="true"
+                                           value="50.0"/>
+                                <Label fx:id="soundVolumeLabel" alignment="CENTER" layoutX="162.0" layoutY="98.0"
+                                       prefHeight="24.0" prefWidth="370.0" styleClass="tempLabel" text="VOLUME">
                                     <font>
                                         <Font name="Agency FB" size="20.0"/>
                                     </font>
                                 </Label>
                                 <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="307.0" layoutY="165.0"
-                                           pickOnBounds="true" preserveRatio="true"
-                                           styleClass="soundHelperImage"/>
+                                           pickOnBounds="true" preserveRatio="true" styleClass="soundHelperImage"/>
                             </AnchorPane>
                         </SplitPane>
                         <Pane fx:id="settingThemePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
@@ -1058,42 +988,39 @@
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
                               styleClass="settingSubPane">
                             <Label fx:id="themeTopLabel" alignment="CENTER" layoutX="197.0" layoutY="14.0"
-                                   prefHeight="31.0" prefWidth="307.0" styleClass="settingsTopLabels"
-                                   text="THEMES">
+                                   prefHeight="31.0" prefWidth="307.0" styleClass="settingsTopLabels" text="THEMES">
                                 <font>
                                     <Font name="Agency FB" size="36.0"/>
                                 </font>
                             </Label>
                             <JFXRadioButton fx:id="darkThemeRadioButton" contentDisplay="RIGHT" layoutX="50.0"
-                                            layoutY="65.0" onAction="#themePaneButtonsOnAction"
-                                            prefHeight="24.0" prefWidth="150.0" selected="true"
-                                            style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="DARK"
-                                            textAlignment="CENTER">
+                                            layoutY="65.0" onAction="#themePaneButtonsOnAction" prefHeight="24.0"
+                                            prefWidth="150.0" selected="true" style="-fx-background-radius: 200;"
+                                            styleClass="changeThemeSaveRadioButton" text="DARK" textAlignment="CENTER">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </JFXRadioButton>
                             <JFXRadioButton fx:id="lightThemeRadioButton" layoutX="200.0" layoutY="65.0"
-                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0"
-                                            prefWidth="150.0" style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="LIGHT ">
+                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0"
+                                            style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton"
+                                            text="LIGHT ">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </JFXRadioButton>
                             <JFXRadioButton fx:id="smoothThemeRadioButton" layoutX="350.0" layoutY="65.0"
-                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0"
-                                            prefWidth="150.0" style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="SMOOTH ">
+                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0"
+                                            style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton"
+                                            text="SMOOTH ">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </JFXRadioButton>
                             <JFXRadioButton fx:id="cartoonThemeRadioButton" layoutX="500.0" layoutY="65.0"
-                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0"
-                                            prefWidth="150.0" style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="CARTOON">
+                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0"
+                                            style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton"
+                                            text="CARTOON">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
@@ -1103,29 +1030,28 @@
                                 <Image url="@../styleSheets/images/darkTheme.png"/>
                             </ImageView>
                             <JFXRadioButton fx:id="spaceThemeRadioButton" layoutX="50.0" layoutY="97.0"
-                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0"
-                                            prefWidth="150.0" style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="SPACE">
+                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0"
+                                            style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton"
+                                            text="SPACE">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </JFXRadioButton>
                             <JFXRadioButton fx:id="forestThemeRadioButton" layoutX="500.0" layoutY="97.0"
-                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0"
-                                            prefWidth="150.0" style="-fx-background-radius: 200;"
-                                            styleClass="changeThemeSaveRadioButton" text="FOREST">
+                                            onAction="#themePaneButtonsOnAction" prefHeight="24.0" prefWidth="150.0"
+                                            style="-fx-background-radius: 200;" styleClass="changeThemeSaveRadioButton"
+                                            text="FOREST">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </JFXRadioButton>
                         </Pane>
-                        <Pane fx:id="settingLanguagePane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingLanguagePane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
+                              styleClass="settingSubPane">
                             <Label fx:id="languageTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0"
-                                   prefHeight="31.0" prefWidth="299.0" styleClass="settingsTopLabels"
-                                   text="LANGUAGES">
+                                   prefHeight="31.0" prefWidth="299.0" styleClass="settingsTopLabels" text="LANGUAGES">
                                 <font>
                                     <Font name="Agency FB" size="36.0"/>
                                 </font>
@@ -1134,65 +1060,62 @@
                                        onAction="#languagePaneButtonsOnAction"
                                        onMouseExited="#languagePaneButtonsOnExit"
                                        onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="150.0"
-                                       prefWidth="150.0" style="-fx-background-radius: 100;"
-                                       styleClass="english" text="english" textFill="TRANSPARENT"/>
+                                       prefWidth="150.0" style="-fx-background-radius: 100;" styleClass="english"
+                                       text="english" textFill="TRANSPARENT"/>
                             <JFXButton fx:id="germanOption" layoutX="304.0" layoutY="105.0"
                                        onAction="#languagePaneButtonsOnAction"
                                        onMouseExited="#languagePaneButtonsOnExit"
-                                       onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0"
-                                       prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="deutsch"
-                                       text="deutsch" textFill="TRANSPARENT"/>
+                                       onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0" prefWidth="90.0"
+                                       style="-fx-background-radius: 100;" styleClass="deutsch" text="deutsch"
+                                       textFill="TRANSPARENT"/>
                             <JFXButton fx:id="turkishOption" layoutX="501.0" layoutY="105.0"
                                        onAction="#languagePaneButtonsOnAction"
                                        onMouseExited="#languagePaneButtonsOnExit"
-                                       onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0"
-                                       prefWidth="90.0" style="-fx-background-radius: 100;" styleClass="turkce"
-                                       text="turkce" textFill="TRANSPARENT"/>
+                                       onMouseMoved="#languagePaneButtonsOnMovement" prefHeight="90.0" prefWidth="90.0"
+                                       style="-fx-background-radius: 100;" styleClass="turkce" text="turkce"
+                                       textFill="TRANSPARENT"/>
                             <Label fx:id="englishLabel" alignment="CENTER" layoutX="63.0" layoutY="70.0"
-                                   prefHeight="27.0" prefWidth="184.0" styleClass="settingMiddleLabels"
-                                   text="ENGLISH" visible="false">
+                                   prefHeight="27.0" prefWidth="184.0" styleClass="settingMiddleLabels" text="ENGLISH"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="28.0"/>
                                 </font>
                             </Label>
                             <Label fx:id="germanLabel" alignment="CENTER" layoutX="272.0" layoutY="70.0"
-                                   prefHeight="27.0" prefWidth="155.0" styleClass="settingMiddleLabels"
-                                   text="DEUTSCH" visible="false">
+                                   prefHeight="27.0" prefWidth="155.0" styleClass="settingMiddleLabels" text="DEUTSCH"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="28.0"/>
                                 </font>
                             </Label>
                             <Label fx:id="turkishLabel" alignment="CENTER" layoutX="472.0" layoutY="70.0"
-                                   prefHeight="27.0" prefWidth="148.0" styleClass="settingMiddleLabels"
-                                   text="TÜRKÇE" visible="false">
+                                   prefHeight="27.0" prefWidth="148.0" styleClass="settingMiddleLabels" text="TÜRKÇE"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="28.0"/>
                                 </font>
                             </Label>
                         </Pane>
-                        <Pane fx:id="settingEmergencyPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingEmergencyPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
+                              styleClass="settingSubPane">
                             <Label fx:id="emergencyTopLabel" alignment="CENTER" layoutX="75.0" layoutY="14.0"
-                                   prefHeight="31.0" prefWidth="551.0" styleClass="settingsTopLabels"
-                                   text="EMERGENCY">
+                                   prefHeight="31.0" prefWidth="551.0" styleClass="settingsTopLabels" text="EMERGENCY">
                                 <font>
                                     <Font name="Agency FB" size="36.0"/>
                                 </font>
                             </Label>
                             <JFXToggleButton fx:id="internalSirenToggle" layoutX="50.0" layoutY="193.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="64.0"
-                                             prefWidth="300.0" styleClass="toggleButtonsMiddle"
-                                             text="INTERNAL SIREN">
+                                             prefWidth="300.0" styleClass="toggleButtonsMiddle" text="INTERNAL SIREN">
                                 <font>
                                     <Font name="Agency FB" size="21.0"/>
                                 </font>
                             </JFXToggleButton>
                             <JFXToggleButton fx:id="externalSirenToggle" layoutX="351.0" layoutY="193.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="64.0"
-                                             prefWidth="300.0" styleClass="toggleButtonsMiddle"
-                                             text="EXTERNAL SIREN">
+                                             prefWidth="300.0" styleClass="toggleButtonsMiddle" text="EXTERNAL SIREN">
                                 <font>
                                     <Font name="Agency FB" size="21.0"/>
                                 </font>
@@ -1200,13 +1123,13 @@
                             <ImageView fitHeight="89.0" fitWidth="86.0" layoutX="308.0" layoutY="107.0"
                                        pickOnBounds="true" preserveRatio="true" styleClass="buzzerImage"/>
                         </Pane>
-                        <Pane fx:id="settingNotificationPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingNotificationPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
-                            <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0"
-                                   layoutY="14.0" prefHeight="31.0" prefWidth="353.0"
-                                   styleClass="settingsTopLabels" text="NOTIFICATIONS">
+                              styleClass="settingSubPane">
+                            <Label fx:id="notificationTopLabel" alignment="CENTER" layoutX="174.0" layoutY="14.0"
+                                   prefHeight="31.0" prefWidth="353.0" styleClass="settingsTopLabels"
+                                   text="NOTIFICATIONS">
                                 <font>
                                     <Font name="Agency FB" size="36.0"/>
                                 </font>
@@ -1232,9 +1155,8 @@
                                     <Font name="Agency FB" size="19.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="settingVisualWarningLabel" alignment="CENTER" layoutX="143.0"
-                                   layoutY="107.0" prefHeight="23.0" prefWidth="218.0" styleClass="tempLabel"
-                                   text="VISUAL WARNING">
+                            <Label fx:id="settingVisualWarningLabel" alignment="CENTER" layoutX="143.0" layoutY="107.0"
+                                   prefHeight="23.0" prefWidth="218.0" styleClass="tempLabel" text="VISUAL WARNING">
                                 <font>
                                     <Font name="Agency FB" size="19.0"/>
                                 </font>
@@ -1248,35 +1170,29 @@
                             </Label>
                             <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="214.0" layoutY="134.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
-                                             prefWidth="76.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
+                                             prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT"/>
                             <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="213.0" layoutY="191.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
-                                             prefWidth="76.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
+                                             prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT"/>
                             <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="214.0" layoutY="244.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
-                                             prefWidth="76.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
+                                             prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT"/>
                             <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="449.0" layoutY="132.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
                                              prefWidth="76.0" styleClass="toggleButtons" text="ToggleButton"
                                              textFill="TRANSPARENT"/>
                             <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="445.0" layoutY="242.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
-                                             prefWidth="76.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
+                                             prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT"/>
                             <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="445.0" layoutY="189.0"
                                              onAction="#applicationSettingsButtonsOnAction" prefHeight="58.0"
-                                             prefWidth="76.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
-                            <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0"
-                                  startY="144.0"/>
+                                             prefWidth="76.0" styleClass="toggleButtons" textFill="TRANSPARENT"/>
+                            <Line endX="9.0" endY="-51.0" layoutX="351.0" layoutY="150.0" startX="9.0" startY="144.0"/>
                         </Pane>
-                        <Pane fx:id="settingConnectionPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingConnectionPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
+                              styleClass="settingSubPane">
                             <Label fx:id="connectionTopLabel" alignment="CENTER" layoutX="179.0" layoutY="14.0"
                                    prefHeight="31.0" prefWidth="341.0" styleClass="settingsTopLabels"
                                    text="CONNECTIONS">
@@ -1284,8 +1200,7 @@
                                     <Font name="Agency FB" size="36.0"/>
                                 </font>
                             </Label>
-                            <Line endX="-3.0" endY="-9.0" layoutX="353.0" layoutY="73.0" startX="-3.0"
-                                  startY="255.0"/>
+                            <Line endX="-3.0" endY="-9.0" layoutX="353.0" layoutY="73.0" startX="-3.0" startY="255.0"/>
                             <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="134.0" layoutY="45.0"
                                        pickOnBounds="true" preserveRatio="true" styleClass="bluImage"/>
                             <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="483.0" layoutY="45.0"
@@ -1297,126 +1212,111 @@
                                        pickOnBounds="true" preserveRatio="true" styleClass="usbImageActive"
                                        visible="false"/>
                             <JFXButton layoutX="144.0" layoutY="295.0" prefHeight="50.0" prefWidth="50.0"
-                                       styleClass="connectionButton" text="bluConnection"
-                                       textFill="TRANSPARENT"/>
+                                       styleClass="connectionButton" text="bluConnection" textFill="TRANSPARENT"/>
                             <JFXButton fx:id="portConnectionButton" layoutX="493.0" layoutY="295.0"
-                                       onAction="#applicationSettingsButtonsOnAction" prefHeight="50.0"
-                                       prefWidth="50.0" styleClass="connectionButton" text="usbConnection"
-                                       textFill="TRANSPARENT"/>
+                                       onAction="#applicationSettingsButtonsOnAction" prefHeight="50.0" prefWidth="50.0"
+                                       styleClass="connectionButton" text="usbConnection" textFill="TRANSPARENT"/>
                             <JFXComboBox fx:id="portChooser" editable="true" layoutX="415.0" layoutY="137.0"
                                          prefHeight="25.0" prefWidth="206.0" promptText="CHOOSE THE PORT"/>
                         </Pane>
-                        <Pane fx:id="settingUsersPane" maxHeight="450.0" maxWidth="700.0" minHeight="354.0"
-                              minWidth="700.0" prefHeight="355.0" prefWidth="700.0" styleClass="settingSubPane"
-                              visible="false">
+                        <Pane fx:id="settingUsersPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="354.0" minWidth="700.0" opacity="0.0" prefHeight="355.0" prefWidth="700.0"
+                              styleClass="settingSubPane">
                             <JFXTreeTableView fx:id="settingUserTable" onMouseMoved="#settingUserTableMov"
                                               onMousePressed="#settingUserTableMov" prefHeight="354.0"
                                               prefWidth="700.0">
                                 <columns>
-                                    <TreeTableColumn fx:id="settingUserTableName" prefWidth="100.0"
-                                                     text="NAME"/>
-                                    <TreeTableColumn fx:id="settingUserTableSurname" prefWidth="100.0"
-                                                     text="SURNAME"/>
+                                    <TreeTableColumn fx:id="settingUserTableName" prefWidth="100.0" text="NAME"/>
+                                    <TreeTableColumn fx:id="settingUserTableSurname" prefWidth="100.0" text="SURNAME"/>
                                     <TreeTableColumn fx:id="settingUserTableBirthday" prefWidth="100.0"
                                                      text="BIRTHDAY"/>
-                                    <TreeTableColumn fx:id="settingUserTableGender" prefWidth="99.0"
-                                                     text="GENDER"/>
+                                    <TreeTableColumn fx:id="settingUserTableGender" prefWidth="99.0" text="GENDER"/>
                                     <TreeTableColumn fx:id="settingUserTableUserName" prefWidth="100.0"
                                                      text="USER NAME"/>
-                                    <TreeTableColumn fx:id="settingUserTableTheme" prefWidth="99.0"
-                                                     text="THEME"/>
-                                    <TreeTableColumn fx:id="settingUserTableLanguage" prefWidth="99.0"
-                                                     text="LANGUAGE"/>
+                                    <TreeTableColumn fx:id="settingUserTableTheme" prefWidth="99.0" text="THEME"/>
+                                    <TreeTableColumn fx:id="settingUserTableLanguage" prefWidth="99.0" text="LANGUAGE"/>
                                 </columns>
                             </JFXTreeTableView>
                         </Pane>
-                        <Pane fx:id="settingElecSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingElecSettingPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
-                            <Label fx:id="homeElecSettingTopLabel" alignment="CENTER" layoutX="200.0"
-                                   layoutY="14.0" prefWidth="300.0" styleClass="settingsTopLabels"
-                                   text="ELECTRICITY SETTINGS">
+                              styleClass="settingSubPane">
+                            <Label fx:id="homeElecSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0"
+                                   prefWidth="300.0" styleClass="settingsTopLabels" text="ELECTRICITY SETTINGS">
                                 <font>
                                     <Font name="Agency FB" size="29.0"/>
                                 </font>
                             </Label>
-                            <JFXToggleButton fx:id="settingElectricityToggleButton" layoutX="311.0"
-                                             layoutY="50.0" onAction="#settingToggleButtonsAction"
-                                             prefHeight="58.0" prefWidth="50.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
-                            <BarChart fx:id="electricityUsageTable" layoutX="60.0" layoutY="120.0"
-                                      prefHeight="220.0" prefWidth="540.0">
+                            <JFXToggleButton fx:id="settingElectricityToggleButton" layoutX="311.0" layoutY="50.0"
+                                             onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0"
+                                             styleClass="toggleButtons" textFill="TRANSPARENT"/>
+                            <BarChart fx:id="electricityUsageTable" layoutX="60.0" layoutY="120.0" prefHeight="220.0"
+                                      prefWidth="540.0">
                                 <xAxis>
                                     <CategoryAxis fx:id="elecBarChartX" label="DAYS OF MONTH" side="BOTTOM"/>
                                 </xAxis>
                                 <yAxis>
-                                    <NumberAxis prefHeight="158.0" prefWidth="43.0" side="LEFT"
-                                                upperBound="20.0"/>
+                                    <NumberAxis prefHeight="158.0" prefWidth="43.0" side="LEFT" upperBound="20.0"/>
                                 </yAxis>
                             </BarChart>
                         </Pane>
-                        <Pane fx:id="settingGasSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingGasSettingPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
-                            <Label fx:id="homeGasSettingTopLabel" alignment="CENTER" layoutX="200.0"
-                                   layoutY="14.0" prefWidth="300.0" styleClass="settingsTopLabels"
-                                   text="GAS SETTINGS">
+                              styleClass="settingSubPane">
+                            <Label fx:id="homeGasSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0"
+                                   prefWidth="300.0" styleClass="settingsTopLabels" text="GAS SETTINGS">
                                 <font>
                                     <Font name="Agency FB" size="29.0"/>
                                 </font>
                             </Label>
                             <JFXToggleButton fx:id="settingGasToggleButton" layoutX="311.0" layoutY="50.0"
-                                             onAction="#settingToggleButtonsAction" prefHeight="58.0"
-                                             prefWidth="50.0" styleClass="toggleButtons"
-                                             textFill="TRANSPARENT"/>
+                                             onAction="#settingToggleButtonsAction" prefHeight="58.0" prefWidth="50.0"
+                                             styleClass="toggleButtons" textFill="TRANSPARENT"/>
                             <BarChart fx:id="gasUsageTable" layoutX="60.0" layoutY="120.0" prefHeight="220.0"
                                       prefWidth="540.0">
                                 <xAxis>
                                     <CategoryAxis fx:id="gasBarChartX" label="DAYS OF MONTH" side="BOTTOM"/>
                                 </xAxis>
                                 <yAxis>
-                                    <NumberAxis prefHeight="158.0" prefWidth="43.0" side="LEFT"
-                                                upperBound="20.0"/>
+                                    <NumberAxis prefHeight="158.0" prefWidth="43.0" side="LEFT" upperBound="20.0"/>
                                 </yAxis>
                             </BarChart>
                         </Pane>
-                        <Pane fx:id="settingAquSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingAquSettingPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
-                            <Label fx:id="homeAquSettingTopLabel" alignment="CENTER" layoutX="200.0"
-                                   layoutY="14.0" prefWidth="300.0" styleClass="settingsTopLabels"
-                                   text="AQUARIUM SETTINGS">
+                              styleClass="settingSubPane">
+                            <Label fx:id="homeAquSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0"
+                                   prefWidth="300.0" styleClass="settingsTopLabels" text="AQUARIUM SETTINGS">
                                 <font>
                                     <Font name="Agency FB" size="29.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="speciesOfFishLabel" alignment="CENTER_RIGHT" layoutX="88.0"
-                                   layoutY="82.0" prefHeight="14.0" prefWidth="245.0"
-                                   styleClass="aquariumSettingsLabel" text="SPECIES OF FISH">
+                            <Label fx:id="speciesOfFishLabel" alignment="CENTER_RIGHT" layoutX="88.0" layoutY="82.0"
+                                   prefHeight="14.0" prefWidth="245.0" styleClass="aquariumSettingsLabel"
+                                   text="SPECIES OF FISH">
                                 <font>
                                     <Font name="Arial Narrow" size="12.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="feedingStartLabel" alignment="CENTER_RIGHT" layoutX="29.0"
-                                   layoutY="125.0" prefHeight="14.0" prefWidth="307.0"
-                                   styleClass="aquariumSettingsLabel" text="FEEDING START TIME(EACH DAY)">
+                            <Label fx:id="feedingStartLabel" alignment="CENTER_RIGHT" layoutX="29.0" layoutY="125.0"
+                                   prefHeight="14.0" prefWidth="307.0" styleClass="aquariumSettingsLabel"
+                                   text="FEEDING START TIME(EACH DAY)">
                                 <font>
                                     <Font name="Arial Narrow" size="12.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="waterExchangeLabel" alignment="CENTER_RIGHT" layoutX="20.0"
-                                   layoutY="171.0" prefHeight="14.0" prefWidth="315.0"
-                                   styleClass="aquariumSettingsLabel" text="WEEKLY WATER EXCHANGE DAY AND TIME">
+                            <Label fx:id="waterExchangeLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="171.0"
+                                   prefHeight="14.0" prefWidth="315.0" styleClass="aquariumSettingsLabel"
+                                   text="WEEKLY WATER EXCHANGE DAY AND TIME">
                                 <font>
                                     <Font name="Arial Narrow" size="12.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="airMotorRunTimeLabel" alignment="CENTER_RIGHT" layoutX="11.0"
-                                   layoutY="221.0" prefHeight="20.0" prefWidth="324.0"
-                                   styleClass="aquariumSettingsLabel"
+                            <Label fx:id="airMotorRunTimeLabel" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="221.0"
+                                   prefHeight="20.0" prefWidth="324.0" styleClass="aquariumSettingsLabel"
                                    text="DAILY AIR ENGINE RUN TIME AND START TIME">
                                 <font>
                                     <Font name="Arial Narrow" size="12.0"/>
@@ -1424,25 +1324,25 @@
                             </Label>
                             <JFXTimePicker fx:id="feedingTime" layoutX="354.0" layoutY="120.0" prefWidth="170.0"
                                            styleClass="timePickerAquarium"/>
-                            <CheckComboBox fx:id="checkComboBox" layoutX="351.0" layoutY="79.0"
-                                           prefHeight="25.0" prefWidth="150.0"/>
-                            <JFXTimePicker fx:id="waterExchangeTime" layoutX="520.0" layoutY="162.0"
-                                           prefWidth="170.0" styleClass="timePickerAquarium"/>
-                            <JFXTimePicker fx:id="airMotorStartTime" layoutX="520.0" layoutY="214.0"
-                                           prefWidth="170.0" styleClass="timePickerAquarium"/>
-                            <JFXComboBox fx:id="waterExchangeDay" layoutX="351.0" layoutY="164.0"
-                                         prefHeight="25.0" prefWidth="150.0"/>
-                            <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="351.0"
-                                       layoutY="219.0" max="24.0" minorTickCount="24" prefHeight="24.0"
-                                       prefWidth="150.0" showTickMarks="true"/>
+                            <CheckComboBox fx:id="checkComboBox" layoutX="351.0" layoutY="79.0" prefHeight="25.0"
+                                           prefWidth="150.0"/>
+                            <JFXTimePicker fx:id="waterExchangeTime" layoutX="520.0" layoutY="162.0" prefWidth="170.0"
+                                           styleClass="timePickerAquarium"/>
+                            <JFXTimePicker fx:id="airMotorStartTime" layoutX="520.0" layoutY="214.0" prefWidth="170.0"
+                                           styleClass="timePickerAquarium"/>
+                            <JFXComboBox fx:id="waterExchangeDay" layoutX="351.0" layoutY="164.0" prefHeight="25.0"
+                                         prefWidth="150.0"/>
+                            <JFXSlider fx:id="airMotorRunTime" blockIncrement="24.0" layoutX="351.0" layoutY="219.0"
+                                       max="24.0" minorTickCount="24" prefHeight="24.0" prefWidth="150.0"
+                                       showTickMarks="true"/>
                             <JFXButton fx:id="saveAquariumChangesButton" layoutX="325.0" layoutY="285.0"
                                        onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0"
                                        styleClass="changeThemeSave" textFill="TRANSPARENT"/>
                         </Pane>
-                        <Pane fx:id="settingGreenHouseSettingPane" maxHeight="450.0" maxWidth="700.0"
-                              minHeight="450.0" minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingGreenHouseSettingPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
+                              styleClass="settingSubPane">
                             <Label fx:id="homeGreenHouseSettingTopLabel" alignment="CENTER" layoutX="200.0"
                                    layoutY="14.0" prefWidth="300.0" styleClass="settingsTopLabels"
                                    text="GREEN HOUSE SETTINGS">
@@ -1450,16 +1350,15 @@
                                     <Font name="Agency FB" size="29.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="greenHouseTemperatureLabel" alignment="CENTER" layoutX="7.0"
-                                   layoutY="70.0" prefHeight="17.0" prefWidth="194.0"
-                                   styleClass="settingMiddleLabels" text="TEMPERATURE">
+                            <Label fx:id="greenHouseTemperatureLabel" alignment="CENTER" layoutX="7.0" layoutY="70.0"
+                                   prefHeight="17.0" prefWidth="194.0" styleClass="settingMiddleLabels"
+                                   text="TEMPERATURE">
                                 <font>
                                     <Font name="Times New Roman" size="12.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="greenHouseHumidityLabel" alignment="CENTER" layoutX="481.0"
-                                   layoutY="70.0" prefHeight="17.0" prefWidth="170.0"
-                                   styleClass="settingMiddleLabels" text="HUMUDITY">
+                            <Label fx:id="greenHouseHumidityLabel" alignment="CENTER" layoutX="481.0" layoutY="70.0"
+                                   prefHeight="17.0" prefWidth="170.0" styleClass="settingMiddleLabels" text="HUMUDITY">
                                 <font>
                                     <Font name="Times New Roman" size="12.0"/>
                                 </font>
@@ -1471,15 +1370,15 @@
                                     <Font name="Times New Roman" size="12.0"/>
                                 </font>
                             </Label>
-                            <Label alignment="CENTER" layoutX="22.0" layoutY="97.0" prefHeight="17.0"
-                                   prefWidth="170.0" style="-fx-background-radius: 40; -fx-border-radius: 40;"
-                                   styleClass="tempValueLabel" text="24"/>
-                            <Label alignment="CENTER" layoutX="208.0" layoutY="97.0" prefHeight="17.0"
-                                   prefWidth="272.0" style="-fx-background-radius: 40; -fx-border-radius: 40;"
-                                   styleClass="tempValueLabel" text="24.04.2020 14.38"/>
-                            <Label alignment="CENTER" layoutX="511.0" layoutY="97.0" prefHeight="17.0"
-                                   prefWidth="116.0" style="-fx-background-radius: 40; -fx-border-radius: 40;"
-                                   styleClass="tempValueLabel" text="\%24"/>
+                            <Label alignment="CENTER" layoutX="22.0" layoutY="97.0" prefHeight="17.0" prefWidth="170.0"
+                                   style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel"
+                                   text="24"/>
+                            <Label alignment="CENTER" layoutX="208.0" layoutY="97.0" prefHeight="17.0" prefWidth="272.0"
+                                   style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel"
+                                   text="24.04.2020 14.38"/>
+                            <Label alignment="CENTER" layoutX="511.0" layoutY="97.0" prefHeight="17.0" prefWidth="116.0"
+                                   style="-fx-background-radius: 40; -fx-border-radius: 40;" styleClass="tempValueLabel"
+                                   text="\%24"/>
                             <LineChart fx:id="greenHouseValuesChart" alternativeColumnFillVisible="true"
                                        createSymbols="false" layoutX="80.0" layoutY="141.0" prefHeight="220.0"
                                        prefWidth="522.0">
@@ -1487,31 +1386,30 @@
                                     <CategoryAxis side="BOTTOM" tickLabelRotation="-3.2"/>
                                 </xAxis>
                                 <yAxis>
-                                    <NumberAxis minorTickCount="10" prefHeight="128.0" prefWidth="28.0"
-                                                side="LEFT" tickLabelGap="4.0" tickUnit="25.0"/>
+                                    <NumberAxis minorTickCount="10" prefHeight="128.0" prefWidth="28.0" side="LEFT"
+                                                tickLabelGap="4.0" tickUnit="25.0"/>
                                 </yAxis>
                             </LineChart>
                         </Pane>
-                        <Pane fx:id="settingWeatherSettingPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0"
+                        <Pane fx:id="settingWeatherSettingPane" disable="true" maxHeight="450.0" maxWidth="700.0"
+                              minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
                               style="-fx-border-width: 2; -fx-background-radius: 50; -fx-border-radius: 50;"
-                              styleClass="settingSubPane" visible="false">
-                            <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0"
-                                       fitWidth="700.0" opacity="0.6" pickOnBounds="true">
+                              styleClass="settingSubPane">
+                            <ImageView fx:id="weatherForecastImage" disable="true" fitHeight="450.0" fitWidth="700.0"
+                                       opacity="0.6" pickOnBounds="true">
                                 <Image url="@../styleSheets/images/snowy5.png"/>
                             </ImageView>
-                            <Label fx:id="homeWeatherSettingTopLabel" alignment="CENTER" layoutX="200.0"
-                                   layoutY="14.0" prefWidth="300.0" styleClass="settingsTopLabels"
-                                   text="WEATHER">
+                            <Label fx:id="homeWeatherSettingTopLabel" alignment="CENTER" layoutX="200.0" layoutY="14.0"
+                                   prefWidth="300.0" styleClass="settingsTopLabels" text="WEATHER">
                                 <font>
                                     <Font name="Agency FB" size="29.0"/>
                                 </font>
                             </Label>
-                            <JFXTextField fx:id="settingWeatherLocationTextField" alignment="CENTER"
-                                          layoutX="180.0" layoutY="63.0" onAction="#homeSettingButtons"
-                                          onKeyPressed="#onWeatherKeyPressed" prefHeight="48.0"
-                                          prefWidth="341.0" promptText="LOCATION"
-                                          style="-fx-background-radius: 40;" styleClass="changeUserWeather">
+                            <JFXTextField fx:id="settingWeatherLocationTextField" alignment="CENTER" layoutX="180.0"
+                                          layoutY="63.0" onAction="#homeSettingButtons"
+                                          onKeyPressed="#onWeatherKeyPressed" prefHeight="48.0" prefWidth="341.0"
+                                          promptText="LOCATION" style="-fx-background-radius: 40;"
+                                          styleClass="changeUserWeather">
                                 <font>
                                     <Font name="Calibri Bold" size="26.0"/>
                                 </font>
@@ -1519,50 +1417,49 @@
                             <JFXButton fx:id="updateWeatherButton" layoutX="327.0" layoutY="121.0"
                                        onAction="#homeSettingButtons" prefHeight="50.0" prefWidth="50.0"
                                        styleClass="updateWeather" textFill="TRANSPARENT"/>
-                            <Pane layoutX="140.0" layoutY="179.0" opacity="0.6" prefHeight="126.0"
-                                  prefWidth="426.0"
+                            <Pane layoutX="140.0" layoutY="179.0" opacity="0.6" prefHeight="126.0" prefWidth="426.0"
                                   style="-fx-background-color: white; -fx-background-radius: 60;">
-                                <Label fx:id="settingWeatherForecastLabel" alignment="CENTER_RIGHT"
-                                       layoutX="-16.0" layoutY="29.0" prefHeight="21.0" prefWidth="225.0"
+                                <Label fx:id="settingWeatherForecastLabel" alignment="CENTER_RIGHT" layoutX="-16.0"
+                                       layoutY="29.0" prefHeight="21.0" prefWidth="225.0"
                                        styleClass="settingLittleLabels" text="WEATHER FORECAST:">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherForecastLabelValue" layoutX="209.0"
-                                       layoutY="29.0" prefWidth="200.0" styleClass="settingLittleLabels">
+                                <Label fx:id="settingWeatherForecastLabelValue" layoutX="209.0" layoutY="29.0"
+                                       prefWidth="200.0" styleClass="settingLittleLabels">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherTemperatureLabel" alignment="CENTER_RIGHT"
-                                       layoutX="-16.0" layoutY="51.0" prefHeight="21.0" prefWidth="225.0"
+                                <Label fx:id="settingWeatherTemperatureLabel" alignment="CENTER_RIGHT" layoutX="-16.0"
+                                       layoutY="51.0" prefHeight="21.0" prefWidth="225.0"
                                        styleClass="settingLittleLabels" text="TEMPERATURE:">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherTemperatureLabelValue" layoutX="212.0"
-                                       layoutY="51.0" prefWidth="200.0" styleClass="settingLittleLabels">
+                                <Label fx:id="settingWeatherTemperatureLabelValue" layoutX="212.0" layoutY="51.0"
+                                       prefWidth="200.0" styleClass="settingLittleLabels">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherHumidityLabel" alignment="CENTER_RIGHT"
-                                       layoutX="-16.0" layoutY="73.0" prefHeight="21.0" prefWidth="225.0"
+                                <Label fx:id="settingWeatherHumidityLabel" alignment="CENTER_RIGHT" layoutX="-16.0"
+                                       layoutY="73.0" prefHeight="21.0" prefWidth="225.0"
                                        styleClass="settingLittleLabels" text="HUMUDITY:">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherHumidityLabelValue" layoutX="209.0"
-                                       layoutY="73.0" prefWidth="200.0" styleClass="settingLittleLabels">
+                                <Label fx:id="settingWeatherHumidityLabelValue" layoutX="209.0" layoutY="73.0"
+                                       prefWidth="200.0" styleClass="settingLittleLabels">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="settingWeatherWindLabel" alignment="CENTER_RIGHT"
-                                       layoutX="-16.0" layoutY="95.0" prefHeight="21.0" prefWidth="225.0"
+                                <Label fx:id="settingWeatherWindLabel" alignment="CENTER_RIGHT" layoutX="-16.0"
+                                       layoutY="95.0" prefHeight="21.0" prefWidth="225.0"
                                        styleClass="settingLittleLabels" text="WIND:">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
@@ -1574,22 +1471,19 @@
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
-                                <Label fx:id="informationTime" alignment="CENTER" layoutX="52.0"
-                                       layoutY="5.0" prefHeight="24.0" prefWidth="307.0"
-                                       styleClass="settingLittleLabels">
+                                <Label fx:id="informationTime" alignment="CENTER" layoutX="52.0" layoutY="5.0"
+                                       prefHeight="24.0" prefWidth="307.0" styleClass="settingLittleLabels">
                                     <font>
                                         <Font name="Calibri Bold" size="17.0"/>
                                     </font>
                                 </Label>
                             </Pane>
-                            <JFXSpinner fx:id="weatherUpdateSpinner" layoutX="325.0" layoutY="121.0"
-                                        visible="false"/>
+                            <JFXSpinner fx:id="weatherUpdateSpinner" layoutX="325.0" layoutY="121.0" visible="false"/>
                             <Label fx:id="weatherCharacterWarningLabel" alignment="CENTER" layoutX="126.0"
-                                   layoutY="121.0" prefWidth="450.0" styleClass="settingLittleLabels"
-                                   visible="false"/>
+                                   layoutY="121.0" prefWidth="450.0" styleClass="settingLittleLabels" visible="false"/>
                         </Pane>
-                        <AnchorPane fx:id="applicationSettingSubPane" layoutX="45.0" layoutY="354.0"
-                                    prefHeight="95.0" prefWidth="610.0"
+                        <AnchorPane fx:id="applicationSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0"
+                                    prefWidth="610.0"
                                     style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;"
                                     styleClass="settingBorderPane">
                             <JFXButton fx:id="themeSettingButton" layoutX="39.0" layoutY="9.0"
@@ -1625,40 +1519,38 @@
                             <JFXButton fx:id="themeSettingButtonActive" layoutX="39.0" layoutY="9.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0"
-                                       prefWidth="50.0" styleClass="themeSettingsActive"
-                                       text="themeSettingActive" textFill="TRANSPARENT"/>
+                                       prefWidth="50.0" styleClass="themeSettingsActive" text="themeSettingActive"
+                                       textFill="TRANSPARENT"/>
                             <JFXButton fx:id="languageSettingButtonActive" layoutX="160.0" layoutY="9.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0"
-                                       prefWidth="50.0" styleClass="languageSettingsActive"
-                                       text="languageSettingActive" textFill="TRANSPARENT" visible="false"/>
+                                       prefWidth="50.0" styleClass="languageSettingsActive" text="languageSettingActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="emergencySettingButtonActive" layoutX="281.0" layoutY="9.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0"
                                        prefWidth="50.0" styleClass="emergencySettingsActive"
                                        text="emergencySettingActive" textFill="TRANSPARENT" visible="false"/>
-                            <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0"
-                                       layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement"
+                            <JFXButton fx:id="phoneNotificationSettingButtonActive" layoutX="413.0" layoutY="9.0"
+                                       onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0"
                                        prefWidth="50.0" styleClass="notificationSettingsActive"
-                                       text="phoneNotificationSettingActive" textFill="TRANSPARENT"
-                                       visible="false"/>
-                            <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0"
-                                       layoutY="9.0" onMouseEntered="#applicationSettingsButtonsOnMovement"
+                                       text="phoneNotificationSettingActive" textFill="TRANSPARENT" visible="false"/>
+                            <JFXButton fx:id="smartHomeConnectionSettingButtonActive" layoutX="517.0" layoutY="9.0"
+                                       onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="50.0"
                                        prefWidth="50.0" styleClass="connectionSettingsActive"
-                                       text="smartHomeConnectionSettingActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       text="smartHomeConnectionSettingActive" textFill="TRANSPARENT" visible="false"/>
                             <Label fx:id="themeSubLabel" alignment="CENTER" layoutX="-3.0" layoutY="67.0"
-                                   prefHeight="18.0" prefWidth="135.0" styleClass="settingTopPaneLabels"
-                                   text="THEME" visible="false">
+                                   prefHeight="18.0" prefWidth="135.0" styleClass="settingTopPaneLabels" text="THEME"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
                             </Label>
                             <Label fx:id="languageSubLabel" alignment="CENTER" layoutX="118.0" layoutY="67.0"
-                                   prefHeight="18.0" prefWidth="135.0" styleClass="settingTopPaneLabels"
-                                   text="LANGUAGE" visible="false">
+                                   prefHeight="18.0" prefWidth="135.0" styleClass="settingTopPaneLabels" text="LANGUAGE"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
@@ -1670,9 +1562,9 @@
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="notificationSubLabel" alignment="CENTER" layoutX="357.0"
-                                   layoutY="67.0" prefHeight="18.0" prefWidth="162.0"
-                                   styleClass="settingTopPaneLabels" text="NOTIFICATION" visible="false">
+                            <Label fx:id="notificationSubLabel" alignment="CENTER" layoutX="357.0" layoutY="67.0"
+                                   prefHeight="18.0" prefWidth="162.0" styleClass="settingTopPaneLabels"
+                                   text="NOTIFICATION" visible="false">
                                 <font>
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
@@ -1685,27 +1577,26 @@
                                 </font>
                             </Label>
                         </AnchorPane>
-                        <AnchorPane fx:id="usersSettingSubPane" layoutX="45.0" layoutY="354.0" prefHeight="95.0"
-                                    prefWidth="610.0"
+                        <AnchorPane fx:id="usersSettingSubPane" disable="true" layoutX="45.0" layoutY="354.0"
+                                    opacity="0.0" prefHeight="95.0" prefWidth="610.0"
                                     style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;"
-                                    styleClass="settingBorderPane" visible="false">
+                                    styleClass="settingBorderPane">
                             <JFXButton fx:id="usersSettingSubPaneAddUser" layoutY="15.0"
-                                       onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0"
-                                       prefWidth="70.0" styleClass="addUserButton" text="addUser"
-                                       textFill="TRANSPARENT" AnchorPane.leftAnchor="167.0"/>
+                                       onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0"
+                                       styleClass="addUserButton" text="addUser" textFill="TRANSPARENT"
+                                       AnchorPane.leftAnchor="167.0"/>
                             <JFXButton fx:id="usersSettingSubPaneRemoveUser" layoutY="15.0"
-                                       onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0"
-                                       prefWidth="70.0" styleClass="removeUserButton" text="removeUser"
-                                       textFill="TRANSPARENT" AnchorPane.rightAnchor="167.0"/>
-                            <JFXButton fx:id="usersSettingSubPanePermissionButton" layoutX="270.0"
-                                       layoutY="15.0" onAction="#usersSettingsPaneButtonsOnAction"
-                                       prefHeight="70.0" prefWidth="70.0" styleClass="permissionButton"
-                                       text="permission" textFill="TRANSPARENT"/>
+                                       onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0"
+                                       styleClass="removeUserButton" text="removeUser" textFill="TRANSPARENT"
+                                       AnchorPane.rightAnchor="167.0"/>
+                            <JFXButton fx:id="usersSettingSubPanePermissionButton" layoutX="270.0" layoutY="15.0"
+                                       onAction="#usersSettingsPaneButtonsOnAction" prefHeight="70.0" prefWidth="70.0"
+                                       styleClass="permissionButton" text="permission" textFill="TRANSPARENT"/>
                         </AnchorPane>
-                        <AnchorPane fx:id="homeSettingSubPane" layoutX="45.0" layoutY="353.0" prefHeight="95.0"
-                                    prefWidth="625.0"
+                        <AnchorPane fx:id="homeSettingSubPane" disable="true" layoutX="45.0" layoutY="353.0"
+                                    opacity="0.0" prefHeight="95.0" prefWidth="625.0"
                                     style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1;"
-                                    styleClass="settingBorderPane" visible="false">
+                                    styleClass="settingBorderPane">
                             <JFXButton fx:id="homeSettingElecButton" layoutX="43.0" layoutY="8.0"
                                        onAction="#homeSettingButtons"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
@@ -1728,8 +1619,8 @@
                                        onAction="#homeSettingButtons"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
-                                       prefWidth="65.0" styleClass="greenHouse"
-                                       text="homeSettingGreenHouseButton" textFill="TRANSPARENT"/>
+                                       prefWidth="65.0" styleClass="greenHouse" text="homeSettingGreenHouseButton"
+                                       textFill="TRANSPARENT"/>
                             <JFXButton fx:id="homeSettingWeatherButton" layoutX="517.0" layoutY="8.0"
                                        onAction="#homeSettingButtons"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
@@ -1739,33 +1630,28 @@
                             <JFXButton fx:id="homeSettingElecButtonActive" layoutX="43.0" layoutY="8.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
-                                       prefWidth="65.0" styleClass="elecButtonActive"
-                                       text="homeSettingElecButtonActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       prefWidth="65.0" styleClass="elecButtonActive" text="homeSettingElecButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="homeSettingGasButtonActive" layoutX="157.0" layoutY="8.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
-                                       prefWidth="65.0" styleClass="gasButtonActive"
-                                       text="homeSettingGasButtonActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       prefWidth="65.0" styleClass="gasButtonActive" text="homeSettingGasButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="homeSettingAquButtonActive" layoutX="278.0" layoutY="8.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
                                        prefWidth="65.0" styleClass="aquariumButtonActive"
-                                       text="homeSettingAquButtonActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       text="homeSettingAquButtonActive" textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="homeSettingGreenHouseButtonActive" layoutX="399.0" layoutY="8.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
                                        prefWidth="65.0" styleClass="greenHouseActive"
-                                       text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       text="homeSettingGreenHouseButtonActive" textFill="TRANSPARENT" visible="false"/>
                             <JFXButton fx:id="homeSettingWeatherButtonActive" layoutX="517.0" layoutY="8.0"
                                        onMouseEntered="#applicationSettingsButtonsOnMovement"
                                        onMouseExited="#applicationSettingsButtonsOnExit" prefHeight="65.0"
-                                       prefWidth="65.0" styleClass="weatherActive"
-                                       text="homeSettingWeatherButtonActive" textFill="TRANSPARENT"
-                                       visible="false"/>
+                                       prefWidth="65.0" styleClass="weatherActive" text="homeSettingWeatherButtonActive"
+                                       textFill="TRANSPARENT" visible="false"/>
                             <Label fx:id="homeSubPaneELecLabel" alignment="CENTER" layoutX="18.0" layoutY="73.0"
                                    prefHeight="22.0" prefWidth="116.0" styleClass="settingTopPaneLabels"
                                    text="ELECTRICITY" visible="false">
@@ -1774,37 +1660,37 @@
                                 </font>
                             </Label>
                             <Label fx:id="homeSubPaneGasLabel" alignment="CENTER" layoutX="145.0" layoutY="73.0"
-                                   prefHeight="22.0" prefWidth="90.0" styleClass="settingTopPaneLabels"
-                                   text="GAS" visible="false">
+                                   prefHeight="22.0" prefWidth="90.0" styleClass="settingTopPaneLabels" text="GAS"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="18.0"/>
                                 </font>
                             </Label>
                             <Label fx:id="homeSubPaneAquLabel" alignment="CENTER" layoutX="230.0" layoutY="72.0"
+                                   prefHeight="22.0" prefWidth="162.0" styleClass="settingTopPaneLabels" text="AQUARIUM"
+                                   visible="false">
+                                <font>
+                                    <Font name="Agency FB" size="18.0"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="homeSubPaneGreenHouseLabel" alignment="CENTER" layoutX="351.0" layoutY="72.0"
                                    prefHeight="22.0" prefWidth="162.0" styleClass="settingTopPaneLabels"
-                                   text="AQUARIUM" visible="false">
+                                   text="GREEN HOUSE" visible="false">
                                 <font>
                                     <Font name="Agency FB" size="18.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="homeSubPaneGreenHouseLabel" alignment="CENTER" layoutX="351.0"
-                                   layoutY="72.0" prefHeight="22.0" prefWidth="162.0"
-                                   styleClass="settingTopPaneLabels" text="GREEN HOUSE" visible="false">
-                                <font>
-                                    <Font name="Agency FB" size="18.0"/>
-                                </font>
-                            </Label>
-                            <Label fx:id="homeSubPaneWeatherLabel" alignment="CENTER" layoutX="492.0"
-                                   layoutY="72.0" prefHeight="22.0" prefWidth="116.0"
-                                   styleClass="settingTopPaneLabels" text="RFID" visible="false">
+                            <Label fx:id="homeSubPaneWeatherLabel" alignment="CENTER" layoutX="492.0" layoutY="72.0"
+                                   prefHeight="22.0" prefWidth="116.0" styleClass="settingTopPaneLabels" text="RFID"
+                                   visible="false">
                                 <font>
                                     <Font name="Agency FB" size="18.0"/>
                                 </font>
                             </Label>
                         </AnchorPane>
-                        <Pane fx:id="addUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;"
-                              styleClass="addRemoveUserPane" visible="false">
+                        <Pane fx:id="addUserPane" disable="true" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
+                              minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
+                              style="-fx-border-width: 2;" styleClass="addRemoveUserPane">
                             <Label fx:id="createUserTopLabel" alignment="CENTER" layoutX="187.0" layoutY="14.0"
                                    prefHeight="32.0" prefWidth="341.0" styleClass="settingsTopLabels"
                                    text="CREATE NEW USER">
@@ -1812,23 +1698,20 @@
                                     <Font name="Agency FB" size="26.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="createUserNameLabel" alignment="CENTER_RIGHT" layoutX="4.0"
-                                   layoutY="62.0" prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel"
-                                   text="NAME">
+                            <Label fx:id="createUserNameLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="62.0"
+                                   prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel" text="NAME">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="createUserSurnameLabel" alignment="CENTER_RIGHT" layoutX="4.0"
-                                   layoutY="102.0" prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel"
-                                   text="SURNAME">
+                            <Label fx:id="createUserSurnameLabel" alignment="CENTER_RIGHT" layoutX="4.0" layoutY="102.0"
+                                   prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel" text="SURNAME">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="createUserGenderLabel" alignment="CENTER_RIGHT" layoutX="2.0"
-                                   layoutY="182.0" prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel"
-                                   text="GENDER">
+                            <Label fx:id="createUserGenderLabel" alignment="CENTER_RIGHT" layoutX="2.0" layoutY="182.0"
+                                   prefHeight="24.0" prefWidth="92.0" styleClass="addUserLabel" text="GENDER">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
@@ -1854,9 +1737,9 @@
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="createUserPasswordVerifyLabel" alignment="CENTER_RIGHT"
-                                   layoutX="308.0" layoutY="146.0" prefHeight="24.0" prefWidth="182.0"
-                                   styleClass="addUserLabel" text="PASSWORD VERIFY">
+                            <Label fx:id="createUserPasswordVerifyLabel" alignment="CENTER_RIGHT" layoutX="308.0"
+                                   layoutY="146.0" prefHeight="24.0" prefWidth="182.0" styleClass="addUserLabel"
+                                   text="PASSWORD VERIFY">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
@@ -1868,9 +1751,8 @@
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
                             </Label>
-                            <Label fx:id="createUserThemeLabel" alignment="CENTER_RIGHT" layoutX="-4.0"
-                                   layoutY="262.0" prefHeight="24.0" prefWidth="90.0" styleClass="addUserLabel"
-                                   text="THEME">
+                            <Label fx:id="createUserThemeLabel" alignment="CENTER_RIGHT" layoutX="-4.0" layoutY="262.0"
+                                   prefHeight="24.0" prefWidth="90.0" styleClass="addUserLabel" text="THEME">
                                 <font>
                                     <Font name="Agency FB" size="20.0"/>
                                 </font>
@@ -1884,8 +1766,7 @@
                             </Label>
                             <JFXButton fx:id="createUserConfirmButton" layoutX="374.0" layoutY="383.0"
                                        onAction="#createUserPaneAction" prefHeight="50.0" prefWidth="50.0"
-                                       styleClass="verifyAddUserButton" text="completeAdd"
-                                       textFill="TRANSPARENT"/>
+                                       styleClass="verifyAddUserButton" text="completeAdd" textFill="TRANSPARENT"/>
                             <JFXTextField fx:id="createUserNameTextField" alignment="CENTER" layoutX="108.0"
                                           layoutY="62.0" prefWidth="150.0" styleClass="addUserInfoTextField">
                                 <font>
@@ -1968,15 +1849,13 @@
                                 </font>
                             </JFXTextField>
                             <JFXPasswordField fx:id="createUserPasswordField" alignment="CENTER" layoutX="504.0"
-                                              layoutY="106.0" prefWidth="150.0"
-                                              styleClass="addUserInfoTextField">
+                                              layoutY="106.0" prefWidth="150.0" styleClass="addUserInfoTextField">
                                 <font>
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
                             </JFXPasswordField>
-                            <JFXPasswordField fx:id="createUserPasswordVerifyField" alignment="CENTER"
-                                              layoutX="504.0" layoutY="146.0" prefWidth="150.0"
-                                              styleClass="addUserInfoTextField">
+                            <JFXPasswordField fx:id="createUserPasswordVerifyField" alignment="CENTER" layoutX="504.0"
+                                              layoutY="146.0" prefWidth="150.0" styleClass="addUserInfoTextField">
                                 <font>
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
@@ -2012,8 +1891,8 @@
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
                             </JFXRadioButton>
-                            <JFXDatePicker fx:id="createDatePicker" layoutX="105.0" layoutY="146.0"
-                                           prefHeight="25.0" prefWidth="190.0" styleClass="datePicker"/>
+                            <JFXDatePicker fx:id="createDatePicker" layoutX="105.0" layoutY="146.0" prefHeight="25.0"
+                                           prefWidth="190.0" styleClass="datePicker"/>
                             <JFXRadioButton fx:id="createUserSpaceThemeOption" layoutX="204.0" layoutY="302.0"
                                             onAction="#createUserPaneAction" prefHeight="20.0" prefWidth="116.0"
                                             styleClass="addUserRadioButton" text="SPACE">
@@ -2029,9 +1908,9 @@
                                 </font>
                             </JFXRadioButton>
                         </Pane>
-                        <Pane fx:id="deleteUserPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;"
-                              styleClass="addRemoveUserPane" visible="false">
+                        <Pane fx:id="deleteUserPane" disable="true" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
+                              minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
+                              style="-fx-border-width: 2;" styleClass="addRemoveUserPane">
                             <Label fx:id="removeAnUser" alignment="CENTER" layoutX="183.0" layoutY="14.0"
                                    prefHeight="32.0" prefWidth="334.0" styleClass="settingsTopLabels"
                                    text="REMOVE AN USER">
@@ -2047,8 +1926,8 @@
                                     <Font name="Agency FB" size="15.0"/>
                                 </font>
                             </JFXPasswordField>
-                            <Label fx:id="removeUserFirstWarning" alignment="CENTER" layoutY="151.0"
-                                   prefHeight="26.0" prefWidth="700.0" styleClass="settingTopPaneLabels"
+                            <Label fx:id="removeUserFirstWarning" alignment="CENTER" layoutY="151.0" prefHeight="26.0"
+                                   prefWidth="700.0" styleClass="settingTopPaneLabels"
                                    text=" WARNING! AFTER THE DELETING, EVERTHING ABOUT THIS USER CAN NOT BRING BACK">
                                 <font>
                                     <Font name="Agency FB" size="21.0"/>
@@ -2060,90 +1939,79 @@
                             <JFXButton fx:id="removeUserGoBack" layoutX="325.0" layoutY="386.0"
                                        onAction="#removeUserPaneAction" prefHeight="50.0" prefWidth="50.0"
                                        styleClass="changeUserInfoBack" text="goBack" textFill="TRANSPARENT"/>
-                            <Label fx:id="removeUserHideWarning" alignment="CENTER" layoutX="72.0"
-                                   layoutY="250.0" prefHeight="20.0" prefWidth="557.0"
-                                   styleClass="settingTopPaneLabels">
+                            <Label fx:id="removeUserHideWarning" alignment="CENTER" layoutX="72.0" layoutY="250.0"
+                                   prefHeight="20.0" prefWidth="557.0" styleClass="settingTopPaneLabels">
                                 <font>
                                     <Font name="Agency FB" size="16.0"/>
                                 </font>
                             </Label>
                         </Pane>
-                        <Pane fx:id="permissionPane" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
-                              minWidth="700.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;"
-                              styleClass="settingSubPane" visible="false">
-                            <Label fx:id="permissionPaneTopLabel" alignment="CENTER" layoutX="145.0"
-                                   layoutY="14.0" prefHeight="42.0" prefWidth="411.0"
-                                   styleClass="settingsTopLabels" text="PERMISSIONS FOR ACCESS">
+                        <Pane fx:id="permissionPane" disable="true" maxHeight="450.0" maxWidth="700.0" minHeight="450.0"
+                              minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0"
+                              style="-fx-border-width: 2;" styleClass="settingSubPane">
+                            <Label fx:id="permissionPaneTopLabel" alignment="CENTER" layoutX="145.0" layoutY="14.0"
+                                   prefHeight="42.0" prefWidth="411.0" styleClass="settingsTopLabels"
+                                   text="PERMISSIONS FOR ACCESS">
                                 <font>
                                     <Font name="Agency FB" size="32.0"/>
                                 </font>
                             </Label>
                             <JFXToggleButton fx:id="permissionPaneElectricityToggle" alignment="CENTER_LEFT"
-                                             layoutX="32.0" layoutY="87.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
+                                             layoutX="32.0" layoutY="87.0" onAction="#permissionPaneButtonsOnAction"
+                                             prefHeight="42.0" prefWidth="212.0" styleClass="permissionButtonsMiddle"
                                              text="ELEKTRICITY">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
-                            <JFXToggleButton fx:id="permissionPaneGasToggle" alignment="CENTER_LEFT"
-                                             layoutX="456.0" layoutY="87.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
+                            <JFXToggleButton fx:id="permissionPaneGasToggle" alignment="CENTER_LEFT" layoutX="456.0"
+                                             layoutY="87.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
                                              prefWidth="212.0" styleClass="permissionButtonsMiddle" text="GAS">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
-                            <JFXToggleButton fx:id="permissionPaneWaterToggle" alignment="CENTER_LEFT"
-                                             layoutX="32.0" layoutY="145.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
-                                             text="WATER">
+                            <JFXToggleButton fx:id="permissionPaneWaterToggle" alignment="CENTER_LEFT" layoutX="32.0"
+                                             layoutY="145.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
+                                             prefWidth="212.0" styleClass="permissionButtonsMiddle" text="WATER">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
                             <JFXToggleButton fx:id="permissionPaneNotificationToggle" alignment="CENTER_LEFT"
-                                             layoutX="244.0" layoutY="203.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
+                                             layoutX="244.0" layoutY="203.0" onAction="#permissionPaneButtonsOnAction"
+                                             prefHeight="42.0" prefWidth="212.0" styleClass="permissionButtonsMiddle"
                                              text="NOTIFICATION">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
                             <JFXToggleButton fx:id="permissionPaneAquariumToggle" alignment="CENTER_LEFT"
-                                             layoutX="243.0" layoutY="145.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
+                                             layoutX="243.0" layoutY="145.0" onAction="#permissionPaneButtonsOnAction"
+                                             prefHeight="42.0" prefWidth="212.0" styleClass="permissionButtonsMiddle"
                                              text="AQUARIUM">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
                             <JFXToggleButton fx:id="permissionPaneGardenLightToggle" alignment="CENTER_LEFT"
-                                             layoutX="244.0" layoutY="87.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
+                                             layoutX="244.0" layoutY="87.0" onAction="#permissionPaneButtonsOnAction"
+                                             prefHeight="42.0" prefWidth="212.0" styleClass="permissionButtonsMiddle"
                                              text="GARDEN LIGHT">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
-                            <JFXToggleButton fx:id="permissionPaneSirenToggle" alignment="CENTER_LEFT"
-                                             layoutX="456.0" layoutY="145.0"
-                                             onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
-                                             prefWidth="212.0" styleClass="permissionButtonsMiddle"
-                                             text="SIREN">
+                            <JFXToggleButton fx:id="permissionPaneSirenToggle" alignment="CENTER_LEFT" layoutX="456.0"
+                                             layoutY="145.0" onAction="#permissionPaneButtonsOnAction" prefHeight="42.0"
+                                             prefWidth="212.0" styleClass="permissionButtonsMiddle" text="SIREN">
                                 <font>
                                     <Font name="Franklin Gothic Demi Cond" size="18.0"/>
                                 </font>
                             </JFXToggleButton>
                             <JFXButton fx:id="permissionPaneGoBackButton" layoutX="320.0" layoutY="374.0"
-                                       onAction="#permissionPaneButtonsOnAction" prefHeight="60.0"
-                                       prefWidth="60.0" styleClass="changeUserInfoBack" text="Button"
-                                       textFill="TRANSPARENT"/>
+                                       onAction="#permissionPaneButtonsOnAction" prefHeight="60.0" prefWidth="60.0"
+                                       styleClass="changeUserInfoBack" text="Button" textFill="TRANSPARENT"/>
                         </Pane>
                     </AnchorPane>
                 </AnchorPane>

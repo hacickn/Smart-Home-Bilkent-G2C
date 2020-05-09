@@ -7,7 +7,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextField;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +29,7 @@ import java.util.ResourceBundle;
  * @author Hacı Çakın
  * @version 28.04.2020
  */
-public class LoginPanel extends Application implements Initializable {
+public class LoginPanel implements Initializable {
 
    //properties
    @FXML
@@ -80,6 +79,10 @@ public class LoginPanel extends Application implements Initializable {
                            else
                               stage[ 0 ].setScene( new Scene( root, 800, 800 ) );
                            stage[ 0 ].setResizable( true );
+                           stage[ 0 ].setOnCloseRequest( event -> {
+                              Platform.exit();
+                              System.exit( 0 );
+                           } );
                            stage[ 0 ].show();
                            userNameField.getScene().getWindow().hide();
                            new FadeIn( root ).play();
@@ -139,14 +142,4 @@ public class LoginPanel extends Application implements Initializable {
             10
       );
    }
-
-
-   @Override
-   public void start( Stage primaryStage ) {
-      primaryStage.setOnCloseRequest( event -> {
-         Platform.exit();
-         System.exit( 0 );
-      } );
-   }
-
 }

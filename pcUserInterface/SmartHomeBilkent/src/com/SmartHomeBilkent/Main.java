@@ -24,11 +24,11 @@ public class Main extends Application {
       primaryStage.setTitle( "SMART HOME" );
       primaryStage.setScene( new Scene( root, 400, 400 ) );
       primaryStage.setResizable( false );
-      primaryStage.show();
       primaryStage.setOnCloseRequest( event -> {
          Platform.exit();
          System.exit( 0 );
       } );
+      primaryStage.show();
       new FadeIn( root ).play();
    }
 

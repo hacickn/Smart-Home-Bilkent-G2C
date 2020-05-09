@@ -13,7 +13,6 @@ import com.fazecast.jSerialComm.SerialPortEvent;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FillTransition;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,7 +55,7 @@ import java.util.Scanner;
  * @author Hacı Çakın
  * @version 29.04.2020
  */
-public class MainPanel extends Application implements Initializable {
+public class MainPanel implements Initializable {
 
    //properties
    /**
@@ -403,14 +402,6 @@ public class MainPanel extends Application implements Initializable {
       isArduinoConnect = false;
       refreshMenu();
       createEmergencyAnimation();
-   }
-
-   @Override
-   public void start( Stage primaryStage ) {
-      primaryStage.setOnCloseRequest( event -> {
-         Platform.exit();
-         System.exit( 0 );
-      } );
    }
 
    public void GUIUpdate() {
@@ -783,8 +774,8 @@ public class MainPanel extends Application implements Initializable {
          new FadeOutLeftBig( userProfileStackPane ).play();
       }
       userProfileButtonActive.setVisible( false );
-      userProfileStackPane.setDisable( true );
       toGoBackUserProfile();
+      userProfileStackPane.setDisable( true );
    }
 
    //main pane
@@ -1121,11 +1112,13 @@ public class MainPanel extends Application implements Initializable {
    void userProfileButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == changeUserNormalInfoButton ) {
          userProfilePane.setEffect( new BoxBlur( 10, 3, 3 ) );
-         changeUserNormalInfoPane.setVisible( true );
+         new ZoomIn( changeUserNormalInfoPane ).play();
+         changeUserNormalInfoPane.setDisable( false );
          userProfilePane.setDisable( true );
       } else if( event.getSource() == changeUserPrivateInfoButton ) {
          userProfilePane.setEffect( new BoxBlur( 10, 3, 3 ) );
-         changeUserPrivateInfoPane.setVisible( true );
+         new ZoomIn( changeUserPrivateInfoPane ).play();
+         changeUserPrivateInfoPane.setDisable( false );
          userProfilePane.setDisable( true );
       } else if( event.getSource() == userChangerButton ) {
          try {
@@ -1232,8 +1225,12 @@ public class MainPanel extends Application implements Initializable {
    public void toGoBackUserProfile() {
       userProfilePane.setEffect( new BoxBlur( 0, 0, 0 ) );
       userProfilePane.setDisable( false );
-      changeUserNormalInfoPane.setVisible( false );
-      changeUserPrivateInfoPane.setVisible( false );
+      if( !changeUserNormalInfoPane.isDisable() )
+         new ZoomOut( changeUserNormalInfoPane ).play();
+      if( !changeUserPrivateInfoPane.isDisable() )
+         new ZoomOut( changeUserPrivateInfoPane ).play();
+      changeUserNormalInfoPane.setDisable( true );
+      changeUserPrivateInfoPane.setDisable( true );
    }
 
 
@@ -1479,42 +1476,62 @@ public class MainPanel extends Application implements Initializable {
 
    void openThemeSetting() {
       themeSettingButtonActive.setVisible( true );
-      settingThemePane.setVisible( true );
+      settingThemePane.setDisable( false );
+      new FadeInUp( settingThemePane ).play();
    }
 
    void openLanguageSetting() {
       languageSettingButtonActive.setVisible( true );
-      settingLanguagePane.setVisible( true );
+      settingLanguagePane.setDisable( false );
+      new FadeInUp( settingLanguagePane ).play();
    }
 
    void openEmergencySetting() {
       emergencySettingButtonActive.setVisible( true );
-      settingEmergencyPane.setVisible( true );
+      settingEmergencyPane.setDisable( false );
+      new FadeInUp( settingEmergencyPane ).play();
    }
 
    void openPhoneNotificationSetting() {
       phoneNotificationSettingButtonActive.setVisible( true );
-      settingNotificationPane.setVisible( true );
+      settingNotificationPane.setDisable( false );
+      new FadeInUp( settingNotificationPane ).play();
    }
 
 
    void openSmartHomeConnectionSetting() {
       smartHomeConnectionSettingButtonActive.setVisible( true );
-      settingConnectionPane.setVisible( true );
+      settingConnectionPane.setDisable( false );
+      new FadeInUp( settingConnectionPane ).play();
       refreshMenu();
    }
 
    void closeAllApplicationSettingSubPanes() {
-      themeSettingButtonActive.setVisible( false );
-      settingThemePane.setVisible( false );
-      languageSettingButtonActive.setVisible( false );
-      settingLanguagePane.setVisible( false );
-      emergencySettingButtonActive.setVisible( false );
-      settingEmergencyPane.setVisible( false );
-      phoneNotificationSettingButtonActive.setVisible( false );
-      settingNotificationPane.setVisible( false );
-      smartHomeConnectionSettingButtonActive.setVisible( false );
-      settingConnectionPane.setVisible( false );
+      if( !settingThemePane.isDisable() ) {
+         themeSettingButtonActive.setVisible( false );
+         new FadeOut( settingThemePane ).play();
+         settingThemePane.setDisable( true );
+      }
+      if( !settingLanguagePane.isDisable() ) {
+         languageSettingButtonActive.setVisible( false );
+         new FadeOut( settingLanguagePane ).play();
+         settingLanguagePane.setDisable( true );
+      }
+      if( !settingEmergencyPane.isDisable() ) {
+         emergencySettingButtonActive.setVisible( false );
+         new FadeOut( settingEmergencyPane ).play();
+         settingEmergencyPane.setDisable( true );
+      }
+      if( !settingNotificationPane.isDisable() ) {
+         phoneNotificationSettingButtonActive.setVisible( false );
+         new FadeOut( settingNotificationPane ).play();
+         settingNotificationPane.setDisable( true );
+      }
+      if( !settingConnectionPane.isDisable() ) {
+         smartHomeConnectionSettingButtonActive.setVisible( false );
+         new FadeOut( settingConnectionPane ).play();
+         settingConnectionPane.setDisable( true );
+      }
       themeSubLabel.setVisible( false );
       languageSubLabel.setVisible( false );
       emergencySubLabel.setVisible( false );
@@ -1851,17 +1868,37 @@ public class MainPanel extends Application implements Initializable {
    //settings----users settings menu
 
    void closeAllUsersPane() {
-      usersSettingSubPane.setVisible( false );
-      settingUsersPane.setVisible( false );
+      usersSettingSubPane.setDisable( true );
+      settingUsersPane.setDisable( true );
       settingsUsersSettingButtonActive.setVisible( false );
-      addUserPane.setVisible( false );
-      deleteUserPane.setVisible( false );
-      permissionPane.setVisible( false );
+      if( !addUserPane.isDisable() ) {
+         addUserPane.setDisable( true );
+         new FadeOut( addUserPane ).play();
+         usersSettingSubPane.setOpacity( 0 );
+         settingUsersPane.setOpacity( 0 );
+      }
+      if( !deleteUserPane.isDisable() ) {
+         deleteUserPane.setDisable( true );
+         new FadeOut( deleteUserPane ).play();
+         usersSettingSubPane.setOpacity( 0 );
+         settingUsersPane.setOpacity( 0 );
+      }
+      if( !permissionPane.isDisable() ) {
+         permissionPane.setDisable( true );
+         new FadeOut( permissionPane ).play();
+         usersSettingSubPane.setOpacity( 0 );
+         settingUsersPane.setOpacity( 0 );
+      } else {
+         new FadeOut( usersSettingSubPane ).play();
+         new FadeOut( settingUsersPane ).play();
+      }
    }
 
    void openUsersPane() {
-      settingUsersPane.setVisible( true );
-      usersSettingSubPane.setVisible( true );
+      settingUsersPane.setDisable( false );
+      usersSettingSubPane.setDisable( false );
+      new FadeInUp( settingUsersPane ).play();
+      new FadeInUp( usersSettingSubPane ).play();
       settingsUsersSettingButtonActive.setVisible( true );
       closeApplicationSettingPane();
       closeModsPane();
@@ -1871,19 +1908,22 @@ public class MainPanel extends Application implements Initializable {
    @FXML
    void usersSettingsPaneButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == usersSettingSubPaneAddUser ) {
-         addUserPane.setVisible( true );
-         deleteUserPane.setVisible( false );
-         permissionPane.setVisible( false );
+         addUserPane.setDisable( false );
+         deleteUserPane.setDisable( true );
+         permissionPane.setDisable( true );
+         new FadeInUp( addUserPane ).play();
          sound( "createUserLang", soundCheck );
       } else if( event.getSource() == usersSettingSubPaneRemoveUser ) {
-         deleteUserPane.setVisible( true );
-         addUserPane.setVisible( false );
-         permissionPane.setVisible( false );
+         addUserPane.setDisable( true );
+         deleteUserPane.setDisable( false );
+         permissionPane.setDisable( true );
+         new FadeInUp( deleteUserPane ).play();
          sound( "removeAnUserLang", soundCheck );
       } else if( event.getSource() == usersSettingSubPanePermissionButton ) {
-         deleteUserPane.setVisible( false );
-         addUserPane.setVisible( false );
-         permissionPane.setVisible( true );
+         addUserPane.setDisable( true );
+         deleteUserPane.setDisable( true );
+         permissionPane.setDisable( false );
+         new FadeInUp( permissionPane ).play();
          //sound
       }
    }
@@ -1944,7 +1984,8 @@ public class MainPanel extends Application implements Initializable {
                   "Ankara"
             ) );
             updateUsersTable();
-            addUserPane.setVisible( false );
+            addUserPane.setDisable( true );
+            new FadeOut( addUserPane ).play();
             clearAddPane();
 
             if( ( Users.getInstance().getParentNumber() > 1 ) ) {
@@ -1953,8 +1994,8 @@ public class MainPanel extends Application implements Initializable {
          }
 
       } else if( event.getSource() == createUserGoBack ) {
-         closeAllUsersPane();
-         openUsersPane();
+         addUserPane.setDisable( true );
+         new FadeOut( addUserPane ).play();
          clearAddPane();
       } else if( event.getSource() == createUserMaleOption
             || event.getSource() == createUserFemaleOption ) {
@@ -2026,7 +2067,8 @@ public class MainPanel extends Application implements Initializable {
    @FXML
    void removeUserPaneAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == removeUserGoBack ) {
-         deleteUserPane.setVisible( false );
+         deleteUserPane.setDisable( true );
+         new FadeOut( deleteUserPane ).play();
          removeUserHideWarning.setVisible( false );
       } else if( event.getSource() == removeUserConfirm ||
             event.getSource() == removeUserTextField ) {
@@ -2038,7 +2080,8 @@ public class MainPanel extends Application implements Initializable {
                removeUserTextField.getText().equals( loginUser.getPassword() ) &&
                settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "CHILD" ) ) {
             Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
-            deleteUserPane.setVisible( false );
+            deleteUserPane.setDisable( true );
+            new FadeOut( deleteUserPane ).play();
             removeUserTextField.setText( "" );
             removeUserHideWarning.setVisible( false );
             if( !( Users.getInstance().getParentNumber() > 1 ) ) {
@@ -2065,7 +2108,8 @@ public class MainPanel extends Application implements Initializable {
             }
          } else if( removeUserTextField.getText().equals( settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() ) ) {
             Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
-            deleteUserPane.setVisible( false );
+            deleteUserPane.setDisable( true );
+            new FadeOut( deleteUserPane ).play();
             removeUserTextField.setText( "" );
             removeUserHideWarning.setVisible( false );
             if( !( Users.getInstance().getParentNumber() > 1 ) ) {
@@ -2117,14 +2161,16 @@ public class MainPanel extends Application implements Initializable {
          else
             permissions[ 6 ] = "C";
       } else if( event.getSource() == permissionPaneGoBackButton ) {
-         permissionPane.setVisible( false );
+         permissionPane.setDisable( true );
+         new FadeOut( permissionPane ).play();
       }
       CommonSettingData.getInstance().updatePermission( commonSetting, permissions );
    }
    //settings----mods settings menu
 
    public void openModsPane() {
-      settingModePane.setVisible( true );
+      settingModePane.setDisable( false );
+      new FadeInUp( settingModePane ).play();
       modsSettingButtonActive.setVisible( true );
       closeApplicationSettingPane();
       closeAllUsersPane();
@@ -2132,7 +2178,8 @@ public class MainPanel extends Application implements Initializable {
    }
 
    public void closeModsPane() {
-      settingModePane.setVisible( false );
+      settingModePane.setDisable( true );
+      new FadeOut( settingModePane ).play();
       modsSettingButtonActive.setVisible( false );
    }
 
@@ -2140,7 +2187,10 @@ public class MainPanel extends Application implements Initializable {
 
    public void openHomeSettingPane() {
       homeSettingButtonActive.setVisible( true );
-      homeSettingSubPane.setVisible( true );
+      homeSettingSubPane.setDisable( false );
+      settingElecSettingPane.setDisable( false );
+      new FadeInUp( homeSettingSubPane ).play();
+      new FadeInUp( settingElecSettingPane ).play();
       closeApplicationSettingPane();
       closeAllUsersPane();
       closeModsPane();
@@ -2148,13 +2198,7 @@ public class MainPanel extends Application implements Initializable {
    }
 
    public void closeHomeSettingPane() {
-      settingElecSettingPane.setVisible( false );
-      settingWeatherSettingPane.setVisible( false );
-      settingGasSettingPane.setVisible( false );
-      settingAquSettingPane.setVisible( false );
-      settingGreenHouseSettingPane.setVisible( false );
       homeSettingButtonActive.setVisible( false );
-      homeSettingSubPane.setVisible( false );
       closeAllHomeSetting();
    }
 
@@ -2215,27 +2259,32 @@ public class MainPanel extends Application implements Initializable {
    void homeSettingButtons( ActionEvent event ) throws SQLException {
       if( event.getSource() == homeSettingElecButton ) {
          closeAllHomeSetting();
-         settingElecSettingPane.setVisible( true );
+         settingElecSettingPane.setDisable( false );
+         new FadeInUp( settingElecSettingPane ).play();
          openHomeSetting();
          homeSettingElecButtonActive.setVisible( true );
       } else if( event.getSource() == homeSettingGasButton ) {
          closeAllHomeSetting();
-         settingGasSettingPane.setVisible( true );
+         settingGasSettingPane.setDisable( false );
+         new FadeInUp( settingGasSettingPane ).play();
          openHomeSetting();
          homeSettingGasButtonActive.setVisible( true );
       } else if( event.getSource() == homeSettingAquButton ) {
          closeAllHomeSetting();
-         settingAquSettingPane.setVisible( true );
+         settingAquSettingPane.setDisable( false );
+         new FadeInUp( settingAquSettingPane ).play();
          openHomeSetting();
          homeSettingAquButtonActive.setVisible( true );
       } else if( event.getSource() == homeSettingGreenHouseButton ) {
          closeAllHomeSetting();
-         settingGreenHouseSettingPane.setVisible( true );
+         settingGreenHouseSettingPane.setDisable( false );
+         new FadeInUp( settingGreenHouseSettingPane ).play();
          openHomeSetting();
          homeSettingGreenHouseButtonActive.setVisible( true );
       } else if( event.getSource() == homeSettingWeatherButton ) {
          closeAllHomeSetting();
-         settingWeatherSettingPane.setVisible( true );
+         settingWeatherSettingPane.setDisable( false );
+         new FadeInUp( settingWeatherSettingPane ).play();
          openHomeSetting();
          homeSettingWeatherButtonActive.setVisible( true );
       } else if( event.getSource() == updateWeatherButton
@@ -2416,22 +2465,41 @@ public class MainPanel extends Application implements Initializable {
    }
 
    public void openHomeSetting() {
-      homeSettingSubPane.setVisible( true );
+      homeSettingSubPane.setDisable( false );
+      new FadeInDown( homeSettingSubPane ).play();
       homeSettingButtonActive.setVisible( true );
    }
 
    public void closeAllHomeSetting() {
-      settingElecSettingPane.setVisible( false );
-      settingGasSettingPane.setVisible( false );
-      settingAquSettingPane.setVisible( false );
-      settingGreenHouseSettingPane.setVisible( false );
-      settingWeatherSettingPane.setVisible( false );
+      if( !settingElecSettingPane.isDisable() ) {
+         settingElecSettingPane.setDisable( true );
+         new FadeOut( settingElecSettingPane ).play();
+      }
+      if( !settingGasSettingPane.isDisable() ) {
+         settingGasSettingPane.setDisable( true );
+         new FadeOut( settingGasSettingPane ).play();
+      }
+      if( !settingAquSettingPane.isDisable() ) {
+         settingAquSettingPane.setDisable( true );
+         new FadeOut( settingAquSettingPane ).play();
+      }
+      if( !settingGreenHouseSettingPane.isDisable() ) {
+         settingGreenHouseSettingPane.setDisable( true );
+         new FadeOut( settingGreenHouseSettingPane ).play();
+      }
+      if( !settingWeatherSettingPane.isDisable() ) {
+         settingWeatherSettingPane.setDisable( true );
+         new FadeOut( settingWeatherSettingPane ).play();
+      }
+      if( !homeSettingSubPane.isDisable() ) {
+         homeSettingSubPane.setDisable( true );
+         new FadeOut( homeSettingSubPane ).play();
+      }
       homeSettingElecButtonActive.setVisible( false );
       homeSettingGasButtonActive.setVisible( false );
       homeSettingAquButtonActive.setVisible( false );
       homeSettingGreenHouseButtonActive.setVisible( false );
       homeSettingWeatherButtonActive.setVisible( false );
-      homeSettingSubPane.setVisible( false );
       homeSettingButtonActive.setVisible( false );
    }
 
