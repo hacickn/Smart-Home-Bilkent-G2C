@@ -1,11 +1,11 @@
 package com.SmartHomeBilkent;
 
 import animatefx.animation.*;
-import com.SmartHomeBilkent.extra.connection.Arduino;
-import com.SmartHomeBilkent.extra.dataBase.*;
-import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
-import com.SmartHomeBilkent.extra.dataBase.fields.User;
-import com.SmartHomeBilkent.extra.weather.WeatherForecast;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
+import com.SmartHomeBilkent.utilities.dataBase.*;
+import com.SmartHomeBilkent.utilities.dataBase.fields.CommonSetting;
+import com.SmartHomeBilkent.utilities.dataBase.fields.User;
+import com.SmartHomeBilkent.utilities.weather.WeatherForecast;
 import com.SmartHomeBilkent.home.Home;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;

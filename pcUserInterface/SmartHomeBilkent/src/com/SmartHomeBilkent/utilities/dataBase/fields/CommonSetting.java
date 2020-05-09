@@ -1,8 +1,7 @@
-package com.SmartHomeBilkent.extra.dataBase.fields;
+package com.SmartHomeBilkent.utilities.dataBase.fields;
 
 /**
  * it is a CommonSetting class
- *
  * @author Hacı Çakın
  * @version 06.05.2020
  */
@@ -19,7 +18,6 @@ public class CommonSetting {
 
    /**
     * it is a Usage constructor
-    *
     * @param homeID           is a LocalDate input parameter
     * @param sensors          is a String input parameter
     * @param permission       is a String input parameter
@@ -39,7 +37,6 @@ public class CommonSetting {
 
    /**
     * it is a getAquariumSettings method
-    *
     * @return result as a String
     */
    public String getAquariumSettings() {
@@ -48,7 +45,6 @@ public class CommonSetting {
 
    /**
     * it is a setAquariumSettings method
-    *
     * @param aquariumSettings is a String input parameter
     */
    public void setAquariumSettings( String aquariumSettings ) {
@@ -57,7 +53,6 @@ public class CommonSetting {
 
    /**
     * it is a getFishSpecies method
-    *
     * @return result as a String
     */
    public String getFishSpecies() {
@@ -66,7 +61,6 @@ public class CommonSetting {
 
    /**
     * it is a setFishSpecies method
-    *
     * @param fishSpecies is a String input parameter
     */
    public void setFishSpecies( String fishSpecies ) {
@@ -75,7 +69,6 @@ public class CommonSetting {
 
    /**
     * it is a getHomeID method
-    *
     * @return result as a String
     */
    public String getHomeID() {
@@ -84,7 +77,6 @@ public class CommonSetting {
 
    /**
     * it is a setHomeID method
-    *
     * @param homeID is a String input parameter
     */
    public void setHomeID( String homeID ) {
@@ -93,7 +85,6 @@ public class CommonSetting {
 
    /**
     * it is a getSensors method
-    *
     * @return result as a String
     */
    public String getSensors() {
@@ -102,7 +93,6 @@ public class CommonSetting {
 
    /**
     * it is a setSensors method
-    *
     * @param sensors is a String input parameter
     */
    public void setSensors( String sensors ) {
@@ -111,7 +101,6 @@ public class CommonSetting {
 
    /**
     * it is a getPermission method
-    *
     * @return result as a String
     */
    public String getPermission() {
@@ -120,7 +109,6 @@ public class CommonSetting {
 
    /**
     * it is a setPermission method
-    *
     * @param permission is a String input parameter
     */
    public void setPermission( String permission ) {

@@ -1,8 +1,7 @@
-package com.SmartHomeBilkent.extra.dataBase.fields;
+package com.SmartHomeBilkent.utilities.dataBase.fields;
 
 /**
  * a Fish class
- *
  * @author METEHAN SAÇAKÇI
  * @version 01.05.2020
  */

@@ -1,6 +1,6 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.GreenHouseValues;
+import com.SmartHomeBilkent.utilities.dataBase.fields.GreenHouseValues;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.LineChart;
@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 
 /**
  * a GreenHouseData class
- *
  * @author İLKE DOĞAN
  * @version 01.05.2020
  */

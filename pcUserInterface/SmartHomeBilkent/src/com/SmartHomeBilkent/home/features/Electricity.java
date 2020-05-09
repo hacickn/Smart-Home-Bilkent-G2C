@@ -1,11 +1,10 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
-import com.SmartHomeBilkent.extra.dataBase.ElectricityUsage;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
+import com.SmartHomeBilkent.utilities.dataBase.ElectricityUsage;
 
 /**
  * a Electricity class
- *
  * @author METEHAN SAÇAKÇI
  * @version 29.04.2020
  */

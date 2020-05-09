@@ -1,6 +1,6 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.Fish;
+import com.SmartHomeBilkent.utilities.dataBase.fields.Fish;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.controlsfx.control.CheckComboBox;
@@ -12,7 +12,6 @@ import java.sql.Statement;
 
 /**
  * a FishSpecies class
- *
  * @author METEHAN SAÇAKÇI
  * @version 01.05.2020
  */

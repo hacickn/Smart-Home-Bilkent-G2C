@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra.dataBase.fields;
+package com.SmartHomeBilkent.utilities.dataBase.fields;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.SimpleStringProperty;
@@ -6,7 +6,6 @@ import javafx.beans.property.StringProperty;
 
 /**
  * a User class that extended by RecursiveTreeObject<User>
- *
  * @author Hacı Çakın
  * @version 28.04.2020
  */
@@ -31,7 +30,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a User constructor
-    *
     * @param name              is a String input parameter
     * @param surname           is a String input parameter
     * @param birthday          is a String input parameter
@@ -64,7 +62,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getName method
-    *
     * @return result as a String
     */
    public String getName() {
@@ -73,7 +70,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getEnter method
-    *
     * @return result as a String
     */
    public String getEnter() {
@@ -82,7 +78,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setEnter method
-    *
     * @param enter is a String input parameter
     */
    public void setEnter( String enter ) {
@@ -91,7 +86,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a nameProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty nameProperty() {
@@ -100,7 +94,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setName method
-    *
     * @param name is a String input parameter
     */
    public void setName( String name ) {
@@ -109,7 +102,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getSurname method
-    *
     * @return result as a String
     */
    public String getSurname() {
@@ -118,7 +110,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a surnameProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty surnameProperty() {
@@ -127,7 +118,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setSurname method
-    *
     * @param surname is a String input parameter
     */
    public void setSurname( String surname ) {
@@ -136,7 +126,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getBirthday method
-    *
     * @return result as a String
     */
    public String getBirthday() {
@@ -145,7 +134,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a birthdayProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty birthdayProperty() {
@@ -154,7 +142,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setBirthday method
-    *
     * @param birthday is a String input parameter
     */
    public void setBirthday( String birthday ) {
@@ -163,7 +150,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getGender method
-    *
     * @return result as a String
     */
    public String getGender() {
@@ -172,7 +158,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a genderProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty genderProperty() {
@@ -181,7 +166,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setGender method
-    *
     * @param gender is a String input parameter
     */
    public void setGender( String gender ) {
@@ -190,7 +174,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getText method
-    *
     * @return result as a String
     */
    public String getText() {
@@ -199,7 +182,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setText method
-    *
     * @param text is a String input parameter
     */
    public void setText( String text ) {
@@ -208,7 +190,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getSound method
-    *
     * @return result as a String
     */
    public String getSound() {
@@ -217,7 +198,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setSound method
-    *
     * @param sound is a String input parameter
     */
    public void setSound( String sound ) {
@@ -226,7 +206,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getUserName method
-    *
     * @return result as a String
     */
    public String getUserName() {
@@ -235,7 +214,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a userNameProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty userNameProperty() {
@@ -244,7 +222,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setUserName method
-    *
     * @param userName is a String input parameter
     */
    public void setUserName( String userName ) {
@@ -253,7 +230,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getPassword method
-    *
     * @return result as a String
     */
    public String getPassword() {
@@ -262,7 +238,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setPassword method
-    *
     * @param password is a String input parameter
     */
    public void setPassword( String password ) {
@@ -271,7 +246,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getUserType method
-    *
     * @return result as a String
     */
    public String getUserType() {
@@ -280,7 +254,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getPreferredTheme method
-    *
     * @return result as a String
     */
    public String getPreferredTheme() {
@@ -289,7 +262,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a preferredThemeProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty preferredThemeProperty() {
@@ -298,7 +270,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setPreferredTheme method
-    *
     * @param preferredTheme is a String input parameter
     */
    public void setPreferredTheme( String preferredTheme ) {
@@ -307,7 +278,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getPreferredLanguage method
-    *
     * @return result as a String
     */
    public String getPreferredLanguage() {
@@ -316,7 +286,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a preferredLanguageProperty method
-    *
     * @return result as a StringProperty
     */
    public StringProperty preferredLanguageProperty() {
@@ -325,7 +294,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setPreferredLanguage method
-    *
     * @param preferredLanguage is a String input parameter
     */
    public void setPreferredLanguage( String preferredLanguage ) {
@@ -334,7 +302,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a getLocation method
-    *
     * @return result as a String
     */
    public String getLocation() {
@@ -343,7 +310,6 @@ public class User extends RecursiveTreeObject< User > {
 
    /**
     * it is a setLocation method
-    *
     * @param location is a String input parameter
     */
    public void setLocation( String location ) {

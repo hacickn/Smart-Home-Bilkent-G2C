@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra.connection;
+package com.SmartHomeBilkent.utilities.connection;
 
 import com.fazecast.jSerialComm.SerialPort;
 
@@ -8,7 +8,6 @@ import java.util.Scanner;
 /**
  * it is a Arduino class
  * this class provide communication
- *
  * @author Hacı Çakın
  * @version 06.05.2020
  */
@@ -23,7 +22,6 @@ public class Arduino {
 
    /**
     * it is a CommonSettingData constructor
-    *
     * @param portDescription is a String input parameter
     * @param baud_rate       is an int input parameter
     */
@@ -38,7 +36,6 @@ public class Arduino {
 
    /**
     * it is a openConnection method
-    *
     * @return result as a boolean
     */
    public boolean openConnection() {
@@ -65,7 +62,6 @@ public class Arduino {
 
    /**
     * it is a getSerialPort method
-    *
     * @return result as a SerialPort
     */
    public SerialPort getSerialPort() {
@@ -74,7 +70,6 @@ public class Arduino {
 
    /**
     * it is a serialRead method
-    *
     * @return result as a String
     */
    public String serialRead() {
@@ -94,7 +89,6 @@ public class Arduino {
 
    /**
     * it is a serialWrite method
-    *
     * @param string is a String input parameter
     */
    public void serialWrite( String string ) {

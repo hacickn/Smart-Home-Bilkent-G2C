@@ -1,6 +1,6 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.Usage;
+import com.SmartHomeBilkent.utilities.dataBase.fields.Usage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
@@ -18,7 +18,6 @@ import java.time.format.DateTimeFormatter;
  * it is a GasUsage class
  * this class get statistics of usage of gas from database
  * and working these statistics
- *
  * @author Hacı Çakın
  * @version 01.05.2020
  */
@@ -51,7 +50,6 @@ public class GasUsage {
 
    /**
     * it is a getInstance method that provide the access to ElectricityUsage
-    *
     * @return result as a GasUsage
     */
    public static GasUsage getInstance() {
@@ -61,7 +59,6 @@ public class GasUsage {
    /**
     * it is a getGasUsage method that get all data from database
     * and put it in ObservableList
-    *
     * @return result as a ObservableList< Usage >
     */
    public ObservableList< Usage > getGasUsage() {
@@ -86,7 +83,6 @@ public class GasUsage {
 
    /**
     * it is a calculateUsage method that calculate the total usage per day
-    *
     * @return result as a ObservableList< Integer >
     */
    public ObservableList< Integer > calculateUsage() {
@@ -131,7 +127,6 @@ public class GasUsage {
 
    /**
     * it is a getTable method that add all data to given chart
-    *
     * @param barChart is a BarChart< Number, Number > input parameter
     */
    public void getTable( BarChart< Number, Number > barChart ) {
@@ -148,7 +143,6 @@ public class GasUsage {
    /**
     * it is a updateGas method that watching activities( opening or closing )
     * and write them to database according to suitable way
-    *
     * @param control as a boolean input parameter
     */
    public void updateGas( boolean control ) {

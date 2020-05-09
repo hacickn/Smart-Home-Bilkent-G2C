@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,6 @@ import java.sql.SQLException;
 /**
  * it is a DatabaseConnection class
  * this class open connection between java and database and provide this connection to other classes
- *
  * @author Hacı Çakın
  * @version 01.05.2020
  */
@@ -32,7 +31,6 @@ public class DatabaseConnection {
 
    /**
     * it is a connectDatabase method that get connection between database and program
-    *
     * @return result as a boolean
     */
    public boolean connectDatabase() {
@@ -60,7 +58,6 @@ public class DatabaseConnection {
 
    /**
     * it is a Connection method that provide the connection
-    *
     * @return connection as a Connection
     */
    public Connection getConnection() {
@@ -69,7 +66,6 @@ public class DatabaseConnection {
 
    /**
     * it is a getInstance method that access to DatabaseConnection class
-    *
     * @return instance as a DatabaseConnection
     */
    public static DatabaseConnection getInstance() {

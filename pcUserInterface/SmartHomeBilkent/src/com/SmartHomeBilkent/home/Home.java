@@ -1,11 +1,10 @@
 package com.SmartHomeBilkent.home;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 import com.SmartHomeBilkent.home.features.*;
 
 /**
  * a Home class
- *
  * @author İlke Doğan
  * @version 29.04.2020
  */

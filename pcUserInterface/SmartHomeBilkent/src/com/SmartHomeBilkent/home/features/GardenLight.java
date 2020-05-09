@@ -1,10 +1,9 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 
 /**
  * a GardenLight class
- *
  * @author METEHAN SAÇAKÇI
  * @version 29.04.2020
  */

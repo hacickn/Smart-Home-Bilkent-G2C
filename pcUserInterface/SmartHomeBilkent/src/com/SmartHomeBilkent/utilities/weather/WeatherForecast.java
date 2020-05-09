@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra.weather;
+package com.SmartHomeBilkent.utilities.weather;
 
 import java.io.BufferedReader;
 import java.io.IOException;

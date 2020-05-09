@@ -1,7 +1,7 @@
 package com.SmartHomeBilkent;
 
-import com.SmartHomeBilkent.extra.dataBase.Users;
-import com.SmartHomeBilkent.extra.dataBase.fields.User;
+import com.SmartHomeBilkent.utilities.dataBase.Users;
+import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.jfoenix.controls.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -19,17 +19,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
-import java.util.Date;
 import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
 
 
 public class ElderMainPanel implements Initializable {

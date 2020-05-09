@@ -1,10 +1,9 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 
 /**
  * a Siren class
- *
  * @author İLKE DOĞAN
  * @version 29.04.2020
  */

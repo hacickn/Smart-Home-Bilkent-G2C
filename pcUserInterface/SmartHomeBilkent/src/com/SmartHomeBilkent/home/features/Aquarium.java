@@ -1,6 +1,6 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 
 /**
  * a Aquarium class

@@ -1,4 +1,4 @@
-package com.SmartHomeBilkent.extra.speech;
+package com.SmartHomeBilkent.utilities.speech;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;

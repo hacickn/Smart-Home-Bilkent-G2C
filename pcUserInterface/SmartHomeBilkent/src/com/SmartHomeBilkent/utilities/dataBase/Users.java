@@ -1,6 +1,6 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.User;
+import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -11,7 +11,6 @@ import java.sql.Statement;
 
 /**
  * a Users class
- *
  * @author Hacı Çakın
  * @version 21.03.2020
  */
@@ -49,7 +48,6 @@ public class Users {
 
    /**
     * it is a getAllUsers method that get all user from the USERS table
-    *
     * @return result as a ObservableList<User>
     */
    public ObservableList< User > getAllUsers() {
@@ -85,7 +83,6 @@ public class Users {
 
    /**
     * it is a addUser method that add new user
-    *
     * @param user is a User input parameter
     * @return result as a String
     */
@@ -112,7 +109,6 @@ public class Users {
 
    /**
     * it is a removeUser method that remove user
-    *
     * @param user is a User input parameter
     */
    public void removeUser( User user ) throws SQLException {
@@ -126,7 +122,6 @@ public class Users {
 
    /**
     * it is a getUserList method that give user list
-    *
     * @return result as a ObservableList<User>
     */
    public ObservableList< User > getUserList() {
@@ -135,7 +130,6 @@ public class Users {
 
    /**
     * it is a getInstance method
-    *
     * @return result as a Users
     */
    public static Users getInstance() {
@@ -144,7 +138,6 @@ public class Users {
 
    /**
     * it is a getParentNumber method give parent number
-    *
     * @return result as a int
     */
    public int getParentNumber() {
@@ -168,7 +161,6 @@ public class Users {
 
    /**
     * it is a updateUserNormalInfo method update user general information
-    *
     * @param user     is a String input parameter
     * @param surname  is a String input parameter
     * @param birthday is a String input parameter
@@ -195,7 +187,6 @@ public class Users {
 
    /**
     * it is a updatePrivateInfo method update user private information
-    *
     * @param user     is a String input parameter
     * @param username is a String input parameter
     * @param password is a String input parameter
@@ -217,7 +208,6 @@ public class Users {
 
    /**
     * it is a updateUsersTheme method update user theme information
-    *
     * @param user  is a String input parameter
     * @param theme is a String input parameter
     */
@@ -235,7 +225,6 @@ public class Users {
 
    /**
     * it is a updateUserNormalInfo method update user language information
-    *
     * @param user     is a String input parameter
     * @param language is a String input parameter
     */
@@ -253,7 +242,6 @@ public class Users {
 
    /**
     * it is a updateVolume method update user volume-sound information
-    *
     * @param user  is a String input parameter
     * @param sound is a String input parameter
     */
@@ -271,7 +259,6 @@ public class Users {
 
    /**
     * it is a updateText method update user text information
-    *
     * @param user is a String input parameter
     * @param text is a String input parameter
     */
@@ -289,7 +276,6 @@ public class Users {
 
    /**
     * it is a updateLocation method update user location information
-    *
     * @param user     is a String input parameter
     * @param location is a String input parameter
     */

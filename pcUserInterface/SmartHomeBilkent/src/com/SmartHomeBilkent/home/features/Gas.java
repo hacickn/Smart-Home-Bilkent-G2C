@@ -1,11 +1,10 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
-import com.SmartHomeBilkent.extra.dataBase.GasUsage;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
+import com.SmartHomeBilkent.utilities.dataBase.GasUsage;
 
 /**
  * a Gas class
- *
  * @author METEHAN SAÇAKÇI
  * @version 29.04.2020
  */

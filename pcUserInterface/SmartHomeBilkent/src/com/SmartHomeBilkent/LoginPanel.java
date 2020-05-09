@@ -1,8 +1,8 @@
 package com.SmartHomeBilkent;
 
 import animatefx.animation.FadeIn;
-import com.SmartHomeBilkent.extra.dataBase.Users;
-import com.SmartHomeBilkent.extra.dataBase.fields.User;
+import com.SmartHomeBilkent.utilities.dataBase.Users;
+import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSpinner;
@@ -25,7 +25,6 @@ import java.util.ResourceBundle;
 
 /**
  * a LoginPanel class implemented by Initializable
- *
  * @author Hacı Çakın
  * @version 28.04.2020
  */
@@ -47,8 +46,12 @@ public class LoginPanel implements Initializable {
 
 
    //methods
+
+   /**
+    * It is a toLogin method that control the passwords and usernames
+    */
    @FXML
-   void toLogin() {
+   private void toLogin() {
       if( userNameField.getText().length() > 0 && passwordField.getText().length() > 0 ) {
          for( User s : Users.getInstance().getUserList() ) {
             if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
@@ -103,8 +106,12 @@ public class LoginPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a controlPressedCapslock method that control the conditions of capslock
+    * @param event is a KeyEvent input parameter
+    */
    @FXML
-   void controlPressedCapslock( KeyEvent event ) {
+   private void controlPressedCapslock( KeyEvent event ) {
       if( capsLock && event.getCode() == KeyCode.CAPS ) {
          capslockOpen.setVisible( true );
          capsLock = false;
@@ -114,6 +121,11 @@ public class LoginPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a initialize method that run when this class runs
+    * @param location  is a KeyEvent input parameter
+    * @param resources is a KeyEvent input parameter
+    */
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       capsLock = ( Toolkit.getDefaultToolkit().getLockingKeyState( java.awt.event.KeyEvent.VK_CAPS_LOCK ) );

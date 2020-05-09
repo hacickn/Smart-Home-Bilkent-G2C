@@ -1,10 +1,9 @@
 package com.SmartHomeBilkent.home.features;
 
-import com.SmartHomeBilkent.extra.connection.Arduino;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 
 /**
  * Aquarium class
- *
  * @author HACI ÇAKIN
  * @version 29.04.2020
  */
@@ -17,7 +16,6 @@ public abstract class Communication {
 
    /**
     * it is a GasUsage constructor
-    *
     * @param arduino is an Arduino input parameter
     */
    public Communication( Arduino arduino ) {
@@ -28,7 +26,6 @@ public abstract class Communication {
 
    /**
     * it is a open abstract method
-    *
     * @param control is a boolean input parameter
     */
    abstract void open( boolean control );

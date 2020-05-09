@@ -1,6 +1,6 @@
-package com.SmartHomeBilkent.extra.dataBase;
+package com.SmartHomeBilkent.utilities.dataBase;
 
-import com.SmartHomeBilkent.extra.dataBase.fields.CommonSetting;
+import com.SmartHomeBilkent.utilities.dataBase.fields.CommonSetting;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,7 +12,6 @@ import java.sql.Statement;
 /**
  * it is a CommonSettingData class
  * this class provide settings from databases
- *
  * @author Hacı Çakın
  * @version 06.05.2020
  */
@@ -43,7 +42,6 @@ public class CommonSettingData {
 
    /**
     * it is a getInstance method that provide the access to CommonSettingData
-    *
     * @return result as a CommonSettingData
     */
    public static CommonSettingData getInstance() {
@@ -53,7 +51,6 @@ public class CommonSettingData {
    /**
     * it is a getAllHome method that get all data from database
     * and put it in ObservableList
-    *
     * @return result as a ObservableList< CommonSetting >
     */
    public ObservableList< CommonSetting > getAllHome() {
@@ -80,7 +77,6 @@ public class CommonSettingData {
 
    /**
     * it is a getSensors method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @return result as a String[]
     */
@@ -90,7 +86,6 @@ public class CommonSettingData {
 
    /**
     * it is a getPermission method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @return result as a String[]
     */
@@ -100,7 +95,6 @@ public class CommonSettingData {
 
    /**
     * it is a updateSensors method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @param sensor        is a String[] input parameter
     */
@@ -122,7 +116,6 @@ public class CommonSettingData {
 
    /**
     * it is a updatePermission method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @param permission    is a String[] input parameter
     */
@@ -144,7 +137,6 @@ public class CommonSettingData {
 
    /**
     * it is a getHomeList method
-    *
     * @return result as an ObservableList< CommonSetting >
     */
    public ObservableList< CommonSetting > getHomeList() {
@@ -153,7 +145,6 @@ public class CommonSettingData {
 
    /**
     * it is a getSelectedFishes method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @return result as a String[]
     */
@@ -163,7 +154,6 @@ public class CommonSettingData {
 
    /**
     * it is a getAquariumSettings method
-    *
     * @param commonSetting is a CommonSetting input parameter
     * @return result as a String
     */
@@ -173,7 +163,6 @@ public class CommonSettingData {
 
    /**
     * it is a updateSelectedFishes method
-    *
     * @param commonSetting as a CommonSetting input parameter
     * @param fishList      as an ObservableList< String > input parameter
     */
@@ -197,7 +186,6 @@ public class CommonSettingData {
 
    /**
     * it is a updateAquariumSettings method
-    *
     * @param commonSetting   as a CommonSetting input parameter
     * @param aquariumSetting as a String input parameter
     */
