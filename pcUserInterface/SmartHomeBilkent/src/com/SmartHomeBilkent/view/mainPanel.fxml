@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.*?>
 <?import org.controlsfx.control.CheckComboBox?>
-<BorderPane fx:id="commonBorderPane" prefHeight="800.0" prefWidth="800.0"
-            stylesheets="@../styleSheets/main_menu_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.MainPanel">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="commonBorderPane" prefHeight="800.0"
+            prefWidth="800.0" stylesheets="@../styleSheets/main_menu_dark_theme.css"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.SmartHomeBilkent.MainPanel">
     <center>
         <Pane maxHeight="800.0" maxWidth="800.0" prefHeight="800.0" prefWidth="800.0">
             <AnchorPane prefHeight="800.0" prefWidth="800.0" StackPane.alignment="CENTER">
@@ -78,21 +78,21 @@
                             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0"
                                   BorderPane.alignment="CENTER">
                                 <JFXButton fx:id="menuElecButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="elecButton" text="menuElecButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="elecButton"
+                                           text="menuElecButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuElecProgress" prefHeight="0.0" prefWidth="50.0"
                                                 visible="false"/>
                                 <JFXButton fx:id="menuGasButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="gasButton" text="menuGasButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="gasButton"
+                                           text="menuGasButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuGasProgress" prefHeight="0.0" prefWidth="50.0"
                                                 visible="false"/>
                                 <JFXButton fx:id="menuWaterButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="waterButton" text="menuWaterButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="waterButton"
+                                           text="menuWaterButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuWaterProgress" prefHeight="0.0" prefWidth="50.0"
                                                 visible="false"/>
                             </VBox>
@@ -101,18 +101,18 @@
                             <VBox alignment="CENTER" prefHeight="316.0" prefWidth="100.0" spacing="15.0"
                                   BorderPane.alignment="CENTER">
                                 <JFXButton fx:id="menuAquariumButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="aquariumButton" text="menuWaterButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="aquariumButton"
+                                           text="menuWaterButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuAquariumProgress" prefWidth="50.0" visible="false"/>
                                 <JFXButton fx:id="menuGreenHouseButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="greenHouse" text="menuTempButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="greenHouse"
+                                           text="menuTempButton" textFill="TRANSPARENT"/>
                                 <JFXButton fx:id="menuGardenLightButton" onAction="#menuPaneButtonsOnAction"
-                                           onMouseEntered="#commonButtonsOnMovement"
-                                           onMouseExited="#commonButtonsOnExit" prefHeight="70.0" prefWidth="70.0"
-                                           styleClass="lightButton" text="menuTempButton" textFill="TRANSPARENT"/>
+                                           onMouseEntered="#menuButtonsOnMovement" onMouseExited="#commonButtonsOnExit"
+                                           prefHeight="70.0" prefWidth="70.0" styleClass="lightButton"
+                                           text="menuTempButton" textFill="TRANSPARENT"/>
                                 <JFXProgressBar fx:id="menuGardenLightProgress" prefWidth="50.0" visible="false"/>
                             </VBox>
                         </right>
@@ -133,16 +133,16 @@
                                     </Label>
                                     <JFXButton fx:id="weatherButton" layoutX="344.0" layoutY="4.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="weather" textFill="TRANSPARENT"/>
                                     <ImageView fx:id="tempImage" fitHeight="60.0" fitWidth="60.0" layoutY="4.0"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" pickOnBounds="true"
                                                preserveRatio="true" styleClass="temperatureButton"/>
                                     <JFXButton fx:id="doorButton" layoutX="172.0" layoutY="4.0"
                                                onAction="#menuPaneButtonsOnAction"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="doorButton" textFill="TRANSPARENT"/>
                                     <Label alignment="CENTER" layoutX="60.0" layoutY="31.0" prefHeight="26.0"
@@ -171,17 +171,17 @@
                             <Pane maxHeight="200.0" maxWidth="1386.0" prefHeight="100.0" prefWidth="692.0"
                                   BorderPane.alignment="CENTER">
                                 <JFXButton fx:id="menuConnectionButton" layoutX="325.0" layoutY="25.0"
-                                           onAction="#goToSettingFromMenuView" onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#goToSettingFromMenuView" onMouseEntered="#menuButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="connectionButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
                                 <JFXButton fx:id="menuBulkChange" layoutX="200.0" layoutY="25.0"
-                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#menuButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="bulkChangeButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
                                 <JFXButton fx:id="menuTimeConfigurationButton" layoutX="450.0" layoutY="25.0"
-                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#commonButtonsOnMovement"
+                                           onAction="#menuPaneButtonsOnAction" onMouseEntered="#menuButtonsOnMovement"
                                            onMouseExited="#commonButtonsOnExit" prefHeight="50.0" prefWidth="50.0"
                                            styleClass="timeConfigurationButton" text="menuConnectionButton"
                                            textFill="TRANSPARENT"/>
@@ -236,7 +236,7 @@
                                     </Label>
                                     <JFXButton fx:id="elecSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearPassive" text="elecSubMenuButtonPassive"
                                                textFill="TRANSPARENT"/>
@@ -279,7 +279,7 @@
                                     </Label>
                                     <JFXButton fx:id="elecSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearActive" text="elecSubMenuButtonActive"
                                                textFill="TRANSPARENT" visible="false"/>
@@ -298,7 +298,7 @@
                                                      text="gasSubMenuToggleButton" textFill="TRANSPARENT"/>
                                     <JFXButton fx:id="gasSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearPassive" text="gasSubMenuButtonPassive"
                                                textFill="TRANSPARENT"/>
@@ -311,7 +311,7 @@
                                     </Label>
                                     <JFXButton fx:id="gasSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearActive" text="gasSubMenuButtonActive"
                                                textFill="TRANSPARENT" visible="false"/>
@@ -329,7 +329,7 @@
                                                      onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons"
                                                      text="gasSubMenuToggleButton" textFill="TRANSPARENT"/>
                                     <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
+                                               onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearPassive"
                                                text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false"/>
                                     <Label fx:id="waterSubPaneLabelActive" alignment="CENTER" layoutX="145.0"
@@ -341,7 +341,7 @@
                                     </Label>
                                     <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
+                                               onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive"
                                                textFill="TRANSPARENT" visible="false"/>
                                 </Pane>
@@ -361,7 +361,7 @@
                                                      textFill="TRANSPARENT"/>
                                     <JFXButton fx:id="aquariumSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearPassive" text="waterSubMenuButtonPassive"
                                                textFill="TRANSPARENT"/>
@@ -374,7 +374,7 @@
                                     </Label>
                                     <JFXButton fx:id="aquariumSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearActive" text="waterSubMenuButtonActive"
                                                textFill="TRANSPARENT" visible="false"/>
@@ -431,13 +431,13 @@
                                     </Label>
                                     <JFXButton fx:id="greenhouseSubMenuButtonPassive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearPassive" text="greenhouseSubMenuButtonPassive"
                                                textFill="TRANSPARENT"/>
                                     <JFXButton fx:id="greenhouseSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement"
+                                               onMouseEntered="#menuButtonsOnMovement"
                                                onMouseExited="#commonButtonsOnExit" prefHeight="60.0" prefWidth="60.0"
                                                styleClass="gearActive" text="greenhouseSubMenuButtonActive"
                                                textFill="TRANSPARENT" visible="false"/>
@@ -457,9 +457,10 @@
                                                      styleClass="toggleButtons" text="gardenLightSubMenuToggleButton"
                                                      textFill="TRANSPARENT"/>
                                     <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
+                                               onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearPassive"
-                                               text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT"/>
+                                               text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT"
+                                               visible="false"/>
                                     <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER" layoutX="145.0"
                                            layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop"
                                            text="GARDEN LIGHT" visible="false">
@@ -469,7 +470,7 @@
                                     </Label>
                                     <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0"
                                                onAction="#goToSettingFromMenuView"
-                                               onMouseEntered="#commonButtonsOnMovement" prefHeight="60.0"
+                                               onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0"
                                                prefWidth="60.0" styleClass="gearActive"
                                                text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT"
                                                visible="false"/>

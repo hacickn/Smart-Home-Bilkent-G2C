@@ -1,12 +1,12 @@
 package com.SmartHomeBilkent;
 
 import animatefx.animation.*;
+import com.SmartHomeBilkent.home.Home;
 import com.SmartHomeBilkent.utilities.connection.Arduino;
 import com.SmartHomeBilkent.utilities.dataBase.*;
 import com.SmartHomeBilkent.utilities.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.SmartHomeBilkent.utilities.weather.WeatherForecast;
-import com.SmartHomeBilkent.home.Home;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
@@ -50,29 +50,29 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
- * a MainPanel class
+ * MainPanel class
+ * I put extra explanation about the order of the this class
  *
  * @author Hacı Çakın
- * @version 29.04.2020
+ * @version 10.05.2020 -> javadoc is added
  */
 public class MainPanel implements Initializable {
 
    //properties
-   /**
-    * PROPERTIES
-    * 1)menu variables
-    * 2)user profile variables
-    * 3)settings variables
-    * 3.1)setting - application settings variables
-    * 3.2)setting - users settings variables
-    * 3.3)setting - mods settings variables
-    * 3.4)setting - home settings variables
-    * 3.5)setting - sub menu variables
-    * 4)Some independent variables( various objects )
+   /*
+    1)menu pane variables(76-140)
+    2)user profile pane variables(145-178)
+    3)settings pane variables(Line 183-193)
+    3.1)setting - application settings variables(Line 198-222)
+    3.2)setting - users settings variables(Line 227-273)
+    3.3)setting - mods settings variables(Line 278-286)
+    3.4)setting - home settings variables(Line 291-337)
+    3.5)setting - sub menu variables(Line 342-357)
+    4)Some independent variables( various objects )(Line 363-380)
     */
 
-   /**
-    * 1)menu variables
+   /*
+    1)menu pane variables
     */
    @FXML
    private BorderPane commonBorderPane;
@@ -140,8 +140,8 @@ public class MainPanel implements Initializable {
    @FXML
    private ProgressIndicator menuAquariumIndicator;
 
-   /**
-    * 2)user profile variables
+   /*
+    2)user profile variables
     */
    @FXML
    private Label privateInfoWarning, normalInfoWarning,
@@ -178,8 +178,8 @@ public class MainPanel implements Initializable {
    @FXML
    private ImageView userInfoBoyImage, userInfoGirlImage;
 
-   /**
-    * 3)settings variables
+   /*
+    3)settings variables
     */
    @FXML
    private AnchorPane settingAnchorPane;
@@ -193,8 +193,8 @@ public class MainPanel implements Initializable {
    private Label applicationSettingButtonLabel, usersSettingButtonLabel,
          modsSettingButtonLabel, homeSettingButtonLabel;
 
-   /**
-    * 3.1)setting - application settings variables
+   /*
+    3.1)setting - application settings variables
     */
    @FXML
    private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
@@ -222,8 +222,8 @@ public class MainPanel implements Initializable {
          smokeSensorVisualToggle, fireButtonSoundToggle,
          smokeSensorSoundToggle, gasSensorSoundToggle;
 
-   /**
-    * 3.2)setting - users settings variables
+   /*
+    3.2)setting - users settings variables
     */
    @FXML
    private Pane settingUsersPane, addUserPane,
@@ -273,8 +273,8 @@ public class MainPanel implements Initializable {
          permissionPaneNotificationToggle, permissionPaneGasToggle,
          permissionPaneSirenToggle;
 
-   /**
-    * 3.3)setting - mods settings variables
+   /*
+    3.3)setting - mods settings variables
     */
    @FXML
    private SplitPane settingModePane;
@@ -286,8 +286,8 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXSlider soundVolumeSlider;
 
-   /**
-    * 3.4)setting - home settings variables
+   /*
+    3.4)setting - home settings variables
     */
    @FXML
    private Pane settingElecSettingPane, settingGasSettingPane,
@@ -337,8 +337,8 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXSpinner weatherUpdateSpinner;
 
-   /**
-    * 3.5)setting - sub menu variables
+   /*
+    3.5)setting - sub menu variables
     */
    @FXML
    private AnchorPane usersSettingSubPane, homeSettingSubPane;
@@ -349,20 +349,17 @@ public class MainPanel implements Initializable {
          homeSettingGreenHouseButton, homeSettingWeatherButton,
          homeSettingElecButtonActive, homeSettingGasButtonActive,
          homeSettingAquButtonActive, homeSettingGreenHouseButtonActive;
-
    @FXML
    private JFXTimePicker feedingTime, airMotorStartTime,
          waterExchangeTime;
-
    @FXML
    private JFXComboBox< String > waterExchangeDay;
-
    @FXML
    private JFXSlider airMotorRunTime;
 
 
-   /**
-    * 4)Some independent variables
+   /*
+    4)Some independent variables
     */
    private ResourceBundle bundle;
    private AudioClip audioClip;
@@ -383,10 +380,40 @@ public class MainPanel implements Initializable {
    private CommonSetting commonSetting;
    private boolean exit;
 
-   //initialize method(it runs before the program start to run)
+   //constructors
+
+   /**
+    * MainPanel is a default contructor
+    */
+   public MainPanel() {
+   }
+
+   //methods
+   /*
+   1)common methods
+   2)menu pane methods
+   3)user profile pane methods
+   4)setting pane methods
+    */
+
+   /*
+   1)common methods
+    */
+
+   /**
+    * It is a initialize method that is Overrode
+    * This method work before the program runs Therefore in this method;
+    * GUI is updated according to user preferences and databases by the
+    * GUIUpdate method and setup some functions( for sound mod,
+    * emergency situation)
+    *
+    * @param location  is an URL input parameter
+    * @param resources is a ResourceBundle input parameter
+    */
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       exit = false;
+      isArduinoConnect = false;
       userPreferenceUpdate( getLoginUser() );
       ElectricityUsage.getInstance().getElectricityUsage();
       GasUsage.getInstance().getGasUsage();
@@ -399,11 +426,34 @@ public class MainPanel implements Initializable {
       audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.setRate( 1.1 );
-      isArduinoConnect = false;
-      refreshMenu();
+      refreshPortList();
       createEmergencyAnimation();
    }
 
+   /**
+    * It is a getLoginUser method that gets the who enter
+    * the application according the their enter properties
+    *
+    * @return result as an User
+    */
+   public User getLoginUser() {
+      for( User u : Users.getInstance().getUserList() ) {
+         if( u.getEnter().equals( "true" ) ) {
+            u.setEnter( "false" );
+            loginUser = u;
+            return u;
+         }
+      }
+      return null;
+   }
+
+   /**
+    * It is a GUIUpdate that is updated GUI. This method is
+    * called before the program runs. It gets data from the
+    * databases internet server( for weather forecast) and it
+    * gets who login the app. According to them, It regulates
+    * GUI and starts clock.
+    */
    public void GUIUpdate() {
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getTable( gasUsageTable );
@@ -486,6 +536,7 @@ public class MainPanel implements Initializable {
          backgroundSetup( "weather" );
          menuWeatherValue.setText( bundle.getString( "netConnectionLang" ) );
       }
+
       Thread thread = new Thread( () -> {
          while( !exit ) {
             Platform.runLater( () -> timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
@@ -500,9 +551,13 @@ public class MainPanel implements Initializable {
       thread.start();
    }
 
-
+   /**
+    * It is a userPreferenceUpdate that is updated GUI
+    * according the user that login the application.
+    *
+    * @param user is an User input parameter
+    */
    void userPreferenceUpdate( User user ) {
-
       dateTimeFormatter = DateTimeFormatter.ofPattern( "dd.MM.yyyy" );
       localDate = LocalDate.parse( user.getBirthday(), dateTimeFormatter );
       birthdayDateField.setValue( localDate );
@@ -556,8 +611,13 @@ public class MainPanel implements Initializable {
       soundVolumeSlider.setValue( Double.parseDouble( volume ) );
    }
 
-
-   void sound( String file, Boolean check ) {
+   /**
+    * It is a sound method that play sounds according to user preference
+    *
+    * @param file  is a String input parameter that is name of the sound file
+    * @param check is a boolean input parameter
+    */
+   void sound( String file, boolean check ) {
       if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
          audioClip.stop();
          audioClip = new AudioClip( this.getClass().getResource( "music/" +
@@ -574,19 +634,10 @@ public class MainPanel implements Initializable {
       }
    }
 
-   public User getLoginUser() {
-      for( User u : Users.getInstance().getUserList() ) {
-         if( u.getEnter().equals( "true" ) ) {
-            u.setEnter( "false" );
-            loginUser = u;
-            return u;
-         }
-      }
-      return null;
-   }
-
-
-   void refreshMenu() {
+   /**
+    * It is a refreshPortList that is refresh the port list for combo box
+    */
+   void refreshPortList() {
       SerialPort[] portNames;
       portChooser.getItems().removeAll( portChooser.getItems() );
       portNames = SerialPort.getCommPorts();
@@ -595,6 +646,10 @@ public class MainPanel implements Initializable {
          portChooser.getItems().add( portName.getSystemPortName() );
    }
 
+   /**
+    * It is a createEmergencyAnimation that creates animation for
+    * emergency warning but it does not play when It is created
+    */
    void createEmergencyAnimation() {
       rectangle = new Rectangle( 0, 0, 800, 800 );
       rectangle.setDisable( true );
@@ -605,9 +660,10 @@ public class MainPanel implements Initializable {
       rectangle.setVisible( false );
    }
 
-
+   /**
+    * It is a updateUsersTable that is added all users to users table according to database
+    */
    void updateUsersTable() {
-      //initialize column
       settingUserTableName.setCellValueFactory( param -> param.getValue().getValue().nameProperty() );
       settingUserTableSurname.setCellValueFactory( param -> param.getValue().getValue().surnameProperty() );
       settingUserTableBirthday.setCellValueFactory( param -> param.getValue().getValue().birthdayProperty() );
@@ -620,7 +676,12 @@ public class MainPanel implements Initializable {
       settingUserTable.setShowRoot( false );
    }
 
-   //these are helps to switch between three main pane(user profile, menu, setting)
+   /**
+    * It is a commonButtonsOnAction that is for common buttons( userProfileButton
+    * - menuButton - settingsButton - logoutButton - helpButton)
+    *
+    * @param event is an ActionEvent input parameter that is source of action
+    */
    @FXML
    void commonButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == userProfileButton ) {
@@ -649,6 +710,11 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a commonButtonsOnMovement that is triggered when there is movement on these buttons
+    *
+    * @param event is a MouseEvent input parameter that is source of mouse movements
+    */
    @FXML
    void commonButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
@@ -662,7 +728,120 @@ public class MainPanel implements Initializable {
          sound( "settingLang", soundCheck );
       } else if( event.getSource() == logoutButton ) {
          sound( "closeAppLang", soundCheck );
-      } else if( event.getSource() == tempImage ) {
+      }
+   }
+
+   /**
+    * It is a commonButtonsOnMovement that is triggered when mouse exits from these buttons
+    *
+    * @param event is a MouseEvent input parameter that is source of mouse movements
+    */
+   @FXML
+   void commonButtonsOnExit( MouseEvent event ) {
+      if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
+         menuUserProfileLabel.setVisible( false );
+      } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
+         menuMenuLabel.setVisible( false );
+      } else if( event.getSource() == settingsButton || event.getSource() == settingsButtonActive ) {
+         menuSettingLabel.setVisible( false );
+      } else if( event.getSource() == doorButton ) {
+         menuOpenDoorLabel.setVisible( false );
+      }
+      sound( "saveChangesLang", false );
+   }
+
+   /**
+    * It is a openMenuPane method that open the menu pane with animation in GUI
+    */
+   void openMenuPane() {
+      menuButtonActive.setVisible( true );
+      menuStackPane.setDisable( false );
+
+      if( userProfileButtonActive.isVisible() )
+         new FadeInRightBig( menuStackPane ).play();
+      else if( settingsButtonActive.isVisible() )
+         new FadeInLeftBig( menuStackPane ).play();
+
+      closeUserProfilePane();
+      closeSettingsPane();
+   }
+
+   /**
+    * It is a closeMenuPane that closes menu pane with animation in GUI
+    */
+   void closeMenuPane() {
+      if( menuButtonActive.isVisible() ) {
+         if( settingsButtonActive.isVisible() )
+            new FadeOutLeftBig( menuStackPane ).play();
+         else if( userProfileButtonActive.isVisible() )
+            new FadeOutRightBig( menuStackPane ).play();
+      }
+      menuButtonActive.setVisible( false );
+      menuStackPane.setDisable( true );
+   }
+
+   /**
+    * It is a openSettingsPane that opens setting pane with animation in GUI
+    */
+   void openSettingsPane() {
+      settingsButtonActive.setVisible( true );
+      settingAnchorPane.setDisable( false );
+      openApplicationPanes();
+      new FadeInRightBig( settingAnchorPane ).play();
+      closeUserProfilePane();
+      closeMenuPane();
+   }
+
+   /**
+    * It is a closeSettingsPane that closes setting pane with animation in GUI
+    */
+   void closeSettingsPane() {
+      if( settingsButtonActive.isVisible() ) {
+         new FadeOutRightBig( settingAnchorPane ).play();
+      }
+      settingsButtonActive.setVisible( false );
+      settingAnchorPane.setDisable( true );
+      closeApplicationSettingPane();
+      closeAllHomeSetting();
+      closeAllUsersPane();
+      closeModsPane();
+   }
+
+   /**
+    * It is a openUserProfilePane that opens user profile pane with animation in GUI
+    */
+   void openUserProfilePane() {
+      userProfileButtonActive.setVisible( true );
+      userProfileStackPane.setDisable( false );
+      new FadeInLeftBig( userProfileStackPane ).play();
+      closeSettingsPane();
+      closeMenuPane();
+   }
+
+   /**
+    * It is a closeUserProfilePane that closes user profile pane with animation in GUI
+    */
+   void closeUserProfilePane() {
+      if( userProfileButtonActive.isVisible() ) {
+         new FadeOutLeftBig( userProfileStackPane ).play();
+      }
+      userProfileButtonActive.setVisible( false );
+      toGoBackUserProfile();
+      userProfileStackPane.setDisable( true );
+   }
+
+   /*
+   2)menu pane methods
+    */
+
+   /**
+    * It is a menuButtonsOnMovement that is run when there is movement on one of these buttons
+    *
+    * @param event is a MouseEvent input parameter that is source of the movement
+    */
+   @FXML
+   void menuButtonsOnMovement( MouseEvent event ) {
+      if( event.getSource() == tempImage ) {
          sound( "homeTemperatureLang", soundCheck );
       } else if( event.getSource() == weatherButton ) {
          sound( "weatherLang", soundCheck );
@@ -698,89 +877,12 @@ public class MainPanel implements Initializable {
       }
    }
 
-   @FXML
-   void commonButtonsOnExit( MouseEvent event ) {
-      if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
-         menuUserProfileLabel.setVisible( false );
-      } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
-         menuMenuLabel.setVisible( false );
-      } else if( event.getSource() == settingsButton || event.getSource() == settingsButtonActive ) {
-         menuSettingLabel.setVisible( false );
-      } else if( event.getSource() == doorButton ) {
-         menuOpenDoorLabel.setVisible( false );
-      }
-      sound( "saveChangesLang", false );
-   }
-
-   //it opens menu
-   void openMenuPane() {
-      menuButtonActive.setVisible( true );
-      menuStackPane.setDisable( false );
-      if( userProfileButtonActive.isVisible() )
-         new FadeInRightBig( menuStackPane ).play();
-      else if( settingsButtonActive.isVisible() )
-         new FadeInLeftBig( menuStackPane ).play();
-      closeUserProfilePane();
-      closeSettingsPane();
-   }
-
-   //it closes menu
-   void closeMenuPane() {
-      if( menuButtonActive.isVisible() ) {
-         if( settingsButtonActive.isVisible() )
-            new FadeOutLeftBig( menuStackPane ).play();
-         else if( userProfileButtonActive.isVisible() )
-            new FadeOutRightBig( menuStackPane ).play();
-      }
-      menuButtonActive.setVisible( false );
-      menuStackPane.setDisable( true );
-   }
-
-   //it opens setting
-   void openSettingsPane() {
-      settingsButtonActive.setVisible( true );
-      settingAnchorPane.setDisable( false );
-      openApplicationPanes();
-      new FadeInRightBig( settingAnchorPane ).play();
-      closeUserProfilePane();
-      closeMenuPane();
-   }
-
-   //it closes setting
-   void closeSettingsPane() {
-      if( settingsButtonActive.isVisible() ) {
-         new FadeOutRightBig( settingAnchorPane ).play();
-      }
-      settingsButtonActive.setVisible( false );
-      settingAnchorPane.setDisable( true );
-      closeApplicationSettingPane();
-      closeAllHomeSetting();
-      closeAllUsersPane();
-      closeModsPane();
-   }
-
-   //it opens user profile
-   void openUserProfilePane() {
-      userProfileButtonActive.setVisible( true );
-      userProfileStackPane.setDisable( false );
-      new FadeInLeftBig( userProfileStackPane ).play();
-      closeSettingsPane();
-      closeMenuPane();
-   }
-
-   //it closes user profile
-   void closeUserProfilePane() {
-      if( userProfileButtonActive.isVisible() ) {
-         new FadeOutLeftBig( userProfileStackPane ).play();
-      }
-      userProfileButtonActive.setVisible( false );
-      toGoBackUserProfile();
-      userProfileStackPane.setDisable( true );
-   }
-
-   //main pane
-
-   //this opens related facility's settings pane
+   /**
+    * It is goToSettingFromMenuView method that run when clicked one of these buttons
+    * and open this button's setting pane in GUI with animation
+    *
+    * @param event is an ActionEvent input parameter that is source of the action
+    */
    @FXML
    void goToSettingFromMenuView( ActionEvent event ) {
       if( event.getSource() == elecSubMenuButtonPassive || event.getSource() == elecSubMenuButtonActive ) {
@@ -825,7 +927,14 @@ public class MainPanel implements Initializable {
       }
    }
 
-   //this controls which pane will be visible by fallowing buttons
+   /**
+    * It is a menuPaneButtonsOnAction that is triggered by the menu buttons
+    * and It open menu view pane of this button on GUI with animation.Also
+    * some ofthe these buttons can send message to embedded system thanks
+    * to serial port when they are triggered
+    *
+    * @param event is an ActionEvent input parameter that is source of the action
+    */
    @FXML
    void menuPaneButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == menuElecButton ) {
@@ -1017,6 +1126,9 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a closeAllMenuPane that closes all menu panes
+    */
    void closeAllMenuPane() {
       menuElecPane.setVisible( false );
       menuGasPane.setVisible( false );
@@ -1028,7 +1140,13 @@ public class MainPanel implements Initializable {
       menuTimeConfigurationPane.setVisible( false );
    }
 
-   //it controls whether facilities are opened or closed
+   /**
+    * It is a menuPaneToggleButtonOnAction that is for controlling home features
+    * to open or close. When one of the these button is triggered, send message
+    * to open/close this feature according to status of toggle buttons
+    *
+    * @param event is an ActionEvent input parameter that is source of the action
+    */
    @FXML
    void menuPaneToggleButtonOnAction( ActionEvent event ) {
       if( event.getSource() == elecSubMenuToggleButton ) {
@@ -1054,6 +1172,12 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a openElectricity class that regulate GUI and send message to
+    * embedded system according to boolean input parameter
+    *
+    * @param control is a boolean input parameter that controls the whether It should open or close
+    */
    public void openElectricity( boolean control ) {
       elecSubPaneLabelActive.setVisible( control );
       elecSubMenuButtonActive.setVisible( control );
@@ -1074,6 +1198,12 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * It is a openGas class that regulate GUI and send message to
+    * embedded system according to boolean input parameter
+    *
+    * @param control is a boolean input parameter that controls the whether It should open or close
+    */
    public void openGas( boolean control ) {
       gasSubPaneLabelActive.setVisible( control );
       gasSubMenuButtonActive.setVisible( control );
@@ -1083,6 +1213,12 @@ public class MainPanel implements Initializable {
       settingGasToggleButton.setSelected( control );
    }
 
+   /**
+    * It is a openAquarium class that regulate GUI and send message to
+    * embedded system according to boolean input parameter
+    *
+    * @param control is a boolean input parameter that controls the whether It should open or close
+    */
    public void openAquarium( boolean control ) {
       aquariumSubPaneLabelActive.setVisible( control );
       aquariumSubMenuButtonActive.setVisible( control );
@@ -1091,6 +1227,12 @@ public class MainPanel implements Initializable {
       aquariumRadioButton.setSelected( control );
    }
 
+   /**
+    * It is a openWater class that regulate GUI and send message to
+    * embedded system according to boolean input parameter
+    *
+    * @param control is a boolean input parameter that controls the whether It should open or close
+    */
    public void openWater( boolean control ) {
       waterSubPaneLabelActive.setVisible( control );
       waterSubMenuButtonActive.setVisible( control );
@@ -1099,6 +1241,12 @@ public class MainPanel implements Initializable {
       waterRadioButton.setSelected( control );
    }
 
+   /**
+    * It is a openGardenLight class that regulate GUI and send message to
+    * embedded system according to boolean input parameter
+    *
+    * @param control is a boolean input parameter that controls the whether It should open or close
+    */
    public void openGardenLight( boolean control ) {
       gardenLightSubPaneLabelActive.setVisible( control );
       gardenLightSubMenuButtonActive.setVisible( control );
@@ -1503,7 +1651,7 @@ public class MainPanel implements Initializable {
       smartHomeConnectionSettingButtonActive.setVisible( true );
       settingConnectionPane.setDisable( false );
       new FadeInUp( settingConnectionPane ).play();
-      refreshMenu();
+      refreshPortList();
    }
 
    void closeAllApplicationSettingSubPanes() {
