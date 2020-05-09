@@ -23,7 +23,7 @@
       //dht        DHT11_green_house;
       #define    DHTPIN  A12
       #define    DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
-      DHT        dht(DHTPIN, DHTTYPE);
+      DHT        dht( DHTPIN , DHTTYPE );
       
       float      temp_green_house;
       float      humid_green_house;
@@ -42,15 +42,15 @@
       
       //LiquidCrystal(RS, RW, E, D4, D5, D6, D7)
       //byte = uint8_t 
-      uint8_t rs = 45, rw=46, en = 44, d4 = 47, d5 = 48, d6 = 49, d7 = 50;
+      uint8_t rs = 45 , rw = 46 , en = 44 , d4 = 47 , d5 = 48 , d6 = 49 , d7 = 50;
       LiquidCrystal lcd(rs, rw, en, d4, d5, d6, d7);
       
       byte       Psw_Length = 4;
-      String     Data_Psw =""; 
-      String     Master_Psw="";//eğer ff se progrm ilkkez çalıştırılr ff i  = "1234"; 
+      String     Data_Psw = ""; 
+      String     Master_Psw = "";//eğer ff se progrm ilkkez çalıştırılr ff i  = "1234"; 
       int        Psw_count = 0, master_count = 0;
       char       customKey;
-      int        give_change=3;
+      int        give_change = 3;
       
       const byte ROWS = 4;
       const byte COLS = 4;
@@ -66,52 +66,52 @@
       byte rowPins[ROWS] = {43, 42, 41, 40};
       byte colPins[COLS] = {39, 38, 37, 36};
       
-      Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+      Keypad customKeypad = Keypad( makeKeymap ( hexaKeys ) , rowPins , colPins , ROWS , COLS );
       
       // Donanımsal interrupt 
       volatile unsigned long LastPulseTimeA;
       #define trigPinA       13
       #define echoPinA        2    //Int.0
-      static unsigned int     Triger=0;
-      static unsigned int     Distance=0;
-      uint8_t                 Distance_Max=14;
-      uint8_t                 Distance_Min=6;
+      static unsigned int     Triger = 0;
+      static unsigned int     Distance = 0;
+      uint8_t                 Distance_Max = 14;
+      uint8_t                 Distance_Min = 6;
       
       uint8_t        Gas_Sensor    = A0;
       uint8_t        Smoke_Sensor  = A1;
       uint8_t        Fire_Sensor   = A2;
       uint8_t        Motion_Sensor = A3;
       uint8_t        Ldr_Sensor    = A13;
-      uint8_t        soil_moisture_sens= A14;
-      uint8_t        Rain_sens    = A15;
+      uint8_t        soil_moisture_sens = A14;
+      uint8_t        Rain_sens     = A15;
       
       float          light_sens_value;
       
-      uint8_t        Buzzer        = 22;
-      uint8_t        electricity   = 23;
-      uint8_t        gas           = 24;
-      uint8_t        incoming_water= 25;
-      uint8_t        outgoing_water= 26;
-      uint8_t        air_motor     = 27;
-      uint8_t        door          = 28;
-      uint8_t        water_valve   = 29;
-      uint8_t        external_siren= 30;
-      uint8_t        garden_lights = 31;
+      uint8_t        Buzzer         = 22;
+      uint8_t        electricity    = 23;
+      uint8_t        gas            = 24;
+      uint8_t        incoming_water = 25;
+      uint8_t        outgoing_water = 26;
+      uint8_t        air_motor      = 27;
+      uint8_t        door           = 28;
+      uint8_t        water_valve    = 29;
+      uint8_t        external_siren = 30;
+      uint8_t        garden_lights  = 31;
       uint8_t        soil_moisture_valf_Cnt = 32;
-      uint8_t        Raint_Device_Cnt=33;
-      uint8_t        Green_House_Heater_Cnt=34;
+      uint8_t        Raint_Device_Cnt = 33;
+      uint8_t        Green_House_Heater_Cnt = 34;
       
-      char           House_movement =' ';
+      char           House_movement = ' ';
       uint8_t        Speed = 60;
       
-      String        _hour, _minute,_second;
+      String        _hour , _minute , _second;
       String        _day_week;
-      String        _day, _moon, _year;
+      String        _day , _moon , _year;
       String        _day_week_tr;
         
-      unsigned long previousMillisTask_1=0;
-      unsigned long previousMillisTask_2=0;
-      unsigned long previousMillisTask_3=0;
+      unsigned long previousMillisTask_1 = 0;
+      unsigned long previousMillisTask_2 = 0;
+      unsigned long previousMillisTask_3 = 0;
       
       // different intervals for each  
       int           intervalTask_1 = 200; //200;
@@ -121,26 +121,26 @@
       String        incoming_data;
       String        first_data;
       String        last_data; 
-      String        feeding_hour, feeding_minute,feeding_second;
-      String        water_change_hour, water_change_minute,water_change_second,water_change_day;
-      String        air_motor_hour, air_motor_minute,air_motor_second,air_motor_operating;     
+      String        feeding_hour , feeding_minute , feeding_second;
+      String        water_change_hour , water_change_minute , water_change_second , water_change_day;
+      String        air_motor_hour , air_motor_minute ,air_motor_second , air_motor_operating;     
       
-      uint8_t       water_change=0;
-      bool          air_motor_on=false;
-      int           air_motor_time=0;
+      uint8_t       water_change = 0;
+      bool          air_motor_on = false;
+      int           air_motor_time = 0;
       
       static unsigned int _time = 0;                       // use volatile for shared variabless
 
-      static unsigned int curtain_time=0;
-      static unsigned int feeding_time=0;
-      static unsigned int door_time=0;
+      static unsigned int curtain_time = 0;
+      static unsigned int feeding_time = 0;
+      static unsigned int door_time = 0;
       
-      bool          door_encrypted=false;
-      bool          door_psw_enb=false;
-      unsigned int  psw_time=0;  
-      byte          alarm_condition=0;
-      String        alarm_message="";
-      bool          manual_on=false;
+      bool          door_encrypted = false;
+      bool          door_psw_enb = false;
+      unsigned int  psw_time = 0;  
+      byte          alarm_condition = 0;
+      String        alarm_message = "";
+      bool          manual_on = false;
 
 
       /* setup()Method
@@ -148,66 +148,66 @@
        */ 
       void setup()
       {
-        attachInterrupt(0, EchoPinA_ISR, CHANGE);  
+        attachInterrupt( 0 , EchoPinA_ISR , CHANGE );  
       
         /* attach lib is embedded library in Arduino
         *  it uses Timer1 digital circuit
         */ 
-        myServo.attach(servoPin);
-        myServo.write(0);
+        myServo.attach( servoPin );
+        myServo.write( 0 );
       
-        myServo_Ldr_curtain_Cnt.attach(servoPin_Ldr_curtain_Cnt);
-        myServo_Ldr_curtain_Cnt.write(0);
+        myServo_Ldr_curtain_Cnt.attach( servoPin_Ldr_curtain_Cnt );
+        myServo_Ldr_curtain_Cnt.write( 0 );
       
-        myServo_Rain_Device_Cnt.attach(servoPin_Rain_Device_Cnt);
-        myServo_Rain_Device_Cnt.write(0);
+        myServo_Rain_Device_Cnt.attach( servoPin_Rain_Device_Cnt );
+        myServo_Rain_Device_Cnt.write( 0 );
         
-        pinMode(soil_moisture_sens, INPUT_PULLUP);
-        pinMode(Rain_sens,      INPUT_PULLUP);
-        pinMode(Ldr_Sensor,     INPUT);
+        pinMode( soil_moisture_sens , INPUT_PULLUP );
+        pinMode( Rain_sens ,      INPUT_PULLUP );
+        pinMode( Ldr_Sensor ,     INPUT );
             
-        pinMode(trigPinA,       OUTPUT);
-        pinMode(echoPinA,       INPUT);
+        pinMode( trigPinA ,     OUTPUT );
+        pinMode( echoPinA ,     INPUT );
       
-        pinMode(Gas_Sensor,     INPUT);
-        pinMode(Smoke_Sensor,   INPUT);
-        pinMode(Fire_Sensor,    INPUT);
-        pinMode(Motion_Sensor,  INPUT);
+        pinMode( Gas_Sensor,     INPUT );
+        pinMode( Smoke_Sensor,   INPUT );
+        pinMode( Fire_Sensor,    INPUT );
+        pinMode( Motion_Sensor,  INPUT );
       
-        pinMode(Buzzer,         OUTPUT);  // Buzzer Declared as Output 
-        pinMode(electricity,    OUTPUT);
-        pinMode(gas,            OUTPUT);
-        pinMode(incoming_water, OUTPUT);
-        pinMode(outgoing_water, OUTPUT);
-        pinMode(air_motor,      OUTPUT);
-        pinMode(door,           OUTPUT);
-        pinMode(water_valve,    OUTPUT);
-        pinMode(external_siren, OUTPUT);
-        pinMode(garden_lights,  OUTPUT);
-        pinMode(soil_moisture_valf_Cnt,OUTPUT);
-        pinMode(Raint_Device_Cnt,OUTPUT);  
-        pinMode(Green_House_Heater_Cnt,OUTPUT);
+        pinMode( Buzzer ,         OUTPUT );  // Buzzer Declared as Output 
+        pinMode( electricity ,    OUTPUT );
+        pinMode( gas ,            OUTPUT );
+        pinMode( incoming_water , OUTPUT );
+        pinMode( outgoing_water , OUTPUT );
+        pinMode( air_motor ,      OUTPUT );
+        pinMode( door ,           OUTPUT );
+        pinMode( water_valve ,    OUTPUT );
+        pinMode( external_siren , OUTPUT );
+        pinMode( garden_lights ,  OUTPUT );
+        pinMode( soil_moisture_valf_Cnt , OUTPUT );
+        pinMode( Raint_Device_Cnt , OUTPUT );  
+        pinMode( Green_House_Heater_Cnt , OUTPUT );
         
-        last_data="B0E0G0I0U0A0D0W0X0F0R0S0N0";      
+        last_data = "B0E0G0I0U0A0D0W0X0F0R0S0N0";      
         Smart_App_Cnt();
         
        // Serial Port--------------------------------------------------------------------
-        Serial.begin(9600);     
-        Serial.println("start");
+        Serial.begin( 9600 );     
+        Serial.println( "start" );
         
         // Bluetooth--------------------------------------------------------------------- 
-        Serial3.begin(9600);    
-        Serial3.write("start");
+        Serial3.begin( 9600 );    
+        Serial3.write( "start" );
       
         
         // set up the LCD's number of columns and rows:
-        lcd.begin(20, 4);//20,4
+        lcd.begin( 20, 4 );//20,4
         lcd.display();
         lcd.clear();       
         clearData();              
         Smart_home_data(); 
       
-        MsTimer2::set(20, timing);//20ms period
+        MsTimer2::set( 20, timing );//20ms period
         MsTimer2::start();
       }
 
@@ -225,18 +225,19 @@
          
           static unsigned long startTimeA;
          
-          if (digitalRead(echoPinA))      // Gone HIGH
+          if ( digitalRead( echoPinA ) )      // Gone HIGH
               startTimeA = micros();
           else                            // Gone LOW
           {
               LastPulseTimeA = micros() - startTimeA;
       
-              //Serial.print("Mesafe :");  //Serial.print(LastPulseTimeA); Serial.print('\t');
-              Distance=(LastPulseTimeA/2) / 29.1,1;
-              Distance= Distance*0.034/2;
+              //Serial.print("Mesafe :");  
+              //Serial.print(LastPulseTimeA); Serial.print('\t');
+              Distance = ( LastPulseTimeA / 2 ) / 29.1,1;
+              Distance = Distance * 0.034 / 2 ;
               //Serial.print(Distance); 
               //Serial.println(" cm");   
-              Triger=0;         
+              Triger = 0;         
           }
       }
 
@@ -247,75 +248,75 @@
       void timing()  // MsTimer2 => 20ms period
       {        
            _time++;       
-        if(_time==50) // 50 * MsTimer2 = 1000msn =1sn
+        if( _time == 50 ) // 50 * MsTimer2 = 1000msn =1sn
            {     
-             _time=0;  
-             if((alarm_condition!=0) && (!manual_on))
+             _time = 0;  
+             if( ( alarm_condition != 0) && ( !manual_on ) )
                 {
-                     digitalWrite(external_siren, HIGH);  
-                     digitalWrite(Buzzer, HIGH);
+                     digitalWrite( external_siren , HIGH );  
+                     digitalWrite( Buzzer , HIGH );
                 }
-                else if((alarm_condition==0) && (!manual_on))
+                else if( ( alarm_condition == 0 ) && ( !manual_on ) )
                 {
-                     digitalWrite(external_siren, LOW);  
-                     digitalWrite(Buzzer, LOW);
+                     digitalWrite( external_siren , LOW );  
+                     digitalWrite( Buzzer , LOW );
                 }
                 
-             if((psw_time > 0) && (!manual_on))
-                digitalWrite(Buzzer, (!digitalRead(Buzzer)));
-             else if((psw_time == 0)&& (!manual_on))
-                digitalWrite(Buzzer, LOW);
+             if( ( psw_time > 0 ) && ( !manual_on ) )
+                digitalWrite( Buzzer , ( !digitalRead( Buzzer ) ) );
+             else if( ( psw_time == 0 )&& ( !manual_on ) )
+                digitalWrite( Buzzer , LOW );
            }         
       
              
-        if(feeding_time > 0)
+        if( feeding_time > 0 )
           { 
-                if(feeding_time++ >= 100)
+                if( feeding_time++ >= 100 )
                 {
-                   feeding_time=0;
-                   myServo.write(0);  
-                   Serial.println("feeding off");
+                   feeding_time = 0;
+                   myServo.write( 0 );  
+                   Serial.println( "feeding off" );
                 }
           }
       
       
-        if(door_time > 0)
+        if( door_time > 0 ) 
           { 
-                if(door_time++ >= 50)
+                if( door_time++ >= 50 )
                 {
-                   door_time=0;
-                   digitalWrite(door, LOW);   
-                   Serial.println("door open");
+                   door_time = 0 ;
+                   digitalWrite( door, LOW );   
+                   Serial.println( "door open" );
                 }
           }
       
          // evden çıkma uyarısı verme buzzer ı (iç siren)
-        if(psw_time > 0)
+        if( psw_time > 0 )
           {                
-                if(psw_time++ >= 500)   // 10sn
+                if( psw_time++ >= 500 )   // 10sn
                 {
                    psw_time = 0;                 
                                        
-                       if((door_psw_enb) && (door_encrypted==false))
+                       if ( ( door_psw_enb ) && ( door_encrypted == false ) )
                          { 
-                          door_encrypted=true;               
-                          Serial.println("door_encrypted _on");
+                          door_encrypted = true;               
+                          Serial.println( "door_encrypted _on" );
                          }
-                        else if(digitalRead(Motion_Sensor) && (door_encrypted))    
+                        else if( digitalRead( Motion_Sensor ) && ( door_encrypted ) )    
                          { 
-                           bitWrite(alarm_condition,3,1);               
+                           bitWrite( alarm_condition , 3 , 1 );               
                          }
                 }
           }        
       
-            if(Triger==0)
+            if( Triger == 0 )
             {
-                digitalWrite(trigPinA, LOW); 
-                delayMicroseconds(2); // 0 da kalma süresi
-                digitalWrite(trigPinA, HIGH); 
-                delayMicroseconds(10);      // 1 de kalma süresi
-                digitalWrite(trigPinA, LOW);
-                Triger=1;
+                digitalWrite( trigPinA , LOW ); 
+                delayMicroseconds( 2 ); // 0 da kalma süresi
+                digitalWrite( trigPinA , HIGH ); 
+                delayMicroseconds( 10 );      // 1 de kalma süresi
+                digitalWrite( trigPinA , LOW );
+                Triger = 1;
             }   
       }
       
@@ -327,16 +328,16 @@
               unsigned long currentMillis = millis();
        
          // time to toggle Task1=200
-         if ((unsigned long)(currentMillis - previousMillisTask_1) >= intervalTask_1) 
+         if ( ( unsigned long )( currentMillis - previousMillisTask_1) >= intervalTask_1 ) 
          {
                 customKey = customKeypad.getKey();
-            if (customKey)
+            if ( customKey )
                 Key_Pad();       
             previousMillisTask_1 = currentMillis;  // save current time to Task1 
          }
       
             // time to toggle Task2=1000
-        if ((unsigned long)(currentMillis - previousMillisTask_2) >= intervalTask_2) 
+        if ( ( unsigned long )( currentMillis - previousMillisTask_2 ) >= intervalTask_2 ) 
         {   
                  House_Temp_Humidity();        
                  Hour_Calendar();  
@@ -344,27 +345,27 @@
                  Display_Refresh();    
                  light_sens_state();
                  
-              if (!manual_on)     
+              if ( !manual_on )     
                   aquarium_control();   
                      
             previousMillisTask_2 = currentMillis;  // save current time to Task2 
         }
            
             // time to toggle Task2=2000
-        if ((unsigned long)(currentMillis - previousMillisTask_3) >= intervalTask_3) 
+        if ( ( unsigned long )( currentMillis - previousMillisTask_3 ) >= intervalTask_3 ) 
         {   
                     humid_green_house = dht.readHumidity();
                     temp_green_house  = dht.readTemperature();
                       
-             if(temp_green_house <= 20 )    
-                digitalWrite(Green_House_Heater_Cnt, HIGH);
-             else if(temp_green_house > 20) 
-               digitalWrite(Green_House_Heater_Cnt, LOW);
+             if( temp_green_house <= 20 )    
+                digitalWrite( Green_House_Heater_Cnt , HIGH );
+             else if( temp_green_house > 20 ) 
+               digitalWrite( Green_House_Heater_Cnt , LOW );
       
             previousMillisTask_3 = currentMillis;  // save current time to Task2 
         }
       
-        if (Serial.available() > 0 || Serial3.available() > 0)   
+        if ( Serial.available() > 0 || Serial3.available() > 0 )   
         {        
                  MsTimer2::stop();
                  Serial_House_Cnt();
@@ -384,15 +385,15 @@
               sht.reset();
               humidity = sht.getHumidity(); // get temp from SHT 
            
-              Serial.print("Temp_HS: ");      
-              Serial.print(temp);
-              Serial.print("\t Humidity_HS: ");
-              Serial.println(humidity);
+              Serial.print( "Temp_HS: " );      
+              Serial.print( temp );
+              Serial.print( "\t Humidity_HS: " );
+              Serial.println( humidity );
       
-              Serial.print("Temp_GH: ");
-              Serial.print(temp_green_house);
-              Serial.print("\t Humidity_GH: ");
-              Serial.println(humid_green_house);
+              Serial.print( "Temp_GH: " );
+              Serial.print( temp_green_house );
+              Serial.print( "\t Humidity_GH: " );
+              Serial.println( humid_green_house );
            
       }
       
@@ -404,15 +405,15 @@
             void light_sens_state()
       {       
               //ADC- A13
-              light_sens_value =  analogRead(Ldr_Sensor);
+              light_sens_value =  analogRead( Ldr_Sensor );
               /** duyarlılık = Vref / 2^n 
               * miliV
               * multipliyng w 1000 to convert it Volt to milivolt
               */
               //light_sens_value =( 0.0048828125*analogRead(Ldr_Sensor))*1000;
-              light_sens_value = map(light_sens_value,0,1023,0,100);
-              Serial.println(light_sens_value);         
-           if(light_sens_value > 70)   
+              light_sens_value = map( light_sens_value , 0,1023 , 0,100 );
+              Serial.println( light_sens_value );         
+           if ( light_sens_value > 70 )   
              {
                //digitalWrite(curtain, ON); // PERDE
                //Serial.print("light_sens_value :");  Serial.println(light_sens_value);
@@ -420,16 +421,16 @@
                 * If we use Stor curtain we will turn the 
                 * curtain 360° in 3 times 
                 */
-               myServo_Ldr_curtain_Cnt.write(0);
-               Serial.println(" myServo_Ldr_curtain_Cnt ON  ");
-               digitalWrite(garden_lights, HIGH);
+               myServo_Ldr_curtain_Cnt.write( 0 );
+               Serial.println( " myServo_Ldr_curtain_Cnt ON  " );
+               digitalWrite( garden_lights , HIGH );
              }
            else
            {
                 // open curtain
-                myServo_Ldr_curtain_Cnt.write(180);
-                Serial.println(" myServo_Ldr_curtain_Cnt OFF  ");
+                myServo_Ldr_curtain_Cnt.write( 180 );
+                Serial.println( " myServo_Ldr_curtain_Cnt OFF  " );
                //digitalWrite(curtain, ON);// PERDE
-               digitalWrite(garden_lights, LOW);
+               digitalWrite( garden_lights , LOW );
            }
       }
