@@ -1,74 +1,76 @@
+   
+      
       void Sensor_Cnt()
       {     //alarm_condition=0;
       
-             if((digitalRead(Rain_sens)) && (!digitalRead(Raint_Device_Cnt))) 
+             if( ( digitalRead( Rain_sens ) ) && ( !digitalRead( Raint_Device_Cnt ) ) )  
               {
-                 Serial.println("Rain_Sens_on");  
-                 digitalWrite(Raint_Device_Cnt, HIGH);
+                 Serial.println( "Rain_Sens_on" );  
+                 digitalWrite( Raint_Device_Cnt , HIGH );
               }
-             else if((!digitalRead(Rain_sens)) && (digitalRead(Raint_Device_Cnt)))
+             else if( ( !digitalRead( Rain_sens ) ) && ( digitalRead( Raint_Device_Cnt ) ) )
               {
-                 Serial.println("Rain_Sens_of");   
-                 digitalWrite(Raint_Device_Cnt, LOW);
+                 Serial.println( "Rain_Sens_of" );   
+                 digitalWrite( Raint_Device_Cnt , LOW );
               }    
       
-              if((digitalRead(soil_moisture_sens)) && (!digitalRead(soil_moisture_valf_Cnt)))   
+              if( ( digitalRead( soil_moisture_sens ) ) && ( !digitalRead( soil_moisture_valf_Cnt ) ) )   
               {
-                 Serial.println("soil_moisture_sens_on");   
-                 digitalWrite(soil_moisture_valf_Cnt, HIGH);
+                 Serial.println( "soil_moisture_sens_on" );   
+                 digitalWrite( soil_moisture_valf_Cnt , HIGH );
               }
-              else if((!digitalRead(soil_moisture_sens)) && (digitalRead(soil_moisture_valf_Cnt)))
+              else if( ( !digitalRead( soil_moisture_sens ) ) && ( digitalRead( soil_moisture_valf_Cnt ) ) )
               {
-                 Serial.println("soil_moisture_sens_of");   
-                 digitalWrite(soil_moisture_valf_Cnt, LOW);
+                 Serial.println( "soil_moisture_sens_of" );   
+                 digitalWrite ( soil_moisture_valf_Cnt , LOW );
               } 
               
-             if(digitalRead(Gas_Sensor))
+             if ( digitalRead( Gas_Sensor ) )
              {
-                bitWrite(alarm_condition,0,1); 
+                bitWrite( alarm_condition , 0 , 1 ); 
                 Gas_Smoke_alarm(); 
              }
              else
-                bitWrite(alarm_condition,0,0);     
+                bitWrite( alarm_condition , 0 , 0 );     
              
-             if(digitalRead(Smoke_Sensor))
+             if ( digitalRead( Smoke_Sensor ) )
              {
-                bitWrite(alarm_condition,1,1);        
+                bitWrite( alarm_condition , 1 , 1 );        
                 Gas_Smoke_alarm();  
              }
              else
-                bitWrite(alarm_condition,1,0);     
+                bitWrite( alarm_condition , 1 , 0 );     
                 
-             if(digitalRead(Fire_Sensor))
+             if ( digitalRead( Fire_Sensor ) )
              {
-                bitWrite(alarm_condition,2,1);       
+                bitWrite( alarm_condition , 2 ,  1 );       
                 Gas_Smoke_alarm(); 
              }
              else
-                bitWrite(alarm_condition,2,0);     
+                bitWrite( alarm_condition , 2 , 0 );     
              
-             if(( door_encrypted ) && digitalRead( Motion_Sensor ) && ( psw_time == 0))
+             if( ( door_encrypted ) && digitalRead( Motion_Sensor ) && ( psw_time == 0))
                  psw_time = 1;              
             
-         if((!digitalRead( Gas_Sensor ))&&(!digitalRead( Smoke_Sensor )) && ( !digitalRead( Fire_Sensor )))
+         if( ( !digitalRead( Gas_Sensor ) )&&(!digitalRead( Smoke_Sensor )) && ( !digitalRead( Fire_Sensor ) ) )
            {
              if (manual_on == false)
              {
-              digitalWrite(electricity, LOW);      
-              digitalWrite(gas, LOW);
+              digitalWrite(electricity , LOW);      
+              digitalWrite(gas , LOW);
              }
            }        
       
-             if((!digitalRead( air_motor )) && ( water_change == 0) && ( Distance > Distance_Max ))
+             if( ( !digitalRead( air_motor ) ) && ( water_change == 0) && ( Distance > Distance_Max ) )
              {  // air_motor NK!!!!!
-                digitalWrite(outgoing_water, LOW);    
-                digitalWrite(incoming_water, LOW);
+                digitalWrite( outgoing_water , LOW );    
+                digitalWrite( incoming_water , LOW );
                  
-                digitalWrite(air_motor, HIGH);    
-                Serial.println("air_motor off");
+                digitalWrite( air_motor , HIGH );    
+                Serial.println( "air_motor off" );
                 
-                Serial.println("low water level");  
-                Serial3.println("low water level");
+                Serial.println( "low water level" );  
+                Serial3.println( "low water level" );
              }      
                  
                     alarm_message="";  
@@ -116,12 +118,12 @@
       
       void Gas_Smoke_alarm()
         { 
-           digitalWrite(air_motor, LOW);        
-           digitalWrite(water_valve, LOW);
+           digitalWrite( air_motor, LOW );        
+           digitalWrite( water_valve, LOW );
            
-           digitalWrite(electricity, HIGH);     
-           digitalWrite(gas, HIGH); 
+           digitalWrite( electricity , HIGH );     
+           digitalWrite( gas , HIGH ); 
            
-           digitalWrite(incoming_water, LOW);    
-           digitalWrite(outgoing_water, LOW);
+           digitalWrite( incoming_water , LOW );    
+           digitalWrite( outgoing_water , LOW );
         }
