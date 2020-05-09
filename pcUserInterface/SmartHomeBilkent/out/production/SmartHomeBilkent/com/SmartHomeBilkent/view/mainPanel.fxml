@@ -201,13 +201,11 @@
                                         </font>
                                     </Label>
                                     <JFXToggleButton fx:id="waterSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="gasSubMenuToggleButton" textFill="TRANSPARENT" />
-                                    <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="waterSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                     <Label fx:id="waterSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop" text="WATER" visible="false">
                                         <font>
                                             <Font name="Agency FB" size="35.0" />
                                         </font>
                                     </Label>
-                                    <JFXButton fx:id="waterSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="waterSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                 </Pane>
                                 <Pane fx:id="menuAquariumPane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
                                     <Label fx:id="aquariumSubPaneLabelPassive" alignment="CENTER" layoutX="96.0" layoutY="14.0" prefWidth="300.0" styleClass="contextPassiveTop" text="AQUARIUM">
@@ -267,13 +265,11 @@
                                         </font>
                                     </Label>
                                     <JFXToggleButton fx:id="gardenLightSubMenuToggleButton" layoutX="220.0" layoutY="55.0" onAction="#menuPaneToggleButtonOnAction" styleClass="toggleButtons" text="gardenLightSubMenuToggleButton" textFill="TRANSPARENT" />
-                                    <JFXButton layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearPassive" text="gardenLightSubMenuButtonPassive" textFill="TRANSPARENT" visible="false" />
                                     <Label fx:id="gardenLightSubPaneLabelActive" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextActiveTop" text="GARDEN LIGHT" visible="false">
                                         <font>
                                             <Font name="Agency FB" size="35.0" />
                                         </font>
                                     </Label>
-                                    <JFXButton fx:id="gardenLightSubMenuButtonActive" layoutX="216.0" layoutY="226.0" onAction="#goToSettingFromMenuView" onMouseEntered="#menuButtonsOnMovement" prefHeight="60.0" prefWidth="60.0" styleClass="gearActive" text="gardenLightSubMenuButtonActive" textFill="TRANSPARENT" visible="false" />
                                 </Pane>
                                 <Pane fx:id="menuBulkChangePane" prefHeight="300.0" prefWidth="500.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" styleClass="homeFacilityPane" visible="false">
                                     <Label fx:id="menuBulkChangeSubLabel" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefWidth="210.0" styleClass="contextPassiveTop" text="BULK CHANGES">

@@ -889,35 +889,39 @@ public class MainPanel implements Initializable {
          openSettingsPane();
          closeApplicationSettingPane();
          openHomeSettingPane();
-         settingElecSettingPane.setVisible( true );
+         settingElecSettingPane.setDisable( false );
          homeSettingElecButtonActive.setVisible( true );
       } else if( event.getSource() == gasSubMenuButtonPassive || event.getSource() == gasSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
          openHomeSettingPane();
-         settingGasSettingPane.setVisible( true );
+         settingGasSettingPane.setDisable( false );
+         new FadeInUp(settingGasSettingPane).play();
          homeSettingGasButtonActive.setVisible( true );
       } else if( event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
          openHomeSettingPane();
-         settingAquSettingPane.setVisible( true );
+         settingAquSettingPane.setDisable( false );
+         new FadeInUp(settingAquSettingPane).play();
          homeSettingAquButtonActive.setVisible( true );
       } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
          openHomeSettingPane();
-         settingGreenHouseSettingPane.setVisible( true );
+         settingGreenHouseSettingPane.setDisable( false );
+         new FadeInUp(settingGreenHouseSettingPane).play();
          homeSettingGreenHouseButtonActive.setVisible( true );
       } else if( event.getSource() == weatherButton ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
          openHomeSettingPane();
-         settingWeatherSettingPane.setVisible( true );
+         settingWeatherSettingPane.setDisable( false );
+         new FadeInUp(settingWeatherSettingPane).play();
          homeSettingWeatherButtonActive.setVisible( true );
       } else if( event.getSource() == menuConnectionButton ) {
          openSettingsPane();
