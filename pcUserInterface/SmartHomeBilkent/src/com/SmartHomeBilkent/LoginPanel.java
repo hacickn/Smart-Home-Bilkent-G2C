@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
@@ -86,6 +87,7 @@ public class LoginPanel implements Initializable {
                               Platform.exit();
                               System.exit( 0 );
                            } );
+                           stage[ 0 ].getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
                            stage[ 0 ].show();
                            userNameField.getScene().getWindow().hide();
                            new FadeIn( root ).play();

@@ -33,11 +33,18 @@
          -fx-font-family:  'Patrick Hand', cursive;
          -fx-font-size: 20px;
 }
-.label{
+.primitiveLabel{
      -fx-text-fill: #b85c00;
+     -fx-font-family:  'Patrick Hand', cursive;
+     -fx-font-size: 30px;
 }
 
 .line{
      -fx-fill: #b85c00;
      -fx-stroke: #b85c00;
+}
+.secondaryLabel{
+     -fx-text-fill: #b85c00;
+     -fx-font-family:  'Patrick Hand', cursive;
+        -fx-font-size: 18px;
 }

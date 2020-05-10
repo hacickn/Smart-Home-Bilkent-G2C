@@ -8,6 +8,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +29,7 @@ public class Main extends Application {
       primaryStage.setTitle( "SMART HOME" );
       primaryStage.setScene( new Scene( root, 400, 400 ) );
       primaryStage.setResizable( false );
+      primaryStage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
       primaryStage.setOnCloseRequest( event -> {
          Platform.exit();
          System.exit( 0 );

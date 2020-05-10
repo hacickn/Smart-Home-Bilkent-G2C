@@ -707,6 +707,7 @@ public class MainPanel implements Initializable {
             Stage stage = new Stage();
             stage.setTitle( "HELP" );
             stage.setScene( new Scene( root, 500, 500 ) );
+            stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
             stage.setResizable( false );
             stage.show();
          } catch( Exception e ) {
@@ -1282,6 +1283,7 @@ public class MainPanel implements Initializable {
             Stage stage = new Stage();
             stage.setTitle( "SMART HOME" );
             stage.setScene( new Scene( root, 400, 400 ) );
+            stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
             stage.setResizable( false );
             stage.show();
             commonBorderPane.getScene().getWindow().hide();
@@ -2325,6 +2327,7 @@ public class MainPanel implements Initializable {
                Stage stage = new Stage();
                stage.setTitle( "SMART HOME" );
                stage.setScene( new Scene( root, 400, 400 ) );
+               stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
                stage.setResizable( false );
                stage.show();
                commonBorderPane.getScene().getWindow().hide();
