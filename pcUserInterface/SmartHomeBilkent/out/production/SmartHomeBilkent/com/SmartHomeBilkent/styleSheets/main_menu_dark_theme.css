@@ -1,5 +1,6 @@
 .root{
-        -fx-background-color: #282727 ;
+             -fx-background-image: url("images/darkWall.jpg");
+               -fx-background-size: cover;
  }
 .menuBorderPane{
            -fx-background-color: darkGray;

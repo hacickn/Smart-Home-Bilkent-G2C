@@ -1,5 +1,6 @@
 #root{
-       -fx-background-color: #282727 ;
+     -fx-background-image: url("images/darkImage.jpg");
+     -fx-background-size: cover;
 }
 #nameImage{
     -fx-background-image: url("images/nameDarkTheme.jpg");
@@ -10,21 +11,27 @@
     -fx-background-size: cover;
 }
 .button{
-    -fx-text-fill: white;
+    -fx-text-fill: #b85c00;
     -fx-border-color: #b85c00;
     -fx-background-color: #282727;
+    -fx-font-family:  'Patrick Hand', cursive;
+    -fx-font-size: 14px;
 }
 
 .button:hover{
-    -fx-text-fill: white;
+    -fx-text-fill: #b85c00;
     -fx-border-color: #b85c00;
     -fx-background-color: #b85c00;
+    -fx-font-family:  'Patrick Hand', cursive;
+    -fx-font-size: 14px;
 }
 
 .text-field{
-     -fx-text-fill: white;
+     -fx-text-fill: #b85c00;
      -jfx-focus-color: #b85c00;
      -jfx-unfocus-color: white;
+         -fx-font-family:  'Patrick Hand', cursive;
+         -fx-font-size: 20px;
 }
 .label{
      -fx-text-fill: #b85c00;
