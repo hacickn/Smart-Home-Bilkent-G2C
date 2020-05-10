@@ -3,19 +3,19 @@
        -fx-background-size: cover;
 }
 .menuBorderPane{
-           -fx-background-color:#bbb7cc;
+           -fx-background-color:#00001a;
            -fx-border-color: #E6E6FA;
 }
 .homeFacilityPane{
-       -fx-background-color: #ffebd6;
+       -fx-background-color: #ffb3b3;
       -fx-border-color: #E6E6FA;
  }
  .userInfoPane{
-        -fx-background-color:#FFE4C4 ;
+        -fx-background-color:#ffcccc ;
         -fx-border-color: #E6E6FA;
  }
  .settingBorderPane{
-        -fx-background-color: #FFE4C4;
+        -fx-background-color: #00004d;
         -fx-border-color:#E6E6FA;
  }
  .settingFacilitiesPane{
@@ -325,7 +325,7 @@
      -fx-background-size: cover;
 }
 .changeUserInfoPane{
-      -fx-background-color: #DCDCDC;
+      -fx-background-color: #ccccff;
       -fx-border-color: #E6E6FA;
 }
 .changeUserInfoSave{
@@ -530,7 +530,7 @@
      -fx-background-size: cover;
 }
 .settingSubPane{
-        -fx-background-color: #DCDCDC;
+        -fx-background-color: #ffb3b3;
         -fx-border-color:#E6E6FA;
 }
 .settingWeatherPane{
@@ -583,12 +583,12 @@
 }
 .topPaneLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #7a7a52;
+     -fx-text-fill: #eedddd;
      -fx-font-size: 16px;
 }
 .timeLabel{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #7a7a52;
+     -fx-text-fill: #eedddd;
      -fx-font-size: 20px;
 }
 .deutsch{

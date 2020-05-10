@@ -3,23 +3,23 @@
        -fx-background-size: cover;
 }
 .menuBorderPane{
-           -fx-background-color:#bbb7cc;
+           -fx-background-color:#c266ff;
            -fx-border-color: #E6E6FA;
 }
 .homeFacilityPane{
-       -fx-background-color: #ffebd6;
+       -fx-background-color: #ffff66;
       -fx-border-color: #E6E6FA;
  }
  .userInfoPane{
-        -fx-background-color:#FFE4C4 ;
+        -fx-background-color:#e6b3ff ;
         -fx-border-color: #E6E6FA;
  }
  .settingBorderPane{
-        -fx-background-color: #FFE4C4;
+        -fx-background-color: #000033;
         -fx-border-color:#E6E6FA;
  }
  .settingFacilitiesPane{
-        -fx-background-color: #FFE4C4;
+        -fx-background-color:#ffff66 ;
        -fx-border-color: #E6E6FA;
   }
 .userProfileButtonBoy{
@@ -325,7 +325,7 @@
      -fx-background-size: cover;
 }
 .changeUserInfoPane{
-      -fx-background-color: #DCDCDC;
+      -fx-background-color: #ff8080;
       -fx-border-color: #E6E6FA;
 }
 .changeUserInfoSave{
@@ -346,14 +346,14 @@
 }
 .changeUserInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #DB7093;
+     -fx-text-fill: #4d0000;
      -jfx-focus-color:#DB7093;
      -jfx-unfocus-color: black;
      -fx-font-size: 12px;
 }
 .addUserInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #DB7093;
+     -fx-text-fill: #4d0000;
      -jfx-focus-color:#DB7093;
      -jfx-unfocus-color: black;
      -fx-font-size: 14px;
@@ -530,7 +530,7 @@
      -fx-background-size: cover;
 }
 .settingSubPane{
-        -fx-background-color: #DCDCDC;
+        -fx-background-color: #ffcc99;
         -fx-border-color:#E6E6FA;
 }
 .settingWeatherPane{
@@ -583,7 +583,7 @@
 }
 .topPaneLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #7a7a52;
+     -fx-text-fill: #660000;
      -fx-font-size: 16px;
 }
 .timeLabel{
@@ -654,7 +654,7 @@
         -fx-background-size: cover;
 }
 .addRemoveUserPane{
-           -fx-background-color: #DCDCDC;
+           -fx-background-color:  #ffcc99;
            -fx-border-color: #E6E6FA;
 }
 .changeUserType{
