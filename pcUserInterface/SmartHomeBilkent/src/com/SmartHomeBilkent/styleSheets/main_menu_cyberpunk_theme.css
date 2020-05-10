@@ -374,7 +374,8 @@
 }
 .bulkChangesRadioButton{
  -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#b85c00;
+     -jfx-selected-color:#DB7093;
+          -fx-text-fill: #DB7093;
      -jfx-unselected-color: black;
      -fx-font-size: 10px;
 }
@@ -784,7 +785,9 @@
          -fx-background-size: cover;
 }
 .calenderDatePicker{
-    -jfx-default-color:#b85c00;
+        -fx-font-family:  'Patrick Hand', cursive;
+        -jfx-default-color:#DB7093;
+         -fx-font-size: 12px;
 }
 .helpButton{
            -fx-background-image: url("images/help5.png");

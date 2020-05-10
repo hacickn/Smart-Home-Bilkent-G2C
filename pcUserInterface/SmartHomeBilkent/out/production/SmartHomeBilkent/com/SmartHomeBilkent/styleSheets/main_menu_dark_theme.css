@@ -367,7 +367,8 @@
 }
 .bulkChangesRadioButton{
  -fx-font-family:  'Oswald', sans-serif;
-     -jfx-selected-color:#b85c00;
+     -jfx-selected-color:white;
+          -fx-text-fill: white;
      -jfx-unselected-color: black;
      -fx-font-size: 10px;
 }
@@ -718,7 +719,8 @@
 .datePicker{
     -fx-font-family:  'Oswald', sans-serif;
     -fx-font-size: 12px;
-    -jfx-default-color:gray;
+    -jfx-default-color:#003366;
+    -fx-text-fill: #003366;
 }
 .updateWeather{
         -fx-background-image: url("images/updater1.png");
@@ -777,7 +779,10 @@
          -fx-background-size: cover;
 }
 .calenderDatePicker{
-    -jfx-default-color:#b85c00;
+      -fx-font-family:  'Oswald', sans-serif;
+        -fx-font-size: 12px;
+        -jfx-default-color:#003366;
+        -fx-text-fill: #003366;
 }
 .helpButton{
            -fx-background-image: url("images/help2.png");
