@@ -91,7 +91,6 @@ public class MainPanel implements Initializable {
          elecSubMenuButtonPassive, elecSubMenuButtonActive,
          weatherButton, menuWaterButton,
          doorButton, menuGardenLightButton,
-         waterSubMenuButtonActive, gardenLightSubMenuButtonActive,
          menuBulkChange, bulkChangesSaveButton,
          dateTimeSaveButton, menuTimeConfigurationButton,
          helpButton, menuAquariumFeedButton;
@@ -1239,7 +1238,6 @@ public class MainPanel implements Initializable {
     */
    public void openWater( boolean control ) {
       waterSubPaneLabelActive.setVisible( control );
-      waterSubMenuButtonActive.setVisible( control );
       menuWaterProgress.setVisible( control );
       waterSubMenuToggleButton.setSelected( control );
       waterRadioButton.setSelected( control );
@@ -1253,7 +1251,6 @@ public class MainPanel implements Initializable {
     */
    public void openGardenLight( boolean control ) {
       gardenLightSubPaneLabelActive.setVisible( control );
-      gardenLightSubMenuButtonActive.setVisible( control );
       menuGardenLightProgress.setVisible( control );
       gardenLightSubMenuToggleButton.setSelected( control );
       gardenLightRadioButton.setSelected( control );
@@ -2611,8 +2608,8 @@ public class MainPanel implements Initializable {
          openElectricity( settingElectricityToggleButton.isSelected() );
       } else if( event.getSource() == settingGasToggleButton ) {
          if( isArduinoConnect )
-            home.getGas().open( settingElectricityToggleButton.isSelected() );
-         openGas( settingElectricityToggleButton.isSelected() );
+            home.getGas().open( settingGasToggleButton.isSelected() );
+         openGas( settingGasToggleButton.isSelected() );
       }
    }
 
