@@ -69,7 +69,8 @@
               lcd.setCursor( 6 ,  3 );   
               lcd.print( _second );
               
-              //lcd.setCursor(8,  3);    lcd.print(_day_week_tr);
+              //lcd.setCursor(8,  3);   
+              //lcd.print(_day_week_tr);
               
               lcd.setCursor( 10 , 3 );  
               lcd.print( _day );

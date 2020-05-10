@@ -122,11 +122,21 @@
                     digitalWrite( soil_moisture_valf_Cnt , HIGH);
                 if ( first_data == "soil_moisture_valf_off")                         
                     digitalWrite( soil_moisture_valf_Cnt , LOW);
-      
-                if ( first_data == "rain_cnt_device_on" )                           
-                    digitalWrite( Raint_Device_Cnt , HIGH );
-                if ( first_data == "rain_cnt_device_off" )                         
-                    digitalWrite( Raint_Device_Cnt , LOW );
+
+                  // Rain control device
+                if ( first_data == "rain_cnt_device_on" )                              
+                   {
+                      window_open=true;
+                      Serial.println( "Window Open" );     
+                      myServo_Rain_Device_Cnt.write( 180 );   
+                   }
+                else if ( first_data == "rain_cnt_device_off" )                    
+                   {
+                      window_open=false;
+                      Serial.println( "Window closed" );     
+                      myServo_Rain_Device_Cnt.write( 0 );  
+                   }
+                   
              }
           }
                first_data = "" ; 
@@ -283,8 +293,10 @@
             air_motor_operating = print2digits( EEPROM.read ( ee_addr ) );   
             ee_addr++; 
       
-            //EEPROM.update(16,0xff); EEPROM.update(17,0xff);        //*****deneme durumunda******
-            //EEPROM.update(18,0xff); EEPROM.update(19,0xff);  
+            //EEPROM.update(16,0xff); 
+            //EEPROM.update(17,0xff);        //*****deneme durumunda******
+            //EEPROM.update(18,0xff);
+            //EEPROM.update(19,0xff);  
         
         if ( ( EEPROM.read ( 16 ) > 9 ) || ( EEPROM.read ( 17 ) > 9 ) || ( EEPROM.read ( 18 ) > 9 ) || ( EEPROM.read( 19 ) > 9) )
          {
@@ -530,10 +542,18 @@
              i = i + 2;
              //Serial.println(tempa);
              
-          if( tempa == "R1" )       
-               digitalWrite( garden_lights, HIGH );
-          else if( tempa == "R0" )
-               digitalWrite( garden_lights, LOW );
+           if( tempa == "R1" )                          
+            {
+                 window_open=true;
+                 Serial.println( "Window Open" );     
+                 myServo_Rain_Device_Cnt.write( 180 );  
+            }
+           else if( tempa == "R0" )                     
+            {
+                 window_open=false;
+                 Serial.println( "Window closed" );    
+                 myServo_Rain_Device_Cnt.write( 0 );    
+            }
       
              tempa = last_data.substring ( i , i + j);
              i = i + 2;
