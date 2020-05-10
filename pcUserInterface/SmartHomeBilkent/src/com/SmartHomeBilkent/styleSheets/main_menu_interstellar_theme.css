@@ -1,10 +1,10 @@
 .root{
-       -fx-background-image: url("images/abstract.jpg");
+       -fx-background-image: url("images/interstellar.jpg");
        -fx-background-size: cover;
 }
 .menuBorderPane{
-    -fx-background-color:#bbb7cc;
-    -fx-border-color: #E6E6FA;
+           -fx-background-color:#bbb7cc;
+           -fx-border-color: #E6E6FA;
 }
 .homeFacilityPane{
        -fx-background-color: #ffebd6;
