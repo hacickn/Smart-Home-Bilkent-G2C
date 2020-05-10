@@ -265,7 +265,10 @@ public class MainPanel implements Initializable {
          createUserEnglishOption, createUserTurkishOption,
          createUserGermanOption, createUserParentOption,
          createUserChildOption, createUserElderOption,
-         createUserSpaceThemeOption, createUserForestThemeOption;
+         createUserSpaceThemeOption, createUserForestThemeOption,
+         createUserSmartCityThemeOption, createUserAbstractThemeOption,
+         createUserPyramidThemeOption, createUserCyberpunkThemeOption,
+         createUserNeonThemeOption, createUserInterstellarThemeOption;
    @FXML
    private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
          removeUserTextField;
@@ -2138,6 +2141,12 @@ public class MainPanel implements Initializable {
                && !createUserForestThemeOption.isSelected()
                && !createUserSpaceThemeOption.isSelected()
                && !createUserSmoothThemeOption.isSelected()
+               && !createUserSmartCityThemeOption.isSelected()
+               && !createUserAbstractThemeOption.isSelected()
+               && !createUserPyramidThemeOption.isSelected()
+               && !createUserCyberpunkThemeOption.isSelected()
+               && !createUserNeonThemeOption.isSelected()
+               && !createUserInterstellarThemeOption.isSelected()
                && !createUserCartoonThemeOption.isSelected() )
                || ( !createUserEnglishOption.isSelected()
                && !createUserGermanOption.isSelected()
@@ -2192,6 +2201,12 @@ public class MainPanel implements Initializable {
             || event.getSource() == createUserLightThemeOption
             || event.getSource() == createUserSmoothThemeOption
             || event.getSource() == createUserSpaceThemeOption
+            || event.getSource() == createUserInterstellarThemeOption
+            || event.getSource() == createUserSmartCityThemeOption
+            || event.getSource() == createUserCyberpunkThemeOption
+            || event.getSource() == createUserNeonThemeOption
+            || event.getSource() == createUserPyramidThemeOption
+            || event.getSource() == createUserAbstractThemeOption
             || event.getSource() == createUserForestThemeOption
             || event.getSource() == createUserCartoonThemeOption ) {
          createUserDarkThemeOption.setSelected( false );
@@ -2200,6 +2215,12 @@ public class MainPanel implements Initializable {
          createUserCartoonThemeOption.setSelected( false );
          createUserSpaceThemeOption.setSelected( false );
          createUserForestThemeOption.setSelected( false );
+         createUserSmartCityThemeOption.setSelected( false );
+         createUserAbstractThemeOption.setSelected( false );
+         createUserPyramidThemeOption.setSelected( false );
+         createUserCyberpunkThemeOption.setSelected( false );
+         createUserNeonThemeOption.setSelected( false );
+         createUserInterstellarThemeOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserTheme = ( JFXRadioButton ) ( event.getSource() );
       } else if( event.getSource() == createUserEnglishOption
@@ -2234,6 +2255,12 @@ public class MainPanel implements Initializable {
       createUserCartoonThemeOption.setSelected( false );
       createUserForestThemeOption.setSelected( false );
       createUserSpaceThemeOption.setSelected( false );
+      createUserSmartCityThemeOption.setSelected( false );
+      createUserAbstractThemeOption.setSelected( false );
+      createUserPyramidThemeOption.setSelected( false );
+      createUserCyberpunkThemeOption.setSelected( false );
+      createUserNeonThemeOption.setSelected( false );
+      createUserInterstellarThemeOption.setSelected( false );
       createUserEnglishOption.setSelected( false );
       createUserGermanOption.setSelected( false );
       createUserTurkishOption.setSelected( false );
