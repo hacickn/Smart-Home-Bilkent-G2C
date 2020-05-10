@@ -3,16 +3,15 @@
       void Sensor_Cnt()
       {     //alarm_condition=0;
       
-             if( ( digitalRead( Rain_sens ) ) && ( !digitalRead( Raint_Device_Cnt ) ) )  
+              if( (digitalRead( Rain_sens ) )  && ( window_open) )  
               {
-                 Serial.println( "Rain_Sens_on" );  
-                 digitalWrite( Raint_Device_Cnt , HIGH );
-              }
-             else if( ( !digitalRead( Rain_sens ) ) && ( digitalRead( Raint_Device_Cnt ) ) )
-              {
-                 Serial.println( "Rain_Sens_of" );   
-                 digitalWrite( Raint_Device_Cnt , LOW );
-              }    
+                /*
+                 * servo motor will turn off at 0 degrees
+                 */
+                 window_open=false;
+                 Serial.println( "Window closed" );    
+                 myServo_Rain_Device_Cnt.write( 0 );                
+              }  
       
               if( ( digitalRead( soil_moisture_sens ) ) && ( !digitalRead( soil_moisture_valf_Cnt ) ) )   
               {

@@ -1,7 +1,7 @@
       /* 
        *  SMART HOME ARDUINO PROGRAM   
       */
-      //****************************************************************************
+
       #include "MsTimer2.h"            // Her 20 msn de bir timer kesmesi için
       #include <Keypad.h>              // Keypad 'e basıldıgında , Keypad'ten deger almak için 4*4 lük
       #include "LiquidCrystal.h"       // Lcd ye değer basmak için 4*20 lik
@@ -134,6 +134,7 @@
       static unsigned int curtain_time = 0;
       static unsigned int feeding_time = 0;
       static unsigned int door_time = 0;
+      bool                window_open=false;
       
       bool          door_encrypted = false;
       bool          door_psw_enb = false;
@@ -312,9 +313,11 @@
             if( Triger == 0 )
             {
                 digitalWrite( trigPinA , LOW ); 
-                delayMicroseconds( 2 ); // 0 da kalma süresi
+                // Time to stay at 0
+                delayMicroseconds( 2 ); 
                 digitalWrite( trigPinA , HIGH ); 
-                delayMicroseconds( 10 );      // 1 de kalma süresi
+                // Time to stay at 1
+                delayMicroseconds( 10 );      
                 digitalWrite( trigPinA , LOW );
                 Triger = 1;
             }   
