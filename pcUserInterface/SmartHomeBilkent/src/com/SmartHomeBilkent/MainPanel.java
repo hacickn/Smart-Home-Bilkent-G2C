@@ -200,7 +200,10 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
          smoothThemeRadioButton, cartoonThemeRadioButton,
-         spaceThemeRadioButton, forestThemeRadioButton;
+         spaceThemeRadioButton, forestThemeRadioButton,
+         neonThemeRadioButton, pyramidThemeRadioButton,
+         interstellarThemeRadioButton, cyberpunkThemeRadioButton,
+         abstractThemeRadioButton, smartCityThemeRadioButton;
 
    @FXML
    private JFXButton englishOption, germanOption,
@@ -1721,6 +1724,12 @@ public class MainPanel implements Initializable {
       darkThemeRadioButton.setSelected( false );
       spaceThemeRadioButton.setSelected( false );
       forestThemeRadioButton.setSelected( false );
+      cyberpunkThemeRadioButton.setSelected( false );
+      neonThemeRadioButton.setSelected( false );
+      interstellarThemeRadioButton.setSelected( false );
+      pyramidThemeRadioButton.setSelected( false );
+      smartCityThemeRadioButton.setSelected( false );
+      abstractThemeRadioButton.setSelected( false );
    }
 
    void changeTheme( String themeName ) {
@@ -1755,6 +1764,33 @@ public class MainPanel implements Initializable {
       } else if( themeName.equals( "uzay" ) || themeName.equals( "space" ) || themeName.equals( "platz" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
          spaceThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
+      } else if( themeName.equals( "neon" )  ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_neon_theme.css" ).toExternalForm();
+         neonThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
+      } else if( themeName.equals( "interstellar" ) || themeName.equals( "ınterstellar" )
+            || themeName.equals( "yıldızlararası" ) || themeName.equals( "yildizlararasi" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_interstellar_theme.css" ).toExternalForm();
+         interstellarThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
+      } else if( themeName.equals( "pyramid" ) || themeName.equals( "pyramıd" ) || themeName.equals( "pyramide" ) || themeName.equals( "pyramıde" )
+            || themeName.equals( "piramid" ) || themeName.equals( "pıramıd" )) {
+         css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
+         pyramidThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
+      } else if( themeName.equals( "cyberpunk" )  ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_cyberpunk_theme.css" ).toExternalForm();
+         cyberpunkThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
+      } else if( themeName.equals( "abstract" ) || themeName.equals( "abstrakt" ) || themeName.equals( "soyut" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_abstract_theme.css" ).toExternalForm();
+         abstractThemeRadioButton.setSelected( true );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
+      } else if( themeName.equals( "smart city" ) || themeName.equals( "smart cıty" )
+            || themeName.equals( "intelligente städte" ) || themeName.equals( "ıntellıgente städte" ) ) {
+         css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
+         smartCityThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
       } else
          css = "";
