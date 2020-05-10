@@ -1778,7 +1778,7 @@ public class MainPanel implements Initializable {
          interstellarThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
       } else if( themeName.equals( "pyramid" ) || themeName.equals( "pyramıd" ) || themeName.equals( "pyramide" ) || themeName.equals( "pyramıde" )
-            || themeName.equals( "piramid" ) || themeName.equals( "pıramıd" )) {
+            || themeName.equals( "piramit" ) || themeName.equals( "pıramıt" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
          pyramidThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
@@ -1791,7 +1791,8 @@ public class MainPanel implements Initializable {
          abstractThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
       } else if( themeName.equals( "smart city" ) || themeName.equals( "smart cıty" )
-            || themeName.equals( "intelligente städte" ) || themeName.equals( "ıntellıgente städte" ) ) {
+            || themeName.equals( "intelligente stadt" ) || themeName.equals( "ıntellıgente stadt" )
+            || themeName.equals( "akıllı sehır" ) || themeName.equals( "akilli sehir" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
          smartCityThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
@@ -1997,6 +1998,18 @@ public class MainPanel implements Initializable {
          createUserSpaceThemeOption.setText( bundle.getString( "spaceThemeLang" ) );
          forestThemeRadioButton.setText( bundle.getString( "forestThemeLang" ) );
          createUserForestThemeOption.setText( bundle.getString( "forestThemeLang" ) );
+         cyberpunkThemeRadioButton.setText( bundle.getString( "cyberpunkThemeLang" ) );
+         neonThemeRadioButton.setText( bundle.getString( "neonThemeLang" ) );
+         interstellarThemeRadioButton.setText( bundle.getString( "interstellarThemeLang" ) );
+         pyramidThemeRadioButton.setText( bundle.getString( "pyramidThemeLang" ) );
+         smartCityThemeRadioButton.setText( bundle.getString( "smartCityThemeLang" ) );
+         abstractThemeRadioButton.setText( bundle.getString( "abstractThemeLang" ) );
+         createUserSmartCityThemeOption.setText( bundle.getString( "smartCityThemeLang" ) );
+         createUserAbstractThemeOption.setText( bundle.getString( "abstractThemeLang" ) );
+         createUserPyramidThemeOption.setText( bundle.getString( "pyramidThemeLang" ) );
+         createUserCyberpunkThemeOption.setText( bundle.getString( "cyberpunkThemeLang" ) );
+         createUserNeonThemeOption.setText( bundle.getString( "neonThemeLang" ) );
+         createUserInterstellarThemeOption.setText( bundle.getString( "interstellarThemeLang" ) );
       } catch( Exception e ) {
          e.printStackTrace();
       }
