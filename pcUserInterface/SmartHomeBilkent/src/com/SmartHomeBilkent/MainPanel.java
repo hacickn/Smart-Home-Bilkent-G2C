@@ -1771,31 +1771,31 @@ public class MainPanel implements Initializable {
       } else if( themeName.equals( "neon" )  ) {
          css = this.getClass().getResource( "styleSheets/main_menu_neon_theme.css" ).toExternalForm();
          neonThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/neonTheme.png" ) ) );
       } else if( themeName.equals( "interstellar" ) || themeName.equals( "ınterstellar" )
             || themeName.equals( "yıldızlararası" ) || themeName.equals( "yildizlararasi" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_interstellar_theme.css" ).toExternalForm();
          interstellarThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) );
       } else if( themeName.equals( "pyramid" ) || themeName.equals( "pyramıd" ) || themeName.equals( "pyramide" ) || themeName.equals( "pyramıde" )
             || themeName.equals( "piramit" ) || themeName.equals( "pıramıt" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
          pyramidThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/pyramidTheme.png" ) ) );
       } else if( themeName.equals( "cyberpunk" )  ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cyberpunk_theme.css" ).toExternalForm();
          cyberpunkThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cyberpunkTheme.png" ) ) );
       } else if( themeName.equals( "abstract" ) || themeName.equals( "abstrakt" ) || themeName.equals( "soyut" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_abstract_theme.css" ).toExternalForm();
          abstractThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/abstractTheme.png" ) ) );
       } else if( themeName.equals( "smart city" ) || themeName.equals( "smart cıty" )
             || themeName.equals( "intelligente stadt" ) || themeName.equals( "ıntellıgente stadt" )
             || themeName.equals( "akıllı sehır" ) || themeName.equals( "akilli sehir" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
          smartCityThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smartCityTheme.png" ) ) );
       } else
          css = "";
 

@@ -784,7 +784,9 @@
          -fx-background-size: cover;
 }
 .calenderDatePicker{
-    -jfx-default-color:#b85c00;
+      -fx-font-family:  'Patrick Hand', cursive;
+        -jfx-default-color:#DB7093;
+         -fx-font-size: 12px;
 }
 .helpButton{
            -fx-background-image: url("images/help5.png");

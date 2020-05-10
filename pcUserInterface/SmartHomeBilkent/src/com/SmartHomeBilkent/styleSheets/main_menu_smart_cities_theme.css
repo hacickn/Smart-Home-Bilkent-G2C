@@ -724,8 +724,9 @@
 }
 .datePicker{
     -fx-font-family:  'Patrick Hand', cursive;
-    -jfx-default-color:#DB7093;
+    -jfx-default-color: #800000;
      -fx-font-size: 12px;
+     -fx-text-fill: #800000;
 }
 .updateWeather{
         -fx-background-image: url("images/updater5.png");
@@ -784,7 +785,10 @@
          -fx-background-size: cover;
 }
 .calenderDatePicker{
-    -jfx-default-color:#b85c00;
+        -fx-font-family:  'Patrick Hand', cursive;
+        -jfx-default-color: #800000;
+         -fx-font-size: 12px;
+         -fx-text-fill: #800000;
 }
 .helpButton{
            -fx-background-image: url("images/help5.png");

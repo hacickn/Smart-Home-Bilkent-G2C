@@ -374,9 +374,10 @@
 }
 .bulkChangesRadioButton{
  -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#b85c00;
+     -jfx-selected-color:#136c68;
      -jfx-unselected-color: black;
      -fx-font-size: 10px;
+      -fx-text-fill: #136c68;
 }
 .changeUserInfoLabels{
     -fx-font-family:  'Patrick Hand', cursive;
@@ -724,7 +725,8 @@
 }
 .datePicker{
     -fx-font-family:  'Patrick Hand', cursive;
-    -jfx-default-color:#DB7093;
+    -jfx-default-color:darkGreen;
+    -fx-text-fill:darkGreen;
      -fx-font-size: 12px;
 }
 .updateWeather{
@@ -784,7 +786,10 @@
          -fx-background-size: cover;
 }
 .calenderDatePicker{
-    -jfx-default-color:#b85c00;
+        -fx-font-family:  'Patrick Hand', cursive;
+        -jfx-default-color:darkGreen;
+        -fx-text-fill:darkGreen;
+         -fx-font-size: 12px;
 }
 .helpButton{
            -fx-background-image: url("images/help5.png");

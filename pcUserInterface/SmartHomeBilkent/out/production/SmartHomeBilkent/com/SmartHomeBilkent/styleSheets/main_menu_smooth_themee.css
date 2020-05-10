@@ -372,7 +372,8 @@
 }
 .bulkChangesRadioButton{
      -fx-font-family:  'Oswald', sans-serif;
-     -jfx-selected-color:#b85c00;
+          -fx-text-fill: #4d0000;
+     -jfx-selected-color:#4d0000;
      -jfx-unselected-color: black;
      -fx-font-size: 10px;
 }
@@ -722,6 +723,7 @@
 .datePicker{
 -fx-font-family:  'Oswald', sans-serif;
     -jfx-default-color: darkGreen;
+    -fx-text-fill: darkGreen;
 }
 .updateWeather{
         -fx-background-image: url("images/updater1.png");

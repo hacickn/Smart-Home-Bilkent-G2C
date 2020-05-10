@@ -374,7 +374,8 @@
 }
 .bulkChangesRadioButton{
  -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#b85c00;
+      -fx-text-fill: #aa33ff;
+     -jfx-selected-color:#aa33ff;
      -jfx-unselected-color: black;
      -fx-font-size: 10px;
 }
@@ -725,8 +726,9 @@
 }
 .datePicker{
     -fx-font-family:  'Patrick Hand', cursive;
-    -jfx-default-color:#DB7093;
+    -jfx-default-color:#aa33ff;
      -fx-font-size: 12px;
+     -fx-text-fill:#aa33ff;
 }
 .updateWeather{
         -fx-background-image: url("images/updater5.png");
