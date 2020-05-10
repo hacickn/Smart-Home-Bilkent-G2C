@@ -38,3 +38,43 @@
        -fx-font-family:  'Patrick Hand', cursive;
        -fx-font-size: 15px;
   }
+.goBackButton{
+     -fx-background-image: url("images/arrow4.png");
+     -fx-background-size: cover;
+}
+.goBackButton:hover{
+     -fx-background-image: url("images/arrow5.png");
+     -fx-background-size: cover;
+}
+.applicationSettingHelp{
+     -fx-background-image: url("images/monitor4.png");
+     -fx-background-size: cover;
+}
+.applicationSettingHelp:hover{
+     -fx-background-image: url("images/monitor5.png");
+     -fx-background-size: cover;
+}
+.usersSettingHelp{
+     -fx-background-image: url("images/users4.png");
+     -fx-background-size: cover;
+}
+.usersSettingHelp:hover{
+     -fx-background-image: url("images/users5.png");
+     -fx-background-size: cover;
+}
+.modsSettingHelp{
+     -fx-background-image: url("images/mods4.png");
+     -fx-background-size: cover;
+}
+.modsSettingHelp:hover{
+     -fx-background-image: url("images/mods5.png");
+     -fx-background-size: cover;
+}
+.homeSettingHelp{
+     -fx-background-image: url("images/homeSetting4.png");
+     -fx-background-size: cover;
+}
+.homeSettingHelp:hover{
+     -fx-background-image: url("images/homeSetting5.png");
+     -fx-background-size: cover;
+}

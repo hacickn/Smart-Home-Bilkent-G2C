@@ -1,0 +1,173 @@
+
+------------------------------------------------------------------------------------------------------------------------------							
+						YARDIM BUTONU
+------------------------------------------------------------------------------------------------------------------------------
+
+						(1) ÇIKIŞ 
+------------------------------------------------------------------------------------------------------------------------------
+
+	Her sayfanın en altında ortada bulunan kapı simgesi kullanıcı adı ve parolayı girdiğiniz sekmeye geri dönebilmeyi sağlar. 
+	İstenilen her an kullanıcı çıkış yapabilmektedir.
+------------------------------------------------------------------------------------------------------------------------------
+						(2) KULLANICI PROFİLİ
+------------------------------------------------------------------------------------------------------------------------------
+
+	 * Sağ üst köşede bulunan kullanıcı profili, akıllı evde bulunan kişilerin profillerinin
+	eklenebileceği butondur. Ad ,soyad , doğum günü tarihi ve cinsiyet bilgileri sol taraftaki
+	alana eklenebilir ve ayrıca altakki oklar butonundan istenilen zamanda değişiklik yapılabilir. 
+	Değişiklik yaptıktan sonra çıkmak için sola doğru olan ok tuşuna basılması yeterlidir.
+ 
+	* Sağ tarafta bulunan bölmeden kullanıcı adı ve parola girilebilir ve ayrıca altakki oklar 
+	butonundan istenilen zamanda değişiklik yapılabilir. 
+	Değişiklik yaptıktan sonra çıkmak için sola doğru olan ok tuşuna basılması yeterlidir.
+------------------------------------------------------------------------------------------------------------------------------
+						(3) MENÜ
+------------------------------------------------------------------------------------------------------------------------------
+
+ 	* Manuel olarak evdeki sistemleri kontrol edebilmek için;
+
+		Sol tarafta bulunan 
+	- 1. Düğmedeki şimşek simgesi ile " ELEKTRİK " valfi açılıp kapatılabilir.
+		Aşağıda bulunan ayarlar butonuyla elektrik ayarlarına ulaşılabilir.
+	- 2. Düğmedeki vana simgesi ile evinizdeki " GAZ " valfi açılıp kapatılabilir. 
+		Aşağıda bulunan ayarlar butonuyla gaz ayarlarına ulaşılabilir.
+	- 3. Düğmedeki su damlası simgesi ile evinizdeki " SU " valfi açılıp kapatılabilir.
+
+		Alt tarafta bulunan 
+	- Soldan 1. sıradaki termometre ile birlikte " EV SICAKLIĞI " bilgisine ulaşılabilir.
+	- Soldan 2. sıradaki kapı simgesi ile birlikte " EVİN KAPISI " açılabilir.
+	- Soldan 3. sıradaki kapı simgesi ile istediğiniz ülkeninin ya da bölgenin " HAVA DURUMU "
+		bilgisine ulaşılabilir. Üst tarafta bulunan metin kutusuna hava durumunu öğrenilmek istenilen ülkenin
+		adını girip aşağıda bulunan güncelleştirme butonuna basarak aşağıdaki bilgilere ulaşılabilir.
+
+		Sağ tarafta bulunan 
+	- 1. Düğmedeki akvaryum simgesi ile evdeki " AKVARYUM AYARLARI " bilgileri açılıp kapatılabilir.
+		Aşağıda bulunan ayarlar butonuyla elektrik ayarlarına ulaşılabilir.
+	- 2. Düğmedeki sera simgesi ile evdeki " SERA " içerisindeki sıcaklık ve nem verilerine ulaşılabilir.
+		Aşağıda bulunan ayarlar butonuyla elektrik ayarlarına ulaşılabilir.
+	- 3. Düğmedeki lamba simgesi ile evin bahçesindeki ışık açılıp kapatılabilir.
+
+		Üst tarafta bulunan 
+	- Sağdan 1. Düğmedeki kısayol simgesi ile otomatik olarak açmak ya da kapatmak  istenilen birimler 
+		açılıp kapatılabilir. 
+		Seçtikten sonra "CALISTIR" butonuna basılmasıyla beraber  istenilen birimler aktif hale dönebilir.   
+		Aşağıda bulunan ayarlar butonuyla elektrik ayarlarına ulaşabilirsiniz.
+	- 2. Düğmedeki "BAĞLANTI "simgesi ile sayfanın sol üstteki ayarlar 
+		bölmesindeki bağlantılar bölmesine gidilebilir. 
+		>> Sol tarafta bulunan "BLUETOOTH" bağlantısını aşağıda buluna 3 çıkışlı 
+			güncelleştirme simgesine sahip butonla aktif hale getirip "ARDUINO" ile Bluetooth bağlantısı sağlanılabilir. 
+		>> Sağ tarafta bulunan port bağlantısından "ARDUINO" ile seri bağlantısını sağlayabilir.
+			COM1 ve COM4 seçeneğini seçip ardından altta bulunan güncelleştirme butonu ile aktif hale getirildikten sonra,
+			"ARDUNIO" ve sensörler birebir arayüz üzerinden kontrol edilebilir.
+		
+	- 3. Düğmedeki saat simgesi ile "KULLANICININ" güncel zaman ayarını aktive etmesi beklenmektedir.
+		>> Birinci text  alanının yanındaki takvim simgesinden gün seçilmelidir
+		>> İkinci text alanının yanındaki saat simgesinden saat, 
+			dakika simgesinden dakika seçilmelidir.
+ !!!!!!!! EN SON SEÇİM İŞLEMİNİ TAMAMLADIKTAN SONRA SEÇİLEN BİLGİLERİ KAYDETMEK İÇİN KAYDET BUTONUNA BASILMALIDIR!!!!!!!
+
+------------------------------------------------------------------------------------------------------------------------------
+							(4) AYARLAR
+------------------------------------------------------------------------------------------------------------------------------
+
+Üst tarafta bulunan UYGULAMA AYARLARI BUTONUNA BASILIYKEN
+------------------------------------------------------------------------------------------------------------------------------
+	> Sağdan 1. Düğmedeki "UYGULAMA" simgesi
+------------------------------------------------------------------------------------------------------------------------------
+		>> Altta bulunan sağdan birinci "TEMA " butonu ile bulunan 4 farklı arka plandan; 
+	(1) GECE
+	(2) AYDINLIK 
+	(3) PÜRÜZSÜZ
+	(4) ÇİZGİ FİLM
+		istenilen fonu seçip yanındaki boşluğa basılıp, boşluğun yeşil olmasıyla beraber istenilen yeni tema aktif hale dönebilir.  
+
+		>> Altta bulunan sağdan ikinci "DİL " butonu ile bulunan 3 farklı dilden; 
+	(1) İNGİLİZCE
+	(2) ALMANCA
+	(3) TÜRKÇE
+		istenilen dil seçilip istenilen yeni dil modu aktif hale dönebilir.   
+
+		>> Altta bulunan sağdan üçüncü "ACİL DURUM " butonu ile bulunan 2 farklı sirenden; 
+	(1) İç Siren
+	(2) Dış Siren
+		evde gaz, yangın, duman sensörlerinin uyarı vermesiyle ya da yanlış şifre alarmının girilmesi ile sirenler
+		aktive hale dönüştürülebilir. Aynı zamanda kişi kendisi de manuel olarak iç ve dış sireni aktive edebilir.
+		
+		>> Altta bulunan sağdan dördüncü "BİLDİRİM " butonu ile bulunan 3 farklı sensörden; 
+	(1) Yangın Sensörü
+	(2) Gaz Sensörü
+	(3) Duman Sensörü
+		iki ayrı uyarı bildirimi gelebilmektedir;
+	(1) Görüntüsel Uyarı Bildirimi 
+	(2) Sessel Uyarı Bildirimi
+		evde gaz, yangın, duman ya da yalnış şifre alarmının girilmesiyle uyarı bildirimi gelmesi kişinin isteğine göre ses, yazı ya da 
+		her iki türde geri dönüş sağlayabilir. Kişi kendisi de manuel olarak elde etmeyi istediği bildirim türlerini butonlara basarak
+		aktif hale dönüştürebilir.
+
+		>> Altta bulunan sağdan üçüncü "BAĞLANTILAR" butonu ile bulunan 2 bağlantı türünden; 
+	(1) Bluetooth
+	(2) Seriport
+			>>> Sol tarafta bulunan Bluetooth bağlantısını aşağıda bulunann 3 çıkışlı 
+	güncelleştirme butonuyla aktif hale getirip "ARDUINO" ile bluetooth bağlantısı sağlanılabilir. 
+			>>> Sağ tarafta bulunan port bağlantısından "ARDUINO" ile seri bağlantısını sağlayabilir.
+	COM1 ve COM4 seçeneğini seçip ardından altta bulunan güncelleştirme butonuyla aktif hale getirip 
+	aktif hale getirip "ARDUNIO" ve sensörlerini birebir arayüz üzerinden kontrol edebiliriz.
+	aşağıda bulunan ayarlar butonuyla elektrik ayarlarına ulaşılabilir.
+
+------------------------------------------------------------------------------------------------------------------------------
+	> Sağdan 2. Düğmedeki "KULLANICILAR" simgesi ile akıllı evde bulunan tüm kullanıcılar 
+	toplu olarak görülebilir.
+------------------------------------------------------------------------------------------------------------------------------
+		>> Aşağıda solda bulunan kişi ekle butonuyla beraber eklemek istediğiniz kullanıcının
+	bilgilerini ekledikten sonra aşağıda bulunan "ARTI" Butonuna basarak kullanıcı eklenilebilir.
+	Çıkmak için Sola doğru olan oka basmanız gerekmektedir. 
+
+		>> Aşağıda ortada izin butonuyla yetişkin bireyler tarafından çocukların akıllı evdeki
+	bulunan bazı birimlere erişim kısıtlaması yapılabilmektedir.
+	
+		>> Aşağıda en sağda bulunan kişi sil butonuyla birlikte silmek istediğiniz kişiyi/leri seçip
+	çöp kutusu simgesine basmanızla beraber "KULLANICI SİL" bilgisini gördükten sonra "UYARI" yazısını göreceksiniz.
+	İşleme devam etmek istiyorsanız bulunan yazı bölümüne şifrenizi girip çarpı butonuna basmanız gerekmektedir. 
+	İşleme devam etmek istemiyor ya da kişi menüsüne dönmek istiyorsanız sola doğru olan oka basmanız gerekmektedir. 
+
+------------------------------------------------------------------------------------------------------------------------------	
+	> Sağdan 3. Düğmedeki " MODLAR " simgesi ile kullanıcı;
+------------------------------------------------------------------------------------------------------------------------------
+		>> "ETKİLEŞİMLİ YAZI MODU" ile arayüzde bulunan butonların altında bulunan bilgi yazılarına 
+	ulaşabilmektedir. 
+		>> " ETKİLEŞİMLİ SES MODU " ile arayüzde bulunan butonların görevlerini ses yardımıyla  
+	ulaşabilmektedir. Panelde en altta bulunan "SES DÜZEYİ" butonu ile Ses ayarı yapılabilmektedir.
+
+------------------------------------------------------------------------------------------------------------------------------	
+	> 4. Düğmedeki " EV AYARLARI " alt bölümde bulunan birimlerin ayarlarına geçiş yapılmaktadır,
+	 aynı zamanda bu panale menüden, aşağıda bulunan birimlerin ayarlar butonu ile dönülebilir. 
+------------------------------------------------------------------------------------------------------------------------------
+
+		>> Sağdan 1. " ELEKTRİK AYARLARI " ile günlük ve haftalık elektrik kullanım saati bilgisine ulaşılabilir.
+
+		>> Sağdan 2. " GAZ AYARLARI " ile günlük ve haftalık gaz kullanım saati bilgisine ulaşılabilir. 
+
+		>> Sağdan 3. " SU AYARLARI " simgesi ile;
+			
+			**  Birinci "BALIK TÜRÜ"  kutusundan akvaryumda bulunması önerilen,birbirleri içerisinde mutalist yaşayan 
+	balık türleri yazılmıştır. Seçilen, üretici gruğğ tarafından önerilen balık türlerine uygun hava motorunun çalışması 
+	için "ÖNERİLEN SÜRE 10 SAAT" olarak verilmiştir. 
+ 			**  İkinci "YEMLEME BAŞLAMA ZAMANI" kullanıcı tarafından seçilmelidir. Bir kere seçildiği taktirde her gün
+	aynı saatte çalışmaya devam edecektir.
+			**  Üçüncü "SU DEĞİŞİM GÜNÜ VE ZAMANI" kullanıcı tarafından seçilmelidir. Bir kere seçildiği taktirde haftanın 
+	seçilen gününde ve saatinde çalışmaya devam edecektir.
+ 			**  Dördüncü "HAVA MOTORU ÇALIŞMA MİKTARI VE BAŞLANGIÇ ZAMANI" kullanıcı tarafından seçilmelidir. Bir kere seçildiği taktirde 
+	haftanın seçilen gününde ve saatinde çalışmaya devam edecektir. İlk butondan sürükleyerek hava motorunun çalışacağı süre belirlenmektedir. 
+	İkinci buton ile hava motorunun çalışmaya başlayacağı zaman seçilmektedir.
+ 	!!!!!!!!EN SON SEÇİM İŞLEMİNİ TAMAMLADIKTAN SONRA SEÇİLEN BİLGİLERİ KAYDETMEK İÇİN KAYDET BUTONUNA BASILMALIDIR!!!!!!!
+		
+		>> Sağdan 4. "SERA AYARLARI" simgesi ile günlük ve haftalık gaz kullanım saati bilgisine 
+	ulaşılabilir. Grafikte gün içerisinde ölçülen ortalama sıcaklık ve nem bilgilerine ulaşılabilir. Aşağıda da belirtildiği gibi
+	kırmızı çizgiler sıcaklığı, turuncu çizgiler nemi temsil etmektedir. Akvaryumdan sera' nın deposuna gelen su, seranın ihtiyacı 
+	olduğu zaman damlama yöntemiyle alınmaktadır. Alınan suyun saatine ve gününe "AKVARYUMDAN GELEN SON SU" adı altında ulaşılabilir.
+		
+		>> Sağdan 5. "HAVA DURUMU AYARLARI" simgesi ile menüden de ulabildiğimiz hava durumu paneli sayesinde
+	hava durmunu öğrenmek istediğiniz ülkeninin ya da bölgenin " HAVA DURUMU " bilgisine ulaşılabilirsiniz.
+	Üst tarafta bulunan metin kutusuna hava durumunu öğrenmek istediğiniz ülkenin adını girip aşağıda bulunan güncelleştirme
+	butonuna basarak aşağıdaki bilgilere ulaşabilirsiniz. 
+			

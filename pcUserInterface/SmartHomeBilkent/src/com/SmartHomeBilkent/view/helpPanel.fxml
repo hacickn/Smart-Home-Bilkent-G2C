@@ -1,25 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-
-<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@../styleSheets/help_panel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.HelpPanel">
-   <children>
-      <Pane layoutX="50.0" layoutY="50.0" opacity="0.66" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: #00126b; -fx-border-width: 3;" />
-      <AnchorPane fx:id="helpMainPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0">
-         <children>
-            <JFXButton fx:id="helpExitButton" layoutX="53.0" layoutY="96.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="exitHelp" textFill="TRANSPARENT" />
-            <JFXButton fx:id="helpMenuButton" layoutX="53.0" layoutY="215.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="menuHelp" textFill="TRANSPARENT" />
-            <JFXButton fx:id="helpUserProfileButton" layoutX="257.0" layoutY="96.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="userProfileHelp" textFill="TRANSPARENT" />
-            <JFXButton fx:id="helpSettingsButton" layoutX="257.0" layoutY="215.0" onAction="#mainButtonOnAction" prefHeight="90.0" prefWidth="90.0" styleClass="settingsHelp" textFill="TRANSPARENT" />
-            <Label alignment="CENTER" layoutX="27.0" layoutY="61.0" prefHeight="17.0" prefWidth="347.0" styleClass="warningHelpLabel" text="PLEASE CHOOSE WHERE YOU STACK" textFill="#002f5e" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="helpExitPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <AnchorPane fx:id="helpUserProfilePane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <AnchorPane fx:id="helpMenuPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <AnchorPane fx:id="helpSettingsPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-   </children>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="500.0" prefWidth="600.0" stylesheets="@../styleSheets/help_panel.css"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.SmartHomeBilkent.HelpPanel">
+    <children>
+        <Pane layoutX="50.0" layoutY="50.0" opacity="0.66" prefHeight="400.0" prefWidth="500.0"
+              style="-fx-background-color: white; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: #00126b; -fx-border-width: 3;"/>
+        <AnchorPane fx:id="helpMainPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0">
+            <children>
+                <JFXButton fx:id="helpExitButton" layoutX="103.0" layoutY="97.0" onAction="#mainButtonOnAction"
+                           prefHeight="90.0" prefWidth="90.0" styleClass="exitHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="helpMenuButton" layoutX="103.0" layoutY="216.0" onAction="#mainButtonOnAction"
+                           prefHeight="90.0" prefWidth="90.0" styleClass="menuHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="helpUserProfileButton" layoutX="307.0" layoutY="97.0" onAction="#mainButtonOnAction"
+                           prefHeight="90.0" prefWidth="90.0" styleClass="userProfileHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="helpSettingsButton" layoutX="307.0" layoutY="216.0" onAction="#mainButtonOnAction"
+                           prefHeight="90.0" prefWidth="90.0" styleClass="settingsHelp" textFill="TRANSPARENT"/>
+                <Label alignment="CENTER" layoutX="77.0" layoutY="62.0" prefHeight="17.0" prefWidth="347.0"
+                       styleClass="warningHelpLabel" text="PLEASE CHOOSE WHERE YOU STACK" textFill="#002f5e"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="helpExitPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromLogout" alignment="CENTER" layoutX="224.0" layoutY="342.0"
+                           onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
+                           textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="logoutTextField" editable="false" layoutX="17.0" layoutY="54.0" prefHeight="285.0"
+                             prefWidth="464.0"
+                             text="The door icon in the middle at the bottom of each page allows you to return to the tab where you entered the username and password.The user can logout at any time.">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="helpUserProfilePane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromUserProfile" alignment="CENTER" layoutX="232.0" layoutY="336.0"
+                           onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
+                           textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="userProfileTextField" editable="false" layoutX="13.0" layoutY="51.0"
+                             prefHeight="285.0" prefWidth="464.0"
+                             text=" * The user profile in the upper right corner is the button where the profiles of the people in the smart home can be added.Name, surname, date of birth and gender information can be added to the field on the left and also changes can be made at any time from the arrows button.To exit after making changes, it is enough to press the arrow key to the left. * User name and password can be entered from the right-hand pane and also changes can be made at any time by using the arrows button.To exit after making changes, it is enough to press the arrow key to the left.">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="helpMenuPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromMenu" alignment="CENTER" layoutX="227.0" layoutY="336.0"
+                           onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
+                           textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="menuTextField" editable="false" layoutX="20.0" layoutY="51.0" prefHeight="285.0"
+                             prefWidth="464.0"
+                             text="* To manually control the systems in the smart home;&#10;&#10;&#9; &gt; Located on the left &#10;&#9;&#9;&gt;&gt; 1. The &quot; ELECTRIC &quot; valve can be opened and closed with the lightning bolt icon on the button.&#10;Electric settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; 2. The &quot; GAS &quot; valve in your home can be opened and closed with the valve icon on the button.&#10;Gas settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; 3. With the water drop icon on the button, the &quot;WATER&quot; valve in your home can be opened and closed.&#10;&#10;&#9;&gt;Located at the bottom&#10;&#9;&#9;&gt;&gt; In the 1st row on the left, the &quot;HOME TEMPERATURE&quot; information can be found with the thermometer.&#10;&#9;&#9;&gt;&gt; In the 2nd row on the left, the &quot;HOUSE DOOR&quot; can be opened with the door icon.&#10;&#9;&#9;&gt;&gt; In the 3rd row on the left, The &quot;WEATHER&quot; information of your country or region can be accessed with the door symbol. &#10;The following information can be accessed by entering the name of the country where you want to learn the weather in the text &#10;box at the top and clicking the update button below.&#10;&#10;&#9;&gt;Located on the right&#10;&#9;&#9;&gt;&gt; With the aquarium icon on the 1st Button, &quot;AQUARIUM SETTINGS&quot; information can be turned on and off at home. &#10;Electric settings can be accessed with the settings button below&#10;&#9;&#9;&gt;&gt; With the greenhouse icon in the 2nd Button, temperature and humidity data in the &quot;GREENHOUSE&quot; at home can&#10; be accessed. Electric settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; With the lamp icon from the 3rd button, the light in the garden of the house can be turned on and off.&#10;&#10;&#9;&#9;Located at the top&#10;&#9;- With the shortcut icon on the 1st button on the right, the units that are automatically turned on or off can be opened and closed. &#10;After selecting &quot;RUN&quot; button, desired units can be activated.&#10;You can access the electrical settings with the settings button below.&#10;&#10;&#9;- With the &quot;CONNECTION&quot; icon on the 2nd button, you can go to the connection panel in the settings&#10;panel at the top left of the page. &#10;&#9;&#9;&gt;&gt;The &quot;BLUETOOTH&quot; link on the left side can be activated with the button with the update icon having 3-inputs below &#10;and Bluetooth connection can be provided with &quot;ARDUINO&quot;.&#10;&#9;&#9;&gt;&gt; It can provide serial connection with &quot;ARDUINO&quot; from the port connection which is on the right.&#10;After selecting the COM1 and COM4 option and then activating with the update button at the bottom, &#10;&quot;ARDUNIO&quot; and sensors can be controlled via the interface.&#10;&#10;&#9;- With the clock icon on the 3rd button, the USER is expected to activate the current time setting.&#10;&#9;&#9;&gt;&gt; The day should be selected from the calendar icon next to the first text field,&#10;&#9;&#9;&gt;&gt; Hour should be selected from the clock icon  and minutes should be selected from &#10;&#9;&#9;&#9;the minute icon that are next to the second text field.&#10; !!!!!!!! AFTER THE COMPLETING LAST PROCESS, USERS HAVE TO PRESS THE SAVE BUTTON TO SAVE CHANGES!!!!!!!">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="helpSettingsPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromSettings" alignment="CENTER" layoutX="225.0" layoutY="336.0"
+                           onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
+                           textFill="TRANSPARENT"/>
+                <JFXButton fx:id="applicationSettingButton" alignment="CENTER" layoutX="95.0" layoutY="80.0"
+                           onAction="#settingButtonOnAction" prefHeight="70.0" prefWidth="70.0"
+                           styleClass="applicationSettingHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="usersSettingButton" alignment="CENTER" layoutX="326.0" layoutY="80.0"
+                           onAction="#settingButtonOnAction" prefHeight="70.0" prefWidth="70.0"
+                           styleClass="usersSettingHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="modsSettingButton" alignment="CENTER" layoutX="95.0" layoutY="232.0"
+                           onAction="#settingButtonOnAction" prefHeight="70.0" prefWidth="70.0"
+                           styleClass="modsSettingHelp" textFill="TRANSPARENT"/>
+                <JFXButton fx:id="homeSettingButton" alignment="CENTER" layoutX="326.0" layoutY="232.0"
+                           onAction="#settingButtonOnAction" prefHeight="70.0" prefWidth="70.0"
+                           styleClass="homeSettingHelp" textFill="TRANSPARENT"/>
+                <Label alignment="CENTER" layoutX="77.0" layoutY="53.0" prefHeight="17.0" prefWidth="347.0"
+                       styleClass="warningHelpLabel" text="PLEASE CHOOSE WHERE YOU STACK" textFill="#002f5e"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="applicationSettingPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromApplicationSetting" alignment="CENTER" layoutX="225.0" layoutY="336.0"
+                           onAction="#settingButtonOnAction" prefHeight="50.0" prefWidth="50.0"
+                           styleClass="goBackButton" textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="applicationSettingTextArea" editable="false" layoutX="18.0" layoutY="51.0"
+                             prefHeight="285.0" prefWidth="464.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="usersSettingPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromUsersSetting" alignment="CENTER" layoutX="225.0" layoutY="336.0"
+                           onAction="#settingButtonOnAction" prefHeight="50.0" prefWidth="50.0"
+                           styleClass="goBackButton" textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="usersSettingTextArea" editable="false" layoutX="18.0" layoutY="51.0"
+                             prefHeight="285.0" prefWidth="464.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="modsSettingPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromModsSetting" alignment="CENTER" layoutX="225.0" layoutY="336.0"
+                           onAction="#settingButtonOnAction" prefHeight="50.0" prefWidth="50.0"
+                           styleClass="goBackButton" textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="modsSettingTextArea" editable="false" layoutX="18.0" layoutY="51.0"
+                             prefHeight="285.0" prefWidth="464.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="homeSettingPane" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0"
+                    visible="false">
+            <children>
+                <JFXButton fx:id="goBackFromHomeSetting" alignment="CENTER" layoutX="225.0" layoutY="336.0"
+                           onAction="#settingButtonOnAction" prefHeight="50.0" prefWidth="50.0"
+                           styleClass="goBackButton" textFill="TRANSPARENT"/>
+                <JFXTextArea fx:id="homeSettingTextArea" editable="false" layoutX="18.0" layoutY="51.0"
+                             prefHeight="285.0" prefWidth="464.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXTextArea>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

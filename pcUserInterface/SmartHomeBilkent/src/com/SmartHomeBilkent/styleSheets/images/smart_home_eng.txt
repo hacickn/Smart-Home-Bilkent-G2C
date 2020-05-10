@@ -1,0 +1,181 @@
+
+------------------------------------------------------------------------------------------------------------------------------							
+						HELP BUTTON
+------------------------------------------------------------------------------------------------------------------------------
+
+						(1) EXİT
+------------------------------------------------------------------------------------------------------------------------------
+
+The door icon in the middle at the bottom of each page allows you to return to the tab where you entered the username and password.
+The user can logout at any time.
+------------------------------------------------------------------------------------------------------------------------------
+						(2) USER PROFILE
+------------------------------------------------------------------------------------------------------------------------------
+
+	 * The user profile in the upper right corner is the button where the profiles of the people in the smart home can be added.
+Name, surname, date of birth and gender information can be added to the field on the left and also changes can be made at any time 
+from the arrows button.
+To exit after making changes, it is enough to press the arrow key to the left.
+ 
+	* User name and password can be entered from the right-hand pane and also changes can be made at any time by 
+using the arrows button.
+To exit after making changes, it is enough to press the arrow key to the left.
+------------------------------------------------------------------------------------------------------------------------------
+						(3) MENU
+------------------------------------------------------------------------------------------------------------------------------
+
+ * To manually control the systems in the smart home;
+
+	 > Located on the left 
+		>> 1. The " ELECTRIC " valve can be opened and closed with the lightning bolt icon on the button.
+Electric settings can be accessed with the settings button below.
+		>> 2. The " GAS " valve in your home can be opened and closed with the valve icon on the button.
+Gas settings can be accessed with the settings button below.
+		>> 3. With the water drop icon on the button, the "WATER" valve in your home can be opened and closed.
+
+	>Located at the bottom
+		>> In the 1st row on the left, the "HOME TEMPERATURE" information can be found with the thermometer.
+		>> In the 2nd row on the left, the "HOUSE DOOR" can be opened with the door icon.
+		>> In the 3rd row on the left, The "WEATHER" information of your country or region can be accessed with the door symbol. 
+The following information can be accessed by entering the name of the country where you want to learn the weather in the text 
+box at the top and clicking the update button below.
+
+	>Located on the right
+		>> With the aquarium icon on the 1st Button, "AQUARIUM SETTINGS" information can be turned on and off at home. 
+Electric settings can be accessed with the settings button below
+		>> With the greenhouse icon in the 2nd Button, temperature and humidity data in the "GREENHOUSE" at home can
+ be accessed. Electric settings can be accessed with the settings button below.
+		>> With the lamp icon from the 3rd button, the light in the garden of the house can be turned on and off.
+
+		Located at the top
+	- With the shortcut icon on the 1st button on the right, the units that are automatically turned on or off can be opened and closed. 
+After selecting "RUN" button, desired units can be activated.
+You can access the electrical settings with the settings button below.
+
+	- With the "CONNECTION" icon on the 2nd button, you can go to the connection panel in the settings
+panel at the top left of the page. 
+		>>The "BLUETOOTH" link on the left side can be activated with the button with the update icon having 3-inputs below 
+and Bluetooth connection can be provided with "ARDUINO".
+		>> It can provide serial connection with "ARDUINO" from the port connection which is on the right.
+After selecting the COM1 and COM4 option and then activating with the update button at the bottom, 
+"ARDUNIO" and sensors can be controlled via the interface.
+
+	- With the clock icon on the 3rd button, the USER is expected to activate the current time setting.
+		>> The day should be selected from the calendar icon next to the first text field,
+		>> Hour should be selected from the clock icon  and minutes should be selected from 
+			the minute icon that are next to the second text field.
+ !!!!!!!! EN SON SEÇİM İŞLEMİNİ TAMAMLADIKTAN SONRA SEÇİLEN BİLGİLERİ KAYDETMEK İÇİN KAYDET BUTONUNA BASILMALIDIR!!!!!!!
+
+------------------------------------------------------------------------------------------------------------------------------
+							(4) SETTINGS
+------------------------------------------------------------------------------------------------------------------------------
+
+While PRESSING THE APPLICATION SETTINGS BUTTON at the top
+------------------------------------------------------------------------------------------------------------------------------
+	> "APPLICATION" icon on the 1st button from the right
+------------------------------------------------------------------------------------------------------------------------------
+		>> 4 different backgrounds found by the 1st button "THEMES" on the right at the buttom ,
+	(1) DARK
+	(2) LIGHT
+	(3) SMOOTH
+	(4) CARTOON
+	by selecting the desired theme and pressing the space next to it, the new theme can be activated with the space turned into green.  
+
+		>> 3 different languages ​​found by the 2nd  button "LANGUAGE" on the bottom right at the buttom ; 
+	(1) ENGLISH
+	(2) GERMAN
+	(3) TURKISH
+	the desired language can be selected and the new language mode can be activated.
+
+		>> 2 different sirens found by the 3rd  button "EMERGENCY" on the right at the buttom; 
+	(1) INTERNAL SIREN
+	(2) EXTERNAL SIREN
+	Sirens can be turned into activation by warning of gas, fire and smoke sensors at home or by 
+	entering false password alarm. At the same time, the person can manually activate the internal and external siren.	
+		
+		>> From the 3 different sensors on the right with the 4th button "NOTIFICATION" on the right at the bottom;
+	(1) FIRE SENSOR
+	(2) GAS SENSOR
+	(3) SMOKE SENSOR
+
+	two separate warning notifications can be received;
+
+	(1) VISUAL WARNING
+	(2) AUDITORY WARNING
+
+	The arrival of a warning notification by entering gas, fire, smoke or false password alarm at home may provide 
+	sound, text or both types of return according to the person's request. The person can also activate the types of notifications 
+	user wants to obtain manually by pressing the buttons.
+
+		>> 2 connection types found by the 3rd button  "CONNECTIONS" on the bottom right;
+
+	(1) Bluetooth
+	(2) Serial Port
+			>>> The "BLUETOOTH" link on the left side can be activated with the button with the update icon having
+	3-inputs below and Bluetooth connection can be provided with "ARDUINO".
+			>>> It can provide serial connection with "ARDUINO" from the port connection which is on the right.
+	After selecting the COM1 and COM4 option and then activating with the update button at the bottom, 
+	"ARDUNIO" and sensors can be controlled via the interface.
+
+------------------------------------------------------------------------------------------------------------------------------
+	> With the "USERS" icon on the 2nd button from the right, all users in the smart home can be viewed as a whole.
+------------------------------------------------------------------------------------------------------------------------------
+		>> After adding the information of the user you want to add with the add person button on the left below, 
+	the user can be added by pressing the "PLUS" Button below. To exit, you must press the arrow to the left. 
+
+		>> Below, with the "PERMISSION" button in the middle, access restrictions can be made by adult individuals 
+	to some units in the smart home account of the children.
+	
+		>> You will see the text "WARNING" after seeing the "DELETE USER" information after selecting the 
+	person/'s you want to delete with the delete button on the far right, and press the trash icon.
+	
+	If you want to continue the process, you need to enter your password in the text section found and press the "CROSS" button.
+	If you do not want to continue the operation or want to return to the contact menu, you must press the arrow to the left. 
+
+------------------------------------------------------------------------------------------------------------------------------	
+	> With the "MODES" icon on the 3rd button from the right, the user;
+------------------------------------------------------------------------------------------------------------------------------
+		>> With the "INTERACTIVE TEXT MODE", it is possible to access the information text under the buttons on the interface.
+		>> With the "INTERACTIVE SOUND MODE", it is possible to reach the tasks of the buttons on the interface with the help of sound. 
+		The volume can be adjusted with the "VOLUME" button at the bottom of the panel.
+
+------------------------------------------------------------------------------------------------------------------------------	
+	> In the fourth button, "HOME SETTINGS", you can go to the settings of the units in the lower section, at the same time, 
+	you can return to this panel with the settings button of the units below.
+------------------------------------------------------------------------------------------------------------------------------
+
+		>> With the first button on the right, "ELECTRICAL SETTINGS", daily and weekly electricity usage hours
+	 information can be accessed.
+
+		>> With the second button "GAS SETTINGS" on the right, daily and weekly gas usage hours information can be accessed.
+
+		>> With the third button "WATER SETTINGS" on the right;
+			
+			**  From the 1st section "SPECIES OF FISH" box, the species of fish that are proposed to be found in the aquarium,
+	 living mutalist among each other were written. It is given as "RECOMMENDED TIME 10 HOURS" for the operation of the air
+	 motor suitable for the fish species selected by the producer group. 
+ 			**  The 2nd section "FEEDING START TIME(EACH DAY)" must be selected by the user. 
+	Once selected, it will continue to run at the same time every day.
+			**  The third section "WATER EXCHANGE DAY AND TIME" must be selected by the user. 
+	Once selected, it will continue to operate on the selected day and time of the week.
+** 			** The fourth "AIR MOTOR WORK AMOUNT AND START TIME " should be selected by the user. Once selected, 
+	it will continue to operate on the selected day and time of the week. The duration of the air motor's operation 
+	is determined by dragging from the first button. The second button is selected when the air motor will start operating.
+
+ 	!!!!!!!! PRESS SAVE BUTTON TO SAVE THE SELECTED INFORMATION AFTER COMPLETING THE LATEST SELECTION !!!!!!!
+		
+		>> With the fourth button on the right, "GREENHOUSE SETTINGS", daily and weekly gas usage hours information can be accessed. 
+			>>> The average temperature and humidity information measured during the day can be accessed in the graph.
+			>>> As mentioned below, red lines represent temperature and orange lines represent humidity. 
+			>>> Water coming from the aquarium to the greenhouse's tank is taken by the drip method when the greenhouse needs it. 
+			>>> The hour and day of the intake can be reached under the name "LAST WATER FROM THE AQUARIUM".
+		
+		>> With the fifth button "WEATHER SETTINGS" on the right, you can reach the "WEATHER" information of the country or region 
+	where you want to learn the weather situation, thanks to the weather panel, which we can also access from the menu. 
+			>>> You can access the information below by entering the name of the country you want to learn the weather
+	in the text box at the top and clicking the update button below. 
+			
+
+
+
+** 

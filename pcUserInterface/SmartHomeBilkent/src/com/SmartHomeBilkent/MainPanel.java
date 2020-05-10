@@ -706,7 +706,7 @@ public class MainPanel implements Initializable {
             Parent root = load.load();
             Stage stage = new Stage();
             stage.setTitle( "HELP" );
-            stage.setScene( new Scene( root, 500, 500 ) );
+            stage.setScene( new Scene( root, 600, 500 ) );
             stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
             stage.setResizable( false );
             stage.show();

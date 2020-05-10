@@ -1,0 +1,359 @@
+-------------------------------------------------- -------------------------------------------------- --------------------------
+HILFE-TASTE
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+(1) EXİT
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+Mit dem Türsymbol in der Mitte unten auf jeder Seite können Sie zu der Registerkarte zurückkehren, auf der Sie den Benutzernamen und das Passwort eingegeben haben.
+Der Benutzer kann sich jederzeit abmelden.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(2) BENUTZERPROFIL
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+* Das Benutzerprofil in der oberen rechten Ecke ist die Schaltfläche, über die die Profile der Personen im Smart Home hinzugefügt werden können.
+Name, Nachname, Geburtsdatum und Geschlechtsinformationen können dem Feld links hinzugefügt werden. Änderungen können jederzeit vorgenommen werden
+von der Pfeiltaste.
+Um nach Änderungen Änderungen zu beenden, müssen Sie die Pfeiltaste nach links drücken.
+ 
+* Benutzername und Passwort können im rechten Bereich eingegeben werden. Änderungen können jederzeit von vorgenommen werden
+mit der Pfeiltaste.
+Um nach Änderungen Änderungen zu beenden, müssen Sie die Pfeiltaste nach links drücken.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(3) MENÜ
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+ * Manuelle Steuerung der Systeme im Smart Home;
+
+> Befindet sich auf der linken Seite
+>> 1. Das Ventil "ELECTRIC" kann mit dem Blitzsymbol auf der Taste geöffnet und geschlossen werden.
+Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> 2. Das "GAS" -Ventil in Ihrem Haus kann mit dem Ventilsymbol auf der Schaltfläche geöffnet und geschlossen werden.
+Auf die Gaseinstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> 3. Mit dem Wassertropfensymbol auf der Schaltfläche kann das "WASSER" -Ventil in Ihrem Haus geöffnet und geschlossen werden.
+
+> Befindet sich unten
+>> In der ersten Zeile links finden Sie die Informationen zur "HEIMTEMPERATUR" mit dem Thermometer.
+>> In der 2. Reihe links kann die "HAUSTÜR" mit dem Türsymbol geöffnet werden.
+>> In der 3. Zeile links können Sie mit dem Türsymbol auf die "WETTER" -Informationen Ihres Landes oder Ihrer Region zugreifen.
+Auf die folgenden Informationen kann zugegriffen werden, indem Sie im Text den Namen des Landes eingeben, in dem Sie das Wetter erfahren möchten
+Kästchen oben und klicken Sie auf die Schaltfläche Aktualisieren unten.
+
+> Befindet sich auf der rechten Seite
+>> Mit dem Aquarium-Symbol auf der 1. Schaltfläche können die Informationen zu "AQUARIUM-EINSTELLUNGEN" zu Hause ein- und ausgeschaltet werden.
+Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden
+>> Mit dem Gewächshaussymbol in der 2. Taste können Temperatur- und Feuchtigkeitsdaten im "GEWÄCHSHAUS" zu Hause erfasst werden
+ zugegriffen werden. Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> Mit dem Lampensymbol ab der 3. Taste kann das Licht im Garten des Hauses ein- und ausgeschaltet werden.
+
+Befindet sich oben
+- Mit dem Verknüpfungssymbol auf der 1. Schaltfläche rechts können die Einheiten, die automatisch ein- oder ausgeschaltet werden, geöffnet und geschlossen werden.
+Nach Auswahl der Schaltfläche "RUN" können die gewünschten Einheiten aktiviert werden.
+Sie können auf die elektrischen Einstellungen mit der Schaltfläche Einstellungen unten zugreifen.
+
+- Mit dem Symbol "VERBINDUNG" auf der 2. Schaltfläche können Sie in den Einstellungen zum Anschlussfeld wechseln
+Panel oben links auf der Seite.
+>> Der Link "BLUETOOTH" auf der linken Seite kann mit der Schaltfläche mit dem Update-Symbol mit 3 Eingängen unten aktiviert werden
+und Bluetooth-Verbindung kann mit "ARDUINO" bereitgestellt werden.
+>> Es kann eine serielle Verbindung mit "ARDUINO" über die Anschlussverbindung auf der rechten Seite herstellen.
+Nachdem Sie die Optionen COM1 und COM4 ausgewählt und dann mit der Update-Schaltfläche unten aktiviert haben,
+"ARDUNIO" und Sensoren können über die Schnittstelle gesteuert werden.
+
+- Mit dem Uhrensymbol auf der 3. Taste soll der BENUTZER die aktuelle Zeiteinstellung aktivieren.
+>> Der Tag sollte über das Kalendersymbol neben dem ersten Textfeld ausgewählt werden.
+>> Stunde sollte über das Uhrensymbol ausgewählt werden und Minuten sollten aus ausgewählt werden
+das Minutensymbol neben dem zweiten Textfeld.
+ !!!!!!!! DE SON SEÇİM İŞLEMİNİ TAMAMLADIKTAN SONRA SEÇİLEN BİLGİLERİ KAYDETMEK İÇİN KAYDET BUTONUNA BASILMALIDIR !!!!!!!
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(4) EINSTELLUNGEN
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+Während Sie oben auf die Schaltfläche ANWENDUNGSEINSTELLUNGEN drücken
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Symbol "ANWENDUNG" auf der 1. Schaltfläche von rechts
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> 4 verschiedene Hintergründe gefunden durch den 1. Button "THEMEN" rechts am Hintern,
+(1) DUNKEL
+(2) LICHT
+(3) GLATT
+(4) CARTOON
+Durch Auswahl des gewünschten Themas und Drücken des Feldes daneben kann das neue Thema aktiviert werden, wobei das Feld grün wird.
+
+>> 3 verschiedene Sprachen finden Sie mit der 2. Schaltfläche "SPRACHE" unten rechts unten;
+(1) DEUTSCH
+(2) DEUTSCH
+(3) TÜRKISCH
+Die gewünschte Sprache kann ausgewählt und der neue Sprachmodus aktiviert werden.
+
+>> 2 verschiedene Sirenen, die mit dem 3. Knopf "NOTFALL" rechts am Hintern gefunden wurden;
+(1) INTERNE SIRENE
+(2) EXTERNE SIRENE
+Sirenen können durch Warnung vor Gas-, Feuer- und Rauchsensoren zu Hause oder von aktiviert werden
+Eingabe eines falschen Passwortalarms. Gleichzeitig kann die Person die interne und externe Sirene manuell aktivieren.
+
+>> Von den 3 verschiedenen Sensoren rechts mit der 4. Taste "NOTIFICATION" rechts unten;
+(1) FEUERSENSOR
+(2) Gassensor
+(3) RAUCHSENSOR
+
+Es können zwei separate Warnmeldungen empfangen werden.
+
+(1) VISUELLE WARNUNG
+(2) PRÜFUNGSWARNUNG
+
+Das Eintreffen einer Warnmeldung durch Eingabe von Gas-, Feuer-, Rauch- oder falschem Passwortalarm zu Hause kann vorsehen
+Ton, Text oder beide Arten der Rücksendung je nach Wunsch der Person. Die Person kann auch die Arten von Benachrichtigungen aktivieren
+Benutzer möchte manuell durch Drücken der Tasten erhalten.
+
+>> 2 Verbindungstypen, die über die 3. Schaltfläche "VERBINDUNGEN" unten rechts gefunden werden;
+
+(1) Bluetooth
+(2) Serielle Schnittstelle
+>>> Der Link "BLUETOOTH" auf der linken Seite kann mit der Schaltfläche mit dem Update-Symbol aktiviert werden
+3 Eingänge unten und Bluetooth-Verbindung können mit "ARDUINO" bereitgestellt werden.
+>>> Es kann eine serielle Verbindung mit "ARDUINO" über die Portverbindung auf der rechten Seite herstellen.
+Nachdem Sie die Optionen COM1 und COM4 ausgewählt und anschließend mit der Update-Schaltfläche unten aktiviert haben,
+"ARDUNIO" und Sensoren können über die Schnittstelle gesteuert werden.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Mit dem Symbol "BENUTZER" auf der 2. Schaltfläche von rechts können alle Benutzer im Smart Home als Ganzes angezeigt werden.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> Nachdem Sie die Informationen des Benutzers hinzugefügt haben, den Sie hinzufügen möchten, klicken Sie links unten auf die Schaltfläche Person hinzufügen.
+Der Benutzer kann durch Drücken der Taste "PLUS" unten hinzugefügt werden. Zum Beenden müssen Sie den Pfeil nach links drücken.
+
+>> Unten, mit der Schaltfläche "ERLAUBNIS" in der Mitte, können erwachsene Personen Zugriffsbeschränkungen vornehmen
+zu einigen Einheiten im Smart-Home-Konto der Kinder.
+
+>> Sie sehen den Text "WARNUNG", nachdem Sie die Informationen "BENUTZER LÖSCHEN" gesehen haben, nachdem Sie die ausgewählt haben
+Personen, die Sie löschen möchten, klicken Sie ganz rechts auf die Schaltfläche "Löschen" und drücken Sie auf das Papierkorbsymbol.
+
+Wenn Sie den Vorgang fortsetzen möchten, müssen Sie Ihr Passwort in den gefundenen Textbereich eingeben und auf die Schaltfläche "CROSS" klicken.
+Wenn Sie den Vorgang nicht fortsetzen oder zum Kontaktmenü zurückkehren möchten, müssen Sie den Pfeil nach links drücken.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Mit dem Symbol "MODES" auf der 3. Schaltfläche von rechts der Benutzer;
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> Mit dem "INTERAKTIVEN TEXTMODUS" ist es möglich, auf den Informationstext unter den Schaltflächen auf der Oberfläche zuzugreifen.
+>> Mit dem "INTERACTIVE SOUND MODE" ist es möglich, die Aufgaben der Tasten auf der Oberfläche mit Hilfe von Sound zu erreichen.
+Die Lautstärke kann mit der Taste "VOLUME" am unteren Rand des Bedienfelds eingestellt werden.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> In der vierten Schaltfläche "HOME SETTINGS" können Sie gleichzeitig zu den Einstellungen der Geräte im unteren Bereich wechseln.
+Sie können mit der Einstellungsschaltfläche der folgenden Einheiten zu diesem Bereich zurückkehren.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+>> Mit der ersten Schaltfläche rechts "ELEKTRISCHE EINSTELLUNGEN", tägliche und wöchentliche Stromverbrauchsstunden
+Informationen können abgerufen werden.
+
+>> Mit der zweiten Schaltfläche "GASEINSTELLUNGEN" rechts können Informationen zu den täglichen und wöchentlichen Gasverbrauchsstunden abgerufen werden.
+
+>> Mit der dritten Taste "WASSEREINSTELLUNGEN" rechts;
+
+** Aus dem 1. Abschnitt "Arten von Fischen", die Fischarten, die im Aquarium gefunden werden sollen,
+lebende Mutalisten untereinander wurden geschrieben. Es wird als "EMPFOHLENE ZEIT 10 STUNDEN" für den Betrieb der Luft angegeben
+Motor geeignet für die von der Erzeugergruppe ausgewählten Fischarten.
+ ** Der 2. Abschnitt "FEEDING START TIME (JEDER TAG)" muss vom Benutzer ausgewählt werden.
+Nach der Auswahl wird es jeden Tag zur gleichen Zeit ausgeführt.
+** Der dritte Abschnitt "WASSERAUSTAUSCHTAG UND -ZEIT" muss vom Benutzer ausgewählt werden.
+Nach der Auswahl wird der Betrieb an dem ausgewählten Wochentag und der ausgewählten Uhrzeit fortgesetzt.
+** ** Der vierte "AIR MOTOR WORK AMOUNT AND START TIME" sollte vom Benutzer ausgewählt werden. Einmal ausgewählt,
+Es wird an dem ausgewählten Tag und der ausgewählten Uhrzeit weiter betrieben. Die Betriebsdauer des Luftmotors
+wird durch Ziehen von der ersten Schaltfläche bestimmt. Die zweite Taste wird ausgewählt, wenn der Luftmotor seinen Betrieb aufnimmt.
+
+ !!!!!!!! Drücken Sie die Taste SPEICHERN, um die ausgewählten Informationen nach Abschluss der letzten Auswahl zu speichern !!!!!!!
+
+>> Mit der vierten Schaltfläche rechts, "GREENHOUSE SETTINGS", können Informationen zu den täglichen und wöchentlichen Gasverbrauchsstunden abgerufen werden.
+>>> Auf die während des Tages gemessenen Informationen zu Durchschnittstemperatur und Luftfeuchtigkeit kann in der Grafik zugegriffen werden.
+>>> Wie unten erwähnt, stehen rote Linien für Temperatur und orange Linien für Feuchtigkeit.
+>>> Wasser, das aus dem Aquarium in den Tank des Gewächshauses kommt, wird nach der Tropfmethode entnommen, wenn das Gewächshaus es benötigt.
+>>> Die Stunde und der Tag der Aufnahme können unter dem Namen "LETZTES WASSER AUS DEM AQUARIUM" erreicht werden.
+
+>> Mit der fünften Schaltfläche "WETTEREINSTELLUNGEN" rechts erreichen Sie die "WETTER" -Informationen des Landes oder der Region
+Hier möchten Sie die Wettersituation dank des Wetterfelds erfahren, auf das wir auch über das Menü zugreifen können.
+>>> Sie können auf die folgenden Informationen zugreifen, indem Sie den Namen des Landes eingeben, in dem Sie das Wetter erfahren möchten
+im Textfeld oben und klicken Sie auf die Schaltfläche Aktualisieren unten.
+
+
+
+
+** **.-------------------------------------------------- -------------------------------------------------- --------------------------
+HILFE-TASTE
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+(1) EXİT
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+Mit dem Türsymbol in der Mitte unten auf jeder Seite können Sie zu der Registerkarte zurückkehren, auf der Sie den Benutzernamen und das Passwort eingegeben haben.
+Der Benutzer kann sich jederzeit abmelden.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(2) BENUTZERPROFIL
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+* Das Benutzerprofil in der oberen rechten Ecke ist die Schaltfläche, über die die Profile der Personen im Smart Home hinzugefügt werden können.
+Name, Nachname, Geburtsdatum und Geschlechtsinformationen können dem Feld links hinzugefügt werden. Änderungen können jederzeit vorgenommen werden
+von der Pfeiltaste.
+Um nach Änderungen Änderungen zu beenden, müssen Sie die Pfeiltaste nach links drücken.
+ 
+* Benutzername und Passwort können im rechten Bereich eingegeben werden. Änderungen können jederzeit von vorgenommen werden
+mit der Pfeiltaste.
+Um nach Änderungen Änderungen zu beenden, müssen Sie die Pfeiltaste nach links drücken.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(3) MENÜ
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+ * Manuelle Steuerung der Systeme im Smart Home;
+
+> Befindet sich auf der linken Seite
+>> 1. Das Ventil "ELECTRIC" kann mit dem Blitzsymbol auf der Taste geöffnet und geschlossen werden.
+Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> 2. Das "GAS" -Ventil in Ihrem Haus kann mit dem Ventilsymbol auf der Schaltfläche geöffnet und geschlossen werden.
+Auf die Gaseinstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> 3. Mit dem Wassertropfensymbol auf der Schaltfläche kann das "WASSER" -Ventil in Ihrem Haus geöffnet und geschlossen werden.
+
+> Befindet sich unten
+>> In der ersten Zeile links finden Sie die Informationen zur "HEIMTEMPERATUR" mit dem Thermometer.
+>> In der 2. Reihe links kann die "HAUSTÜR" mit dem Türsymbol geöffnet werden.
+>> In der 3. Zeile links können Sie mit dem Türsymbol auf die "WETTER" -Informationen Ihres Landes oder Ihrer Region zugreifen.
+Auf die folgenden Informationen kann zugegriffen werden, indem Sie im Text den Namen des Landes eingeben, in dem Sie das Wetter erfahren möchten
+Kästchen oben und klicken Sie auf die Schaltfläche Aktualisieren unten.
+
+> Befindet sich auf der rechten Seite
+>> Mit dem Aquarium-Symbol auf der 1. Schaltfläche können die Informationen zu "AQUARIUM-EINSTELLUNGEN" zu Hause ein- und ausgeschaltet werden.
+Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden
+>> Mit dem Gewächshaussymbol in der 2. Taste können Temperatur- und Feuchtigkeitsdaten im "GEWÄCHSHAUS" zu Hause erfasst werden
+ zugegriffen werden. Auf die elektrischen Einstellungen kann über die Schaltfläche Einstellungen unten zugegriffen werden.
+>> Mit dem Lampensymbol ab der 3. Taste kann das Licht im Garten des Hauses ein- und ausgeschaltet werden.
+
+Befindet sich oben
+- Mit dem Verknüpfungssymbol auf der 1. Schaltfläche rechts können die Einheiten, die automatisch ein- oder ausgeschaltet werden, geöffnet und geschlossen werden.
+Nach Auswahl der Schaltfläche "RUN" können die gewünschten Einheiten aktiviert werden.
+Sie können auf die elektrischen Einstellungen mit der Schaltfläche Einstellungen unten zugreifen.
+
+- Mit dem Symbol "VERBINDUNG" auf der 2. Schaltfläche können Sie in den Einstellungen zum Anschlussfeld wechseln
+Panel oben links auf der Seite.
+>> Der Link "BLUETOOTH" auf der linken Seite kann mit der Schaltfläche mit dem Update-Symbol mit 3 Eingängen unten aktiviert werden
+und Bluetooth-Verbindung kann mit "ARDUINO" bereitgestellt werden.
+>> Es kann eine serielle Verbindung mit "ARDUINO" über die Anschlussverbindung auf der rechten Seite herstellen.
+Nachdem Sie die Optionen COM1 und COM4 ausgewählt und dann mit der Update-Schaltfläche unten aktiviert haben,
+"ARDUNIO" und Sensoren können über die Schnittstelle gesteuert werden.
+
+- Mit dem Uhrensymbol auf der 3. Taste soll der BENUTZER die aktuelle Zeiteinstellung aktivieren.
+>> Der Tag sollte über das Kalendersymbol neben dem ersten Textfeld ausgewählt werden.
+>> Stunde sollte über das Uhrensymbol ausgewählt werden und Minuten sollten aus ausgewählt werden
+das Minutensymbol neben dem zweiten Textfeld.
+ !!!!!!!! DE SON SEÇİM İŞLEMİNİ TAMAMLADIKTAN SONRA SEÇİLEN BİLGİLERİ KAYDETMEK İÇİN KAYDET BUTONUNA BASILMALIDIR !!!!!!!
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+(4) EINSTELLUNGEN
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+Während Sie oben auf die Schaltfläche ANWENDUNGSEINSTELLUNGEN drücken
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Symbol "ANWENDUNG" auf der 1. Schaltfläche von rechts
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> 4 verschiedene Hintergründe gefunden durch den 1. Button "THEMEN" rechts am Hintern,
+(1) DUNKEL
+(2) LICHT
+(3) GLATT
+(4) CARTOON
+Durch Auswahl des gewünschten Themas und Drücken des Feldes daneben kann das neue Thema aktiviert werden, wobei das Feld grün wird.
+
+>> 3 verschiedene Sprachen finden Sie mit der 2. Schaltfläche "SPRACHE" unten rechts unten;
+(1) DEUTSCH
+(2) DEUTSCH
+(3) TÜRKISCH
+Die gewünschte Sprache kann ausgewählt und der neue Sprachmodus aktiviert werden.
+
+>> 2 verschiedene Sirenen, die mit dem 3. Knopf "NOTFALL" rechts am Hintern gefunden wurden;
+(1) INTERNE SIRENE
+(2) EXTERNE SIRENE
+Sirenen können durch Warnung vor Gas-, Feuer- und Rauchsensoren zu Hause oder von aktiviert werden
+Eingabe eines falschen Passwortalarms. Gleichzeitig kann die Person die interne und externe Sirene manuell aktivieren.
+
+>> Von den 3 verschiedenen Sensoren rechts mit der 4. Taste "NOTIFICATION" rechts unten;
+(1) FEUERSENSOR
+(2) Gassensor
+(3) RAUCHSENSOR
+
+Es können zwei separate Warnmeldungen empfangen werden.
+
+(1) VISUELLE WARNUNG
+(2) PRÜFUNGSWARNUNG
+
+Das Eintreffen einer Warnmeldung durch Eingabe von Gas-, Feuer-, Rauch- oder falschem Passwortalarm zu Hause kann vorsehen
+Ton, Text oder beide Arten der Rücksendung je nach Wunsch der Person. Die Person kann auch die Arten von Benachrichtigungen aktivieren
+Benutzer möchte manuell durch Drücken der Tasten erhalten.
+
+>> 2 Verbindungstypen, die über die 3. Schaltfläche "VERBINDUNGEN" unten rechts gefunden werden;
+
+(1) Bluetooth
+(2) Serielle Schnittstelle
+>>> Der Link "BLUETOOTH" auf der linken Seite kann mit der Schaltfläche mit dem Update-Symbol aktiviert werden
+3 Eingänge unten und Bluetooth-Verbindung können mit "ARDUINO" bereitgestellt werden.
+>>> Es kann eine serielle Verbindung mit "ARDUINO" über die Portverbindung auf der rechten Seite herstellen.
+Nachdem Sie die Optionen COM1 und COM4 ausgewählt und anschließend mit der Update-Schaltfläche unten aktiviert haben,
+"ARDUNIO" und Sensoren können über die Schnittstelle gesteuert werden.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Mit dem Symbol "BENUTZER" auf der 2. Schaltfläche von rechts können alle Benutzer im Smart Home als Ganzes angezeigt werden.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> Nachdem Sie die Informationen des Benutzers hinzugefügt haben, den Sie hinzufügen möchten, klicken Sie links unten auf die Schaltfläche Person hinzufügen.
+Der Benutzer kann durch Drücken der Taste "PLUS" unten hinzugefügt werden. Zum Beenden müssen Sie den Pfeil nach links drücken.
+
+>> Unten, mit der Schaltfläche "ERLAUBNIS" in der Mitte, können erwachsene Personen Zugriffsbeschränkungen vornehmen
+zu einigen Einheiten im Smart-Home-Konto der Kinder.
+
+>> Sie sehen den Text "WARNUNG", nachdem Sie die Informationen "BENUTZER LÖSCHEN" gesehen haben, nachdem Sie die ausgewählt haben
+Personen, die Sie löschen möchten, klicken Sie ganz rechts auf die Schaltfläche "Löschen" und drücken Sie auf das Papierkorbsymbol.
+
+Wenn Sie den Vorgang fortsetzen möchten, müssen Sie Ihr Passwort in den gefundenen Textbereich eingeben und auf die Schaltfläche "CROSS" klicken.
+Wenn Sie den Vorgang nicht fortsetzen oder zum Kontaktmenü zurückkehren möchten, müssen Sie den Pfeil nach links drücken.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> Mit dem Symbol "MODES" auf der 3. Schaltfläche von rechts der Benutzer;
+-------------------------------------------------- -------------------------------------------------- --------------------------
+>> Mit dem "INTERAKTIVEN TEXTMODUS" ist es möglich, auf den Informationstext unter den Schaltflächen auf der Oberfläche zuzugreifen.
+>> Mit dem "INTERACTIVE SOUND MODE" ist es möglich, die Aufgaben der Tasten auf der Oberfläche mit Hilfe von Sound zu erreichen.
+Die Lautstärke kann mit der Taste "VOLUME" am unteren Rand des Bedienfelds eingestellt werden.
+
+-------------------------------------------------- -------------------------------------------------- --------------------------
+> In der vierten Schaltfläche "HOME SETTINGS" können Sie gleichzeitig zu den Einstellungen der Geräte im unteren Bereich wechseln.
+Sie können mit der Einstellungsschaltfläche der folgenden Einheiten zu diesem Bereich zurückkehren.
+-------------------------------------------------- -------------------------------------------------- --------------------------
+
+>> Mit der ersten Schaltfläche rechts "ELEKTRISCHE EINSTELLUNGEN", tägliche und wöchentliche Stromverbrauchsstunden
+Informationen können abgerufen werden.
+
+>> Mit der zweiten Schaltfläche "GASEINSTELLUNGEN" rechts können Informationen zu den täglichen und wöchentlichen Gasverbrauchsstunden abgerufen werden.
+
+>> Mit der dritten Taste "WASSEREINSTELLUNGEN" rechts;
+
+** Aus dem 1. Abschnitt "Arten von Fischen", die Fischarten, die im Aquarium gefunden werden sollen,
+lebende Mutalisten untereinander wurden geschrieben. Es wird als "EMPFOHLENE ZEIT 10 STUNDEN" für den Betrieb der Luft angegeben
+Motor geeignet für die von der Erzeugergruppe ausgewählten Fischarten.
+ ** Der 2. Abschnitt "FEEDING START TIME (JEDER TAG)" muss vom Benutzer ausgewählt werden.
+Nach der Auswahl wird es jeden Tag zur gleichen Zeit ausgeführt.
+** Der dritte Abschnitt "WASSERAUSTAUSCHTAG UND -ZEIT" muss vom Benutzer ausgewählt werden.
+Nach der Auswahl wird der Betrieb an dem ausgewählten Wochentag und der ausgewählten Uhrzeit fortgesetzt.
+** ** Der vierte "AIR MOTOR WORK AMOUNT AND START TIME" sollte vom Benutzer ausgewählt werden. Einmal ausgewählt,
+Es wird an dem ausgewählten Tag und der ausgewählten Uhrzeit weiter betrieben. Die Betriebsdauer des Luftmotors
+wird durch Ziehen von der ersten Schaltfläche bestimmt. Die zweite Taste wird ausgewählt, wenn der Luftmotor seinen Betrieb aufnimmt.
+
+ !!!!!!!! Drücken Sie die Taste SPEICHERN, um die ausgewählten Informationen nach Abschluss der letzten Auswahl zu speichern !!!!!!!
+
+>> Mit der vierten Schaltfläche rechts, "GREENHOUSE SETTINGS", können Informationen zu den täglichen und wöchentlichen Gasverbrauchsstunden abgerufen werden.
+>>> Auf die während des Tages gemessenen Informationen zu Durchschnittstemperatur und Luftfeuchtigkeit kann in der Grafik zugegriffen werden.
+>>> Wie unten erwähnt, stehen rote Linien für Temperatur und orange Linien für Feuchtigkeit.
+>>> Wasser, das aus dem Aquarium in den Tank des Gewächshauses kommt, wird nach der Tropfmethode entnommen, wenn das Gewächshaus es benötigt.
+>>> Die Stunde und der Tag der Aufnahme können unter dem Namen "LETZTES WASSER AUS DEM AQUARIUM" erreicht werden.
+
+>> Mit der fünften Schaltfläche "WETTEREINSTELLUNGEN" rechts erreichen Sie die "WETTER" -Informationen des Landes oder der Region
+Hier möchten Sie die Wettersituation dank des Wetterfelds erfahren, auf das wir auch über das Menü zugreifen können.
+>>> Sie können auf die folgenden Informationen zugreifen, indem Sie den Namen des Landes eingeben, in dem Sie das Wetter erfahren möchten
+im Textfeld oben und klicken Sie auf die Schaltfläche Aktualisieren unten.
+
+
+
+
+** **.
