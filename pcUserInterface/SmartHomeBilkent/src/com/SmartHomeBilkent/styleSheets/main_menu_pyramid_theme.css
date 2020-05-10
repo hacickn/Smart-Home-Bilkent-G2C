@@ -3,24 +3,24 @@
        -fx-background-size: cover;
 }
 .menuBorderPane{
-    -fx-background-color:#bbb7cc;
-    -fx-border-color: #E6E6FA;
+    -fx-background-color: #cc99ff;
+    -fx-border-color: #80ffff;
 }
 .homeFacilityPane{
-       -fx-background-color: #ffebd6;
-      -fx-border-color: #E6E6FA;
+       -fx-background-color: #ccf2ff;
+      -fx-border-color: #80ffff;
  }
  .userInfoPane{
-        -fx-background-color:#FFE4C4 ;
-        -fx-border-color: #E6E6FA;
+        -fx-background-color:#ccf2ff ;
+        -fx-border-color: #80ffff;
  }
  .settingBorderPane{
-        -fx-background-color: #FFE4C4;
-        -fx-border-color:#E6E6FA;
+        -fx-background-color:#cc99ff;
+        -fx-border-color:#80ffff;
  }
  .settingFacilitiesPane{
         -fx-background-color: #FFE4C4;
-       -fx-border-color: #E6E6FA;
+       -fx-border-color: #80ffff;
   }
 .userProfileButtonBoy{
            -fx-background-image: url("images/userSetting5.png");
@@ -212,30 +212,30 @@
                -fx-background-size: cover;
    }
 .tempLabel{
-      -fx-text-fill: black;
+      -fx-text-fill: #730099;
     -fx-font-family:  'Patrick Hand', cursive;
           -fx-font-size: 18px;
  }
   .aquariumSettingsLabel{
-        -fx-text-fill: black;
+        -fx-text-fill: #730099;
         -fx-font-family:  'Patrick Hand', cursive;
         -fx-font-size: 14px;
    }
    .timePickerAquarium{
         -jfx-default-color: #b85c00;
-        -fx-text-fill: black;
+        -fx-text-fill: #730099;
         -fx-font-family:  'Patrick Hand', cursive;
         -fx-font-size: 13px;
    }
      .timePicker{
           -jfx-default-color: #b85c00;
-          -fx-text-fill: black;
+          -fx-text-fill: #730099;
           -fx-font-family:  'Patrick Hand', cursive;
           -fx-font-size: 13px;
      }
 .tempValueLabel{
     -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-border-color: black;
 }
 .connectionInfo{
@@ -244,12 +244,12 @@
  }
 .contextPassiveTop{
     -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill: black;
+      -fx-text-fill: #730099;
       -fx-font-size: 35px;
  }
  .contextPassiveSub{
      -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size: 20px;
   }
 .contextActiveTop{
@@ -269,20 +269,20 @@
 .toggleButtonsMiddle{
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
-    -fx-text-fill:black;
+    -fx-text-fill:#730099;
     -fx-font-family:  'Patrick Hand', cursive;
     -fx-font-size: 18px;
 }
 .permissionButtonsMiddle{
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
-    -fx-text-fill:black;
+    -fx-text-fill:#730099;
     -fx-font-family:  'Patrick Hand', cursive;
     -fx-font-size: 15px;
 }
 .contextDetailPassive{
     -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill: black;
+      -fx-text-fill:#730099;
       -fx-border-color: black;
        -fx-font-size: 20px;
  }
@@ -325,8 +325,8 @@
      -fx-background-size: cover;
 }
 .changeUserInfoPane{
-      -fx-background-color: #DCDCDC;
-      -fx-border-color: #E6E6FA;
+      -fx-background-color: #cc99ff;
+      -fx-border-color: #80ffff;
 }
 .changeUserInfoSave{
     -fx-background-image: url("images/save5.png");
@@ -346,29 +346,29 @@
 }
 .changeUserInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #DB7093;
-     -jfx-focus-color:#DB7093;
+     -fx-text-fill: #730099;
+     -jfx-focus-color:#730099;
      -jfx-unfocus-color: black;
      -fx-font-size: 12px;
 }
 .addUserInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #DB7093;
-     -jfx-focus-color:#DB7093;
+     -fx-text-fill: #730099;
+     -jfx-focus-color:#730099;
      -jfx-unfocus-color: black;
      -fx-font-size: 14px;
 }
 .changeUserWeather{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #ffbb00;
-     -jfx-focus-color:darkGreen;
+     -fx-text-fill: #730099;
+     -jfx-focus-color:#730099;
      -jfx-unfocus-color: #ffe100;
      -fx-font-size: 20
 
 }
 .changeUserInforRadioButton{
     -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#DB7093;
+     -jfx-selected-color:#730099;
      -jfx-unselected-color: black;
      -fx-font-size: 12px;
 }
@@ -380,38 +380,38 @@
 }
 .changeUserInfoLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
   -fx-font-size:20px;
 }
 .changeUserSubInfoLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size:13px;
 }
 .settingsTopLabels{
 -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size:27px;
 }
 .settingMiddleLabels{
 -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size:18px;
 }
 .settingLittleLabels{
 -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size:14px;
 }
 .addUserLabel{
     -fx-font-family:  'Oswald', sans-serif;
-       -fx-text-fill: black;
+       -fx-text-fill: #730099;
        -fx-font-size:15px;
 }
 
 .userInfoTextField{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: black;
+     -fx-text-fill: #730099;
      -jfx-focus-color:#b85c00;
      -jfx-unfocus-color: black;
          -fx-font-size: 14px;
@@ -530,12 +530,12 @@
      -fx-background-size: cover;
 }
 .settingSubPane{
-        -fx-background-color: #DCDCDC;
-        -fx-border-color:#E6E6FA;
+        -fx-background-color: #ccf2ff;
+        -fx-border-color:#80ffff;
 }
 .settingWeatherPane{
-        -fx-background-color: #DCDCDC;
-        -fx-border-color:#E6E6FA;
+        -fx-background-color: #ccf2ff;
+        -fx-border-color:#80ffff;
 }
 .changeThemeSave{
     -fx-background-image: url("images/save5.png");
@@ -546,22 +546,22 @@
     -fx-background-size: cover;
 }
 .changeThemeSaveRadioButton{
-     -jfx-selected-color:#DB7093;
+     -jfx-selected-color:#730099;
      -jfx-unselected-color: black;
     -fx-font-family:  'Patrick Hand', cursive;
-    -fx-text-fill: black;
+    -fx-text-fill: #730099;
     -fx-font-size: 15px;
 }
 .addUserRadioButton{
-     -jfx-selected-color:#DB7093;
+     -jfx-selected-color:#730099;
      -jfx-unselected-color: black;
     -fx-font-family:  'Patrick Hand', cursive;
-          -fx-text-fill: black;
+          -fx-text-fill: #730099;
           -fx-font-size: 13px;
 }
 .userProfileInfoLabel{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #b85c00;
+     -fx-text-fill: #730099;
      -fx-font-size: 12px;
 }
 .userProfileButtonGirls{
@@ -578,17 +578,17 @@
 }
 .settingTopPaneLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #b85c00;
+     -fx-text-fill: #730099;
      -fx-font-size: 14px;
 }
 .topPaneLabels{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #7a7a52;
+     -fx-text-fill: #ffa31a;
      -fx-font-size: 16px;
 }
 .timeLabel{
     -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #7a7a52;
+     -fx-text-fill: #ffa31a;
      -fx-font-size: 20px;
 }
 .deutsch{
@@ -654,8 +654,8 @@
         -fx-background-size: cover;
 }
 .addRemoveUserPane{
-           -fx-background-color: #DCDCDC;
-           -fx-border-color: #E6E6FA;
+           -fx-background-color: #ccf2ff;
+           -fx-border-color: #80ffff;
 }
 .changeUserType{
         -fx-background-image: url("images/userType5.png");
@@ -687,7 +687,7 @@
 
 .tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
     -fx-font-family:  'Patrick Hand', cursive;
-    -fx-text-fill: black;
+    -fx-text-fill: #730099;
     -fx-border-color:#F0FFFF;
 }
 
@@ -710,7 +710,7 @@
 
 .tree-table-view .column-header .label {
     -fx-font-family:  'Patrick Hand', cursive;
-    -fx-text-fill : #DEB887;
+    -fx-text-fill : #730099;
     -fx-padding : 16 0 16 0 ;
 }
 
