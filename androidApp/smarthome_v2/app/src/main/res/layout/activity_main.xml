@@ -8,9 +8,9 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/login_email"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="300dp"
@@ -18,11 +18,13 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp"
-        android:autofillHints="@string/prompt_user"
-        android:background="@color/orange_one"
-        android:hint="@string/prompt_user"
+        android:autofillHints="Email"
+        android:background="@drawable/edittext_background"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:textColor="@color/orange_two"
+        android:textColorHint="@color/orange_two"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +33,7 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="40dp"
@@ -39,15 +41,17 @@
 
         android:layout_marginRight="30dp"
         android:autofillHints="@string/prompt_password"
-        android:background="@color/orange_one"
+        android:background="@drawable/edittext_background"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="@color/orange_two"
+        android:textColorHint="@color/orange_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
 
     <ImageView
@@ -91,12 +95,34 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/orange_two"
         android:text="@string/action_sign_in"
-        android:background="@color/orange_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/login_need_account"
+        android:layout_width="140dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/login_need"
+        android:background="@drawable/edittext_background"
+        android:textColor="@color/orange_two"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="910dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        tools:layout_editor_absoluteX="220dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

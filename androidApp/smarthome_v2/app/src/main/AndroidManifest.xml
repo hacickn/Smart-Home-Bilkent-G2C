@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GardenLight"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".GardenLight" />
         <activity android:name=".settings.AppSettings" />
         <activity android:name=".settings.HomeSettings" />
         <activity android:name=".settings.Settings" />
