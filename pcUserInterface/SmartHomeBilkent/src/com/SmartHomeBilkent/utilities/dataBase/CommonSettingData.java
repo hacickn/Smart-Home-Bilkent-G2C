@@ -26,7 +26,7 @@ public class CommonSettingData {
    private static final String TABLE_FISH_SPECIES = "FISHES";
    private static CommonSettingData instance = new CommonSettingData();
    private static ObservableList< CommonSetting > homeList;
-   private Connection connection;
+   private static Connection connection;
    private Statement statement;
 
    //constructor

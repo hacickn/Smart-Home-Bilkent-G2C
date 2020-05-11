@@ -16,20 +16,20 @@ public class Arduino {
    //properties
    private SerialPort comPort;
    private String portDescription;
-   private int baud_rate;
+   private int baudRate;
 
    //constructor
 
    /**
     * it is a CommonSettingData constructor
     * @param portDescription is a String input parameter
-    * @param baud_rate       is an int input parameter
+    * @param baudRate       is an int input parameter
     */
-   public Arduino( String portDescription, int baud_rate ) {
+   public Arduino( String portDescription, int baudRate ) {
       this.portDescription = portDescription;
-      this.baud_rate = baud_rate;
+      this.baudRate = baudRate;
       comPort = SerialPort.getCommPort( this.portDescription );
-      comPort.setBaudRate( this.baud_rate );
+      comPort.setBaudRate( this.baudRate );
    }
 
    //methods

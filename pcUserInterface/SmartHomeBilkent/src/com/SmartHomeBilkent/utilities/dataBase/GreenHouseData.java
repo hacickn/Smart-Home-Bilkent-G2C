@@ -30,7 +30,7 @@ public class GreenHouseData {
    private static ObservableList< Integer > temperaturesPerDay;
    private static ObservableList< Integer > humidityPerDay;
    private static ObservableList< GreenHouseValues > valuesList;
-   private Connection connection;
+   private static Connection connection;
    private DateTimeFormatter dateTimeFormatter;
    private String[] detailUsage;
 

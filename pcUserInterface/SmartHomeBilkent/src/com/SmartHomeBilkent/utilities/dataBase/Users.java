@@ -18,21 +18,21 @@ import java.sql.Statement;
 public class Users {
 
    //properties
-   public static final String TABLE_USERS = "USERS";
-   public static final String TABLE_NAME_COLUMN = "NAME";
-   public static final String TABLE_SURNAME_COLUMN = "SURNAME";
-   public static final String TABLE_BIRTHDAY_COLUMN = "BIRTHDAY";
-   public static final String TABLE_GENDER_COLUMN = "GENDER";
-   public static final String TABLE_USERNAME_COLUMN = "USERNAME";
-   public static final String TABLE_PASSWORD_COLUMN = "PASSWORD";
-   public static final String TABLE_USER_TYPE_COLUMN = "USERTYPE";
-   public static final String TABLE_PREFERRED_THEME_COLUMN = "PREFERREDTHEME";
-   public static final String TABLE_PREFERRED_LANGUAGE_COLUMN = "PREFERREDLANGUAGE";
-   public static final String TABLE_ENTER_COLUMN = "ENTER";
-   public static final String TABLE_TEXT_COLUMN = "TEXT";
-   public static final String TABLE_SOUND_COLUMN = "SOUND";
-   public static final String TABLE_LOCATION_COLUMN = "LOCATION";
-   private Connection connection;
+   private static final String TABLE_USERS = "USERS";
+   private static final String TABLE_NAME_COLUMN = "NAME";
+   private static final String TABLE_SURNAME_COLUMN = "SURNAME";
+   private static final String TABLE_BIRTHDAY_COLUMN = "BIRTHDAY";
+   private static final String TABLE_GENDER_COLUMN = "GENDER";
+   private static final String TABLE_USERNAME_COLUMN = "USERNAME";
+   private static final String TABLE_PASSWORD_COLUMN = "PASSWORD";
+   private static final String TABLE_USER_TYPE_COLUMN = "USERTYPE";
+   private static final String TABLE_PREFERRED_THEME_COLUMN = "PREFERREDTHEME";
+   private static final String TABLE_PREFERRED_LANGUAGE_COLUMN = "PREFERREDLANGUAGE";
+   private static final String TABLE_ENTER_COLUMN = "ENTER";
+   private static final String TABLE_TEXT_COLUMN = "TEXT";
+   private static final String TABLE_SOUND_COLUMN = "SOUND";
+   private static final String TABLE_LOCATION_COLUMN = "LOCATION";
+   private static Connection connection;
    private static Users instance = new Users();
    private static ObservableList< User > usersList;
 

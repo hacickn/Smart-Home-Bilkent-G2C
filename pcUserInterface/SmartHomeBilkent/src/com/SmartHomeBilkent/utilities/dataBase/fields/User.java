@@ -44,7 +44,11 @@ public class User extends RecursiveTreeObject< User > {
     * @param sound             is a String input parameter
     * @param location          is a String input parameter
     */
-   public User( String name, String surname, String birthday, String gender, String userName, String password, String userType, String preferredTheme, String preferredLanguage, String enter, String text, String sound, String location ) {
+   public User( String name, String surname, String birthday,
+                String gender, String userName, String password,
+                String userType, String preferredTheme,
+                String preferredLanguage, String enter, String text,
+                String sound, String location ) {
       this.name = new SimpleStringProperty( name );
       this.surname = new SimpleStringProperty( surname );
       this.birthday = new SimpleStringProperty( birthday );
