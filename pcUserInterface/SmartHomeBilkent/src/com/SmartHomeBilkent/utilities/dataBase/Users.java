@@ -62,7 +62,19 @@ public class Users {
          resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_USERS );
 
          while( resultSet.next() ) {
-            usersList.add( new User( resultSet.getString( TABLE_NAME_COLUMN ), resultSet.getString( TABLE_SURNAME_COLUMN ), resultSet.getString( TABLE_BIRTHDAY_COLUMN ), resultSet.getString( TABLE_GENDER_COLUMN ), resultSet.getString( TABLE_USERNAME_COLUMN ), resultSet.getString( TABLE_PASSWORD_COLUMN ), resultSet.getString( TABLE_USER_TYPE_COLUMN ), resultSet.getString( TABLE_PREFERRED_THEME_COLUMN ), resultSet.getString( TABLE_PREFERRED_LANGUAGE_COLUMN ), resultSet.getString( TABLE_ENTER_COLUMN ), resultSet.getString( TABLE_TEXT_COLUMN ), resultSet.getString( TABLE_SOUND_COLUMN ), resultSet.getString( TABLE_LOCATION_COLUMN ) ) );
+            usersList.add( new User( resultSet.getString( TABLE_NAME_COLUMN ),
+                  resultSet.getString( TABLE_SURNAME_COLUMN ),
+                  resultSet.getString( TABLE_BIRTHDAY_COLUMN ),
+                  resultSet.getString( TABLE_GENDER_COLUMN ),
+                  resultSet.getString( TABLE_USERNAME_COLUMN ),
+                  resultSet.getString( TABLE_PASSWORD_COLUMN ),
+                  resultSet.getString( TABLE_USER_TYPE_COLUMN ),
+                  resultSet.getString( TABLE_PREFERRED_THEME_COLUMN ),
+                  resultSet.getString( TABLE_PREFERRED_LANGUAGE_COLUMN ),
+                  resultSet.getString( TABLE_ENTER_COLUMN ),
+                  resultSet.getString( TABLE_TEXT_COLUMN ),
+                  resultSet.getString( TABLE_SOUND_COLUMN ),
+                  resultSet.getString( TABLE_LOCATION_COLUMN ) ) );
          }
          return usersList;
       } catch( SQLException e ) {
@@ -80,7 +92,20 @@ public class Users {
    public void addUser( User user ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( "INSERT INTO " + TABLE_USERS + " VALUES ('" + user.getName() + "', '" + user.getSurname() + "', '" + user.getBirthday() + "', '" + user.getGender() + "', '" + user.getUserName() + "', '" + user.getPassword() + "', '" + user.getUserType() + "', '" + user.getPreferredTheme() + "', '" + user.getPreferredLanguage() + "', '" + user.getEnter() + "', '" + user.getText() + "', '" + user.getSound() + "', '" + user.getLocation() + "')" );
+      statement.execute( "INSERT INTO " + TABLE_USERS +
+            " VALUES ('" + user.getName() + "', '" +
+            user.getSurname() + "', '" +
+            user.getBirthday() + "', '" +
+            user.getGender() + "', '" +
+            user.getUserName() + "', '" +
+            user.getPassword() + "', '" +
+            user.getUserType() + "', '" +
+            user.getPreferredTheme() + "', '" +
+            user.getPreferredLanguage() + "', '" +
+            user.getEnter() + "', '" +
+            user.getText() + "', '" +
+            user.getSound() + "', '" +
+            user.getLocation() + "')" );
       usersList.add( user );
    }
 
@@ -92,7 +117,9 @@ public class Users {
    public void removeUser( User user ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " DELETE FROM " + TABLE_USERS + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " DELETE FROM " + TABLE_USERS +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       usersList.remove( user );
    }
 
@@ -114,6 +141,13 @@ public class Users {
       return instance;
    }
 
+   /**
+    * It is a isUserNameAvailable that controls the given
+    * userName whether it is available or not
+    *
+    * @param userName is a String input parameter
+    * @return result as a boolean
+    */
    public boolean isUserNameAvailable( String userName ) {
       for( User user : usersList )
          if( user.getUserName().equals( userName ) )
@@ -134,7 +168,8 @@ public class Users {
 
       try {
          statement = connection.createStatement();
-         resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_USERS + " WHERE " + TABLE_USER_TYPE_COLUMN + "='" + "PARENT'" );
+         resultSet = statement.executeQuery( " SELECT * FROM " + TABLE_USERS +
+               " WHERE " + TABLE_USER_TYPE_COLUMN + "='" + "PARENT'" );
 
          while( resultSet.next() ) {
             number++;
@@ -156,7 +191,13 @@ public class Users {
    public void updateUserNormalInfo( User user, String name, String surname, String birthday, String gender ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_NAME_COLUMN + " = '" + name + "' , " + TABLE_SURNAME_COLUMN + " = '" + surname + "' , " + TABLE_BIRTHDAY_COLUMN + " = '" + birthday + "' , " + TABLE_GENDER_COLUMN + " = '" + gender + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_NAME_COLUMN + " = '" + name + "' , " +
+            TABLE_SURNAME_COLUMN + " = '" + surname + "' , " +
+            TABLE_BIRTHDAY_COLUMN + " = '" + birthday + "' , " +
+            TABLE_GENDER_COLUMN + " = '" + gender + "' " +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
 
       user.setName( name );
       user.setSurname( surname );
@@ -174,7 +215,12 @@ public class Users {
    public void updatePrivateInfo( User user, String username, String password ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_USERNAME_COLUMN + " = '" + username + "' , " + TABLE_PASSWORD_COLUMN + " = '" + password + "' " + " WHERE " + TABLE_NAME_COLUMN + "='" + user.getName() + "' AND " + TABLE_BIRTHDAY_COLUMN + "='" + user.getBirthday() + "' AND " + TABLE_SURNAME_COLUMN + "='" + user.getSurname() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_USERNAME_COLUMN + " = '" + username + "' , " +
+            TABLE_PASSWORD_COLUMN + " = '" + password + "' " + "" +
+            " WHERE " + TABLE_NAME_COLUMN + "='" + user.getName() +
+            "' AND " + TABLE_BIRTHDAY_COLUMN + "='" + user.getBirthday() +
+            "' AND " + TABLE_SURNAME_COLUMN + "='" + user.getSurname() + "'" );
       user.setUserName( username );
       user.setPassword( password );
    }
@@ -188,7 +234,10 @@ public class Users {
    public void updateUsersTheme( User user, String theme ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_PREFERRED_THEME_COLUMN + " = '" + theme + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_PREFERRED_THEME_COLUMN + " = '" + theme + "' " +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       user.setPreferredTheme( theme );
    }
 
@@ -201,7 +250,10 @@ public class Users {
    public void updateLanguage( User user, String language ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_PREFERRED_LANGUAGE_COLUMN + " = '" + language + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_PREFERRED_LANGUAGE_COLUMN + " = '" + language + "' " +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       user.setPreferredLanguage( language );
    }
 
@@ -214,7 +266,10 @@ public class Users {
    public void updateVolume( User user, String sound ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_SOUND_COLUMN + " = '" + sound + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_SOUND_COLUMN + " = '" + sound + "' " + " WHERE " +
+            TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " +
+            TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       user.setSound( sound );
    }
 
@@ -227,7 +282,10 @@ public class Users {
    public void updateText( User user, String text ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_TEXT_COLUMN + " = '" + text + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_TEXT_COLUMN + " = '" + text + "' " +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       user.setText( text );
    }
 
@@ -240,7 +298,10 @@ public class Users {
    public void updateLocation( User user, String location ) throws SQLException {
       Statement statement;
       statement = connection.createStatement();
-      statement.execute( " UPDATE " + TABLE_USERS + " SET " + TABLE_LOCATION_COLUMN + " = '" + location + "' " + " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() + "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
+      statement.execute( " UPDATE " + TABLE_USERS + " SET " +
+            TABLE_LOCATION_COLUMN + " = '" + location + "' " +
+            " WHERE " + TABLE_USERNAME_COLUMN + "='" + user.getUserName() +
+            "' AND " + TABLE_PASSWORD_COLUMN + "='" + user.getPassword() + "'" );
       user.setLocation( location );
    }
 }

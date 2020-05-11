@@ -14,6 +14,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FillTransition;
 import javafx.application.Platform;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +38,7 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
@@ -197,7 +199,9 @@ public class MainPanel implements Initializable {
     3.1)setting - application settings variables
     */
    @FXML
-   private Pane settingThemePane, settingLanguagePane, settingEmergencyPane, settingNotificationPane, settingConnectionPane;
+   private Pane settingThemePane, settingLanguagePane,
+         settingEmergencyPane, settingNotificationPane,
+         settingConnectionPane;
    @FXML
    private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
          smoothThemeRadioButton, cartoonThemeRadioButton,
@@ -297,7 +301,8 @@ public class MainPanel implements Initializable {
     */
    @FXML
    private Pane settingElecSettingPane, settingGasSettingPane,
-         settingAquSettingPane, settingGreenHouseSettingPane, settingWeatherSettingPane;
+         settingAquSettingPane, settingGreenHouseSettingPane,
+         settingWeatherSettingPane;
    @FXML
    private Label homeElecSettingTopLabel, homeGasSettingTopLabel,
          homeAquSettingTopLabel, homeGreenHouseSettingTopLabel,
@@ -460,6 +465,7 @@ public class MainPanel implements Initializable {
     * GUI and starts clock.
     */
    public void GUIUpdate() {
+      String flowAquariumSetting;
       ElectricityUsage.getInstance().getTable( electricityUsageTable );
       GasUsage.getInstance().getTable( gasUsageTable );
       GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
@@ -474,13 +480,18 @@ public class MainPanel implements Initializable {
 
       for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
-      String flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
+
+      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
+      feedingTime.setValue( LocalTime.of( Integer.parseInt(
+            flowAquariumSetting.substring( 0, 2 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      waterExchangeTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
+      waterExchangeTime.setValue( LocalTime.of( Integer.parseInt(
+            flowAquariumSetting.substring( 6, 8 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
-      waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      airMotorStartTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
+      waterExchangeDay.getSelectionModel().select( Integer.parseInt(
+            flowAquariumSetting.substring( 13, 14 ) ) - 1 );
+      airMotorStartTime.setValue( LocalTime.of( Integer.parseInt(
+            flowAquariumSetting.substring( 14, 16 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
       airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
@@ -530,7 +541,8 @@ public class MainPanel implements Initializable {
          informationTime.setText( weatherForecast.getLocalTime() );
          settingWeatherLocationTextField.setText( loginUser.getLocation() );
          backgroundSetup( weatherForecast.getWeather() );
-         menuWeatherValue.setText( weatherForecast.getWeather() + " " + weatherForecast.getTemperature() + "°C" );
+         menuWeatherValue.setText( weatherForecast.getWeather() +
+               " " + weatherForecast.getTemperature() + "°C" );
       } catch( IOException e ) {
          settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
          settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
@@ -544,7 +556,8 @@ public class MainPanel implements Initializable {
 
       Thread thread = new Thread( () -> {
          while( !exit ) {
-            Platform.runLater( () -> timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
+            Platform.runLater( () ->
+                  timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
                   + "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
             try {
                Thread.sleep( 1000 );
@@ -574,7 +587,9 @@ public class MainPanel implements Initializable {
       nameTextField.setText( user.getName() );
       surnameTextField.setText( user.getSurname() );
 
-      if( user.getGender().equals( "MALE" ) || user.getGender().equals( "ERKEK" ) || user.getGender().equals( "MÄNNLICH" ) ) {
+      if( user.getGender().equals( "MALE" )
+            || user.getGender().equals( "ERKEK" )
+            || user.getGender().equals( "MÄNNLICH" ) ) {
          maleRadioOption.setSelected( true );
          femaleRadioOption.setSelected( false );
          userInfoBoyImage.setVisible( true );
@@ -623,19 +638,18 @@ public class MainPanel implements Initializable {
     * @param check is a boolean input parameter
     */
    void sound( String file, boolean check ) {
-      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" ) + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
+      if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" )
+            + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
          audioClip.stop();
          audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
+               bundle.getString( "pathLang" ) + file + bundle.getString( "mp3Lang" ) ).toString() );
          audioClip.setRate( 1 );
          audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
          audioClip.play();
       } else {
          audioClip.stop();
          audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) +
-               file + bundle.getString( "mp3Lang" ) ).toString() );
+               bundle.getString( "pathLang" ) + file + bundle.getString( "mp3Lang" ) ).toString() );
       }
    }
 
@@ -658,7 +672,8 @@ public class MainPanel implements Initializable {
    void createEmergencyAnimation() {
       rectangle = new Rectangle( 0, 0, 800, 800 );
       rectangle.setDisable( true );
-      fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle, Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
+      fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle,
+            Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
       fillTransition.setCycleCount( 20 );
       fillTransition.setAutoReverse( true );
       commonBorderPane.getChildren().add( rectangle );
@@ -669,13 +684,20 @@ public class MainPanel implements Initializable {
     * It is a updateUsersTable that is added all users to users table according to database
     */
    void updateUsersTable() {
-      settingUserTableName.setCellValueFactory( param -> param.getValue().getValue().nameProperty() );
-      settingUserTableSurname.setCellValueFactory( param -> param.getValue().getValue().surnameProperty() );
-      settingUserTableBirthday.setCellValueFactory( param -> param.getValue().getValue().birthdayProperty() );
-      settingUserTableGender.setCellValueFactory( param -> param.getValue().getValue().genderProperty() );
-      settingUserTableUserName.setCellValueFactory( param -> param.getValue().getValue().userNameProperty() );
-      settingUserTableTheme.setCellValueFactory( param -> param.getValue().getValue().preferredThemeProperty() );
-      settingUserTableLanguage.setCellValueFactory( param -> param.getValue().getValue().preferredLanguageProperty() );
+      settingUserTableName.setCellValueFactory( param ->
+            param.getValue().getValue().nameProperty() );
+      settingUserTableSurname.setCellValueFactory( param ->
+            param.getValue().getValue().surnameProperty() );
+      settingUserTableBirthday.setCellValueFactory( param ->
+            param.getValue().getValue().birthdayProperty() );
+      settingUserTableGender.setCellValueFactory( param ->
+            param.getValue().getValue().genderProperty() );
+      settingUserTableUserName.setCellValueFactory( param ->
+            param.getValue().getValue().userNameProperty() );
+      settingUserTableTheme.setCellValueFactory( param ->
+            param.getValue().getValue().preferredThemeProperty() );
+      settingUserTableLanguage.setCellValueFactory( param ->
+            param.getValue().getValue().preferredLanguageProperty() );
       settingUserTable.setRoot( new RecursiveTreeItem<>( Users.getInstance().getUserList()
             , RecursiveTreeObject::getChildren ) );
       settingUserTable.setShowRoot( false );
@@ -717,19 +739,24 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a commonButtonsOnMovement that is triggered when there is movement on these buttons
+    * It is a commonButtonsOnMovement that is
+    * triggered when there is movement on these buttons
     *
-    * @param event is a MouseEvent input parameter that is source of mouse movements
+    * @param event is a MouseEvent input parameter
+    *              that is source of mouse movements
     */
    @FXML
    void commonButtonsOnMovement( MouseEvent event ) {
-      if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
+      if( event.getSource() == userProfileButton
+            || event.getSource() == userProfileButtonActive ) {
          menuUserProfileLabel.setVisible( textCheck );
          sound( "userProfileLang", soundCheck );
-      } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
+      } else if( event.getSource() == menuButton
+            || event.getSource() == menuButtonActive ) {
          menuMenuLabel.setVisible( textCheck );
          sound( "menuLang", soundCheck );
-      } else if( event.getSource() == settingsButton || event.getSource() == settingsButtonActive ) {
+      } else if( event.getSource() == settingsButton
+            || event.getSource() == settingsButtonActive ) {
          menuSettingLabel.setVisible( textCheck );
          sound( "settingLang", soundCheck );
       } else if( event.getSource() == logoutButton ) {
@@ -738,17 +765,22 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a commonButtonsOnMovement that is triggered when mouse exits from these buttons
+    * It is a commonButtonsOnMovement that is
+    * triggered when mouse exits from these buttons
     *
-    * @param event is a MouseEvent input parameter that is source of mouse movements
+    * @param event is a MouseEvent input parameter
+    *              that is source of mouse movements
     */
    @FXML
    void commonButtonsOnExit( MouseEvent event ) {
-      if( event.getSource() == userProfileButton || event.getSource() == userProfileButtonActive ) {
+      if( event.getSource() == userProfileButton
+            || event.getSource() == userProfileButtonActive ) {
          menuUserProfileLabel.setVisible( false );
-      } else if( event.getSource() == menuButton || event.getSource() == menuButtonActive ) {
+      } else if( event.getSource() == menuButton
+            || event.getSource() == menuButtonActive ) {
          menuMenuLabel.setVisible( false );
-      } else if( event.getSource() == settingsButton || event.getSource() == settingsButtonActive ) {
+      } else if( event.getSource() == settingsButton
+            || event.getSource() == settingsButtonActive ) {
          menuSettingLabel.setVisible( false );
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( false );
@@ -757,7 +789,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a openMenuPane method that open the menu pane with animation in GUI
+    * It is a openMenuPane method that open the menu
+    * pane with animation in GUI
     */
    void openMenuPane() {
       menuButtonActive.setVisible( true );
@@ -773,7 +806,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a closeMenuPane that closes menu pane with animation in GUI
+    * It is a closeMenuPane that closes menu pane
+    * with animation in GUI
     */
    void closeMenuPane() {
       if( menuButtonActive.isVisible() ) {
@@ -787,7 +821,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a openSettingsPane that opens setting pane with animation in GUI
+    * It is a openSettingsPane that opens setting pane
+    * with animation in GUI
     */
    void openSettingsPane() {
       settingsButtonActive.setVisible( true );
@@ -799,7 +834,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a closeSettingsPane that closes setting pane with animation in GUI
+    * It is a closeSettingsPane that closes setting pane
+    * with animation in GUI
     */
    void closeSettingsPane() {
       if( settingsButtonActive.isVisible() ) {
@@ -814,7 +850,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a openUserProfilePane that opens user profile pane with animation in GUI
+    * It is a openUserProfilePane that opens user profile
+    * pane with animation in GUI
     */
    void openUserProfilePane() {
       userProfileButtonActive.setVisible( true );
@@ -825,7 +862,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is a closeUserProfilePane that closes user profile pane with animation in GUI
+    * It is a closeUserProfilePane that closes user profile
+    * pane with animation in GUI
     */
    void closeUserProfilePane() {
       if( userProfileButtonActive.isVisible() ) {
@@ -841,9 +879,11 @@ public class MainPanel implements Initializable {
     */
 
    /**
-    * It is a menuButtonsOnMovement that is run when there is movement on one of these buttons
+    * It is a menuButtonsOnMovement that is run when there is
+    * movement on one of these buttons
     *
-    * @param event is a MouseEvent input parameter that is source of the movement
+    * @param event is a MouseEvent input parameter that is
+    *              source of the movement
     */
    @FXML
    void menuButtonsOnMovement( MouseEvent event ) {
@@ -861,13 +901,17 @@ public class MainPanel implements Initializable {
          sound( "aquiarumLang", soundCheck );
       } else if( event.getSource() == menuGreenHouseButton ) {
          sound( "greenHouseLang", soundCheck );
-      } else if( event.getSource() == elecSubMenuButtonPassive || event.getSource() == elecSubMenuButtonActive ) {
+      } else if( event.getSource() == elecSubMenuButtonPassive
+            || event.getSource() == elecSubMenuButtonActive ) {
          sound( "elecSettingsLang", soundCheck );
-      } else if( event.getSource() == gasSubMenuButtonPassive || event.getSource() == gasSubMenuButtonActive ) {
+      } else if( event.getSource() == gasSubMenuButtonPassive
+            || event.getSource() == gasSubMenuButtonActive ) {
          sound( "gasSettingsLang", soundCheck );
-      } else if( event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
+      } else if( event.getSource() == aquariumSubMenuButtonPassive
+            || event.getSource() == aquariumSubMenuButtonActive ) {
          sound( "aquSettingsLang", soundCheck );
-      } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == greenhouseSubMenuButtonActive ) {
+      } else if( event.getSource() == greenhouseSubMenuButtonPassive
+            || event.getSource() == greenhouseSubMenuButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
       } else if( event.getSource() == menuWaterButton ) {
          sound( "waterLang", soundCheck );
@@ -884,20 +928,23 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * It is goToSettingFromMenuView method that run when clicked one of these buttons
+    * It is goToSettingFromMenuView method that run when
+    * clicked one of these buttons
     * and open this button's setting pane in GUI with animation
     *
     * @param event is an ActionEvent input parameter that is source of the action
     */
    @FXML
    void goToSettingFromMenuView( ActionEvent event ) {
-      if( event.getSource() == elecSubMenuButtonPassive || event.getSource() == elecSubMenuButtonActive ) {
+      if( event.getSource() == elecSubMenuButtonPassive
+            || event.getSource() == elecSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          openHomeSettingPane();
          settingElecSettingPane.setDisable( false );
          homeSettingElecButtonActive.setVisible( true );
-      } else if( event.getSource() == gasSubMenuButtonPassive || event.getSource() == gasSubMenuButtonActive ) {
+      } else if( event.getSource() == gasSubMenuButtonPassive
+            || event.getSource() == gasSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -905,7 +952,8 @@ public class MainPanel implements Initializable {
          settingGasSettingPane.setDisable( false );
          new FadeInUp(settingGasSettingPane).play();
          homeSettingGasButtonActive.setVisible( true );
-      } else if( event.getSource() == aquariumSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
+      } else if( event.getSource() == aquariumSubMenuButtonPassive
+            || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -913,7 +961,8 @@ public class MainPanel implements Initializable {
          settingAquSettingPane.setDisable( false );
          new FadeInUp(settingAquSettingPane).play();
          homeSettingAquButtonActive.setVisible( true );
-      } else if( event.getSource() == greenhouseSubMenuButtonPassive || event.getSource() == aquariumSubMenuButtonActive ) {
+      } else if( event.getSource() == greenhouseSubMenuButtonPassive
+            || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
@@ -1231,7 +1280,8 @@ public class MainPanel implements Initializable {
     * It is a openGas class that regulate GUI and send message to
     * embedded system according to boolean input parameter
     *
-    * @param control is a boolean input parameter that controls the whether It should open or close
+    * @param control is a boolean input parameter that
+    *                controls the whether It should open or close
     */
    public void openGas( boolean control ) {
       gasSubPaneLabelActive.setVisible( control );
@@ -1246,7 +1296,8 @@ public class MainPanel implements Initializable {
     * It is a openAquarium class that regulate GUI and send message to
     * embedded system according to boolean input parameter
     *
-    * @param control is a boolean input parameter that controls the whether It should open or close
+    * @param control is a boolean input parameter that
+    *                controls the whether It should open or close
     */
    public void openAquarium( boolean control ) {
       aquariumSubPaneLabelActive.setVisible( control );
@@ -1260,7 +1311,8 @@ public class MainPanel implements Initializable {
     * It is a openWater class that regulate GUI and send message to
     * embedded system according to boolean input parameter
     *
-    * @param control is a boolean input parameter that controls the whether It should open or close
+    * @param control is a boolean input parameter that
+    *                controls the whether It should open or close
     */
    public void openWater( boolean control ) {
       waterSubPaneLabelActive.setVisible( control );
@@ -1273,7 +1325,8 @@ public class MainPanel implements Initializable {
     * It is a openGardenLight class that regulate GUI and send message to
     * embedded system according to boolean input parameter
     *
-    * @param control is a boolean input parameter that controls the whether It should open or close
+    * @param control is a boolean input parameter that
+    *                controls the whether It should open or close
     */
    public void openGardenLight( boolean control ) {
       gardenLightSubPaneLabelActive.setVisible( control );
@@ -1315,7 +1368,9 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == saveUserNormalInfo ) {
          String gender;
 
-         if( nameTextField.getText().isEmpty() || surnameTextField.getText().isEmpty() || birthdayDateField.getValue() == null ) {
+         if( nameTextField.getText().isEmpty()
+               || surnameTextField.getText().isEmpty()
+               || birthdayDateField.getValue() == null ) {
             normalInfoWarning.setVisible( true );
          } else {
 
@@ -1325,17 +1380,21 @@ public class MainPanel implements Initializable {
                gender = "FEMALE";
             }
 
-            Users.getInstance().updateUserNormalInfo( loginUser, nameTextField.getText()
-                  , surnameTextField.getText(), birthdayDateField.getValue().format( DateTimeFormatter.ofPattern( "dd.MM.yyyy" ) )
-                  , gender );
+            Users.getInstance().updateUserNormalInfo( loginUser,
+                  nameTextField.getText(),
+                  surnameTextField.getText(),
+                  birthdayDateField.getValue().format( DateTimeFormatter.ofPattern( "dd.MM.yyyy" ) ),
+                  gender );
             userPreferenceUpdate( loginUser );
             updateUsersTable();
             toGoBackUserProfile();
          }
       } else if( event.getSource() == saveUserPrivateInfo ) {
 
-         if( userNameTextField.getText().length() > 0 && currentPasswordField.getText().length() > 0 && newPasswordTextField.getText().length() > 0 && verifyNewPasswordField.getText().length() > 0 ) {
-
+         if( userNameTextField.getText().length() > 0
+               && currentPasswordField.getText().length() > 0
+               && newPasswordTextField.getText().length() > 0
+               && verifyNewPasswordField.getText().length() > 0 ) {
             if( !newPasswordTextField.getText().equals( verifyNewPasswordField.getText() ) ) {
                privateInfoWarning.setVisible( true );
                privateInfoWarning.setText( bundle.getString( "passwordConflictLang" ) );
@@ -1344,7 +1403,9 @@ public class MainPanel implements Initializable {
                privateInfoWarning.setText( bundle.getString( "passwordMistakeLang" ) );
             } else {
                privateInfoWarning.setVisible( false );
-               Users.getInstance().updatePrivateInfo( loginUser, userNameTextField.getText(), newPasswordTextField.getText() );
+               Users.getInstance().updatePrivateInfo( loginUser,
+                     userNameTextField.getText(),
+                     newPasswordTextField.getText() );
                userPreferenceUpdate( loginUser );
                toGoBackUserProfile();
                updateUsersTable();
@@ -1404,9 +1465,11 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == changeUserPrivateInfoButton ) {
          changeUserPrivateInfoLabel.setVisible( textCheck );
          sound( "changeUserInfoLang", soundCheck );
-      } else if( event.getSource() == saveUserNormalInfo || event.getSource() == saveUserPrivateInfo ) {
+      } else if( event.getSource() == saveUserNormalInfo
+            || event.getSource() == saveUserPrivateInfo ) {
          sound( "saveChangesLang", soundCheck );
-      } else if( event.getSource() == backToUserProfileFromNormalInfo || event.getSource() == backToUserProfileFromPrivateInfo ) {
+      } else if( event.getSource() == backToUserProfileFromNormalInfo
+            || event.getSource() == backToUserProfileFromPrivateInfo ) {
          sound( "goBackLang", soundCheck );
       }
    }
@@ -1462,16 +1525,20 @@ public class MainPanel implements Initializable {
    //all settings buttons ( app settings(theme-language-emergency-notification-connection), users settings( add-remove user), home settings())
    @FXML
    void settingsFacilitiesButtonsMov( MouseEvent event ) {
-      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive ) {
+      if( event.getSource() == applicationSettingButton
+            || event.getSource() == applicationSettingButtonActive ) {
          applicationSettingButtonLabel.setVisible( textCheck );
          sound( "applicationSettingLang", soundCheck );
-      } else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive ) {
+      } else if( event.getSource() == settingsUsersSettingButton
+            || event.getSource() == settingsUsersSettingButtonActive ) {
          usersSettingButtonLabel.setVisible( textCheck );
          sound( "usersSettingLang", soundCheck );
-      } else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive ) {
+      } else if( event.getSource() == modsSettingButton
+            || event.getSource() == modsSettingButtonActive ) {
          modsSettingButtonLabel.setVisible( textCheck );
          sound( "modsSettingLang", soundCheck );
-      } else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive ) {
+      } else if( event.getSource() == homeSettingButton
+            || event.getSource() == homeSettingButtonActive ) {
          homeSettingButtonLabel.setVisible( textCheck );
          sound( "homeLang", soundCheck );
       }
@@ -1479,13 +1546,17 @@ public class MainPanel implements Initializable {
 
    @FXML
    void settingsFacilitiesButtonsMovEx( MouseEvent event ) {
-      if( event.getSource() == applicationSettingButton || event.getSource() == applicationSettingButtonActive )
+      if( event.getSource() == applicationSettingButton
+            || event.getSource() == applicationSettingButtonActive )
          applicationSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == settingsUsersSettingButton || event.getSource() == settingsUsersSettingButtonActive )
+      else if( event.getSource() == settingsUsersSettingButton
+            || event.getSource() == settingsUsersSettingButtonActive )
          usersSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == modsSettingButton || event.getSource() == modsSettingButtonActive )
+      else if( event.getSource() == modsSettingButton
+               || event.getSource() == modsSettingButtonActive )
          modsSettingButtonLabel.setVisible( false );
-      else if( event.getSource() == homeSettingButton || event.getSource() == homeSettingButtonActive )
+      else if( event.getSource() == homeSettingButton
+                  || event.getSource() == homeSettingButtonActive )
          homeSettingButtonLabel.setVisible( false );
       sound( "gasLang", false );
    }
@@ -1527,7 +1598,8 @@ public class MainPanel implements Initializable {
                public void serialEvent( SerialPortEvent serialPortEvent ) {
                   if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
                      return;
-                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING, 0, 0 );
+                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,
+                        0, 0 );
                   StringBuilder out = new StringBuilder();
                   Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
 
@@ -1537,8 +1609,10 @@ public class MainPanel implements Initializable {
                   } catch( Exception e ) {
                      e.printStackTrace();
                   }
-                  out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
-                  out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
+                  out = new StringBuilder( out.toString().replaceAll( "\\s",
+                        "" ) );
+                  out = new StringBuilder( out.toString().replace( "\n",
+                        "" ).replace( "\r", "" ) );
 
                   if( out.length() > 0 ) {
                      System.out.println( out );
@@ -1769,7 +1843,8 @@ public class MainPanel implements Initializable {
       unSelectAllTheme();
       ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
       changeTheme( ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
-      Users.getInstance().updateUsersTheme( loginUser, ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
+      Users.getInstance().updateUsersTheme( loginUser,
+            ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
    }
 
    public void unSelectAllTheme() {
@@ -1791,63 +1866,99 @@ public class MainPanel implements Initializable {
       String css;
       unSelectAllTheme();
 
-      if( themeName.equals( "light" ) || themeName.equals( "aydınlık" )
-            || themeName.equals( "licht" ) || themeName.equals( "lıght" )
-            || themeName.equals( "lıcht" ) || themeName.equals( "aydinlik" ) ) {
+      if( themeName.equals( "light" )
+            || themeName.equals( "aydınlık" )
+            || themeName.equals( "licht" )
+            || themeName.equals( "lıght" )
+            || themeName.equals( "lıcht" )
+            || themeName.equals( "aydinlik" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightTheme.png" ) ) );
-      } else if( themeName.equals( "dark" ) || themeName.equals( "gece" ) || themeName.equals( "dunkel" ) ) {
+
+      } else if( themeName.equals( "dark" )
+            || themeName.equals( "gece" )
+            || themeName.equals( "dunkel" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
          darkThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/darkTheme.png" ) ) );
-      } else if( themeName.equals( "smooth" ) || themeName.equals( "pürüzsüz" )
-            || themeName.equals( "puruzsuz" ) || themeName.equals( "glatt" ) ) {
+
+      } else if( themeName.equals( "smooth" )
+            || themeName.equals( "pürüzsüz" )
+            || themeName.equals( "puruzsuz" )
+            || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smoothTheme.png" ) ) );
-      } else if( themeName.equals( "cartoon" ) || themeName.equals( "çizgi film" )
-            || themeName.equals( "karikatur" ) || themeName.equals( "karıkatur" )
+
+      } else if( themeName.equals( "cartoon" )
+            || themeName.equals( "çizgi film" )
+            || themeName.equals( "karikatur" )
+            || themeName.equals( "karıkatur" )
             || themeName.equals( "çızgı fılm" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
          cartoonThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cartoonTheme.png" ) ) );
-      } else if( themeName.equals( "forest" ) || themeName.equals( "orman" ) || themeName.equals( "wald" ) ) {
+
+      } else if( themeName.equals( "forest" )
+            || themeName.equals( "orman" )
+            || themeName.equals( "wald" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_forest_theme.css" ).toExternalForm();
          forestThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
-      } else if( themeName.equals( "uzay" ) || themeName.equals( "space" ) || themeName.equals( "platz" ) ) {
+
+      } else if( themeName.equals( "uzay" )
+            || themeName.equals( "space" )
+            || themeName.equals( "platz" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
          spaceThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
+
       } else if( themeName.equals( "neon" )  ) {
          css = this.getClass().getResource( "styleSheets/main_menu_neon_theme.css" ).toExternalForm();
          neonThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/neonTheme.png" ) ) );
-      } else if( themeName.equals( "interstellar" ) || themeName.equals( "ınterstellar" )
-            || themeName.equals( "yıldızlararası" ) || themeName.equals( "yildizlararasi" ) ) {
+
+      } else if( themeName.equals( "interstellar" )
+            || themeName.equals( "ınterstellar" )
+            || themeName.equals( "yıldızlararası" )
+            || themeName.equals( "yildizlararasi" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_interstellar_theme.css" ).toExternalForm();
          interstellarThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) );
-      } else if( themeName.equals( "pyramid" ) || themeName.equals( "pyramıd" ) || themeName.equals( "pyramide" ) || themeName.equals( "pyramıde" )
-            || themeName.equals( "piramit" ) || themeName.equals( "pıramıt" )) {
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) )
+         ;
+      } else if( themeName.equals( "pyramid" )
+            || themeName.equals( "pyramıd" )
+            || themeName.equals( "pyramide" )
+            || themeName.equals( "pyramıde" )
+            || themeName.equals( "piramit" )
+            || themeName.equals( "pıramıt" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
          pyramidThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/pyramidTheme.png" ) ) );
+
       } else if( themeName.equals( "cyberpunk" )  ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cyberpunk_theme.css" ).toExternalForm();
          cyberpunkThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cyberpunkTheme.png" ) ) );
-      } else if( themeName.equals( "abstract" ) || themeName.equals( "abstrakt" ) || themeName.equals( "soyut" ) ) {
+
+      } else if( themeName.equals( "abstract" )
+            || themeName.equals( "abstrakt" )
+            || themeName.equals( "soyut" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_abstract_theme.css" ).toExternalForm();
          abstractThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/abstractTheme.png" ) ) );
-      } else if( themeName.equals( "smart city" ) || themeName.equals( "smart cıty" )
-            || themeName.equals( "intelligente stadt" ) || themeName.equals( "ıntellıgente stadt" )
-            || themeName.equals( "akıllı sehır" ) || themeName.equals( "akilli sehir" )) {
+
+      } else if( themeName.equals( "smart city" )
+            || themeName.equals( "smart cıty" )
+            || themeName.equals( "intelligente stadt" )
+            || themeName.equals( "ıntellıgente stadt" )
+            || themeName.equals( "akıllı sehır" )
+            || themeName.equals( "akilli sehir" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
          smartCityThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smartCityTheme.png" ) ) );
+
       } else
          css = "";
 
@@ -2353,25 +2464,27 @@ public class MainPanel implements Initializable {
             removeUserHideWarning.setText( bundle.getString( "removePasswordLang" ) );
             removeUserHideWarning.setVisible( true );
             sound( "removePasswordLang", soundCheck );
-         } else if( loginUser.getUserType().equals( "PARENT" ) &&
-               removeUserTextField.getText().equals( loginUser.getPassword() ) &&
-               settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "CHILD" ) ) {
+         } else if( loginUser.getUserType().equals( "PARENT" )
+               && removeUserTextField.getText().equals( loginUser.getPassword() )
+               && settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "CHILD" ) ) {
             Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
             deleteUserPane.setDisable( true );
             new FadeOut( deleteUserPane ).play();
             removeUserTextField.setText( "" );
             removeUserHideWarning.setVisible( false );
+
             if( !( Users.getInstance().getParentNumber() > 1 ) ) {
                usersSettingSubPaneRemoveUser.setDisable( true );
             }
+
          } else if( removeUserTextField.getText().equals(
-               settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() ) &&
-               settingUserTable.getSelectionModel().getSelectedItem().getValue() == loginUser ) {
+               settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() )
+               && settingUserTable.getSelectionModel().getSelectedItem().getValue() == loginUser ) {
+
             try {
                Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
                removeUserTextField.setText( "" );
                removeUserHideWarning.setVisible( false );
-
                Users.getInstance().getUserList().get( Users.getInstance().getUserList().indexOf( loginUser ) ).setEnter( "false" );
                FXMLLoader load = new FXMLLoader( getClass().getResource( "view/loginPanel.fxml" ) );
                Parent root = load.load();
@@ -2382,18 +2495,22 @@ public class MainPanel implements Initializable {
                stage.setResizable( false );
                stage.show();
                commonBorderPane.getScene().getWindow().hide();
+
             } catch( Exception e ) {
                e.printStackTrace();
             }
+
          } else if( removeUserTextField.getText().equals( settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() ) ) {
             Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
             deleteUserPane.setDisable( true );
             new FadeOut( deleteUserPane ).play();
             removeUserTextField.setText( "" );
             removeUserHideWarning.setVisible( false );
+
             if( !( Users.getInstance().getParentNumber() > 1 ) ) {
                usersSettingSubPaneRemoveUser.setDisable( true );
             }
+
          } else {
             removeUserHideWarning.setText( bundle.getString( "passwordMistakeLang" ) );
             removeUserHideWarning.setVisible( true );
@@ -2495,11 +2612,13 @@ public class MainPanel implements Initializable {
       }
 
       audioClip.stop();
-      audioClip = new AudioClip( this.getClass().getResource( "music/" + bundle.getString( "pathLang" ) + "volumeTryLang" + bundle.getString( "mp3Lang" ) ).toString() );
+      audioClip = new AudioClip( this.getClass().getResource( "music/"
+            + bundle.getString( "pathLang" ) + "volumeTryLang" + bundle.getString( "mp3Lang" ) ).toString() );
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 500 );
 
-      modsSound = loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ) + volume;
+      modsSound = loginUser.getSound().substring( 0,
+            loginUser.getSound().length() - 3 ) + volume;
       Users.getInstance().updateVolume( loginUser, modsSound );
       userPreferenceUpdate( loginUser );
       updateUsersTable();
@@ -2691,14 +2810,19 @@ public class MainPanel implements Initializable {
    public void backgroundSetup( String weather ) {
       if( weather.equalsIgnoreCase( "Cloudy" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Partly cloudy" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/partlyCloudy1.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Sunny" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/sunny1.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Snowy" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/snowy.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Patches Of Fog" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/patchesOfFog.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Light Rain Shower" )
             || weather.equalsIgnoreCase( "Patchy rain possible" )
             || weather.equalsIgnoreCase( "rain" )
@@ -2710,21 +2834,28 @@ public class MainPanel implements Initializable {
             || weather.equalsIgnoreCase( "Light Rain Shower, Rain Shower" )
             || weather.equalsIgnoreCase( "Heavy rain" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRain.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Mist" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/mist.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Light Rain With Thunderstorm, Rain With Thunderstorm" )
             || weather.equalsIgnoreCase( "Light Rain With Thunderstorm" )
             || weather.equalsIgnoreCase( "Rain With Thunderstorm" )
             || weather.equalsIgnoreCase( "Thunderstorm In Vicinity" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/lightRainWithThunderStorm.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Moderate or heavy rain shower" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/heavyRain.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Clear" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Clear.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Blowing Widespread Dust" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/dust.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "Thundery outbreaks possible" ) || weather.equalsIgnoreCase( "Overcast" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/Thundery.jpg" ) ) );
+
       else if( weather.equalsIgnoreCase( "weather" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/weather.jpg" ) ) );
 
