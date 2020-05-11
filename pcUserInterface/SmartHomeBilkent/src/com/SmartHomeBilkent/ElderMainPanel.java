@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent;
 
+import com.SmartHomeBilkent.home.Home;
 import com.SmartHomeBilkent.utilities.dataBase.Users;
 import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.jfoenix.controls.*;
@@ -105,6 +106,12 @@ public class ElderMainPanel implements Initializable {
    private JFXButton electricityPanelElderSettingsButton;
 
    @FXML
+   private JFXProgressBar electricityPanelElderProgressBar1;
+
+   @FXML
+   private JFXProgressBar electricityPanelElderProgressBar2;
+
+   @FXML
    private Label electricityLabelElder;
 
    @FXML
@@ -133,6 +140,12 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private ImageView lightsPanelElderCloseButtonActive;
+
+   @FXML
+   private JFXProgressBar lightsPanelElderProgressBar2;
+
+   @FXML
+   private JFXProgressBar lightsPanelElderProgressBar1;
 
    @FXML
    private Label lightsLabelElder;
@@ -238,6 +251,9 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private Label settingsBackButtonSubLabel;
+
+   @FXML
+   private Label houseMenuFirstLabelElder1;
 
    @FXML
    private Pane applicationElderPanel;
@@ -474,6 +490,12 @@ public class ElderMainPanel implements Initializable {
    private JFXButton aquariumPanelElderSettingsButton;
 
    @FXML
+   private JFXProgressBar aquariumPanelElderProgressBar1;
+
+   @FXML
+   private JFXProgressBar aquariumPanelElderProgressBar2;
+
+   @FXML
    private Label aquariumLabelElder;
 
    @FXML
@@ -538,6 +560,12 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private JFXButton gasPanelElderSettingsButton;
+
+   @FXML
+   private JFXProgressBar gasPanelElderProgressBar1;
+
+   @FXML
+   private JFXProgressBar gasPanelElderProgressBar2;
 
    @FXML
    private Label gasLabelElder;
@@ -730,6 +758,10 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private Label greenhouseTemperatureVariable;
+
+   private boolean isArduinoConnect;
+
+   private Home home;
 
 
    public User loginUser;
@@ -1051,6 +1083,7 @@ public class ElderMainPanel implements Initializable {
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       userTextFieldController( getLoginUser( ) );
+      isArduinoConnect = false;
       turkishElderButtonSubLabelActive.setVisible( false );
       englishElderButtonSubLabelActive.setVisible( true );
       languageStatusElder = false;
@@ -2030,6 +2063,78 @@ public class ElderMainPanel implements Initializable {
          turkishElderButtonSubLabelPassive.setText( "TURKISH" );
          turkishElderButtonSubLabelActive.setText( "TURKISH" );
       }
+
    }
    // changeLanguageElder END -MS 06.05.2020-
+
+   // house settings controller -MS 11.05.2020- from mainPanel.java
+   @FXML
+   void houseSettingsController ( ActionEvent event )
+   {
+      if ( event.getSource() == electricityPanelElderSwitch )
+      {
+         controlElectricity( electricityPanelElderSwitch.isSelected( ) );
+         if ( isArduinoConnect )
+         {
+            home.getElectricity( ).open( electricityPanelElderSwitch.isSelected( ) );
+         }
+      }
+      else if( event.getSource() == gasPanelElderSwitch )
+      {
+         controlGas( gasPanelElderSwitch.isSelected() );
+         if ( isArduinoConnect )
+         {
+            home.getGas( ).open( gasPanelElderSwitch.isSelected( ) );
+         }
+      }
+      else if( event.getSource() == aquariumPanelElderSwitch ) {
+         controlAquarium( aquariumPanelElderSwitch.isSelected() );
+         if( isArduinoConnect )
+            home.getAquarium().open( aquariumPanelElderSwitch.isSelected() );
+      }
+      else if( event.getSource() == waterPanelElderSwitch ) {
+         //openWater( waterSubMenuToggleButton.isSelected() );
+         if( isArduinoConnect )
+            home.getWater().open( waterPanelElderSwitch.isSelected() );
+      }
+      else if( event.getSource() == lightsPanelElderSwitch ) {
+         controlLights( lightsPanelElderSwitch.isSelected() );
+         if( isArduinoConnect )
+            home.getGardenLight().open( lightsPanelElderSwitch.isSelected() );
+      }
+
+   }
+
+   @FXML
+   void controlElectricity ( boolean status )
+   {
+      electricityPanelElderProgressBar1.setVisible( status );
+      electricityPanelElderProgressBar2.setVisible( status );
+      electiricitySettingsPanelCloseOpenSwitch.setSelected( status );
+   }
+   @FXML
+   void controlLights ( boolean status )
+   {
+      lightsPanelElderProgressBar1.setVisible( status );
+      lightsPanelElderProgressBar2.setVisible( status );
+      electiricitySettingsPanelCloseOpenSwitch.setSelected( status );
+   }
+   @FXML
+   void controlGas ( boolean status )
+   {
+      gasPanelElderProgressBar1.setVisible( status );
+      gasPanelElderProgressBar2.setVisible( status );
+      gasSettingsPanelCloseOpenSwitch.setSelected( status );
+   }
+   @FXML
+   void controlAquarium ( boolean status )
+   {
+      aquariumPanelElderProgressBar1.setVisible( status );
+      aquariumPanelElderProgressBar2.setVisible( status );
+   }
+   @FXML
+   void controlWater ( boolean status )
+   {
+
+   }
 }

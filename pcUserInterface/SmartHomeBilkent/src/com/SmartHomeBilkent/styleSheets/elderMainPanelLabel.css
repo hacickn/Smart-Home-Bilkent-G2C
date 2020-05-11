@@ -357,3 +357,21 @@
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
+#electricityPanelElderSettingsButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("imagesElder/cogwheel3.png");
+    -fx-background-size: 58, 58;
+}
+#greenhousePanelElderSettingsButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("imagesElder/cogwheel3.png");
+    -fx-background-size: 58, 58;
+}
+#gasPanelElderSettingsButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("imagesElder/cogwheel3.png");
+    -fx-background-size: 58, 58;
+}
