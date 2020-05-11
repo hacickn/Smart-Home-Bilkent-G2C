@@ -1,7 +1,7 @@
 package com.SmartHomeBilkent;
 
 import com.SmartHomeBilkent.home.Home;
-import com.SmartHomeBilkent.utilities.dataBase.Users;
+import com.SmartHomeBilkent.utilities.dataBase.*;
 import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.fazecast.jSerialComm.SerialPort;
 import com.jfoenix.controls.*;
@@ -21,6 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import org.controlsfx.control.CheckComboBox;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -705,7 +706,7 @@ public class ElderMainPanel implements Initializable {
    private Label electiricityMenuBackButtonSubLabel;
 
    @FXML
-   private BarChart<?, ?> electiricitySettingsPanelChart;
+   private BarChart< Number, Number> electiricitySettingsPanelChart;
 
    @FXML
    private JFXToggleButton electiricitySettingsPanelCloseOpenSwitch;
@@ -723,7 +724,7 @@ public class ElderMainPanel implements Initializable {
    private Label gasMenuBackButtonSubLabel;
 
    @FXML
-   private BarChart<?, ?> gasSettingsPanelChart;
+   private BarChart<Number, Number> gasSettingsPanelChart;
 
    @FXML
    private JFXToggleButton gasSettingsPanelCloseOpenSwitch;
@@ -775,6 +776,9 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private ComboBox<String> portChooserElder;
+
+   @FXML
+   private CheckComboBox<String> speciesOfFishCheckComboBox;
 
 
    private boolean isArduinoConnect;
@@ -1126,7 +1130,9 @@ public class ElderMainPanel implements Initializable {
       turkishElderButtonSubLabelActive.setVisible( false );
       englishElderButtonSubLabelActive.setVisible( true );
       languageStatusElder = false;
+      ElectricityUsage.getInstance().getElectricityUsage();
       refreshPortList();
+      GUIUpdateElder();
 
       new Thread( new Runnable() {
          @Override
@@ -2202,4 +2208,13 @@ public class ElderMainPanel implements Initializable {
          portChooserElder.getItems().add( portName.getSystemPortName() );
    }
    //
+
+   // GUIUpdateElder -MS 11.05.2020- from mainPanel.java
+   public void GUIUpdateElder()
+   {
+      ElectricityUsage.getInstance().getTable( electiricitySettingsPanelChart );
+      //GasUsage.getInstance().getTable( gasSettingsPanelChart );
+      //GreenHouseData.getInstance().getTable( greenHouseValuesChart, bundle );
+      //FishSpecies.getInstance().addFishToComboBox( speciesOfFishCheckComboBox );
+   }
 }

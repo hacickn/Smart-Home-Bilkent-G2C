@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
@@ -10,6 +11,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,11 +19,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../styleSheets/elderMainPanelLabel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.ElderMainPanel">
    <children>
       <Line endX="800.0000610351562" endY="130.49998474121094" startY="130.5" />
-      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger"  prefHeight="600.0" prefWidth="800.0">
+      <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger" prefHeight="600.0" prefWidth="800.0">
          <children>
             <Label fx:id="dayMessage" layoutX="26.0" layoutY="22.0" prefHeight="87.0" prefWidth="452.0" text="Good morning, Metehan!" textFill="#ff5d00">
                <font>
@@ -88,12 +91,12 @@
             <JFXButton id="electricityButtonElder" fx:id="electricityButtonElder" layoutX="120.0" layoutY="153.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
             <Pane fx:id="electricityPanelElder" disable="true" layoutX="75.0" layoutY="141.0" prefHeight="224.0" prefWidth="291.0" style="-fx-background-color: #176BEF; -fx-background-radius: 5;" visible="false">
                <children>
-                  <Label fx:id="electricityPanelElderLabel" alignment="CENTER" layoutX="34.0" opacity="0.99" prefHeight="41.0" prefWidth="224.0" text="Electricity" textFill="WHITE">
+                  <Label fx:id="electricityPanelElderLabel" alignment="CENTER" layoutX="90.0" opacity="0.99" prefHeight="41.0" prefWidth="112.0" text="Electricity" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                      </font>
                   </Label>
-                  <JFXToggleButton fx:id="electricityPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                  <JFXToggleButton fx:id="electricityPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
                   <Label fx:id="electricityPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -105,12 +108,14 @@
                      </font>
                   </Label>
                   <JFXButton fx:id="electricityPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
-                  <ImageView fx:id="electricityPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="electricityPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../styleSheets/imagesElder/arrows02.png" />
                      </image>
                   </ImageView>
                   <JFXButton fx:id="electricityPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="58.0" prefWidth="58.0" />
+                  <JFXProgressBar fx:id="electricityPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                  <JFXProgressBar fx:id="electricityPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
                </children>
             </Pane>
             <Label fx:id="electricityLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="301.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Electricity" textFill="WHITE" visible="false">
@@ -127,7 +132,7 @@
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                      </font>
                   </Label>
-                  <JFXToggleButton fx:id="lightsPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                  <JFXToggleButton fx:id="lightsPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
                   <Label fx:id="lightsPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -144,6 +149,8 @@
                         <Image url="@../styleSheets/imagesElder/arrows02.png" />
                      </image>
                   </ImageView>
+                  <JFXProgressBar fx:id="lightsPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
+                  <JFXProgressBar fx:id="lightsPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
                </children>
             </Pane>
             <Label id="lightsLabelElder" fx:id="lightsLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="518.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Lighting" textFill="WHITE" visible="false">
@@ -160,7 +167,7 @@
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                      </font>
                   </Label>
-                  <JFXToggleButton fx:id="waterPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                  <JFXToggleButton fx:id="waterPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
                   <Label fx:id="waterPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -292,7 +299,7 @@
                </font>
             </Label>
             <Line fx:id="languageSettingsElderLine" disable="true" endX="319.0" endY="367.0" layoutX="181.0" opacity="0.99" startX="118.99998474121094" startY="367.0" visible="false" />
-            <JFXButton fx:id="connectionSettingsElderButton" layoutX="50.0" layoutY="225.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
+            <JFXButton fx:id="connectionSettingsElderButton" layoutX="50.0" layoutY="225.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
             <Label fx:id="connectionSettingsElderLabel" alignment="CENTER" disable="true" layoutX="50.0" layoutY="367.0" opacity="0.8" prefHeight="58.0" prefWidth="200.0" text="Connection" textFill="WHITE" visible="false">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
@@ -498,7 +505,7 @@
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                      </font>
                   </Label>
-                  <JFXToggleButton fx:id="aquariumPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                  <JFXToggleButton fx:id="aquariumPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
                   <Label fx:id="aquariumPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -516,6 +523,8 @@
                      </image>
                   </ImageView>
                   <JFXButton fx:id="aquariumPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" opacity="0.99" prefHeight="58.0" prefWidth="58.0" />
+                  <JFXProgressBar fx:id="aquariumPanelElderProgressBar1" disable="true" layoutX="219.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                  <JFXProgressBar fx:id="aquariumPanelElderProgressBar2" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
                </children>
             </Pane>
             <Label fx:id="aquariumLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="301.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Aquarium" textFill="WHITE" visible="false">
@@ -566,7 +575,7 @@
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                      </font>
                   </Label>
-                  <JFXToggleButton fx:id="gasPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                  <JFXToggleButton fx:id="gasPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
                   <Label fx:id="gasPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                      <font>
                         <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -584,6 +593,8 @@
                      </image>
                   </ImageView>
                   <JFXButton fx:id="gasPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
+                  <JFXProgressBar fx:id="gasPanelElderProgressBar1" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                  <JFXProgressBar fx:id="gasPanelElderProgressBar2" disable="true" layoutX="26.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
                </children>
             </Pane>
             <Label fx:id="gasLabelElder" alignment="CENTER" disable="true" layoutX="480.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Gas Control" textFill="WHITE" visible="false">
@@ -670,7 +681,8 @@
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="speciesOfFishChoice" layoutX="458.0" layoutY="193.0" prefWidth="150.0" />
+            <CheckComboBox fx:id="speciesOfFishCheckComboBox" layoutX="460.0" layoutY="194.0" prefHeight="25.0" prefWidth="142.0" />
+            <ChoiceBox fx:id="speciesOfFishChoice" disable="true" layoutX="640.0" layoutY="132.0" prefWidth="150.0" visible="false" />
             <Label fx:id="FeedingStartTimeLabel" layoutX="124.0" layoutY="247.0" prefHeight="54.0" prefWidth="344.0" text="Feeding Start Time( Each Day): ">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
@@ -850,6 +862,39 @@
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="connectionSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="connectionPanelFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in connection settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="connectionElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="connectionElderPanelBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="portChooserElder" layoutX="517.0" layoutY="368.0" prefWidth="150.0" promptText="CHOOSE THE PORT" />
+            <Line endX="26.29290771484375" endY="-44.0" layoutX="372.0" layoutY="177.0" startX="26.29290771484375" startY="426.0" />
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="492.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../styleSheets/imagesElder/usb2.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="542.0" layoutY="441.0" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="97.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../styleSheets/imagesElder/communication2.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="147.0" layoutY="441.0" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
          </children>
       </Pane>
    </children>
