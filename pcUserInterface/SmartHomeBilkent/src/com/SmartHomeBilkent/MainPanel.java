@@ -27,6 +27,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -126,7 +127,7 @@ public class MainPanel implements Initializable {
          gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive,
          menuBulkChangeSubLabel;
    @FXML
-   private ImageView tempImage, weatherForecastImage;
+   private ImageView tempImage, weatherForecastImage, avaliabilityImage;
    @FXML
    private Pane menuElecPane, menuGasPane,
          menuAquariumPane, menuGreenHousePane,
@@ -340,7 +341,7 @@ public class MainPanel implements Initializable {
    @FXML
    private CheckComboBox< String > checkComboBox;
    @FXML
-   private JFXSpinner weatherUpdateSpinner;
+   private JFXSpinner weatherUpdateSpinner, doorSpinner;
 
    /*
     3.5)setting - sub menu variables
@@ -444,7 +445,6 @@ public class MainPanel implements Initializable {
    public User getLoginUser() {
       for( User u : Users.getInstance().getUserList() ) {
          if( u.getEnter().equals( "true" ) ) {
-            u.setEnter( "false" );
             loginUser = u;
             return u;
          }
@@ -974,6 +974,25 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == doorButton ) {
          if( isArduinoConnect )
             home.getDoor().open( true );
+
+         new Thread( () -> {
+            for( int k = 0; k < 20; k++ ) {
+               final int j = k;
+               Platform.runLater( () -> {
+                  doorSpinner.setVisible( true );
+                  doorButton.setVisible( false );
+                  if( j == 19 ) {
+                     doorSpinner.setVisible( false );
+                     doorButton.setVisible( true );
+                  }
+               } );
+               try {
+                  Thread.sleep( 100 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         } ).start();
       } else if( event.getSource() == menuBulkChange ) {
          closeAllMenuPane();
          menuBulkChangePane.setVisible( true );
@@ -1278,6 +1297,7 @@ public class MainPanel implements Initializable {
          userProfilePane.setDisable( true );
       } else if( event.getSource() == userChangerButton ) {
          try {
+            Users.getInstance().getUserList().get( Users.getInstance().getUserList().indexOf( loginUser ) ).setEnter( "false" );
             FXMLLoader load = new FXMLLoader( getClass().getResource( "view/loginPanel.fxml" ) );
             Parent root = load.load();
             Stage stage = new Stage();
@@ -1347,6 +1367,31 @@ public class MainPanel implements Initializable {
       }
    }
 
+   @FXML
+   void controlAvailability( KeyEvent event) {
+      if( event.getSource() == userNameTextField ) {
+         avaliabilityImage.setVisible( true );
+         if( userNameTextField.getText().equals( loginUser.getUserName() )) {
+            privateInfoWarning.setVisible( false );
+            saveUserPrivateInfo.setDisable( false );
+            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
+         }else if( !Users.getInstance().isUserNameAvailable( userNameTextField.getText() ) ) {
+            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/notAvailable.png" ) ) );
+            privateInfoWarning.setVisible( true );
+            privateInfoWarning.setText( bundle.getString( "userNameSimilarityLang" ) );
+            saveUserPrivateInfo.setDisable( true );
+         }else if( userNameTextField.getText().equals( "" ) ) {
+            avaliabilityImage.setVisible( false );
+            privateInfoWarning.setVisible( false );
+         }else  {
+            privateInfoWarning.setVisible( false );
+            saveUserPrivateInfo.setDisable( false );
+            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
+         }
+      }
+   }
+
+
    //user profiles main buttons' helper labels animation
    @FXML
    void userProfileButtonsOnMovement( MouseEvent event ) {
@@ -1388,6 +1433,11 @@ public class MainPanel implements Initializable {
          new ZoomOut( changeUserPrivateInfoPane ).play();
       changeUserNormalInfoPane.setDisable( true );
       changeUserPrivateInfoPane.setDisable( true );
+      userNameTextField.setText( loginUser.getUserName() );
+      newPasswordTextField.setText( "" );
+      verifyNewPasswordField.setText( "" );
+      currentPasswordField.setText( "" );
+      avaliabilityImage.setVisible( false );
    }
 
 
@@ -2322,6 +2372,7 @@ public class MainPanel implements Initializable {
                removeUserTextField.setText( "" );
                removeUserHideWarning.setVisible( false );
 
+               Users.getInstance().getUserList().get( Users.getInstance().getUserList().indexOf( loginUser ) ).setEnter( "false" );
                FXMLLoader load = new FXMLLoader( getClass().getResource( "view/loginPanel.fxml" ) );
                Parent root = load.load();
                Stage stage = new Stage();

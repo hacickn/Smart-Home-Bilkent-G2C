@@ -85,6 +85,9 @@ public class LoginPanel implements Initializable {
                            stage[ 0 ].setResizable( true );
                            stage[ 0 ].setOnCloseRequest( event -> {
                               Platform.exit();
+                              for(User s: Users.getInstance().getUserList()){
+                                 s.setEnter( "false" );
+                              }
                               System.exit( 0 );
                            } );
                            stage[ 0 ].getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
