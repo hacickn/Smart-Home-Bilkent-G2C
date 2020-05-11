@@ -375,3 +375,25 @@
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
+#turkishElderButton
+{
+    -fx-border-radius: 100;
+    -fx-background-image: url("imagesElder/tr.png");
+    -fx-background-size: 250, 250;
+}
+#turkishElderButtonSubLabelActive
+{
+    -fx-background-color: #FF3E30;
+    -fx-background-radius: 25;
+}
+#englishElderButton
+{
+    -fx-border-radius: 100;
+    -fx-background-image: url("imagesElder/uk.png");
+    -fx-background-size: 250, 250;
+}
+#englishElderButtonSubLabelActive
+{
+    -fx-background-color: #176BEF;
+    -fx-background-radius: 25;
+}

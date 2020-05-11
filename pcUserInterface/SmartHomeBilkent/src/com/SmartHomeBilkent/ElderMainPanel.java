@@ -3,6 +3,7 @@ package com.SmartHomeBilkent;
 import com.SmartHomeBilkent.home.Home;
 import com.SmartHomeBilkent.utilities.dataBase.Users;
 import com.SmartHomeBilkent.utilities.dataBase.fields.User;
+import com.fazecast.jSerialComm.SerialPort;
 import com.jfoenix.controls.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -759,6 +761,22 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Label greenhouseTemperatureVariable;
 
+   @FXML
+   private Pane connectionSettingsElderPanel;
+
+   @FXML
+   private Label connectionPanelFirstLabelElder;
+
+   @FXML
+   private JFXButton connectionElderPanelBackButtonElder;
+
+   @FXML
+   private Label connectionElderPanelBackButtonSubLabel;
+
+   @FXML
+   private ComboBox<String> portChooserElder;
+
+
    private boolean isArduinoConnect;
 
    private Home home;
@@ -1066,6 +1084,27 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane2.setDisable( false );
       }
       // greenhouseMenuBackButtonElder END -MS 07.05.2020-
+
+      // connectionElderPanelBackButtonElder -MS 11.05.2020-
+      else if ( event.getSource() == connectionElderPanelBackButtonElder )
+      {
+         connectionSettingsElderPanel.setDisable( true );
+         connectionSettingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+      // connectionElderPanelBackButtonElder END -MS 11.05.2020-
+
+      // connectionSettingsElderButton -MS 11.05.2020-
+      else if ( event.getSource() == connectionSettingsElderButton )
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         connectionSettingsElderPanel.setVisible( true );
+         connectionSettingsElderPanel.setDisable( false );
+         refreshPortList();
+      }
+      // connectionSettingsElderButton END -MS 11.05.2020-
    }
 
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
@@ -1087,6 +1126,7 @@ public class ElderMainPanel implements Initializable {
       turkishElderButtonSubLabelActive.setVisible( false );
       englishElderButtonSubLabelActive.setVisible( true );
       languageStatusElder = false;
+      refreshPortList();
 
       new Thread( new Runnable() {
          @Override
@@ -1558,6 +1598,13 @@ public class ElderMainPanel implements Initializable {
          greenhouseMenuBackButtonSubLabel.setVisible( true );
       }
       // greenhouseSettingsPanel Activate END -MS 07.05.2020-
+
+      //connectionElderPanelBackButtonElder Activate -MS 11.05.2020-
+      else if ( event.getSource() == connectionElderPanelBackButtonElder )
+      {
+         connectionElderPanelBackButtonSubLabel.setVisible( true );
+      }
+      //connectionElderPanelBackButtonElder Activate END -MS 11.05.2020-
    }
    // buttonElderActivate END -MS 05.05.2020-
 
@@ -1897,6 +1944,13 @@ public class ElderMainPanel implements Initializable {
          greenhouseMenuBackButtonSubLabel.setVisible( false );
       }
       // greenhouseSettingsPanel Deactivate END -MS 07.05.2020-
+
+      //connectionElderPanelBackButtonElder Deactivate -MS 11.05.2020-
+      else if ( event.getSource() == connectionElderPanelBackButtonElder )
+      {
+         connectionElderPanelBackButtonSubLabel.setVisible( false );
+      }
+      //connectionElderPanelBackButtonElder Deactivate END -MS 11.05.2020-
    }
    // buttonElderDeactivate END -MS 05.05.2020-
 
@@ -2137,4 +2191,15 @@ public class ElderMainPanel implements Initializable {
    {
 
    }
+
+   // refreshPortList() -MS 11.05.2020- from mainPanel.java
+   void refreshPortList() {
+      SerialPort[] portNames;
+      portChooserElder.getItems().removeAll( portChooserElder.getItems() );
+      portNames = SerialPort.getCommPorts();
+
+      for( SerialPort portName : portNames )
+         portChooserElder.getItems().add( portName.getSystemPortName() );
+   }
+   //
 }
