@@ -1,5 +1,7 @@
 package com.SmartHomeBilkent;
 
+import com.SmartHomeBilkent.utilities.dataBase.Users;
+import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
@@ -33,10 +35,12 @@ public class HelpPanel implements Initializable {
          logoutTextField, applicationSettingTextArea,
          usersSettingTextArea, modsSettingTextArea,
          homeSettingTextArea;
+   private User loginUser;
 
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
-      if( true ) { // türkçe
+      getLoginUser();
+      if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) ) { // türkçe
          menuTextField.setText( "" );
          userProfileTextField.setText( "" );
          logoutTextField.setText( "" );
@@ -44,7 +48,7 @@ public class HelpPanel implements Initializable {
          usersSettingTextArea.setText( "" );
          modsSettingTextArea.setText( "" );
          homeSettingTextArea.setText( "" );
-      } else if( false ) { //almanca
+      } else if( loginUser.getPreferredLanguage().equals( "DEUTSCH" ) ) { //almanca
          menuTextField.setText( "" );
          userProfileTextField.setText( "" );
          logoutTextField.setText( "" );
@@ -62,6 +66,16 @@ public class HelpPanel implements Initializable {
          homeSettingTextArea.setText( "" );
       }
 
+   }
+
+   public User getLoginUser() {
+      for( User u : Users.getInstance().getUserList() ) {
+         if( u.getEnter().equals( "true" ) ) {
+            loginUser = u;
+            return u;
+         }
+      }
+      return null;
    }
 
    @FXML
