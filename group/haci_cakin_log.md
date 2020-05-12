@@ -77,5 +77,60 @@ I also added two new themes for pc user interface. I embedded fonts which are us
 ---
 
 ### ~ 11.05.2020 ~
+This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I try to add more options for users(such as more theme, language options etc).
 
 ****
+
+> What I did until now
+```
+* I made menu pane which has home facilities panes( Electricity - gas -  water - greenhouse - 
+garden light - aquarium - shortcuts - time configuration ).
+* I made login panel of user interface.
+* I added user profile.
+* I added 3 language option( both sound and text ).
+* I added 9 theme, program have totaly 12 theme( 3 of them are added by İlke Doğan).
+* I added emergency pane which gives chance to make buzzers active manuelly.
+* I added notification pane that warns user in emergency situation.
+* I added connection setting pane that gives chance to choose which type connection will be.
+* I added users pane(add new user pane, remove user pane, permissions pane) that controls adding ,
+removing user and permission for child access
+* I added mods pane that controls the sound and text mode
+* I added home settings pane that give chance to view usages of sources(electricity and gas usage),
+statistic about greenhouse values(temperature,humidity) 
+and set the aquarium settings and weather preferences.
+* I added weather pane which is gave current weather forecast( İlke Doğan aided to me to add 
+background walpaper).
+* More things which are added from me about program logic can be found in pc user interface
+report which is in detailed folder.
+* I wrote these classes in java pc user interface; Aquarium.java, Abstract.java, 
+Communication.java, Arduino.java, CommonSetting.java, Usage.java, User.java, 
+CommonSettingData.java, DatabaseConnection.java,ElectricityUsage.java,
+GasUsage.java, Users.java, Main.java, WeatherForecast.java
+* I wrote these controllers in java pc user interface; MainPanel.java, LoginPanel.java
+* I worte these views in java pc user interface(I built in scene builder); mainPanel.fxml,
+loginPanel.fxml
+* I also added nearly all images in images folder.( ilke doğan has helped to me in weather 
+and theme backgorund images)
+* I added all sound files in music folder.
+* I added all language properties in language folder( Metehan Saçakçı also added some
+words in these properties).
+* I also added totalty 10 css file for themes(in program we have 15 css file. 4 of them are 
+added by İlke Doğan and 1 one fo them is added by Metehan Saçakçı).
+* I added fonts that are used in program to embed the system.
+* I creates all database tables; ELECTRICITY TABLE, FISHES TABLE, GAS TABLE, GREENHOUSE TABLE,
+HOME TABLE, USERS TABLE.
+* I added WeatherForecast.java in android app to get weather from the Internet.
+* I added chart library and two chart to android app.
+* I also wrote Smart_App_Cnt , hours_setting parts of the Arduino code.
+* In proteus, I made Gas_Valve, electricity_relay, water_valve parts( İlke Doğan aided to me).
+```
+
+> What I think about what I will do 
+```
+* In fact I nearly finished what we thought about on this project(Adding some features wasn't
+in our plan such as weather, sound mode).However, I want to add more things so that I expand 
+the border of our application. Therefore, In my mind I think to add one or two more language 
+for users.
+* The last remaining part is that pc user interface will recieve humidity and temperature 
+information about greenhouse. Other communication parts are done.
+```
