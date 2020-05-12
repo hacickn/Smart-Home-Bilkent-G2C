@@ -2,6 +2,10 @@
 ## Pc User Interface 
 > (Until Today)
 To experience the program there are three users in the program
+Note: After the Java 11, module system came to Java. Because we write 
+this code in jdk v1.8.0 we don't use this module system. Therefore when 
+you are running program in intelliJ, Please use JDK 1.8(In intelliJ v2020.1,
+you can download all JDK versions in the intelliJ) .
 ```
  UserName       Password      User Type
 - david     |    cs102    |    Parent
@@ -92,6 +96,9 @@ day and time, air motor work amount and start time).
 9) Interface gives chance to choose which port we use when connecting to 
 embedded system.  
 
+10)Each user names are unique. Therefore if you try to get user name that is 
+used by somenone, program doesn't permit to do that.
+
 (*)= In this demo, people can experience without connection. Program will
 not five any error because we prevent it. However, In logic way, users 
 should not able to use this features(7.1-7.14). In order to experience all
@@ -104,4 +111,11 @@ both connecting or not connecting.
 ##### TECHNICAL DETAILS
 ```
 1) To communicate with database, Singleton patters is used.
+2) Model-View-Controller pattern is used.
+3) Getting data from the web api as a JSON format(for weather forecast).
+4) All movements are recorded in databases(Electricity usage,gas usage, greenHouseValues etc.).
+5) SerialPort is used to communicate with embedded system(Normally we want to add others 
+options such as bluetooth or ethernet shild(LAN).However due to COVID'19 we can only
+simulate serial port connection in the simulation program virtually)
+6) To be contiuned...
 ```
