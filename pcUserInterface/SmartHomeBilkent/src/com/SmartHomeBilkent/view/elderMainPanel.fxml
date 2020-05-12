@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -688,13 +691,13 @@
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </Label>
-            <JFXTimePicker fx:id="FeedingStartTimeTimePicker" layoutX="469.0" layoutY="262.0" />
+            <JFXTimePicker fx:id="feedingStartTimeTimePicker" layoutX="469.0" layoutY="262.0" />
             <Label fx:id="weeklyWaterExchangeDayAndTimeLabel" layoutX="31.0" layoutY="316.0" prefHeight="54.0" prefWidth="437.0" text="Weekly Water Exchange Day And Time: ">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="weeklyWaterExchangeDayAndTimeChoice" layoutX="469.0" layoutY="330.0" prefWidth="150.0" />
+            <JFXComboBox fx:id="weeklyWaterExchangeDayAndTimeChoice" layoutX="469.0" layoutY="330.0" prefHeight="25.0" prefWidth="150.0" />
             <JFXTimePicker fx:id="weeklyWaterExchangeDayAndTimeTimePicker" layoutX="629.0" layoutY="330.0" />
             <Label fx:id="dailyAirEngineRunTimeandStartTimeLabel" layoutX="7.0" layoutY="384.0" prefHeight="54.0" prefWidth="461.0" text="Daily Air Engine Run Time and Start Time:">
                <font>
@@ -702,6 +705,7 @@
                </font>
             </Label>
             <JFXTimePicker fx:id="dailyAirEngineRunTimeandStartTimeTimePicker" layoutX="629.0" layoutY="399.0" />
+            <JFXSlider fx:id="dailyAirEngineRunTimeandStartTimeSlider" layoutX="473.0" layoutY="405.0" showTickLabels="true" showTickMarks="true" />
             <JFXButton fx:id="aquariumSaveButton" layoutX="340.0" layoutY="438.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="120.0" prefWidth="120.0" />
             <Label fx:id="aquariumSaveButtonLabel" alignment="CENTER" disable="true" layoutX="350.0" layoutY="558.0" prefHeight="34.0" prefWidth="101.0" text="SAVE" visible="false">
                <font>
@@ -824,14 +828,14 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <BarChart fx:id="greenhouseSettingsPanelChart" layoutX="150.0" layoutY="307.0" prefHeight="243.0" prefWidth="500.0">
-               <xAxis>
-                  <CategoryAxis side="BOTTOM" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis side="LEFT" />
-               </yAxis>
-            </BarChart>
+            <LineChart fx:id="greenhouseSettingsPanelChart" alternativeColumnFillVisible="true" createSymbols="false" layoutX="150.0" layoutY="307.0" prefHeight="243.0" prefWidth="500.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
             <Label fx:id="latesWaterFromAquariumLabel" alignment="CENTER" layoutX="241.0" layoutY="173.0" prefHeight="41.0" prefWidth="318.0" text="Lates Water From Aquarium">
                <font>
                   <Font name="Microsoft JhengHei Light" size="24.0" />
