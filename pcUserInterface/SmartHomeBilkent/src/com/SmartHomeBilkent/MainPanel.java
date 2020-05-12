@@ -14,7 +14,6 @@ import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.animation.FillTransition;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +37,6 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
@@ -113,23 +111,24 @@ public class MainPanel implements Initializable {
          menuGardenLightProgress;
    @FXML
    private Label ghHumidityTempLabel, timeConfigurationLabel,
-         menuHomeTempLabel, mainMenuHomeLabel, elecSubPaneLabelPassive,
-         elecSubPaneOpenLabelPassive, elecSubPaneCloseLabelPassive,
-         elecSubPaneOpenValueLabelPassive, elecSubPaneCloseValueLabelPassive,
-         elecSubPaneLabelActive, elecSubPaneOpenLabelActive,
-         elecSubPaneCloseLabelActive, elecSubPaneOpenValueLabelActive,
-         elecSubPaneCloseValueLabelActive, gasSubPaneLabelPassive,
-         gasSubPaneLabelActive, aquariumSubPaneLabelPassive,
-         mainMenuWeatherLabel, aquariumSubPaneLabelActive,
-         greenHouseSubPaneLabelPassive, ghTempSubPaneLabelActive,
-         menuUserProfileLabel, menuMenuLabel,
-         menuSettingLabel, menuWeatherValue,
-         timeLabel, menuOpenDoorLabel,
-         waterSubPaneLabelActive, waterSubPaneLabelPassive,
-         gardenLightSubPaneLabelActive, gardenLightSubPaneLabelPassive,
-         menuBulkChangeSubLabel;
+         menuHomeTempLabel, mainMenuHomeLabel,
+         elecSubPaneLabelPassive, elecSubPaneOpenLabelPassive,
+         elecSubPaneCloseLabelPassive, elecSubPaneOpenValueLabelPassive,
+         elecSubPaneCloseValueLabelPassive, elecSubPaneLabelActive,
+         elecSubPaneOpenLabelActive, elecSubPaneCloseLabelActive,
+         elecSubPaneOpenValueLabelActive, elecSubPaneCloseValueLabelActive,
+         gasSubPaneLabelPassive, gasSubPaneLabelActive,
+         aquariumSubPaneLabelPassive, mainMenuWeatherLabel,
+         aquariumSubPaneLabelActive, greenHouseSubPaneLabelPassive,
+         ghTempSubPaneLabelActive, menuUserProfileLabel,
+         menuMenuLabel, menuSettingLabel,
+         menuWeatherValue, timeLabel,
+         menuOpenDoorLabel, waterSubPaneLabelActive,
+         waterSubPaneLabelPassive, gardenLightSubPaneLabelActive,
+         gardenLightSubPaneLabelPassive, menuBulkChangeSubLabel;
    @FXML
-   private ImageView tempImage, weatherForecastImage, avaliabilityImage;
+   private ImageView tempImage, weatherForecastImage,
+         availabilityImage;
    @FXML
    private Pane menuElecPane, menuGasPane,
          menuAquariumPane, menuGreenHousePane,
@@ -187,10 +186,9 @@ public class MainPanel implements Initializable {
    private AnchorPane settingAnchorPane;
    @FXML
    private JFXButton applicationSettingButton, settingsUsersSettingButton,
-         modsSettingButton, homeSettingButton,
-         applicationSettingButtonActive, settingsUsersSettingButtonActive,
-         modsSettingButtonActive, homeSettingButtonActive,
-         portConnectionButton;
+         modsSettingButton, homeSettingButton, applicationSettingButtonActive,
+         settingsUsersSettingButtonActive, modsSettingButtonActive,
+         homeSettingButtonActive, portConnectionButton;
    @FXML
    private Label applicationSettingButtonLabel, usersSettingButtonLabel,
          modsSettingButtonLabel, homeSettingButtonLabel;
@@ -200,8 +198,7 @@ public class MainPanel implements Initializable {
     */
    @FXML
    private Pane settingThemePane, settingLanguagePane,
-         settingEmergencyPane, settingNotificationPane,
-         settingConnectionPane;
+         settingEmergencyPane, settingNotificationPane, settingConnectionPane;
    @FXML
    private JFXRadioButton darkThemeRadioButton, lightThemeRadioButton,
          smoothThemeRadioButton, cartoonThemeRadioButton,
@@ -238,10 +235,10 @@ public class MainPanel implements Initializable {
    @FXML
    private JFXTreeTableView< User > settingUserTable;
    @FXML
-   private TreeTableColumn< User, String > settingUserTableName,
-         settingUserTableSurname, settingUserTableBirthday,
-         settingUserTableGender, settingUserTableUserName,
-         settingUserTableTheme, settingUserTableLanguage;
+   private TreeTableColumn< User, String > settingUserTableName, settingUserTableSurname,
+         settingUserTableBirthday, settingUserTableGender,
+         settingUserTableUserName, settingUserTableTheme,
+         settingUserTableLanguage;
 
    private JFXRadioButton addUserGender, addUserTheme,
          addUserLanguage, addUserType;
@@ -258,8 +255,7 @@ public class MainPanel implements Initializable {
    private JFXDatePicker createDatePicker;
    @FXML
    private JFXButton createUserConfirmButton, createUserGoBack,
-         removeUserConfirm, removeUserGoBack,
-         usersSettingSubPanePermissionButton, permissionPaneGoBackButton;
+         removeUserConfirm, removeUserGoBack, usersSettingSubPanePermissionButton, permissionPaneGoBackButton;
    @FXML
    private JFXTextField createUserNameTextField, createUserSurnameTextField,
          createUserUserNameTextField;
@@ -327,7 +323,7 @@ public class MainPanel implements Initializable {
          emergencySettingButton, phoneNotificationSettingButton,
          smartHomeConnectionSettingButton, themeSettingButtonActive,
          languageSettingButtonActive, emergencySettingButtonActive,
-         phoneNotificationSettingButtonActive, smartHomeConnectionSettingButtonActive,
+         notificationSettingButtonActive, smartHomeConnectionSettingButtonActive,
          saveAquariumChangesButton;
    @FXML
    private JFXTextField settingWeatherLocationTextField;
@@ -361,8 +357,7 @@ public class MainPanel implements Initializable {
          homeSettingElecButtonActive, homeSettingGasButtonActive,
          homeSettingAquButtonActive, homeSettingGreenHouseButtonActive;
    @FXML
-   private JFXTimePicker feedingTime, airMotorStartTime,
-         waterExchangeTime;
+   private JFXTimePicker feedingTime, airMotorStartTime, waterExchangeTime;
    @FXML
    private JFXComboBox< String > waterExchangeDay;
    @FXML
@@ -405,6 +400,10 @@ public class MainPanel implements Initializable {
    2)menu pane methods
    3)user profile pane methods
    4)setting pane methods
+   4.1)application setting pane methods
+   4.2)users setting pane methods
+   4.3)mods setting pane methods
+   4.4)home setting pane methods
     */
 
    /*
@@ -482,16 +481,12 @@ public class MainPanel implements Initializable {
          checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
 
       flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingTime.setValue( LocalTime.of( Integer.parseInt(
-            flowAquariumSetting.substring( 0, 2 ) ),
+      feedingTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 0, 2 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      waterExchangeTime.setValue( LocalTime.of( Integer.parseInt(
-            flowAquariumSetting.substring( 6, 8 ) ),
+      waterExchangeTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 6, 8 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
-      waterExchangeDay.getSelectionModel().select( Integer.parseInt(
-            flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      airMotorStartTime.setValue( LocalTime.of( Integer.parseInt(
-            flowAquariumSetting.substring( 14, 16 ) ),
+      waterExchangeDay.getSelectionModel().select( Integer.parseInt( flowAquariumSetting.substring( 13, 14 ) ) - 1 );
+      airMotorStartTime.setValue( LocalTime.of( Integer.parseInt( flowAquariumSetting.substring( 14, 16 ) ),
             Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
       airMotorRunTime.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
 
@@ -541,8 +536,8 @@ public class MainPanel implements Initializable {
          informationTime.setText( weatherForecast.getLocalTime() );
          settingWeatherLocationTextField.setText( loginUser.getLocation() );
          backgroundSetup( weatherForecast.getWeather() );
-         menuWeatherValue.setText( weatherForecast.getWeather() +
-               " " + weatherForecast.getTemperature() + "°C" );
+         menuWeatherValue.setText( weatherForecast.getWeather() + " " +
+               weatherForecast.getTemperature() + "°C" );
       } catch( IOException e ) {
          settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
          settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
@@ -556,9 +551,8 @@ public class MainPanel implements Initializable {
 
       Thread thread = new Thread( () -> {
          while( !exit ) {
-            Platform.runLater( () ->
-                  timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) )
-                  + "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
+            Platform.runLater( () -> timeLabel.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
+                  "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
             try {
                Thread.sleep( 1000 );
             } catch( InterruptedException e ) {
@@ -616,10 +610,12 @@ public class MainPanel implements Initializable {
          selectGermanOption();
       }
 
-      if( loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ).equals( "false" ) ) {
+      if( loginUser.getSound().substring( 0,
+            loginUser.getSound().length() - 3 ).equals( "false" ) ) {
          soundCheck = false;
          soundControl( false );
-      } else if( loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ).equals( "true" ) ) {
+      } else if( loginUser.getSound().substring( 0,
+            loginUser.getSound().length() - 3 ).equals( "true" ) ) {
          soundCheck = true;
          soundControl( true );
          soundModeToggle.setSelected( true );
@@ -672,8 +668,9 @@ public class MainPanel implements Initializable {
    void createEmergencyAnimation() {
       rectangle = new Rectangle( 0, 0, 800, 800 );
       rectangle.setDisable( true );
-      fillTransition = new FillTransition( Duration.seconds( 0.5 ), rectangle,
-            Color.rgb( 255, 0, 0, 0 ), Color.rgb( 255, 0, 0, 0.6 ) );
+      fillTransition = new FillTransition( Duration.seconds( 0.5 ),
+            rectangle, Color.rgb( 255, 0, 0, 0 ),
+            Color.rgb( 255, 0, 0, 0.6 ) );
       fillTransition.setCycleCount( 20 );
       fillTransition.setAutoReverse( true );
       commonBorderPane.getChildren().add( rectangle );
@@ -684,22 +681,14 @@ public class MainPanel implements Initializable {
     * It is a updateUsersTable that is added all users to users table according to database
     */
    void updateUsersTable() {
-      settingUserTableName.setCellValueFactory( param ->
-            param.getValue().getValue().nameProperty() );
-      settingUserTableSurname.setCellValueFactory( param ->
-            param.getValue().getValue().surnameProperty() );
-      settingUserTableBirthday.setCellValueFactory( param ->
-            param.getValue().getValue().birthdayProperty() );
-      settingUserTableGender.setCellValueFactory( param ->
-            param.getValue().getValue().genderProperty() );
-      settingUserTableUserName.setCellValueFactory( param ->
-            param.getValue().getValue().userNameProperty() );
-      settingUserTableTheme.setCellValueFactory( param ->
-            param.getValue().getValue().preferredThemeProperty() );
-      settingUserTableLanguage.setCellValueFactory( param ->
-            param.getValue().getValue().preferredLanguageProperty() );
-      settingUserTable.setRoot( new RecursiveTreeItem<>( Users.getInstance().getUserList()
-            , RecursiveTreeObject::getChildren ) );
+      settingUserTableName.setCellValueFactory( param -> param.getValue().getValue().nameProperty() );
+      settingUserTableSurname.setCellValueFactory( param -> param.getValue().getValue().surnameProperty() );
+      settingUserTableBirthday.setCellValueFactory( param -> param.getValue().getValue().birthdayProperty() );
+      settingUserTableGender.setCellValueFactory( param -> param.getValue().getValue().genderProperty() );
+      settingUserTableUserName.setCellValueFactory( param -> param.getValue().getValue().userNameProperty() );
+      settingUserTableTheme.setCellValueFactory( param -> param.getValue().getValue().preferredThemeProperty() );
+      settingUserTableLanguage.setCellValueFactory( param -> param.getValue().getValue().preferredLanguageProperty() );
+      settingUserTable.setRoot( new RecursiveTreeItem<>( Users.getInstance().getUserList(), RecursiveTreeObject::getChildren ) );
       settingUserTable.setShowRoot( false );
    }
 
@@ -713,15 +702,20 @@ public class MainPanel implements Initializable {
    void commonButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == userProfileButton ) {
          openUserProfilePane();
+
       } else if( event.getSource() == menuButton ) {
          openMenuPane();
+
       } else if( event.getSource() == settingsButton ) {
          openSettingsPane();
+
       } else if( event.getSource() == logoutButton ) {
          Platform.exit();
          exit = true;
+
          if( isArduinoConnect )
             home.getArduino().closeConnection();
+
       } else if( event.getSource() == helpButton ) {
          try {
             FXMLLoader load = new FXMLLoader( getClass().getResource( "view/helpPanel.fxml" ) );
@@ -729,7 +723,7 @@ public class MainPanel implements Initializable {
             Stage stage = new Stage();
             stage.setTitle( "HELP" );
             stage.setScene( new Scene( root, 600, 500 ) );
-            stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
+            stage.getIcons().add( new Image( Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" ) ) );
             stage.setResizable( false );
             stage.show();
          } catch( Exception e ) {
@@ -751,14 +745,17 @@ public class MainPanel implements Initializable {
             || event.getSource() == userProfileButtonActive ) {
          menuUserProfileLabel.setVisible( textCheck );
          sound( "userProfileLang", soundCheck );
+
       } else if( event.getSource() == menuButton
             || event.getSource() == menuButtonActive ) {
          menuMenuLabel.setVisible( textCheck );
          sound( "menuLang", soundCheck );
+
       } else if( event.getSource() == settingsButton
             || event.getSource() == settingsButtonActive ) {
          menuSettingLabel.setVisible( textCheck );
          sound( "settingLang", soundCheck );
+
       } else if( event.getSource() == logoutButton ) {
          sound( "closeAppLang", soundCheck );
       }
@@ -776,12 +773,15 @@ public class MainPanel implements Initializable {
       if( event.getSource() == userProfileButton
             || event.getSource() == userProfileButtonActive ) {
          menuUserProfileLabel.setVisible( false );
+
       } else if( event.getSource() == menuButton
             || event.getSource() == menuButtonActive ) {
          menuMenuLabel.setVisible( false );
+
       } else if( event.getSource() == settingsButton
             || event.getSource() == settingsButtonActive ) {
          menuSettingLabel.setVisible( false );
+
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( false );
       }
@@ -889,38 +889,53 @@ public class MainPanel implements Initializable {
    void menuButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == tempImage ) {
          sound( "homeTemperatureLang", soundCheck );
+
       } else if( event.getSource() == weatherButton ) {
          sound( "weatherLang", soundCheck );
+
       } else if( event.getSource() == menuConnectionButton ) {
          sound( "connectionLang", soundCheck );
+
       } else if( event.getSource() == menuElecButton ) {
          sound( "elecLang", soundCheck );
+
       } else if( event.getSource() == menuGasButton ) {
          sound( "gasLang", soundCheck );
+
       } else if( event.getSource() == menuAquariumButton ) {
          sound( "aquiarumLang", soundCheck );
+
       } else if( event.getSource() == menuGreenHouseButton ) {
          sound( "greenHouseLang", soundCheck );
+
       } else if( event.getSource() == elecSubMenuButtonPassive
             || event.getSource() == elecSubMenuButtonActive ) {
          sound( "elecSettingsLang", soundCheck );
+
       } else if( event.getSource() == gasSubMenuButtonPassive
             || event.getSource() == gasSubMenuButtonActive ) {
          sound( "gasSettingsLang", soundCheck );
+
       } else if( event.getSource() == aquariumSubMenuButtonPassive
             || event.getSource() == aquariumSubMenuButtonActive ) {
          sound( "aquSettingsLang", soundCheck );
+
       } else if( event.getSource() == greenhouseSubMenuButtonPassive
             || event.getSource() == greenhouseSubMenuButtonActive ) {
          sound( "greenHouseSettingsLang", soundCheck );
+
       } else if( event.getSource() == menuWaterButton ) {
          sound( "waterLang", soundCheck );
+
       } else if( event.getSource() == menuGardenLightButton ) {
          sound( "gardenLightLang", soundCheck );
+
       } else if( event.getSource() == menuBulkChange ) {
          sound( "bulkChangesLang", soundCheck );
+
       } else if( event.getSource() == menuTimeConfigurationButton ) {
          sound( "timeConfigurationLang", soundCheck );
+
       } else if( event.getSource() == doorButton ) {
          sound( "doorLang", soundCheck );
          menuOpenDoorLabel.setVisible( textCheck );
@@ -943,6 +958,7 @@ public class MainPanel implements Initializable {
          openHomeSettingPane();
          settingElecSettingPane.setDisable( false );
          homeSettingElecButtonActive.setVisible( true );
+
       } else if( event.getSource() == gasSubMenuButtonPassive
             || event.getSource() == gasSubMenuButtonActive ) {
          openSettingsPane();
@@ -950,8 +966,9 @@ public class MainPanel implements Initializable {
          closeAllHomeSetting();
          openHomeSettingPane();
          settingGasSettingPane.setDisable( false );
-         new FadeInUp(settingGasSettingPane).play();
+         new FadeInUp( settingGasSettingPane ).play();
          homeSettingGasButtonActive.setVisible( true );
+
       } else if( event.getSource() == aquariumSubMenuButtonPassive
             || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
@@ -959,8 +976,9 @@ public class MainPanel implements Initializable {
          closeAllHomeSetting();
          openHomeSettingPane();
          settingAquSettingPane.setDisable( false );
-         new FadeInUp(settingAquSettingPane).play();
+         new FadeInUp( settingAquSettingPane ).play();
          homeSettingAquButtonActive.setVisible( true );
+
       } else if( event.getSource() == greenhouseSubMenuButtonPassive
             || event.getSource() == aquariumSubMenuButtonActive ) {
          openSettingsPane();
@@ -968,16 +986,18 @@ public class MainPanel implements Initializable {
          closeAllHomeSetting();
          openHomeSettingPane();
          settingGreenHouseSettingPane.setDisable( false );
-         new FadeInUp(settingGreenHouseSettingPane).play();
+         new FadeInUp( settingGreenHouseSettingPane ).play();
          homeSettingGreenHouseButtonActive.setVisible( true );
+
       } else if( event.getSource() == weatherButton ) {
          openSettingsPane();
          closeApplicationSettingPane();
          closeAllHomeSetting();
          openHomeSettingPane();
          settingWeatherSettingPane.setDisable( false );
-         new FadeInUp(settingWeatherSettingPane).play();
+         new FadeInUp( settingWeatherSettingPane ).play();
          homeSettingWeatherButtonActive.setVisible( true );
+
       } else if( event.getSource() == menuConnectionButton ) {
          openSettingsPane();
          closeAllApplicationSettingSubPanes();
@@ -1000,26 +1020,32 @@ public class MainPanel implements Initializable {
          closeAllMenuPane();
          menuElecPane.setVisible( true );
          new FadeIn( menuElecPane ).play();
+
       } else if( event.getSource() == menuGasButton ) {
          closeAllMenuPane();
          menuGasPane.setVisible( true );
+
          new FadeIn( menuGasPane ).play();
       } else if( event.getSource() == menuAquariumButton ) {
          closeAllMenuPane();
          menuAquariumPane.setVisible( true );
          new FadeIn( menuAquariumPane ).play();
+
       } else if( event.getSource() == menuGreenHouseButton ) {
          closeAllMenuPane();
          menuGreenHousePane.setVisible( true );
          new FadeIn( menuGreenHousePane ).play();
+
       } else if( event.getSource() == menuWaterButton ) {
          closeAllMenuPane();
          menuWaterPane.setVisible( true );
          new FadeIn( menuWaterPane ).play();
+
       } else if( event.getSource() == menuGardenLightButton ) {
          closeAllMenuPane();
          menuGardenLightPane.setVisible( true );
          new FadeIn( menuGardenLightPane ).play();
+
       } else if( event.getSource() == doorButton ) {
          if( isArduinoConnect )
             home.getDoor().open( true );
@@ -1042,14 +1068,17 @@ public class MainPanel implements Initializable {
                }
             }
          } ).start();
+
       } else if( event.getSource() == menuBulkChange ) {
          closeAllMenuPane();
          menuBulkChangePane.setVisible( true );
          new FadeIn( menuBulkChangePane ).play();
+
       } else if( event.getSource() == menuTimeConfigurationButton ) {
          closeAllMenuPane();
          menuTimeConfigurationPane.setVisible( true );
          new FadeIn( menuTimeConfigurationPane ).play();
+
       } else if( event.getSource() == bulkChangesSaveButton ) {
          StringBuilder message;
          message = new StringBuilder();
@@ -1141,8 +1170,7 @@ public class MainPanel implements Initializable {
             } ).start();
 
       } else if( event.getSource() == dateTimeSaveButton ) {
-         if( menuDatePicker.getValue() == null ||
-               menuTimePicker.getValue() == null ) {
+         if( menuDatePicker.getValue() == null || menuTimePicker.getValue() == null ) {
          } else {
             StringBuilder message;
             message = new StringBuilder();
@@ -1176,9 +1204,11 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == incomingWaterRadioButton ) {
          if( incomingWaterRadioButton.isSelected() )
             outgoingWaterRadioButton.setSelected( false );
+
       } else if( event.getSource() == outgoingWaterRadioButton ) {
          if( outgoingWaterRadioButton.isSelected() )
             incomingWaterRadioButton.setSelected( false );
+
       } else if( event.getSource() == menuAquariumFeedButton ) {
          if( isArduinoConnect )
             home.getAquarium().feedingOpen( true );
@@ -1231,18 +1261,22 @@ public class MainPanel implements Initializable {
          openElectricity( elecSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
             home.getElectricity().open( elecSubMenuToggleButton.isSelected() );
+
       } else if( event.getSource() == gasSubMenuToggleButton ) {
          openGas( gasSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
             home.getGas().open( gasSubMenuToggleButton.isSelected() );
+
       } else if( event.getSource() == aquariumSubMenuToggleButton ) {
          openAquarium( aquariumSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
             home.getAquarium().open( aquariumSubMenuToggleButton.isSelected() );
+
       } else if( event.getSource() == waterSubMenuToggleButton ) {
          openWater( waterSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
             home.getWater().open( waterSubMenuToggleButton.isSelected() );
+
       } else if( event.getSource() == gardenLightSubMenuToggleButton ) {
          openGardenLight( gardenLightSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
@@ -1335,7 +1369,18 @@ public class MainPanel implements Initializable {
       gardenLightRadioButton.setSelected( control );
    }
 
-   //user profiles main buttons (normal info change button, priv info change button, user changer button)
+   /*
+   3)user profile pane methods
+    */
+
+   /**
+    * userProfileButtonsOnAction method that is onAction of all user profile
+    * buttons that opens user info change pane , user changer pane or
+    * saves user info
+    *
+    * @param event is a ActionEvent input parameter that source of the action
+    * @throws SQLException
+    */
    @FXML
    void userProfileButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == changeUserNormalInfoButton ) {
@@ -1343,11 +1388,13 @@ public class MainPanel implements Initializable {
          new ZoomIn( changeUserNormalInfoPane ).play();
          changeUserNormalInfoPane.setDisable( false );
          userProfilePane.setDisable( true );
+
       } else if( event.getSource() == changeUserPrivateInfoButton ) {
          userProfilePane.setEffect( new BoxBlur( 10, 3, 3 ) );
          new ZoomIn( changeUserPrivateInfoPane ).play();
          changeUserPrivateInfoPane.setDisable( false );
          userProfilePane.setDisable( true );
+
       } else if( event.getSource() == userChangerButton ) {
          try {
             Users.getInstance().getUserList().get( Users.getInstance().getUserList().indexOf( loginUser ) ).setEnter( "false" );
@@ -1356,7 +1403,7 @@ public class MainPanel implements Initializable {
             Stage stage = new Stage();
             stage.setTitle( "SMART HOME" );
             stage.setScene( new Scene( root, 400, 400 ) );
-            stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
+            stage.getIcons().add( new Image( Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" ) ) );
             stage.setResizable( false );
             stage.show();
             commonBorderPane.getScene().getWindow().hide();
@@ -1383,8 +1430,7 @@ public class MainPanel implements Initializable {
             Users.getInstance().updateUserNormalInfo( loginUser,
                   nameTextField.getText(),
                   surnameTextField.getText(),
-                  birthdayDateField.getValue().format( DateTimeFormatter.ofPattern( "dd.MM.yyyy" ) ),
-                  gender );
+                  birthdayDateField.getValue().format( DateTimeFormatter.ofPattern( "dd.MM.yyyy" ) ), gender );
             userPreferenceUpdate( loginUser );
             updateUsersTable();
             toGoBackUserProfile();
@@ -1395,17 +1441,18 @@ public class MainPanel implements Initializable {
                && currentPasswordField.getText().length() > 0
                && newPasswordTextField.getText().length() > 0
                && verifyNewPasswordField.getText().length() > 0 ) {
+
             if( !newPasswordTextField.getText().equals( verifyNewPasswordField.getText() ) ) {
                privateInfoWarning.setVisible( true );
                privateInfoWarning.setText( bundle.getString( "passwordConflictLang" ) );
+
             } else if( !currentPasswordField.getText().equals( loginUser.getPassword() ) ) {
                privateInfoWarning.setVisible( true );
                privateInfoWarning.setText( bundle.getString( "passwordMistakeLang" ) );
+
             } else {
                privateInfoWarning.setVisible( false );
-               Users.getInstance().updatePrivateInfo( loginUser,
-                     userNameTextField.getText(),
-                     newPasswordTextField.getText() );
+               Users.getInstance().updatePrivateInfo( loginUser, userNameTextField.getText(), newPasswordTextField.getText() );
                userPreferenceUpdate( loginUser );
                toGoBackUserProfile();
                updateUsersTable();
@@ -1418,80 +1465,113 @@ public class MainPanel implements Initializable {
          toGoBackUserProfile();
          normalInfoWarning.setVisible( false );
          birthdayDateField.setValue( localDate );
+
       } else if( event.getSource() == backToUserProfileFromPrivateInfo ) {
          toGoBackUserProfile();
          privateInfoWarning.setVisible( false );
+
       } else if( event.getSource() == maleRadioOption ) {
          femaleRadioOption.setSelected( !maleRadioOption.isSelected() );
+
       } else if( event.getSource() == femaleRadioOption ) {
          maleRadioOption.setSelected( !femaleRadioOption.isSelected() );
       }
    }
 
+   /**
+    * controlAvailability control that the new user name available
+    * or not and according to this, it regulates GUI
+    *
+    * @param event is a KeyEvent input parameter that source of the key released
+    */
    @FXML
-   void controlAvailability( KeyEvent event) {
+   void controlAvailability( KeyEvent event ) {
       if( event.getSource() == userNameTextField ) {
-         avaliabilityImage.setVisible( true );
-         if( userNameTextField.getText().equals( loginUser.getUserName() )) {
+         availabilityImage.setVisible( true );
+         if( userNameTextField.getText().equals( loginUser.getUserName() ) ) {
             privateInfoWarning.setVisible( false );
             saveUserPrivateInfo.setDisable( false );
-            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
-         }else if( !Users.getInstance().isUserNameAvailable( userNameTextField.getText() ) ) {
-            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/notAvailable.png" ) ) );
+            availabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
+
+         } else if( !Users.getInstance().isUserNameAvailable( userNameTextField.getText() ) ) {
+            availabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/notAvailable.png" ) ) );
             privateInfoWarning.setVisible( true );
             privateInfoWarning.setText( bundle.getString( "userNameSimilarityLang" ) );
             saveUserPrivateInfo.setDisable( true );
-         }else if( userNameTextField.getText().equals( "" ) ) {
-            avaliabilityImage.setVisible( false );
+
+         } else if( userNameTextField.getText().equals( "" ) ) {
+            availabilityImage.setVisible( false );
             privateInfoWarning.setVisible( false );
-         }else  {
+
+         } else {
             privateInfoWarning.setVisible( false );
             saveUserPrivateInfo.setDisable( false );
-            avaliabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
+            availabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
          }
       }
    }
 
 
-   //user profiles main buttons' helper labels animation
+   /**
+    * userProfileButtonsOnMovement method regulate GUI and sound according
+    * to the source of the movement
+    *
+    * @param event is a MouseEvent input parameter that is source of the movement
+    */
    @FXML
    void userProfileButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == userChangerButton ) {
          userChangerInfoLabel.setVisible( textCheck );
          sound( "userChangerLang", soundCheck );
+
       } else if( event.getSource() == changeUserNormalInfoButton ) {
          changeUserInfoLabel.setVisible( textCheck );
          sound( "changeUserInfoLang", soundCheck );
+
       } else if( event.getSource() == changeUserPrivateInfoButton ) {
          changeUserPrivateInfoLabel.setVisible( textCheck );
          sound( "changeUserInfoLang", soundCheck );
+
       } else if( event.getSource() == saveUserNormalInfo
             || event.getSource() == saveUserPrivateInfo ) {
          sound( "saveChangesLang", soundCheck );
+
       } else if( event.getSource() == backToUserProfileFromNormalInfo
             || event.getSource() == backToUserProfileFromPrivateInfo ) {
          sound( "goBackLang", soundCheck );
       }
    }
 
+   /**
+    * userProfileButtonsOnExit method regulate GUI and sound according
+    * to the source of the exit
+    *
+    * @param event is a MouseEvent input parameter that is source of the exit
+    */
    @FXML
    void userProfileButtonsOnExit( MouseEvent event ) {
       if( event.getSource() == userChangerButton )
          userChangerInfoLabel.setVisible( false );
+
       else if( event.getSource() == changeUserNormalInfoButton )
          changeUserInfoLabel.setVisible( false );
+
       else if( event.getSource() == changeUserPrivateInfoButton )
          changeUserPrivateInfoLabel.setVisible( false );
 
       sound( "gasLang", false );
    }
 
-   //user profiles user info changer panels
+   /**
+    * toGoBackUserProfile method that help to go back from set user information
+    * panes with animation and blur
+    */
    public void toGoBackUserProfile() {
       userProfilePane.setEffect( new BoxBlur( 0, 0, 0 ) );
       userProfilePane.setDisable( false );
       if( !changeUserNormalInfoPane.isDisable() )
          new ZoomOut( changeUserNormalInfoPane ).play();
+
       if( !changeUserPrivateInfoPane.isDisable() )
          new ZoomOut( changeUserPrivateInfoPane ).play();
       changeUserNormalInfoPane.setDisable( true );
@@ -1500,20 +1580,31 @@ public class MainPanel implements Initializable {
       newPasswordTextField.setText( "" );
       verifyNewPasswordField.setText( "" );
       currentPasswordField.setText( "" );
-      avaliabilityImage.setVisible( false );
+      availabilityImage.setVisible( false );
    }
 
 
-   //settings
-   //settings ---------top pane
+   /*
+   4)setting pane methods
+    */
+
+   /**
+    * settingsFacilitiesButtonsOnAction method control which pane should open
+    * according to source of event
+    *
+    * @param event is an ActionEvent input parameter that source of action
+    */
    @FXML
-   void settingsFacilitiesButtons( ActionEvent event ) {
+   void settingsFacilitiesButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == applicationSettingButton )
          openApplicationPanes();
+
       else if( event.getSource() == settingsUsersSettingButton )
          openUsersPane();
+
       else if( event.getSource() == modsSettingButton )
          openModsPane();
+
       else if( event.getSource() == homeSettingButton ) {
          openHomeSettingPane();
          settingElecSettingPane.setVisible( true );
@@ -1523,20 +1614,31 @@ public class MainPanel implements Initializable {
 
 
    //all settings buttons ( app settings(theme-language-emergency-notification-connection), users settings( add-remove user), home settings())
+
+   /**
+    * settingsFacilitiesButtonsOnAction method regulates GUI according
+    * to source of event
+    *
+    * @param event is a MouseEvent input parameter that is source
+    *              of the mouse movement
+    */
    @FXML
    void settingsFacilitiesButtonsMov( MouseEvent event ) {
       if( event.getSource() == applicationSettingButton
             || event.getSource() == applicationSettingButtonActive ) {
          applicationSettingButtonLabel.setVisible( textCheck );
          sound( "applicationSettingLang", soundCheck );
+
       } else if( event.getSource() == settingsUsersSettingButton
             || event.getSource() == settingsUsersSettingButtonActive ) {
          usersSettingButtonLabel.setVisible( textCheck );
          sound( "usersSettingLang", soundCheck );
+
       } else if( event.getSource() == modsSettingButton
             || event.getSource() == modsSettingButtonActive ) {
          modsSettingButtonLabel.setVisible( textCheck );
          sound( "modsSettingLang", soundCheck );
+
       } else if( event.getSource() == homeSettingButton
             || event.getSource() == homeSettingButtonActive ) {
          homeSettingButtonLabel.setVisible( textCheck );
@@ -1544,41 +1646,66 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * settingsFacilitiesButtonsMovEx method regulates GUI according
+    * to source of event
+    *
+    * @param event is a MouseEvent input parameter that is source
+    *              of the mouse exit
+    */
    @FXML
    void settingsFacilitiesButtonsMovEx( MouseEvent event ) {
       if( event.getSource() == applicationSettingButton
             || event.getSource() == applicationSettingButtonActive )
          applicationSettingButtonLabel.setVisible( false );
+
       else if( event.getSource() == settingsUsersSettingButton
             || event.getSource() == settingsUsersSettingButtonActive )
          usersSettingButtonLabel.setVisible( false );
+
       else if( event.getSource() == modsSettingButton
-               || event.getSource() == modsSettingButtonActive )
+            || event.getSource() == modsSettingButtonActive )
          modsSettingButtonLabel.setVisible( false );
+
       else if( event.getSource() == homeSettingButton
-                  || event.getSource() == homeSettingButtonActive )
+            || event.getSource() == homeSettingButtonActive )
          homeSettingButtonLabel.setVisible( false );
       sound( "gasLang", false );
    }
 
-   //settings -----application settings
+   /*
+   4.1)application setting pane methods
+    */
+
+   /**
+    * applicationSettingsButtonsOnAction method that controls the all
+    * application setting panes' buttons
+    *
+    * @param event is an ActionEvent input parameter
+    * @throws SQLException
+    */
    @FXML
    void applicationSettingsButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == themeSettingButton ) {
          closeAllApplicationSettingSubPanes();
          openThemeSetting();
+
       } else if( event.getSource() == languageSettingButton ) {
          closeAllApplicationSettingSubPanes();
          openLanguageSetting();
+
       } else if( event.getSource() == emergencySettingButton ) {
          closeAllApplicationSettingSubPanes();
          openEmergencySetting();
+
       } else if( event.getSource() == phoneNotificationSettingButton ) {
          closeAllApplicationSettingSubPanes();
-         openPhoneNotificationSetting();
+         openNotificationSetting();
+
       } else if( event.getSource() == smartHomeConnectionSettingButton ) {
          closeAllApplicationSettingSubPanes();
          openSmartHomeConnectionSetting();
+
       } else if( event.getSource() == portConnectionButton ) {
          arduino = new Arduino( portChooser.getValue(), 9600 );
 
@@ -1598,8 +1725,10 @@ public class MainPanel implements Initializable {
                public void serialEvent( SerialPortEvent serialPortEvent ) {
                   if( serialPortEvent.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE )
                      return;
-                  home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,
-                        0, 0 );
+                  home.getArduino().getSerialPort().setComPortTimeouts(
+                        SerialPort.TIMEOUT_NONBLOCKING,
+                        0,
+                        0 );
                   StringBuilder out = new StringBuilder();
                   Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
 
@@ -1634,42 +1763,50 @@ public class MainPanel implements Initializable {
          } else {
             portChooser.setValue( "" );
          }
+
       } else if( event.getSource() == externalSirenToggle ) {
          if( isArduinoConnect )
             home.getSiren().open( externalSirenToggle.isSelected() );
+
       } else if( event.getSource() == internalSirenToggle ) {
          if( isArduinoConnect )
             home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
+
       } else if( event.getSource() == fireButtonVisualToggle ) {
          if( fireButtonVisualToggle.isSelected() )
             sensors[ 0 ] = "O" + sensors[ 0 ].charAt( 1 );
          else
             sensors[ 0 ] = "C" + sensors[ 0 ].charAt( 1 );
          CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
       } else if( event.getSource() == gasSensorVisualToggle ) {
          if( gasSensorVisualToggle.isSelected() )
             sensors[ 1 ] = "O" + sensors[ 1 ].charAt( 1 );
          else
             sensors[ 1 ] = "C" + sensors[ 1 ].charAt( 1 );
          CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
       } else if( event.getSource() == smokeSensorVisualToggle ) {
          if( smokeSensorVisualToggle.isSelected() )
             sensors[ 2 ] = "O" + sensors[ 2 ].charAt( 1 );
          else
             sensors[ 2 ] = "C" + sensors[ 2 ].charAt( 1 );
          CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
       } else if( event.getSource() == fireButtonSoundToggle ) {
          if( fireButtonSoundToggle.isSelected() )
             sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "O";
          else
             sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "C";
          CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
       } else if( event.getSource() == gasSensorSoundToggle ) {
          if( gasSensorSoundToggle.isSelected() )
             sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "O";
          else
             sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "C";
          CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
       } else if( event.getSource() == smokeSensorSoundToggle ) {
          if( smokeSensorSoundToggle.isSelected() )
             sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "O";
@@ -1679,9 +1816,15 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * applicationSettingsButtonsOnMovement method that controls all movements
+    * about application panes' buttons and regulate GUI according to
+    * these movements
+    *
+    * @param event is a MouseEvent input parameter that is source of the mouse movement
+    */
    @FXML
    void applicationSettingsButtonsOnMovement( MouseEvent event ) {
-
       if( event.getSource() == themeSettingButton
             || event.getSource() == themeSettingButtonActive ) {
          themeSubLabel.setVisible( textCheck );
@@ -1695,7 +1838,7 @@ public class MainPanel implements Initializable {
          emergencySubLabel.setVisible( textCheck );
          sound( "emergencyLang", soundCheck );
       } else if( event.getSource() == phoneNotificationSettingButton
-            || event.getSource() == phoneNotificationSettingButtonActive ) {
+            || event.getSource() == notificationSettingButtonActive ) {
          notificationSubLabel.setVisible( textCheck );
          sound( "notificationLang", soundCheck );
       } else if( event.getSource() == smartHomeConnectionSettingButton
@@ -1725,6 +1868,14 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * applicationSettingsButtonsOnExit method that controls all exits
+    * about application panes' buttons and regulate GUI according to
+    * these exits
+    *
+    * @param event is a MouseEvent input parameter that is source
+    *              of the exit movement
+    */
    @FXML
    void applicationSettingsButtonsOnExit( MouseEvent event ) {
       if( event.getSource() == themeSettingButton )
@@ -1755,31 +1906,45 @@ public class MainPanel implements Initializable {
       sound( "gasLang", false );
    }
 
+   /**
+    * openThemeSetting method that opens theme setting pane
+    */
    void openThemeSetting() {
       themeSettingButtonActive.setVisible( true );
       settingThemePane.setDisable( false );
       new FadeInUp( settingThemePane ).play();
    }
 
+   /**
+    * openLanguageSetting method that opens language setting pane
+    */
    void openLanguageSetting() {
       languageSettingButtonActive.setVisible( true );
       settingLanguagePane.setDisable( false );
       new FadeInUp( settingLanguagePane ).play();
    }
 
+   /**
+    * openEmergencySetting method that opens emergency setting pane
+    */
    void openEmergencySetting() {
       emergencySettingButtonActive.setVisible( true );
       settingEmergencyPane.setDisable( false );
       new FadeInUp( settingEmergencyPane ).play();
    }
 
-   void openPhoneNotificationSetting() {
-      phoneNotificationSettingButtonActive.setVisible( true );
+   /**
+    * openNotificationSetting method that opens notification setting pane
+    */
+   void openNotificationSetting() {
+      notificationSettingButtonActive.setVisible( true );
       settingNotificationPane.setDisable( false );
       new FadeInUp( settingNotificationPane ).play();
    }
 
-
+   /**
+    * openSmartHomeConnectionSetting method that opens connection setting pane
+    */
    void openSmartHomeConnectionSetting() {
       smartHomeConnectionSettingButtonActive.setVisible( true );
       settingConnectionPane.setDisable( false );
@@ -1787,6 +1952,10 @@ public class MainPanel implements Initializable {
       refreshPortList();
    }
 
+   /**
+    * closeAllApplicationSettingSubPanes method that closes all
+    * application setting panes with animation
+    */
    void closeAllApplicationSettingSubPanes() {
       if( !settingThemePane.isDisable() ) {
          themeSettingButtonActive.setVisible( false );
@@ -1804,7 +1973,7 @@ public class MainPanel implements Initializable {
          settingEmergencyPane.setDisable( true );
       }
       if( !settingNotificationPane.isDisable() ) {
-         phoneNotificationSettingButtonActive.setVisible( false );
+         notificationSettingButtonActive.setVisible( false );
          new FadeOut( settingNotificationPane ).play();
          settingNotificationPane.setDisable( true );
       }
@@ -1820,6 +1989,9 @@ public class MainPanel implements Initializable {
       connectionSubLabel.setVisible( false );
    }
 
+   /**
+    * closeApplicationSettingPane method that close application setting
+    */
    void closeApplicationSettingPane() {
       applicationSettingButtonActive.setVisible( false );
       applicationSettingSubPane.setVisible( false );
@@ -1827,6 +1999,9 @@ public class MainPanel implements Initializable {
       themeSubLabel.setVisible( textCheck );
    }
 
+   /**
+    * openApplicationPanes method that open application setting
+    */
    void openApplicationPanes() {
       applicationSettingButtonActive.setVisible( true );
       applicationSettingSubPane.setVisible( true );
@@ -1836,8 +2011,13 @@ public class MainPanel implements Initializable {
       closeHomeSettingPane();
    }
 
-   //settings ---------view pane----theme pane
 
+   /**
+    * themePaneButtonsOnAction method that determines which theme is given
+    *
+    * @param event is an ActionEvent input parameter
+    * @throws SQLException
+    */
    @FXML
    void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       unSelectAllTheme();
@@ -1847,6 +2027,11 @@ public class MainPanel implements Initializable {
             ( ( JFXRadioButton ) event.getSource() ).getText().toLowerCase() );
    }
 
+   /**
+    * unSelectAllTheme method make unselected all theme radio buttons.
+    * The reason of this is that It save us to write code for each radio
+    * button(12)
+    */
    public void unSelectAllTheme() {
       cartoonThemeRadioButton.setSelected( false );
       lightThemeRadioButton.setSelected( false );
@@ -1862,6 +2047,11 @@ public class MainPanel implements Initializable {
       abstractThemeRadioButton.setSelected( false );
    }
 
+   /**
+    * changeTheme method that regulate GUI according to given theme
+    *
+    * @param themeName is a String input parameter that is new theme name
+    */
    void changeTheme( String themeName ) {
       String css;
       unSelectAllTheme();
@@ -1914,7 +2104,7 @@ public class MainPanel implements Initializable {
          spaceThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/spaceTheme.png" ) ) );
 
-      } else if( themeName.equals( "neon" )  ) {
+      } else if( themeName.equals( "neon" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_neon_theme.css" ).toExternalForm();
          neonThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/neonTheme.png" ) ) );
@@ -1925,19 +2115,18 @@ public class MainPanel implements Initializable {
             || themeName.equals( "yildizlararasi" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_interstellar_theme.css" ).toExternalForm();
          interstellarThemeRadioButton.setSelected( true );
-         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) )
-         ;
+         themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) );
       } else if( themeName.equals( "pyramid" )
             || themeName.equals( "pyramıd" )
             || themeName.equals( "pyramide" )
             || themeName.equals( "pyramıde" )
             || themeName.equals( "piramit" )
-            || themeName.equals( "pıramıt" )) {
+            || themeName.equals( "pıramıt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
          pyramidThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/pyramidTheme.png" ) ) );
 
-      } else if( themeName.equals( "cyberpunk" )  ) {
+      } else if( themeName.equals( "cyberpunk" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cyberpunk_theme.css" ).toExternalForm();
          cyberpunkThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cyberpunkTheme.png" ) ) );
@@ -1954,7 +2143,7 @@ public class MainPanel implements Initializable {
             || themeName.equals( "intelligente stadt" )
             || themeName.equals( "ıntellıgente stadt" )
             || themeName.equals( "akıllı sehır" )
-            || themeName.equals( "akilli sehir" )) {
+            || themeName.equals( "akilli sehir" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
          smartCityThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/smartCityTheme.png" ) ) );
@@ -1970,8 +2159,13 @@ public class MainPanel implements Initializable {
       }
    }
 
-   //settings ----language pane
-   //language pane buttons
+   /**
+    * languagePaneButtonsOnAction method regulates language of application
+    * according to source of event
+    *
+    * @param event is an ActionEvent input parameter
+    * @throws SQLException
+    */
    @FXML
    void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException {
       String language;
@@ -1982,10 +2176,12 @@ public class MainPanel implements Initializable {
          selectEnglishOption();
          languageSetter( "en" );
          language = "ENGLISH";
+
       } else if( event.getSource() == germanOption ) {
          selectGermanOption();
          languageSetter( "de" );
          language = "DEUTSCH";
+
       } else if( event.getSource() == turkishOption ) {
          selectTurkishOption();
          languageSetter( "tr" );
@@ -1996,6 +2192,12 @@ public class MainPanel implements Initializable {
       userPreferenceUpdate( loginUser );
    }
 
+   /**
+    * languageSetter method that regulate all strings according to given string.
+    * It adjusts new language using properties files
+    *
+    * @param language is a String input parameter( tr, en, de)
+    */
    private void languageSetter( String language ) {
       try {
          Locale locale = new Locale( language );
@@ -2178,6 +2380,10 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * unSelectAllLanguage method that makes unselected all language button.
+    * The reason of writing this is that we prevent to write twice same things
+    */
    void unSelectAllLanguage() {
       englishOption.setPrefSize( 90, 90 );
       englishOption.setLayoutX( 110 );
@@ -2190,74 +2396,117 @@ public class MainPanel implements Initializable {
       turkishOption.setLayoutY( 105 );
    }
 
+   /**
+    * selectEnglishOption method that select english and adjust
+    * GUI according to this
+    */
    void selectEnglishOption() {
       englishOption.setPrefSize( 150, 150 );
       englishOption.setLayoutX( 80 );
       englishOption.setLayoutY( 105 );
    }
 
+   /**
+    * selectGermanOption method that select english and adjust
+    * GUI according to this
+    */
    void selectGermanOption() {
       germanOption.setPrefSize( 150, 150 );
       germanOption.setLayoutX( 274 );
       germanOption.setLayoutY( 105 );
    }
 
+   /**
+    * selectTurkishOption method that select english and adjust
+    * GUI according to this
+    */
    void selectTurkishOption() {
       turkishOption.setPrefSize( 150, 150 );
       turkishOption.setLayoutX( 471 );
       turkishOption.setLayoutY( 105 );
    }
 
+   /**
+    * languagePaneButtonsOnMovement method controls label in GUI
+    * according to source of event
+    *
+    * @param event is a MouseEvent input parameter that is source
+    *              of the mouse movement
+    */
    @FXML
    void languagePaneButtonsOnMovement( MouseEvent event ) {
       if( event.getSource() == englishOption )
          englishLabel.setVisible( textCheck );
+
       else if( event.getSource() == germanOption )
          germanLabel.setVisible( textCheck );
+
       else if( event.getSource() == turkishOption )
          turkishLabel.setVisible( textCheck );
    }
 
+   /**
+    * languagePaneButtonsOnExit method controls label in GUI
+    * according to source of event
+    *
+    * @param event is a MouseEvent input parameter that is source
+    *              of the mouse exit
+    */
    @FXML
    void languagePaneButtonsOnExit( MouseEvent event ) {
+
       if( event.getSource() == englishOption )
          englishLabel.setVisible( false );
+
       else if( event.getSource() == germanOption )
          germanLabel.setVisible( false );
+
       else if( event.getSource() == turkishOption )
          turkishLabel.setVisible( false );
       sound( "gasLang", false );
    }
 
-   //settings----users settings menu
+   /*
+   4.2)users setting pane methods
+   */
 
+   /**
+    * closeAllUsersPane method closes the users pane with Animation
+    */
    void closeAllUsersPane() {
       usersSettingSubPane.setDisable( true );
       settingUsersPane.setDisable( true );
       settingsUsersSettingButtonActive.setVisible( false );
+
       if( !addUserPane.isDisable() ) {
          addUserPane.setDisable( true );
          new FadeOut( addUserPane ).play();
          usersSettingSubPane.setOpacity( 0 );
          settingUsersPane.setOpacity( 0 );
+
       }
       if( !deleteUserPane.isDisable() ) {
          deleteUserPane.setDisable( true );
          new FadeOut( deleteUserPane ).play();
          usersSettingSubPane.setOpacity( 0 );
          settingUsersPane.setOpacity( 0 );
+
       }
       if( !permissionPane.isDisable() ) {
          permissionPane.setDisable( true );
          new FadeOut( permissionPane ).play();
          usersSettingSubPane.setOpacity( 0 );
          settingUsersPane.setOpacity( 0 );
+
       } else {
          new FadeOut( usersSettingSubPane ).play();
          new FadeOut( settingUsersPane ).play();
       }
    }
 
+   /**
+    * openUsersPane method opens users pane with Animation
+    */
    void openUsersPane() {
       settingUsersPane.setDisable( false );
       usersSettingSubPane.setDisable( false );
@@ -2269,6 +2518,13 @@ public class MainPanel implements Initializable {
       closeHomeSettingPane();
    }
 
+   /**
+    * usersSettingsPaneButtonsOnAction method that controls GUI changes
+    * when these buttons are triggered
+    *
+    * @param event is an ActionEvent input parameter that source of
+    *              the action in users pane
+    */
    @FXML
    void usersSettingsPaneButtonsOnAction( ActionEvent event ) {
       if( event.getSource() == usersSettingSubPaneAddUser ) {
@@ -2277,12 +2533,14 @@ public class MainPanel implements Initializable {
          permissionPane.setDisable( true );
          new FadeInUp( addUserPane ).play();
          sound( "createUserLang", soundCheck );
+
       } else if( event.getSource() == usersSettingSubPaneRemoveUser ) {
          addUserPane.setDisable( true );
          deleteUserPane.setDisable( false );
          permissionPane.setDisable( true );
          new FadeInUp( deleteUserPane ).play();
          sound( "removeAnUserLang", soundCheck );
+
       } else if( event.getSource() == usersSettingSubPanePermissionButton ) {
          addUserPane.setDisable( true );
          deleteUserPane.setDisable( true );
@@ -2292,18 +2550,28 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * settingUserTableMov method controls which user is chosen from
+    * table when there is a movement on the table
+    */
    @FXML
    void settingUserTableMov() {
       if( settingUserTable.getSelectionModel().isEmpty() )
          usersSettingSubPaneRemoveUser.setDisable( true );
       else
-         usersSettingSubPaneRemoveUser.setDisable(
-               settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "PARENT" )
-                     && !( Users.getInstance().getParentNumber() > 1 ) );
+         usersSettingSubPaneRemoveUser.setDisable( settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "PARENT" )
+               && !( Users.getInstance().getParentNumber() > 1 ) );
    }
 
-   //settings ---------sub view pane----users settings menu---- add new user pane
 
+   /**
+    * createUserPaneAction method controls the status whether new user
+    * information fields suitable or not and add user according to
+    * button's action
+    *
+    * @param event is an ActionEvent input parameter that is source of the action
+    * @throws SQLException
+    */
    @FXML
    void createUserPaneAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == createUserConfirmButton ) {
@@ -2335,24 +2603,22 @@ public class MainPanel implements Initializable {
                && !createUserElderOption.isSelected() ) ) {
             createUserWarningLabel.setText( bundle.getString( "normalInfoWarningLang" ) );
             sound( "normalInfoWarningLang", soundCheck );
+
          } else if( !createUserPasswordField.getText().equals( createUserPasswordVerifyField.getText() ) ) {
             createUserWarningLabel.setText( bundle.getString( "passwordConflictLang" ) );
             sound( "passwordConflictLang", soundCheck );
+
          } else {
             Users.getInstance().addUser( new User( createUserNameTextField.getText(),
                   createUserSurnameTextField.getText(),
                   createDatePicker.getValue().format( dateTimeFormatter ),
-                  addUserGender.getText(),
-                  createUserUserNameTextField.getText(),
-                  createUserPasswordField.getText(),
-                  addUserType.getText(),
-                  addUserTheme.getText().toLowerCase(),
-                  addUserLanguage.getText(),
+                  addUserGender.getText(), createUserUserNameTextField.getText(),
+                  createUserPasswordField.getText(), addUserType.getText(),
+                  addUserTheme.getText().toLowerCase(), addUserLanguage.getText(),
                   "false",
                   "true",
                   "true050",
-                  "Ankara"
-            ) );
+                  "Ankara" ) );
             updateUsersTable();
             addUserPane.setDisable( true );
             new FadeOut( addUserPane ).play();
@@ -2373,6 +2639,7 @@ public class MainPanel implements Initializable {
          createUserFemaleOption.setSelected( false );
          ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
          addUserGender = ( JFXRadioButton ) event.getSource();
+
       } else if( event.getSource() == createUserDarkThemeOption
             || event.getSource() == createUserLightThemeOption
             || event.getSource() == createUserSmoothThemeOption
@@ -2399,6 +2666,7 @@ public class MainPanel implements Initializable {
          createUserInterstellarThemeOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserTheme = ( JFXRadioButton ) ( event.getSource() );
+
       } else if( event.getSource() == createUserEnglishOption
             || event.getSource() == createUserGermanOption
             || event.getSource() == createUserTurkishOption ) {
@@ -2407,6 +2675,7 @@ public class MainPanel implements Initializable {
          createUserGermanOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserLanguage = ( JFXRadioButton ) ( event.getSource() );
+
       } else if( event.getSource() == createUserParentOption
             || event.getSource() == createUserChildOption
             || event.getSource() == createUserElderOption ) {
@@ -2417,6 +2686,11 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * clearAddPane method that clear the all fields of add pane
+    * the reason of writing twice is that we will use this code
+    * more than one times
+    */
    public void clearAddPane() {
       createUserNameTextField.setText( "" );
       createUserSurnameTextField.setText( "" );
@@ -2443,27 +2717,35 @@ public class MainPanel implements Initializable {
       createUserParentOption.setSelected( false );
       createUserChildOption.setSelected( false );
       createDatePicker.setValue( null );
-
       addUserGender = null;
       addUserLanguage = null;
       addUserTheme = null;
       addUserType = null;
    }
 
-
-   //settings ---------sub view pane----users settings menu---- remove user pane
+   /**
+    * removeUserPaneAction method that control GUI information and remove user
+    * according to buttons' action
+    *
+    * @param event is an ActionEvent inpur parameter that is source of the
+    *              action in the remove user pane
+    * @throws SQLException
+    */
    @FXML
    void removeUserPaneAction( ActionEvent event ) throws SQLException {
+
       if( event.getSource() == removeUserGoBack ) {
          deleteUserPane.setDisable( true );
          new FadeOut( deleteUserPane ).play();
          removeUserHideWarning.setVisible( false );
-      } else if( event.getSource() == removeUserConfirm ||
-            event.getSource() == removeUserTextField ) {
+
+      } else if( event.getSource() == removeUserConfirm
+            || event.getSource() == removeUserTextField ) {
          if( removeUserTextField.getText().isEmpty() ) {
             removeUserHideWarning.setText( bundle.getString( "removePasswordLang" ) );
             removeUserHideWarning.setVisible( true );
             sound( "removePasswordLang", soundCheck );
+
          } else if( loginUser.getUserType().equals( "PARENT" )
                && removeUserTextField.getText().equals( loginUser.getPassword() )
                && settingUserTable.getSelectionModel().getSelectedItem().getValue().getUserType().equals( "CHILD" ) ) {
@@ -2477,8 +2759,7 @@ public class MainPanel implements Initializable {
                usersSettingSubPaneRemoveUser.setDisable( true );
             }
 
-         } else if( removeUserTextField.getText().equals(
-               settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() )
+         } else if( removeUserTextField.getText().equals( settingUserTable.getSelectionModel().getSelectedItem().getValue().getPassword() )
                && settingUserTable.getSelectionModel().getSelectedItem().getValue() == loginUser ) {
 
             try {
@@ -2491,7 +2772,7 @@ public class MainPanel implements Initializable {
                Stage stage = new Stage();
                stage.setTitle( "SMART HOME" );
                stage.setScene( new Scene( root, 400, 400 ) );
-               stage.getIcons().add( new Image(Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" )) );
+               stage.getIcons().add( new Image( Main.class.getResourceAsStream( "styleSheets/images/smartHome.png" ) ) );
                stage.setResizable( false );
                stage.show();
                commonBorderPane.getScene().getWindow().hide();
@@ -2519,6 +2800,13 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * permissionPaneButtonsOnAction method controls the permissions according
+    * to status of toggle buttons
+    *
+    * @param event is an ActionEvent input parameter that is source of the event
+    * @throws SQLException
+    */
    @FXML
    void permissionPaneButtonsOnAction( ActionEvent event ) throws SQLException {
       if( event.getSource() == permissionPaneElectricityToggle ) {
@@ -2526,44 +2814,58 @@ public class MainPanel implements Initializable {
             permissions[ 0 ] = "O";
          else
             permissions[ 0 ] = "C";
+
       } else if( event.getSource() == permissionPaneGasToggle ) {
          if( permissionPaneGasToggle.isSelected() )
             permissions[ 1 ] = "O";
          else
             permissions[ 1 ] = "C";
+
       } else if( event.getSource() == permissionPaneWaterToggle ) {
          if( permissionPaneWaterToggle.isSelected() )
             permissions[ 2 ] = "O";
          else
             permissions[ 2 ] = "C";
+
       } else if( event.getSource() == permissionPaneGardenLightToggle ) {
          if( permissionPaneGardenLightToggle.isSelected() )
             permissions[ 3 ] = "O";
          else
             permissions[ 3 ] = "C";
+
       } else if( event.getSource() == permissionPaneAquariumToggle ) {
          if( permissionPaneAquariumToggle.isSelected() )
             permissions[ 4 ] = "O";
          else
             permissions[ 4 ] = "C";
+
       } else if( event.getSource() == permissionPaneNotificationToggle ) {
          if( permissionPaneNotificationToggle.isSelected() )
             permissions[ 5 ] = "O";
          else
             permissions[ 5 ] = "C";
+
       } else if( event.getSource() == permissionPaneSirenToggle ) {
          if( permissionPaneSirenToggle.isSelected() )
             permissions[ 6 ] = "O";
          else
             permissions[ 6 ] = "C";
+
       } else if( event.getSource() == permissionPaneGoBackButton ) {
          permissionPane.setDisable( true );
          new FadeOut( permissionPane ).play();
       }
-      CommonSettingData.getInstance().updatePermission( commonSetting, permissions );
+      CommonSettingData.getInstance().updatePermission( commonSetting,
+            permissions );
    }
-   //settings----mods settings menu
 
+   /*
+    4.3)mods setting pane methods
+    */
+
+   /**
+    * openModsPane method that opens mods pane in GUI
+    */
    public void openModsPane() {
       settingModePane.setDisable( false );
       new FadeInUp( settingModePane ).play();
@@ -2573,57 +2875,54 @@ public class MainPanel implements Initializable {
       closeHomeSettingPane();
    }
 
+   /**
+    * closeModsPane method that closes mods pane in GUI
+    */
    public void closeModsPane() {
       settingModePane.setDisable( true );
       new FadeOut( settingModePane ).play();
       modsSettingButtonActive.setVisible( false );
    }
 
-   //settings----mods settings menu
-
-   public void openHomeSettingPane() {
-      homeSettingButtonActive.setVisible( true );
-      homeSettingSubPane.setDisable( false );
-      settingElecSettingPane.setDisable( false );
-      new FadeInUp( homeSettingSubPane ).play();
-      new FadeInUp( settingElecSettingPane ).play();
-      closeApplicationSettingPane();
-      closeAllUsersPane();
-      closeModsPane();
-
-   }
-
-   public void closeHomeSettingPane() {
-      homeSettingButtonActive.setVisible( false );
-      closeAllHomeSetting();
-   }
-
-   //settings----mods settings menu
+   /**
+    * volumeAdjust controls the slider to get user preferred volume level
+    * and send it database
+    *
+    * @throws SQLException
+    */
    @FXML
    void volumeAdjust() throws SQLException {
       String modsSound;
 
       if( soundVolumeSlider.getValue() < 10 ) {
          volume = "00" + ( int ) soundVolumeSlider.getValue();
+
       } else if( soundVolumeSlider.getValue() < 100 ) {
          volume = "0" + ( int ) soundVolumeSlider.getValue();
+
       } else {
          volume = "" + ( int ) soundVolumeSlider.getValue();
       }
 
       audioClip.stop();
-      audioClip = new AudioClip( this.getClass().getResource( "music/"
-            + bundle.getString( "pathLang" ) + "volumeTryLang" + bundle.getString( "mp3Lang" ) ).toString() );
+      audioClip = new AudioClip( this.getClass().getResource( "music/" +
+            bundle.getString( "pathLang" ) + "volumeTryLang" +
+            bundle.getString( "mp3Lang" ) ).toString() );
       audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
       audioClip.play( ( ( double ) Integer.parseInt( volume ) ) / 500 );
-
-      modsSound = loginUser.getSound().substring( 0,
-            loginUser.getSound().length() - 3 ) + volume;
+      modsSound = loginUser.getSound().substring( 0, loginUser.getSound().length() - 3 ) + volume;
       Users.getInstance().updateVolume( loginUser, modsSound );
       userPreferenceUpdate( loginUser );
       updateUsersTable();
    }
 
+   /**
+    * modsToggleButtons method controls whether user wants to use these
+    * mods or not
+    *
+    * @param event is an ActionEvent input parameter that is source of the event
+    * @throws SQLException
+    */
    @FXML
    void modsToggleButtons( ActionEvent event ) throws SQLException {
       String modsSound;
@@ -2646,66 +2945,115 @@ public class MainPanel implements Initializable {
       updateUsersTable();
    }
 
-   public void soundControl( Boolean check ) {
+   /**
+    * soundControl method controls whether sound mode is active or not
+    *
+    * @param check is a boolean input parameter
+    */
+   public void soundControl( boolean check ) {
       soundVolumeSlider.setVisible( check );
       soundVolumeLabel.setVisible( check );
       soundCheck = check;
    }
 
-   //settings pane----home settings pane
+   /*
+ 4.4)home setting pane methods
+ */
+
+   /**
+    * openHomeSettingPane method opens home setting pane in GUI
+    */
+   public void openHomeSettingPane() {
+      homeSettingButtonActive.setVisible( true );
+      homeSettingSubPane.setDisable( false );
+      settingElecSettingPane.setDisable( false );
+      new FadeInUp( homeSettingSubPane ).play();
+      new FadeInUp( settingElecSettingPane ).play();
+      closeApplicationSettingPane();
+      closeAllUsersPane();
+      closeModsPane();
+   }
+
+   /**
+    * closeHomeSettingPane method closes home setting pane in GUI
+    */
+   public void closeHomeSettingPane() {
+      homeSettingButtonActive.setVisible( false );
+      closeAllHomeSetting();
+   }
+
+
+   /**
+    * homeSettingButtonsOnAction methods adjust GUI( open close panes, set
+    * aquarium setting, weather update) according to source of the action
+    *
+    * @param event is an ActionEvent input parameter that source of the action
+    * @throws SQLException
+    */
    @FXML
-   void homeSettingButtons( ActionEvent event ) throws SQLException {
+   void homeSettingButtonsOnAction( ActionEvent event ) throws SQLException {
+
       if( event.getSource() == homeSettingElecButton ) {
          closeAllHomeSetting();
          settingElecSettingPane.setDisable( false );
          new FadeInUp( settingElecSettingPane ).play();
          openHomeSetting();
          homeSettingElecButtonActive.setVisible( true );
+
       } else if( event.getSource() == homeSettingGasButton ) {
          closeAllHomeSetting();
          settingGasSettingPane.setDisable( false );
          new FadeInUp( settingGasSettingPane ).play();
          openHomeSetting();
          homeSettingGasButtonActive.setVisible( true );
+
       } else if( event.getSource() == homeSettingAquButton ) {
          closeAllHomeSetting();
          settingAquSettingPane.setDisable( false );
          new FadeInUp( settingAquSettingPane ).play();
          openHomeSetting();
          homeSettingAquButtonActive.setVisible( true );
+
       } else if( event.getSource() == homeSettingGreenHouseButton ) {
          closeAllHomeSetting();
          settingGreenHouseSettingPane.setDisable( false );
          new FadeInUp( settingGreenHouseSettingPane ).play();
          openHomeSetting();
          homeSettingGreenHouseButtonActive.setVisible( true );
+
       } else if( event.getSource() == homeSettingWeatherButton ) {
          closeAllHomeSetting();
          settingWeatherSettingPane.setDisable( false );
          new FadeInUp( settingWeatherSettingPane ).play();
          openHomeSetting();
          homeSettingWeatherButtonActive.setVisible( true );
+
       } else if( event.getSource() == updateWeatherButton
             || event.getSource() == settingWeatherLocationTextField ) {
          if( settingWeatherLocationTextField.getText().length() > 0 ) {
             weatherUpdateSpinner.setVisible( true );
             updateWeatherButton.setVisible( false );
+
             new Thread( () -> {
                try {
                   if( weatherForecast == null )
-                     weatherForecast = new WeatherForecast( loginUser.getLocation() );
+                     weatherForecast = new WeatherForecast(
+                           loginUser.getLocation() );
                   else {
-                     weatherForecast.findLocationXY( settingWeatherLocationTextField.getText() );
+                     weatherForecast.findLocationXY(
+                           settingWeatherLocationTextField.getText() );
                      weatherForecast.getWeatherCase();
                   }
                } catch( IOException exception ) {
-                  settingWeatherForecastLabelValue.setText( bundle.getString( "netConnectionLang" ) );
+                  settingWeatherForecastLabelValue.setText( bundle.getString(
+                        "netConnectionLang" ) );
                   settingWeatherTemperatureLabelValue.setText( bundle.getString( "netConnectionLang" ) );
                   settingWeatherHumidityLabelValue.setText( bundle.getString( "netConnectionLang" ) );
                   settingWeatherWindLabelValue.setText( bundle.getString( "netConnectionLang" ) );
                   informationTime.setText( bundle.getString( "netConnectionLang" ) );
                   try {
-                     Users.getInstance().updateLocation( loginUser, settingWeatherLocationTextField.getText() );
+                     Users.getInstance().updateLocation( loginUser,
+                           settingWeatherLocationTextField.getText() );
                   } catch( SQLException sqlException ) {
                      sqlException.printStackTrace();
                   }
@@ -2741,13 +3089,13 @@ public class MainPanel implements Initializable {
             informationTime.setText( "Please enter the location" );
          }
       } else if( event.getSource() == saveAquariumChangesButton ) {
-         if( feedingTime.getValue() == null ||
-               waterExchangeTime.getValue() == null ||
-               airMotorStartTime.getValue() == null ||
-               waterExchangeDay.getValue() == null ) {
+
+         if( feedingTime.getValue() == null
+               || waterExchangeTime.getValue() == null
+               || airMotorStartTime.getValue() == null
+               || waterExchangeDay.getValue() == null ) {
          } else {
             StringBuilder message;
-
             message = new StringBuilder( "aquarium#" );
 
             if( feedingTime.getValue().getHour() < 10 )
@@ -2789,6 +3137,7 @@ public class MainPanel implements Initializable {
 
             if( isArduinoConnect )
                home.getAquarium().setAquariumSettings( message.toString() );
+
             CommonSettingData.getInstance().updateAquariumSettings( commonSetting, message.toString().substring( 9, 31 ) );
             CommonSettingData.getInstance().updateSelectedFishes( commonSetting, checkComboBox.getItems() );
          }
@@ -2802,11 +3151,11 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * Background for Weather Class
+    * backgroundSetup method that changes background image according to weather
     *
+    * @param weather is a String input parameter that is name of weather forecast
     * @author Hacı Çakın, İlke Doğan
     */
-
    public void backgroundSetup( String weather ) {
       if( weather.equalsIgnoreCase( "Cloudy" ) )
          weatherForecastImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/cloudy.jpg" ) ) );
@@ -2861,6 +3210,13 @@ public class MainPanel implements Initializable {
 
    }
 
+   /**
+    * settingToggleButtonsAction method that send message to embedded system
+    * according to status of toggle buttons
+    *
+    * @param event is an ActionEvent input parameter that source toggle
+    *              button of the action
+    */
    @FXML
    void settingToggleButtonsAction( ActionEvent event ) {
       if( event.getSource() == settingElectricityToggleButton ) {
@@ -2874,12 +3230,18 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * openHomeSetting method opens home setting Pane in GUI
+    */
    public void openHomeSetting() {
       homeSettingSubPane.setDisable( false );
       new FadeInDown( homeSettingSubPane ).play();
       homeSettingButtonActive.setVisible( true );
    }
 
+   /**
+    * closeAllHomeSetting method closes home setting Pane in GUI
+    */
    public void closeAllHomeSetting() {
       if( !settingElecSettingPane.isDisable() ) {
          settingElecSettingPane.setDisable( true );
