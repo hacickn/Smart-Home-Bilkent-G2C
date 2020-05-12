@@ -1,7 +1,7 @@
 # Smart Home Bilkent G2C
 ## Pc User Interface 
 > (Until Today)
-To experience the program there are three users in the program
+To experience the program there are for users in the program( Each user type has different features ).
 
 > Note: After the Java 11, module system came to Java. Because we have written 
 this code in JDK v1.8.0 we don't use this module system. Therefore when 
