@@ -1,4 +1,4 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -12,8 +12,15 @@ import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
+import com.example.smarthome_v2.R;
 
+import java.util.Calendar;
+/**
+ * an Aquarium class
+ *
+ * @author Tarık Buğra Karali
+ * @version 06.05.2020
+ */
 public class Aquarium extends AppCompatActivity {
     private Button species;
     ImageButton timeButton_one;
@@ -41,6 +48,7 @@ public class Aquarium extends AppCompatActivity {
 
             }
         });
+
         Bundle bundle = getIntent().getExtras();
         if(bundle != null ){
             String type = bundle.getString("type");
@@ -56,27 +64,24 @@ public class Aquarium extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Calendar mcurrentTime = Calendar.getInstance();//
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//Güncel saati aldık
-                int minute = mcurrentTime.get(Calendar.MINUTE);//Güncel dakikayı aldık
-                TimePickerDialog timePicker; //Time Picker referansımızı oluşturduk
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//actual hour is taken
+                int minute = mcurrentTime.get(Calendar.MINUTE);//actual minute is taken
+                TimePickerDialog timePicker; //Time Picker reference is created.
 
-                //TimePicker objemizi oluşturuyor ve click listener ekliyoruz
+               //TimePicker creates object and add  click listener
                 timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_one.setText( selectedHour + ":" + selectedMinute);//Ayarla butonu tıklandığında textview'a yazdırıyoruz
+                        textView_one.setText( selectedHour + ":" + selectedMinute);//print on the text view
                     }
-                }, hour, minute, true);//true 24 saatli sistem için
-                timePicker.setTitle("Saat Seçiniz");
+                }, hour, minute, true);//true for 24 hour system
+                timePicker.setTitle("Choose Time");
                 timePicker.setButton(DatePickerDialog.BUTTON_POSITIVE, "Save", timePicker);
                 timePicker.setButton(DatePickerDialog.BUTTON_NEGATIVE, "Cancel", timePicker);
 
                 timePicker.show();
             }
         });
-
-
-
 
         timeButton_two = findViewById(R.id.exchange_button);
         textView_two=findViewById(R.id.time_exhange);
@@ -86,25 +91,24 @@ public class Aquarium extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Calendar mcurrentTime = Calendar.getInstance();//
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//Güncel saati aldık
-                int minute = mcurrentTime.get(Calendar.MINUTE);//Güncel dakikayı aldık
-                TimePickerDialog timePicker; //Time Picker referansımızı oluşturduk
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//actual hour is taken
+                int minute = mcurrentTime.get(Calendar.MINUTE);//actual minute is taken
+                TimePickerDialog timePicker; //Time Picker reference is created.
 
-                //TimePicker objemizi oluşturuyor ve click listener ekliyoruz
+                //TimePicker creates object and add  click listener
                 timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_two.setText( selectedHour + ":" + selectedMinute);//Ayarla butonu tıklandığında textview'a yazdırıyoruz
+                        textView_two.setText( selectedHour + ":" + selectedMinute);//print on the text view
                     }
-                }, hour, minute, true);//true 24 saatli sistem için
-                timePicker.setTitle("Saat Seçiniz");
+                }, hour, minute, true);//true for 24 hour system
+                timePicker.setTitle("Choose Time");
                 timePicker.setButton(DatePickerDialog.BUTTON_POSITIVE, "Save", timePicker);
                 timePicker.setButton(DatePickerDialog.BUTTON_NEGATIVE, "Cancel", timePicker);
 
                 timePicker.show();
             }
         });
-
 
         day = findViewById(R.id.exchange_day_button);
         textView_three=findViewById(R.id.day_exhange);
@@ -123,7 +127,6 @@ public class Aquarium extends AppCompatActivity {
 
         }
 
-
         timeButton_three = findViewById(R.id.air_motor_button);
         textView_four=findViewById(R.id.air_motor_start);
         timeButton_three.setOnClickListener(new View.OnClickListener() {//saatButona Click Listener ekliyoruz
@@ -132,18 +135,18 @@ public class Aquarium extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Calendar mcurrentTime = Calendar.getInstance();//
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//Güncel saati aldık
-                int minute = mcurrentTime.get(Calendar.MINUTE);//Güncel dakikayı aldık
-                TimePickerDialog timePicker; //Time Picker referansımızı oluşturduk
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);//actual hour is taken
+                int minute = mcurrentTime.get(Calendar.MINUTE);//actual minute is taken
+                TimePickerDialog timePicker; //Time Picker reference is created.
 
-                //TimePicker objemizi oluşturuyor ve click listener ekliyoruz
+                //TimePicker creates object and add  click listener
                 timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_four.setText( selectedHour + ":" + selectedMinute);//Ayarla butonu tıklandığında textview'a yazdırıyoruz
+                        textView_four.setText( selectedHour + ":" + selectedMinute);//print on the text view
                     }
-                }, hour, minute, true);//true 24 saatli sistem için
-                timePicker.setTitle("Saat Seçiniz");
+                }, hour, minute, true);//true for 24 hour system
+                timePicker.setTitle("Choose Time");
                 timePicker.setButton(DatePickerDialog.BUTTON_POSITIVE, "Save", timePicker);
                 timePicker.setButton(DatePickerDialog.BUTTON_NEGATIVE, "Cancel", timePicker);
 

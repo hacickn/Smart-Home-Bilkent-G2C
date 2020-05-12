@@ -11,6 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smarthome_v2.popup.WeatherPop;
 import com.example.smarthome_v2.settings.Settings;
+import com.example.smarthome_v2.utilities.Aquarium;
+import com.example.smarthome_v2.utilities.Electricity;
+import com.example.smarthome_v2.utilities.GardenLight;
+import com.example.smarthome_v2.utilities.Gas;
+import com.example.smarthome_v2.utilities.GreenHouse;
+import com.example.smarthome_v2.utilities.Water;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class main_screen extends AppCompatActivity {
@@ -46,11 +52,11 @@ public class main_screen extends AppCompatActivity {
         gas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, gas.class);
+                Intent main = new Intent(main_screen.this, Gas.class);
                 startActivity(main);
                 gas_control = findViewById(R.id.gas_control);
                 gasOnOff = gas_control.isChecked();
-                Intent i = new Intent(getApplicationContext(), gas.class);
+                Intent i = new Intent(getApplicationContext(), Gas.class);
 
                 i.putExtra("gasCondition", gasOnOff);
                 startActivity(i);

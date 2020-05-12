@@ -1,4 +1,4 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import android.content.Intent;
 import android.os.Build;
@@ -11,8 +11,16 @@ import android.widget.ToggleButton;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
+import com.example.smarthome_v2.R;
+import com.example.smarthome_v2.main_screen;
 
+import java.util.Objects;
+/**
+ * a Water class
+ *
+ * @author Tarık Buğra Karali
+ * @version 06.05.2020
+ */
 public class Water extends AppCompatActivity {
     public ImageButton exit;
     public ToggleButton water_controller;
@@ -62,13 +70,13 @@ public class Water extends AppCompatActivity {
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
-                    // ON durumunda yapılacaklar
+                    // ON
                     drop_one.setVisibility(View.VISIBLE);
                     drop_two.setVisibility(View.VISIBLE);
                     drop_three.setVisibility(View.VISIBLE);
                     water_wave.setVisibility(View.VISIBLE);
                 } else {
-                    // OFF durumunda yapılacaklar
+                    // OFF
                     drop_one.setVisibility(View.INVISIBLE);
                     drop_two.setVisibility(View.INVISIBLE);
                     drop_three.setVisibility(View.INVISIBLE);

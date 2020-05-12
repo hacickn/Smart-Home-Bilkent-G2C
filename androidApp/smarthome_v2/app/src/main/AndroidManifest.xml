@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".GardenLight" />
+        <activity android:name=".utilities.GardenLight" />
         <activity android:name=".settings.AppSettings" />
         <activity android:name=".settings.HomeSettings" />
         <activity android:name=".settings.Settings" />
@@ -51,13 +51,13 @@
         </activity>
         <activity android:name=".main_screen" />
         <activity android:name=".connection_settings" />
-        <activity android:name=".gas" />
-        <activity android:name=".Electricity" />
-        <activity android:name=".Water" />
-        <activity android:name=".Aquarium" />
-        <activity android:name=".AquariumDaylist" />
-        <activity android:name=".FishList" />
-        <activity android:name=".GreenHouse" />
+        <activity android:name=".utilities.Gas" />
+        <activity android:name=".utilities.Electricity" />
+        <activity android:name=".utilities.Water" />
+        <activity android:name=".utilities.Aquarium" />
+        <activity android:name=".utilities.AquariumDaylist" />
+        <activity android:name=".utilities.FishList" />
+        <activity android:name=".utilities.GreenHouse" />
     </application>
 
 </manifest>

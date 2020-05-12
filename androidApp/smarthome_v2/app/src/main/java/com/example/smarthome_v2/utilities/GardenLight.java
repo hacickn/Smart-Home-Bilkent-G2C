@@ -1,9 +1,11 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ToggleButton;
+
+import com.example.smarthome_v2.R;
 
 public class GardenLight extends AppCompatActivity {
     ToggleButton gardenLightController;

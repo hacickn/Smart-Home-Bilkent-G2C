@@ -1,4 +1,4 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
+import com.example.smarthome_v2.R;
+import com.example.smarthome_v2.main_screen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -21,7 +23,12 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
+/**
+ * an Electricity class
+ *
+ * @author Erengazi Mutlu
+ * @version 06.05.2020
+ */
 public class Electricity extends AppCompatActivity {
     public ImageButton exit;
     public ToggleButton elec_controller;
@@ -34,8 +41,6 @@ public class Electricity extends AppCompatActivity {
     private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
-
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -73,7 +78,7 @@ public class Electricity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(Electricity.this,main_screen.class);
+                Intent main = new Intent(Electricity.this, main_screen.class);
                 startActivity(main);
             }
         });
@@ -96,13 +101,13 @@ public class Electricity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
-                    // ON durumunda yapılacaklar
+                    // ON
                     light_one.setVisibility(View.VISIBLE);
                     light_two.setVisibility(View.VISIBLE);
                     light_three.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
                 } else {
-                    // OFF durumunda yapılacaklar
+                    // OFF
                     light_one.setVisibility(View.INVISIBLE);
                     light_two.setVisibility(View.INVISIBLE);
                     light_three.setVisibility(View.INVISIBLE);

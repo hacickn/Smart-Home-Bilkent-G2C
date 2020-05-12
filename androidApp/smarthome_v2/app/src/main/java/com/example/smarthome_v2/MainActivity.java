@@ -17,7 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+/**
+ * an AquariumDayList class
+ *
+ * @author Tarık Buğra Karali , Nasuh Dinçer
+ * @version 11.05.2020
+ */
 public class MainActivity extends AppCompatActivity {
     private EditText loginPassword;
     private EditText loginEmail;

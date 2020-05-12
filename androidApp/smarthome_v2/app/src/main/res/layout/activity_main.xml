@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <EditText
@@ -22,9 +22,10 @@
         android:background="@drawable/edittext_background"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
         android:selectAllOnFocus="true"
         android:textColor="@color/orange_two"
-        android:textColorHint="@color/orange_two"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +47,10 @@
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
         android:selectAllOnFocus="true"
         android:textColor="@color/orange_two"
-        android:textColorHint="@color/orange_two"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_email" />
@@ -116,13 +118,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="910dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/login_email"
-        tools:layout_editor_absoluteX="220dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

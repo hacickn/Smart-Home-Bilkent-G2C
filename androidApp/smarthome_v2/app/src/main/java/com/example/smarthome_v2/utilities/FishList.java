@@ -1,4 +1,4 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,14 @@ import android.widget.ListView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smarthome_v2.R;
+import com.example.smarthome_v2.utilities.Aquarium;
+/**
+ * an FishList class
+ *
+ * @author Tarık Buğra Karali
+ * @version 06.05.2020
+ */
 public class FishList extends AppCompatActivity {
     private ListView list;
     private static final String[] fishTypes = new String[]{"Lepistes","Japon","Vatoz","Brachydanio","clownfish","Pencilfish","Juvenile"};
@@ -29,7 +37,7 @@ public class FishList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String show = fishTypes[position]+"";
-                Intent i = new Intent(getApplicationContext(),Aquarium.class);
+                Intent i = new Intent(getApplicationContext(), Aquarium.class);
 
                 i.putExtra("type",show);
                 startActivity(i);

@@ -1,4 +1,4 @@
-package com.example.smarthome_v2;
+package com.example.smarthome_v2.utilities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,6 +12,8 @@ import android.widget.ToggleButton;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smarthome_v2.R;
+import com.example.smarthome_v2.main_screen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -21,9 +23,14 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
+/**
+ * a Gas class
+ *
+ * @author Tarık Buğra Karali
+ * @version 06.05.2020
+ */
 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-public class gas extends AppCompatActivity {
+public class Gas extends AppCompatActivity {
     public ImageButton exit;
     public ToggleButton gas_controller;
     private ImageView smokes;
@@ -73,7 +80,7 @@ public class gas extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(gas.this,main_screen.class);
+                Intent main = new Intent(Gas.this, main_screen.class);
                 startActivity(main);
             }
         });
@@ -96,13 +103,13 @@ public class gas extends AppCompatActivity {
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
-                    // ON durumunda yapılacaklar
+                    // ON
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
                     wave_two.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
                 } else {
-                    // OFF durumunda yapılacaklar
+                    // OFF
                     smokes.setVisibility(View.INVISIBLE);
                     wave_one.setVisibility(View.INVISIBLE);
                     wave_two.setVisibility(View.INVISIBLE);
