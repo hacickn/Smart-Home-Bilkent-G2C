@@ -4,6 +4,7 @@
 ****
 
 On this page I will keep a weekly record of what I have done for the CS102 group project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
+
 ---
 
 ### ~ 02.03.2020 ~
@@ -17,10 +18,12 @@ This week, with the start of the exams, I continued to research the systems we c
 
 ### ~ 16.03.2020 ~
 With the onset of the pandemic period, I started to work more intensively on the project. I shared the idea of ​​adding the Aquarium and Greenhouse systems to the smart home with my group friends, and we thought that it would actually be a useful idea for the pandemic period. I made researches and made reports about how plant production and aquarium cycle can be achieved. I continued my first week based on the research of the digital systems of the sensors that we will generally use like from [Direnc.net](https://www.direnc.net/) and [Robotus] (https://www.robotus.net/). I also thought that a simulation would help us implement and test the project, with the idea that project presentations could be made at home.  I have tried a few researches and applications on digital design in [Proteus](https://www.labcenter.com/) simulation. (almost 30 hours)
+
 ---
 
 ### ~ 23.03.2020 ~
 This week, I continued my sensor research that can be used  [robitshop] (https://www.robitshop.com/) and [Robotistan] (https://www.robotistan.com/). Although I initially thought of the sensor that uses infrared beam to measure the water level in the aquarium, I then thought about the breaks that might have been in the water and decided to use an ultrasonic sensor. In the encryption system we will use, I decided to choose motion, gas, smoke sensors and fire button, lcd and lcd types. With the researches of the code we will write in Arduino, [Mobilhanem.com] (https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/) and [gelecegiyazanlar.turkcell] (https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) I started writing the codes. Examine the connection diagrams of these systems [Arduino Turkey] (http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/) I started to build our C ++ code. I also thought that being a 4x4 Keypad is suitable for features such as deletion, changing the password and I started to add these systems to the simulation in Proteus. I also found libraries not in Proteus' library on the internet and added them to the library of the simulation program. I examined the individual connection protocols of these sensors and added them to the code in C ++ and to Proteus.(nearly 30- 40 hours)
+
 ---
 
 ### ~ 30.03.2020 ~
@@ -31,7 +34,7 @@ manual_on#: that based on the characthers '#' and ':' . It had to work according
 
 ### ~ 06.04.2020 ~
 This week, I decided to use a servo motor for the feeding system to be used in the Aquarium and I used the "Servo.h" library. I also added the "DS1307RTC.h" library to get instant Clock and calendar data. However, I encountered a bug, after giving the user 3 cogs in the encryption system, when the luck was reset, it entered the endless loop and
-`` `
+```
 else
          {
              if (give_chang == 0)
@@ -42,8 +45,9 @@ else
          }
            clearData ();
        }
-`` `
+```
 I fixed it with the code.
+
 ---
 
 ### ~ 13.04.2020 ~
@@ -54,14 +58,17 @@ GreenHouseData, GreenHouseValues, and GreenHouse. From the Ardunio data from gre
 
 ### ~ 20.04.2020 ~
 This week I started working on weather class on the pc interface with Hacı. We designed background of the weather class in Main panel. We arranged the idea that it should suit based on the weather and we added some of pictures to pictures file and arrange the colors which is suitable for background color.  I wrote Ultrasonic sensor methods that are echo and trigger and I did search about the way to use these connection and I found the formula from the internet t  = s /  v  => 10cm/ 0..34 = 294 micro sec * distance: => s = t*0.034/2q. (nearly 10-15 hours)
+
 ---
 
 ### ~ 27.04.2020 ~
 This week I almost packed the program in Arduino. I moved on to the simulations in Proteus. I started shortening the codes. I had my friends tested the interface and tried to find the bugs of the interface and took notes of them and corrected them with the Hacı.
+
 ---
 
 ### ~ 04.05.2020 ~
 This week we started to develop programs in Arduino and Pc interface. We've duplicated the user's background theme option and I added 3 backgrounds. We researched these pictures from the internet and I added them to the images file. Then I made the color adjustments for these 3 background pics in the interface.
----
+
+****
 
 ### ~ 11.05.2020 ~
