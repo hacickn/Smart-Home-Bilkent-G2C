@@ -114,6 +114,8 @@ words in these properties).
 and 1 one fo them is added by Metehan Saçakçı).
 * I added fonts that are used in program to embed the system.
 * I creates all database tables; ELECTRICITY TABLE, FISHES TABLE, GAS TABLE, GREENHOUSE TABLE, HOME TABLE, USERS TABLE.
+* I also wrote Smart_App_Cnt , hours_setting parts of the Arduino code.
+* In proteus, I made Gas_Valve, electricity_relay, water_valve parts( İlke Doğan aided to me).
 ```
 
 > What I think about what I will do 
