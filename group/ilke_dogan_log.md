@@ -9,6 +9,7 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 ### ~ 02.03.2020 ~
 In the first week, I started to report on the systems that can be used in the smart home. I suggested these systems and shared them with my group friends at the group meeting. I started to research about the decisions taken at the meeting. We attended microcontroller and Arduino trainings with my friends. Also during this week, we have shared information about the Arduino and C ++ language that we intend to use in the system at the group meeting. At the same time, [Arduino] (https://www.arduino.cc/en/Tutorial/HomePage), I searched and watched tutorils related to Arduino. (Almost 10 hours in total)
+
 ---
 
 ### ~ 09.03.2020 ~
