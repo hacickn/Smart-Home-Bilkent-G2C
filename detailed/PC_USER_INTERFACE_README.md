@@ -2,7 +2,8 @@
 ## Pc User Interface 
 > (Until Today)
 To experience the program there are three users in the program
-Note: After the Java 11, module system came to Java. Because we write 
+
+> Note: After the Java 11, module system came to Java. Because we write 
 this code in jdk v1.8.0 we don't use this module system. Therefore when 
 you are running program in intelliJ, Please use JDK 1.8(In intelliJ v2020.1,
 you can download all JDK versions in the intelliJ) .
