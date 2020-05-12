@@ -28,7 +28,7 @@ This week I started to build a demo for pc user interface. I did it for strength
 ---
 
 ### ~ 30.03.2020 ~
-This week I finished pc user interface demo. It has user profile, menu, setting and statistic parts( We didn't upload this demo but If you want I can upload it). This demo was very good practise for me. After the group meeting, I start to build new one for Cs102 project which is more tidy.  Before this I showed my first project to get feedback. I paid attention what people say about my first demo. I found suitable database technologies for us. In our project sqlite will be enough. I tried to setup sqlite to my first demo and It worked. I also viewed some documents from [w3school](https://www.w3schools.com/) to learn sql to use sqlite. I also tried to use mysql for my personal interest. In order to use mysql, I tried various online database services like amazon. However, I can't create connection with online database. After the lost of work, I decided to continue my way.(nearly estimation 20-30 hours)
+This week I finished pc user interface demo. It has user profile, menu, setting and statistic parts( We didn't upload this demo but If you want I can upload it. In other word, I can show it). This demo was very good practise for me. After the group meeting, I start to build new one for Cs102 project which is more tidy.  Before this I showed my first project to get feedback. I paid attention what people say about my first demo. I found suitable database technologies for us. In our project sqlite will be enough. I tried to setup sqlite to my first demo and It worked. I also viewed some documents from [w3school](https://www.w3schools.com/) to learn sql to use sqlite. I also tried to use mysql for my personal interest. In order to use mysql, I tried various online database services like amazon. However, I can't create connection with online database. After the lost of work, I decided to continue my way.(nearly estimation 20-30 hours)
 
 ---
 
@@ -77,7 +77,7 @@ I also added two new themes for pc user interface. I embedded fonts which are us
 ---
 
 ### ~ 11.05.2020 ~
-This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I try to add more options for users(such as more theme, language options etc).
+This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I try to add more options for users(such as more theme, language options etc).(in process)
 
 ****
 
