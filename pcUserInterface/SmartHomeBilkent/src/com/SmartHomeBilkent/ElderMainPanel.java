@@ -810,6 +810,7 @@ public class ElderMainPanel implements Initializable {
    //}
 
    //methods
+   //1
    @FXML
    void actionPerformed( ActionEvent event ) {
       // settings elder panel -MS 23.04.2020-
@@ -1027,12 +1028,14 @@ public class ElderMainPanel implements Initializable {
       else if ( event.getSource() == turkishElderButton )
       {
          String language;
+         language = "";
          englishElderButtonSubLabelActive.setVisible( false );
          turkishElderButtonSubLabelActive.setVisible( true );
          languageStatusElder = true;
          changeLanguageElder( "tr" );
          language = "TÜRKÇE";
          //Users.getInstance().updateLanguage( loginUser, language );
+         //userTextFieldController( loginUser );
       }
       // turkishElderButton END -MS 06.05.2020-
 
@@ -1040,12 +1043,14 @@ public class ElderMainPanel implements Initializable {
       else if ( event.getSource() == englishElderButton )
       {
          String language;
+         language = "";
          turkishElderButtonSubLabelActive.setVisible( false );
          englishElderButtonSubLabelActive.setVisible( true );
          languageStatusElder = false;
          changeLanguageElder( "en" );
          language = "ENGLISH";
          //Users.getInstance().updateLanguage( loginUser, language );
+         //userTextFieldController( loginUser );
       }
       // englishElderButton END -MS 06.05.2020-
 
@@ -1131,6 +1136,7 @@ public class ElderMainPanel implements Initializable {
       // connectionSettingsElderButton END -MS 11.05.2020-
    }
 
+   //2
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
    public void setMainMenuInvisible( Boolean b ) {
       if( b ) {
@@ -1143,6 +1149,7 @@ public class ElderMainPanel implements Initializable {
 
    //Set the time END -MS 09.04.2020-
 
+   //3
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
 
@@ -1192,6 +1199,7 @@ public class ElderMainPanel implements Initializable {
       } ).start();
    }
 
+   //4
    // user after login panel -MS 24.03.2020-
    public User getLoginUser( ) {
       for( User u : Users.getInstance( ).getUserList( ) ) {
@@ -1206,7 +1214,7 @@ public class ElderMainPanel implements Initializable {
    // user after login panel END -MS 24.03.2020-
 
 
-
+   //5
    //User textFieldController -MS 24.04.2020-
    void userTextFieldController( User user ) {
       userSettingsNameElderText.setText( user.getName( ) );
@@ -1215,6 +1223,20 @@ public class ElderMainPanel implements Initializable {
       userSettingsGenderElderText.setText( user.getGender( ) );
       userSettingsUsernameElderText.setText( user.getUserName( ) );
       userSettingsPasswordElderTextSecret.setText( user.getPassword( ) );
+
+      if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) ) {
+         turkishElderButtonSubLabelActive.setVisible( false );
+         englishElderButtonSubLabelActive.setVisible( true );
+         languageStatusElder = false;
+         changeLanguageElder( "en" );
+         //language = "ENGLISH";
+
+      } else if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) ) {
+         englishElderButtonSubLabelActive.setVisible( false );
+         turkishElderButtonSubLabelActive.setVisible( true );
+         languageStatusElder = true;
+         changeLanguageElder( "tr" );
+      }
    }
    //User textFieldController END -MS 24.04.2020-
 
@@ -2040,7 +2062,7 @@ public class ElderMainPanel implements Initializable {
          userSettingsChangeSaveSubLabel.setText( bundle.getString( "saveLang" ));
          userSettingsChangeBackButtonSubLabel.setText( bundle.getString( "getBackButtonLang" ) );
          userSettingsUNElderChange.setText(  bundle.getString("userNameLang" ) );
-         userSettingsPasswordChangeElderCurrent.setText( bundle.getString("currentPasswordLang:" ));
+         //userSettingsPasswordChangeElderCurrent.setText( bundle.getString("currentPasswordLang:" ));
          userSettingsPasswordChangeElderNew.setText( bundle.getString( "newPasswordLang" ));
          userSettingsPasswordChangeElderNewConfirm.setText( bundle.getString("verifyNewPasswordLang" ));
          userSettingsPanelTwoChangeSaveLabel.setText( bundle.getString( "saveLang" ));
