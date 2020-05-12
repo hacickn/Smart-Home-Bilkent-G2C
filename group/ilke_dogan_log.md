@@ -13,7 +13,7 @@ In the first week, I started to report on the systems that can be used in the sm
 ---
 
 ### ~ 09.03.2020 ~
-This week, with the start of the exams, I continued to research the systems we can use in the smart home. I searched for features that people are looking for in a smart home from the Internet [Current consumer attitudes towards Smart Home](https://www.citizensadvice.org.uk/Global/CitizensAdvice/Energy/Smart%20homes%20final%20report%20 (new% 20Traverse% 20logo) pdf). We also continued to participate in Arduino and digital trainings with my friends.(Almost 4 hours in total)
+This week, with the start of the exams, I continued to research the systems we can use in the smart home. I searched for features that people are looking for in a smart home from the Internet [Current consumer attitudes towards Smart Home](https://www.citizensadvice.org.uk/Global/CitizensAdvice/Energy/Smart%20homes%20final%20report%20(new%20Traverse%20logo).pdf). We also continued to participate in Arduino and digital trainings with my friends.(Almost 4 hours in total)
 
 ---
 
@@ -28,7 +28,7 @@ This week, I continued my sensor research that can be used  [robitshop](https://
 ---
 
 ### ~ 30.03.2020 ~
-This week, I continued to review serial communication protocols [Tripod](http://yildizertan.tripod.com/whatsnew.htm) and [Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart- spi-i2c /). I have examined the protocols I can find about how to get and use the data from the serial port, ie the PC interface, and produced a protocol like 
+This week, I continued to review serial communication protocols [Tripod](http://yildizertan.tripod.com/whatsnew.htm) and [Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart-spi-i2c/). I have examined the protocols I can find about how to get and use the data from the serial port, ie the PC interface, and produced a protocol like 
 manual_on#: that based on the characthers '#' and ':' . It had to work according to the protocol to run manually and sensor-based, and I did not add the library since the serial communication library came embedded in Arduino. We searched for serial communication and Bluetooth connections and tried to ensure that Arduino and pc interface work together with Hacı. Also, I did the Timer library research to arrange the operation of the units used in Ardunio, and I chose the "MsTimer2.h" library because it worked better than other versions of the latest MsTimer.(nearly 20-30 hours)
 
 ---
