@@ -269,7 +269,8 @@ public class MainPanel implements Initializable {
          createUserSpaceThemeOption, createUserForestThemeOption,
          createUserSmartCityThemeOption, createUserAbstractThemeOption,
          createUserPyramidThemeOption, createUserCyberpunkThemeOption,
-         createUserNeonThemeOption, createUserInterstellarThemeOption;
+         createUserNeonThemeOption, createUserInterstellarThemeOption,
+         createUserItalianOption, createUserFrenchOption;
    @FXML
    private JFXPasswordField createUserPasswordField, createUserPasswordVerifyField,
          removeUserTextField;
@@ -2654,7 +2655,9 @@ public class MainPanel implements Initializable {
                && !createUserCartoonThemeOption.isSelected() )
                || ( !createUserEnglishOption.isSelected()
                && !createUserGermanOption.isSelected()
-               && !createUserTurkishOption.isSelected() )
+               && !createUserTurkishOption.isSelected()
+               && !createUserItalianOption.isSelected()
+               && !createUserFrenchOption.isSelected() )
                || createUserUserNameTextField.getText().isEmpty()
                || createUserPasswordField.getText().isEmpty()
                || createUserPasswordVerifyField.getText().isEmpty()
@@ -2729,10 +2732,14 @@ public class MainPanel implements Initializable {
 
       } else if( event.getSource() == createUserEnglishOption
             || event.getSource() == createUserGermanOption
-            || event.getSource() == createUserTurkishOption ) {
+            || event.getSource() == createUserTurkishOption
+            || event.getSource() == createUserItalianOption
+            || event.getSource() == createUserFrenchOption) {
          createUserEnglishOption.setSelected( false );
          createUserTurkishOption.setSelected( false );
          createUserGermanOption.setSelected( false );
+         createUserItalianOption.setSelected( false );
+         createUserFrenchOption.setSelected( false );
          ( ( JFXRadioButton ) ( event.getSource() ) ).setSelected( true );
          addUserLanguage = ( JFXRadioButton ) ( event.getSource() );
 
@@ -2774,6 +2781,8 @@ public class MainPanel implements Initializable {
       createUserEnglishOption.setSelected( false );
       createUserGermanOption.setSelected( false );
       createUserTurkishOption.setSelected( false );
+      createUserItalianOption.setSelected( false );
+      createUserFrenchOption.setSelected( false );
       createUserParentOption.setSelected( false );
       createUserChildOption.setSelected( false );
       addUserImageView.setVisible( false );
@@ -2828,7 +2837,6 @@ public class MainPanel implements Initializable {
                Users.getInstance().removeUser( settingUserTable.getSelectionModel().getSelectedItem().getValue() );
                removeUserTextField.setText( "" );
                removeUserHideWarning.setVisible( false );
-               Users.getInstance().getUserList().get( Users.getInstance().getUserList().indexOf( loginUser ) ).setEnter( "false" );
                FXMLLoader load = new FXMLLoader( getClass().getResource( "view/loginPanel.fxml" ) );
                Parent root = load.load();
                Stage stage = new Stage();
