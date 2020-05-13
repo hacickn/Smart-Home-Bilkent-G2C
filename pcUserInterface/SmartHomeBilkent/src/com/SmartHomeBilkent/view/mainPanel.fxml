@@ -1117,7 +1117,7 @@
                                     <Font name="Agency FB" size="16.0" />
                                 </font>
                             </JFXRadioButton>
-                            <JFXTextField fx:id="createUserUserNameTextField" alignment="CENTER" layoutX="504.0" layoutY="66.0" prefWidth="150.0" styleClass="addUserInfoTextField">
+                            <JFXTextField fx:id="createUserUserNameTextField" alignment="CENTER" layoutX="504.0" layoutY="66.0" onKeyReleased="#controlAvailability" prefWidth="150.0" styleClass="addUserInfoTextField">
                                 <font>
                                     <Font name="Agency FB" size="15.0" />
                                 </font>
@@ -1194,6 +1194,7 @@
                                     <Font name="Agency FB" size="16.0" />
                                 </font>
                             </JFXRadioButton>
+                     <ImageView fx:id="addUserImageView" fitHeight="20.0" fitWidth="20.0" layoutX="654.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" visible="false" />
                         </Pane>
                         <Pane fx:id="deleteUserPane" disable="true" maxHeight="450.0" maxWidth="700.0" minHeight="450.0" minWidth="700.0" opacity="0.0" prefHeight="450.0" prefWidth="700.0" style="-fx-border-width: 2;" styleClass="addRemoveUserPane">
                             <Label fx:id="removeAnUser" alignment="CENTER" layoutX="183.0" layoutY="14.0" prefHeight="32.0" prefWidth="334.0" styleClass="settingsTopLabels" text="REMOVE AN USER">

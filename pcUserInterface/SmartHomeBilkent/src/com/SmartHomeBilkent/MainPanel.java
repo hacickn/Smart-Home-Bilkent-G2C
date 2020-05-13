@@ -278,7 +278,8 @@ public class MainPanel implements Initializable {
          permissionPaneGardenLightToggle, permissionPaneAquariumToggle,
          permissionPaneNotificationToggle, permissionPaneGasToggle,
          permissionPaneSirenToggle;
-
+   @FXML
+   private ImageView addUserImageView;
    /*
     3.3)setting - mods settings variables
     */
@@ -1513,6 +1514,24 @@ public class MainPanel implements Initializable {
             saveUserPrivateInfo.setDisable( false );
             availabilityImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
          }
+      } else if( event.getSource() == createUserUserNameTextField ) {
+         addUserImageView.setVisible( true );
+         if( !Users.getInstance().isUserNameAvailable( createUserUserNameTextField.getText() ) ) {
+            addUserImageView.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/notAvailable.png" ) ) );
+            createUserWarningLabel.setVisible( true );
+            createUserWarningLabel.setText( bundle.getString( "userNameSimilarityLang" ) );
+            createUserConfirmButton.setDisable( true );
+
+         } else if( createUserUserNameTextField.getText().equals( "" ) ) {
+            addUserImageView.setVisible( false );
+            createUserWarningLabel.setVisible( false );
+            createUserConfirmButton.setDisable( false );
+
+         } else {
+            createUserWarningLabel.setVisible( false );
+            createUserConfirmButton.setDisable( false );
+            addUserImageView.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/available.png" ) ) );
+         }
       }
    }
 
@@ -2725,6 +2744,7 @@ public class MainPanel implements Initializable {
       createUserTurkishOption.setSelected( false );
       createUserParentOption.setSelected( false );
       createUserChildOption.setSelected( false );
+      addUserImageView.setVisible( false );
       createDatePicker.setValue( null );
       addUserGender = null;
       addUserLanguage = null;

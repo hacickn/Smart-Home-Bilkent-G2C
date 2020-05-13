@@ -54,10 +54,13 @@ public class LoginPanel implements Initializable {
    @FXML
    private void toLogin() {
       if( userNameField.getText().length() > 0 && passwordField.getText().length() > 0 ) {
+
          for( User s : Users.getInstance().getUserList() ) {
+
             if( userNameField.getText().equals( s.getUserName() ) && passwordField.getText().equals( s.getPassword() ) ) {
                loginButton.setVisible( false );
                loginSpinner.setVisible( true );
+
                new Thread( new Runnable() {
                   @Override
                   public void run() {
@@ -148,14 +151,6 @@ public class LoginPanel implements Initializable {
       );
       Font.loadFont(
             LoginPanel.class.getResource( "styleSheets/font/PatrickHand-Regular.ttf" ).toExternalForm(),
-            10
-      );
-      Font.loadFont(
-            LoginPanel.class.getResource( "styleSheets/font/IndieFlower-Regular.ttf" ).toExternalForm(),
-            10
-      );
-      Font.loadFont(
-            LoginPanel.class.getResource( "styleSheets/font/Bahiana-Regular.ttf" ).toExternalForm(),
             10
       );
    }
