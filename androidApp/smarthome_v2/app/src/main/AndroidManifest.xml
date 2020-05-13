@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ProfileCard"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".utilities.GardenLight" />
         <activity android:name=".settings.AppSettings" />
         <activity android:name=".settings.HomeSettings" />
@@ -49,7 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".main_screen" />
         <activity android:name=".connection_settings" />
         <activity android:name=".utilities.Gas" />
@@ -59,8 +60,8 @@
         <activity android:name=".utilities.AquariumDaylist" />
         <activity android:name=".utilities.FishList" />
         <activity android:name=".utilities.GreenHouse" />
-        <activity android:name=".settings.GraphicSettings"></activity>
-        <activity android:name=".settings.ThemeSettings"></activity>
+        <activity android:name=".settings.GraphicSettings" />
+        <activity android:name=".settings.ThemeSettings" />
     </application>
 
 </manifest>
