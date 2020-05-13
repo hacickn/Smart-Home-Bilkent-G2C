@@ -39,7 +39,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -125,7 +124,8 @@ public class MainPanel implements Initializable {
          menuWeatherValue, timeLabel,
          menuOpenDoorLabel, waterSubPaneLabelActive,
          waterSubPaneLabelPassive, gardenLightSubPaneLabelActive,
-         gardenLightSubPaneLabelPassive, menuBulkChangeSubLabel;
+         gardenLightSubPaneLabelPassive, menuBulkChangeSubLabel,
+         timeConfigurationPaneWarningLabel;
    @FXML
    private ImageView tempImage, weatherForecastImage,
          availabilityImage;
@@ -315,7 +315,8 @@ public class MainPanel implements Initializable {
          settingWeatherWindLabelValue, speciesOfFishLabel,
          feedingStartLabel, waterExchangeLabel,
          airMotorRunTimeLabel, greenHouseTemperatureLabel,
-         greenHouseHumidityLabel, latestWaterLabel;
+         greenHouseHumidityLabel, latestWaterLabel,
+         aquariumSettingLabel;
    @FXML
    private AnchorPane applicationSettingSubPane;
    @FXML
@@ -324,11 +325,9 @@ public class MainPanel implements Initializable {
          smartHomeConnectionSettingButton, themeSettingButtonActive,
          languageSettingButtonActive, emergencySettingButtonActive,
          notificationSettingButtonActive, smartHomeConnectionSettingButtonActive,
-         saveAquariumChangesButton;
+         saveAquariumChangesButton, updateWeatherButton;
    @FXML
    private JFXTextField settingWeatherLocationTextField;
-   @FXML
-   private JFXButton updateWeatherButton;
    @FXML
    private JFXToggleButton settingElectricityToggleButton, settingGasToggleButton;
    @FXML
@@ -1170,8 +1169,12 @@ public class MainPanel implements Initializable {
             } ).start();
 
       } else if( event.getSource() == dateTimeSaveButton ) {
-         if( menuDatePicker.getValue() == null || menuTimePicker.getValue() == null ) {
+         if( menuDatePicker.getValue() == null
+               || menuTimePicker.getValue() == null ) {
+            timeConfigurationPaneWarningLabel.setVisible( true );
+            timeConfigurationPaneWarningLabel.setText( bundle.getString( "normalInfoWarningLang" ) );
          } else {
+            timeConfigurationPaneWarningLabel.setVisible( false );
             StringBuilder message;
             message = new StringBuilder();
 
@@ -1246,6 +1249,7 @@ public class MainPanel implements Initializable {
       menuGardenLightPane.setVisible( false );
       menuBulkChangePane.setVisible( false );
       menuTimeConfigurationPane.setVisible( false );
+      timeConfigurationPaneWarningLabel.setVisible( false );
    }
 
    /**
@@ -1379,7 +1383,8 @@ public class MainPanel implements Initializable {
     * saves user info
     *
     * @param event is a ActionEvent input parameter that source of the action
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database connection
+    *          and communication
     */
    @FXML
    void userProfileButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -1682,7 +1687,8 @@ public class MainPanel implements Initializable {
     * application setting panes' buttons
     *
     * @param event is an ActionEvent input parameter
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *         connection or communication failure
     */
    @FXML
    void applicationSettingsButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -2016,7 +2022,8 @@ public class MainPanel implements Initializable {
     * themePaneButtonsOnAction method that determines which theme is given
     *
     * @param event is an ActionEvent input parameter
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void themePaneButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -2164,7 +2171,8 @@ public class MainPanel implements Initializable {
     * according to source of event
     *
     * @param event is an ActionEvent input parameter
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void languagePaneButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -2570,7 +2578,8 @@ public class MainPanel implements Initializable {
     * button's action
     *
     * @param event is an ActionEvent input parameter that is source of the action
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void createUserPaneAction( ActionEvent event ) throws SQLException {
@@ -2729,7 +2738,8 @@ public class MainPanel implements Initializable {
     *
     * @param event is an ActionEvent inpur parameter that is source of the
     *              action in the remove user pane
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void removeUserPaneAction( ActionEvent event ) throws SQLException {
@@ -2805,7 +2815,8 @@ public class MainPanel implements Initializable {
     * to status of toggle buttons
     *
     * @param event is an ActionEvent input parameter that is source of the event
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void permissionPaneButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -2888,7 +2899,8 @@ public class MainPanel implements Initializable {
     * volumeAdjust controls the slider to get user preferred volume level
     * and send it database
     *
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *          connection or communication failure
     */
    @FXML
    void volumeAdjust() throws SQLException {
@@ -2921,7 +2933,8 @@ public class MainPanel implements Initializable {
     * mods or not
     *
     * @param event is an ActionEvent input parameter that is source of the event
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *           connection or communication failure
     */
    @FXML
    void modsToggleButtons( ActionEvent event ) throws SQLException {
@@ -2988,7 +3001,8 @@ public class MainPanel implements Initializable {
     * aquarium setting, weather update) according to source of the action
     *
     * @param event is an ActionEvent input parameter that source of the action
-    * @throws SQLException
+    * @throws SQLException is an Exception that is due to database
+    *           connection or communication failure
     */
    @FXML
    void homeSettingButtonsOnAction( ActionEvent event ) throws SQLException {
@@ -3094,7 +3108,11 @@ public class MainPanel implements Initializable {
                || waterExchangeTime.getValue() == null
                || airMotorStartTime.getValue() == null
                || waterExchangeDay.getValue() == null ) {
+            aquariumSettingLabel.setText( bundle.getString( "normalInfoWarningLang" ) );
+            aquariumSettingLabel.setVisible( true );
          } else {
+            aquariumSettingLabel.setVisible( false );
+
             StringBuilder message;
             message = new StringBuilder( "aquarium#" );
 
@@ -3144,6 +3162,9 @@ public class MainPanel implements Initializable {
       }
    }
 
+   /**
+    * onWeatherKeyPressed method that shows the button when input has changed
+    */
    @FXML
    void onWeatherKeyPressed() {
       updateWeatherButton.setVisible( true );
@@ -3257,6 +3278,7 @@ public class MainPanel implements Initializable {
       }
       if( !settingGreenHouseSettingPane.isDisable() ) {
          settingGreenHouseSettingPane.setDisable( true );
+         aquariumSettingLabel.setVisible( false );
          new FadeOut( settingGreenHouseSettingPane ).play();
       }
       if( !settingWeatherSettingPane.isDisable() ) {
