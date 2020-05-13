@@ -99,4 +99,15 @@
         app:layout_constraintStart_toEndOf="@+id/Temperature"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/exit_greenhouse"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/ic_exit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

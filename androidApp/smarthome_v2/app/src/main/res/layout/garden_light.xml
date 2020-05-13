@@ -7,7 +7,7 @@
     tools:context=".utilities.GardenLight"
     android:background="@color/grey">
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/image_garden_light"
         android:layout_width="122dp"
         android:layout_height="128dp"
         android:layout_marginTop="72dp"
@@ -30,5 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/exit_garden"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/ic_exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

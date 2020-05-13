@@ -24,40 +24,36 @@ import java.util.Objects;
 public class Water extends AppCompatActivity {
     public ImageButton exit;
     public ToggleButton water_controller;
-    private ImageView drop_one;
-    private ImageView drop_two;
-    private ImageView drop_three;
-    private ImageView water_wave;
-
-
-
-
+    private ImageView drop_one,drop_two,drop_three,water_wave,water;
+    Bundle bundle;
+    int themeNumber;
+    boolean condition,currentCondition;
+    Intent thm;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.water_screen);
 
-
-
+        //initialization
         exit=findViewById(R.id.exit_water);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent main = new Intent(Water.this, main_screen.class);
-                startActivity(main);
-            }
-        });
-
-
         water_controller = (ToggleButton) findViewById(R.id.water_control);
-        boolean condition = Objects.requireNonNull(getIntent().getExtras()).getBoolean("waterCondition");
-        water_controller.setChecked(condition);
-
         drop_one = findViewById(R.id.drop_1);
         drop_two = findViewById(R.id.drop_2);
         drop_three = findViewById(R.id.drop_3);
         water_wave = findViewById(R.id.water_wave);
+        water = findViewById(R.id.tap);
+
+        //getting datas
+        bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            themeNumber = bundle.getInt("theme");
+            condition = bundle.getBoolean("waterCondition");
+        }
+
+        //impementation of datas
+        water_controller.setChecked(condition);
+
         if(!condition) {
             drop_one.setVisibility(View.INVISIBLE);
             drop_two.setVisibility(View.INVISIBLE);
@@ -65,6 +61,17 @@ public class Water extends AppCompatActivity {
             water_wave.setVisibility(View.INVISIBLE);
         }
 
+        //choosing theme
+        if(themeNumber == 1){
+
+            drop_one.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
+            drop_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
+            drop_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
+            water.setBackgroundResource(R.drawable.ic_bluenight_tap);
+            water_wave.setBackgroundResource(R.drawable.ic_bluenight_wave);
+        }
+
+        //events
         water_controller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +89,17 @@ public class Water extends AppCompatActivity {
                     drop_three.setVisibility(View.INVISIBLE);
                     water_wave.setVisibility(View.INVISIBLE);
                 }
+            }
+        });
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentCondition = water_controller.isChecked();
+                thm = new Intent(Water.this, main_screen.class);
+                thm.putExtra("theme",themeNumber);
+                thm.putExtra("water",currentCondition);
+                startActivity(thm);
             }
         });
 
