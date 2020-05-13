@@ -209,17 +209,17 @@ public class MainPanel implements Initializable {
 
    @FXML
    private JFXButton englishOption, germanOption,
-         turkishOption;
+         turkishOption, italianOption,
+         franceOption;
    @FXML
    private ImageView themeImage;
    @FXML
-   private Label englishLabel, germanLabel,
-         turkishLabel, themeTopLabel,
+   private Label themeTopLabel,settingAuditoryWarningLabel,
          languageTopLabel, emergencyTopLabel,
          notificationTopLabel, connectionTopLabel,
          removeAnUser, settingFireButtonLabel,
          settingGasSensorLabel, settingSmokeSensorLabel,
-         settingVisualWarningLabel, settingAuditoryWarningLabel;
+         settingVisualWarningLabel ;
    @FXML
    private ToggleButton internalSirenToggle, externalSirenToggle,
          fireButtonVisualToggle, gasSensorVisualToggle,
@@ -608,6 +608,12 @@ public class MainPanel implements Initializable {
       } else if( loginUser.getPreferredLanguage().equals( "DEUTSCH" ) ) {
          languageSetter( "de" );
          selectGermanOption();
+      } else if( loginUser.getPreferredLanguage().equals( "ITALIANO" ) ) {
+         languageSetter( "it" );
+         selectItalianOption();
+      } else if( loginUser.getPreferredLanguage().equals( "FRANCAIS" ) ) {
+         languageSetter( "fr" );
+         selectFrenchOption();
       }
 
       if( loginUser.getSound().substring( 0,
@@ -2087,6 +2093,9 @@ public class MainPanel implements Initializable {
             || themeName.equals( "licht" )
             || themeName.equals( "lıght" )
             || themeName.equals( "lıcht" )
+            || themeName.equals( "lumiere" )
+            || themeName.equals( "lumıere" )
+            || themeName.equals( "leggero" )
             || themeName.equals( "aydinlik" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
          lightThemeRadioButton.setSelected( true );
@@ -2094,6 +2103,9 @@ public class MainPanel implements Initializable {
 
       } else if( themeName.equals( "dark" )
             || themeName.equals( "gece" )
+            || themeName.equals( "sombre" )
+            || themeName.equals( "buio" )
+            || themeName.equals( "buıo" )
             || themeName.equals( "dunkel" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_dark_theme.css" ).toExternalForm();
          darkThemeRadioButton.setSelected( true );
@@ -2102,6 +2114,10 @@ public class MainPanel implements Initializable {
       } else if( themeName.equals( "smooth" )
             || themeName.equals( "pürüzsüz" )
             || themeName.equals( "puruzsuz" )
+            || themeName.equals( "liscio" )
+            || themeName.equals( "lıscıo" )
+            || themeName.equals( "lısse" )
+            || themeName.equals( "lisse" )
             || themeName.equals( "glatt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smooth_themee.css" ).toExternalForm();
          smoothThemeRadioButton.setSelected( true );
@@ -2111,6 +2127,8 @@ public class MainPanel implements Initializable {
             || themeName.equals( "çizgi film" )
             || themeName.equals( "karikatur" )
             || themeName.equals( "karıkatur" )
+            || themeName.equals( "dessin anime" )
+            || themeName.equals( "dessın anıme" )
             || themeName.equals( "çızgı fılm" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_cartoon_theme.css" ).toExternalForm();
          cartoonThemeRadioButton.setSelected( true );
@@ -2118,13 +2136,18 @@ public class MainPanel implements Initializable {
 
       } else if( themeName.equals( "forest" )
             || themeName.equals( "orman" )
+            || themeName.equals( "foret" )
+            || themeName.equals( "foresta" )
             || themeName.equals( "wald" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_forest_theme.css" ).toExternalForm();
          forestThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/forestTheme.png" ) ) );
 
       } else if( themeName.equals( "uzay" )
+            || themeName.equals( "espace" )
             || themeName.equals( "space" )
+            || themeName.equals( "spazıo" )
+            || themeName.equals( "spazio" )
             || themeName.equals( "platz" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_space_theme.css" ).toExternalForm();
          spaceThemeRadioButton.setSelected( true );
@@ -2138,7 +2161,11 @@ public class MainPanel implements Initializable {
       } else if( themeName.equals( "interstellar" )
             || themeName.equals( "ınterstellar" )
             || themeName.equals( "yıldızlararası" )
-            || themeName.equals( "yildizlararasi" ) ) {
+            || themeName.equals( "yildizlararasi" )
+            || themeName.equals( "interstellare" )
+            || themeName.equals( "ınterstellare" )
+            || themeName.equals( "interstellaire" )
+            || themeName.equals( "ınterstellaıre" )) {
          css = this.getClass().getResource( "styleSheets/main_menu_interstellar_theme.css" ).toExternalForm();
          interstellarThemeRadioButton.setSelected( true );
          themeImage.setImage( new Image( getClass().getResourceAsStream( "styleSheets/images/interstellerTheme.png" ) ) );
@@ -2146,6 +2173,8 @@ public class MainPanel implements Initializable {
             || themeName.equals( "pyramıd" )
             || themeName.equals( "pyramide" )
             || themeName.equals( "pyramıde" )
+            || themeName.equals( "piramide" )
+            || themeName.equals( "pıramıde" )
             || themeName.equals( "piramit" )
             || themeName.equals( "pıramıt" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_pyramid_theme.css" ).toExternalForm();
@@ -2159,6 +2188,9 @@ public class MainPanel implements Initializable {
 
       } else if( themeName.equals( "abstract" )
             || themeName.equals( "abstrakt" )
+            || themeName.equals( "abstraite" )
+            || themeName.equals( "abstraıte" )
+            || themeName.equals( "astratto" )
             || themeName.equals( "soyut" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_abstract_theme.css" ).toExternalForm();
          abstractThemeRadioButton.setSelected( true );
@@ -2168,6 +2200,10 @@ public class MainPanel implements Initializable {
             || themeName.equals( "smart cıty" )
             || themeName.equals( "intelligente stadt" )
             || themeName.equals( "ıntellıgente stadt" )
+            || themeName.equals( "citta intelligente" )
+            || themeName.equals( "cıtta ıntellıgente" )
+            || themeName.equals( "ville intelligente" )
+            || themeName.equals( "vılle ıntellıgente" )
             || themeName.equals( "akıllı sehır" )
             || themeName.equals( "akilli sehir" ) ) {
          css = this.getClass().getResource( "styleSheets/main_menu_smart_cities_theme.css" ).toExternalForm();
@@ -2213,6 +2249,16 @@ public class MainPanel implements Initializable {
          selectTurkishOption();
          languageSetter( "tr" );
          language = "TÜRKÇE";
+
+      }  else if( event.getSource() == italianOption ) {
+         selectItalianOption();
+         languageSetter( "de" );
+         language = "ITALIANO";
+
+      } else if( event.getSource() == franceOption ) {
+         selectFrenchOption();
+         languageSetter( "fr" );
+         language = "FRANCAIS";
       }
 
       Users.getInstance().updateLanguage( loginUser, language );
@@ -2413,14 +2459,20 @@ public class MainPanel implements Initializable {
     */
    void unSelectAllLanguage() {
       englishOption.setPrefSize( 90, 90 );
-      englishOption.setLayoutX( 110 );
-      englishOption.setLayoutY( 105 );
+      englishOption.setLayoutX( 15 );
+      englishOption.setLayoutY( 135 );
       germanOption.setPrefSize( 90, 90 );
-      germanOption.setLayoutX( 304 );
-      germanOption.setLayoutY( 105 );
+      germanOption.setLayoutX( 160 );
+      germanOption.setLayoutY( 135 );
       turkishOption.setPrefSize( 90, 90 );
-      turkishOption.setLayoutX( 501 );
-      turkishOption.setLayoutY( 105 );
+      turkishOption.setLayoutX( 305 );
+      turkishOption.setLayoutY( 135 );
+      italianOption.setPrefSize( 90, 90 );
+      italianOption.setLayoutX( 450 );
+      italianOption.setLayoutY( 135 );
+      franceOption.setPrefSize( 90, 90 );
+      franceOption.setLayoutX( 595 );
+      franceOption.setLayoutY( 135 );
    }
 
    /**
@@ -2428,9 +2480,9 @@ public class MainPanel implements Initializable {
     * GUI according to this
     */
    void selectEnglishOption() {
-      englishOption.setPrefSize( 150, 150 );
-      englishOption.setLayoutX( 80 );
-      englishOption.setLayoutY( 105 );
+      englishOption.setPrefSize( 140, 140 );
+      englishOption.setLayoutX( 5 );
+      englishOption.setLayoutY( 110 );
    }
 
    /**
@@ -2438,9 +2490,9 @@ public class MainPanel implements Initializable {
     * GUI according to this
     */
    void selectGermanOption() {
-      germanOption.setPrefSize( 150, 150 );
-      germanOption.setLayoutX( 274 );
-      germanOption.setLayoutY( 105 );
+      germanOption.setPrefSize( 140, 140 );
+      germanOption.setLayoutX( 135 );
+      germanOption.setLayoutY( 110 );
    }
 
    /**
@@ -2448,49 +2500,29 @@ public class MainPanel implements Initializable {
     * GUI according to this
     */
    void selectTurkishOption() {
-      turkishOption.setPrefSize( 150, 150 );
-      turkishOption.setLayoutX( 471 );
-      turkishOption.setLayoutY( 105 );
+      turkishOption.setPrefSize( 140, 140 );
+      turkishOption.setLayoutX( 280 );
+      turkishOption.setLayoutY( 110 );
    }
 
    /**
-    * languagePaneButtonsOnMovement method controls label in GUI
-    * according to source of event
-    *
-    * @param event is a MouseEvent input parameter that is source
-    *              of the mouse movement
+    * selectItalianOption method that select italian and adjust
+    * GUI according to this
     */
-   @FXML
-   void languagePaneButtonsOnMovement( MouseEvent event ) {
-      if( event.getSource() == englishOption )
-         englishLabel.setVisible( textCheck );
-
-      else if( event.getSource() == germanOption )
-         germanLabel.setVisible( textCheck );
-
-      else if( event.getSource() == turkishOption )
-         turkishLabel.setVisible( textCheck );
+   void selectItalianOption() {
+      italianOption.setPrefSize( 140, 140 );
+      italianOption.setLayoutX( 425 );
+      italianOption.setLayoutY( 110 );
    }
 
    /**
-    * languagePaneButtonsOnExit method controls label in GUI
-    * according to source of event
-    *
-    * @param event is a MouseEvent input parameter that is source
-    *              of the mouse exit
+    * selectFrenchOption method that select french and adjust
+    * GUI according to this
     */
-   @FXML
-   void languagePaneButtonsOnExit( MouseEvent event ) {
-
-      if( event.getSource() == englishOption )
-         englishLabel.setVisible( false );
-
-      else if( event.getSource() == germanOption )
-         germanLabel.setVisible( false );
-
-      else if( event.getSource() == turkishOption )
-         turkishLabel.setVisible( false );
-      sound( "gasLang", false );
+   void selectFrenchOption() {
+      franceOption.setPrefSize( 140, 140 );
+      franceOption.setLayoutX( 555 );
+      franceOption.setLayoutY( 110 );
    }
 
    /*

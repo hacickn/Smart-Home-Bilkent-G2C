@@ -601,6 +601,14 @@
            -fx-background-image: url("images/turkey.png");
            -fx-background-size: cover;
 }
+.italiano{
+           -fx-background-image: url("images/italy.png");
+           -fx-background-size: cover;
+}
+.francais{
+           -fx-background-image: url("images/france.png");
+           -fx-background-size: cover;
+}
 .wifiImage{
         -fx-image: url("images/wifiConnection1.png");
 }
