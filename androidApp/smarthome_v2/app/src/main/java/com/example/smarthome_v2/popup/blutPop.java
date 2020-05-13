@@ -3,11 +3,14 @@ package com.example.smarthome_v2.popup;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.smarthome_v2.R;
 
 
 public class blutPop extends Activity {
+    private Button search;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,13 @@ public class blutPop extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int) (width*.8),(int)(height*.8));
+
+        search = findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
