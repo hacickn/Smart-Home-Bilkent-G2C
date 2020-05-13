@@ -59,6 +59,8 @@
         <activity android:name=".utilities.AquariumDaylist" />
         <activity android:name=".utilities.FishList" />
         <activity android:name=".utilities.GreenHouse" />
+        <activity android:name=".settings.GraphicSettings"></activity>
+        <activity android:name=".settings.ThemeSettings"></activity>
     </application>
 
 </manifest>

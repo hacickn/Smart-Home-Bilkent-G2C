@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:id="@+id/mainmenu"
+    android:background="@drawable/background_main">
 
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/menu"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@drawable/ic_menu"
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ToggleButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/gardenlight_control"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
@@ -40,7 +41,7 @@
         android:textColor="@drawable/toggle_colour"
         android:textSize="11dp"
         app:layout_constraintStart_toEndOf="@+id/garden_light"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/menu" />
 
     <ImageButton
         android:id="@+id/water_tap"
@@ -65,7 +66,7 @@
         android:textColor="@drawable/toggle_colour"
         android:textSize="11dp"
         app:layout_constraintStart_toEndOf="@+id/water_tap"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+        app:layout_constraintTop_toBottomOf="@+id/gardenlight_control" />
 
     <ImageButton
         android:id="@+id/aquarium"
@@ -79,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/water_tap" />
 
     <ToggleButton
-        android:id="@+id/toggleButton3"
+        android:id="@+id/aquarium_control"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
@@ -115,7 +116,7 @@
         android:textColor="@drawable/toggle_colour"
         android:textSize="11dp"
         app:layout_constraintEnd_toStartOf="@+id/electricity"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/menu" />
 
     <ImageButton
         android:id="@+id/electricity"
@@ -154,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/gas" />
 
     <ToggleButton
-        android:id="@+id/toggleButton6"
+        android:id="@+id/greenhouse_control"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
@@ -191,4 +192,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/settings" />
+
+    <ImageButton
+        android:id="@+id/graphic_options"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_graphic_option"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

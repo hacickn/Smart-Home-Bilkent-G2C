@@ -12,4 +12,5 @@
     <string name="todo">TODO</string>
     <string name="reg_to_login"> "I already have an account"</string>
     <string name="login_need">"I need a new account"</string>
+    <string name="backgrund">"@drawable/background"</string>
 </resources>
