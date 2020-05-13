@@ -31,8 +31,7 @@
                            onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
                            textFill="TRANSPARENT"/>
                 <JFXTextArea fx:id="logoutTextField" editable="false" layoutX="17.0" layoutY="54.0" prefHeight="285.0"
-                             prefWidth="464.0"
-                             text="The door icon in the middle at the bottom of each page allows you to return to the tab where you entered the username and password.The user can logout at any time.">
+                             prefWidth="464.0">
                     <font>
                         <Font size="18.0"/>
                     </font>
@@ -46,8 +45,7 @@
                            onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
                            textFill="TRANSPARENT"/>
                 <JFXTextArea fx:id="userProfileTextField" editable="false" layoutX="13.0" layoutY="51.0"
-                             prefHeight="285.0" prefWidth="464.0"
-                             text=" * The user profile in the upper right corner is the button where the profiles of the people in the smart home can be added.Name, surname, date of birth and gender information can be added to the field on the left and also changes can be made at any time from the arrows button.To exit after making changes, it is enough to press the arrow key to the left. * User name and password can be entered from the right-hand pane and also changes can be made at any time by using the arrows button.To exit after making changes, it is enough to press the arrow key to the left.">
+                             prefHeight="285.0" prefWidth="464.0">
                     <font>
                         <Font size="18.0"/>
                     </font>
@@ -61,8 +59,7 @@
                            onAction="#mainButtonOnAction" prefHeight="50.0" prefWidth="50.0" styleClass="goBackButton"
                            textFill="TRANSPARENT"/>
                 <JFXTextArea fx:id="menuTextField" editable="false" layoutX="20.0" layoutY="51.0" prefHeight="285.0"
-                             prefWidth="464.0"
-                             text="* To manually control the systems in the smart home;&#10;&#10;&#9; &gt; Located on the left &#10;&#9;&#9;&gt;&gt; 1. The &quot; ELECTRIC &quot; valve can be opened and closed with the lightning bolt icon on the button.&#10;Electric settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; 2. The &quot; GAS &quot; valve in your home can be opened and closed with the valve icon on the button.&#10;Gas settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; 3. With the water drop icon on the button, the &quot;WATER&quot; valve in your home can be opened and closed.&#10;&#10;&#9;&gt;Located at the bottom&#10;&#9;&#9;&gt;&gt; In the 1st row on the left, the &quot;HOME TEMPERATURE&quot; information can be found with the thermometer.&#10;&#9;&#9;&gt;&gt; In the 2nd row on the left, the &quot;HOUSE DOOR&quot; can be opened with the door icon.&#10;&#9;&#9;&gt;&gt; In the 3rd row on the left, The &quot;WEATHER&quot; information of your country or region can be accessed with the door symbol. &#10;The following information can be accessed by entering the name of the country where you want to learn the weather in the text &#10;box at the top and clicking the update button below.&#10;&#10;&#9;&gt;Located on the right&#10;&#9;&#9;&gt;&gt; With the aquarium icon on the 1st Button, &quot;AQUARIUM SETTINGS&quot; information can be turned on and off at home. &#10;Electric settings can be accessed with the settings button below&#10;&#9;&#9;&gt;&gt; With the greenhouse icon in the 2nd Button, temperature and humidity data in the &quot;GREENHOUSE&quot; at home can&#10; be accessed. Electric settings can be accessed with the settings button below.&#10;&#9;&#9;&gt;&gt; With the lamp icon from the 3rd button, the light in the garden of the house can be turned on and off.&#10;&#10;&#9;&#9;Located at the top&#10;&#9;- With the shortcut icon on the 1st button on the right, the units that are automatically turned on or off can be opened and closed. &#10;After selecting &quot;RUN&quot; button, desired units can be activated.&#10;You can access the electrical settings with the settings button below.&#10;&#10;&#9;- With the &quot;CONNECTION&quot; icon on the 2nd button, you can go to the connection panel in the settings&#10;panel at the top left of the page. &#10;&#9;&#9;&gt;&gt;The &quot;BLUETOOTH&quot; link on the left side can be activated with the button with the update icon having 3-inputs below &#10;and Bluetooth connection can be provided with &quot;ARDUINO&quot;.&#10;&#9;&#9;&gt;&gt; It can provide serial connection with &quot;ARDUINO&quot; from the port connection which is on the right.&#10;After selecting the COM1 and COM4 option and then activating with the update button at the bottom, &#10;&quot;ARDUNIO&quot; and sensors can be controlled via the interface.&#10;&#10;&#9;- With the clock icon on the 3rd button, the USER is expected to activate the current time setting.&#10;&#9;&#9;&gt;&gt; The day should be selected from the calendar icon next to the first text field,&#10;&#9;&#9;&gt;&gt; Hour should be selected from the clock icon  and minutes should be selected from &#10;&#9;&#9;&#9;the minute icon that are next to the second text field.&#10; !!!!!!!! AFTER THE COMPLETING LAST PROCESS, USERS HAVE TO PRESS THE SAVE BUTTON TO SAVE CHANGES!!!!!!!">
+                             prefWidth="464.0">
                     <font>
                         <Font size="16.0"/>
                     </font>
