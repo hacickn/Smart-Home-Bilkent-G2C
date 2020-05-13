@@ -42,13 +42,14 @@
         <activity
             android:name=".popup.notiPop"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".OpenScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".main_screen" />
         <activity android:name=".connection_settings" />
         <activity android:name=".utilities.Gas" />
