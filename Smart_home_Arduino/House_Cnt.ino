@@ -1,21 +1,13 @@
-      /*
-       * As a visual aid, the fields of Intel HEX records are colored throughout this article as follows:
-       :0300300002337A1E,
-        Start code   Byte count   Address   Record type   Data   Checksum
-           :            03         0030         00       02337A     1E
-                                                00 veri
-                                                01 dosya sonu
-            03 + 00 + 30 + 00 + 02 + 33 + 7A = E2(226D) 256-226=30(1EH)
-            03 + 00 + 30 + 00 + 02 + 33 + 7A + 1E = 100(256D)
-      
-      : 10 0100 00 214601360121470136007EFE09D21901 40 
-      : 10 0110 00 2146017E17C20001FF5F160021480119 28 
-      : 10 0120 00 194E79234623965778239EDA3F01B2CA A7 
-      : 10 0130 00 3F0156702B5E712B722B732146013421 C7 
-      : 00 0000 01FF
-      */
-      
-      
+ /*
+ * Serial_House_Cnt()
+ * void Smart_App_Cnt()
+ * void Smart_home_data()
+ * int hex_to_int( unsigned char hex[], int count )
+ * String print2digits( int number )
+ * void hours_setting()
+ * int _readStringUntil()
+ */
+          
       void Serial_House_Cnt()
       {   
         Serial.setTimeout( 100 );  //100msn  max kadar süre ver verinin gelmesi için bekleme
@@ -89,14 +81,11 @@
                 if ( first_data == "air_motor_off" )                     
                     digitalWrite( air_motor , HIGH );
       
-                if ( first_data == "door_on" )                           
-                   {
-                      digitalWrite( door , HIGH ); 
-                      door_time = 1;
-                   }
+                if ( first_data == "door_on" )       
+                    digitalWrite( door , HIGH );  
                 if ( first_data == "door_off" )                          
-                   digitalWrite( door , LOW );
-      
+                    digitalWrite( door , LOW );
+                        
                 if ( first_data == "water_valve_on" )                           
                    digitalWrite( water_valve , LOW );
                 if ( first_data == "water_valve_off" )                          
@@ -107,11 +96,10 @@
                 if ( first_data == "external_siren_off" )                         
                    digitalWrite( external_siren, LOW );
       
-                if ( first_data == "feeding_on" )                           
-                   {
+                if ( first_data == "feeding_on" )    
                       myServo.write( 180 ); 
-                      feeding_time = 1;
-                   } 
+                if ( first_data == "feeding_off" )    
+                      myServo.write( 0 );
                     
                 if ( first_data == "garden_lights_on" )                           
                     digitalWrite( garden_lights , HIGH );
@@ -126,13 +114,13 @@
                   // Rain control device
                 if ( first_data == "rain_cnt_device_on" )                              
                    {
-                      window_open=true;
+                      window_open = true;
                       Serial.println( "Window Open" );     
                       myServo_Rain_Device_Cnt.write( 180 );   
                    }
                 else if ( first_data == "rain_cnt_device_off" )                    
                    {
-                      window_open=false;
+                      window_open = false;
                       Serial.println( "Window closed" );     
                       myServo_Rain_Device_Cnt.write( 0 );  
                    }
@@ -142,119 +130,137 @@
                first_data = "" ; 
       }
       
+       void Smart_App_Cnt()
+        { 
+             Serial.println( last_data );  
+             String tempa = ""; 
+             byte i = 0, j = 2;
       
-      void aquarium_setting()
-      {       
-           byte i = 0, j = 2; 
-                   
-       if( last_data.length() > 0 )
+             tempa=last_data.substring( i,i+j ); 
+             i = i + 2; 
+             //Serial.print(tempa);
+          if( tempa == "B1" )       
+               digitalWrite( Buzzer, HIGH );
+          else if( tempa == "B0" )
+               digitalWrite( Buzzer, LOW );       
+      
+             tempa = last_data.substring( i,i+j );
+             i = i+2;
+             //Serial.print(tempa);
+          if( tempa == "E1" )       
+                digitalWrite( electricity, HIGH );
+          else if( tempa == "E0" )
+                digitalWrite( electricity, LOW );
+          
+             tempa = last_data.substring( i,i+j );
+             i = i + 2;
+             //Serial.print(tempa);
+          if(tempa == "G1" )       
+               digitalWrite( gas, HIGH );
+          else if( tempa == "G0" )
+               digitalWrite( gas, LOW );     
+      
+             tempa = last_data.substring ( i , i + j ); 
+             i = i + 2;
+             //Serial.print(tempa);
+             
+       if( ( ( tempa == "I1" )||( tempa == "I0" ) ) && ( !digitalRead( outgoing_water ) ) )  
         {
-          feeding_hour        = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          feeding_minute      = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          feeding_second      = last_data.substring( i , i + j ); 
-          i = i + 2;
-                  
-          water_change_hour   = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          water_change_minute = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          water_change_second = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          water_change_day    = last_data.substring( i , i + j ); 
-          i = i + 2;
-                  
-          air_motor_hour      = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          air_motor_minute    = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          air_motor_second    = last_data.substring( i , i + j ); 
-          i = i + 2;
-          
-          air_motor_operating = last_data.substring( i , i + j ); 
-          i = i + 2;        
-      /*
-      Serial.println(feeding_hour); Serial.println(feeding_minute); Serial.println(feeding_second);
-      Serial.println(water_change_hour); Serial.println(water_change_minute); 
-      Serial.println(water_change_second); Serial.println(water_change_day); 
-      Serial.println(air_motor_hour); Serial.println(air_motor_minute); 
-      Serial.println(air_motor_second); Serial.println(air_motor_operating); 
-      */
-           //for (int ee_addr=0; ee_addr < 16; ee_addr++) // 
-           //        EEPROM.update(ee_addr, 0xff);
-       
-                i=0;
-           for ( int ee_addr = 0 ; ee_addr < 12; ee_addr++ ) // 
-               {   
-                   EEPROM.update( ee_addr , ( last_data.substring( i ,i + j ) ).toInt() );
-                   i = i + 2 ; 
-               }  
+              if( tempa == "I1" )       
+                   digitalWrite( incoming_water, HIGH );
+              else if( tempa == "I0" )
+                   digitalWrite( incoming_water, LOW ); 
         }
-      }
+       else if( ( ( tempa == "I1" )||( tempa == "I0" ) ) && ( digitalRead( outgoing_water ) ) )
+               Serial.println( "the incoming and outgoing water cannot be active at the same time" );
+                 
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.print(tempa);
+       if( ( ( tempa == "U1" )||( tempa == "U0" ) ) && ( !digitalRead( incoming_water) ) )  
+        {
+          if( tempa == "U1" )       
+               digitalWrite( outgoing_water, HIGH );
+          else if( tempa == "U0" )
+               digitalWrite( outgoing_water, LOW ); 
+        }
+       else if( ( ( tempa == "U1" )||( tempa == "U0" )) && ( digitalRead( incoming_water) ) )
+               Serial.println( "the incoming and outgoing water cannot be active at the same time" );
+               
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.print(tempa);             
+          if( tempa == "A1" )       
+               digitalWrite( air_motor, HIGH );
+          else if( tempa == "A0" )
+               digitalWrite( air_motor, LOW );
+               
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.print(tempa);             
+          if( tempa == "D1" )       
+               digitalWrite( door, HIGH );
+          else if( tempa == "D0" )
+               digitalWrite( door, LOW ); 
       
-      void aquarium_control()
-      {              
-         if( ( feeding_hour == _hour ) && ( feeding_minute == _minute ) && ( feeding_second == _second ) )
-         {
-            feeding_time = 1;
-            myServo.write( 180 );       
-            Serial.println( "feeding on" );
-         }
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "W1" )       
+               digitalWrite( water_valve, HIGH );
+          else if( tempa == "W0" )
+                digitalWrite( water_valve, LOW );
+               
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "X1" )       
+               digitalWrite( external_siren, HIGH ); 
+          else if( tempa == "X0" )
+               digitalWrite( external_siren, LOW );
       
-      
-         if( ( water_change_hour == _hour ) && ( water_change_minute == _minute ) && ( water_change_day == _day_week )&& ( water_change == 0 ) )
-         { 
-            water_change = 1;
-            digitalWrite( air_motor , HIGH ); 
-            digitalWrite( incoming_water , LOW );      
-            digitalWrite( outgoing_water , HIGH );   
-            Serial.println( "outgoing_water on" );
-         }
-         else if( ( water_change == 1 ) && ( Distance > Distance_Max ) )
-         { 
-            water_change = 2;
-            digitalWrite( outgoing_water, LOW );    
-            Serial.println( "outgoing_water off" );
-            digitalWrite( incoming_water, HIGH );    
-            Serial.println( "incoming_water on" );
-         }
-         else if ( ( water_change == 2 ) && ( Distance < Distance_Min ) )
-         { 
-            water_change = 0;
-            digitalWrite( incoming_water , LOW );    
-            digitalWrite( outgoing_water , LOW );
-            Serial.println( "water change end" );
-            if( air_motor_on == true )
-               digitalWrite( air_motor , LOW );
-         }
-      
-      
-         if( ( air_motor_hour == _hour ) && ( air_motor_minute == _minute ) && ( air_motor_on == false ) )
-         {
-               air_motor_on = true;
-               air_motor_time = air_motor_operating.toInt() + _hour.toInt();
-            if(air_motor_time > 24)
-               air_motor_time = air_motor_time - 24;  
-            if( water_change == 0 )
+             tempa = last_data.substring( i , i + j );
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "F1" )       
+              myServo.write(180);
+          else if( tempa == "F0" )       
+              myServo.write( 0 );
+              
+             tempa = last_data.substring (i , i + j );
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "R1" )                            //////////////////// 
             {
-               digitalWrite( air_motor, LOW );   Serial.println( "air_motor on" );   
+                 window_open=true;
+                 Serial.println( "Window Open" );     
+                 myServo_Rain_Device_Cnt.write( 180 );   //////////////////// 
             }
-         }
-         else if( ( air_motor_on == true ) && ( _hour.toInt() >= air_motor_time ) )
-         { 
-               air_motor_on  = false;
-               digitalWrite( air_motor , HIGH);
-               Serial.println( "air_motor off" );
-         }   
-      }
+           else if( tempa == "R0" )                     //////////////////// 
+            {
+                 window_open=false;
+                 Serial.println( "Window closed" );    
+                 myServo_Rain_Device_Cnt.write( 0 );     //////////////////// 
+            }
+      
+             tempa = last_data.substring ( i , i + j);
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "S1" )       
+               digitalWrite( soil_moisture_valf_Cnt, HIGH );
+          else if( tempa == "S0" )
+               digitalWrite( soil_moisture_valf_Cnt, LOW );
+      
+             tempa = last_data.substring ( i , i + j);
+             //Serial.println(tempa);
+             i = i + 2;
+             //Serial.println(tempa);             
+          if( tempa == "N1" )       
+               digitalWrite( Raint_Device_Cnt, HIGH );
+          else if( tempa == "N0" )
+               digitalWrite( Raint_Device_Cnt, LOW );
+       }
+   
       
       void Smart_home_data()
       {       
@@ -431,192 +437,4 @@
                  */          
             }  
           return data_count;
-      }
-      
-      void Smart_App_Cnt()
-        { 
-             Serial.println( last_data );  
-             String tempa = ""; 
-             byte i = 0, j = 2;
-      
-             tempa=last_data.substring( i,i+j ); 
-             i = i + 2; 
-             //Serial.print(tempa);
-             
-          if( tempa == "B1" )       
-               digitalWrite( Buzzer, HIGH );
-          else if( tempa == "B0" )
-               digitalWrite( Buzzer, LOW );       
-      
-             tempa = last_data.substring( i,i+j );
-             i = i+2;
-             //Serial.print(tempa);
-          if( tempa == "E1" )       
-                digitalWrite( electricity, HIGH );
-          else if( tempa == "E0" )
-                digitalWrite( electricity, LOW );
-          
-             tempa = last_data.substring( i,i+j );
-             i = i + 2;
-             //Serial.print(tempa);
-
-          if(tempa == "G1" )       
-               digitalWrite( gas, HIGH );
-          else if( tempa == "G0" )
-               digitalWrite( gas, LOW );     
-      
-             tempa = last_data.substring ( i , i + j ); 
-             i = i + 2;
-             //Serial.print(tempa);
-             
-       if( ( ( tempa == "I1" )||( tempa == "I0" ) ) && ( !digitalRead( outgoing_water ) ) )  
-        {
-              if( tempa == "I1" )       
-                   digitalWrite( incoming_water, HIGH );
-              else if( tempa == "I0" )
-                   digitalWrite( incoming_water, LOW ); 
-        }
-       else if( ( ( tempa == "I1" )||( tempa == "I0" ) ) && ( digitalRead( outgoing_water ) ) )
-               Serial.println( "the incoming and outgoing water cannot be active at the same time" );
-                 
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.print(tempa);
-       if( ( ( tempa == "U1" )||( tempa == "U0" ) ) && ( !digitalRead( incoming_water) ) )  
-        {
-          if( tempa == "U1" )       
-               digitalWrite( outgoing_water, HIGH );
-          else if( tempa == "U0" )
-               digitalWrite( outgoing_water, LOW ); 
-        }
-       else if( ( ( tempa == "U1" )||( tempa == "U0" )) && ( digitalRead( incoming_water) ) )
-               Serial.println( "the incoming and outgoing water cannot be active at the same time" );
-               
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.print(tempa);
-             
-          if( tempa == "A1" )       
-               digitalWrite( air_motor, HIGH );
-          else if( tempa == "A0" )
-               digitalWrite( air_motor, LOW );
-               
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.print(tempa);
-             
-          if( tempa == "D1" )       
-               digitalWrite( door, HIGH );
-          else if( tempa == "D0" )
-               digitalWrite( door, LOW ); 
-      
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.println(tempa);
-             
-          if( tempa == "W1" )       
-               digitalWrite( water_valve, HIGH );
-          else if( tempa == "W0" )
-                digitalWrite( water_valve, LOW );
-               
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.println(tempa);
-             
-          if( tempa == "X1" )       
-               digitalWrite( external_siren, HIGH ); 
-          else if( tempa == "X0" )
-               digitalWrite( external_siren, LOW );
-      
-             tempa = last_data.substring( i , i + j );
-             i = i + 2;
-             //Serial.println(tempa);
-             
-          if( tempa == "F1" )       
-               {
-                  myServo.write(180);
-                  feeding_time = 1;
-                } 
-      
-             tempa = last_data.substring (i , i + j );
-             i = i + 2;
-             //Serial.println(tempa);
-             
-           if( tempa == "R1" )                          
-            {
-                 window_open=true;
-                 Serial.println( "Window Open" );     
-                 myServo_Rain_Device_Cnt.write( 180 );  
-            }
-           else if( tempa == "R0" )                     
-            {
-                 window_open=false;
-                 Serial.println( "Window closed" );    
-                 myServo_Rain_Device_Cnt.write( 0 );    
-            }
-      
-             tempa = last_data.substring ( i , i + j);
-             i = i + 2;
-             //Serial.println(tempa);
-             
-          if( tempa == "S1" )       
-               digitalWrite( soil_moisture_valf_Cnt, HIGH );
-          else if( tempa == "S0" )
-               digitalWrite( soil_moisture_valf_Cnt, LOW );
-      
-             tempa = last_data.substring ( i , i + j);
-             //Serial.println(tempa);
-             i = i + 2;
-             //Serial.println(tempa);
-             
-          if( tempa == "N1" )       
-               digitalWrite( Raint_Device_Cnt, HIGH );
-          else if( tempa == "N0" )
-               digitalWrite( Raint_Device_Cnt, LOW );
-       }
-      
-      //HC-05 Bluetooth Modülü
-      void Bluetooth_Setting()
-      {
-            String isim = "Bluet_Cnt_Car_rk";
-            int sifre = 1111;
-           // String uart = "9600,0,0";
-           
-            //"AT+NAME=Bluet_Cnt_Car_rk"
-            Serial3.print( "AT + NAME = " );
-            Serial3.println( isim );
-            Serial.print( "Isim ayarlandi: " );
-            Serial.println( isim );
-            delay( 1000 );
-            Serial3.print( "AT + PSWD = " );
-            Serial3.println( sifre );
-            Serial.print( "Sifre ayarlandi: " );
-            Serial.println( sifre );
-            //delay(1000);
-            //Serial3.print("AT+UART=");
-            //Serial3.println(uart);
-            //Serial.print("Baud rate ayarlandi: ");
-            //Serial.println(uart);
-            delay( 2000 );
-            Serial.println( "Islem tamamlandi." );
-      
-        /*
-            //Handshake 
-            Serial.println("Bluetooth Modülü ile iletişim bekleniyor");
-                 String  smsMetni;    char txtMsg[20]; 
-            blue.println("Mrb Blue");  
-            
-            while (!blue.available());
-                         
-            if (blue.available() > 0)     // BLUETOOTH için
-                {  
-                   readSerial(txtMsg);
-                   smsMetni=txtMsg;   Serial.println(smsMetni);
-                }  
-            
-            if(smsMetni=="mrb") 
-                   Serial.println("Bluetooth Modülü ile iletişim kuruldu");
-             else
-                   Serial.println("Bluetooth Modülü ile iletişim kurulamadı");
-          */
       }
