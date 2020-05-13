@@ -1,8 +1,13 @@
       /* 
-       *  #include <Keypad.h> 
-       *  #include <Password.h>
-       *  #include "LiquidCrystal.h"   
+       *  void Display_Refresh() 
+       *  void Key_Pad()  
+       *  void clearData()
+       *  void changePassword()
+       *  void Get_new_psw ( int line )
+       *  void Hour_Calendar()
+       *  String print2digits_Lcd ( int number )
       */
+      
       
       void Display_Refresh()
         {       
@@ -27,8 +32,7 @@
               lcd.setCursor( 0, 1 );   // 2.satır için 
               
           if ( door_encrypted == false )          
-               lcd.print( "Password(Off):" );
-               
+               lcd.print( "Password(Off):" );       
           else if( door_encrypted == true )   
                lcd.print( "Password(On ):" );
                
@@ -243,31 +247,21 @@
             _moon     = print2digits_Lcd( tm.Month );    
             _year     = print2digits_Lcd( tmYearToCalendar ( tm.Year ) );   
       
-            byte _day_week_ = _day_week.toInt();  
-            switch ( _day_week_ )   // Haftanın günü
-            {
-            case 2:
-              _day_week_tr = ( "PT" );
-              break;
-            case 3:
-              _day_week_tr = ( "SL" );
-              break;
-            case 4:
-              _day_week_tr = ( "CR" );
-              break;
-            case 5:
-              _day_week_tr = ( "PR" );
-              break;
-            case 6:
-              _day_week_tr = ( "CM" );
-              break;
-            case 7:
-              _day_week_tr = ( "CT" );
-              break;
-            case 1:
-              _day_week_tr = ("PZ") ;
-              break;
-            }      
+       byte _day_week_ = _day_week.toInt();  
+            if(_day_week_== 1)
+               _day_week_tr = ( "PZ" );             
+            else if(_day_week_== 2)
+               _day_week_tr = ( "PT" );
+            else if(_day_week_== 3)
+               _day_week_tr = ( "SL" );
+            else if(_day_week_== 4)
+               _day_week_tr = ( "CR" );
+            else if(_day_week_== 5)
+               _day_week_tr = ( "PR" );
+            else if(_day_week_== 6)
+               _day_week_tr = ( "CM" );
+            else if(_day_week_== 7)
+               _day_week_tr = ( "CT" );         
           }
       }
       
@@ -284,14 +278,3 @@
             return ( '0' + temp );
            }  
       }
-      
-      /*
-      void print2digits(int number)
-      {
-        if (number >= 0 && number < 10)
-        {
-          Serial.write('0');
-        }
-        Serial.print(number);
-      }
-      */

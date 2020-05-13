@@ -68,7 +68,7 @@
       
       Keypad customKeypad = Keypad( makeKeymap ( hexaKeys ) , rowPins , colPins , ROWS , COLS );
       
-      // Donanımsal interrupt 
+      // Hardware interrupt 
       volatile unsigned long LastPulseTimeA;
       #define trigPinA       13
       #define echoPinA        2    //Int.0
@@ -100,6 +100,7 @@
       uint8_t        soil_moisture_valf_Cnt = 32;
       uint8_t        Raint_Device_Cnt = 33;
       uint8_t        Green_House_Heater_Cnt = 34;
+      //const uint8_t port_Pins[ ] = {Buzzer,electricity,gas};
       
       char           House_movement = ' ';
       uint8_t        Speed = 60;
@@ -174,6 +175,9 @@
         pinMode( Smoke_Sensor,   INPUT );
         pinMode( Fire_Sensor,    INPUT );
         pinMode( Motion_Sensor,  INPUT );
+
+         // for (int i=22; i <= 24; i++) //portlar pasif  
+         // pinMode(port_Pins[i], OUTPUT);  
       
         pinMode( Buzzer ,         OUTPUT );  // Buzzer Declared as Output 
         pinMode( electricity ,    OUTPUT );
@@ -192,14 +196,14 @@
         last_data = "B0E0G0I0U0A0D0W0X0F0R0S0N0";      
         Smart_App_Cnt();
         
-       // Serial Port--------------------------------------------------------------------
+       // Serial Port
         Serial.begin( 9600 );     
         Serial.println( "start" );
         
-        // Bluetooth--------------------------------------------------------------------- 
+        // Bluetooth
         Serial3.begin( 9600 );    
         Serial3.write( "start" );
-      
+        //Bluetooth_Setting();
         
         // set up the LCD's number of columns and rows:
         lcd.begin( 20, 4 );//20,4
@@ -280,7 +284,17 @@
                 }
           }
       
-      
+       if( curtain_time > 0 )
+          { 
+                if( curtain_time++ >= 100 )
+                {
+                   // open curtain
+                   curtain_time = 0;
+                   myServo_Ldr_curtain_Cnt.write( 0 );  
+                   Serial.println( "curtain off" );
+                }
+          }
+          
         if( door_time > 0 ) 
           { 
                 if( door_time++ >= 50 )
@@ -376,64 +390,48 @@
         }
      }
 
-      /*
-       * House_Temp_Humidity()
-       * GreenHouse Humidty data
-       */
-          
-      void House_Temp_Humidity()
-      {       //SHT21     
-              sht.reset();
-              temp = sht.getTemperature();  // get temp from SHT 
-              sht.reset();
-              humidity = sht.getHumidity(); // get temp from SHT 
+     //HC-05 Bluetooth Modülü                           
+      void Bluetooth_Setting()
+      {
+            String _name = "Bluet_Cnt_Car_rk";
+            int _psw = 1111;
+           // String uart = "9600,0,0";
            
-              Serial.print( "Temp_HS: " );      
-              Serial.print( temp );
-              Serial.print( "\t Humidity_HS: " );
-              Serial.println( humidity );
+            //"AT+NAME=Bluet_Cnt_Car_rk"
+            Serial3.print( "AT + NAME = " );
+            Serial3.println( _name );
+            Serial.print( "Name is set " );
+            Serial.println( _name );
+            delay( 1000 );
+            Serial3.print( "AT + PSWD = " );
+            Serial3.println( _psw );
+            Serial.print( "Password set " );
+            Serial.println( _psw );
+            //delay(1000);
+            //Serial3.print("AT+UART=");
+            //Serial3.println(uart);
+            //Serial.print("Baud rate set: ");
+            //Serial.println(uart);
+            delay( 2000 );
+            Serial.println( "Process completed" );
       
-              Serial.print( "Temp_GH: " );
-              Serial.print( temp_green_house );
-              Serial.print( "\t Humidity_GH: " );
-              Serial.println( humid_green_house );
-           
-      }
-      
-                
-         /*
-          * light_sens_state()
-          * curtain control based on ligth amount
+        /*
+            //Handshake 
+            Serial.println("Awaiting communication with the Bluetooth Module");
+                 String  smstxt;    char txtMsg[20]; 
+            blue.println("Mrb Blue");  
+            
+            while (!blue.available());
+                         
+            if (blue.available() > 0)     // BLUETOOTH için
+                {  
+                   readSerial(txtMsg);
+                   smstxt=txtMsg;   Serial.println(smstxt);
+                }  
+            
+            if(smstxt=="mrb") 
+                   Serial.println("Communication with the Bluetooth Module has been established");
+             else
+                   Serial.println("Communication with the Bluetooth Module failed");
           */
-            void light_sens_state()
-      {       
-              //ADC- A13
-              light_sens_value =  analogRead( Ldr_Sensor );
-              /** duyarlılık = Vref / 2^n 
-              * miliV
-              * multipliyng w 1000 to convert it Volt to milivolt
-              */
-              //light_sens_value =( 0.0048828125*analogRead(Ldr_Sensor))*1000;
-              light_sens_value = map( light_sens_value , 0,1023 , 0,100 );
-              Serial.println( light_sens_value );         
-           if ( light_sens_value > 70 )   
-             {
-               //digitalWrite(curtain, ON); // PERDE
-               //Serial.print("light_sens_value :");  Serial.println(light_sens_value);
-               /*
-                * If we use Stor curtain we will turn the 
-                * curtain 360° in 3 times 
-                */
-               myServo_Ldr_curtain_Cnt.write( 0 );
-               Serial.println( " myServo_Ldr_curtain_Cnt ON  " );
-               digitalWrite( garden_lights , HIGH );
-             }
-           else
-           {
-                // open curtain
-                myServo_Ldr_curtain_Cnt.write( 180 );
-                Serial.println( " myServo_Ldr_curtain_Cnt OFF  " );
-               //digitalWrite(curtain, ON);// PERDE
-               digitalWrite( garden_lights , LOW );
-           }
-      }
+      }                                                               

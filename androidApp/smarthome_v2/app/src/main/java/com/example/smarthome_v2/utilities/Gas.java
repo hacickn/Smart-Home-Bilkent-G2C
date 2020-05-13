@@ -33,15 +33,17 @@ import java.util.Objects;
 public class Gas extends AppCompatActivity {
     public ImageButton exit;
     public ToggleButton gas_controller;
-    private ImageView smokes;
-    private ImageView wave_one;
-    private ImageView wave_two;
+    private ImageView smokes,wave_one,wave_two,gas;
     private BarChart gasChart;
     private ArrayList<BarEntry> dataValues;
     private BarDataSet lineDataSet;
     private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
+    boolean condition,currentCondition;
+    int themeNumber;
+    Bundle bundle;
+    Intent thm;
 
 
 
@@ -49,6 +51,8 @@ public class Gas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gas_screen);
+
+        //chart
         gasChart = findViewById(R.id.gasChart);
         dataValues = new ArrayList<>();
         dataValues.add(new BarEntry(0,20));
@@ -76,27 +80,50 @@ public class Gas extends AppCompatActivity {
         gasChart.setDescription(description);
 
 
+        //initialization
         exit=findViewById(R.id.exit_gas);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent main = new Intent(Gas.this, main_screen.class);
-                startActivity(main);
-            }
-        });
-
         smokes = findViewById(R.id.smokes);
-        gas_controller = (ToggleButton) findViewById(R.id.gas_control);
-        boolean condition = Objects.requireNonNull(getIntent().getExtras()).getBoolean("gasCondition");
-        gas_controller.setChecked(condition);
-
         wave_one = findViewById(R.id.wave_1);
         wave_two = findViewById(R.id.wave_two);
+        gas_controller = (ToggleButton) findViewById(R.id.gas_control);
+        gas=findViewById(R.id.gas_gas);
+
+        //getting datas
+        bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            themeNumber = bundle.getInt("theme");
+            condition = bundle.getBoolean("gasCondition");
+        }
+        //impementation of datas
+
+        gas_controller.setChecked(condition);
+
         if(!condition) {
             smokes.setVisibility(View.INVISIBLE);
             wave_one.setVisibility(View.INVISIBLE);
             wave_two.setVisibility(View.INVISIBLE);
         }
+
+        //choosing theme
+        if(themeNumber == 1){
+
+            smokes.setBackgroundResource(R.drawable.ic_bluenight_smoke);
+            wave_one.setBackgroundResource(R.drawable.ic_bluenight_wave);
+            wave_two.setBackgroundResource(R.drawable.ic_bluenight_wave);
+            gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
+        }
+
+        //events
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentCondition =gas_controller.isChecked();
+                 thm = new Intent(Gas.this, main_screen.class);
+                 thm.putExtra("theme",themeNumber);
+                thm.putExtra("gas",currentCondition);
+                startActivity(thm);
+            }
+        });
 
         gas_controller.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +131,7 @@ public class Gas extends AppCompatActivity {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
                     // ON
+
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
                     wave_two.setVisibility(View.VISIBLE);
@@ -117,6 +145,7 @@ public class Gas extends AppCompatActivity {
                 }
             }
         });
+
 
     }
 

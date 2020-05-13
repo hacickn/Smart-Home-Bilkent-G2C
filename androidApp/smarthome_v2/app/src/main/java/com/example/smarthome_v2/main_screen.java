@@ -30,12 +30,14 @@ import java.util.Objects;
 public class main_screen extends AppCompatActivity {
 
     public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,aquarium_control,greenHouse_control;
-    public boolean gasOnOff, elecOnOff, waterOnOff;
+    public boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
     private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics;
     private FirebaseAuth mAuth;
     int themeNumber;
     ConstraintLayout main;
     ImageView menu;
+    Bundle bundle;
+    boolean gasCheck,gardenCheck,electricityCheck,waterCheck;
 
 
 
@@ -65,7 +67,6 @@ public class main_screen extends AppCompatActivity {
         greenHouse = findViewById(R.id.green_house);
         graphics = findViewById(R.id.graphic_options);
         menu = findViewById(R.id.menu);
-
         gas_control = findViewById(R.id.gas_control);
         electricity_control = findViewById(R.id.electricity_control);
         water_control = findViewById(R.id.water_controller);
@@ -73,12 +74,27 @@ public class main_screen extends AppCompatActivity {
         gardenLight_control= findViewById(R.id.gardenlight_control);
         greenHouse_control=  findViewById(R.id.greenhouse_control);
 
-        //theme choosing
-        Bundle bundle = getIntent().getExtras();
+        //getting data
+        bundle = getIntent().getExtras();
 
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
+            gasCheck = bundle.getBoolean("gas");
+            gardenCheck = bundle.getBoolean("garden");
+            electricityCheck = bundle.getBoolean("electricity");
+            waterCheck = bundle.getBoolean("water");
+
+
+
+
         }
+        //setting toggles
+        gas_control.setChecked(gasCheck);
+        gardenLight_control.setChecked(gardenCheck);
+        electricity_control.setChecked(electricityCheck);
+        water_control.setChecked(waterCheck);
+
+        //theme choosing
         if(themeNumber == 1){
             gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
             main.setBackgroundResource(R.drawable.backgroundbluenight);
@@ -100,8 +116,12 @@ public class main_screen extends AppCompatActivity {
         gardenLight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, GardenLight.class);
-                startActivity(main);
+
+                gardenLightOnOff= gardenLight_control.isChecked();
+                Intent i = new Intent(getApplicationContext(), GardenLight.class);
+                i.putExtra("gardenCondition", gardenLightOnOff);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
@@ -109,14 +129,14 @@ public class main_screen extends AppCompatActivity {
         gas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, Gas.class);
-                startActivity(main);
 
                 gasOnOff = gas_control.isChecked();
                 Intent i = new Intent(getApplicationContext(), Gas.class);
 
                 i.putExtra("gasCondition", gasOnOff);
+                i.putExtra("theme", themeNumber);
                 startActivity(i);
+
             }
         });
 
@@ -143,13 +163,12 @@ public class main_screen extends AppCompatActivity {
         elec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, Electricity.class);
-                startActivity(main);
 
                 elecOnOff = electricity_control.isChecked();
                 Intent i = new Intent(getApplicationContext(), Electricity.class);
 
                 i.putExtra("elecCondition", elecOnOff);
+                i.putExtra("theme", themeNumber);
                 startActivity(i);
             }
         });
@@ -159,13 +178,12 @@ public class main_screen extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, Water.class);
-                startActivity(main);
 
                 waterOnOff = water_control.isChecked();
                 Intent i = new Intent(getApplicationContext(), Water.class);
 
                 i.putExtra("waterCondition", waterOnOff);
+                i.putExtra("theme", themeNumber);
                 startActivity(i);
             }
         });
@@ -181,11 +199,13 @@ public class main_screen extends AppCompatActivity {
         });
 
 
-        greenHouse_control.setOnClickListener(new View.OnClickListener() {
+        greenHouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, GreenHouse.class);
-                startActivity(main);
+
+                Intent i = new Intent(getApplicationContext(), GreenHouse.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
