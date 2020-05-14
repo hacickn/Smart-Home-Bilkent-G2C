@@ -113,6 +113,15 @@ public class Gas extends AppCompatActivity {
             gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
         }
 
+        if(themeNumber == 2){
+
+            smokes.setBackgroundResource(R.drawable.ic_alien_smoke);
+            wave_one.setBackgroundResource(R.drawable.ic_alien_wave);
+            wave_two.setBackgroundResource(R.drawable.ic_alien_wave);
+            gas.setBackgroundResource(R.drawable.ic_alien_gas);
+
+        }
+
         //events
         exit.setOnClickListener(new View.OnClickListener() {
             @Override

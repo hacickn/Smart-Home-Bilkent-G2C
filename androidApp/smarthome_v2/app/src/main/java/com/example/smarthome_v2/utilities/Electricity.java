@@ -113,6 +113,14 @@ public class Electricity extends AppCompatActivity {
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
         }
 
+        if(themeNumber == 2){
+
+            light_one.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            light_two.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            light_three.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+        }
+
         //events
         elec_controller.setOnClickListener(new View.OnClickListener() {
             @Override

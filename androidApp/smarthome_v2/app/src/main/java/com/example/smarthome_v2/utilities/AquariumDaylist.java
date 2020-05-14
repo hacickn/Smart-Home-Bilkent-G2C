@@ -51,6 +51,11 @@ public class AquariumDaylist extends AppCompatActivity {
             adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,days);
         }
 
+        if(themeNumber == 2){
+            main.setBackgroundResource(R.color.alien);
+            adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,days);
+        }
+
 
         //implementation
         list.setAdapter(adaptor);

@@ -51,6 +51,11 @@ public class FishList extends AppCompatActivity {
             adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,fishTypes);
         }
 
+        if(themeNumber == 2){
+            main.setBackgroundResource(R.color.alien);
+            adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,fishTypes);
+        }
+
         //implementation
         list.setAdapter(adaptor);
 
