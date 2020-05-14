@@ -34,4 +34,8 @@ public class Fish {
    public void setAirMotorWorkTime( String airMotorWorkTime ) {
       this.airMotorWorkTime = airMotorWorkTime;
    }
+
+   public String[] fishAirMotorTimeRange() {
+      return airMotorWorkTime.split("-");
+   }
 }

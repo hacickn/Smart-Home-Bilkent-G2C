@@ -1,5 +1,6 @@
 package com.SmartHomeBilkent.utilities.dataBase;
 
+import com.SmartHomeBilkent.utilities.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.utilities.dataBase.fields.Fish;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -58,5 +59,10 @@ public class FishSpecies {
    public void addFishToComboBox( CheckComboBox< String > comboBox ) {
       for( int k = 0; k < fishes.size(); k++ )
          comboBox.getItems().add( fishes.get( k ).getSpecies() );
+   }
+   public int getFishesAirMotorRunTime (CommonSetting commonSetting) {
+      String[] flowList;
+      flowList = CommonSettingData.getInstance().getSelectedFishes(commonSetting);
+      return 0;
    }
 }
