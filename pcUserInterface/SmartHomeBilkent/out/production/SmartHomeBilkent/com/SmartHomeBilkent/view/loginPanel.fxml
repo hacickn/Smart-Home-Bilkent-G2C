@@ -10,44 +10,62 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-
-<StackPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#controlPressedCapslock" onKeyTyped="#controlPressedCapslock" prefHeight="400.0" prefWidth="400.0" stylesheets="@../styleSheets/login_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.LoginPanel">
+<?import javafx.scene.text.*?>
+<StackPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+           onKeyPressed="#controlPressedCapslock" onKeyTyped="#controlPressedCapslock" prefHeight="400.0"
+           prefWidth="400.0" stylesheets="@../styleSheets/login_dark_theme.css" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SmartHomeBilkent.LoginPanel">
     <AnchorPane prefHeight="400.0" prefWidth="400.0">
-        <JFXButton fx:id="loginButton" layoutX="165.0" layoutY="271.0" onAction="#toLogin" prefHeight="35.0" prefWidth="70.0" ripplerFill="#c2a006" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" text="LOG IN" />
-        <Label alignment="CENTER" layoutX="123.0" layoutY="69.0" prefHeight="35.0" prefWidth="154.0" styleClass="primitiveLabel" text="SMART HOME" textFill="WHITE">
+        <JFXButton fx:id="loginButton" layoutX="165.0" layoutY="271.0" onAction="#toLogin" prefHeight="35.0"
+                   prefWidth="70.0" ripplerFill="#c2a006"
+                   style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-width: 2;" text="LOG IN"/>
+        <Label alignment="CENTER" layoutX="123.0" layoutY="69.0" prefHeight="35.0" prefWidth="154.0"
+               styleClass="primitiveLabel" text="SMART HOME" textFill="WHITE">
             <font>
-                <Font name="Agency FB" size="39.0" />
+                <Font name="Agency FB" size="39.0"/>
             </font>
         </Label>
-        <Line endX="90.70709228515625" endY="-10.70709228515625" fill="WHITE" layoutX="112.0" layoutY="48.0" startX="179.0" startY="31.0" stroke="WHITE" strokeWidth="3.0" styleClass="line" />
-        <Line endX="80.0" endY="-21.4141845703125" fill="WHITE" layoutX="122.0" layoutY="58.0" startX="-15.70709228515625" startY="23.70709228515625" stroke="WHITE" strokeWidth="3.0" styleClass="line" />
-        <JFXTextField fx:id="userNameField" focusColor="#ff8400" labelFloat="true" layoutX="104.0" layoutY="149.0" maxHeight="30.0" minHeight="30.0" onAction="#toLogin" onKeyPressed="#controlPressedCapslock" onKeyTyped="#controlPressedCapslock" prefHeight="30.0" prefWidth="230.0" promptText="USER NAME" style="-fx-background-radius: 20;">
+        <Line endX="90.70709228515625" endY="-10.70709228515625" fill="WHITE" layoutX="112.0" layoutY="48.0"
+              startX="179.0" startY="31.0" stroke="WHITE" strokeWidth="3.0" styleClass="line"/>
+        <Line endX="80.0" endY="-21.4141845703125" fill="WHITE" layoutX="122.0" layoutY="58.0"
+              startX="-15.70709228515625" startY="23.70709228515625" stroke="WHITE" strokeWidth="3.0"
+              styleClass="line"/>
+        <JFXTextField fx:id="userNameField" focusColor="#ff8400" labelFloat="true" layoutX="104.0" layoutY="149.0"
+                      maxHeight="30.0" minHeight="30.0" onAction="#toLogin" onKeyPressed="#controlPressedCapslock"
+                      onKeyTyped="#controlPressedCapslock" prefHeight="30.0" prefWidth="230.0" promptText="USER NAME"
+                      style="-fx-background-radius: 20;">
             <font>
-                <Font name="Arial" size="15.0" />
+                <Font name="Arial" size="15.0"/>
             </font>
         </JFXTextField>
-        <JFXPasswordField fx:id="passwordField" labelFloat="true" layoutX="104.0" layoutY="196.0" maxHeight="30.0" minHeight="30.0" onAction="#toLogin" onKeyPressed="#controlPressedCapslock" onKeyTyped="#controlPressedCapslock" prefHeight="30.0" prefWidth="230.0" promptText="PASSWORD" style="-fx-background-radius: 20;" styleClass="text-field">
+        <JFXPasswordField fx:id="passwordField" labelFloat="true" layoutX="104.0" layoutY="196.0" maxHeight="30.0"
+                          minHeight="30.0" onAction="#toLogin" onKeyPressed="#controlPressedCapslock"
+                          onKeyTyped="#controlPressedCapslock" prefHeight="30.0" prefWidth="230.0" promptText="PASSWORD"
+                          style="-fx-background-radius: 20;" styleClass="text-field">
             <font>
-                <Font name="Arial" size="15.0" />
+                <Font name="Arial" size="15.0"/>
             </font>
         </JFXPasswordField>
-        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="70.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../styleSheets/images/nameDarkTheme.png" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="70.0" layoutY="150.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../styleSheets/images/nameDarkTheme.png"/>
         </ImageView>
-        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="74.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../styleSheets/images/keyDarkTheme.png" />
+        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="74.0" layoutY="199.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../styleSheets/images/keyDarkTheme.png"/>
         </ImageView>
-        <Label fx:id="waningLabel" alignment="CENTER" layoutY="314.0" opacity="0.74" prefHeight="27.0" prefWidth="400.0" styleClass="secondaryLabel">
+        <Label fx:id="waningLabel" alignment="CENTER" layoutY="314.0" opacity="0.74" prefHeight="27.0" prefWidth="400.0"
+               styleClass="secondaryLabel">
             <font>
-                <Font name="Agency FB" size="17.0" />
+                <Font name="Agency FB" size="17.0"/>
             </font>
         </Label>
-        <Label fx:id="capslockOpen" alignment="CENTER" layoutX="99.0" layoutY="238.0" opacity="0.74" prefHeight="16.0" prefWidth="200.0" styleClass="secondaryLabel" text="CAPSLOCK OPEN" visible="false">
+        <Label fx:id="capslockOpen" alignment="CENTER" layoutX="99.0" layoutY="238.0" opacity="0.74" prefHeight="16.0"
+               prefWidth="200.0" styleClass="secondaryLabel" text="CAPSLOCK OPEN" visible="false">
             <font>
-                <Font name="Agency FB" size="17.0" />
+                <Font name="Agency FB" size="17.0"/>
             </font>
         </Label>
-        <JFXSpinner fx:id="loginSpinner" layoutX="174.0" layoutY="264.0" visible="false" />
+        <JFXSpinner fx:id="loginSpinner" layoutX="174.0" layoutY="264.0" visible="false"/>
     </AnchorPane>
 </StackPane>
