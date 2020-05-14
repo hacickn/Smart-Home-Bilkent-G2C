@@ -1,8 +1,6 @@
 package com.example.smarthome_v2;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -24,8 +21,6 @@ import com.example.smarthome_v2.utilities.Gas;
 import com.example.smarthome_v2.utilities.GreenHouse;
 import com.example.smarthome_v2.utilities.Water;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
 
 public class main_screen extends AppCompatActivity {
 
@@ -115,6 +110,21 @@ public class main_screen extends AppCompatActivity {
         if(themeNumber == 2){
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
             main.setBackgroundResource(R.drawable.backgroundalien);
+            gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
+
+            weather.setBackgroundResource(R.drawable.ic_alien_weather);
+            settings.setBackgroundResource(R.drawable.ic_alien_optons);
+            elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+            water.setBackgroundResource(R.drawable.ic_alien_tap);
+            aquarium.setBackgroundResource(R.drawable.ic_alien_aquarium);
+            greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
+            graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
+            menu.setBackgroundResource(R.drawable.ic_alien_menu);
+
+        }
+        if(themeNumber == 4){
+            gas.setBackgroundResource(R.drawable.ic_alien_gas);
+            main.setBackgroundResource(R.drawable.backgroundspace);
             gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
 
             weather.setBackgroundResource(R.drawable.ic_alien_weather);

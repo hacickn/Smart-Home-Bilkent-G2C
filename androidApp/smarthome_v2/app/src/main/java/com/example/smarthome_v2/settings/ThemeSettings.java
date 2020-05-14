@@ -8,11 +8,10 @@ import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
-import com.example.smarthome_v2.utilities.Gas;
 
 public class ThemeSettings extends Activity {
     int themeNo;
-    ImageButton blueNight,mainTheme,alien;
+    ImageButton blueNight,mainTheme,alien,space;
     Intent thm,thmGas;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,7 @@ public class ThemeSettings extends Activity {
         mainTheme = findViewById(R.id.main_theme);
         blueNight = findViewById(R.id.blue_night);
         alien =findViewById(R.id.alien);
+        space = findViewById(R.id.space);
 
         //events
         mainTheme.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +52,16 @@ public class ThemeSettings extends Activity {
             @Override
             public void onClick(View v) {
                 themeNo = 2;
+                thm.putExtra("theme", themeNo);
+                startActivity(thm);
+
+            }
+        });
+
+        space.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                themeNo = 4;
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
 
