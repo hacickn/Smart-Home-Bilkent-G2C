@@ -72,6 +72,24 @@ public class GreenHouse extends Activity {
 
         }
 
+        if(themeNumber == 2){
+
+            greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
+            temperature.setTextColor(Color.BLACK);
+            water.setTextColor(Color.BLACK);
+            humudity.setTextColor(Color.BLACK);
+            Drawable drawable = hum.getBackground(); // get current EditText drawable
+            drawable.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            hum.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            Drawable drawableTwo = comingWater.getBackground(); // get current EditText drawable
+            drawableTwo.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            comingWater.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            Drawable drawableThree = temp.getBackground(); // get current EditText drawable
+            drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
+
+        }
+
         //events
         exit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -71,6 +71,15 @@ public class Water extends AppCompatActivity {
             water_wave.setBackgroundResource(R.drawable.ic_bluenight_wave);
         }
 
+        if(themeNumber == 2){
+
+            drop_one.setBackgroundResource(R.drawable.ic_alien_drop);
+            drop_two.setBackgroundResource(R.drawable.ic_alien_drop);
+            drop_three.setBackgroundResource(R.drawable.ic_alien_drop);
+            water.setBackgroundResource(R.drawable.ic_alien_tap);
+            water_wave.setBackgroundResource(R.drawable.ic_alien_wave);
+        }
+
         //events
         water_controller.setOnClickListener(new View.OnClickListener() {
             @Override

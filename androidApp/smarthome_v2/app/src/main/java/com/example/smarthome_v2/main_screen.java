@@ -110,6 +110,21 @@ public class main_screen extends AppCompatActivity {
             menu.setBackgroundResource(R.drawable.ic_bluenight_menu);
 
         }
+        if(themeNumber == 2){
+            gas.setBackgroundResource(R.drawable.ic_alien_gas);
+            main.setBackgroundResource(R.drawable.backgroundalien);
+            gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
+
+            weather.setBackgroundResource(R.drawable.ic_alien_weather);
+            settings.setBackgroundResource(R.drawable.ic_alien_optons);
+            elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+            water.setBackgroundResource(R.drawable.ic_alien_tap);
+            aquarium.setBackgroundResource(R.drawable.ic_alien_aquarium);
+            greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
+            graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
+            menu.setBackgroundResource(R.drawable.ic_alien_menu);
+
+        }
 
 
 
