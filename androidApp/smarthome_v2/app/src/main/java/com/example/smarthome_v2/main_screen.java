@@ -31,7 +31,7 @@ public class main_screen extends AppCompatActivity {
 
     public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,aquarium_control,greenHouse_control;
     public boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
-    private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics;
+    private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics,smartHomeDoor,helpbutton;
     private FirebaseAuth mAuth;
     int themeNumber;
     ConstraintLayout main;
@@ -73,6 +73,8 @@ public class main_screen extends AppCompatActivity {
         aquarium_control = findViewById(R.id.aquarium_control);
         gardenLight_control= findViewById(R.id.gardenlight_control);
         greenHouse_control=  findViewById(R.id.greenhouse_control);
+        smartHomeDoor = findViewById(R.id.smarthome_door);
+        helpbutton = findViewById(R.id.helper_button);
 
         //getting data
         bundle = getIntent().getExtras();
@@ -231,6 +233,14 @@ public class main_screen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent main = new Intent(main_screen.this, GraphicSettings.class);
                 startActivity(main);
+            }
+        });
+
+        helpbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toHelp = new Intent(main_screen.this, HelpPop.class);
+                startActivity(toHelp);
             }
         });
     }
