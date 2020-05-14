@@ -8,7 +8,7 @@
     android:background="#86292727">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/motor_hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"

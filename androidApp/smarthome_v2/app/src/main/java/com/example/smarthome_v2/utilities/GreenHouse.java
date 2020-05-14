@@ -72,6 +72,7 @@ public class GreenHouse extends Activity {
 
         }
 
+        //events
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

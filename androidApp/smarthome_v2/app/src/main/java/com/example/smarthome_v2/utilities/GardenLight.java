@@ -26,6 +26,7 @@ public class GardenLight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.garden_light);
 
+
         //initialization
         gardenLightController = findViewById(R.id.garden_light_control);
         gardenLight = findViewById(R.id.image_garden_light);

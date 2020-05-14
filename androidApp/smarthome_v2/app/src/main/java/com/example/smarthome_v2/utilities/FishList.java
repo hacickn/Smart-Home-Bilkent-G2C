@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.utilities.Aquarium;
@@ -23,26 +24,46 @@ public class FishList extends AppCompatActivity {
     private ListView list;
     private static final String[] fishTypes = new String[]{"Lepistes","Japon","Vatoz","Brachydanio","clownfish","Pencilfish","Juvenile"};
     Context context = this;
+    Bundle bundle;
+    int themeNumber;
+    ConstraintLayout main;
+    ArrayAdapter<String> adaptor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.species_list);
-        list = findViewById(R.id.fish_type);
 
-        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(context,R.layout.text_special,fishTypes);
+        //initialization
+        list = findViewById(R.id.fish_type);
+        main = findViewById(R.id.list_of_fish);
+        adaptor = new ArrayAdapter<String>(context,R.layout.text_special,fishTypes);
+
+        //getting datas
+        bundle = getIntent().getExtras();
+        if(bundle != null ){
+            themeNumber = bundle.getInt("theme");
+        }
+
+        //choosing theme
+        if(themeNumber == 1){
+            main.setBackgroundResource(R.color.blue_night);
+            adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,fishTypes);
+        }
+
+        //implementation
         list.setAdapter(adaptor);
 
+        //events
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String show = fishTypes[position]+"";
                 Intent i = new Intent(getApplicationContext(), Aquarium.class);
-
+                i.putExtra("theme",themeNumber);
                 i.putExtra("type",show);
                 startActivity(i);
                 setContentView(R.layout.aquarium_screen);
-
             }
         });
 

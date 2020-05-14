@@ -192,9 +192,10 @@ public class main_screen extends AppCompatActivity {
         aquarium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, Aquarium.class);
-                startActivity(main);
 
+                Intent i = new Intent(getApplicationContext(), Aquarium.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 

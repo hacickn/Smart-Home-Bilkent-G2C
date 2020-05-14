@@ -7,7 +7,7 @@
     android:background="@color/grey">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/im_aquarium"
 
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/im_species"
 
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -29,34 +29,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/im_feed"
 
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="39dp"
         android:background="@drawable/ic_fish_food"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/im_species" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/im_water"
 
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="39dp"
         android:background="@drawable/ic_water_exhange"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/im_feed" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/im_motor"
 
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="39dp"
         android:background="@drawable/ic_air_engine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintTop_toBottomOf="@+id/im_water" />
 
     <Button
         android:id="@+id/species"
@@ -70,8 +70,8 @@
         android:paddingHorizontal="5dp"
         android:text="Select Spicy"
         android:textColor="@color/grey"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/im_species"
+        app:layout_constraintTop_toBottomOf="@+id/im_aquarium" />
 
     <EditText
         android:id="@+id/time_feed"
@@ -105,7 +105,7 @@
         android:text="Feeding Start Time (Each Day)"
         android:textColor="@color/orange_one"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toEndOf="@+id/im_feed"
         app:layout_constraintTop_toBottomOf="@+id/species" />
 
     <TextView
@@ -117,7 +117,7 @@
         android:text="Water Exchange Time"
         android:textColor="@color/orange_one"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toEndOf="@+id/im_water"
         app:layout_constraintTop_toBottomOf="@+id/feed_text" />
 
     <EditText
@@ -153,7 +153,7 @@
         android:text="Water Exchange Day"
         android:textColor="@color/orange_one"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toEndOf="@+id/im_water"
         app:layout_constraintTop_toBottomOf="@+id/exchange_time_text" />
 
     <EditText
@@ -190,11 +190,11 @@
         android:layout_marginTop="48dp"
         android:progressDrawable="@color/orange_one"
         android:thumbTint="@color/orange_two"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/motor_hour"
         app:layout_constraintTop_toBottomOf="@+id/exchange_day_text" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/motor_hour"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -202,11 +202,11 @@
         android:text="Air Motor Work Amount"
         android:textColor="@color/orange_one"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/im_motor"
         app:layout_constraintTop_toBottomOf="@+id/exchange_day_text" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/motor_day"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -214,8 +214,8 @@
         android:text="Air Motor Start Time"
         android:textColor="@color/orange_one"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/im_motor"
+        app:layout_constraintTop_toBottomOf="@+id/motor_hour" />
 
     <EditText
         android:id="@+id/air_motor_start"
@@ -231,7 +231,7 @@
         android:inputType="textMultiLine"
         android:textColor="@color/orange_two"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/motor_day"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
     <ImageButton
