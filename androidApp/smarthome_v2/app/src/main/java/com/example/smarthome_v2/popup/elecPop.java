@@ -50,7 +50,7 @@ public class elecPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.8),(int)(height*.8));
+        getWindow().setLayout((int) (width*1),(int)(height*1));
         ImageButton exit = findViewById(R.id.exit_elec);
         exit.setVisibility(View.GONE);
 

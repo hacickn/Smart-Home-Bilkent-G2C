@@ -22,7 +22,7 @@ public class blutPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.8),(int)(height*.8));
+        getWindow().setLayout((int) (width*1),(int)(height*1));
 
         search = findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {

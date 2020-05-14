@@ -36,11 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="316dp"
         android:text="Fire Sensor"
+        android:textColor="@color/orange_one"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:textColor="@color/orange_one"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
