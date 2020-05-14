@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileCard"></activity>
+        <activity android:name=".ProfileCard"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".utilities.GardenLight" />
         <activity android:name=".settings.AppSettings" />
