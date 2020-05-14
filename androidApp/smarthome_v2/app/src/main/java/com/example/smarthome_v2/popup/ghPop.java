@@ -38,7 +38,7 @@ public class ghPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.8),(int)(height*.8));
+        getWindow().setLayout((int) (width*1),(int)(height*1));
         //initialization
         greenHouse = findViewById(R.id.green_house_image);
         temperature = findViewById(R.id.Temperature);
