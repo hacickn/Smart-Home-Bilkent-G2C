@@ -12,7 +12,6 @@ import android.widget.ToggleButton;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
-import com.example.smarthome_v2.utilities.Gas;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -47,7 +46,7 @@ public class gasPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*1,(int)(height*1));
+        getWindow().setLayout((int) (width*1),(int)(height*1));
         //chart
         gasChart = findViewById(R.id.gasChart);
         dataValues = new ArrayList<>();
