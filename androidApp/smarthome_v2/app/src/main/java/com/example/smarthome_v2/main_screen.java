@@ -21,10 +21,11 @@ import com.example.smarthome_v2.utilities.Gas;
 import com.example.smarthome_v2.utilities.GreenHouse;
 import com.example.smarthome_v2.utilities.Water;
 import com.google.firebase.auth.FirebaseAuth;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class main_screen extends AppCompatActivity {
 
-    public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,aquarium_control,greenHouse_control;
+    public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,aquarium_control,greenhouse_control;
     public boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
     private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics,smartHomeDoor,helpbutton;
     private FirebaseAuth mAuth;
@@ -67,7 +68,7 @@ public class main_screen extends AppCompatActivity {
         water_control = findViewById(R.id.water_controller);
         aquarium_control = findViewById(R.id.aquarium_control);
         gardenLight_control= findViewById(R.id.gardenlight_control);
-        greenHouse_control=  findViewById(R.id.greenhouse_control);
+        greenhouse_control=  findViewById(R.id.greenhouse_control);
         smartHomeDoor = findViewById(R.id.smarthome_door);
         helpbutton = findViewById(R.id.helper_button);
 
@@ -80,10 +81,6 @@ public class main_screen extends AppCompatActivity {
             gardenCheck = bundle.getBoolean("garden");
             electricityCheck = bundle.getBoolean("electricity");
             waterCheck = bundle.getBoolean("water");
-
-
-
-
         }
         //setting toggles
         gas_control.setChecked(gasCheck);
@@ -253,8 +250,66 @@ public class main_screen extends AppCompatActivity {
                 startActivity(toHelp);
             }
         });
+
+        electricity_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( electricity_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_electricity,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,false).show();
+            }
+        });
+
+        gas_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( gas_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,false).show();
+            }
+        });
+
+        greenhouse_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( greenhouse_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"GREENHOUSE IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_green_house,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"GREENHOUSE IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_green_house,false).show();
+            }
+        });
+
+        gardenLight_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( gardenLight_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gardening,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gardening,false).show();
+            }
+        });
+
+        water_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( water_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_water_exchange,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_water_exchange,false).show();
+            }
+        });
+
+        aquarium_control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( aquarium_control.isChecked() )
+                    FancyToast.makeText(getApplicationContext(),"AQUARIUM IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_aquarium,false).show();
+                else
+                    FancyToast.makeText(getApplicationContext(),"AQUARIUM IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_aquarium,false).show();
+            }
+        });
     }
-
-
 }
 

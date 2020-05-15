@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.smarthome_v2"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -35,4 +35,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
 }
