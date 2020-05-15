@@ -107,13 +107,15 @@ public class LoginPanel implements Initializable {
 
                      } catch( Exception e ) {
                         e.printStackTrace();
+                        loginButton.setVisible( true );
+                        loginSpinner.setVisible( false );
                      }
                   }
                } ).start();
                waningLabel.setVisible( false );
             }
          }
-         waningLabel.setText( "USERNAME/PASSWORD IS WRONG" );
+         waningLabel.setText( "USERNAME/PASSWORD IS WRONG, TRY AGAIN" );
       } else {
          waningLabel.setVisible( true );
          waningLabel.setText( "PLEASE ENTER BOTH PASSWORD AND USERNAME" );
