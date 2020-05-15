@@ -8,10 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/FishSpecies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/FishSpecies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/fields/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/fields/Fish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome.db" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/HelpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/LoginPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/ElectricityUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/ElectricityUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/GasUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SmartHomeBilkent/utilities/dataBase/GasUsage.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,19 +141,13 @@
       <recent name="D:\ilke\Smart-Home-Bilkent-G2C\pcUserInterface\SmartHomeBilkent\src\com\SmartHomeBilkent\styleSheets\images" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -162,12 +159,6 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="LoginPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.SmartHomeBilkent.LoginPanel" />
@@ -276,13 +267,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -376,32 +366,32 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="459" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586872730862" />
-    <state width="1879" height="2" key="GridCell.Tab.0.bottom" timestamp="1589412309949">
+    <state width="1879" height="2" key="GridCell.Tab.0.bottom" timestamp="1589519013456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1879" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589412309949" />
+    <state width="1879" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589519013456" />
     <state width="1877" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.bottom/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1879" height="2" key="GridCell.Tab.0.center" timestamp="1589412309949">
+    <state width="1879" height="2" key="GridCell.Tab.0.center" timestamp="1589519013456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1879" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589412309949" />
+    <state width="1879" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589519013456" />
     <state width="1877" height="151" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.center/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
-    <state width="1879" height="2" key="GridCell.Tab.0.left" timestamp="1589412309949">
+    <state width="1879" height="2" key="GridCell.Tab.0.left" timestamp="1589519013455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1879" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589412309949" />
+    <state width="1879" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589519013455" />
     <state width="1877" height="151" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245916" />
     <state width="752" height="2" key="GridCell.Tab.0.left/0.0.800.600@0.0.800.600" timestamp="1585492248661" />
-    <state width="1879" height="2" key="GridCell.Tab.0.right" timestamp="1589412309949">
+    <state width="1879" height="2" key="GridCell.Tab.0.right" timestamp="1589519013456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1557" height="226" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1588544735120" />
-    <state width="1879" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589412309949" />
+    <state width="1879" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589519013456" />
     <state width="1877" height="151" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588112245917" />
     <state width="752" height="2" key="GridCell.Tab.0.right/0.0.800.600@0.0.800.600" timestamp="1585492248662" />
     <state width="916" height="387" key="GridCell.Tab.1.bottom" timestamp="1589411887549">
@@ -432,6 +422,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="PlantUMLSettings/0.0.1920.1040@0.0.1920.1040" timestamp="1588676528249" />
+    <state x="554" y="138" key="RollbackChangesDialog" timestamp="1589515741268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="554" y="138" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589515741268" />
     <state x="297" y="190" width="1160" height="708" key="SettingsEditor" timestamp="1589215249518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

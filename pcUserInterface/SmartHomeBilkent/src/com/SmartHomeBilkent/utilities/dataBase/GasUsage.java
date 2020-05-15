@@ -147,12 +147,12 @@ public class GasUsage {
     */
    public void updateGas( boolean control ) {
       localDate = LocalDate.now().format( dateTimeFormatter );
-      if( LocalTime.now().getHour() < 0 )
+      if( LocalTime.now().getHour() < 10 )
          localTime = "0" + LocalTime.now().getHour() + ":";
       else
          localTime = "" + LocalTime.now().getHour() + ":";
 
-      if( LocalTime.now().getMinute() < 0 )
+      if( LocalTime.now().getMinute() < 10 )
          localTime = localTime + "0" + LocalTime.now().getMinute();
       else
          localTime = localTime + "" + LocalTime.now().getMinute();

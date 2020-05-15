@@ -70,7 +70,13 @@ public class LoginPanel implements Initializable {
                         Parent root;
                         final Stage[] stage = new Stage[ 1 ];
 
-                        if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
+                        if( s.getUserType().equals( "ELDER" )
+                              || s.getUserType().equals( "ÄLTERE" )
+                              || s.getUserType().equals( "ANCIEN" )
+                              || s.getUserType().equals( "ANCİEN" )
+                              || s.getUserType().equals( "SAMBUCO" )
+                              || s.getUserType().equals( "YASLI" )
+                              || s.getUserType().equals( "YASLİ" ) )
                            fxmlAddress = "view/elderMainPanel.fxml";
                         else
                            fxmlAddress = "view/mainPanel.fxml";
