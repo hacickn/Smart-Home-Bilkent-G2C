@@ -85,11 +85,8 @@ public class main_screen extends AppCompatActivity {
             gardenCheck = bundle.getBoolean("garden");
             electricityCheck = bundle.getBoolean("electricity");
             waterCheck = bundle.getBoolean("water");
-
-
-
-
         }
+
         //setting toggles
         gas_control.setChecked(gasCheck);
         gardenLight_control.setChecked(gardenCheck);
@@ -116,7 +113,6 @@ public class main_screen extends AppCompatActivity {
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
             main.setBackgroundResource(R.drawable.backgroundalien);
             gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
-
             weather.setBackgroundResource(R.drawable.ic_alien_weather);
             settings.setBackgroundResource(R.drawable.ic_alien_optons);
             elec.setBackgroundResource(R.drawable.ic_alien_electricity);
@@ -171,8 +167,11 @@ public class main_screen extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toSettings = new Intent(main_screen.this, Settings.class);
-                startActivity(toSettings);
+                Intent i = new Intent(getApplicationContext(), Settings.class);
+
+                i.putExtra("elecCondition", elecOnOff);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 

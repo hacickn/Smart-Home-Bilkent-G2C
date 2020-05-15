@@ -15,19 +15,33 @@ import com.example.smarthome_v2.popup.notiPop;
 public class AppSettings extends AppCompatActivity {
 
     private ImageButton alarm,blut,noti;
+    Bundle bundle;
+    int themeNumber;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_settings);
 
+        //initialization
         alarm = findViewById(R.id.Emergency);
         blut = findViewById(R.id.Blt);
         noti = findViewById(R.id.Noti);
 
+        //getting data
+        bundle = getIntent().getExtras();
+
+        if(bundle!=null) {
+            themeNumber = bundle.getInt("theme");
+        }
+
+
+        //events
         alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AppSettings.this, alarmPop.class));
+                Intent i = new Intent(getApplicationContext(), alarmPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
 
             }
         });
@@ -35,14 +49,18 @@ public class AppSettings extends AppCompatActivity {
         blut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AppSettings.this, blutPop.class));
+                Intent i = new Intent(getApplicationContext(), blutPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
         noti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AppSettings.this, notiPop.class));
+                Intent i = new Intent(getApplicationContext(), notiPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
     }

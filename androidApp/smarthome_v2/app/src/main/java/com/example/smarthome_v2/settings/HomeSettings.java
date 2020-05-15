@@ -16,41 +16,61 @@ import com.example.smarthome_v2.popup.ghPop;
 public class HomeSettings extends AppCompatActivity {
 
     private ImageButton electricity,aquarium,gas,greenhouse;
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    Bundle bundle;
+    int themeNumber;
+
+    protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_settings);
-        //declaring image buttons
+
+        //initialization
         electricity = findViewById(R.id.imageButton15);
         aquarium = findViewById(R.id.imageButton16);
         gas = findViewById(R.id.imageButton19);
         greenhouse = findViewById(R.id.imageButton17);
 
+        //getting data
+        bundle = getIntent().getExtras();
+
+        if(bundle!=null) {
+            themeNumber = bundle.getInt("theme");
+        }
+
+
         electricity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeSettings.this, elecPop.class));
+                Intent i = new Intent(getApplicationContext(), elecPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
         aquarium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeSettings.this, aquaPop.class));
+                Intent i = new Intent(getApplicationContext(), aquaPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
         gas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeSettings.this, gasPop.class));
+                Intent i = new Intent(getApplicationContext(), gasPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
 
         greenhouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeSettings.this, ghPop.class));
+                Intent i = new Intent(getApplicationContext(), ghPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
             }
         });
     }
