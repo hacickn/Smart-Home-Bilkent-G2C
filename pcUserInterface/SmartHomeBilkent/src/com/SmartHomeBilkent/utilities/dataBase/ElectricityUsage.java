@@ -27,10 +27,10 @@ public class ElectricityUsage {
    private static final String TABLE_ELECTRICITY = "ELECTRICITY";
    private static final String TABLE_DAY_COLUMN = "DAY";
    private static final String TABLE_USAGE_COLUMN = "USAGE";
-   private static ElectricityUsage instance = new ElectricityUsage();
+   private static final ElectricityUsage instance = new ElectricityUsage();
    private static ObservableList< Integer > daysOfUsage;
    private static ObservableList< Usage > usageList;
-   private Connection connection;
+   private final Connection connection;
    private DateTimeFormatter dateTimeFormatter;
    private String[] detailUsage;
    private String localDate;
@@ -148,12 +148,12 @@ public class ElectricityUsage {
     */
    public void updateElectricity( boolean control ) {
       localDate = LocalDate.now().format( dateTimeFormatter );
-      if( LocalTime.now().getHour() < 0 )
+      if( LocalTime.now().getHour() < 10 )
          localTime = "0" + LocalTime.now().getHour() + ":";
       else
          localTime = "" + LocalTime.now().getHour() + ":";
 
-      if( LocalTime.now().getMinute() < 0 )
+      if( LocalTime.now().getMinute() < 10 )
          localTime = localTime + "0" + LocalTime.now().getMinute();
       else
          localTime = localTime + "" + LocalTime.now().getMinute();

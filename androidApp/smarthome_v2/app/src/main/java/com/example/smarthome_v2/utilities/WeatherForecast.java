@@ -33,7 +33,6 @@ public class WeatherForecast {
     public WeatherForecast( String location ) throws IOException {
         locationName = location;
         this.location = findLocationXY( location );
-        System.out.println( this.location );
         weather = "";
         wind = "";
         temperature = "";
@@ -59,7 +58,7 @@ public class WeatherForecast {
         int number;
 
         XY = "";
-        url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + location + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
+        url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + makeItSuitableForUTF( location ) + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
         con = ( HttpURLConnection ) url.openConnection();
         con.setRequestMethod( "GET" );
         con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
@@ -249,4 +248,42 @@ public class WeatherForecast {
         return localTime;
     }
 
+    public String makeItSuitableForUTF( String s ){
+        String finalString;
+        String[] list;
+        finalString = "";
+        list = new String[ s.length() ];
+        for( int k = 0; k < s.length(); k++)
+            list[ k ] = s.charAt( k ) + "";
+
+        for( String string:list ){
+            if( string.equals( "Ç" )
+                    || string.equals( "ç" ) )
+                string = "c";
+
+            else if( string.equals( "Ğ" )
+                    || string.equals( "ğ" ))
+                string = "g";
+
+            else if( string.equals( "İ" )
+                    || string.equals( "ı" )
+                    || string.equals( "I" ))
+                string = "i";
+
+            else if( string.equals( "Ö" )
+                    || string.equals( "ö" ))
+                string = "o";
+
+            else if( string.equals( "Ş" )
+                    || string.equals( "ş" ))
+                string = "s";
+
+            else if( string.equals( "Ü" )
+                    || string.equals( "ü" ))
+                string = "u";
+
+            finalString = finalString + string;
+        }
+        return finalString.toLowerCase();
+    }
 }

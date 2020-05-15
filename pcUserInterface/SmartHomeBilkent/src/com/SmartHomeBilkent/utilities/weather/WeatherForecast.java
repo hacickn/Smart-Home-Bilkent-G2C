@@ -112,7 +112,7 @@ public class WeatherForecast {
       HttpURLConnection con;
       int responseCode;
 
-      url = new URL( "http://api.weatherstack.com/current?access_key=c3606cc969e14ee977079a6e2ab290bf&query=" + getLocation() );
+      url = new URL( "http://api.weatherstack.com/current?access_key=12c79e881fc91ad5968316def88309bf&query=" + getLocation() );
       con = ( HttpURLConnection ) url.openConnection();
       con.setRequestMethod( "GET" );
       con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
@@ -126,7 +126,6 @@ public class WeatherForecast {
             response.append( inputLine );
          }
          bufferedReader.close();
-
 
          for( int k = 0; k < response.length() - 25; k++ ) {
             if( response.substring( k, k + 20 ).equals( "weather_descriptions" ) ) {

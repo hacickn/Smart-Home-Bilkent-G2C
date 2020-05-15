@@ -40,7 +40,7 @@ public class HelpPanel implements Initializable {
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       getLoginUser();
-      if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) ) { // türkçe
+      if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) ) {
          menuTextField.setText( "* Manuel olarak evdeki sistemleri kontrol edebilmek için;\n" +
                  "\n" +
                  "\t\tSol tarafta bulunan \n" +
@@ -149,7 +149,7 @@ public class HelpPanel implements Initializable {
                  " \" HAVA DURUMU \" bilgisine ulaşılabilirsiniz. Üst tarafta bulunan metin kutusuna hava durumunu " +
                  "öğrenmek istediğiniz ülkenin adını girip aşağıda bulunan güncelleştirme butonuna basarak aşağıdaki" +
                  " bilgilere ulaşabilirsiniz. " );
-      } else if( loginUser.getPreferredLanguage().equals( "DEUTSCH" ) ) { //almanca
+      } else if( loginUser.getPreferredLanguage().equals( "DEUTSCH" ) ) {
          menuTextField.setText( "(3) MENÜ\n" + "\n" + "* Manuelle Steuerung der Systeme im Smart Home;\n" + "\n" +
                  "> Befindet sich auf der linken Seite\n" + ">> 1. Das Ventil \"ELECTRIC\" kann mit dem Blitzsymbol auf" +
                  " der Taste geöffnet und geschlossen werden. Auf die elektrischen Einstellungen kann über die " +
@@ -274,7 +274,7 @@ public class HelpPanel implements Initializable {
                  ">>> Sie können auf die folgenden Informationen zugreifen, indem Sie den Namen des Landes eingeben, " +
                  "in dem Sie das Wetter erfahren möchten im Textfeld oben und klicken Sie auf die Schaltfläche " +
                  "Aktualisieren unten.\n" + "\n" + "\n" );
-      } else { // ENGLISH
+      } else {
          menuTextField.setText( " * To manually control the systems in the smart home;\n" + "\t > Located on the left \n" +
                  "\t\t>> 1. The \" ELECTRIC \" valve can be opened and closed with the lightning bolt icon on the " +
                  "button. Electric settings can be accessed with the settings button below.\n" + "\t\t>> 2. The" +
@@ -388,17 +388,14 @@ public class HelpPanel implements Initializable {
                  " information" + " below by entering the name of the country you want to learn the weather in the text " +
                  "box at the top and clicking the update button below. \n" );
       }
-
    }
 
-   public User getLoginUser() {
+   public void getLoginUser() {
       for( User u : Users.getInstance().getUserList() ) {
          if( u.getEnter().equals( "true" ) ) {
             loginUser = u;
-            return u;
          }
       }
-      return null;
    }
 
    @FXML

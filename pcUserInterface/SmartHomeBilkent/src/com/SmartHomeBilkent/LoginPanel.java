@@ -70,7 +70,13 @@ public class LoginPanel implements Initializable {
                         Parent root;
                         final Stage[] stage = new Stage[ 1 ];
 
-                        if( s.getUserType().equals( "ELDER" ) || s.getUserType().equals( "ÄLTERE" ) || s.getUserType().equals( "YASLI" ) || s.getUserType().equals( "YASLİ" ) )
+                        if( s.getUserType().equals( "ELDER" )
+                              || s.getUserType().equals( "ÄLTERE" )
+                              || s.getUserType().equals( "ANCIEN" )
+                              || s.getUserType().equals( "ANCİEN" )
+                              || s.getUserType().equals( "SAMBUCO" )
+                              || s.getUserType().equals( "YASLI" )
+                              || s.getUserType().equals( "YASLİ" ) )
                            fxmlAddress = "view/elderMainPanel.fxml";
                         else
                            fxmlAddress = "view/mainPanel.fxml";
@@ -101,13 +107,15 @@ public class LoginPanel implements Initializable {
 
                      } catch( Exception e ) {
                         e.printStackTrace();
+                        loginButton.setVisible( true );
+                        loginSpinner.setVisible( false );
                      }
                   }
                } ).start();
                waningLabel.setVisible( false );
             }
          }
-         waningLabel.setText( "USERNAME/PASSWORD IS WRONG" );
+         waningLabel.setText( "USERNAME/PASSWORD IS WRONG, TRY AGAIN" );
       } else {
          waningLabel.setVisible( true );
          waningLabel.setText( "PLEASE ENTER BOTH PASSWORD AND USERNAME" );
