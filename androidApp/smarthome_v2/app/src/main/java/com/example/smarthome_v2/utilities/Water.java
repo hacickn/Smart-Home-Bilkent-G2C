@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
+import pl.droidsonroids.gif.GifImageView;
 
 import java.util.Objects;
 /**
@@ -29,6 +30,7 @@ public class Water extends AppCompatActivity {
     int themeNumber;
     boolean condition,currentCondition;
     Intent thm;
+    private GifImageView waterGIF;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class Water extends AppCompatActivity {
         drop_three = findViewById(R.id.drop_3);
         water_wave = findViewById(R.id.water_wave);
         water = findViewById(R.id.tap);
+        waterGIF = findViewById(R.id.waterGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -100,12 +103,14 @@ public class Water extends AppCompatActivity {
                     drop_two.setVisibility(View.VISIBLE);
                     drop_three.setVisibility(View.VISIBLE);
                     water_wave.setVisibility(View.VISIBLE);
+                    waterGIF.setImageResource(R.drawable.water);
                 } else {
                     // OFF
                     drop_one.setVisibility(View.INVISIBLE);
                     drop_two.setVisibility(View.INVISIBLE);
                     drop_three.setVisibility(View.INVISIBLE);
                     water_wave.setVisibility(View.INVISIBLE);
+                    waterGIF.setImageResource(R.drawable.water_first);
                 }
             }
         });

@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".utilities.GardenLight"
-    android:background="@color/grey">
+    >
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gardenlightGIF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0070707"
+        android:scaleType="fitXY"
+        android:src="@drawable/gardenlight_first"></pl.droidsonroids.gif.GifImageView>
     <ImageView
         android:id="@+id/image_garden_light"
         android:layout_width="122dp"

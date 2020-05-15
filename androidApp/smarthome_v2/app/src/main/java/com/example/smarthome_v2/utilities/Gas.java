@@ -20,6 +20,8 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import pl.droidsonroids.gif.GifImageView;
+
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -44,6 +46,7 @@ public class Gas extends AppCompatActivity {
     int themeNumber;
     Bundle bundle;
     Intent thm;
+    private GifImageView gasGIF;
 
 
 
@@ -87,6 +90,7 @@ public class Gas extends AppCompatActivity {
         wave_two = findViewById(R.id.wave_two);
         gas_controller = (ToggleButton) findViewById(R.id.gas_control);
         gas=findViewById(R.id.gas_gas);
+        gasGIF = findViewById(R.id.gasGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -149,17 +153,18 @@ public class Gas extends AppCompatActivity {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
                     // ON
-
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
                     wave_two.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
+                    gasGIF.setImageResource(R.drawable.gas);
                 } else {
                     // OFF
                     smokes.setVisibility(View.INVISIBLE);
                     wave_one.setVisibility(View.INVISIBLE);
                     wave_two.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
+                    gasGIF.setImageResource(R.drawable.gas_first);
                 }
             }
         });

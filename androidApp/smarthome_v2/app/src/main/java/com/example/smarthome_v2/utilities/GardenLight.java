@@ -11,6 +11,7 @@ import android.widget.ToggleButton;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
+import pl.droidsonroids.gif.GifImageView;
 
 public class GardenLight extends AppCompatActivity {
     ToggleButton gardenLightController;
@@ -20,6 +21,7 @@ public class GardenLight extends AppCompatActivity {
     boolean gardenLightOnOff,cuurentCondition;
     ImageButton exit;
     Intent thm;
+    private GifImageView gardenLightGIF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +33,13 @@ public class GardenLight extends AppCompatActivity {
         gardenLightController = findViewById(R.id.garden_light_control);
         gardenLight = findViewById(R.id.image_garden_light);
         exit = findViewById(R.id.exit_garden);
+        gardenLightGIF = findViewById(R.id.gardenlightGIF);
 
-        //choosing theme
-        bundle = getIntent().getExtras();
+
+
 
         //getting datas
+        bundle = getIntent().getExtras();
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
             gardenLightOnOff = bundle.getBoolean("gardenCondition");
@@ -48,6 +52,7 @@ public class GardenLight extends AppCompatActivity {
         if(themeNumber == 1){
 
             gardenLight.setBackgroundResource(R.drawable.ic_bluenight_gardening);
+            gardenLightGIF.setImageResource(R.drawable.bluenight_electricity_first);
 
         }
 
@@ -64,6 +69,35 @@ public class GardenLight extends AppCompatActivity {
         }
 
         //events
+        gardenLightController.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean on = ((ToggleButton) v).isChecked();
+                if (on) {
+                    // ON
+                    gardenLightGIF.setImageResource(R.drawable.gardenlight);
+                    if(themeNumber == 2) {
+                        gardenLightGIF.setImageResource(R.drawable.gardenlight);
+                    }
+
+                    if(themeNumber == 1) {
+                        gardenLightGIF.setImageResource(R.drawable.bluenight_electricity);
+                    }
+
+                } else {
+                    // OFF
+                    gardenLightGIF.setImageResource(R.drawable.gardenlight_first);
+
+                    if(themeNumber == 2) {
+                        gardenLightGIF.setImageResource(R.drawable.gardenlight_first);
+                    }
+
+                    if(themeNumber == 1) {
+                       gardenLightGIF.setImageResource(R.drawable.bluenight_electricity_first);
+                    }
+                }
+            }
+        });
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

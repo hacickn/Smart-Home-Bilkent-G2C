@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    >
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/waterGIF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0070707"
+        android:scaleType="fitXY"
+        android:src="@drawable/water_first"></pl.droidsonroids.gif.GifImageView>
 
     <ImageView
         android:id="@+id/tap"
@@ -19,17 +27,14 @@
 
     <ImageButton
         android:id="@+id/exit_water"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="279dp"
-        android:layout_marginLeft="279dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="33dp"
         android:background="@drawable/ic_exit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ToggleButton
         android:id="@+id/water_control"

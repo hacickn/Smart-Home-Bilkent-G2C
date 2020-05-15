@@ -4,7 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    >
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gasGIF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0070707"
+        android:scaleType="fitXY"
+        android:src="@drawable/gas_first"></pl.droidsonroids.gif.GifImageView>
 
     <ImageView
         android:id="@+id/gas_gas"
@@ -19,16 +26,14 @@
 
     <ImageButton
         android:id="@+id/exit_gas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="593dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginBottom="33dp"
         android:background="@drawable/ic_exit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ToggleButton
         android:id="@+id/gas_control"
@@ -88,8 +93,8 @@
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/gasChart"
-        android:layout_width="414dp"
-        android:layout_height="212dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="19dp"

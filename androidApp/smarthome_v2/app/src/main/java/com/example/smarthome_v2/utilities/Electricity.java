@@ -3,6 +3,7 @@ package com.example.smarthome_v2.utilities;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -20,6 +21,7 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import pl.droidsonroids.gif.GifImageView;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -45,8 +47,11 @@ public class Electricity extends AppCompatActivity {
     int themeNumber;
     boolean condition,currentCondition;
     Intent thm;
+    private GifImageView electricityGIF;
 
 
+   // @SuppressLint("WrongViewCast")
+    @SuppressLint("WrongViewCast")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +92,7 @@ public class Electricity extends AppCompatActivity {
         light_two = findViewById(R.id.light2);
         light_three = findViewById(R.id.light3);
         elec = findViewById(R.id.mainelectiricity);
+        electricityGIF = findViewById(R.id.electricityGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -111,6 +117,8 @@ public class Electricity extends AppCompatActivity {
             light_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
+            electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
+
         }
 
         if(themeNumber == 2){
@@ -119,6 +127,9 @@ public class Electricity extends AppCompatActivity {
             light_two.setBackgroundResource(R.drawable.ic_alien_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_alien_eleclight);
             elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+            electricityGIF.setImageResource(R.drawable.alien_electricity_first);
+
+
         }
 
         if(themeNumber == 3){
@@ -127,6 +138,7 @@ public class Electricity extends AppCompatActivity {
             light_two.setBackgroundResource(R.drawable.ic_wood_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_wood_eleclight);
             elec.setBackgroundResource(R.drawable.ic_wood_electricity);
+            electricityGIF.setImageResource(R.drawable.backgroundwood);
         }
 
         //events
@@ -140,12 +152,27 @@ public class Electricity extends AppCompatActivity {
                     light_two.setVisibility(View.VISIBLE);
                     light_three.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
+                    if(themeNumber == 2) {
+                        electricityGIF.setImageResource(R.drawable.alien_electricity);
+                    }
+
+                    if(themeNumber == 1) {
+                        electricityGIF.setImageResource(R.drawable.bluenight_electricity);
+                    }
+
                 } else {
                     // OFF
                     light_one.setVisibility(View.INVISIBLE);
                     light_two.setVisibility(View.INVISIBLE);
                     light_three.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
+                    if(themeNumber == 2) {
+                        electricityGIF.setImageResource(R.drawable.alien_electricity_first);
+                    }
+
+                    if(themeNumber == 1) {
+                        electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
+                    }
                 }
             }
         });
