@@ -11,7 +11,7 @@ import com.example.smarthome_v2.main_screen;
 
 public class ThemeSettings extends Activity {
     int themeNo;
-    ImageButton blueNight,mainTheme,alien,space;
+    ImageButton blueNight,mainTheme,alien,wood,space;
     Intent thm,thmGas;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class ThemeSettings extends Activity {
         mainTheme = findViewById(R.id.main_theme);
         blueNight = findViewById(R.id.blue_night);
         alien =findViewById(R.id.alien);
+        wood = findViewById(R.id.wood);
         space = findViewById(R.id.space);
 
         //events
@@ -52,6 +53,16 @@ public class ThemeSettings extends Activity {
             @Override
             public void onClick(View v) {
                 themeNo = 2;
+                thm.putExtra("theme", themeNo);
+                startActivity(thm);
+
+            }
+        });
+
+        wood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                themeNo = 3;
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
 

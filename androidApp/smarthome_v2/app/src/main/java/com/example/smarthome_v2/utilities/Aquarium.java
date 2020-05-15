@@ -145,6 +145,38 @@ public class Aquarium extends AppCompatActivity {
             species.setBackgroundResource(R.color.alien);
 
         }
+
+        if(themeNumber == 3){
+
+            aquarim.setBackgroundResource(R.drawable.ic_wood_aquarium);
+            specy.setBackgroundResource(R.drawable.ic_wood_species);
+            waterExchange.setBackgroundResource(R.drawable.ic_wood_water_exhange);
+            feed.setBackgroundResource(R.drawable.ic_wood_fish_food);
+            motor.setBackgroundResource(R.drawable.ic_wood_air_engine);
+            Drawable drawable = textView_one.getBackground(); // get current EditText drawable
+            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            textView_one.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            Drawable drawableTwo = textView_two.getBackground(); // get current EditText drawable
+            drawableTwo.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            textView_two.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            Drawable drawableThree = textView_three.getBackground(); // get current EditText drawable
+            drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            textView_three.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            Drawable drawableFour = textView_four.getBackground(); // get current EditText drawable
+            drawableFour.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            textView_four.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            timeButton_one.setBackgroundResource(R.drawable.ic_wood_clock);
+            timeButton_two.setBackgroundResource(R.drawable.ic_wood_clock);
+            timeButton_three.setBackgroundResource(R.drawable.ic_wood_clock);
+            day.setBackgroundResource(R.drawable.ic_wood_clock);
+            a.setTextColor(Color.WHITE);
+            b.setTextColor(Color.WHITE);
+            c.setTextColor(Color.WHITE);
+            d.setTextColor(Color.WHITE);
+            e.setTextColor(Color.WHITE);
+            species.setBackgroundResource(R.color.alien);
+
+        }
         //events
         species.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,9 +64,9 @@ public class Water extends AppCompatActivity {
         //choosing theme
         if(themeNumber == 1){
 
-            drop_one.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
-            drop_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
-            drop_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
+            drop_one.setBackgroundResource(R.drawable.ic_bluenight_drop);
+            drop_two.setBackgroundResource(R.drawable.ic_bluenight_drop);
+            drop_three.setBackgroundResource(R.drawable.ic_bluenight_drop);
             water.setBackgroundResource(R.drawable.ic_bluenight_tap);
             water_wave.setBackgroundResource(R.drawable.ic_bluenight_wave);
         }
@@ -78,6 +78,15 @@ public class Water extends AppCompatActivity {
             drop_three.setBackgroundResource(R.drawable.ic_alien_drop);
             water.setBackgroundResource(R.drawable.ic_alien_tap);
             water_wave.setBackgroundResource(R.drawable.ic_alien_wave);
+        }
+
+        if(themeNumber == 3){
+
+            drop_one.setBackgroundResource(R.drawable.ic_wood_drop);
+            drop_two.setBackgroundResource(R.drawable.ic_wood_drop);
+            drop_three.setBackgroundResource(R.drawable.ic_wood_drop);
+            water.setBackgroundResource(R.drawable.ic_wood_tap);
+            water_wave.setBackgroundResource(R.drawable.ic_wood_wave);
         }
 
         //events

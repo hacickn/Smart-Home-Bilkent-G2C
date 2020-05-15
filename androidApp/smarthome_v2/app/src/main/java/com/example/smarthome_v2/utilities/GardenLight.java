@@ -57,6 +57,12 @@ public class GardenLight extends AppCompatActivity {
 
         }
 
+        if(themeNumber == 3){
+
+            gardenLight.setBackgroundResource(R.drawable.ic_wood_gardening);
+
+        }
+
         //events
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
