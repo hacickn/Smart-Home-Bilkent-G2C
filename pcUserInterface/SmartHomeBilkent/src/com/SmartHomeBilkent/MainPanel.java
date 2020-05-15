@@ -2843,6 +2843,7 @@ public class MainPanel implements Initializable {
             || event.getSource() == createUserElderOption ) {
          createUserParentOption.setSelected( false );
          createUserChildOption.setSelected( false );
+         createUserElderOption.setSelected( false );
          ( ( JFXRadioButton ) event.getSource() ).setSelected( true );
          addUserType = ( JFXRadioButton ) event.getSource();
       }
