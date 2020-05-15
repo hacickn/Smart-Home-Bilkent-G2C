@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import at.markushi.ui.CircleButton;
+
 /**
  * an AquariumDayList class
  *
@@ -26,7 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
     private EditText loginPassword;
     private EditText loginEmail;
-    private Button loginButton;
+    private CircleButton loginButton;
     private TextView loginToregister;
     private ProgressDialog loginProgress;
     private FirebaseAuth mAuth;
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loginPassword = (EditText) findViewById(R.id.password);
         loginEmail = (EditText) findViewById(R.id.login_email);
-        loginButton = (Button) findViewById(R.id.login);
+        loginButton =  findViewById(R.id.login);
         loginToregister = (TextView) findViewById(R.id.login_need_account);
         loginProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();

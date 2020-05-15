@@ -63,11 +63,10 @@
         android:layout_marginEnd="4dp"
         android:background="@drawable/ic_update_white_24dp"
         android:tint="#FFFFFF"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/locationTextField"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="86dp"
-        android:layout_marginRight="4dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/weatherHumidity"

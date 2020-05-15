@@ -57,18 +57,6 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="84dp"
-        android:contentDescription="TODO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smarthome" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -93,31 +81,58 @@
         app:srcCompat="@drawable/ic_password"
         tools:ignore="VectorDrawableCompat" />
 
-    <Button
+    <at.markushi.ui.CircleButton
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@color/orange_two"
-        android:text="@string/action_sign_in"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/ic_circle"
+        app:cb_color="#000000"
+        app:cb_pressedRingWidth="8dip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/login_need_account"
         android:layout_width="140dp"
         android:layout_height="21dp"
-        android:layout_marginBottom="100dp"
-        android:text="@string/login_need"
+        android:layout_marginTop="62dp"
         android:background="@drawable/edittext_background"
+        android:text="@string/login_need"
         android:textColor="@color/orange_two"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="471dp"
+        android:layout_height="168dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baumans"
+        android:text="SMART HOME"
+        android:textAlignment="textStart"
+        android:textColor="@color/orange_two"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/login_email"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

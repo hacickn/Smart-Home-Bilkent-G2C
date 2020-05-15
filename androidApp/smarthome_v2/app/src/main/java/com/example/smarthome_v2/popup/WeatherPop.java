@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.RequiresApi;
+import androidx.lifecycle.Lifecycle;
+
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.utilities.WeatherForecast;
 import java.io.IOException;
@@ -75,6 +78,7 @@ public class WeatherPop extends Activity {
                                     weatherHumidity.setText("HUMIDITY: %" + weatherForecast.getHumidity());
                                     weatherWind.setText("WIND: " + weatherForecast.getWind());
                                     weatherLastUpdate.setText("LAST UPDATE: " + weatherForecast.getLocalTime());
+                                    weatherUpdateButton.setVisibility(View.INVISIBLE);
                                 }
                             });
                         }
@@ -83,6 +87,17 @@ public class WeatherPop extends Activity {
                 } else {
                     weatherLastUpdate.setText("PLEASE ENTER YOUR LOCATION");
                 }
+            }
+        });
+
+        locationTextField.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if( String.valueOf(locationTextField.getText()).isEmpty() )
+                    weatherUpdateButton.setVisibility(View.INVISIBLE);
+                else
+                    weatherUpdateButton.setVisibility(View.VISIBLE);
+                return false;
             }
         });
     }
