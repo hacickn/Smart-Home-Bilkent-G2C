@@ -124,9 +124,10 @@ simulate serial port connection in the simulation program virtually)
 ```
 
 ##### USEFULL CODES EXPLANATIONS
->In here, I put some extra code with their explanation to be useful my friends or anyone who interested in this project.
+##### In here, I put some extra code with their explanation to be useful my friends or anyone who interested in this project.
 
 >1. In javaFX, if you will use Threads, then you have to use Platform.runLater method.
+
 ```
 new Thread( new Runnable() {
     @Override
@@ -172,6 +173,8 @@ new Thread( () -> {
     } );
 } ).start();
 ```
+
+---
 >2. This one is about getting status of capslock when Program run at the beginning
 ```
 /*
@@ -179,13 +182,14 @@ It returns boolean
 */
 capsLock = ( Toolkit.getDefaultToolkit().getLockingKeyState( java.awt.event.KeyEvent.VK_CAPS_LOCK ) );
 ```
+---
 
 >3. To embed css or tff files and using them.
 3.1)for tff files
 3.2)for css files
 3.3)using this css file
 
-* 3.1)for tff files
+* 3.1) for tff files
 ```
 Font.loadFont( String urlStr, double size);
 
@@ -198,7 +202,7 @@ Font.loadFont( yourSelectedClassName.class.getResource( "file path way according
 Font.loadFont( LoginPanel.class.getResource( "styleSheets/font/Oswald-VariableFont_wght.ttf" ).toExternalForm(), 10 );
 ```
 
-* 3.2)for css files
+* 3.2) for css files
 ```
 this.currenctClass.getResource( "file path way according to selected class as a string" ).toExternalForm();
 ```
@@ -207,7 +211,7 @@ this.currenctClass.getResource( "file path way according to selected class as a 
 this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
 ```
 
-* 3.3)using this css file
+* 3.3) using this css file
 ```
 yourLayoutMaterial.getStylesheets().removeAll( yourLayoutMaterial.getStylesheets() );
 yourLayoutMaterial.getStylesheets().add( css );
@@ -217,6 +221,7 @@ yourLayoutMaterial.getStylesheets().add( css );
 commonBorderPane.getStylesheets().removeAll( commonBorderPane.getStylesheets() );
 commonBorderPane.getStylesheets().add( css );
 ```
+---
 
 >4. Using sound files
 
@@ -235,6 +240,7 @@ audioClip.setVolume( 0.8 );
 audioClip.setRate( 1.1 );
 audioClip.play
 ```
+---
 
 >5. Get available port list
 ```
@@ -247,12 +253,14 @@ for( SerialPort portName : portNames )
 
 ```
 * Information( if you wonder getCommPorts(), you shout look at SerialPort )
+---
+
 
 >6. Read and write data using SerialPort class
 6.1) Read data
 6.2) Write data
 
-* 6.1)Read data
+* 6.1) Read data
 ```
 home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING, 0, 0 );
 /*
@@ -276,7 +284,7 @@ try {
 }
 ```
 
-* 6.2)Write data
+* 6.2) Write data
 ```
 public void serialWrite( String string ) {
    PrintWriter printWriter;
