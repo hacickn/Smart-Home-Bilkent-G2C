@@ -804,10 +804,6 @@ public class ElderMainPanel implements Initializable {
 
    //constructors
    //public ElderMainPanel()
-   //{
-   //initialize();
-   //    clock();
-   //}
 
    //methods
    //1
@@ -2187,31 +2183,44 @@ public class ElderMainPanel implements Initializable {
       String flowAquariumSetting;
       ElectricityUsage.getInstance().getTable( electiricitySettingsPanelChart );
       GasUsage.getInstance().getTable( gasSettingsPanelChart );
-      //GreenHouseData.getInstance().getTable( greenhouseSettingsPanelChart, bundle );
-      //FishSpecies.getInstance().addFishToComboBox( speciesOfFishCheckComboBox );
-      //
-      //for( int k = 1; k <= 7; k++ ) {
-      //   weeklyWaterExchangeDayAndTimeChoice.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
-      //}
-      //commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
-      //sensors = CommonSettingData.getInstance().getSensors( commonSetting );
-      //permissions = CommonSettingData.getInstance().getPermission( commonSetting );
-      //
-      //for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
-      //   checkComboBox.getCheckModel().check( checkComboBox.getItems().indexOf( s ) );
-      //
-      //flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      //feedingStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-      //        flowAquariumSetting.substring( 0, 2 ) ),
-      //        Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      //weeklyWaterExchangeDayAndTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-      //        flowAquariumSetting.substring( 6, 8 ) ),
-      //        Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
-      //weeklyWaterExchangeDayAndTimeChoice.getSelectionModel().select( Integer.parseInt(
-      //        flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      //dailyAirEngineRunTimeandStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-      //        flowAquariumSetting.substring( 14, 16 ) ),
-      //        Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
-      //dailyAirEngineRunTimeandStartTimeSlider.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
+      GreenHouseData.getInstance().getTable( greenhouseSettingsPanelChart, bundle );
+      FishSpecies.getInstance().addFishToComboBox( speciesOfFishCheckComboBox );
+
+      for( int k = 1; k <= 7; k++ ) {
+         weeklyWaterExchangeDayAndTimeChoice.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
+      }
+      commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
+      sensors = CommonSettingData.getInstance().getSensors( commonSetting );
+      permissions = CommonSettingData.getInstance().getPermission( commonSetting );
+
+      for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
+         speciesOfFishCheckComboBox.getCheckModel().check( speciesOfFishCheckComboBox.getItems().indexOf( s ) );
+
+      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
+      feedingStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 0, 2 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
+      weeklyWaterExchangeDayAndTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 6, 8 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
+      weeklyWaterExchangeDayAndTimeChoice.getSelectionModel().select( Integer.parseInt(
+              flowAquariumSetting.substring( 13, 14 ) ) - 1 );
+      dailyAirEngineRunTimeandStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 14, 16 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
+      dailyAirEngineRunTimeandStartTimeSlider.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
+
+      //Language setting
+      if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) )
+      {
+         languageStatusElder = false;
+         changeLanguageElder( "en" );
+      }
+
+      else if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) )
+      {
+         languageStatusElder = true;
+         changeLanguageElder( "tr" );
+      }
    }
 }
