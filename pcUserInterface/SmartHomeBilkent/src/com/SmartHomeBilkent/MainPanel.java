@@ -391,7 +391,7 @@ public class MainPanel implements Initializable {
    //constructors
 
    /**
-    * MainPanel is a default contructor
+    * MainPanel is a default constructor
     */
    public MainPanel() {
    }

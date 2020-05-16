@@ -30,14 +30,16 @@ you can download all JDK versions).
 2) Web Sites
 * [FLATICON](https://www.flaticon.com/) - The vector icons webpage
 * [AMAZON POLLY](https://aws.amazon.com/polly/?nc1=h_ls) - Amazon Polly is a service that turns text into lifelike speech
-* [WEATHER STACK](https://weatherstack.com/) - Retrieve instant, accurate weather information for
+* [WEATHER STACK(API)](https://weatherstack.com/) - Retrieve instant, accurate weather information for
 any location in the world in lightweight JSON format
+* [MAPBOX(API)](https://docs.mapbox.com/api/) - The Mapbox web services APIs allow you to programmatically access Mapbox tools and services
 ---
 3) Libraries
 * [controlsfx](https://github.com/controlsfx/controlsfx) - Custom controls for JavaFX
 * [jSerialComm](https://fazecast.github.io/jSerialComm/) - jSerialComm is a Java library designed to provide a platform-independent way to access standard serial ports without requiring external libraries
 * [JFoenix](https://github.com/jfoenixadmin/JFoenix) - JavaFX Material Design Library
 * [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) - SQLite JDBC Driver
+* [animate-fx](https://github.com/onexip/animate-fx) - Animation library for JavaFX
 
 #### Features
 ##### PROGRAM FEATURES
@@ -62,11 +64,11 @@ opening electricity, notification settings).
 
 4) Notification settings can adjust by only parents.
 
-5) Parents can remove profile of childeren with his password. 
-5.1) Parents also can remove profiles of other parents and elders with their
+5.1) Parents can remove profile of childeren with his password. 
+5.2) Parents also can remove profiles of other parents and elders with their
 password.
-5.2) Childeren can remove only their profiles.
-5.3) If program has only one parent, No one can delete this profile.
+5.3) Childeren can remove only their profiles.
+5.4) If program has only one parent, No one can delete this profile.
 
 6) In emergency situation, users can regulate visual and auditory warnings.
 
@@ -120,3 +122,175 @@ options such as bluetooth or ethernet shild(LAN).However due to COVID'19 we can 
 simulate serial port connection in the simulation program virtually)
 6) To be contiuned...
 ```
+
+##### USEFULL CODES EXPLANATIONS
+>In here, I put some extra code with their explanation to be useful my friends or anyone who interested in this project.
+
+>1. In javaFX, if you will use Threads, then you have to use Platform.runLater method.
+```
+new Thread( new Runnable() {
+    @Override
+    public void run() {
+        //the codes are not related to GUI visual changes shoul be written here!!!
+        
+        Platform.runLater( new Runnable() {
+        
+            @Override
+            public void run() {
+                //the codes are related the GUI changes should be written here!!!!        
+            }
+        } );
+    }
+} ).start();
+```
+* EXAMPLE(In the code, It is not exactly same because In program there is lots of Exception probablity.
+The only thing I want to show that is showing how Thread should use in javafx)
+```
+/*
+The codes that create request from the server and wait response. When It is waiting, In order to prevent occuping default thread,
+I used new thread
+*/
+new Thread( () -> {
+    
+    //this part make a new request and get the response. In other word, there is nothing about GUI
+    if( weatherForecast == null )                                                                           
+        weatherForecast = new WeatherForecast( loginUser.getLocation() );
+               
+    Platform.runLater( () -> {
+    
+        //After finished request and response process, for regulating GUI according to Information
+        
+        weatherUpdateSpinner.setVisible( false );
+        settingWeatherForecastLabelValue.setText( weatherForecast.getWeather() );
+        settingWeatherTemperatureLabelValue.setText( weatherForecast.getTemperature() + "°C" );
+        settingWeatherHumidityLabelValue.setText( weatherForecast.getHumidity() );
+        settingWeatherWindLabelValue.setText( weatherForecast.getWind() );
+        informationTime.setText( weatherForecast.getLocalTime() );
+        backgroundSetup( weatherForecast.getWeather() );
+           
+        }
+    } );
+} ).start();
+```
+>2. This one is about getting status of capslock when Program run at the beginning
+```
+/*
+It returns boolean 
+*/
+capsLock = ( Toolkit.getDefaultToolkit().getLockingKeyState( java.awt.event.KeyEvent.VK_CAPS_LOCK ) );
+```
+
+>3. To embed css or tff files and using them.
+3.1)for tff files
+3.2)for css files
+3.3)using this css file
+
+* 3.1)for tff files
+```
+Font.loadFont( String urlStr, double size);
+
+//IN other world, you can use like this;
+
+Font.loadFont( yourSelectedClassName.class.getResource( "file path way according to selected class as a string" ).toExternalForm(), size );
+```
+* Example( After you do this, You can use this font in your css files )
+```
+Font.loadFont( LoginPanel.class.getResource( "styleSheets/font/Oswald-VariableFont_wght.ttf" ).toExternalForm(), 10 );
+```
+
+* 3.2)for css files
+```
+this.currenctClass.getResource( "file path way according to selected class as a string" ).toExternalForm();
+```
+* Example( After you do this, This gives a string to you )
+```
+this.getClass().getResource( "styleSheets/main_menu_light_theme.css" ).toExternalForm();
+```
+
+* 3.3)using this css file
+```
+yourLayoutMaterial.getStylesheets().removeAll( yourLayoutMaterial.getStylesheets() );
+yourLayoutMaterial.getStylesheets().add( css );
+```
+* Example
+```
+commonBorderPane.getStylesheets().removeAll( commonBorderPane.getStylesheets() );
+commonBorderPane.getStylesheets().add( css );
+```
+
+>4. Using sound files
+
+```
+AudioClip audioClip;
+audioClip = new AudioClip( this.getClass().getResource( "sound file path way according to selected class as a string ).toString() );
+audioClip.setVolume( between 0-1 (double) );
+audioClip.setRate( double );
+audioClip.play
+```
+* Example
+```
+AudioClip audioClip;
+audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
+audioClip.setVolume( 0.8 );
+audioClip.setRate( 1.1 );
+audioClip.play
+```
+
+>5. Get available port list
+```
+SerialPort[] portNames;
+portChooser.getItems().removeAll( portChooser.getItems() );
+portNames = SerialPort.getCommPorts();
+
+for( SerialPort portName : portNames )
+   portChooser.getItems().add( portName.getSystemPortName() );
+
+```
+* Information( if you wonder getCommPorts(), you shout look at SerialPort )
+
+>6. Read and write data using SerialPort class
+6.1) Read data
+6.2) Write data
+
+* 6.1)Read data
+```
+home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING, 0, 0 );
+/*
+The reason of this is that without this method is work correctly until It recieves longer string
+.To prevent it, I put Thread.sleep()
+*/
+try {
+   Thread.sleep( 200 );
+} catch( InterruptedException e ) {
+   e.printStackTrace();
+}
+
+StringBuilder out = new StringBuilder();
+Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+
+try {
+   while( in.hasNextLine() )
+      out.append( in.nextLine() );
+} catch( Exception e ) {
+   e.printStackTrace();
+}
+```
+
+* 6.2)Write data
+```
+public void serialWrite( String string ) {
+   PrintWriter printWriter;
+   comPort.setComPortTimeouts( SerialPort.TIMEOUT_SCANNER, 0, 0 );
+   
+   try {
+      Thread.sleep( 5 );
+   } catch( Exception e ) {
+      e.printStackTrace();
+   }
+   
+   printWriter = new PrintWriter( comPort.getOutputStream() );
+   printWriter.print( string );
+   printWriter.flush();
+}
+```
+

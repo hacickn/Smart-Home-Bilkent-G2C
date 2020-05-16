@@ -54,31 +54,12 @@ This week I nearly finished my parts of work. We created connection between embe
 ---
 
 ### ~ 04.05.2020 ~
-This week, I continuied to fix some bugs and tried to make pc user interface more user friendly. For example, when user open and login application, he has to wait response from weather service. In this part GUI is frozen. In order to prevent this, I searched how can preven it. Then I learnt threads in java udemy course. I applied it my javafx application. However, it doesn't work. Then I searched why it didn't worked. I learnt that javafx need some extra codes.
-```
-new Thread( new Runnable() {
-
-    @Override
-    public void run() {
-        //the codes are not related to GUI visual changes shoul be written here!!!
-        
-        Platform.runLater( new Runnable() {
-        
-            @Override
-            public void run() {
-                //the codes are related the GUI changes should be written here!!!!        
-            }
-        } );
-    }
-} ).start();
-```
-I also added two new themes for pc user interface. I embedded fonts which are used in user interface to program.  I added weather api to android project and I created weather activity to show user weather information. I also added chart library and two chart to android project. I started to make uml diagram because our project almost done.(nearly 40 hours)
+This week, I continuied to fix some bugs and tried to make pc user interface more user friendly. For example, when user open and login application, he has to wait response from weather service. In this part GUI is frozen. In order to prevent this, I searched how can preven it. Then I learnt threads in java udemy course. I applied it my javafx application. However, it doesn't work. Then I searched why it didn't worked. I learnt that javafx need some extra codes. I also added two new themes for pc user interface. I embedded fonts which are used in user interface to program.  I added weather api to android project and I created weather activity to show user weather information. I also added chart library and two chart to android project. I started to make uml diagram because our project almost done.(nearly 40 hours)
 
 ---
 
 ### ~ 11.05.2020 ~
-This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I try to add more options for users(such as more theme, language options etc).(in process)
-
+This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I added 3 more theme and 2 more language(both sound and in text). I also added new fonts. I embedded them in the program because otherwise fonts can change computer to computer(Last week I tried the program's jar version on my father computer.There are some differences between what I did and What I saw. Font was one of them.Therefore to fix it, I embedded fonts to program). Not only fonts, but also there were some görünüşsel differences. I fixed them. I also added a method that regulate string to make it suitable for request.(nearly 30 hours) 
 ****
 
 > What I did until now
@@ -123,14 +104,14 @@ HOME TABLE, USERS TABLE.
 * I added chart library and two chart to android app.
 * I also wrote Smart_App_Cnt , hours_setting parts of the Arduino code.
 * In proteus, I made Gas_Valve, electricity_relay, water_valve parts( İlke Doğan aided to me).
+* I added two more language.
+* I added input regulater in order to prevent to recieve error response. In server request all
+characters should be suitable for request string. However, some cities has characters which are
+not suitable for this. Therefore, My method regulates according to request criteria.(Ç,Ş.. etc).
 ```
 
 > What I think about what I will do 
 ```
-* In fact I nearly finished what we thought about on this project(Adding some features wasn't
-in our plan such as weather, sound mode).However, I want to add more things so that I expand 
-the border of our application. Therefore, In my mind I think to add one or two more language 
-for users.
 * The last remaining part is that pc user interface will recieve humidity and temperature 
 information about greenhouse. Other communication parts are done.
 ```

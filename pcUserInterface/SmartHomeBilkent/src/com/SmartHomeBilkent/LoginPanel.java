@@ -19,7 +19,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;

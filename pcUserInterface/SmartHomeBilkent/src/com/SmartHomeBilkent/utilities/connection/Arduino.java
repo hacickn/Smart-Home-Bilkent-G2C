@@ -92,6 +92,7 @@ public class Arduino {
     * @param string is a String input parameter
     */
    public void serialWrite( String string ) {
+      PrintWriter printWriter;
       comPort.setComPortTimeouts( SerialPort.TIMEOUT_SCANNER, 0, 0 );
 
       try {
@@ -99,9 +100,9 @@ public class Arduino {
       } catch( Exception e ) {
          e.printStackTrace();
       }
-      PrintWriter pout = new PrintWriter( comPort.getOutputStream() );
-      pout.print( string );
-      pout.flush();
+      printWriter = new PrintWriter( comPort.getOutputStream() );
+      printWriter.print( string );
+      printWriter.flush();
    }
 }
 
