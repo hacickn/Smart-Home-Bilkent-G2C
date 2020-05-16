@@ -2088,6 +2088,7 @@ public class ElderMainPanel implements Initializable {
          englishElderButtonSubLabelActive.setText( bundle.getString("englishElderButtonSubLabelLang" ) );
          turkishElderButtonSubLabelPassive.setText( bundle.getString("turkishElderButtonSubLabelLang" ));
          turkishElderButtonSubLabelActive.setText( bundle.getString("turkishElderButtonSubLabelLang" ) );
+         languageElderPanelBackButtonSubLabel.setText( bundle.getString("languageElderPanelBackButtonSubLabelLang" ));
       } catch( Exception e ) {
          e.printStackTrace();
       }
