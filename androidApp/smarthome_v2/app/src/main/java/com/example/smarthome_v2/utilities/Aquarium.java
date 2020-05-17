@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import pl.droidsonroids.gif.GifImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,6 +43,7 @@ public class Aquarium extends AppCompatActivity {
     String type,dayMotor;
     int themeNumber,textNo;
     TextView a,b,c,d,e;
+    private GifImageView aquariumGIF;
 
 
 
@@ -69,6 +71,7 @@ public class Aquarium extends AppCompatActivity {
         c = findViewById(R.id.exchange_time_text);
         d = findViewById(R.id.motor_hour);
         e = findViewById(R.id.motor_day);
+        aquariumGIF = findViewById(R.id.aquariumGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -113,6 +116,7 @@ public class Aquarium extends AppCompatActivity {
             d.setTextColor(Color.BLUE);
             e.setTextColor(Color.BLUE);
             species.setBackgroundResource(R.color.blue_night);
+            aquariumGIF.setImageResource(R.drawable.bluenight_electricity);
 
         }
 
@@ -145,6 +149,10 @@ public class Aquarium extends AppCompatActivity {
             d.setTextColor(Color.BLACK);
             e.setTextColor(Color.BLACK);
             species.setBackgroundResource(R.color.alien);
+            //aquariumGIF.setImageResource(R.drawable.electricity);
+
+
+
 
         }
 
@@ -177,6 +185,7 @@ public class Aquarium extends AppCompatActivity {
             d.setTextColor(Color.WHITE);
             e.setTextColor(Color.WHITE);
             species.setBackgroundResource(R.color.alien);
+            aquariumGIF.setImageResource(R.drawable.backgroundwood);
 
         }
 

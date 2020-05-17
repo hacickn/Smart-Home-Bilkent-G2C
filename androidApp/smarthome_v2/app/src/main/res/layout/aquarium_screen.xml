@@ -4,8 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    >
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/aquariumGIF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0070707"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_main"></pl.droidsonroids.gif.GifImageView>
     <ImageView
         android:id="@+id/im_aquarium"
 

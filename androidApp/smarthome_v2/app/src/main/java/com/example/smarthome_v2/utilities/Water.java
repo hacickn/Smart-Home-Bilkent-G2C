@@ -90,6 +90,7 @@ public class Water extends AppCompatActivity {
             drop_three.setBackgroundResource(R.drawable.ic_wood_drop);
             water.setBackgroundResource(R.drawable.ic_wood_tap);
             water_wave.setBackgroundResource(R.drawable.ic_wood_wave);
+            waterGIF.setImageResource(R.drawable.backgroundwood);
         }
 
         //events
@@ -104,6 +105,10 @@ public class Water extends AppCompatActivity {
                     drop_three.setVisibility(View.VISIBLE);
                     water_wave.setVisibility(View.VISIBLE);
                     waterGIF.setImageResource(R.drawable.water);
+                    if(themeNumber ==3)
+                    {
+                        waterGIF.setImageResource(R.drawable.backgroundwood);
+                    }
                 } else {
                     // OFF
                     drop_one.setVisibility(View.INVISIBLE);
@@ -111,6 +116,10 @@ public class Water extends AppCompatActivity {
                     drop_three.setVisibility(View.INVISIBLE);
                     water_wave.setVisibility(View.INVISIBLE);
                     waterGIF.setImageResource(R.drawable.water_first);
+                    if(themeNumber ==3)
+                    {
+                        waterGIF.setImageResource(R.drawable.backgroundwood);
+                    }
                 }
             }
         });

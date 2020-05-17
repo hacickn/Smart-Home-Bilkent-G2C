@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import pl.droidsonroids.gif.GifImageView;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
@@ -32,6 +33,7 @@ public class GreenHouse extends Activity {
     int themeNumber,textNo;
     Bundle bundle;
     Intent thm;
+    private GifImageView greenHouseGIF;
 
     @SuppressLint("ResourceAsColor")
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class GreenHouse extends Activity {
         comingWater = findViewById(R.id.coming_water);
         temp = findViewById(R.id.temp);
         exit = findViewById(R.id.exit_greenhouse);
+        greenHouseGIF = findViewById(R.id.greenhouseGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -71,6 +74,7 @@ public class GreenHouse extends Activity {
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
             drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            greenHouseGIF.setImageResource(R.drawable.bluenight_electricity);
 
         }
 
@@ -89,6 +93,7 @@ public class GreenHouse extends Activity {
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
             drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
+           //greenHouseGIF.setImageResource(R.drawable.electricity);
 
         }
 
@@ -107,6 +112,7 @@ public class GreenHouse extends Activity {
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
             drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
+            greenHouseGIF.setImageResource(R.drawable.backgroundwood);
 
         }
 

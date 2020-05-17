@@ -14,10 +14,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="123dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/acme"
         android:text="ACME"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,10 +28,10 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="123dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/aladin"
         android:text="ALADIN"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_acme"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,10 +42,10 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="123dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/amarante"
         android:text="AMARANTE"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_aladin"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,10 +56,10 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="123dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/annie_use_your_telescope"
         android:text="ANNIE"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_amarante"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,10 +70,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="61dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/atomic_age"
         android:text="ATOMIC"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_acme" />
 
@@ -84,10 +84,10 @@
         android:layout_marginStart="26dp"
         android:layout_marginLeft="26dp"
         android:layout_marginTop="60dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/baumans"
         android:text="BAUMANS"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_atomicage"
         app:layout_constraintTop_toBottomOf="@+id/text_aladin" />
 
@@ -98,10 +98,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="60dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/blackhans"
         android:text="BLACK HANS"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_baumans"
         app:layout_constraintTop_toBottomOf="@+id/text_amarante" />
 
@@ -112,10 +112,10 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="61dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
         android:fontFamily="@font/caveat_brush"
         android:text="CANTORA"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/text_blackhans"
         app:layout_constraintTop_toBottomOf="@+id/text_annie" />
 

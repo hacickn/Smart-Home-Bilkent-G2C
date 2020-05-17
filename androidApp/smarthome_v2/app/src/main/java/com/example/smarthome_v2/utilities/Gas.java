@@ -132,6 +132,7 @@ public class Gas extends AppCompatActivity {
             wave_one.setBackgroundResource(R.drawable.ic_wood_wave);
             wave_two.setBackgroundResource(R.drawable.ic_wood_wave);
             gas.setBackgroundResource(R.drawable.ic_wood_gas);
+            gasGIF.setImageResource(R.drawable.backgroundwood);
 
         }
 
@@ -158,6 +159,10 @@ public class Gas extends AppCompatActivity {
                     wave_two.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
                     gasGIF.setImageResource(R.drawable.gas);
+                    if(themeNumber ==3)
+                    {
+                        gasGIF.setImageResource(R.drawable.backgroundwood);
+                    }
                 } else {
                     // OFF
                     smokes.setVisibility(View.INVISIBLE);
@@ -165,6 +170,10 @@ public class Gas extends AppCompatActivity {
                     wave_two.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
                     gasGIF.setImageResource(R.drawable.gas_first);
+                    if(themeNumber ==3)
+                    {
+                        gasGIF.setImageResource(R.drawable.backgroundwood);
+                    }
                 }
             }
         });
