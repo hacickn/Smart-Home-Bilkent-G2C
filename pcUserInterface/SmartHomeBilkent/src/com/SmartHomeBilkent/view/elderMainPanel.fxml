@@ -94,7 +94,7 @@
                 <JFXButton id="electricityButtonElder" fx:id="electricityButtonElder" layoutX="120.0" layoutY="153.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
                 <Pane fx:id="electricityPanelElder" disable="true" layoutX="75.0" layoutY="141.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #176BEF; -fx-background-radius: 5;" visible="false">
                     <children>
-                        <Label fx:id="electricityPanelElderLabel" alignment="CENTER" layoutX="90.0" opacity="0.99" prefHeight="41.0" prefWidth="112.0" text="Electricity" textFill="WHITE">
+                        <Label fx:id="electricityPanelElderLabel" alignment="CENTER" layoutX="20.0" opacity="0.99" prefHeight="41.0" prefWidth="251.0" text="Electricity" textFill="WHITE">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="24.0" />
                             </font>
@@ -117,8 +117,8 @@
                             </image>
                         </ImageView>
                         <JFXButton fx:id="electricityPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="58.0" prefWidth="58.0" />
-                        <JFXProgressBar fx:id="electricityPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
-                        <JFXProgressBar fx:id="electricityPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="electricityPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="53.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="electricityPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="53.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
                     </children>
                 </Pane>
                 <Label fx:id="electricityLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="301.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Electricity" textFill="WHITE" visible="false">
@@ -152,8 +152,8 @@
                                 <Image url="@../styleSheets/imagesElder/arrows02.png" />
                             </image>
                         </ImageView>
-                        <JFXProgressBar fx:id="lightsPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
-                        <JFXProgressBar fx:id="lightsPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="lightsPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="53.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="lightsPanelElderProgressBar1" disable="true" layoutX="25.0" layoutY="53.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
                     </children>
                 </Pane>
                 <Label id="lightsLabelElder" fx:id="lightsLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="518.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Lighting" textFill="WHITE" visible="false">
@@ -599,8 +599,8 @@
                             </image>
                         </ImageView>
                         <JFXButton fx:id="gasPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
-                        <JFXProgressBar fx:id="gasPanelElderProgressBar1" disable="true" layoutX="211.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
-                        <JFXProgressBar fx:id="gasPanelElderProgressBar2" disable="true" layoutX="26.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="gasPanelElderProgressBar1" disable="true" layoutX="211.0" layoutY="53.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="gasPanelElderProgressBar2" disable="true" layoutX="26.0" layoutY="53.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
                     </children>
                 </Pane>
                 <Label fx:id="gasLabelElder" alignment="CENTER" disable="true" layoutX="480.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Gas Control" textFill="WHITE" visible="false">
@@ -668,9 +668,9 @@
         </Pane>
         <Pane fx:id="aquariumSettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="aquariumMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in the aquarium settings." textFill="#ff3e30">
+                <Label fx:id="aquariumMenuFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in the aquarium settings." textFill="#ff3e30">
                     <font>
-                        <Font name="Microsoft YaHei Light" size="36.0" />
+                        <Font name="Microsoft YaHei Light" size="32.0" />
                     </font>
                 </Label>
                 <JFXButton fx:id="aquariumMenuBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
@@ -680,32 +680,32 @@
                 </JFXButton>
                 <Label fx:id="aquariumMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="18.0" />
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
                     </font>
                 </Label>
-                <Label fx:id="speciesOfFishLabel" layoutX="288.0" layoutY="179.0" prefHeight="54.0" prefWidth="170.0" text="Species of Fish:">
+                <Label fx:id="speciesOfFishLabel" alignment="CENTER_RIGHT" layoutX="62.0" layoutY="179.0" prefHeight="54.0" prefWidth="396.0" text="Species of Fish:">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="24.0" />
+                        <Font name="Microsoft JhengHei Light" size="20.0" />
                     </font>
                 </Label>
                 <CheckComboBox fx:id="speciesOfFishCheckComboBox" layoutX="460.0" layoutY="194.0" prefHeight="25.0" prefWidth="142.0" />
                 <ChoiceBox fx:id="speciesOfFishChoice" disable="true" layoutX="640.0" layoutY="132.0" prefWidth="150.0" visible="false" />
-                <Label fx:id="FeedingStartTimeLabel" layoutX="124.0" layoutY="247.0" prefHeight="54.0" prefWidth="344.0" text="Feeding Start Time( Each Day): ">
+                <Label fx:id="FeedingStartTimeLabel" alignment="CENTER_RIGHT" layoutX="16.0" layoutY="247.0" prefHeight="54.0" prefWidth="452.0" text="Feeding Start Time( Each Day): ">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="24.0" />
+                        <Font name="Microsoft JhengHei Light" size="20.0" />
                     </font>
                 </Label>
                 <JFXTimePicker fx:id="feedingStartTimeTimePicker" layoutX="469.0" layoutY="262.0" />
-                <Label fx:id="weeklyWaterExchangeDayAndTimeLabel" layoutX="31.0" layoutY="316.0" prefHeight="54.0" prefWidth="437.0" text="Weekly Water Exchange Day And Time: ">
+                <Label fx:id="weeklyWaterExchangeDayAndTimeLabel" alignment="CENTER_RIGHT" layoutX="16.0" layoutY="316.0" prefHeight="54.0" prefWidth="452.0" text="Weekly Water Exchange Day And Time: ">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="24.0" />
+                        <Font name="Microsoft JhengHei Light" size="20.0" />
                     </font>
                 </Label>
                 <JFXComboBox fx:id="weeklyWaterExchangeDayAndTimeChoice" layoutX="469.0" layoutY="330.0" prefHeight="25.0" prefWidth="150.0" />
                 <JFXTimePicker fx:id="weeklyWaterExchangeDayAndTimeTimePicker" layoutX="629.0" layoutY="330.0" />
-                <Label fx:id="dailyAirEngineRunTimeandStartTimeLabel" layoutX="7.0" layoutY="384.0" prefHeight="54.0" prefWidth="461.0" text="Daily Air Engine Run Time and Start Time:">
+                <Label fx:id="dailyAirEngineRunTimeandStartTimeLabel" alignment="CENTER_RIGHT" layoutX="7.0" layoutY="384.0" prefHeight="54.0" prefWidth="461.0" text="Daily Air Engine Run Time and Start Time:">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="24.0" />
+                        <Font name="Microsoft JhengHei Light" size="18.0" />
                     </font>
                 </Label>
                 <JFXTimePicker fx:id="dailyAirEngineRunTimeandStartTimeTimePicker" layoutX="629.0" layoutY="399.0" />
@@ -773,7 +773,7 @@
                 </JFXButton>
                 <Label fx:id="electiricityMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="18.0" />
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
                     </font>
                 </Label>
                 <BarChart fx:id="electiricitySettingsPanelChart" layoutX="150.0" layoutY="300.0" prefHeight="243.0" prefWidth="500.0">
@@ -801,7 +801,7 @@
                 </JFXButton>
                 <Label fx:id="gasMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="18.0" />
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
                     </font>
                 </Label>
                 <BarChart fx:id="gasSettingsPanelChart" layoutX="150.0" layoutY="300.0" prefHeight="243.0" prefWidth="500.0">
@@ -829,7 +829,7 @@
                 </JFXButton>
                 <Label fx:id="greenhouseMenuBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the house settings" visible="false">
                     <font>
-                        <Font name="Microsoft JhengHei Light" size="18.0" />
+                        <Font name="Microsoft JhengHei Light" size="15.0" />
                     </font>
                 </Label>
                 <LineChart fx:id="greenhouseSettingsPanelChart" alternativeColumnFillVisible="true" createSymbols="false" layoutX="150.0" layoutY="307.0" prefHeight="243.0" prefWidth="500.0">
