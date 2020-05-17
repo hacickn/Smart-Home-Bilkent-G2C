@@ -12,7 +12,7 @@ import com.example.smarthome_v2.main_screen;
 public class ThemeSettings extends Activity {
     int themeNo;
     ImageButton blueNight,mainTheme,alien,wood,space;
-    Intent thm,thmGas;
+    Intent thm;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

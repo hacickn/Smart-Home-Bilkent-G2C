@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +40,7 @@ public class Aquarium extends AppCompatActivity {
     EditText textView_four;
     Bundle bundle;
     String type,dayMotor;
-    int themeNumber;
+    int themeNumber,textNo;
     TextView a,b,c,d,e;
 
 
@@ -74,6 +75,7 @@ public class Aquarium extends AppCompatActivity {
         if(bundle != null ){
             type = bundle.getString("type");
             themeNumber = bundle.getInt("theme");
+            textNo = bundle.getInt("text");
             dayMotor = bundle.getString("day");
            //implementation of datas
             species.setText(type);
@@ -177,6 +179,120 @@ public class Aquarium extends AppCompatActivity {
             species.setBackgroundResource(R.color.alien);
 
         }
+
+        //choosing text type
+        if(textNo == 1)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/acme.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+        if(textNo == 2)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/aladin.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+        if(textNo == 3)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/amarante.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+        if(textNo == 4)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/annie_use_your_telescope.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+        if(textNo == 5)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/atomic_age.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+        if(textNo == 6)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+        if(textNo == 7)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/BlackHanSans-Regular.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
+
+        if(textNo == 8)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora.ttf");
+            textView_one.setTypeface(typeface);
+            textView_two.setTypeface(typeface);
+            textView_three.setTypeface(typeface);
+            textView_four.setTypeface(typeface);
+            a.setTypeface(typeface);
+            b.setTypeface(typeface);
+            c.setTypeface(typeface);
+            d.setTypeface(typeface);
+            e.setTypeface(typeface);
+        }
+
         //events
         species.setOnClickListener(new View.OnClickListener() {
             @Override

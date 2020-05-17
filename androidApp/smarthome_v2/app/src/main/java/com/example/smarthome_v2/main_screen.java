@@ -29,7 +29,7 @@ public class main_screen extends AppCompatActivity {
     public boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
     private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics,smartHomeDoor,helpbutton;
     private FirebaseAuth mAuth;
-    int themeNumber;
+    int themeNumber,textNo;
     ConstraintLayout main;
     ImageView menu;
     Bundle bundle;
@@ -77,6 +77,7 @@ public class main_screen extends AppCompatActivity {
 
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
+            textNo = bundle.getInt("text");
             gasCheck = bundle.getBoolean("gas");
             gardenCheck = bundle.getBoolean("garden");
             electricityCheck = bundle.getBoolean("electricity");
@@ -160,6 +161,7 @@ public class main_screen extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), GardenLight.class);
                 i.putExtra("gardenCondition", gardenLightOnOff);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -174,6 +176,7 @@ public class main_screen extends AppCompatActivity {
 
                 i.putExtra("gasCondition", gasOnOff);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
 
             }
@@ -197,6 +200,7 @@ public class main_screen extends AppCompatActivity {
 
                 i.putExtra("elecCondition", elecOnOff);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -211,6 +215,7 @@ public class main_screen extends AppCompatActivity {
 
                 i.putExtra("elecCondition", elecOnOff);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -226,6 +231,7 @@ public class main_screen extends AppCompatActivity {
 
                 i.putExtra("waterCondition", waterOnOff);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -237,6 +243,7 @@ public class main_screen extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(), Aquarium.class);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -248,6 +255,7 @@ public class main_screen extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(), GreenHouse.class);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });

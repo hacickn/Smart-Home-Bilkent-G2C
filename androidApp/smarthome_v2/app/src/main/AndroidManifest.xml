@@ -66,6 +66,7 @@
         <activity android:name=".utilities.GreenHouse" />
         <activity android:name=".settings.GraphicSettings" />
         <activity android:name=".settings.ThemeSettings" />
+        <activity android:name=".settings.TextSettings" />
     </application>
 
 </manifest>

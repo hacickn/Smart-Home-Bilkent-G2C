@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundgrapoption">
+
+    <Button
+        android:id="@+id/text_acme"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="123dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/acme"
+        android:text="ACME"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/text_aladin"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="123dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/aladin"
+        android:text="ALADIN"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_acme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/text_amarante"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="123dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/amarante"
+        android:text="AMARANTE"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_aladin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/text_annie"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="123dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:text="ANNIE"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_amarante"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/text_atomicage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="61dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/atomic_age"
+        android:text="ATOMIC"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_acme" />
+
+    <Button
+        android:id="@+id/text_baumans"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/baumans"
+        android:text="BAUMANS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_atomicage"
+        app:layout_constraintTop_toBottomOf="@+id/text_aladin" />
+
+    <Button
+        android:id="@+id/text_blackhans"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/blackhans"
+        android:text="BLACK HANS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_baumans"
+        app:layout_constraintTop_toBottomOf="@+id/text_amarante" />
+
+    <Button
+        android:id="@+id/text_cantora"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="61dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/caveat_brush"
+        android:text="CANTORA"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/text_blackhans"
+        app:layout_constraintTop_toBottomOf="@+id/text_annie" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

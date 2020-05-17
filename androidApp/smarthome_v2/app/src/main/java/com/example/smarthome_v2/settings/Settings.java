@@ -14,7 +14,7 @@ public class Settings extends AppCompatActivity {
 
     private ImageButton homeSet, appSet,profile;
     Bundle bundle;
-    int themeNumber;
+    int themeNumber,textNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class Settings extends AppCompatActivity {
 
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
+            textNo = bundle.getInt("text");
         }
 
         //events
@@ -38,6 +39,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), HomeSettings.class);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -46,6 +48,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), AppSettings.class);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });
@@ -54,6 +57,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ProfileCard.class);
                 i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
                 startActivity(i);
             }
         });

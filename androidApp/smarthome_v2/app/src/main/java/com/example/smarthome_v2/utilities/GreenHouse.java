@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class GreenHouse extends Activity {
     private  ImageView greenHouse;
     private TextView temperature,water,humudity;
     private EditText hum,comingWater,temp;
-    int themeNumber;
+    int themeNumber,textNo;
     Bundle bundle;
     Intent thm;
 
@@ -51,6 +52,7 @@ public class GreenHouse extends Activity {
         bundle = getIntent().getExtras();
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
+            textNo = bundle.getInt("text");
         }
 
         //choosing theme
@@ -108,6 +110,96 @@ public class GreenHouse extends Activity {
 
         }
 
+        //choosing text type
+        if(textNo == 1)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/acme.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+
+        }
+
+        if(textNo == 2)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/aladin.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
+        if(textNo == 3)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/amarante.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
+        if(textNo == 4)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/annie_use_your_telescope.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
+        if(textNo == 5)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/atomic_age.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+        if(textNo == 6)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
+        if(textNo == 7)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/BlackHanSans-Regular.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
+
+        if(textNo == 8)
+        {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora.ttf");
+            temperature.setTypeface(typeface);
+            water.setTypeface(typeface);
+            humudity.setTypeface(typeface);
+            hum.setTypeface(typeface);
+            comingWater.setTypeface(typeface);
+            temp.setTypeface(typeface);
+        }
+
         //events
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +207,7 @@ public class GreenHouse extends Activity {
 
                 thm = new Intent(GreenHouse.this, main_screen.class);
                 thm.putExtra("theme",themeNumber);
+                thm.putExtra("text",textNo);
                 startActivity(thm);
             }
         });
