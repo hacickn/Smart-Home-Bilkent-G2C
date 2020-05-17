@@ -1,11 +1,15 @@
 package com.SmartHomeBilkent;
 
 import com.SmartHomeBilkent.home.Home;
+import com.SmartHomeBilkent.utilities.connection.Arduino;
 import com.SmartHomeBilkent.utilities.dataBase.*;
 import com.SmartHomeBilkent.utilities.dataBase.fields.CommonSetting;
 import com.SmartHomeBilkent.utilities.dataBase.fields.User;
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortDataListener;
+import com.fazecast.jSerialComm.SerialPortEvent;
 import com.jfoenix.controls.*;
+import javafx.animation.FillTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,11 +22,16 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.AudioClip;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.controlsfx.control.CheckComboBox;
 
 import java.awt.event.ActionListener;
@@ -33,6 +42,7 @@ import java.time.LocalTime;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 
 public class ElderMainPanel implements Initializable {
@@ -793,6 +803,14 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private JFXButton elderLogoutButton;
 
+   @FXML
+   private JFXButton portConnectionButtonElder;
+
+   @FXML
+   private ToggleButton internalSirenToggle, externalSirenToggle,
+           fireButtonVisualToggle, gasSensorVisualToggle,
+           smokeSensorVisualToggle, fireButtonSoundToggle,
+           smokeSensorSoundToggle, gasSensorSoundToggle;
 
    private boolean isArduinoConnect;
 
@@ -806,11 +824,77 @@ public class ElderMainPanel implements Initializable {
    private String[] sensors;
    private String[] permissions;
    private Boolean exit;
+   private Arduino arduino;
+   private FillTransition fillTransition;
+   private Rectangle rectangle;
+   private AudioClip audioClip;
+   private AudioClip audioClipEmergency;
+   private String volume;
 
    //constructors
    //public ElderMainPanel()
 
    //methods
+
+   @Override
+   public void initialize( URL location, ResourceBundle resources )
+   {
+      exit = false;
+      isArduinoConnect = false;
+      volume = "0";
+      userTextFieldController( getLoginUser( ) );
+      turkishElderButtonSubLabelActive.setVisible( false );
+      englishElderButtonSubLabelActive.setVisible( true );
+      languageStatusElder = false;
+      ElectricityUsage.getInstance().getElectricityUsage();
+      GasUsage.getInstance().getGasUsage();
+      GreenHouseData.getInstance().getGreenHouseValues();
+      FishSpecies.getInstance().getFishes();
+      CommonSettingData.getInstance().getAllHome();
+      GUIUpdateElder();
+      refreshPortList();
+      audioClipEmergency = new AudioClip( this.getClass().getResource( "music/emergencySound.mp3" ).toString() );
+      audioClip = new AudioClip( this.getClass().getResource( "music/suprise.mp3" ).toString() );
+      audioClipEmergency.setVolume( 1.0 );
+      audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
+      audioClipEmergency.setRate( 1.0 );
+      audioClip.setRate( 1.1 );
+
+      new Thread( new Runnable() {
+         @Override
+         public void run() {
+            while(true){
+               Platform.runLater( new Runnable() {
+                  @Override
+                  public void run() {
+                     time.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
+                             "  |  " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) );
+
+                     if( LocalTime.now().getHour() > 6 && LocalTime.now().getHour() < 11 ) {
+                        dayMessage.setText( "Good morning, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( LocalTime.now().getHour() >= 11 && LocalTime.now().getHour() < 16 ) {
+                        dayMessage.setText( "Good afternoon, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( LocalTime.now().getHour() >= 16 && LocalTime.now().getHour() < 20 ) {
+                        dayMessage.setText( "Good evening, " + userSettingsNameElderText.getText( ) + "!" );
+                     } else if( ( LocalTime.now().getHour() >= 20 && LocalTime.now().getHour() < 24 )
+                             || ( LocalTime.now().getHour() >= 0 && LocalTime.now().getHour() <= 6 ) ) {
+                        dayMessage.setText( "Good night, " + userSettingsNameElderText.getText( ) + "!" );
+                     }
+                  }
+               } );
+               try {
+                  Thread.sleep( 1000 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         }
+
+      } ).start();
+
+      createEmergencyAnimation();
+   }
+
    //1
    @FXML
    void actionPerformed( ActionEvent event ) {
@@ -1102,15 +1186,7 @@ public class ElderMainPanel implements Initializable {
       }
       // greenhouseMenuBackButtonElder END -MS 07.05.2020-
 
-      // connectionElderPanelBackButtonElder -MS 11.05.2020-
-      else if ( event.getSource() == connectionElderPanelBackButtonElder )
-      {
-         connectionSettingsElderPanel.setDisable( true );
-         connectionSettingsElderPanel.setVisible( false );
-         applicationElderPanel.setVisible( true );
-         applicationElderPanel.setDisable( false );
-      }
-      // connectionElderPanelBackButtonElder END -MS 11.05.2020-
+
 
       // connectionSettingsElderButton -MS 11.05.2020-
       else if ( event.getSource() == connectionSettingsElderButton )
@@ -1174,55 +1250,7 @@ public class ElderMainPanel implements Initializable {
    //Set the time END -MS 09.04.2020-
 
    //3
-   @Override
-   public void initialize( URL location, ResourceBundle resources )
-   {
-      exit = false;
-      userTextFieldController( getLoginUser( ) );
-      isArduinoConnect = false;
-      turkishElderButtonSubLabelActive.setVisible( false );
-      englishElderButtonSubLabelActive.setVisible( true );
-      languageStatusElder = false;
-      ElectricityUsage.getInstance().getElectricityUsage();
-      GasUsage.getInstance().getGasUsage();
-      GreenHouseData.getInstance().getGreenHouseValues();
-      FishSpecies.getInstance().getFishes();
-      CommonSettingData.getInstance().getAllHome();
-      GUIUpdateElder();
-      refreshPortList();
 
-      new Thread( new Runnable() {
-         @Override
-         public void run() {
-            while(true){
-               Platform.runLater( new Runnable() {
-                  @Override
-                  public void run() {
-                     time.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
-                           "  |  " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) );
-
-                     if( LocalTime.now().getHour() > 6 && LocalTime.now().getHour() < 11 ) {
-                        dayMessage.setText( "Good morning, " + userSettingsNameElderText.getText( ) + "!" );
-                     } else if( LocalTime.now().getHour() >= 11 && LocalTime.now().getHour() < 16 ) {
-                        dayMessage.setText( "Good afternoon, " + userSettingsNameElderText.getText( ) + "!" );
-                     } else if( LocalTime.now().getHour() >= 16 && LocalTime.now().getHour() < 20 ) {
-                        dayMessage.setText( "Good evening, " + userSettingsNameElderText.getText( ) + "!" );
-                     } else if( ( LocalTime.now().getHour() >= 20 && LocalTime.now().getHour() < 24 )
-                           || ( LocalTime.now().getHour() >= 0 && LocalTime.now().getHour() <= 6 ) ) {
-                        dayMessage.setText( "Good night, " + userSettingsNameElderText.getText( ) + "!" );
-                     }
-                  }
-               } );
-               try {
-                  Thread.sleep( 1000 );
-               } catch( InterruptedException e ) {
-                  e.printStackTrace();
-               }
-            }
-         }
-
-      } ).start();
-   }
 
    //4
    // user after login panel -MS 24.03.2020-
@@ -2265,5 +2293,177 @@ public class ElderMainPanel implements Initializable {
          }
       } );
       thread.start();
+   }
+
+   public void connectionPanelOperations( ActionEvent event )
+   {
+      // connectionElderPanelBackButtonElder -MS 11.05.2020-
+      if ( event.getSource() == connectionElderPanelBackButtonElder )
+      {
+      connectionSettingsElderPanel.setDisable( true );
+      connectionSettingsElderPanel.setVisible( false );
+      applicationElderPanel.setVisible( true );
+      applicationElderPanel.setDisable( false );
+      }
+      else if( event.getSource() == portConnectionButtonElder )
+      {
+         arduino = new Arduino( portChooserElder.getValue(), 9600 );
+
+         if( arduino.openConnection() ) {
+            isArduinoConnect = true;
+            portConnectionButtonElder.setDisable( true );
+            home = new Home( arduino );
+            home.adjustCollective( "manual_on#:" );
+
+            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
+               @Override
+               public int getListeningEvents() {
+                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
+               }
+
+               @Override
+               public void serialEvent( SerialPortEvent serialPortEvent ) {
+                  if( serialPortEvent.getEventType() == SerialPort.LISTENING_EVENT_DATA_AVAILABLE ) {
+                     home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,
+                             0, 0 );
+                     try {
+                        Thread.sleep( 200 );
+                     } catch( InterruptedException e ) {
+                        e.printStackTrace();
+                     }
+                     StringBuilder out = new StringBuilder();
+                     Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+
+                     try {
+                        while( in.hasNextLine() )
+                           out.append( in.nextLine() );
+                     } catch( Exception e ) {
+                        e.printStackTrace();
+                     }
+                     out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
+                     out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
+
+
+                     if( out.length() > 0 ) {
+                        System.out.println( out );
+
+                        if( out.toString().equals( "FireButon" ) ) {
+                           if( fireButtonVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( fireButtonSoundToggle.isSelected()
+                                   && audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "SmokeAlarm" ) ) {
+                           if( smokeSensorVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( smokeSensorSoundToggle.isSelected()
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "GasAlarm" ) ) {
+                           if( gasSensorVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( gasSensorSoundToggle.isSelected()
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Fire" ) ) {
+                           if( ( gasSensorVisualToggle.isSelected()
+                                   || fireButtonVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( gasSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smokealarm" ) ) {
+                           if( ( gasSensorVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( gasSensorSoundToggle.isSelected()
+                                   || smokeSensorSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smoke" ) ) {
+                           if( ( fireButtonVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( smokeSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smoke+Fire" ) ) {
+                           if( ( fireButtonVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected()
+                                   || gasSensorVisualToggle.isSelected())
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( smokeSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected()
+                                   || gasSensorSoundToggle.isSelected())
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+                        }
+                     }
+                  }
+               }
+            } );
+         } else {
+            portChooserElder.setValue( "" );
+         }
+
+      }
+
+
+
+   }
+
+   void createEmergencyAnimation() {
+      rectangle = new Rectangle( 0, 0, 800, 800 );
+      rectangle.setDisable( true );
+      fillTransition = new FillTransition( Duration.seconds( 0.5 ),
+              rectangle, Color.rgb( 255, 0, 0, 0 ),
+              Color.rgb( 255, 0, 0, 0.6 ) );
+      fillTransition.setCycleCount( 20 );
+      fillTransition.setAutoReverse( true );
+      //commonBorderPane.getChildren().add( rectangle );
+      rectangle.setVisible( false );
    }
 }

@@ -884,7 +884,7 @@
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="connectionElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+                <JFXButton fx:id="connectionElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#connectionPanelOperations" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                     </font>
@@ -901,7 +901,7 @@
                         <Image url="@../styleSheets/imagesElder/usb2.png" />
                     </image>
                 </ImageView>
-                <JFXButton layoutX="542.0" layoutY="441.0" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#connectionPanelOperations" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
                 <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="97.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../styleSheets/imagesElder/communication2.png" />
