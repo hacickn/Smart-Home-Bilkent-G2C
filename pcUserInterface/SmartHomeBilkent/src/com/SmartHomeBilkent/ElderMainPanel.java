@@ -25,6 +25,7 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import org.controlsfx.control.CheckComboBox;
 
+import java.awt.event.ActionListener;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -789,6 +790,9 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private JFXSlider dailyAirEngineRunTimeandStartTimeSlider;
 
+   @FXML
+   private JFXButton elderLogoutButton;
+
 
    private boolean isArduinoConnect;
 
@@ -801,6 +805,7 @@ public class ElderMainPanel implements Initializable {
    private CommonSetting commonSetting;
    private String[] sensors;
    private String[] permissions;
+   private Boolean exit;
 
    //constructors
    //public ElderMainPanel()
@@ -810,29 +815,16 @@ public class ElderMainPanel implements Initializable {
    @FXML
    void actionPerformed( ActionEvent event ) {
       // settings elder panel -MS 23.04.2020-
-      if( event.getSource( ) == settingsButtonElder ) {
-         setMainMenuInvisible( true );
-         settingsElderPanel.setVisible( true );
-         settingsElderPanel.setDisable( false );
-      } else if( event.getSource( ) == settingsBackButtonElder ) {
+      if( event.getSource( ) == settingsBackButtonElder ) {
          settingsElderPanel.setVisible( false );
          setMainMenuInvisible( false );
       }
       // settings elder panel END -MS 23.04.2020
-      else if( event.getSource( ) == houseMenuButtonElder ) {
-         setMainMenuInvisible( true );
-         houseMenuElderPane.setVisible( true );
-         houseMenuElderPane.setDisable( false );
-      } else if( event.getSource( ) == houseMenuBackButtonElder ) {
+      else if( event.getSource( ) == houseMenuBackButtonElder ) {
          houseMenuElderPane.setVisible( false );
          setMainMenuInvisible( false );
       }
-      // userSettingsElderPanelMenu -MS 23.04.2020-
-      else if( event.getSource( ) == userProfileButtonElder ) {
-         setMainMenuInvisible( true );
-         userSettingsElderPanelMenu.setVisible( true );
-         userSettingsElderPanelMenu.setDisable( false );
-      } else if( event.getSource( ) == userProfileBackButtonElder ) {
+      else if( event.getSource( ) == userProfileBackButtonElder ) {
          userSettingsElderPanelMenu.setVisible( false );
          setMainMenuInvisible( false );
       }
@@ -1132,6 +1124,42 @@ public class ElderMainPanel implements Initializable {
       // connectionSettingsElderButton END -MS 11.05.2020-
    }
 
+   //  elderMainPanelOperations -MS 17.05.2020-
+
+   /**
+    * This method is responsible control main Elder panel which come out when user log in.
+    * Every button which is in the main panel is processed in this method.
+    * @param event
+    */
+   public void elderMainPanelOperations( ActionEvent event )
+   {
+      if( event.getSource() == elderLogoutButton )
+      {
+         Platform.exit();
+         exit = true;
+
+         if( isArduinoConnect )
+            home.getArduino().closeConnection();
+      }
+      else if( event.getSource( ) == settingsButtonElder )
+      {
+         setMainMenuInvisible( true );
+         settingsElderPanel.setVisible( true );
+         settingsElderPanel.setDisable( false );
+      }
+      else if( event.getSource( ) == houseMenuButtonElder )
+      {
+         setMainMenuInvisible( true );
+         houseMenuElderPane.setVisible( true );
+         houseMenuElderPane.setDisable( false );
+      }
+      else if( event.getSource( ) == userProfileButtonElder ) {
+         setMainMenuInvisible( true );
+         userSettingsElderPanelMenu.setVisible( true );
+         userSettingsElderPanelMenu.setDisable( false );
+      }
+   }
+
    //2
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
    public void setMainMenuInvisible( Boolean b ) {
@@ -1147,8 +1175,9 @@ public class ElderMainPanel implements Initializable {
 
    //3
    @Override
-   public void initialize( URL location, ResourceBundle resources ) {
-
+   public void initialize( URL location, ResourceBundle resources )
+   {
+      exit = false;
       userTextFieldController( getLoginUser( ) );
       isArduinoConnect = false;
       turkishElderButtonSubLabelActive.setVisible( false );
@@ -2223,5 +2252,18 @@ public class ElderMainPanel implements Initializable {
          languageStatusElder = true;
          changeLanguageElder( "tr" );
       }
+
+      Thread thread = new Thread( () -> {
+         while( !exit ) {
+            Platform.runLater( () -> time.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
+                    "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
+            try {
+               Thread.sleep( 1000 );
+            } catch( InterruptedException e ) {
+               e.printStackTrace();
+            }
+         }
+      } );
+      thread.start();
    }
 }

@@ -39,19 +39,19 @@
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                     </font>
                 </Label>
-                <JFXButton id="userProfileButtonElder" fx:id="userProfileButtonElder" alignment="CENTER" layoutX="52.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
+                <JFXButton id="userProfileButtonElder" fx:id="userProfileButtonElder" alignment="CENTER" layoutX="52.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#elderMainPanelOperations" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
                 <ImageView fx:id="userProfileElderActiveImage" disable="true" fitHeight="200.0" fitWidth="200.0" layoutX="52.0" layoutY="243.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
                         <Image url="@../styleSheets/imagesElder/couple3.png" />
                     </image>
                 </ImageView>
-                <JFXButton id="settingsButtonElder" fx:id="settingsButtonElder" alignment="CENTER" layoutX="547.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
+                <JFXButton id="settingsButtonElder" fx:id="settingsButtonElder" alignment="CENTER" layoutX="547.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#elderMainPanelOperations" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
                 <ImageView fx:id="settingsButtonElderActiveImage" disable="true" fitHeight="200.0" fitWidth="200.0" layoutX="547.0" layoutY="243.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
                         <Image url="@../styleSheets/imagesElder/cogwheel3.png" />
                     </image>
                 </ImageView>
-                <JFXButton id="menuButtonElder" fx:id="houseMenuButtonElder" alignment="CENTER" layoutX="300.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
+                <JFXButton id="menuButtonElder" fx:id="houseMenuButtonElder" alignment="CENTER" layoutX="300.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#elderMainPanelOperations" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
                 <ImageView fx:id="houseMenuElderActiveImage" disable="true" fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="243.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
                         <Image url="@../styleSheets/imagesElder/houseMenu3Finished.png" />
@@ -87,6 +87,11 @@
                         <Font name="Microsoft JhengHei Light" size="22.0" />
                     </font>
                 </Label>
+            <JFXButton fx:id="elderLogoutButton" layoutX="726.0" layoutY="526.0" onAction="#elderMainPanelOperations" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #000000;" text="LOGOUT">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </JFXButton>
             </children>
         </Pane>
         <Pane fx:id="houseMenuElderPane" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
