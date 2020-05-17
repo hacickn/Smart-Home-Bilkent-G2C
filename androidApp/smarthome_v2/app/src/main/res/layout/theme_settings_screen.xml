@@ -7,58 +7,113 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundgrapoption">
 
-    <ImageButton
-        android:id="@+id/blue_night"
-        android:layout_width="70dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="146dp"
-        android:background="@drawable/backgroundbluenight"
-        app:layout_constraintStart_toEndOf="@+id/main_theme"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/main_theme"
-        android:layout_width="70dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="146dp"
-        android:background="@drawable/background_main"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/woodtxt"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:text="Wood"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wood" />
 
-    <ImageButton
-        android:id="@+id/alien"
-        android:layout_width="70dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="146dp"
-        app:layout_constraintStart_toEndOf="@+id/blue_night"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/backgroundalien" />
+        <Button
+            android:id="@+id/spacetxt"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Space"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintStart_toEndOf="@+id/woodtxt"
+            app:layout_constraintTop_toBottomOf="@+id/space" />
 
-    <ImageButton
-        android:id="@+id/space"
-        android:layout_width="70dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="97dp"
-        android:background="@drawable/backgroundspace"
-        app:layout_constraintStart_toEndOf="@+id/wood"
-        app:layout_constraintTop_toBottomOf="@+id/blue_night" />
+        <Button
+            android:id="@+id/alientxt"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:text="Alien"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintStart_toEndOf="@+id/bluenighttxt"
+            app:layout_constraintTop_toBottomOf="@+id/alien" />
 
-    <ImageButton
-        android:id="@+id/wood"
-        android:layout_width="70dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="97dp"
-        android:background="@drawable/backgroundwood"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_theme" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/bluenighttxt"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:text="Blue Night"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintStart_toEndOf="@+id/maintxt"
+            app:layout_constraintTop_toBottomOf="@+id/blue_night" />
+
+        <ImageButton
+            android:id="@+id/blue_night"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="146dp"
+            android:background="@drawable/backgroundbluenight"
+            app:layout_constraintStart_toEndOf="@+id/main_theme"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/main_theme"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="146dp"
+            android:background="@drawable/background_main"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/alien"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="146dp"
+            android:background="@drawable/backgroundalien"
+            app:layout_constraintStart_toEndOf="@+id/blue_night"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/space"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/backgroundspace"
+            app:layout_constraintStart_toEndOf="@+id/wood"
+            app:layout_constraintTop_toBottomOf="@+id/blue_night" />
+
+        <ImageButton
+            android:id="@+id/wood"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/backgroundwood"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_theme" />
+
+        <Button
+            android:id="@+id/maintxt"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Main"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_theme" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

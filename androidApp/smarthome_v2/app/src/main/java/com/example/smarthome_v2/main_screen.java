@@ -264,8 +264,10 @@ public class main_screen extends AppCompatActivity {
         graphics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(main_screen.this, GraphicSettings.class);
-                startActivity(main);
+                Intent i = new Intent(main_screen.this, GraphicSettings.class);
+                i.putExtra("theme", themeNumber);
+                i.putExtra("text", textNo);
+                startActivity(i);
             }
         });
 

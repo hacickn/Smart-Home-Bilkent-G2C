@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
@@ -12,7 +13,10 @@ import com.example.smarthome_v2.main_screen;
 public class ThemeSettings extends Activity {
     int themeNo;
     ImageButton blueNight,mainTheme,alien,wood,space;
+    Button main,blueNighttxt,alientxt,woodtxt,spacetxt;
     Intent thm;
+    private Bundle bundle;
+    int thmNo;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,39 @@ public class ThemeSettings extends Activity {
         alien =findViewById(R.id.alien);
         wood = findViewById(R.id.wood);
         space = findViewById(R.id.space);
+        main =findViewById(R.id.maintxt);
+        blueNighttxt =findViewById(R.id.bluenighttxt);
+        alientxt =findViewById(R.id.alientxt);
+        woodtxt =findViewById(R.id.woodtxt);
+        spacetxt =findViewById(R.id.spacetxt);
+
+        bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            thmNo = bundle.getInt("theme");
+        }
+
+        if(thmNo == 1)
+        {
+            blueNighttxt.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        else if(thmNo == 2)
+        {
+            alientxt.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+        else if(thmNo == 3)
+        {
+            woodtxt.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+        else if(thmNo == 4)
+        {
+            spacetxt.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+        else
+        {
+            main.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
 
         //events
         mainTheme.setOnClickListener(new View.OnClickListener() {

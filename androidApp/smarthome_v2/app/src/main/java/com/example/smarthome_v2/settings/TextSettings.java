@@ -14,6 +14,8 @@ public class TextSettings extends Activity {
     int textNo;
     Button acme,aladin,amarante,annie,atomic,baumans,blackHans,cantora;
     Intent txt;
+    private Bundle bundle;
+    int text;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,52 @@ public class TextSettings extends Activity {
         baumans = findViewById(R.id.text_baumans);
         blackHans = findViewById(R.id.text_blackhans);
         cantora = findViewById(R.id.text_cantora);
+
+
+        bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            text = bundle.getInt("text");
+        }
+        //choosing text type
+        if(text == 1)
+        {
+            acme.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        if(text == 2)
+        {
+            aladin.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        if(text == 3)
+        {
+            amarante.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        if(text == 4)
+        {
+            annie.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        if(text == 5)
+        {
+            atomic.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+        if(text == 6)
+        {
+            baumans.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+        if(text == 7)
+        {
+            blackHans.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
+
+
+        if(text == 8)
+        {
+            cantora.setBackgroundResource(R.drawable.buttonshapetwo);
+        }
 
         acme.setOnClickListener(new View.OnClickListener() {
             @Override
