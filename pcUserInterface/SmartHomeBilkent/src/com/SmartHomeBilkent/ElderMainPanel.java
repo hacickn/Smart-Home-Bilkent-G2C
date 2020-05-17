@@ -807,10 +807,41 @@ public class ElderMainPanel implements Initializable {
    private JFXButton portConnectionButtonElder;
 
    @FXML
-   private ToggleButton internalSirenToggle, externalSirenToggle,
-           fireButtonVisualToggle, gasSensorVisualToggle,
-           smokeSensorVisualToggle, fireButtonSoundToggle,
-           smokeSensorSoundToggle, gasSensorSoundToggle;
+   private ToggleButton internalSirenToggle, externalSirenToggle;
+
+
+   @FXML
+   private Pane notificationSettingsElderPanel;
+
+   @FXML
+   private Label notificationPanelFirstLabelElder;
+
+   @FXML
+   private JFXButton notificationElderPanelBackButtonElder;
+
+   @FXML
+   private Label connectionElderPanelBackButtonSubLabel1;
+
+   @FXML
+   private JFXToggleButton fireButtonVisualToggle;
+
+   @FXML
+   private JFXToggleButton gasSensorVisualToggle;
+
+   @FXML
+   private JFXToggleButton smokeSensorVisualToggle;
+
+   @FXML
+   private JFXToggleButton fireButtonSoundToggle;
+
+   @FXML
+   private JFXToggleButton gasSensorSoundToggle;
+
+   @FXML
+   private JFXToggleButton smokeSensorSoundToggle;
+
+   @FXML
+   private JFXButton notificationSettingsElderButton;
 
    private boolean isArduinoConnect;
 
@@ -2465,5 +2496,27 @@ public class ElderMainPanel implements Initializable {
       fillTransition.setAutoReverse( true );
       //commonBorderPane.getChildren().add( rectangle );
       rectangle.setVisible( false );
+   }
+
+   public void notificationPanelOperation( ActionEvent event)
+   {
+      if( event.getSource() == notificationElderPanelBackButtonElder)
+      {
+         notificationSettingsElderPanel.setDisable( true );
+         notificationSettingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+   }
+
+   public void applicationPanelOperation( ActionEvent event)
+   {
+      if( event.getSource() == notificationSettingsElderButton)
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         notificationSettingsElderPanel.setVisible( true );
+         notificationSettingsElderPanel.setDisable( false );
+      }
    }
 }
