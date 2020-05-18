@@ -17,6 +17,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText registerName;
@@ -26,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerButton;
     private ProgressDialog registerProgress;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,16 +73,39 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void register_user(String name, String password, String email) {
+    private void register_user(final String name, final String password, final String email) {
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful())
                 {
-                    registerProgress.dismiss();
-                    Intent mainIntent = new Intent(RegisterActivity.this, main_screen.class);
-                    startActivity(mainIntent);
+                    String user_id = mAuth.getCurrentUser().getUid();
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                    HashMap<String, String> userMap = new HashMap<>();
+                    userMap.put("name", name);
+                    userMap.put("email", email);
+                    userMap.put("password", password);
+                    userMap.put("aquarium", "off");
+                    userMap.put("gas", "off");
+                    userMap.put("water", "off");
+                    userMap.put("gardenLight", "off");
+                    userMap.put("greenHouse", "off");
+                    userMap.put("electricity", "off");
+
+                    mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task)
+                        {
+
+                            if(task.isSuccessful())
+                            {
+                                registerProgress.dismiss();
+                                Intent mainIntent = new Intent(RegisterActivity.this, main_screen.class);
+                                startActivity(mainIntent);
+                            }
+                        }
+                    });
 
                 }
                 else {
