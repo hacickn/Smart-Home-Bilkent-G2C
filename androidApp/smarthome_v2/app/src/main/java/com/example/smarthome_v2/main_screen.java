@@ -412,7 +412,7 @@ public class main_screen extends AppCompatActivity {
                 }
                 else
                 {
-                    userMap.put("electricity", "on");
+                    userMap.put("electricity", "off");
                     mDatabase.updateChildren(userMap);
                     FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,false).show();
                 }
@@ -435,7 +435,7 @@ public class main_screen extends AppCompatActivity {
                 }
                 else
                 {
-                    userMap.put("gas", "on");
+                    userMap.put("gas", "off");
                     mDatabase.updateChildren(userMap);
                     FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,false).show();
                 }
@@ -458,7 +458,7 @@ public class main_screen extends AppCompatActivity {
                 }
                 else
                 {
-                    userMap.put("greenHouse", "on");
+                    userMap.put("greenHouse", "off");
                     mDatabase.updateChildren(userMap);
                     FancyToast.makeText(getApplicationContext(),"GREENHOUSE IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_green_house,false).show();
                 }
