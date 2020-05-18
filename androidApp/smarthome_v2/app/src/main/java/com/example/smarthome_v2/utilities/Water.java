@@ -13,8 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
+
 import pl.droidsonroids.gif.GifImageView;
 
+import java.util.HashMap;
 import java.util.Objects;
 /**
  * a Water class
@@ -31,6 +37,8 @@ public class Water extends AppCompatActivity {
     boolean condition,currentCondition;
     Intent thm;
     private GifImageView waterGIF;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,7 @@ public class Water extends AppCompatActivity {
         water_wave = findViewById(R.id.water_wave);
         water = findViewById(R.id.tap);
         waterGIF = findViewById(R.id.waterGIF);
+        mAuth = FirebaseAuth.getInstance();
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -120,6 +129,22 @@ public class Water extends AppCompatActivity {
                     {
                         waterGIF.setImageResource(R.drawable.backgroundwood);
                     }
+                }
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+
+                if( water_controller.isChecked() )
+                {
+                    userMap.put("water", "on");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_water_exchange,false).show();
+                }
+                else
+                {
+                    userMap.put("water", "off");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_water_exchange,false).show();
                 }
             }
         });

@@ -21,9 +21,15 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
+
 import pl.droidsonroids.gif.GifImageView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 /**
  * an Electricity class
@@ -48,6 +54,8 @@ public class Electricity extends AppCompatActivity {
     boolean condition,currentCondition;
     Intent thm;
     private GifImageView electricityGIF;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
 
 
    // @SuppressLint("WrongViewCast")
@@ -93,6 +101,7 @@ public class Electricity extends AppCompatActivity {
         light_three = findViewById(R.id.light3);
         elec = findViewById(R.id.mainelectiricity);
         electricityGIF = findViewById(R.id.electricityGIF);
+        mAuth = FirebaseAuth.getInstance();
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -173,6 +182,23 @@ public class Electricity extends AppCompatActivity {
                     if(themeNumber == 1) {
                         electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
                     }
+
+                }
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+
+                if( elec_controller.isChecked() )
+                {
+                    userMap.put("electricity", "on");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_electricity,false).show();
+                }
+                else
+                {
+                    userMap.put("electricity", "off");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,false).show();
                 }
             }
         });

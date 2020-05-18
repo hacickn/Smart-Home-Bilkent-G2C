@@ -9,6 +9,11 @@ import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class ThemeSettings extends Activity {
     int themeNo;
@@ -17,6 +22,8 @@ public class ThemeSettings extends Activity {
     Intent thm;
     private Bundle bundle;
     int thmNo;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +31,9 @@ public class ThemeSettings extends Activity {
 
         //initialization
         thm = new Intent(getApplicationContext(), main_screen.class);
+        mAuth = FirebaseAuth.getInstance();
+        final String user_id = mAuth.getCurrentUser().getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
 
         mainTheme = findViewById(R.id.main_theme);
@@ -66,12 +76,19 @@ public class ThemeSettings extends Activity {
 
 
         //events
+
         mainTheme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 themeNo = 0;
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
+
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("theme", "0");
+                mDatabase.updateChildren(userMap);
 
             }
         });
@@ -83,6 +100,12 @@ public class ThemeSettings extends Activity {
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
 
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("theme", "1");
+                mDatabase.updateChildren(userMap);
+
             }
         });
 
@@ -92,6 +115,12 @@ public class ThemeSettings extends Activity {
                 themeNo = 2;
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
+
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("theme", "2");
+                mDatabase.updateChildren(userMap);
 
             }
         });
@@ -103,6 +132,12 @@ public class ThemeSettings extends Activity {
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
 
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("theme", "3");
+                mDatabase.updateChildren(userMap);
+
             }
         });
 
@@ -112,6 +147,12 @@ public class ThemeSettings extends Activity {
                 themeNo = 4;
                 thm.putExtra("theme", themeNo);
                 startActivity(thm);
+
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("theme", "4");
+                mDatabase.updateChildren(userMap);
 
             }
         });

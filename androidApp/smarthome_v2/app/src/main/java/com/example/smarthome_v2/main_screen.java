@@ -87,7 +87,7 @@ public class main_screen extends AppCompatActivity {
         bundle = getIntent().getExtras();
 
         if(bundle!=null) {
-            themeNumber = bundle.getInt("theme");
+            // themeNumber = bundle.getInt("theme");
             textNo = bundle.getInt("text");
             gasCheck = bundle.getBoolean("gas");
             gardenCheck = bundle.getBoolean("garden");
@@ -96,6 +96,7 @@ public class main_screen extends AppCompatActivity {
         }
 
         //setting toggles
+
 
         final String user_id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
@@ -206,6 +207,173 @@ public class main_screen extends AppCompatActivity {
 
             }
         });
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
+                Object thmObj = map.get("theme");
+                String thmNum =  String.valueOf(thmObj);
+                if(thmNum.equals("0"))
+                {
+
+                    themeNumber = 0;
+                }
+
+                else if (thmNum.equals("1"))
+                {
+
+                    themeNumber = 1;
+
+                    gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
+                    main.setBackgroundResource(R.drawable.backgroundbluenight);
+                    gardenLight.setBackgroundResource(R.drawable.ic_bluenight_gardening);
+                    weather.setBackgroundResource(R.drawable.ic_bluenight_weather);
+                    settings.setBackgroundResource(R.drawable.ic_bluenight_option);
+                    elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
+                    water.setBackgroundResource(R.drawable.ic_bluenight_tap);
+                    aquarium.setBackgroundResource(R.drawable.ic_bluenight_aquarium);
+                    greenHouse.setBackgroundResource(R.drawable.ic_bluenight_green_house);
+                    graphics.setBackgroundResource(R.drawable.ic__bluenight_graphic_option);
+                    menu.setBackgroundResource(R.drawable.ic_bluenight_menu);
+                }
+
+                else if (thmNum.equals("2"))
+                {
+
+                    themeNumber = 2;
+
+                    gas.setBackgroundResource(R.drawable.ic_alien_gas);
+                    main.setBackgroundResource(R.drawable.backgroundalien);
+                    gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
+                    weather.setBackgroundResource(R.drawable.ic_alien_weather);
+                    settings.setBackgroundResource(R.drawable.ic_alien_optons);
+                    elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+                    water.setBackgroundResource(R.drawable.ic_alien_tap);
+                    aquarium.setBackgroundResource(R.drawable.ic_alien_aquarium);
+                    greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
+                    graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
+                    menu.setBackgroundResource(R.drawable.ic_alien_menu);
+                }
+
+                else if (thmNum.equals("3"))
+                {
+
+                    themeNumber = 3;
+
+                    gas.setBackgroundResource(R.drawable.ic_wood_gas);
+                    main.setBackgroundResource(R.drawable.backgroundwood);
+                    gardenLight.setBackgroundResource(R.drawable.ic_wood_gardening);
+                    weather.setBackgroundResource(R.drawable.ic_wood_weather);
+                    settings.setBackgroundResource(R.drawable.ic_wood_option);
+                    elec.setBackgroundResource(R.drawable.ic_wood_electricity);
+                    water.setBackgroundResource(R.drawable.ic_wood_tap);
+                    aquarium.setBackgroundResource(R.drawable.ic_wood_aquarium);
+                    greenHouse.setBackgroundResource(R.drawable.ic_wood_green_house);
+                    graphics.setBackgroundResource(R.drawable.ic_wood_graphic_option);
+                    menu.setBackgroundResource(R.drawable.ic_wood_menu);
+                }
+
+                else if (thmNum.equals("4"))
+                {
+
+                    themeNumber = 4;
+
+                    gas.setBackgroundResource(R.drawable.ic_alien_gas);
+                    main.setBackgroundResource(R.drawable.backgroundspace);
+                    gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
+                    weather.setBackgroundResource(R.drawable.ic_alien_weather);
+                    settings.setBackgroundResource(R.drawable.ic_alien_optons);
+                    elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+                    water.setBackgroundResource(R.drawable.ic_alien_tap);
+                    aquarium.setBackgroundResource(R.drawable.ic_alien_aquarium);
+                    greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
+                    graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
+                    menu.setBackgroundResource(R.drawable.ic_alien_menu);
+                }
+
+                else
+                {
+                    themeNumber = 0;
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
+                Object txtObj = map.get("txt");
+                String txtNum =  String.valueOf(txtObj);
+                if(txtNum.equals("0"))
+                {
+                    textNo = 0;
+                }
+
+                else if (txtNum.equals("1"))
+                {
+                    textNo = 1;
+                }
+
+                else if (txtNum.equals("2"))
+                {
+                    textNo = 2;
+                }
+
+                else if (txtNum.equals("3"))
+                {
+                    textNo = 3;
+                }
+
+                else if (txtNum.equals("4"))
+                {
+                    textNo = 4;
+                }
+
+                else if (txtNum.equals("5"))
+                {
+                    textNo = 5;
+                }
+
+                else if (txtNum.equals("6"))
+                {
+                    textNo = 6;
+                }
+
+                else if (txtNum.equals("7"))
+                {
+                    textNo = 7;
+                }
+
+                else if (txtNum.equals("8"))
+                {
+                    textNo = 8;
+                }
+
+                else
+                {
+                    textNo = 0;
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        gas_control.setChecked(gasCheck);
+        gardenLight_control.setChecked(gardenCheck);
+        electricity_control.setChecked(electricityCheck);
+        water_control.setChecked(waterCheck);
 
         //theme choosing
         if(themeNumber == 1){

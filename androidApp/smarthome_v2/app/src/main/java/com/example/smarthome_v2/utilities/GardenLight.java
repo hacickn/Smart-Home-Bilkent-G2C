@@ -11,6 +11,13 @@ import android.widget.ToggleButton;
 
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.HashMap;
+
 import pl.droidsonroids.gif.GifImageView;
 
 public class GardenLight extends AppCompatActivity {
@@ -22,6 +29,8 @@ public class GardenLight extends AppCompatActivity {
     ImageButton exit;
     Intent thm;
     private GifImageView gardenLightGIF;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,7 @@ public class GardenLight extends AppCompatActivity {
         gardenLight = findViewById(R.id.image_garden_light);
         exit = findViewById(R.id.exit_garden);
         gardenLightGIF = findViewById(R.id.gardenlightGIF);
+        mAuth = FirebaseAuth.getInstance();
 
 
 
@@ -96,6 +106,22 @@ public class GardenLight extends AppCompatActivity {
                     if(themeNumber == 1) {
                        gardenLightGIF.setImageResource(R.drawable.bluenight_electricity_first);
                     }
+                }
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+
+                if( gardenLightController.isChecked() )
+                {
+                    userMap.put("gardenLight", "on");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gardening,false).show();
+                }
+                else
+                {
+                    userMap.put("gardenLight", "off");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gardening,false).show();
                 }
             }
         });

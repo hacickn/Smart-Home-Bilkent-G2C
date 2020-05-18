@@ -92,6 +92,11 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("gardenLight", "off");
                     userMap.put("greenHouse", "off");
                     userMap.put("electricity", "off");
+                    userMap.put("theme", "0");
+                    userMap.put("txt", "0");
+                    userMap.put("day", "-");
+                    userMap.put("month", "-");
+                    userMap.put("year", "-");
 
                     mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

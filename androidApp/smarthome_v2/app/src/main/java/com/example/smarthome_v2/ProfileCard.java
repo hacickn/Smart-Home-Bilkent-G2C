@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 public class ProfileCard extends AppCompatActivity {
     private static final String TAG = "ProfileCard";
@@ -71,6 +72,30 @@ public class ProfileCard extends AppCompatActivity {
 
                 settingsName.setText(user_name);
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
+                Object yearObj = map.get("year");
+                String newYear  =   String.valueOf(yearObj);
+
+                Object dayObj = map.get("day");
+                String newDay  =   String.valueOf(dayObj);
+
+                Object monthObj = map.get("month");
+                String newMonth  =   String.valueOf(monthObj);
+
+                String date = newDay + "/" + newMonth + "/" + newYear;
+
+                mDisplayDate.setText(date);
             }
 
             @Override
@@ -147,6 +172,14 @@ public class ProfileCard extends AppCompatActivity {
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("year", year + "");
+                userMap.put("day", day + "");
+                userMap.put("month", month + "");
+                mDatabase.updateChildren(userMap);
+
                 DatePickerDialog dialog = new DatePickerDialog(ProfileCard.this,android.R.style.Theme_Holo_Light_Dialog_MinWidth,mDateSetListener,year,month,day);
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -159,6 +192,7 @@ public class ProfileCard extends AppCompatActivity {
                 month = month + 1;
                 String date = day + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
+
             }
         };
 
