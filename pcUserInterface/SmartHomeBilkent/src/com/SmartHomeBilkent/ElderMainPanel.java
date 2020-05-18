@@ -855,6 +855,9 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Line notificationSettingsElderLine;
 
+   @FXML
+   private Label aquariumSettingsWarningLabel;
+
    private boolean isArduinoConnect;
 
    private Home home;
@@ -873,6 +876,7 @@ public class ElderMainPanel implements Initializable {
    private AudioClip audioClip;
    private AudioClip audioClipEmergency;
    private String volume;
+   private Label aquariumSettingLabel;
 
    //constructors
    //public ElderMainPanel()
@@ -945,7 +949,7 @@ public class ElderMainPanel implements Initializable {
     * @param event
     */
    @FXML
-   void actionPerformed( ActionEvent event ) {
+   void actionPerformed( ActionEvent event ) throws SQLException {
       // settings elder panel -MS 23.04.2020-
       if( event.getSource( ) == settingsBackButtonElder ) {
          settingsElderPanel.setVisible( false );
@@ -1076,15 +1080,6 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane2.setVisible( false );
          setMainMenuInvisible( false );
       }
-      // aquariumSaveButton -MS 03.05.2020-
-      else if( event.getSource( ) == aquariumSaveButton ) {
-         //**
-         aquariumSettingsPanel.setDisable( true );
-         aquariumSettingsPanel.setVisible( false );
-         houseMenuElderPane2.setVisible( true );
-         houseMenuElderPane2.setDisable( false );
-      }
-      // aquariumSaveButton END -MS 03.05.2020-
       // aquariumBackButton -MS 03.05.2020-
       else if( event.getSource( ) == aquariumMenuBackButtonElder ) {
          //**
@@ -1287,6 +1282,282 @@ public class ElderMainPanel implements Initializable {
          notificationSettingsElderPanel.setVisible( false );
          applicationElderPanel.setVisible( true );
          applicationElderPanel.setDisable( false );
+      }
+
+      // connectionElderPanelBackButtonElder -MS 11.05.2020-
+      else if ( event.getSource() == connectionElderPanelBackButtonElder )
+      {
+         connectionSettingsElderPanel.setDisable( true );
+         connectionSettingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+      else if( event.getSource() == portConnectionButtonElder )
+      {
+         arduino = new Arduino( portChooserElder.getValue(), 9600 );
+
+         if( arduino.openConnection() ) {
+            isArduinoConnect = true;
+            portConnectionButtonElder.setDisable( true );
+            home = new Home( arduino );
+            home.adjustCollective( "manual_on#:" );
+
+            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
+               @Override
+               public int getListeningEvents() {
+                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
+               }
+
+               @Override
+               public void serialEvent( SerialPortEvent serialPortEvent ) {
+                  if( serialPortEvent.getEventType() == SerialPort.LISTENING_EVENT_DATA_AVAILABLE ) {
+                     home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,
+                             0, 0 );
+                     try {
+                        Thread.sleep( 200 );
+                     } catch( InterruptedException e ) {
+                        e.printStackTrace();
+                     }
+                     StringBuilder out = new StringBuilder();
+                     Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
+
+                     try {
+                        while( in.hasNextLine() )
+                           out.append( in.nextLine() );
+                     } catch( Exception e ) {
+                        e.printStackTrace();
+                     }
+                     out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
+                     out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
+
+
+                     if( out.length() > 0 ) {
+                        System.out.println( out );
+
+                        if( out.toString().equals( "FireButon" ) ) {
+                           if( fireButtonVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( fireButtonSoundToggle.isSelected()
+                                   && audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "SmokeAlarm" ) ) {
+                           if( smokeSensorVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( smokeSensorSoundToggle.isSelected()
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "GasAlarm" ) ) {
+                           if( gasSensorVisualToggle.isSelected()
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( gasSensorSoundToggle.isSelected()
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Fire" ) ) {
+                           if( ( gasSensorVisualToggle.isSelected()
+                                   || fireButtonVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( gasSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smokealarm" ) ) {
+                           if( ( gasSensorVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( gasSensorSoundToggle.isSelected()
+                                   || smokeSensorSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smoke" ) ) {
+                           if( ( fireButtonVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected() )
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( smokeSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected() )
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+
+                        }else if( out.toString().equals( "Gas+Smoke+Fire" ) ) {
+                           if( ( fireButtonVisualToggle.isSelected()
+                                   || smokeSensorVisualToggle.isSelected()
+                                   || gasSensorVisualToggle.isSelected())
+                                   && fillTransition.getCurrentRate() == 0.0d ) {
+                              fillTransition.play();
+                              rectangle.setVisible( true );
+                           }
+
+                           if( ( smokeSensorSoundToggle.isSelected()
+                                   || fireButtonSoundToggle.isSelected()
+                                   || gasSensorSoundToggle.isSelected())
+                                   && !audioClipEmergency.isPlaying() ){
+                              audioClipEmergency.play();
+                           }
+                        }
+                     }
+                  }
+               }
+            } );
+         } else {
+            portChooserElder.setValue( "" );
+         }
+      }
+      else if( event.getSource() == externalSirenToggle )
+      {
+         if( isArduinoConnect )
+            home.getSiren().open( externalSirenToggle.isSelected() );
+
+      }
+      else if( event.getSource() == internalSirenToggle )
+      {
+         if( isArduinoConnect )
+            home.getSiren().buzzerOpen( internalSirenToggle.isSelected() );
+
+      }
+      else if( event.getSource() == fireButtonVisualToggle )
+      {
+         if( fireButtonVisualToggle.isSelected() )
+            sensors[ 0 ] = "O" + sensors[ 0 ].charAt( 1 );
+         else
+            sensors[ 0 ] = "C" + sensors[ 0 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
+      }
+      else if( event.getSource() == gasSensorVisualToggle )
+      {
+         if( gasSensorVisualToggle.isSelected() )
+            sensors[ 1 ] = "O" + sensors[ 1 ].charAt( 1 );
+         else
+            sensors[ 1 ] = "C" + sensors[ 1 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
+      }
+      else if( event.getSource() == smokeSensorVisualToggle )
+      {
+         if( smokeSensorVisualToggle.isSelected() )
+            sensors[ 2 ] = "O" + sensors[ 2 ].charAt( 1 );
+         else
+            sensors[ 2 ] = "C" + sensors[ 2 ].charAt( 1 );
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
+      }
+      else if( event.getSource() == fireButtonSoundToggle )
+      {
+         if( fireButtonSoundToggle.isSelected() )
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "O";
+         else
+            sensors[ 0 ] = sensors[ 0 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
+      }
+      else if( event.getSource() == gasSensorSoundToggle )
+      {
+         if( gasSensorSoundToggle.isSelected() )
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "O";
+         else
+            sensors[ 1 ] = sensors[ 1 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+
+      }
+      else if( event.getSource() == smokeSensorSoundToggle )
+      {
+         if( smokeSensorSoundToggle.isSelected() )
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "O";
+         else
+            sensors[ 2 ] = sensors[ 2 ].charAt( 0 ) + "C";
+         CommonSettingData.getInstance().updateSensors( commonSetting, sensors );
+      }
+      else if( event.getSource() == aquariumSaveButton ) {
+
+         if( feedingStartTimeTimePicker.getValue() == null
+                 || weeklyWaterExchangeDayAndTimeTimePicker.getValue() == null
+                 || dailyAirEngineRunTimeandStartTimeTimePicker.getValue() == null
+                 || weeklyWaterExchangeDayAndTimeChoice.getValue() == null ) {
+            aquariumSettingsWarningLabel.setText( bundle.getString( "normalInfoWarningLang" ) );
+            aquariumSettingsWarningLabel.setVisible( true );
+         } else {
+            aquariumSettingsWarningLabel.setVisible( false );
+
+            StringBuilder message;
+            message = new StringBuilder( "aquarium#" );
+
+            if( feedingStartTimeTimePicker.getValue().getHour() < 10 )
+               message.append( "0" ).append( feedingStartTimeTimePicker.getValue().getHour() );
+            else
+               message.append( feedingStartTimeTimePicker.getValue().getHour() );
+
+            if( feedingStartTimeTimePicker.getValue().getMinute() < 10 )
+               message.append( "0" ).append( feedingStartTimeTimePicker.getValue().getMinute() ).append( "00" );
+            else
+               message.append( feedingStartTimeTimePicker.getValue().getMinute() ).append( "00" );
+
+            if( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getHour() < 10 )
+               message.append( "0" ).append( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getHour() );
+            else
+               message.append( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getHour() );
+
+            if( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getMinute() < 10 )
+               message.append( "0" ).append( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getMinute() ).append( "00" );
+            else
+               message.append( weeklyWaterExchangeDayAndTimeTimePicker.getValue().getMinute() ).append( "00" );
+
+            message.append( "0" ).append( weeklyWaterExchangeDayAndTimeChoice.getValue().charAt( 0 ) );
+
+            if( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getHour() < 10 )
+               message.append( "0" ).append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getHour() );
+            else
+               message.append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getHour() );
+
+            if( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() < 10 )
+               message.append( "0" ).append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() ).append( "00" );
+            else
+               message.append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() ).append( "00" );
+
+            if( dailyAirEngineRunTimeandStartTimeSlider.getValue() < 10 )
+               message.append( "0" ).append( ( int ) dailyAirEngineRunTimeandStartTimeSlider.getValue() ).append( ":" );
+            else
+               message.append( ( int ) dailyAirEngineRunTimeandStartTimeSlider.getValue() ).append( ":" );
+
+            if( isArduinoConnect )
+               home.getAquarium().setAquariumSettings( message.toString() );
+
+            CommonSettingData.getInstance().updateAquariumSettings( commonSetting, message.toString().substring( 9, 31 ) );
+            CommonSettingData.getInstance().updateSelectedFishes( commonSetting, speciesOfFishCheckComboBox.getItems() );
+         }
       }
    }
 
@@ -2393,161 +2664,6 @@ public class ElderMainPanel implements Initializable {
 
    public void connectionPanelOperations( ActionEvent event )
    {
-      // connectionElderPanelBackButtonElder -MS 11.05.2020-
-      if ( event.getSource() == connectionElderPanelBackButtonElder )
-      {
-      connectionSettingsElderPanel.setDisable( true );
-      connectionSettingsElderPanel.setVisible( false );
-      applicationElderPanel.setVisible( true );
-      applicationElderPanel.setDisable( false );
-      }
-      else if( event.getSource() == portConnectionButtonElder )
-      {
-         arduino = new Arduino( portChooserElder.getValue(), 9600 );
-
-         if( arduino.openConnection() ) {
-            isArduinoConnect = true;
-            portConnectionButtonElder.setDisable( true );
-            home = new Home( arduino );
-            home.adjustCollective( "manual_on#:" );
-
-            home.getArduino().getSerialPort().addDataListener( new SerialPortDataListener() {
-               @Override
-               public int getListeningEvents() {
-                  return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
-               }
-
-               @Override
-               public void serialEvent( SerialPortEvent serialPortEvent ) {
-                  if( serialPortEvent.getEventType() == SerialPort.LISTENING_EVENT_DATA_AVAILABLE ) {
-                     home.getArduino().getSerialPort().setComPortTimeouts( SerialPort.TIMEOUT_NONBLOCKING,
-                             0, 0 );
-                     try {
-                        Thread.sleep( 200 );
-                     } catch( InterruptedException e ) {
-                        e.printStackTrace();
-                     }
-                     StringBuilder out = new StringBuilder();
-                     Scanner in = new Scanner( home.getArduino().getSerialPort().getInputStream() );
-
-                     try {
-                        while( in.hasNextLine() )
-                           out.append( in.nextLine() );
-                     } catch( Exception e ) {
-                        e.printStackTrace();
-                     }
-                     out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
-                     out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
-
-
-                     if( out.length() > 0 ) {
-                        System.out.println( out );
-
-                        if( out.toString().equals( "FireButon" ) ) {
-                           if( fireButtonVisualToggle.isSelected()
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( fireButtonSoundToggle.isSelected()
-                                   && audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "SmokeAlarm" ) ) {
-                           if( smokeSensorVisualToggle.isSelected()
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( smokeSensorSoundToggle.isSelected()
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "GasAlarm" ) ) {
-                           if( gasSensorVisualToggle.isSelected()
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( gasSensorSoundToggle.isSelected()
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "Gas+Fire" ) ) {
-                           if( ( gasSensorVisualToggle.isSelected()
-                                   || fireButtonVisualToggle.isSelected() )
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( ( gasSensorSoundToggle.isSelected()
-                                   || fireButtonSoundToggle.isSelected() )
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "Gas+Smokealarm" ) ) {
-                           if( ( gasSensorVisualToggle.isSelected()
-                                   || smokeSensorVisualToggle.isSelected() )
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( ( gasSensorSoundToggle.isSelected()
-                                   || smokeSensorSoundToggle.isSelected() )
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "Gas+Smoke" ) ) {
-                           if( ( fireButtonVisualToggle.isSelected()
-                                   || smokeSensorVisualToggle.isSelected() )
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( ( smokeSensorSoundToggle.isSelected()
-                                   || fireButtonSoundToggle.isSelected() )
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-
-                        }else if( out.toString().equals( "Gas+Smoke+Fire" ) ) {
-                           if( ( fireButtonVisualToggle.isSelected()
-                                   || smokeSensorVisualToggle.isSelected()
-                                   || gasSensorVisualToggle.isSelected())
-                                   && fillTransition.getCurrentRate() == 0.0d ) {
-                              fillTransition.play();
-                              rectangle.setVisible( true );
-                           }
-
-                           if( ( smokeSensorSoundToggle.isSelected()
-                                   || fireButtonSoundToggle.isSelected()
-                                   || gasSensorSoundToggle.isSelected())
-                                   && !audioClipEmergency.isPlaying() ){
-                              audioClipEmergency.play();
-                           }
-                        }
-                     }
-                  }
-               }
-            } );
-         } else {
-            portChooserElder.setValue( "" );
-         }
-
-      }
-
-
 
    }
 

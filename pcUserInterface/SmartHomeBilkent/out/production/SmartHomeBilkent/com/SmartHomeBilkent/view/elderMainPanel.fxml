@@ -726,13 +726,18 @@
                     </font>
                 </Label>
                 <JFXTimePicker fx:id="dailyAirEngineRunTimeandStartTimeTimePicker" layoutX="629.0" layoutY="399.0" />
-                <JFXSlider fx:id="dailyAirEngineRunTimeandStartTimeSlider" layoutX="473.0" layoutY="405.0" showTickLabels="true" showTickMarks="true" />
+                <JFXSlider fx:id="dailyAirEngineRunTimeandStartTimeSlider" layoutX="473.0" layoutY="405.0" max="24.0" showTickLabels="true" showTickMarks="true" />
                 <JFXButton fx:id="aquariumSaveButton" layoutX="340.0" layoutY="438.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="120.0" prefWidth="120.0" />
                 <Label fx:id="aquariumSaveButtonLabel" alignment="CENTER" disable="true" layoutX="350.0" layoutY="558.0" prefHeight="34.0" prefWidth="101.0" text="SAVE" visible="false">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                     </font>
                 </Label>
+            <Label fx:id="aquariumSettingsWarningLabel" alignment="CENTER" layoutX="548.0" layoutY="469.0" prefHeight="58.0" prefWidth="200.0" text="Warning" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
         <Pane fx:id="languageSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
@@ -896,7 +901,7 @@
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="connectionElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#connectionPanelOperations" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+                <JFXButton fx:id="connectionElderPanelBackButtonElder" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
                     </font>
@@ -913,7 +918,7 @@
                         <Image url="@../styleSheets/imagesElder/usb2.png" />
                     </image>
                 </ImageView>
-                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#connectionPanelOperations" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#actionPerformed" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
                 <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="97.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../styleSheets/imagesElder/communication2.png" />
@@ -939,9 +944,9 @@
                   <Font name="Microsoft JhengHei Light" size="18.0" />
                </font>
             </Label>
-            <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="363.0" layoutY="182.0" text=" " />
-            <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="363.0" layoutY="324.0" text=" " />
-            <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="363.0" layoutY="467.0" text=" " />
+            <JFXToggleButton fx:id="fireButtonVisualToggle" layoutX="363.0" layoutY="182.0" onAction="#actionPerformed" text=" " />
+            <JFXToggleButton fx:id="gasSensorVisualToggle" layoutX="363.0" layoutY="324.0" onAction="#actionPerformed" text=" " />
+            <JFXToggleButton fx:id="smokeSensorVisualToggle" layoutX="363.0" layoutY="467.0" onAction="#actionPerformed" text=" " />
             <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="184.0" prefHeight="54.0" prefWidth="251.0" text="Fire Sensor">
                <font>
                   <Font name="Microsoft JhengHei Light" size="36.0" />
@@ -968,9 +973,9 @@
                </font>
             </Label>
             <Line endX="-6.70709228515625" endY="-142.0" layoutX="528.0" layoutY="275.0" startX="-6.70709228515625" startY="325.0" />
-            <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="626.0" layoutY="182.0" text=" " />
-            <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="626.0" layoutY="324.0" text=" " />
-            <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="627.0" layoutY="467.0" text=" " />
+            <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="626.0" layoutY="182.0" onAction="#actionPerformed" text=" " />
+            <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="626.0" layoutY="324.0" onAction="#actionPerformed" text=" " />
+            <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="627.0" layoutY="467.0" onAction="#actionPerformed" text=" " />
          </children>
       </Pane>
     </children>
