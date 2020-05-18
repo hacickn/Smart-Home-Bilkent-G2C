@@ -32,7 +32,7 @@
         <Line endX="800.0000610351562" endY="130.49998474121094" startY="130.5" />
         <Pane fx:id="mainElderPanelMenu" onDragDetected="#toUserElderChanger" prefHeight="600.0" prefWidth="800.0">
             <children>
-                <Label fx:id="dayMessage" layoutX="26.0" layoutY="22.0" prefHeight="87.0" prefWidth="452.0" text="Good morning, Metehan!" textFill="#ff5d00">
+                <Label fx:id="dayMessage" alignment="CENTER" layoutX="26.0" layoutY="22.0" prefHeight="87.0" prefWidth="452.0" text="Good morning, Metehan!" textFill="#ff5d00">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="36.0" />
                     </font>
@@ -251,7 +251,7 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="houseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the house settings." textFill="#ff3e30">
+                <Label fx:id="houseMenuFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the house settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -288,7 +288,7 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="houseMenuFirstLabelElder1" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
+                <Label fx:id="houseMenuFirstLabelElder1" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the general settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -326,7 +326,7 @@
                     </font>
                 </Label>
                 <Line fx:id="connectionSettingsElderLine" disable="true" endX="189.99998474121094" endY="371.0" opacity="0.99" startX="40.00001525878906" startY="371.0" visible="false" />
-                <JFXButton fx:id="emergencySettingsElderButton" layoutX="610.0" layoutY="270.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
+                <JFXButton fx:id="emergencySettingsElderButton" layoutX="610.0" layoutY="270.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="150.0" prefWidth="150.0" text=" " />
                 <Label fx:id="emergencySettingsElderLabel" alignment="CENTER" disable="true" layoutX="610.0" layoutY="371.0" opacity="0.8" prefHeight="51.0" prefWidth="151.0" text="Emergency" textFill="WHITE" visible="false">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
@@ -543,8 +543,8 @@
                             </image>
                         </ImageView>
                         <JFXButton fx:id="aquariumPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" opacity="0.99" prefHeight="58.0" prefWidth="58.0" />
-                        <JFXProgressBar fx:id="aquariumPanelElderProgressBar1" disable="true" layoutX="219.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
-                        <JFXProgressBar fx:id="aquariumPanelElderProgressBar2" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="aquariumPanelElderProgressBar1" disable="true" layoutX="211.0" layoutY="53.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                        <JFXProgressBar fx:id="aquariumPanelElderProgressBar2" disable="true" layoutX="26.0" layoutY="53.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
                   <JFXButton fx:id="menuAquariumFeedButton" layoutX="116.0" layoutY="80.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="60.0" prefWidth="60.0" />
                   <ImageView fx:id="menuAquariumFeedButtonActive" disable="true" fitHeight="60.0" fitWidth="60.0" layoutX="116.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
@@ -675,7 +675,7 @@
                         <Font name="Microsoft JhengHei Light" size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="houseMenuFirstLabelElder2" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the house settings." textFill="#ff3e30">
+                <Label fx:id="houseMenuFirstLabelElder2" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="509.0" text="You are in the house settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -748,7 +748,7 @@
         </Pane>
         <Pane fx:id="languageSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="languagePanelFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in the language settings." textFill="#ff3e30">
+                <Label fx:id="languagePanelFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in the language settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -789,7 +789,7 @@
         </Pane>
         <Pane fx:id="electiricitySettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="electiricityMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
+                <Label fx:id="electiricityMenuFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -817,7 +817,7 @@
         </Pane>
         <Pane fx:id="gasSettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="gasMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
+                <Label fx:id="gasMenuFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in electiricity settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -845,7 +845,7 @@
         </Pane>
         <Pane fx:id="greenhouseSettingsPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="greenhouseMenuFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in greenhouse settings." textFill="#ff3e30">
+                <Label fx:id="greenhouseMenuFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in greenhouse settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -902,7 +902,7 @@
         </Pane>
         <Pane fx:id="connectionSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
             <children>
-                <Label fx:id="connectionPanelFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in connection settings." textFill="#ff3e30">
+                <Label fx:id="connectionPanelFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in connection settings." textFill="#ff3e30">
                     <font>
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
@@ -935,7 +935,7 @@
         </Pane>
       <Pane fx:id="notificationSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
          <children>
-            <Label fx:id="notificationPanelFirstLabelElder" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in notification settings." textFill="#ff3e30">
+            <Label fx:id="notificationPanelFirstLabelElder" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in notification settings." textFill="#ff3e30">
                <font>
                   <Font name="Microsoft YaHei Light" size="36.0" />
                </font>
@@ -1022,6 +1022,32 @@
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="206.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../styleSheets/imagesElder/clock4.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="elderEmergencyPane" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="emergencyFirstLabel" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in emergency settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="30.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="emergencyBackButton" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="emergencyBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="15.0" />
+               </font>
+            </Label>
+            <JFXToggleButton fx:id="internalSirenToggle" layoutX="105.0" layoutY="343.0" onAction="#actionPerformed" prefWidth="178.0" text="Internal Siren" />
+            <JFXToggleButton fx:id="externalSirenToggle" layoutX="543.0" layoutY="343.0" onAction="#actionPerformed" text="External Siren" />
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../styleSheets/images/siren5.png" />
                </image>
             </ImageView>
          </children>

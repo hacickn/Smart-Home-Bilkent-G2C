@@ -915,6 +915,17 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Label auditoryWarningLabel;
 
+   @FXML
+   private Pane elderEmergencyPane;
+
+   @FXML
+   private Label emergencyFirstLabel;
+
+   @FXML
+   private JFXButton emergencyBackButton;
+
+   @FXML
+   private Label emergencyBackButtonSubLabel;
 
 
    private boolean isArduinoConnect;
@@ -1722,6 +1733,28 @@ public class ElderMainPanel implements Initializable {
             }
          } ).start();
       }
+      else if( event.getSource() == emergencySettingsElderButton )
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         elderEmergencyPane.setVisible( true );
+         elderEmergencyPane.setDisable( false );
+      }
+      else if( event.getSource() == emergencyBackButton )
+      {
+         elderEmergencyPane.setDisable( true );
+         elderEmergencyPane.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+      else if( event.getSource() == externalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren().open( externalSirenToggle.isSelected() );
+
+      } else if( event.getSource() == internalSirenToggle ) {
+         if( isArduinoConnect )
+            home.getSiren( ).buzzerOpen( internalSirenToggle.isSelected( ) );
+      }
    }
 
    //2
@@ -2280,6 +2313,10 @@ public class ElderMainPanel implements Initializable {
       {
          menuAquariumFeedButtonActive.setVisible( true );
       }
+      else if( event.getSource() == emergencyBackButton )
+      {
+         emergencyBackButtonSubLabel.setVisible( true );
+      }
    }
    // buttonElderActivate END -MS 05.05.2020-
 
@@ -2659,6 +2696,10 @@ public class ElderMainPanel implements Initializable {
       {
          menuAquariumFeedButtonActive.setVisible( false );
       }
+      else if( event.getSource() == emergencyBackButton )
+      {
+         emergencyBackButtonSubLabel.setVisible( false );
+      }
    }
    // buttonElderDeactivate END -MS 05.05.2020-
 
@@ -2782,7 +2823,12 @@ public class ElderMainPanel implements Initializable {
          notificationSettingsElderLabel.setText( bundle.getString( "notificationLang" ) );
          portChooserElder.setPromptText( bundle.getString( "portChooserLang" ) );
          timeConfigurationBackButtonSubLabel.setText( bundle.getString( "applicationBackButtonSubLabelLang" ) );
-         dateTimeSaveButtonSubLabel.setText( "saveLang" );
+         dateTimeSaveButtonSubLabel.setText( bundle.getString( "saveLang" ) );
+         emergencyFirstLabel.setText( bundle.getString( "emergencyFirstLabelLang" ));
+         emergencyBackButton.setText( bundle.getString( "getBackButtonLang" ));
+         emergencyBackButtonSubLabel.setText( bundle.getString( "applicationBackButtonSubLabelLang" ));
+         internalSirenToggle.setText( bundle.getString( "internalSirenLang" ) );
+         externalSirenToggle.setText( bundle.getString( "externalSirenLang" ) );
 
       } catch( Exception e ) {
          e.printStackTrace();
