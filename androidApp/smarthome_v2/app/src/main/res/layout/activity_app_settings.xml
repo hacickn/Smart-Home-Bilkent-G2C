@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".settings.AppSettings"
-    android:background="#86292727">
+    android:background="@drawable/gradient">
 
     <TextView
         android:id="@+id/motor_hour"
@@ -17,6 +17,7 @@
         android:layout_marginEnd="156dp"
         android:layout_marginRight="156dp"
         android:text="App Settings"
+        android:fontFamily="@font/blackhans"
         android:textColor="@color/orange_one"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -28,27 +29,33 @@
         android:id="@+id/Emergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="237dp"
         android:background="@drawable/alarm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/Blt"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="53dp"
         android:background="@drawable/ic_connection"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Noti"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Emergency" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Emergency" />
 
     <ImageButton
         android:id="@+id/Noti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="300dp"
         android:background="@drawable/ic_musical_instrument"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Blt" />
 
     <ImageButton
         android:id="@+id/app_settings_helperbutton"
@@ -59,5 +66,47 @@
         android:background="@drawable/ic_helpbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="208dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Alarm"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Emergency"
+        app:layout_constraintTop_toBottomOf="@+id/motor_hour" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Connection"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Blt"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Notification"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Noti"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
