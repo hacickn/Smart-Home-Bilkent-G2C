@@ -171,11 +171,11 @@
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
 }
-#homeSettingsElderButton
+#timeConfigurationElderButton
 {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/settingsS2.png");
+    -fx-background-image: url("imagesElder/bulkChange5.png");
     -fx-background-size: 250, 250;
 }
 #homeSettingsElderLabel
@@ -414,4 +414,10 @@
     -fx-border-radius: 5;
     -fx-background-image: url("imagesElder/arrow4.png");
     -fx-background-size: 52, 52;
+}
+#dateTimeSaveButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("imagesElder/floppy-disk2.png");
+    -fx-background-size: 100, 100;
 }

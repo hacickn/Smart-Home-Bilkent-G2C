@@ -2,10 +2,12 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import com.jfoenix.controls.JFXToggleButton?>
@@ -256,6 +258,7 @@
                 <JFXButton fx:id="nextPageHouseSettings" layoutX="729.0" layoutY="335.0" onAction="#actionPerformed" prefHeight="52.0" prefWidth="52.0" />
                 <Label layoutX="9.0" layoutY="571.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 25;" text=" " />
                 <Label layoutX="50.0" layoutY="578.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 25;" text=" " />
+            <JFXButton fx:id="houseMenuElderBulkChange" disable="true" layoutX="33.0" layoutY="336.0" prefHeight="52.0" prefWidth="52.0" visible="false" />
             </children>
         </Pane>
         <Pane fx:id="settingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
@@ -267,7 +270,7 @@
                     </font>
                 </Label>
                 <Line fx:id="applicationSettingsElderLine" disable="true" endX="220.0" endY="149.0" layoutX="130.0" layoutY="259.0" opacity="0.99" startX="-30.000015258789062" startY="149.0" visible="false" />
-                <JFXButton fx:id="homeSettingsElderButton" layoutX="450.0" layoutY="228.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="250.0" prefWidth="250.0" text=" " />
+                <JFXButton fx:id="timeConfigurationElderButton" layoutX="450.0" layoutY="228.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="250.0" prefWidth="250.0" text=" " />
                 <Label fx:id="homeSettingsElderLabel" alignment="CENTER" disable="true" layoutX="450.0" layoutY="408.0" opacity="0.9" prefHeight="71.0" prefWidth="250.0" text="House" textFill="WHITE" visible="false">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="36.0" />
@@ -627,14 +630,14 @@
                 </Label>
                 <Line fx:id="gasLineElder" disable="true" endX="105.00006103515625" layoutX="575.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" startX="-95.0" visible="false" />
                 <JFXButton fx:id="doorButtonElder" layoutX="480.0" layoutY="373.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
-                <Pane fx:id="doorPanelElder" disable="true" layoutX="435.0" layoutY="362.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #179C52; -fx-background-radius: 5;" visible="false">
+                <Pane fx:id="doorPanelElder" layoutX="435.0" layoutY="362.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #179C52; -fx-background-radius: 5;">
                     <children>
                         <Label fx:id="doorPanelElderLabel" alignment="CENTER" layoutX="34.0" opacity="0.99" prefHeight="41.0" prefWidth="224.0" text="Door" textFill="WHITE">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="24.0" />
                             </font>
                         </Label>
-                        <JFXToggleButton fx:id="doorPanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
+                        <JFXToggleButton fx:id="doorPanelElderSwitch" disable="true" layoutX="34.0" layoutY="21.0" opacity="0.99" text=" " visible="false" />
                         <Label fx:id="doorPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
@@ -651,6 +654,8 @@
                                 <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
+                  <JFXButton fx:id="doorButton" layoutX="61.0" layoutY="41.0" prefHeight="41.0" prefWidth="171.0" style="-fx-border-color: #000000;" />
+                  <JFXSpinner fx:id="doorSpinner" layoutX="21.0" layoutY="164.0" visible="false" />
                     </children>
                 </Pane>
                 <Label fx:id="doorLabelElder" alignment="CENTER" disable="true" layoutX="480.0" layoutY="518.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Doors" textFill="WHITE" visible="false">
@@ -976,6 +981,48 @@
             <JFXToggleButton fx:id="fireButtonSoundToggle" layoutX="626.0" layoutY="182.0" onAction="#actionPerformed" text=" " />
             <JFXToggleButton fx:id="gasSensorSoundToggle" layoutX="626.0" layoutY="324.0" onAction="#actionPerformed" text=" " />
             <JFXToggleButton fx:id="smokeSensorSoundToggle" layoutX="627.0" layoutY="467.0" onAction="#actionPerformed" text=" " />
+         </children>
+      </Pane>
+      <Pane fx:id="timeConfigurationPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label fx:id="timeConfigurationFirstLabel" alignment="CENTER" layoutX="14.0" layoutY="36.0" prefHeight="64.0" prefWidth="540.0" text="You are in time configuration  settings." textFill="#ff3e30">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="30.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="timeConfigurationBackButton" alignment="CENTER" layoutX="554.0" layoutY="36.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="64.0" prefWidth="201.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 15;" text="BACK">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="timeConfigurationBackButtonSubLabel" alignment="CENTER" disable="true" layoutX="543.0" layoutY="91.0" opacity="0.9" prefHeight="41.0" prefWidth="224.0" text="Get back to the menu" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="18.0" />
+               </font>
+            </Label>
+            <JFXTimePicker fx:id="menuTimePicker" layoutX="275.0" layoutY="363.0" prefHeight="50.0" prefWidth="250.0" />
+            <JFXDatePicker fx:id="menuDatePicker" layoutX="275.0" layoutY="242.0" prefHeight="50.0" prefWidth="250.0" />
+            <JFXButton fx:id="dateTimeSaveButton" layoutX="350.0" layoutY="448.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="timeConfigurationPaneWarningLabel" alignment="CENTER" layoutX="192.0" layoutY="143.0" prefHeight="64.0" prefWidth="416.0" text="Label" visible="false">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateTimeSaveButtonSubLabel" alignment="CENTER" layoutX="344.0" layoutY="548.0" prefHeight="34.0" prefWidth="112.0" text="SAVE" visible="false">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="206.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../styleSheets/imagesElder/calender4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="206.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../styleSheets/imagesElder/clock4.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
     </children>

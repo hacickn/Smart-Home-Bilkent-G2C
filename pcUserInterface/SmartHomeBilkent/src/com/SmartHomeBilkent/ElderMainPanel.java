@@ -255,7 +255,7 @@ public class ElderMainPanel implements Initializable {
    private Line applicationSettingsElderLine;
 
    @FXML
-   private JFXButton homeSettingsElderButton;
+   private JFXButton timeConfigurationElderButton;
 
    @FXML
    private Label homeSettingsElderLabel;
@@ -857,6 +857,43 @@ public class ElderMainPanel implements Initializable {
 
    @FXML
    private Label aquariumSettingsWarningLabel;
+
+   @FXML
+   private JFXButton doorButton;
+
+   @FXML
+   private JFXSpinner doorSpinner;
+
+   @FXML
+   private JFXButton houseMenuElderBulkChange;
+
+   @FXML
+   private Pane timeConfigurationPanel;
+
+   @FXML
+   private Label timeConfigurationFirstLabel;
+
+   @FXML
+   private JFXButton timeConfigurationBackButton;
+
+   @FXML
+   private Label timeConfigurationBackButtonSubLabel;
+
+   @FXML
+   private JFXTimePicker menuTimePicker;
+
+   @FXML
+   private JFXDatePicker menuDatePicker;
+
+   @FXML
+   private JFXButton dateTimeSaveButton;
+
+   @FXML
+   private Label timeConfigurationPaneWarningLabel;
+
+   @FXML
+   private Label dateTimeSaveButtonSubLabel;
+
 
    private boolean isArduinoConnect;
 
@@ -1559,6 +1596,82 @@ public class ElderMainPanel implements Initializable {
             CommonSettingData.getInstance().updateSelectedFishes( commonSetting, speciesOfFishCheckComboBox.getItems() );
          }
       }
+      else if( event.getSource() == doorButton )
+      {
+         if( isArduinoConnect )
+            home.getDoor().open( true );
+
+         new Thread( () -> {
+            for( int k = 0; k < 20; k++ ) {
+               final int j = k;
+               Platform.runLater( () -> {
+                  doorSpinner.setVisible( true );
+                  doorButton.setVisible( false );
+                  if( j == 19 ) {
+                     doorSpinner.setVisible( false );
+                     doorButton.setVisible( true );
+                  }
+               } );
+               try {
+                  Thread.sleep( 100 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         } ).start();
+      }
+      else if( event.getSource() == timeConfigurationBackButton )
+      {
+         timeConfigurationPanel.setDisable( true );
+         timeConfigurationPanel.setVisible( false );
+         settingsElderPanel.setVisible( true );
+         settingsElderPanel.setDisable( false );
+      }
+      else if( event.getSource() == timeConfigurationElderButton)
+      {
+         settingsElderPanel.setDisable( true );
+         settingsElderPanel.setVisible( false );
+         timeConfigurationPanel.setVisible( true );
+         timeConfigurationPanel.setDisable( false );
+      }
+      else if( event.getSource() == dateTimeSaveButton )
+      {
+         if( menuDatePicker.getValue() == null
+                 || menuTimePicker.getValue() == null ) {
+            timeConfigurationPaneWarningLabel.setVisible( true );
+            timeConfigurationPaneWarningLabel.setText( bundle.getString( "normalInfoWarningLang" ) );
+         } else {
+            timeConfigurationPaneWarningLabel.setVisible( false );
+            StringBuilder message;
+            message = new StringBuilder();
+
+            if( menuTimePicker.getValue().getHour() < 10 )
+               message.append( "clock#0" ).append( menuTimePicker.getValue().getHour() );
+            else
+               message.append( "clock#" ).append( menuTimePicker.getValue().getHour() );
+
+            if( menuTimePicker.getValue().getMinute() < 10 )
+               message.append( "0" ).append( menuTimePicker.getValue().getMinute() );
+            else
+               message.append( menuTimePicker.getValue().getMinute() );
+
+            message.append( "000" ).append( menuDatePicker.getValue().getDayOfWeek().getValue() );
+
+            if( menuDatePicker.getValue().getDayOfMonth() < 10 )
+               message.append( "0" ).append( menuDatePicker.getValue().getDayOfMonth() );
+            else
+               message.append( menuDatePicker.getValue().getDayOfMonth() );
+            if( menuDatePicker.getValue().getMonthValue() < 10 )
+               message.append( "0" ).append( menuDatePicker.getValue().getMonthValue() );
+            else
+               message.append( menuDatePicker.getValue().getMonthValue() );
+            message.append( menuDatePicker.getValue().getYear() ).append( ":" );
+
+            if( isArduinoConnect )
+               home.adjustCollective( message.toString() );
+            System.out.println( message.toString() );
+         }
+      }
    }
 
    //  elderMainPanelOperations -MS 17.05.2020-
@@ -1609,6 +1722,16 @@ public class ElderMainPanel implements Initializable {
       userSettingsGenderElderText.setText( user.getGender( ) );
       userSettingsUsernameElderText.setText( user.getUserName( ) );
       userSettingsPasswordElderTextSecret.setText( user.getPassword( ) );
+
+      if( user.getGender().equals( "MALE" )
+              || user.getGender().equals( "ERKEK" )
+              || user.getGender().equals( "MÄNNLICH" ) ) {
+         userSettingsGenderMale.setSelected( true );
+         userSettingsGenderFemale.setSelected( false );
+      } else {
+         userSettingsGenderFemale.setSelected( true );
+         userSettingsGenderMale.setSelected( false );
+      }
 
       if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) ) {
          turkishElderButtonSubLabelActive.setVisible( false );
@@ -1822,7 +1945,7 @@ public class ElderMainPanel implements Initializable {
       //applicationSettingsElderButton Activate END -MS 23.04.2020-
 
       //homeSettingsElder Activate -MS 23.04.2020-
-      else if ( event.getSource() == homeSettingsElderButton )
+      else if ( event.getSource() == timeConfigurationElderButton )
       {
          homeSettingsElderLabel.setVisible( true );
          homeSettingsElderLine.setVisible( true );
@@ -2061,6 +2184,14 @@ public class ElderMainPanel implements Initializable {
       {
          notificationElderPanelBackButtonSubLabel.setVisible( true );
       }
+      else if( event.getSource() == timeConfigurationBackButton )
+      {
+         timeConfigurationBackButtonSubLabel.setVisible( true );
+      }
+      else if( event.getSource() == dateTimeSaveButton )
+      {
+         dateTimeSaveButtonSubLabel.setVisible( true );
+      }
    }
    // buttonElderActivate END -MS 05.05.2020-
 
@@ -2175,7 +2306,7 @@ public class ElderMainPanel implements Initializable {
       //applicationSettingsElderButton Deactivate END -MS 23.04.2020-
 
       //homeSettingsElder Deactivate -MS 23.04.2020-
-      else if ( event.getSource() == homeSettingsElderButton )
+      else if ( event.getSource() == timeConfigurationElderButton )
       {
          homeSettingsElderLabel.setVisible( false );
          homeSettingsElderLine.setVisible( false );
@@ -2423,6 +2554,14 @@ public class ElderMainPanel implements Initializable {
       else if( event.getSource() == notificationElderPanelBackButtonElder )
       {
          notificationElderPanelBackButtonSubLabel.setVisible( false );
+      }
+      else if( event.getSource() == timeConfigurationBackButton )
+      {
+         timeConfigurationBackButtonSubLabel.setVisible( false );
+      }
+      else if( event.getSource() == dateTimeSaveButton )
+      {
+         dateTimeSaveButtonSubLabel.setVisible( true );
       }
    }
    // buttonElderDeactivate END -MS 05.05.2020-
