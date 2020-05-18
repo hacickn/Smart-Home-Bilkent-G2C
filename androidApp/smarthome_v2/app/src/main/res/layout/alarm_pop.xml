@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A63C3333">
+    android:background="@drawable/gradient">
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency"
+        android:fontFamily="@font/blackhans"
         android:textColor="@color/orange_one"
         android:textSize="20sp"
         android:textStyle="bold"

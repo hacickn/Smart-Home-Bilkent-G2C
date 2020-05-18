@@ -5,7 +5,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".settings.HomeSettings"
-    android:background="#86292727">
+    android:background="@drawable/gradient">
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="142dp"
+        android:background="@drawable/ic_electricity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/ic_aquarium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/ic_green_house"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton16" />
+
+    <ImageButton
+        android:id="@+id/imageButton19"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/ic_gas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton17" />
+
+    <TextView
+        android:id="@+id/home_text_electricity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Electricity"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageButton15"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/home_text_aquarium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Aquarium"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageButton16"
+        app:layout_constraintTop_toBottomOf="@+id/home_text_electricity" />
+
+    <TextView
+        android:id="@+id/home_text_gas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="85dp"
+        android:text="Gas"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/atomic_age"
+        app:layout_constraintStart_toEndOf="@+id/imageButton19"
+        app:layout_constraintTop_toBottomOf="@+id/home_text_greenhouse" />
+
+    <TextView
+        android:id="@+id/home_text_greenhouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="79dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Greenhouse"
+        android:textColor="@color/orange_one"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageButton17"
+        app:layout_constraintTop_toBottomOf="@+id/home_text_aquarium" />
 
     <TextView
         android:id="@+id/textView2"
@@ -13,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Home Settings"
+        android:fontFamily="@font/blackhans"
         android:textColor="@color/orange_one"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -20,48 +117,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:background="@drawable/ic_electricity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:background="@drawable/ic_aquarium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15" />
-
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:background="@drawable/ic_green_house"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton16" />
-
-    <ImageButton
-        android:id="@+id/imageButton19"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:background="@drawable/ic_gas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
