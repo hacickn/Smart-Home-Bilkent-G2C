@@ -843,6 +843,18 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private JFXButton notificationSettingsElderButton;
 
+   @FXML
+   private ImageView elderLogoutButtonActive;
+
+   @FXML
+   private Label notificationSettingsElderLabel;
+
+   @FXML
+   private Label notificationElderPanelBackButtonSubLabel;
+
+   @FXML
+   private Line notificationSettingsElderLine;
+
    private boolean isArduinoConnect;
 
    private Home home;
@@ -927,6 +939,11 @@ public class ElderMainPanel implements Initializable {
    }
 
    //1
+   /**
+    * This method is responsible control main Elder panel which come out when user log in.
+    * Every button which is in the main panel is processed in this method.
+    * @param event
+    */
    @FXML
    void actionPerformed( ActionEvent event ) {
       // settings elder panel -MS 23.04.2020-
@@ -1229,18 +1246,8 @@ public class ElderMainPanel implements Initializable {
          refreshPortList();
       }
       // connectionSettingsElderButton END -MS 11.05.2020-
-   }
 
-   //  elderMainPanelOperations -MS 17.05.2020-
-
-   /**
-    * This method is responsible control main Elder panel which come out when user log in.
-    * Every button which is in the main panel is processed in this method.
-    * @param event
-    */
-   public void elderMainPanelOperations( ActionEvent event )
-   {
-      if( event.getSource() == elderLogoutButton )
+      else if( event.getSource() == elderLogoutButton )
       {
          Platform.exit();
          exit = true;
@@ -1265,6 +1272,30 @@ public class ElderMainPanel implements Initializable {
          userSettingsElderPanelMenu.setVisible( true );
          userSettingsElderPanelMenu.setDisable( false );
       }
+
+      // notificationSettingsElderButton Activate -MS 18.05.2020-
+      else if( event.getSource() == notificationSettingsElderButton )
+      {
+         applicationElderPanel.setDisable( true );
+         applicationElderPanel.setVisible( false );
+         notificationSettingsElderPanel.setVisible( true );
+         notificationSettingsElderPanel.setDisable( false );
+      }
+      else if( event.getSource() == notificationElderPanelBackButtonElder )
+      {
+         notificationSettingsElderPanel.setDisable( true );
+         notificationSettingsElderPanel.setVisible( false );
+         applicationElderPanel.setVisible( true );
+         applicationElderPanel.setDisable( false );
+      }
+   }
+
+   //  elderMainPanelOperations -MS 17.05.2020-
+
+
+   public void elderMainPanelOperations( ActionEvent event )
+   {
+
    }
 
    //2
@@ -1742,6 +1773,23 @@ public class ElderMainPanel implements Initializable {
          connectionElderPanelBackButtonSubLabel.setVisible( true );
       }
       //connectionElderPanelBackButtonElder Activate END -MS 11.05.2020-
+
+      // elderLogoutButton Activate -MS 18.05.2020-
+      else if( event.getSource() == elderLogoutButton )
+      {
+         elderLogoutButtonActive.setVisible( true );
+      }
+
+      // notificationSettingsElderButton Activate -MS 18.05.2020-
+      else if( event.getSource() == notificationSettingsElderButton )
+      {
+         notificationSettingsElderLabel.setVisible( true );
+         notificationSettingsElderLine.setVisible( true );
+      }
+      else if( event.getSource() == notificationElderPanelBackButtonElder )
+      {
+         notificationElderPanelBackButtonSubLabel.setVisible( true );
+      }
    }
    // buttonElderActivate END -MS 05.05.2020-
 
@@ -2088,6 +2136,23 @@ public class ElderMainPanel implements Initializable {
          connectionElderPanelBackButtonSubLabel.setVisible( false );
       }
       //connectionElderPanelBackButtonElder Deactivate END -MS 11.05.2020-
+
+      // elderLogoutButton Dectivate -MS 18.05.2020-
+      else if( event.getSource() == elderLogoutButton )
+      {
+         elderLogoutButtonActive.setVisible( false );
+      }
+
+      // notificationSettingsElderButton Activate -MS 18.05.2020-
+      else if( event.getSource() == notificationSettingsElderButton )
+      {
+         notificationSettingsElderLabel.setVisible( false );
+         notificationSettingsElderLine.setVisible( false );
+      }
+      else if( event.getSource() == notificationElderPanelBackButtonElder )
+      {
+         notificationElderPanelBackButtonSubLabel.setVisible( false );
+      }
    }
    // buttonElderDeactivate END -MS 05.05.2020-
 
