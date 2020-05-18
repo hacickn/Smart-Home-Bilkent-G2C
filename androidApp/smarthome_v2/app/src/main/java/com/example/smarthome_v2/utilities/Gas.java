@@ -153,6 +153,7 @@ public class Gas extends AppCompatActivity {
                  thm.putExtra("theme",themeNumber);
                 thm.putExtra("gas",currentCondition);
                 startActivity(thm);
+                finish();
             }
         });
 

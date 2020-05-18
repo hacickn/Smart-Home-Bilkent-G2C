@@ -36,11 +36,13 @@ import java.util.HashMap;
 
 public class main_screen extends AppCompatActivity {
 
-    public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,aquarium_control,greenhouse_control;
+    public ToggleButton electricity_control, water_control,gas_control,gardenLight_control,
+            aquarium_control,greenhouse_control;
     public boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
-    private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics,smartHomeDoor,helpbutton;
+    private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,graphics,
+            smartHomeDoor,helpbutton;
     private FirebaseAuth mAuth;
-    int themeNumber,textNo;
+    private int themeNumber,textNo;
     ConstraintLayout main;
     ImageView menu;
     Bundle bundle;
@@ -448,6 +450,7 @@ public class main_screen extends AppCompatActivity {
                 i.putExtra("theme", themeNumber);
                 i.putExtra("text", textNo);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -463,7 +466,7 @@ public class main_screen extends AppCompatActivity {
                 i.putExtra("theme", themeNumber);
                 i.putExtra("text", textNo);
                 startActivity(i);
-
+                finish();
             }
         });
 

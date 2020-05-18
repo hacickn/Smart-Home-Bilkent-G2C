@@ -58,7 +58,9 @@ public class WeatherForecast {
         int number;
 
         XY = "";
-        url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" + makeItSuitableForUTF( location ) + ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
+        url = new URL( "https://api.mapbox.com/geocoding/v5/mapbox.places/%20" +
+                makeItSuitableForUTF( location ) +
+                ".json?access_token=pk.eyJ1IjoiaGNja24iLCJhIjoiY2s4dTd0b3VsMDIxNzNna2Rsdjd2enJieiJ9.6OwVbhFTRPwDxPX5BLedTw&limit=1" );
         con = ( HttpURLConnection ) url.openConnection();
         con.setRequestMethod( "GET" );
         con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
@@ -107,7 +109,8 @@ public class WeatherForecast {
         HttpURLConnection con;
         int responseCode;
 
-        url = new URL( "http://api.weatherstack.com/current?access_key=c3606cc969e14ee977079a6e2ab290bf&query=" + getLocation() );
+        url = new URL( "http://api.weatherstack.com/current?access_key=c3606cc969e14ee977079a6e2ab290bf&query=" +
+                getLocation() );
         con = ( HttpURLConnection ) url.openConnection();
         con.setRequestMethod( "GET" );
         con.setRequestProperty( "User-Agent", "Mozilla/5.0" );
@@ -248,6 +251,12 @@ public class WeatherForecast {
         return localTime;
     }
 
+    /**
+     * it is a makeItSuitableForUTF method that make given string suitable to request
+     *
+     * @param s a String input parameter
+     * @return localTime as a String
+     */
     public String makeItSuitableForUTF( String s ){
         String finalString;
         String[] list;
