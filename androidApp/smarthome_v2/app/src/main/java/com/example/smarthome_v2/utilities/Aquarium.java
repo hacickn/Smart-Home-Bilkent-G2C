@@ -82,7 +82,6 @@ public class Aquarium extends AppCompatActivity {
             dayMotor = bundle.getString("day");
            //implementation of datas
             species.setText(type);
-            species.setBackgroundResource(R.color.on);
             textView_three.setText(dayMotor);
         }
 

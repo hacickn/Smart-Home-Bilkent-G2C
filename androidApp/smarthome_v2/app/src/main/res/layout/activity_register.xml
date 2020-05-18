@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@drawable/gradient"
     tools:context=".RegisterActivity"
     tools:ignore="ExtraText">
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/orange_two"
+        android:background="@drawable/buttonshape"
         android:text="Register"
         app:layout_constraintBottom_toTopOf="@+id/register_to_login"
         app:layout_constraintEnd_toEndOf="parent"
