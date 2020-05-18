@@ -13,9 +13,11 @@ import com.example.smarthome_v2.SettingsHelper;
 
 public class Settings extends AppCompatActivity {
 
+    //properties
     private ImageButton homeSet, appSet,profile,helpButton;
-    Bundle bundle;
-    int themeNumber,textNo;
+    private Bundle bundle;
+    private int themeNumber,textNo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

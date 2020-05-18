@@ -39,8 +39,10 @@ import java.util.Objects;
  */
 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class Gas extends AppCompatActivity {
-    public ImageButton exit;
-    public ToggleButton gas_controller;
+
+    //properties
+    private ImageButton exit;
+    private ToggleButton gas_controller;
     private ImageView smokes,wave_one,wave_two,gas;
     private BarChart gasChart;
     private ArrayList<BarEntry> dataValues;
@@ -48,10 +50,10 @@ public class Gas extends AppCompatActivity {
     private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
-    boolean condition,currentCondition;
-    int themeNumber;
-    Bundle bundle;
-    Intent thm;
+    private boolean condition,currentCondition;
+    private int themeNumber;
+    private Bundle bundle;
+    private Intent thm;
     private GifImageView gasGIF;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;

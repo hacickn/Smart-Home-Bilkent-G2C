@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    //properties
     private EditText registerName;
     private EditText registerPassword;
     private EditText registerEmail;

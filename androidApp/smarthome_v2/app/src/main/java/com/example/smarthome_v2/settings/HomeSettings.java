@@ -15,9 +15,10 @@ import com.example.smarthome_v2.popup.ghPop;
 
 public class HomeSettings extends AppCompatActivity {
 
+    //properties
     private ImageButton electricity,aquarium,gas,greenhouse;
-    Bundle bundle;
-    int themeNumber;
+    private Bundle bundle;
+    private int themeNumber;
 
     protected void onCreate(Bundle savedInstanceState) {
 

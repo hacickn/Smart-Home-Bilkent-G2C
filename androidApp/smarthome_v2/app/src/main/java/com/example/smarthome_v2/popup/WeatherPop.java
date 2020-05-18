@@ -19,6 +19,8 @@ import java.time.LocalTime;
 import pl.droidsonroids.gif.GifImageView;
 
 public class WeatherPop extends Activity {
+
+    //properties
     private TextView weatherTopLabel, weatherTemperature,
             weatherHumidity, weatherForecastValue,
             weatherWind, weatherLastUpdate;

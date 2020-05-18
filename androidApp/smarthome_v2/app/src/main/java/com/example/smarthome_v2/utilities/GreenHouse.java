@@ -26,13 +26,15 @@ import com.example.smarthome_v2.main_screen;
  * @version 06.05.2020
  */
 public class GreenHouse extends Activity {
-    public ImageButton exit;
+
+    //properties
+    private ImageButton exit;
     private  ImageView greenHouse;
     private TextView temperature,water,humudity;
     private EditText hum,comingWater,temp;
-    int themeNumber,textNo;
-    Bundle bundle;
-    Intent thm;
+    private int themeNumber,textNo;
+    private Bundle bundle;
+    private Intent thm;
     private GifImageView greenHouseGIF;
 
     @SuppressLint("ResourceAsColor")

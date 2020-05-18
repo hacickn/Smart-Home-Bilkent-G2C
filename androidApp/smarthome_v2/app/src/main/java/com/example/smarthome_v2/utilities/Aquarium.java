@@ -29,20 +29,22 @@ import java.util.Calendar;
  * @version 06.05.2020
  */
 public class Aquarium extends AppCompatActivity {
+
+    //properties
     private Button species;
-    ImageButton timeButton_one;
-    EditText textView_one;
-    ImageButton timeButton_two;
-    EditText textView_two;
-    ImageButton day;
-    EditText textView_three;
-    ImageButton timeButton_three;
-    ImageView specy,feed,waterExchange,motor,aquarim;
-    EditText textView_four;
-    Bundle bundle;
-    String type,dayMotor;
-    int themeNumber,textNo;
-    TextView a,b,c,d,e;
+    private ImageButton timeButton_one;
+    private EditText textView_one;
+    private ImageButton timeButton_two;
+    private EditText textView_two;
+    private ImageButton day;
+    private EditText textView_three;
+    private ImageButton timeButton_three;
+    private ImageView specy,feed,waterExchange,motor,aquarim;
+    private EditText textView_four;
+    private Bundle bundle;
+    private String type,dayMotor;
+    private int themeNumber,textNo;
+    private TextView a,b,c,d,e;
     private GifImageView aquariumGIF;
 
 

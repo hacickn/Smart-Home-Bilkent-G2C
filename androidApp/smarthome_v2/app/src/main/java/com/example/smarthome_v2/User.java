@@ -7,10 +7,11 @@ import java.util.List;
 
 public class User {
 
-    String name;
-    String email;
-    String password;
-    String aquarium;
+    //properties
+    private String name;
+    private String email;
+    private String password;
+    private String aquarium;
     static HashMap<String, String> information;
 
     public User(String name, String email, String password, String aquarium ) {

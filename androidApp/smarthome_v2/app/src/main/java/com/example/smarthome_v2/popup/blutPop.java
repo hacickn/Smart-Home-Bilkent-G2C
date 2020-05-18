@@ -10,7 +10,9 @@ import com.example.smarthome_v2.R;
 
 
 public class blutPop extends Activity {
+
     private Button search;
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -29,13 +29,15 @@ import java.util.Objects;
  * @version 06.05.2020
  */
 public class Water extends AppCompatActivity {
-    public ImageButton exit;
-    public ToggleButton water_controller;
+
+    //properties
+    private ImageButton exit;
+    private ToggleButton water_controller;
     private ImageView drop_one,drop_two,drop_three,water_wave,water;
-    Bundle bundle;
-    int themeNumber;
-    boolean condition,currentCondition;
-    Intent thm;
+    private Bundle bundle;
+    private int themeNumber;
+    private boolean condition,currentCondition;
+    private Intent thm;
     private GifImageView waterGIF;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;

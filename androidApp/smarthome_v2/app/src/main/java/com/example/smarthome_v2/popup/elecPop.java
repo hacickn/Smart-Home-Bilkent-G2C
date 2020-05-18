@@ -19,13 +19,20 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class elecPop extends Activity {
-    public ImageButton exit;
-    public ToggleButton elec_controller;
+
+    //properties
+    private ImageButton exit;
+    private ToggleButton elec_controller;
     private ImageView light_one;
     private ImageView light_two;
     private ImageView light_three,elec;
@@ -35,10 +42,13 @@ public class elecPop extends Activity {
     private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
-    Bundle bundle;
-    int themeNumber;
-    boolean condition,currentCondition;
-    Intent thm;
+    private Bundle bundle;
+    private int themeNumber;
+    private boolean condition,currentCondition;
+    private Intent thm;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +97,10 @@ public class elecPop extends Activity {
         light_two = findViewById(R.id.light2);
         light_three = findViewById(R.id.light3);
         elec = findViewById(R.id.mainelectiricity);
+        mAuth = FirebaseAuth.getInstance();
+
         //getting datas
+
         bundle = getIntent().getExtras();
         if(bundle!=null) {
             themeNumber = bundle.getInt("theme");
@@ -104,13 +117,16 @@ public class elecPop extends Activity {
         }
 
         //choosing theme
-        if(themeNumber == 1){
+        if(themeNumber == 1)
+        {
 
             light_one.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
         }
+
+
 
         //events
         elec_controller.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +145,23 @@ public class elecPop extends Activity {
                     light_two.setVisibility(View.INVISIBLE);
                     light_three.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
+                }
+
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+
+                if( elec_controller.isChecked() )
+                {
+                    userMap.put("electricity", "on");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_electricity,false).show();
+                }
+                else
+                {
+                    userMap.put("electricity", "off");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,false).show();
                 }
             }
         });

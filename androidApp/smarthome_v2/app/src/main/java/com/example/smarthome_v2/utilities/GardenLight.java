@@ -21,13 +21,15 @@ import java.util.HashMap;
 import pl.droidsonroids.gif.GifImageView;
 
 public class GardenLight extends AppCompatActivity {
-    ToggleButton gardenLightController;
-    Bundle bundle;
-    int themeNumber;
-    ImageView gardenLight;
-    boolean gardenLightOnOff,cuurentCondition;
-    ImageButton exit;
-    Intent thm;
+
+    //properties
+    private ToggleButton gardenLightController;
+    private Bundle bundle;
+    private int themeNumber;
+    private ImageView gardenLight;
+    private boolean gardenLightOnOff,cuurentCondition;
+    private ImageButton exit;
+    private Intent thm;
     private GifImageView gardenLightGIF;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;

@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class OpenScreen extends Activity {
-    Animation anim, anim_two;
+
+    //properties
+    private Animation anim, anim_two;
 
     // @SuppressLint("WrongViewCast")
     @Override

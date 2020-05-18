@@ -38,8 +38,10 @@ import java.util.Objects;
  * @version 06.05.2020
  */
 public class Electricity extends AppCompatActivity {
-    public ImageButton exit;
-    public ToggleButton elec_controller;
+
+    //properties
+    private ImageButton exit;
+    private ToggleButton elec_controller;
     private ImageView light_one;
     private ImageView light_two;
     private ImageView light_three,elec;
@@ -49,10 +51,10 @@ public class Electricity extends AppCompatActivity {
     private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
-    Bundle bundle;
-    int themeNumber;
-    boolean condition,currentCondition;
-    Intent thm;
+    private Bundle bundle;
+    private int themeNumber;
+    private boolean condition,currentCondition;
+    private Intent thm;
     private GifImageView electricityGIF;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;

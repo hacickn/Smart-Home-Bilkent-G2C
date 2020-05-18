@@ -16,12 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class ThemeSettings extends Activity {
-    int themeNo;
-    ImageButton blueNight,mainTheme,alien,wood,space;
-    Button main,blueNighttxt,alientxt,woodtxt,spacetxt;
-    Intent thm;
+
+    //properties
+    private int themeNo;
+    private ImageButton blueNight,mainTheme,alien,wood,space;
+    private Button main,blueNighttxt,alientxt,woodtxt,spacetxt;
+    private Intent thm;
     private Bundle bundle;
-    int thmNo;
+    private int thmNo;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 

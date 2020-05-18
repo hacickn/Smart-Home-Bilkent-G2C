@@ -7,7 +7,9 @@ import android.util.DisplayMetrics;
 import com.example.smarthome_v2.R;
 
 public class notiPop extends Activity {
+
     @Override
+
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_pop);

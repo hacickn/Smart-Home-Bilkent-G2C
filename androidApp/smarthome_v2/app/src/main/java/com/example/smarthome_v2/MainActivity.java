@@ -27,6 +27,8 @@ import at.markushi.ui.CircleButton;
  * @version 11.05.2020
  */
 public class MainActivity extends AppCompatActivity {
+
+    //properties
     private EditText loginPassword;
     private EditText loginEmail;
     private CircleButton loginButton;

@@ -15,9 +15,10 @@ import com.example.smarthome_v2.popup.notiPop;
 
 public class AppSettings extends AppCompatActivity {
 
+    //properties
     private ImageButton alarm,blut,noti,appSettingsHelperButton;
-    Bundle bundle;
-    int themeNumber;
+    private Bundle bundle;
+    private int themeNumber;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

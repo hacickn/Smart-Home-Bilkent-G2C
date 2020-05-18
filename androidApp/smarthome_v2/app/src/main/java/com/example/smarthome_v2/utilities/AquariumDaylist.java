@@ -21,13 +21,17 @@ import com.example.smarthome_v2.utilities.Aquarium;
  * @version 06.05.2020
  */
 public class AquariumDaylist extends AppCompatActivity {
+
+    //properties
     private ListView list;
-    private static final String[] days = new String[]{"1. Day of the Week","2. Day of the Week","3. Day of the Week","4. Day of the Week","5. Day of the Week","6. Day of the Week","7. Day of the Week"};
-    Context context = this;
-    Bundle bundle;
-    int themeNumber;
-    ConstraintLayout main;
-    ArrayAdapter<String> adaptor;
+    private static final String[] days = new String[]{"1. Day of the Week","2. Day of the Week",
+            "3. Day of the Week","4. Day of the Week","5. Day of the Week",
+            "6. Day of the Week","7. Day of the Week"};
+    private Context context = this;
+    private Bundle bundle;
+    private int themeNumber;
+    private ConstraintLayout main;
+    private ArrayAdapter<String> adaptor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -16,11 +16,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class TextSettings extends Activity {
-    int textNo;
-    Button acme,aladin,amarante,annie,atomic,baumans,blackHans,cantora;
-    Intent txt;
+
+    //properties
+    private int textNo;
+    private Button acme,aladin,amarante,annie,atomic,baumans,blackHans,cantora;
+    private Intent txt;
     private Bundle bundle;
-    int text;
+    private int text;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 

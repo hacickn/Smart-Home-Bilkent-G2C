@@ -10,9 +10,12 @@ import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.main_screen;
 
 public class GraphicSettings extends Activity {
+
+    //properties
     private ImageButton theme,textType;
     private int themeNo,text;
     private Bundle bundle;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graphic_settings_screen);

@@ -18,23 +18,36 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class gasPop extends Activity {
-    public ImageButton exit;
-    public ToggleButton gas_controller;
+
+    //properties
+    private ImageButton exit;
+    private ToggleButton gas_controller;
     private ImageView smokes,wave_one,wave_two,gas;
     private BarChart gasChart;
     private ArrayList<BarEntry> dataValues;
     private BarDataSet lineDataSet;
-    private  ArrayList<IBarDataSet> dataSets;
+    private ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
-    boolean condition,currentCondition;
-    int themeNumber;
-    Bundle bundle;
-    Intent thm;
+    private boolean condition,currentCondition;
+    private int themeNumber;
+    private Bundle bundle;
+    private Intent thm;
+    private GifImageView gasGIF;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,17 +139,43 @@ public class gasPop extends Activity {
                 boolean on = ((ToggleButton) v).isChecked();
                 if (on) {
                     // ON
-
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
                     wave_two.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
-                } else {
+                    gasGIF.setImageResource(R.drawable.gas);
+                    if(themeNumber ==3)
+                    {
+                        gasGIF.setImageResource(R.drawable.backgroundwood);
+                    }
+                } else
+                {
                     // OFF
                     smokes.setVisibility(View.INVISIBLE);
                     wave_one.setVisibility(View.INVISIBLE);
                     wave_two.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
+                    gasGIF.setImageResource(R.drawable.gas_first);
+                    if(themeNumber ==3)
+                    {
+                        gasGIF.setImageResource(R.drawable.backgroundwood);
+                    }
+                }
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, Object> userMap = new HashMap<>();
+
+                if( gas_controller.isChecked() )
+                {
+                    userMap.put("gas", "on");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,false).show();
+                }
+                else
+                {
+                    userMap.put("gas", "off");
+                    mDatabase.updateChildren(userMap);
+                    FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,false).show();
                 }
             }
         });

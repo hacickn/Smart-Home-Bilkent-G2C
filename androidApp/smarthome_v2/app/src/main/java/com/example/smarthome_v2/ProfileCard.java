@@ -26,6 +26,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class ProfileCard extends AppCompatActivity {
+
+    //properties
     private static final String TAG = "ProfileCard";
     private EditText settingsName;
     private TextView mDisplayDate;

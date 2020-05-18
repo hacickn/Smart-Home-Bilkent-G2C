@@ -21,13 +21,15 @@ import com.example.smarthome_v2.utilities.Aquarium;
  * @version 06.05.2020
  */
 public class FishList extends AppCompatActivity {
+
+    //properties
     private ListView list;
     private static final String[] fishTypes = new String[]{"Lepistes","Japon","Vatoz","Brachydanio","clownfish","Pencilfish","Juvenile"};
-    Context context = this;
-    Bundle bundle;
-    int themeNumber;
-    ConstraintLayout main;
-    ArrayAdapter<String> adaptor;
+    private Context context = this;
+    private Bundle bundle;
+    private int themeNumber;
+    private ConstraintLayout main;
+    private ArrayAdapter<String> adaptor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
