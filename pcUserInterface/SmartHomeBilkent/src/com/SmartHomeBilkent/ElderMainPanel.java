@@ -900,6 +900,22 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private ProgressIndicator menuAquariumIndicator;
 
+   @FXML
+   private Label fireSensorLabel;
+
+   @FXML
+   private Label gasSensorLabel;
+
+   @FXML
+   private Label smokeSensorLabel;
+
+   @FXML
+   private Label visualWarningLabel;
+
+   @FXML
+   private Label auditoryWarningLabel;
+
+
 
    private boolean isArduinoConnect;
 
@@ -1106,9 +1122,27 @@ public class ElderMainPanel implements Initializable {
       // gas END -MS 02.05.2020-
       // door -MS 02.05.2020-
       else if( event.getSource( ) == doorButtonElder ) {
-         doorButtonElder.setVisible( false );
-         doorPanelElder.setVisible( true );
-         doorPanelElder.setDisable( false );
+         if( isArduinoConnect )
+            home.getDoor().open( true );
+
+         new Thread( () -> {
+            for( int k = 0; k < 20; k++ ) {
+               final int j = k;
+               Platform.runLater( () -> {
+                  doorSpinner.setVisible( true );
+                  doorButton.setVisible( false );
+                  if( j == 19 ) {
+                     doorSpinner.setVisible( false );
+                     doorButton.setVisible( true );
+                  }
+               } );
+               try {
+                  Thread.sleep( 100 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         } ).start();
       } else if( event.getSource( ) == doorPanelElderCloseButton ) {
          doorButtonElder.setVisible( true );
          doorPanelElder.setVisible( false );
@@ -1611,27 +1645,7 @@ public class ElderMainPanel implements Initializable {
       }
       else if( event.getSource() == doorButton )
       {
-         if( isArduinoConnect )
-            home.getDoor().open( true );
 
-         new Thread( () -> {
-            for( int k = 0; k < 20; k++ ) {
-               final int j = k;
-               Platform.runLater( () -> {
-                  doorSpinner.setVisible( true );
-                  doorButton.setVisible( false );
-                  if( j == 19 ) {
-                     doorSpinner.setVisible( false );
-                     doorButton.setVisible( true );
-                  }
-               } );
-               try {
-                  Thread.sleep( 100 );
-               } catch( InterruptedException e ) {
-                  e.printStackTrace();
-               }
-            }
-         } ).start();
       }
       else if( event.getSource() == timeConfigurationBackButton )
       {
@@ -2639,7 +2653,7 @@ public class ElderMainPanel implements Initializable {
       }
       else if( event.getSource() == dateTimeSaveButton )
       {
-         dateTimeSaveButtonSubLabel.setVisible( true );
+         dateTimeSaveButtonSubLabel.setVisible( false );
       }
       else if( event.getSource() == menuAquariumFeedButton )
       {
@@ -2739,6 +2753,37 @@ public class ElderMainPanel implements Initializable {
          turkishElderButtonSubLabelPassive.setText( bundle.getString("turkishElderButtonSubLabelLang" ));
          turkishElderButtonSubLabelActive.setText( bundle.getString("turkishElderButtonSubLabelLang" ) );
          languageElderPanelBackButtonSubLabel.setText( bundle.getString("languageElderPanelBackButtonSubLabelLang" ));
+         homeSettingsElderLabel.setText( bundle.getString( "timeConfigurationLang" ));
+         timeConfigurationFirstLabel.setText( bundle.getString( "timeConfigurationFirstLabelLang" ) );
+         timeConfigurationBackButton.setText( bundle.getString( "getBackButtonLang" ) );
+         dateTimeSaveButtonSubLabel.setText( bundle.getString( "saveLang" ) );
+         fireSensorLabel.setText( bundle.getString( "fireButtonLang" ) );
+         gasSensorLabel.setText( bundle.getString( "gasSensorLang" ) );
+         smokeSensorLabel.setText( bundle.getString( "smokeSensor" ) );
+         visualWarningLabel.setText( bundle.getString( "visualWarningLang" ) );
+         auditoryWarningLabel.setText( bundle.getString( "auditoryWarning" ) );
+         notificationElderPanelBackButtonSubLabel.setText( bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
+         notificationPanelFirstLabelElder.setText( bundle.getString( "notificationPanelFirstLabelElderLang" ) );
+         connectionElderPanelBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
+         connectionElderPanelBackButtonSubLabel.setText( bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
+         connectionPanelFirstLabelElder.setText( bundle.getString( "connectionPanelFirstLabelElderLang" ) );
+         greenhouseMenuFirstLabelElder.setText( bundle.getString( "greenhouseMenuFirstLabelElderLang" ) );
+         greenhouseMenuBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
+         greenhouseMenuBackButtonSubLabel.setText( bundle.getString( "getBackButtonSubLabelLang" ) );
+         greenhouseTemperatureLabel.setText( bundle.getString( "tempLang" ) );
+         latesWaterFromAquariumLabel.setText( bundle.getString( "latestWaterFromAquariumLang" ) );
+         humidityLabel.setText( bundle.getString( "humidity" ) );
+         gasMenuFirstLabelElder.setText( bundle.getString( "gasMenuFirstLabelElderLang" ) );
+         gasMenuBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
+         gasMenuBackButtonSubLabel.setText( bundle.getString( "getBackButtonSubLabelLang" ) );
+         electiricityMenuFirstLabelElder.setText( bundle.getString( "electiricityMenuFirstLabelElderLang" ) );
+         electiricityMenuBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
+         electiricityMenuBackButtonSubLabel.setText( bundle.getString( "getBackButtonSubLabelLang" ) );
+         notificationSettingsElderLabel.setText( bundle.getString( "notificationLang" ) );
+         portChooserElder.setPromptText( bundle.getString( "portChooserLang" ) );
+         timeConfigurationBackButtonSubLabel.setText( bundle.getString( "applicationBackButtonSubLabelLang" ) );
+         dateTimeSaveButtonSubLabel.setText( "saveLang" );
+
       } catch( Exception e ) {
          e.printStackTrace();
       }
