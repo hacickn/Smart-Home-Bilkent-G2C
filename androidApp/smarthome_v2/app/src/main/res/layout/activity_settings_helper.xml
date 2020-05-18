@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".SettingsHelper">
+
+    <TextView
+        android:id="@+id/settings_helper_faq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FAQ"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/orange_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/settings_helper_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/settings_helper_appsettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_helper_home"
+        app:srcCompat="@drawable/app_settings" />
+
+    <ImageView
+        android:id="@+id/settings_helper_profilecard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_helper_appsettings"
+        app:srcCompat="@drawable/ic_profilecard" />
+
+    <TextView
+        android:id="@+id/settings_helper_text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="183dp"
+        android:text="Home Settings"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/settings_helper_home"
+        app:layout_constraintTop_toBottomOf="@+id/settings_helper_faq" />
+
+    <TextView
+        android:id="@+id/settings_helper_text_appsettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="122dp"
+        android:text="App Settings"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/settings_helper_appsettings"
+        app:layout_constraintTop_toBottomOf="@+id/settings_helper_text_home" />
+
+    <TextView
+        android:id="@+id/settings_helper_text_profilecard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="120dp"
+        android:text="Profile Card"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/settings_helper_profilecard"
+        app:layout_constraintTop_toBottomOf="@+id/settings_helper_text_appsettings" />
+</androidx.constraintlayout.widget.ConstraintLayout>

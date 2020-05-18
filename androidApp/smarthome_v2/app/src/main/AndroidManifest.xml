@@ -13,8 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HelpPop"
+        <activity android:name=".AppSettingsHelper"
             android:theme="@style/AppTheme.CustomTheme"></activity>
+        <activity
+            android:name=".SettingsHelper"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".HelpPop"
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".ProfileCard"
             android:theme="@style/AppTheme.CustomTheme" />

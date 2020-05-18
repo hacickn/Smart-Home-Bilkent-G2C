@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.smarthome_v2.AppSettingsHelper;
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.popup.alarmPop;
 import com.example.smarthome_v2.popup.blutPop;
@@ -14,7 +15,7 @@ import com.example.smarthome_v2.popup.notiPop;
 
 public class AppSettings extends AppCompatActivity {
 
-    private ImageButton alarm,blut,noti;
+    private ImageButton alarm,blut,noti,appSettingsHelperButton;
     Bundle bundle;
     int themeNumber;
 
@@ -26,6 +27,7 @@ public class AppSettings extends AppCompatActivity {
         alarm = findViewById(R.id.Emergency);
         blut = findViewById(R.id.Blt);
         noti = findViewById(R.id.Noti);
+        appSettingsHelperButton = findViewById(R.id.app_settings_helperbutton);
 
         //getting data
         bundle = getIntent().getExtras();
@@ -59,6 +61,14 @@ public class AppSettings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), notiPop.class);
+                i.putExtra("theme", themeNumber);
+                startActivity(i);
+            }
+        });
+        appSettingsHelperButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), AppSettingsHelper.class);
                 i.putExtra("theme", themeNumber);
                 startActivity(i);
             }

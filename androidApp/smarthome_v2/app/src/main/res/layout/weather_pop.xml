@@ -83,7 +83,7 @@
         app:layout_constraintBottom_toTopOf="@+id/weatherWind"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView14" />
+        app:layout_constraintStart_toEndOf="@+id/help_water" />
 
     <TextView
         android:id="@+id/weatherWind"
@@ -101,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView14" />
+        app:layout_constraintStart_toEndOf="@+id/help_water" />
 
     <TextView
         android:id="@+id/weatherTemperature"
@@ -148,7 +148,7 @@
         android:layout_marginLeft="10dp" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/help_water"
         android:layout_width="15dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"

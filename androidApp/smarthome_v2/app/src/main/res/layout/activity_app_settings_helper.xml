@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".AppSettingsHelper">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FAQ"
+        android:textColor="@color/orange_one"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/app_settings_helper_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alarm" />
+
+    <ImageView
+        android:id="@+id/help_settings_helper_connection"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_settings_helper_alarm"
+        app:srcCompat="@drawable/ic_connection" />
+
+    <ImageView
+        android:id="@+id/help_settings_helper_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help_settings_helper_connection"
+        app:srcCompat="@drawable/ic_musical_instrument" />
+
+    <TextView
+        android:id="@+id/help_settings_helper_text_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="186dp"
+        android:text="Alarm"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/app_settings_helper_alarm"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/help_settings_helper_text_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="119dp"
+        android:text="Connection"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/help_settings_helper_connection"
+        app:layout_constraintTop_toBottomOf="@+id/help_settings_helper_text_alarm" />
+
+    <TextView
+        android:id="@+id/help_settings_helper_text_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="121dp"
+        android:text="Notification"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/help_settings_helper_notification"
+        app:layout_constraintTop_toBottomOf="@+id/help_settings_helper_text_connection" />
+</androidx.constraintlayout.widget.ConstraintLayout>
