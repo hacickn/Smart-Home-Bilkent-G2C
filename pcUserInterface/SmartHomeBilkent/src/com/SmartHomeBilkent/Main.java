@@ -21,7 +21,7 @@ public class Main extends Application {
    /**
     * It is a start method that is Overrode
     * @param primaryStage is a Stage input parameter
-    * @throws Exception
+    * @throws Exception that may be caused because of the loading new panel
     */
    @Override
    public void start( Stage primaryStage ) throws Exception {
@@ -40,7 +40,7 @@ public class Main extends Application {
 
    /**
     * It is a init method that is Overrode
-    * @throws Exception
+    * @throws Exception that may be caused by the SQLException
     */
    @Override
    public void init() throws Exception {
@@ -51,7 +51,7 @@ public class Main extends Application {
 
    /**
     * It is a stop method that is Overrode
-    * @throws Exception
+    * @throws Exception that may be caused by the SQLException
     */
    @Override
    public void stop() throws Exception {
@@ -61,7 +61,7 @@ public class Main extends Application {
 
    /**
     * It is a main method
-    * @param args
+    * @param args is a String[] input parameter
     */
    public static void main( String[] args ) {
       launch( args );

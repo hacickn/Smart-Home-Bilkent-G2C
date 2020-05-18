@@ -47,23 +47,93 @@ This week every group member mentioned his/her's ideas about should we continue 
 ### Meeting ~ (17.03.2020, 60 min)
 ****
 
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+Hacı was absent because of illness. We discussed what we found, our suggestions. Our main target was that how we can come forward other smart home products. Then we decided to go over this subject. We shared our design ideas. Moreover, we started to think specificially how to build for functionally.
+
+**ToDo:** All groups members will start to think what we can add more than what we though at the beginning of the idea. Also we will started to build applications. 
+
 ****
 ### Meeting ~ (24.03.2020, 60 min)
 ****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan,Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
+**Discussion:** 
+This week we searched about what we found. We decided to adjust colors according to human psychology. Also we decided to add sound mode which can be very useful some user.
+Moreover, we showed what we did for application building. We gave suggestions to each other about design.
+
+**ToDo:** All groups members will continue to work on application building. And both android group and pc user interface group will discuss amongst themselves.
+****
+### Meeting ~ (30.03.2020, 40 min)(PC USER INTERFACE PART)
+****
+**Present:** Metehan Saçakçı, İlke Doğan,Hacı Çakın
+
+**Discussion:** 
+We decided to what we can for pc user interface. We decided to add elder part.We discussed that who will weigh more where. However, we said that each member should help each other.According to we decided to separate three main part. Elder part, main part, proteus and arduino part.
+
+**ToDo:** Metehan will continue to do elder panel.İlke will weight proteus and arduino part.Hacı will do main panel.(Although we decided to who weight more where, we also will do work on each piece.)
 
 ****
-### Meeting ~ (30.03.2020, 40 min)
+### Meeting ~ (29.03.2020, 50 min)(ANDROID PART)
 ****
+**Present:**  Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer
 
-****
-### Meeting ~ (12.04.2020, 70 min)
-****
+**Discussion:** 
 
+
+**ToDo:** 
+****
+### Meeting ~ (12.04.2020, 20 min)
+****
+**Present:**  Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** we discussed at what stage we are. We showed what we experience to each other. We talked what we did for our project. Metehan showed that he started to build special desing for elders which should have bigger labels or buttons. Erengazi showed that what he learnt from udemy courde and which material he can use.İlke informed us about proteus and how it works. Hacı showed what main panel have until now. He also made a little arduino circuit which have 6 leds and control them in java user interface(video record). Tarık showed that he learnt using android layouts and materials. Nasuh started to search firebase systems and he learnt what is the differences between firebases and databases. 
+
+
+**ToDo:** All members will continnue to do what they do. Also we will search how we can add functionality according to MVC.
 ****
 ### Meeting ~ (19.04.2020, 20 min)
 ****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
+**Discussion:** 
+
+
+**ToDo:**
 ****
-### Meeting ~ (26.04.2020, 50 min)
+### Meeting ~ (26.04.2020, 30 min)
 ****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (01.04.2020, 40 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (08.04.2020, 70 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (15.04.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
