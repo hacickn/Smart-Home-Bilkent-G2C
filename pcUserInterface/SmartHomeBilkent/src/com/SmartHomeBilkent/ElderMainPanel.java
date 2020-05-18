@@ -19,10 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -894,6 +891,15 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Label dateTimeSaveButtonSubLabel;
 
+   @FXML
+   private JFXButton menuAquariumFeedButton;
+
+   @FXML
+   private ImageView menuAquariumFeedButtonActive;
+
+   @FXML
+   private ProgressIndicator menuAquariumIndicator;
+
 
    private boolean isArduinoConnect;
 
@@ -920,6 +926,12 @@ public class ElderMainPanel implements Initializable {
 
    //methods
 
+   /**
+    * Initialize method is started when an elder people log in to the interface.
+    * Before the main elder panel opens, this method simply run some methods and prepare the program.
+    * @param location
+    * @param resources
+    */
    @Override
    public void initialize( URL location, ResourceBundle resources )
    {
@@ -927,6 +939,7 @@ public class ElderMainPanel implements Initializable {
       isArduinoConnect = false;
       volume = "0";
       userTextFieldController( getLoginUser( ) );
+      lightsPanelElderSwitch.setDisable( !electricityPanelElderSwitch.isSelected() );
       turkishElderButtonSubLabelActive.setVisible( false );
       englishElderButtonSubLabelActive.setVisible( true );
       languageStatusElder = false;
@@ -981,7 +994,7 @@ public class ElderMainPanel implements Initializable {
 
    //1
    /**
-    * This method is responsible control main Elder panel which come out when user log in.
+    * This method is responsible control main Elder panel's buttons.
     * Every button which is in the main panel is processed in this method.
     * @param event
     */
@@ -1672,18 +1685,38 @@ public class ElderMainPanel implements Initializable {
             System.out.println( message.toString() );
          }
       }
-   }
+      else if( event.getSource() == menuAquariumFeedButton ) {
+         if( isArduinoConnect )
+            home.getAquarium().feedingOpen( true );
 
-   //  elderMainPanelOperations -MS 17.05.2020-
-
-
-   public void elderMainPanelOperations( ActionEvent event )
-   {
-
+         new Thread( () -> {
+            for( int k = 0; k < 20; k++ ) {
+               final int j = k;
+               Platform.runLater( () -> {
+                  menuAquariumIndicator.setVisible( true );
+                  //feedRadioButton.setSelected( true );
+                  if( j == 19 ) {
+                     menuAquariumIndicator.setVisible( false );
+                     //feedRadioButton.setSelected( false );
+                  }
+               } );
+               try {
+                  Thread.sleep( 100 );
+               } catch( InterruptedException e ) {
+                  e.printStackTrace();
+               }
+            }
+         } ).start();
+      }
    }
 
    //2
    // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
+
+   /**
+    * This method is simply responsible from first panel of the elderMain.java to make it visible or non visible.
+    * @param b
+    */
    public void setMainMenuInvisible( Boolean b ) {
       if( b ) {
          mainElderPanelMenu.setVisible( false );
@@ -1700,6 +1733,12 @@ public class ElderMainPanel implements Initializable {
 
    //4
    // user after login panel -MS 24.03.2020-
+
+   /**
+    * This method is responsible to get user information from the User class
+    * and display it on the user settings panel of elderMainPanel.java.
+    * @return
+    */
    public User getLoginUser( ) {
       for( User u : Users.getInstance( ).getUserList( ) ) {
          if( u.getEnter( ).equals( "true" ) ) {
@@ -1715,6 +1754,11 @@ public class ElderMainPanel implements Initializable {
 
    //5
    //User textFieldController -MS 24.04.2020-
+
+   /**
+    * This method is written to fill user settings panel's texts and set user's language.
+    * @param user
+    */
    void userTextFieldController( User user ) {
       userSettingsNameElderText.setText( user.getName( ) );
       userSettingsSurnameElderText.setText( user.getSurname( ) );
@@ -1751,6 +1795,12 @@ public class ElderMainPanel implements Initializable {
 
 
    ///////////////
+
+   /**
+    * This method basically sets user's new setting preferences.
+    * @param event
+    * @throws SQLException
+    */
    @FXML
    void saveUserNormalChanges( ActionEvent event ) throws SQLException {
       String gender;
@@ -1773,6 +1823,10 @@ public class ElderMainPanel implements Initializable {
    }
    ///////////////
 
+   /**
+    * This method is written to prevent user from choice both genders, male and female.
+    * @param event
+    */
    @FXML
    void elderGenderController( ActionEvent event ) {
       if( event.getSource( ) == userSettingsGenderMale ) {
@@ -1787,6 +1841,11 @@ public class ElderMainPanel implements Initializable {
    }
 
    /////////////////////// -MS 26.04.2020-
+
+   /**
+    * This method make it possible to change user. It simply close the ElderMainPanel.java and opens the loginPanel.java.
+    * @param event
+    */
    @FXML
    void toUserElderChanger( ActionEvent event ) {
       try {
@@ -1808,6 +1867,12 @@ public class ElderMainPanel implements Initializable {
    /////////////////////// END -MS 26.04.2020-
 
    /////////////// -MS 26.04.2020-
+
+   /**
+    * This method is responsible to set user's new  account preferences.
+    * @param event
+    * @throws SQLException
+    */
    @FXML
    void saveUserPrivInfoChanges( ActionEvent event ) throws SQLException {
       User user;
@@ -1835,6 +1900,11 @@ public class ElderMainPanel implements Initializable {
    }
    /////////////// END -MS 26.04.2020-
 
+   /**
+    * This method is responsible to activate all of the JFXButtons in the ElderMainPanel.java.
+    * Activate can be in various way such as display a lable or make the button more visible and highlighted.
+    * @param event
+    */
    @FXML
    void buttonElderActivate ( MouseEvent event )
    {
@@ -2192,10 +2262,18 @@ public class ElderMainPanel implements Initializable {
       {
          dateTimeSaveButtonSubLabel.setVisible( true );
       }
+      else if( event.getSource() == menuAquariumFeedButton )
+      {
+         menuAquariumFeedButtonActive.setVisible( true );
+      }
    }
    // buttonElderActivate END -MS 05.05.2020-
 
    // buttonElderDeactivate -MS 05.05.2020-
+   /**
+    * This method is responsible to deactivate all of the JFXButtons in the ElderMainPanel.java.
+    * @param event
+    */
    @FXML
    void buttonElderDeactivate ( MouseEvent event )
    {
@@ -2563,10 +2641,19 @@ public class ElderMainPanel implements Initializable {
       {
          dateTimeSaveButtonSubLabel.setVisible( true );
       }
+      else if( event.getSource() == menuAquariumFeedButton )
+      {
+         menuAquariumFeedButtonActive.setVisible( false );
+      }
    }
    // buttonElderDeactivate END -MS 05.05.2020-
 
    // changeLanguageElder -MS 06.05.2020-
+
+   /**
+    * When user want to change the programs language, this method changes all labels and names on the interface.
+    * @param language
+    */
    public void changeLanguageElder ( String language) {
 
       try {
@@ -2660,6 +2747,11 @@ public class ElderMainPanel implements Initializable {
 
 
    // house settings controller -MS 11.05.2020- from mainPanel.java
+
+   /**
+    * This method is responsible to control house settings such as electricity contol or gas control, etc.
+    * @param event
+    */
    @FXML
    void houseSettingsController ( ActionEvent event )
    {
@@ -2670,6 +2762,7 @@ public class ElderMainPanel implements Initializable {
          {
             home.getElectricity( ).open( electricityPanelElderSwitch.isSelected( ) );
          }
+
       }
       else if( event.getSource() == gasPanelElderSwitch )
       {
@@ -2703,6 +2796,11 @@ public class ElderMainPanel implements Initializable {
       electricityPanelElderProgressBar1.setVisible( status );
       electricityPanelElderProgressBar2.setVisible( status );
       electiricitySettingsPanelCloseOpenSwitch.setSelected( status );
+      lightsPanelElderSwitch.setDisable( !electricityPanelElderSwitch.isSelected() );
+      if( !electricityPanelElderSwitch.isSelected() )
+      {
+         lightsPanelElderSwitch.setSelected( false );
+      }
    }
    @FXML
    void controlLights ( boolean status )
@@ -2742,6 +2840,10 @@ public class ElderMainPanel implements Initializable {
    //
 
    // GUIUpdateElder -MS 11.05.2020- from mainPanel.java
+
+   /**
+    * This method is started before interface starts to work. Its function is take and set house settings.
+    */
    public void GUIUpdateElder()
    {
       String flowAquariumSetting;
@@ -2818,25 +2920,5 @@ public class ElderMainPanel implements Initializable {
       rectangle.setVisible( false );
    }
 
-   public void notificationPanelOperation( ActionEvent event)
-   {
-      if( event.getSource() == notificationElderPanelBackButtonElder)
-      {
-         notificationSettingsElderPanel.setDisable( true );
-         notificationSettingsElderPanel.setVisible( false );
-         applicationElderPanel.setVisible( true );
-         applicationElderPanel.setDisable( false );
-      }
-   }
 
-   public void applicationPanelOperation( ActionEvent event)
-   {
-      if( event.getSource() == notificationSettingsElderButton)
-      {
-         applicationElderPanel.setDisable( true );
-         applicationElderPanel.setVisible( false );
-         notificationSettingsElderPanel.setVisible( true );
-         notificationSettingsElderPanel.setDisable( false );
-      }
-   }
 }

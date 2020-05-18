@@ -18,6 +18,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -531,17 +532,10 @@
                                 <Font name="Microsoft JhengHei Light" size="24.0" />
                             </font>
                         </Label>
-                        <JFXToggleButton fx:id="aquariumPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
-                        <Label fx:id="aquariumPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
-                            <font>
-                                <Font name="Microsoft JhengHei Light" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="aquariumPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
-                            <font>
-                                <Font name="Microsoft JhengHei Light" size="18.0" />
-                            </font>
-                        </Label>
+                        <JFXToggleButton fx:id="aquariumPanelElderSwitch" layoutX="77.0" layoutY="22.0" onAction="#houseSettingsController" opacity="0.99" text="Air Motor">
+                     <font>
+                        <Font size="15.0" />
+                     </font></JFXToggleButton>
                         <JFXButton fx:id="aquariumPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="aquariumPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
@@ -551,6 +545,13 @@
                         <JFXButton fx:id="aquariumPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" opacity="0.99" prefHeight="58.0" prefWidth="58.0" />
                         <JFXProgressBar fx:id="aquariumPanelElderProgressBar1" disable="true" layoutX="219.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
                         <JFXProgressBar fx:id="aquariumPanelElderProgressBar2" disable="true" layoutX="25.0" layoutY="19.0" prefHeight="3.0" prefWidth="53.0" visible="false" />
+                  <JFXButton fx:id="menuAquariumFeedButton" layoutX="116.0" layoutY="80.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="60.0" prefWidth="60.0" />
+                  <ImageView fx:id="menuAquariumFeedButtonActive" disable="true" fitHeight="60.0" fitWidth="60.0" layoutX="116.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../styleSheets/imagesElder/feeding4.png" />
+                     </image>
+                  </ImageView>
+                  <ProgressIndicator fx:id="menuAquariumIndicator" layoutX="220.0" layoutY="84.0" style="-fx-background-color: #30eaff; -fx-background-radius: 25;" visible="false" />
                     </children>
                 </Pane>
                 <Label fx:id="aquariumLabelElder" alignment="CENTER" disable="true" layoutX="120.0" layoutY="301.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Aquarium" textFill="WHITE" visible="false">
@@ -630,7 +631,7 @@
                 </Label>
                 <Line fx:id="gasLineElder" disable="true" endX="105.00006103515625" layoutX="575.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" startX="-95.0" visible="false" />
                 <JFXButton fx:id="doorButtonElder" layoutX="480.0" layoutY="373.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
-                <Pane fx:id="doorPanelElder" layoutX="435.0" layoutY="362.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #179C52; -fx-background-radius: 5;">
+                <Pane fx:id="doorPanelElder" disable="true" layoutX="435.0" layoutY="362.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #179C52; -fx-background-radius: 5;" visible="false">
                     <children>
                         <Label fx:id="doorPanelElderLabel" alignment="CENTER" layoutX="34.0" opacity="0.99" prefHeight="41.0" prefWidth="224.0" text="Door" textFill="WHITE">
                             <font>

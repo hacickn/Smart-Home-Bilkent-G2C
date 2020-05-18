@@ -421,3 +421,9 @@
     -fx-background-image: url("imagesElder/floppy-disk2.png");
     -fx-background-size: 100, 100;
 }
+#menuAquariumFeedButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("imagesElder/feeding5.png");
+    -fx-background-size: 60, 60;
+}
