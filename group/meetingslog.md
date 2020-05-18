@@ -33,8 +33,15 @@ This week because of the covid-19, we meet on the zoom platform first time. Afte
 **ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should start to work on pc interface design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 
 ****
-### Meeting ~ (10.03.2020, 60 min)
+### Meeting ~ (28.03.2020, 60 min)
 ****
+
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+This week every group member mentioned his/her's ideas about should we continue to work on our project with last week's plan or not. At this point, whether we do not have displayable interface design on our project files, everyone in the group wants to continue to work with last week's same ToDo list. That is why we concluded to continue our work with same plan for one more week. 
+
+**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should start to work on pc interface design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 
 ****
 ### Meeting ~ (17.03.2020, 60 min)
