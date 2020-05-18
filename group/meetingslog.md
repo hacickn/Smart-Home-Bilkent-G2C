@@ -23,9 +23,14 @@ This week we come out with new interface designs that are drawn on papers and di
 **ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should start to watch videos about the pc interface design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to watch videos about how we can write mobile application.
 
 ****
-### Meeting ~ (09.03.2020, 90 min)
+### Meeting ~ (15.03.2020, 40 min)
 ****
-blah, blah, blah...
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+This week because of the covid-19, we meet on the zoom platform first time. After our last meeting, everyone in our group accepted that he / she has some basic opinions about pc and android interface. That is why, at this point, we decided to design two different interfaces. One of them is designed for pc and the other one is designed for the android. Also, to prevent any kind of program version problems we decided use specific versions of jre and jdk. After this meeting, pc interface is started to designed with using Scene Builder and Intellij. We are planning to design mobile application with Android Studio. This week, we will simply observe our processes and next week when we meet again, we will talk about our suggestions. 
+
+**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should start to work on pc interface design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 
 ****
 ### Meeting ~ (10.03.2020, 60 min)
