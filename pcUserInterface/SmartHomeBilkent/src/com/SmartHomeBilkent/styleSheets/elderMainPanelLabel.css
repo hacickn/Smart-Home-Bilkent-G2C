@@ -99,28 +99,28 @@
 {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #waterPanelElderCloseButton
 {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #temperaturePanelElderCloseButton
 {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #lightsPanelElderCloseButton
 {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #applicationSettingsElderButton
@@ -241,7 +241,7 @@
 #userSettingsChangeBackButton
 {
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 100, 100;
 }
 #userSettingsChangeInfoButton
@@ -266,7 +266,7 @@
 #userSettingsPanelTwoChangeBackButton
 {
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 100, 100;
 }
 #aquariumButtonElder
@@ -321,28 +321,28 @@
 {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #gasPanelElderCloseButton
 {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #doorPanelElderCloseButton
 {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #greenhousePanelElderCloseButton
 {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
-    -fx-background-image: url("imagesElder/arrows01.png");
+    -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
 #aquariumSaveButton
@@ -402,4 +402,16 @@
     -fx-border-radius: 5;
     -fx-background-image: url("imagesElder/logout1.png");
     -fx-background-size: 60, 60;
+}
+#nextPageHouseSettings
+{
+    -fx-border-radius: 5;
+    -fx-background-image: url("imagesElder/arrow4Extra.png");
+    -fx-background-size: 52, 52;
+}
+#returnPageHouseSettings
+{
+    -fx-border-radius: 5;
+    -fx-background-image: url("imagesElder/arrow4.png");
+    -fx-background-size: 52, 52;
 }

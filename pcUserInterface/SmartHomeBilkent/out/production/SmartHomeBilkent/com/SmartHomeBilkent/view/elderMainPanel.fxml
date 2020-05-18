@@ -123,7 +123,7 @@
                         <JFXButton fx:id="electricityPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="electricityPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <JFXButton fx:id="electricityPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="58.0" prefWidth="58.0" />
@@ -159,7 +159,7 @@
                         <JFXButton fx:id="lightsPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="lightsPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <JFXProgressBar fx:id="lightsPanelElderProgressBar2" disable="true" layoutX="211.0" layoutY="53.0" prefHeight="1.0" prefWidth="53.0" visible="false" />
@@ -194,7 +194,7 @@
                         <JFXButton fx:id="waterPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="waterPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                     </children>
@@ -227,7 +227,7 @@
                         <JFXButton fx:id="temperaturePanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="temperaturePanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                     </children>
@@ -253,7 +253,7 @@
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="nextPageHouseSettings" layoutX="741.0" layoutY="149.0" onAction="#actionPerformed" prefHeight="425.0" prefWidth="52.0" style="-fx-border-color: ff0000; -fx-border-radius: 25;" text="NEXT" />
+                <JFXButton fx:id="nextPageHouseSettings" layoutX="729.0" layoutY="335.0" onAction="#actionPerformed" prefHeight="52.0" prefWidth="52.0" />
                 <Label layoutX="9.0" layoutY="571.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 25;" text=" " />
                 <Label layoutX="50.0" layoutY="578.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: #ff3e30; -fx-background-radius: 25;" text=" " />
             </children>
@@ -461,7 +461,7 @@
                         </Label>
                         <ImageView fx:id="userSettingsChangeBackButtonImage" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="41.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                     </children>
@@ -506,7 +506,7 @@
                         <JFXButton fx:id="userSettingsPanelTwoChangeBackButton" layoutX="80.0" layoutY="247.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="100.0" prefWidth="100.0" text=" " />
                         <ImageView fx:id="userSettingsPanelTwoChangeBackButtonImage" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="80.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <Label fx:id="userSettingsPanelTwoChangeBackLabel" alignment="CENTER" disable="true" layoutX="80.0" layoutY="345.0" prefHeight="31.0" prefWidth="100.0" text="BACK" visible="false">
@@ -542,7 +542,7 @@
                         <JFXButton fx:id="aquariumPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="aquariumPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <JFXButton fx:id="aquariumPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" opacity="0.99" prefHeight="58.0" prefWidth="58.0" />
@@ -578,7 +578,7 @@
                         <JFXButton fx:id="greenhousePanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="greenhousePanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <JFXButton fx:id="greenhousePanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
@@ -612,7 +612,7 @@
                         <JFXButton fx:id="gasPanelElderCloseButton" layoutX="51.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="gasPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                         <JFXButton fx:id="gasPanelElderSettingsButton" layoutX="182.0" layoutY="160.0" onAction="#actionPerformed" prefHeight="58.0" prefWidth="58.0" />
@@ -648,7 +648,7 @@
                         <JFXButton fx:id="doorPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
                         <ImageView fx:id="doorPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
                             <image>
-                                <Image url="@../styleSheets/imagesElder/arrows02.png" />
+                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
                             </image>
                         </ImageView>
                     </children>
@@ -674,7 +674,7 @@
                         <Font name="Microsoft YaHei Light" size="36.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="returnPageHouseSettings" layoutX="8.0" layoutY="143.0" onAction="#actionPerformed" prefHeight="425.0" prefWidth="52.0" style="-fx-border-color: #ff0000; -fx-border-radius: 25;" text="Return" textFill="RED">
+                <JFXButton fx:id="returnPageHouseSettings" layoutX="19.0" layoutY="336.0" onAction="#actionPerformed" prefHeight="52.0" prefWidth="52.0" textFill="RED">
                     <font>
                         <Font size="10.0" />
                     </font>
