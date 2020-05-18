@@ -927,6 +927,9 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private Label emergencyBackButtonSubLabel;
 
+   @FXML
+   private ImageView portConnectionButtonElderImage;
+
 
    private boolean isArduinoConnect;
 
@@ -1755,6 +1758,7 @@ public class ElderMainPanel implements Initializable {
          if( isArduinoConnect )
             home.getSiren( ).buzzerOpen( internalSirenToggle.isSelected( ) );
       }
+
    }
 
    //2
@@ -2317,6 +2321,10 @@ public class ElderMainPanel implements Initializable {
       {
          emergencyBackButtonSubLabel.setVisible( true );
       }
+      else if( event.getSource() == portConnectionButtonElder )
+      {
+         portConnectionButtonElderImage.setVisible( true );
+      }
    }
    // buttonElderActivate END -MS 05.05.2020-
 
@@ -2699,6 +2707,10 @@ public class ElderMainPanel implements Initializable {
       else if( event.getSource() == emergencyBackButton )
       {
          emergencyBackButtonSubLabel.setVisible( false );
+      }
+      else if( event.getSource() == portConnectionButtonElder )
+      {
+         portConnectionButtonElderImage.setVisible( false );
       }
    }
    // buttonElderDeactivate END -MS 05.05.2020-

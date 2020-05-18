@@ -924,7 +924,12 @@
                         <Image url="@../styleSheets/imagesElder/usb2.png" />
                     </image>
                 </ImageView>
-                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#actionPerformed" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" text="CONNECT" />
+                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="100.0" prefWidth="100.0" text="CONNECT" />
+            <ImageView fx:id="portConnectionButtonElderImage" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="542.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../styleSheets/images/connection4.png" />
+               </image>
+            </ImageView>
                 <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="97.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../styleSheets/imagesElder/communication2.png" />

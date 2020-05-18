@@ -427,3 +427,9 @@
     -fx-background-image: url("imagesElder/feeding5.png");
     -fx-background-size: 60, 60;
 }
+#portConnectionButtonElder
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("images/connection5.png");
+    -fx-background-size: 100, 100;
+}
