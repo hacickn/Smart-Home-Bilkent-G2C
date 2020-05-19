@@ -148,12 +148,12 @@
                             </font>
                         </Label>
                         <JFXToggleButton fx:id="lightsPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
-                        <Label fx:id="lightsPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
+                        <Label fx:id="lightsPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="lightsPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
+                        <Label fx:id="lightsPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
@@ -183,12 +183,12 @@
                             </font>
                         </Label>
                         <JFXToggleButton fx:id="waterPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
-                        <Label fx:id="waterPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
+                        <Label fx:id="waterPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="waterPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
+                        <Label fx:id="waterPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
@@ -568,12 +568,12 @@
                             </font>
                         </Label>
                         <JFXToggleButton fx:id="greenhousePanelElderSwitch" layoutX="109.0" layoutY="26.0" opacity="0.99" text=" " />
-                        <Label fx:id="greenhousePanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
+                        <Label fx:id="greenhousePanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="greenhousePanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
+                        <Label fx:id="greenhousePanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
@@ -602,12 +602,12 @@
                             </font>
                         </Label>
                         <JFXToggleButton fx:id="gasPanelElderSwitch" layoutX="109.0" layoutY="26.0" onAction="#houseSettingsController" opacity="0.99" text=" " />
-                        <Label fx:id="gasPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
+                        <Label fx:id="gasPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="gasPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
+                        <Label fx:id="gasPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE" visible="false">
                             <font>
                                 <Font name="Microsoft JhengHei Light" size="18.0" />
                             </font>
