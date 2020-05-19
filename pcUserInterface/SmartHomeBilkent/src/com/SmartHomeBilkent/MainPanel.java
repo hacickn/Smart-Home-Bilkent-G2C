@@ -649,7 +649,7 @@ public class MainPanel implements Initializable {
     */
    void sound( String file, boolean check ) {
       if( ( check && !audioClip.getSource().substring( audioClip.getSource().indexOf( "com/SmartHomeBilkent/" )
-            + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) ) ) {
+            + 30, ( audioClip.getSource().length() - 6 ) ).equals( file ) && !audioClip.isPlaying() ) ) {
          audioClip = new AudioClip( this.getClass().getResource( "music/emergencySound.mp3" ).toString() );
          audioClip.stop();
          audioClip = new AudioClip( this.getClass().getResource( "music/" +
@@ -658,11 +658,6 @@ public class MainPanel implements Initializable {
          audioClip.setRate( 1 );
          audioClip.setVolume( ( ( double ) Integer.parseInt( volume ) ) / 500 );
          audioClip.play();
-      } else {
-         audioClip.stop();
-         audioClip = new AudioClip( this.getClass().getResource( "music/" +
-               bundle.getString( "pathLang" ) + file +
-               bundle.getString( "mp3Lang" ) ).toString() );
       }
    }
 
@@ -802,7 +797,6 @@ public class MainPanel implements Initializable {
       } else if( event.getSource() == doorButton ) {
          menuOpenDoorLabel.setVisible( false );
       }
-      sound( "saveChangesLang", false );
    }
 
    /**
@@ -1612,8 +1606,6 @@ public class MainPanel implements Initializable {
 
       else if( event.getSource() == changeUserPrivateInfoButton )
          changeUserPrivateInfoLabel.setVisible( false );
-
-      sound( "gasLang", false );
    }
 
    /**
@@ -1724,7 +1716,6 @@ public class MainPanel implements Initializable {
       else if( event.getSource() == homeSettingButton
             || event.getSource() == homeSettingButtonActive )
          homeSettingButtonLabel.setVisible( false );
-      sound( "gasLang", false );
    }
 
    /*
@@ -2043,7 +2034,6 @@ public class MainPanel implements Initializable {
       else if( event.getSource() == homeSettingWeatherButton
             || event.getSource() == homeSettingWeatherButtonActive )
          homeSubPaneWeatherLabel.setVisible( false );
-      sound( "gasLang", false );
    }
 
    /**
@@ -2189,8 +2179,8 @@ public class MainPanel implements Initializable {
    }
 
    /**
-    * changeTheme method that regulate GUI according to given theme
-    * @authors Hacı Çakın, İlke Doğan
+    * changeTheme method that regulate GUI according to given theme written are
+    * Hacı Çakın, İlke Doğan
     * @param themeName is a String input parameter that is new theme name
     */
    void changeTheme( String themeName ) {
