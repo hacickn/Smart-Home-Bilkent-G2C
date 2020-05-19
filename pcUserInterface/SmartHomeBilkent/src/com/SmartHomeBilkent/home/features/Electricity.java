@@ -15,11 +15,19 @@ public class Electricity extends Communication {
    private final String ELECTRICITY_OFF = "electricity_off#:";
 
    //constructors
+   /**
+    * This constructor method basically create new electricity with using ardinuo parameter.
+    * @param arduino
+    */
    public Electricity( Arduino arduino ) {
       super( arduino );
    }
 
    //methods
+   /**
+    * This method is responsible  to send open or close command to the arduino.
+    * @param control is a boolean input parameter
+    */
    public void open( boolean control ) {
       if( control )
          arduino.serialWrite( ELECTRICITY_ON );

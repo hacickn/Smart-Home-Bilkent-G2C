@@ -14,11 +14,20 @@ public class GardenLight extends Communication {
    private final String GARDEN_LIGHTS_OFF = "garden_lights_off#:";
 
    //constructor
+
+   /**
+    * This constructor method basically create new garden light with using ardinuo parameter.
+    * @param arduino
+    */
    public GardenLight( Arduino arduino ) {
       super( arduino );
    }
 
    //methods
+   /**
+    * This method is responsible  to send open or close command to the arduino.
+    * @param control is a boolean input parameter
+    */
    public void open( boolean control ) {
       if( control )
          arduino.serialWrite( GARDEN_LIGHTS_ON );

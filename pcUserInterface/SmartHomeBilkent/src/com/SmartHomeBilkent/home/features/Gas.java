@@ -15,11 +15,19 @@ public class Gas extends Communication {
    private final String GAS_OFF = "gas_off#:";
 
    //constructor
+   /**
+    * This constructor method basically create new garden light with using ardinuo parameter.
+    * @param arduino
+    */
    public Gas( Arduino arduino ) {
       super( arduino );
    }
 
    //methods
+   /**
+    * This method is responsible  to send open or close command to the arduino.
+    * @param control is a boolean input parameter
+    */
    public void open( boolean control ) {
       if( control )
          arduino.serialWrite( GAS_ON );
