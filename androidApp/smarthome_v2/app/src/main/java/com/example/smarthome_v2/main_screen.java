@@ -64,8 +64,8 @@ public class main_screen extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please Log in", Toast.LENGTH_SHORT).show();
         }
 
+        //initialize
         main = (ConstraintLayout) findViewById(R.id.mainmenu);
-        //ImageButton initialize
         gardenLight = findViewById(R.id.garden_light);
         gas = findViewById(R.id.gas);
         weather = findViewById(R.id.weather);
@@ -97,8 +97,7 @@ public class main_screen extends AppCompatActivity {
             waterCheck = bundle.getBoolean("water");
         }
 
-        //setting toggles
-
+        //database
 
         final String user_id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
@@ -546,7 +545,6 @@ public class main_screen extends AppCompatActivity {
             }
         });
 
-
         graphics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -704,7 +702,6 @@ public class main_screen extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
 

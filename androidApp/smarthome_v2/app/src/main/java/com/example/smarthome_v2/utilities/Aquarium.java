@@ -20,6 +20,7 @@ import pl.droidsonroids.gif.GifImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smarthome_v2.R;
+import com.example.smarthome_v2.main_screen;
 
 import java.util.Calendar;
 /**
@@ -34,7 +35,7 @@ public class Aquarium extends AppCompatActivity {
     private Button species;
     private ImageButton timeButton_one;
     private EditText textView_one;
-    private ImageButton timeButton_two;
+    private ImageButton timeButton_two,exit;
     private EditText textView_two;
     private ImageButton day;
     private EditText textView_three;
@@ -74,6 +75,7 @@ public class Aquarium extends AppCompatActivity {
         d = findViewById(R.id.text_appsetting);
         e = findViewById(R.id.motor_day);
         aquariumGIF = findViewById(R.id.aquariumGIF);
+        exit = findViewById(R.id.exit_aquarium);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -291,7 +293,7 @@ public class Aquarium extends AppCompatActivity {
 
         if(textNo == 8)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora_one.ttf");
             textView_one.setTypeface(typeface);
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
@@ -399,6 +401,19 @@ public class Aquarium extends AppCompatActivity {
                 timePicker.show();
             }
         });
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent thm = new Intent(Aquarium.this, main_screen.class);
+                thm.putExtra("theme",themeNumber);
+                thm.putExtra("text",textNo);
+                startActivity(thm);
+                finish();
+            }
+        });
+
 
     }
 }

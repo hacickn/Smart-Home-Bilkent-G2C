@@ -61,15 +61,16 @@ public class notiPop extends Activity {
             fire.setTextColor(Color.GREEN);
             gas.setTextColor(Color.GREEN);
             smoke.setTextColor(Color.GREEN);
-
-            if (themeNumber == 3) {
-                notifications.setBackgroundResource(R.drawable.gradient_bluenight);
-                top.setTextColor(Color.WHITE);
-                fire.setTextColor(Color.WHITE);
-                gas.setTextColor(Color.WHITE);
-                smoke.setTextColor(Color.WHITE);
-            }
-
         }
+
+        if (themeNumber == 3) {
+            notifications.setBackgroundResource(R.drawable.backgroundwood);
+            top.setTextColor(Color.WHITE);
+            fire.setTextColor(Color.WHITE);
+            gas.setTextColor(Color.WHITE);
+            smoke.setTextColor(Color.WHITE);
+        }
+
     }
 }
+

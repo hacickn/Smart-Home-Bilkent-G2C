@@ -160,7 +160,7 @@ public class ProfileCard extends AppCompatActivity {
 
         if(textNo == 8)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora_one.ttf");
             settingsName.setTypeface(typeface);
             mDisplayDate.setTypeface(typeface);
         }
