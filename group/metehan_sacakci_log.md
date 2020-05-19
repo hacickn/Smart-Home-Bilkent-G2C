@@ -18,6 +18,6 @@ This week I decided and applied the design of the "house panel"s appearance. I a
 This week I succesfully design the "user" panel and finished it. At this point, our current "elderMainPanel" which is the interface for elder people is mostly designed but still I have not finished "settings panel" properly. The another problem that I need to fix is to investigate my java code and make it more well designed as much as possible. Next week, I will learn how I can connect this interface with simulation.
 
 ### ~ 02.05.2020 ~
-
+This week I realized that Elder Main Panel has crucial problems about code efficiency. That is why I mostly worked to solve this problem and now I believe that Elder Panel has more efficient well proper methods and variables. Also, I mostly finished the code which is written to give functionality to settings pane. Whether there are still settings pane's sub panes that are needed to be completed, I believe that next week I will complete that part. Lastly, I add English and Turkish language choice for the user but again that method has a problem and next week, I will able the solve that problem. 
 
 ****
