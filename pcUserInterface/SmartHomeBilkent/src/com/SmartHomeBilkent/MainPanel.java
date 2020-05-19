@@ -1284,6 +1284,19 @@ public class MainPanel implements Initializable {
          if( isArduinoConnect )
             home.getElectricity().open( elecSubMenuToggleButton.isSelected() );
 
+         if( elecSubMenuToggleButton.isSelected() ) {
+            elecSubPaneOpenValueLabelPassive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+            elecSubPaneOpenValueLabelActive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+         }
+         else {
+            elecSubPaneCloseValueLabelPassive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+            elecSubPaneCloseValueLabelActive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+         }
+
       } else if( event.getSource() == gasSubMenuToggleButton ) {
          openGas( gasSubMenuToggleButton.isSelected() );
          if( isArduinoConnect )
@@ -3400,6 +3413,20 @@ public class MainPanel implements Initializable {
          if( isArduinoConnect )
             home.getElectricity().open( settingElectricityToggleButton.isSelected() );
          openElectricity( settingElectricityToggleButton.isSelected() );
+
+         if( elecSubMenuToggleButton.isSelected() ) {
+            elecSubPaneOpenValueLabelPassive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+            elecSubPaneOpenValueLabelActive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+         }
+         else {
+            elecSubPaneCloseValueLabelPassive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+            elecSubPaneCloseValueLabelActive.setText( "TODAY" +
+                  LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() );
+         }
+
       } else if( event.getSource() == settingGasToggleButton ) {
          if( isArduinoConnect )
             home.getGas().open( settingGasToggleButton.isSelected() );
