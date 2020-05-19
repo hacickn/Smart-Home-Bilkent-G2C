@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/alarm"
     android:background="@drawable/gradient">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/text_emergancy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency"
@@ -28,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/text_emergancy"
         app:srcCompat="@drawable/alarm" />
 
     <Switch
@@ -52,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/switch_internal" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/text_siren1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -77,6 +78,6 @@
         android:textStyle="bold"
         android:textColor="@color/orange_one"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/text_siren1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

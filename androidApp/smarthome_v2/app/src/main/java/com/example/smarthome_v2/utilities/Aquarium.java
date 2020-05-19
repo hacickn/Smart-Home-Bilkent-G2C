@@ -71,7 +71,7 @@ public class Aquarium extends AppCompatActivity {
         a = findViewById(R.id.feed_text);
         b = findViewById(R.id.exchange_day_text);
         c = findViewById(R.id.exchange_time_text);
-        d = findViewById(R.id.motor_hour);
+        d = findViewById(R.id.text_appsetting);
         e = findViewById(R.id.motor_day);
         aquariumGIF = findViewById(R.id.aquariumGIF);
 

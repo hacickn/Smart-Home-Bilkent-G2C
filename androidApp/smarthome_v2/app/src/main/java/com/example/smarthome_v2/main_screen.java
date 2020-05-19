@@ -362,8 +362,6 @@ public class main_screen extends AppCompatActivity {
                 {
                     textNo = 0;
                 }
-
-
             }
 
             @Override
@@ -563,6 +561,8 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent toHelp = new Intent(main_screen.this, HelpPop.class);
+                toHelp.putExtra("theme", themeNumber);
+                toHelp.putExtra("text", textNo);
                 startActivity(toHelp);
             }
         });

@@ -197,11 +197,11 @@
         android:layout_marginTop="48dp"
         android:progressDrawable="@color/orange_one"
         android:thumbTint="@color/orange_two"
-        app:layout_constraintStart_toEndOf="@+id/motor_hour"
+        app:layout_constraintStart_toEndOf="@+id/text_appsetting"
         app:layout_constraintTop_toBottomOf="@+id/exchange_day_text" />
 
     <TextView
-        android:id="@+id/motor_hour"
+        android:id="@+id/text_appsetting"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
         android:textColor="@color/orange_one"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/im_motor"
-        app:layout_constraintTop_toBottomOf="@+id/motor_hour" />
+        app:layout_constraintTop_toBottomOf="@+id/text_appsetting" />
 
     <EditText
         android:id="@+id/air_motor_start"

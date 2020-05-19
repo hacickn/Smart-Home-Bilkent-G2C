@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/app_settings"
     tools:context=".settings.AppSettings"
     android:background="@drawable/gradient">
 
     <TextView
-        android:id="@+id/motor_hour"
+        android:id="@+id/text_appsetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
@@ -68,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/text_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
@@ -79,10 +80,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/Emergency"
-        app:layout_constraintTop_toBottomOf="@+id/motor_hour" />
+        app:layout_constraintTop_toBottomOf="@+id/text_appsetting" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/text_connection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
@@ -93,10 +94,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/Blt"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/text_alarm" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/text_noti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
@@ -107,6 +108,6 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/Noti"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/text_connection" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".settings.HomeSettings"
+    android:id="@+id/home_settings"
     android:background="@drawable/gradient">
 
     <ImageButton
@@ -15,7 +16,7 @@
         android:layout_marginTop="142dp"
         android:background="@drawable/ic_electricity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
     <ImageButton
         android:id="@+id/imageButton16"
@@ -59,7 +60,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageButton15"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
     <TextView
         android:id="@+id/home_text_aquarium"
@@ -104,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/home_text_aquarium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
