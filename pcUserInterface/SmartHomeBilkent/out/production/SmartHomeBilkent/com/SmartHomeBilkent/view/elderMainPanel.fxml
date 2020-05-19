@@ -7,7 +7,6 @@
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXSlider?>
-<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import com.jfoenix.controls.JFXToggleButton?>
@@ -631,34 +630,6 @@
                 </Label>
                 <Line fx:id="gasLineElder" disable="true" endX="105.00006103515625" layoutX="575.0" layoutY="300.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" startX="-95.0" visible="false" />
                 <JFXButton fx:id="doorButtonElder" layoutX="480.0" layoutY="373.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="200.0" prefWidth="200.0" text=" " />
-                <Pane fx:id="doorPanelElder" disable="true" layoutX="435.0" layoutY="362.0" prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #179C52; -fx-background-radius: 5;" visible="false">
-                    <children>
-                        <Label fx:id="doorPanelElderLabel" alignment="CENTER" layoutX="34.0" opacity="0.99" prefHeight="41.0" prefWidth="224.0" text="Door" textFill="WHITE">
-                            <font>
-                                <Font name="Microsoft JhengHei Light" size="24.0" />
-                            </font>
-                        </Label>
-                        <JFXToggleButton fx:id="doorPanelElderSwitch" disable="true" layoutX="34.0" layoutY="21.0" opacity="0.99" text=" " visible="false" />
-                        <Label fx:id="doorPanelElderLastOpening" alignment="CENTER" layoutX="11.0" layoutY="84.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-radius: 25; -fx-border-color: #ffffff;" text="Last Opening: Yesterday 14.00" textFill="WHITE">
-                            <font>
-                                <Font name="Microsoft JhengHei Light" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="doorPanelElderLastClosure" alignment="CENTER" layoutX="11.0" layoutY="122.0" opacity="0.99" prefHeight="31.0" prefWidth="269.0" style="-fx-border-color: #ffffff; -fx-border-radius: 25;" text="Last Closure: Yesterday 23.00" textFill="WHITE">
-                            <font>
-                                <Font name="Microsoft JhengHei Light" size="18.0" />
-                            </font>
-                        </Label>
-                        <JFXButton fx:id="doorPanelElderCloseButton" layoutX="117.0" layoutY="160.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.99" prefHeight="58.0" prefWidth="58.0" text=" " />
-                        <ImageView fx:id="doorPanelElderCloseButtonActive" disable="true" fitHeight="58.0" fitWidth="58.0" layoutX="117.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                            <image>
-                                <Image url="@../styleSheets/imagesElder/arrow4.png" />
-                            </image>
-                        </ImageView>
-                  <JFXButton fx:id="doorButton" layoutX="61.0" layoutY="41.0" prefHeight="41.0" prefWidth="171.0" style="-fx-border-color: #000000;" />
-                  <JFXSpinner fx:id="doorSpinner" layoutX="21.0" layoutY="164.0" visible="false" />
-                    </children>
-                </Pane>
                 <Label fx:id="doorLabelElder" alignment="CENTER" disable="true" layoutX="480.0" layoutY="518.0" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" opacity="0.8" prefHeight="54.0" prefWidth="200.0" text="Doors" textFill="WHITE" visible="false">
                     <font>
                         <Font name="Microsoft JhengHei Light" size="24.0" />
@@ -924,7 +895,7 @@
                         <Image url="@../styleSheets/imagesElder/usb2.png" />
                     </image>
                 </ImageView>
-                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="100.0" prefWidth="100.0" text="CONNECT" />
+                <JFXButton fx:id="portConnectionButtonElder" layoutX="542.0" layoutY="441.0" onAction="#actionPerformed" onMouseEntered="#buttonElderActivate" onMouseExited="#buttonElderDeactivate" prefHeight="100.0" prefWidth="100.0" />
             <ImageView fx:id="portConnectionButtonElderImage" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="542.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../styleSheets/images/connection4.png" />
@@ -935,7 +906,7 @@
                         <Image url="@../styleSheets/imagesElder/communication2.png" />
                     </image>
                 </ImageView>
-                <JFXButton layoutX="147.0" layoutY="441.0" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: #000000;" />
+                <JFXButton fx:id="bluetoothButton" layoutX="147.0" layoutY="441.0" prefHeight="100.0" prefWidth="100.0" />
             </children>
         </Pane>
       <Pane fx:id="notificationSettingsElderPanel" disable="true" prefHeight="600.0" prefWidth="800.0" visible="false">

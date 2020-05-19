@@ -433,3 +433,9 @@
     -fx-background-image: url("images/connection5.png");
     -fx-background-size: 100, 100;
 }
+#bluetoothButton
+{
+    -fx-background-radius: 5;
+    -fx-background-image: url("images/connection5.png");
+    -fx-background-size: 100, 100;
+}

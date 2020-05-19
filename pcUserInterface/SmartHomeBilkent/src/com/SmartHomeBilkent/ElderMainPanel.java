@@ -44,695 +44,260 @@ import java.util.Scanner;
 
 public class ElderMainPanel implements Initializable {
    //properties
+
+   // First main elder pane's properties.
    @FXML
    private Pane mainElderPanelMenu;
 
    @FXML
-   private Label dayMessage;
+   private Label dayMessage, time, userProfileSubLabelNotActive,
+           userProfileSubLabelActive,  menuSubLabelNotActive,
+           menuSubLabelActive, settingsSubLabelNotActive, settingsSubLabelActive;
 
    @FXML
-   private Label time;
+   private JFXButton userProfileButtonElder, settingsButtonElder,
+           houseMenuButtonElder, elderLogoutButton;
 
    @FXML
-   private JFXButton userProfileButtonElder;
+   private ImageView userProfileElderActiveImage, settingsButtonElderActiveImage,
+           houseMenuElderActiveImage, elderLogoutButtonActive;
 
-   @FXML
-   private ImageView userProfileElderActiveImage;
-
-   @FXML
-   private JFXButton settingsButtonElder;
-
-   @FXML
-   private ImageView settingsButtonElderActiveImage;
-
-   @FXML
-   private JFXButton houseMenuButtonElder;
-
-   @FXML
-   private ImageView houseMenuElderActiveImage;
-
-   @FXML
-   private Label userProfileSubLabelNotActive;
-
-   @FXML
-   private Label userProfileSubLabelActive;
-
-   @FXML
-   private Label menuSubLabelNotActive;
-
-   @FXML
-   private Label menuSubLabelActive;
-
-   @FXML
-   private Label settingsSubLabelNotActive;
-
-   @FXML
-   private Label settingsSubLabelActive;
-
+   // house menu(settings)'s first elder pane's properties
    @FXML
    private Pane houseMenuElderPane;
 
    @FXML
-   private JFXButton electricityButtonElder;
+   private JFXButton electricityButtonElder, electricityPanelElderCloseButton,
+           electricityPanelElderSettingsButton, lightsButtonElder,
+           lightsPanelElderCloseButton, waterButtonElder,
+           waterPanelElderCloseButton, temperatureButtonElder,
+           temperaturePanelElderCloseButton, houseMenuBackButtonElder,
+           nextPageHouseSettings, houseMenuElderBulkChange;
 
    @FXML
-   private Pane electricityPanelElder;
+   private Pane electricityPanelElder, lightsPanelElder, waterPanelElder, temperaturePanelElder;
 
    @FXML
-   private Label electricityPanelElderLabel;
+   private Label electricityPanelElderLabel, electricityPanelElderLastOpening,
+           electricityPanelElderLastClosure, electricityLabelElder,
+           lightsPanelElderLabel, lightsPanelElderLastOpening,
+           lightsPanelElderLastClosure, lightsLabelElder,
+           waterPanelElderLabel, waterPanelElderLastOpening,
+           waterPanelElderLastClosure, waterLabelElder,
+           temperaturePanelElderLabel, temperaturePanelElderLastOpening,
+           temperaturePanelElderLastClosure, temperatureLabelElder,
+           houseMenuBackButtonSubLabel, houseMenuFirstLabelElder;
 
    @FXML
-   private JFXToggleButton electricityPanelElderSwitch;
+   private JFXToggleButton electricityPanelElderSwitch, lightsPanelElderSwitch,
+           waterPanelElderSwitch, temperaturePanelElderSwitch;
 
    @FXML
-   private Label electricityPanelElderLastOpening;
+   private ImageView electricityPanelElderCloseButtonActive, lightsPanelElderCloseButtonActive,
+           waterPanelElderCloseButtonActive, temperaturePanelElderCloseButtonActive;
 
    @FXML
-   private Label electricityPanelElderLastClosure;
+   private JFXProgressBar electricityPanelElderProgressBar1, electricityPanelElderProgressBar2,
+           lightsPanelElderProgressBar2, lightsPanelElderProgressBar1;
 
    @FXML
-   private JFXButton electricityPanelElderCloseButton;
+   private Line electricityLineElder, lightsLineElder,
+           waterLineElder, temperatureLineElder;
 
-   @FXML
-   private ImageView electricityPanelElderCloseButtonActive;
-
-   @FXML
-   private JFXButton electricityPanelElderSettingsButton;
-
-   @FXML
-   private JFXProgressBar electricityPanelElderProgressBar1;
-
-   @FXML
-   private JFXProgressBar electricityPanelElderProgressBar2;
-
-   @FXML
-   private Label electricityLabelElder;
-
-   @FXML
-   private Line electricityLineElder;
-
-   @FXML
-   private JFXButton lightsButtonElder;
-
-   @FXML
-   private Pane lightsPanelElder;
-
-   @FXML
-   private Label lightsPanelElderLabel;
-
-   @FXML
-   private JFXToggleButton lightsPanelElderSwitch;
-
-   @FXML
-   private Label lightsPanelElderLastOpening;
-
-   @FXML
-   private Label lightsPanelElderLastClosure;
-
-   @FXML
-   private JFXButton lightsPanelElderCloseButton;
-
-   @FXML
-   private ImageView lightsPanelElderCloseButtonActive;
-
-   @FXML
-   private JFXProgressBar lightsPanelElderProgressBar2;
-
-   @FXML
-   private JFXProgressBar lightsPanelElderProgressBar1;
-
-   @FXML
-   private Label lightsLabelElder;
-
-   @FXML
-   private Line lightsLineElder;
-
-   @FXML
-   private JFXButton waterButtonElder;
-
-   @FXML
-   private Pane waterPanelElder;
-
-   @FXML
-   private Label waterPanelElderLabel;
-
-   @FXML
-   private JFXToggleButton waterPanelElderSwitch;
-
-   @FXML
-   private Label waterPanelElderLastOpening;
-
-   @FXML
-   private Label waterPanelElderLastClosure;
-
-   @FXML
-   private JFXButton waterPanelElderCloseButton;
-
-   @FXML
-   private ImageView waterPanelElderCloseButtonActive;
-
-   @FXML
-   private Label waterLabelElder;
-
-   @FXML
-   private Line waterLineElder;
-
-   @FXML
-   private JFXButton temperatureButtonElder;
-
-   @FXML
-   private Pane temperaturePanelElder;
-
-   @FXML
-   private Label temperaturePanelElderLabel;
-
-   @FXML
-   private JFXToggleButton temperaturePanelElderSwitch;
-
-   @FXML
-   private Label temperaturePanelElderLastOpening;
-
-   @FXML
-   private Label temperaturePanelElderLastClosure;
-
-   @FXML
-   private JFXButton temperaturePanelElderCloseButton;
-
-   @FXML
-   private ImageView temperaturePanelElderCloseButtonActive;
-
-   @FXML
-   private Label temperatureLabelElder;
-
-   @FXML
-   private Line temperatureLineElder;
-
-   @FXML
-   private JFXButton houseMenuBackButtonElder;
-
-   @FXML
-   private Label houseMenuBackButtonSubLabel;
-
-   @FXML
-   private Label houseMenuFirstLabelElder;
-
-   @FXML
-   private JFXButton nextPageHouseSettings;
-
+   // settings pane's properties
    @FXML
    private Pane settingsElderPanel;
 
    @FXML
-   private JFXButton applicationSettingsElderButton;
+   private JFXButton applicationSettingsElderButton, timeConfigurationElderButton,
+           settingsBackButtonElder;
 
    @FXML
-   private Label applicationSettingsElderLabel;
+   private Label applicationSettingsElderLabel, homeSettingsElderLabel,
+           settingsBackButtonSubLabel, houseMenuFirstLabelElder1;
 
    @FXML
-   private Line applicationSettingsElderLine;
+   private Line applicationSettingsElderLine, homeSettingsElderLine;
 
-   @FXML
-   private JFXButton timeConfigurationElderButton;
-
-   @FXML
-   private Label homeSettingsElderLabel;
-
-   @FXML
-   private Line homeSettingsElderLine;
-
-   @FXML
-   private JFXButton settingsBackButtonElder;
-
-   @FXML
-   private Label settingsBackButtonSubLabel;
-
-   @FXML
-   private Label houseMenuFirstLabelElder1;
-
+   // application pane's properties
    @FXML
    private Pane applicationElderPanel;
 
    @FXML
-   private JFXButton applicationBackButtonElder;
+   private JFXButton applicationBackButtonElder, languageSettingsElderButton,
+           connectionSettingsElderButton, emergencySettingsElderButton,
+           notificationSettingsElderButton;
 
    @FXML
-   private Label applicationMenuFirstLabelElder;
+   private Label applicationMenuFirstLabelElder, applicationBackButtonSubLabel,
+           languageSettingsElderLabel, connectionSettingsElderLabel,
+           emergencySettingsElderLabel, notificationSettingsElderLabel;
 
    @FXML
-   private Label applicationBackButtonSubLabel;
+   private Line languageSettingsElderLine, connectionSettingsElderLine,
+           emergencySettingsElderLine, notificationSettingsElderLine;
 
-   @FXML
-   private JFXButton languageSettingsElderButton;
-
-   @FXML
-   private Label languageSettingsElderLabel;
-
-   @FXML
-   private Line languageSettingsElderLine;
-
-   @FXML
-   private JFXButton connectionSettingsElderButton;
-
-   @FXML
-   private Label connectionSettingsElderLabel;
-
-   @FXML
-   private Line connectionSettingsElderLine;
-
-   @FXML
-   private JFXButton emergencySettingsElderButton;
-
-   @FXML
-   private Label emergencySettingsElderLabel;
-
-   @FXML
-   private Line emergencySettingsElderLine;
-
+   // user settings pane's properties
    @FXML
    private Pane userSettingsElderPanelMenu;
 
    @FXML
-   private JFXButton userProfileBackButtonElder;
+   private JFXButton userProfileBackButtonElder, userSettingsChangeInfoButton,
+           userSettingsChangeUserElderButton, userSettingsUPChangeButton,
+           userSettingsChangeSave, userSettingsChangeBackButton,
+           userSettingsPanelTwoChangeSaveButton, userSettingsPanelTwoChangeBackButton;
 
    @FXML
-   private Label userProfileBackButtonElderSubLabel;
+   private Label userProfileBackButtonElderSubLabel, userSettingsFirstLabelElder,
+           userSettingsNameElder, userSettingsSurnameElder,
+           userSettingsDateElder, userSettingsGenderElder,
+           userSettingsUsernameElder, userSettingsPasswordElder,
+           userSettingsChangeInfoButtonSubLabel, userSettingsUPChangeLabel,
+           userSettingsNameElderChange, userSettingsSurnameElderChange,
+           userSettingsDateElderChange, userSettingsGenderElderChange,
+           userSettingsChangeSaveSubLabel, userSettingsChangeBackButtonSubLabel,
+           userSettingsUNElderChange, userSettingsPasswordChangeElderCurrent,
+           userSettingsPasswordChangeElderNew, userSettingsPasswordChangeElderNewConfirm,
+           userSettingsPanelTwoChangeSaveLabel, userSettingsPanelTwoChangeBackLabel;
 
    @FXML
-   private Label userSettingsFirstLabelElder;
-
-   @FXML
-   private Label userSettingsNameElder;
-
-   @FXML
-   private JFXTextField userSettingsNameElderText;
-
-   @FXML
-   private Label userSettingsSurnameElder;
-
-   @FXML
-   private JFXTextField userSettingsSurnameElderText;
-
-   @FXML
-   private Label userSettingsDateElder;
-
-   @FXML
-   private JFXTextField userSettingsDateElderText;
-
-   @FXML
-   private Label userSettingsGenderElder;
-
-   @FXML
-   private JFXTextField userSettingsGenderElderText;
-
-   @FXML
-   private Label userSettingsUsernameElder;
-
-   @FXML
-   private JFXTextField userSettingsUsernameElderText;
-
-   @FXML
-   private Label userSettingsPasswordElder;
-
-   @FXML
-   private JFXTextField userSettingsPasswordElderText;
+   private JFXTextField userSettingsNameElderText, userSettingsSurnameElderText,
+           userSettingsDateElderText, userSettingsGenderElderText,
+           userSettingsUsernameElderText, userSettingsPasswordElderText,
+           userSettingsNameElderTextChange, userSettingsSurnameElderTextChange,
+           userSettingsDateElderTextChange, userSettingsUNElderChangeText,
+           userSettingsPasswordChangeElderTextCurrent, userSettingsPasswordChangeElderNewText,
+           userSettingsPasswordChangeElderNewConfirmText;
 
    @FXML
    private JFXPasswordField userSettingsPasswordElderTextSecret;
 
    @FXML
-   private JFXButton userSettingsChangeInfoButton;
+   private ImageView userSettingsChangeInfoButtonImage, userSettingsUPChangeButtonImage,
+           userSettingsChangeSaveImage, userSettingsChangeBackButtonImage,
+           userSettingsPanelTwoChangeSaveButtonImage, userSettingsPanelTwoChangeBackButtonImage;
 
    @FXML
-   private Label userSettingsChangeInfoButtonSubLabel;
+   private Pane userSettingsInfoChangerPanel, userSettingsUIChangerPanel;
 
    @FXML
-   private ImageView userSettingsChangeInfoButtonImage;
+   private JFXRadioButton userSettingsGenderMale, userSettingsGenderFemale;
 
-   @FXML
-   private JFXButton userSettingsChangeUserElderButton;
-
-   @FXML
-   private JFXButton userSettingsUPChangeButton;
-
-   @FXML
-   private Label userSettingsUPChangeLabel;
-
-   @FXML
-   private ImageView userSettingsUPChangeButtonImage;
-
-   @FXML
-   private Pane userSettingsInfoChangerPanel;
-
-   @FXML
-   private Label userSettingsNameElderChange;
-
-   @FXML
-   private JFXTextField userSettingsNameElderTextChange;
-
-   @FXML
-   private Label userSettingsSurnameElderChange;
-
-   @FXML
-   private JFXTextField userSettingsSurnameElderTextChange;
-
-   @FXML
-   private Label userSettingsDateElderChange;
-
-   @FXML
-   private JFXTextField userSettingsDateElderTextChange;
-
-   @FXML
-   private Label userSettingsGenderElderChange;
-
-   @FXML
-   private JFXRadioButton userSettingsGenderMale;
-
-   @FXML
-   private JFXRadioButton userSettingsGenderFemale;
-
-   @FXML
-   private JFXButton userSettingsChangeSave;
-
-   @FXML
-   private Label userSettingsChangeSaveSubLabel;
-
-   @FXML
-   private ImageView userSettingsChangeSaveImage;
-
-   @FXML
-   private JFXButton userSettingsChangeBackButton;
-
-   @FXML
-   private Label userSettingsChangeBackButtonSubLabel;
-
-   @FXML
-   private ImageView userSettingsChangeBackButtonImage;
-
-   @FXML
-   private Pane userSettingsUIChangerPanel;
-
-   @FXML
-   private Label userSettingsUNElderChange;
-
-   @FXML
-   private JFXTextField userSettingsUNElderChangeText;
-
-   @FXML
-   private Label userSettingsPasswordChangeElderCurrent;
-
-   @FXML
-   private JFXTextField userSettingsPasswordChangeElderTextCurrent;
-
-   @FXML
-   private Label userSettingsPasswordChangeElderNew;
-
-   @FXML
-   private JFXTextField userSettingsPasswordChangeElderNewText;
-
-   @FXML
-   private Label userSettingsPasswordChangeElderNewConfirm;
-
-   @FXML
-   private JFXTextField userSettingsPasswordChangeElderNewConfirmText;
-
-   @FXML
-   private JFXButton userSettingsPanelTwoChangeSaveButton;
-
-   @FXML
-   private ImageView userSettingsPanelTwoChangeSaveButtonImage;
-
-   @FXML
-   private Label userSettingsPanelTwoChangeSaveLabel;
-
-   @FXML
-   private JFXButton userSettingsPanelTwoChangeBackButton;
-
-   @FXML
-   private ImageView userSettingsPanelTwoChangeBackButtonImage;
-
-   @FXML
-   private Label userSettingsPanelTwoChangeBackLabel;
-
+   // house menu's (settings) second page's properties
    @FXML
    private Pane houseMenuElderPane2;
 
    @FXML
-   private JFXButton aquariumButtonElder;
+   private JFXButton aquariumButtonElder, aquariumPanelElderCloseButton,
+           aquariumPanelElderSettingsButton, menuAquariumFeedButton,
+           greenhouseButtonElder, greenhousePanelElderCloseButton,
+           greenhousePanelElderSettingsButton, gasButtonElder,
+           gasPanelElderCloseButton, gasPanelElderSettingsButton,
+           doorButtonElder, houseMenuBackButtonElder2,
+           returnPageHouseSettings;
 
    @FXML
-   private Pane aquariumPanelElder;
+   private Pane aquariumPanelElder, greenhousePanelElder,
+           gasPanelElder;
 
    @FXML
-   private Label aquariumPanelElderLabel;
+   private Label aquariumPanelElderLabel, aquariumLabelElder,
+           greenhousePanelElderLabel, greenhousePanelElderLastOpening,
+           greenhousePanelElderLastClosure, greenhouseLabelElder,
+           gasPanelElderLabel, gasPanelElderLastOpening,
+           gasPanelElderLastClosure, gasLabelElder,
+           doorPanelElderLabel, doorLabelElder,
+           houseMenuBackButtonSubLabel2, houseMenuFirstLabelElder2;
 
    @FXML
-   private JFXToggleButton aquariumPanelElderSwitch;
+   private JFXToggleButton aquariumPanelElderSwitch, greenhousePanelElderSwitch,
+           gasPanelElderSwitch;
 
    @FXML
-   private Label aquariumPanelElderLastOpening;
+   private ImageView aquariumPanelElderCloseButtonActive, menuAquariumFeedButtonActive,
+           greenhousePanelElderCloseButtonActive, gasPanelElderCloseButtonActive;
 
    @FXML
-   private Label aquariumPanelElderLastClosure;
+   private JFXProgressBar aquariumPanelElderProgressBar1, aquariumPanelElderProgressBar2,
+           gasPanelElderProgressBar1, gasPanelElderProgressBar2;
 
    @FXML
-   private JFXButton aquariumPanelElderCloseButton;
+   private ProgressIndicator menuAquariumIndicator;
 
    @FXML
-   private ImageView aquariumPanelElderCloseButtonActive;
+   private Line aquariumLineElder, greenhouseLineElder,
+           gasLineElder, doorLineElder;
 
    @FXML
-   private JFXButton aquariumPanelElderSettingsButton;
+   private JFXSpinner doorSpinner;
 
-   @FXML
-   private JFXProgressBar aquariumPanelElderProgressBar1;
-
-   @FXML
-   private JFXProgressBar aquariumPanelElderProgressBar2;
-
-   @FXML
-   private Label aquariumLabelElder;
-
-   @FXML
-   private Line aquariumLineElder;
-
-   @FXML
-   private JFXButton greenhouseButtonElder;
-
-   @FXML
-   private Pane greenhousePanelElder;
-
-   @FXML
-   private Label greenhousePanelElderLabel;
-
-   @FXML
-   private JFXToggleButton greenhousePanelElderSwitch;
-
-   @FXML
-   private Label greenhousePanelElderLastOpening;
-
-   @FXML
-   private Label greenhousePanelElderLastClosure;
-
-   @FXML
-   private JFXButton greenhousePanelElderCloseButton;
-
-   @FXML
-   private ImageView greenhousePanelElderCloseButtonActive;
-
-   @FXML
-   private JFXButton greenhousePanelElderSettingsButton;
-
-   @FXML
-   private Label greenhouseLabelElder;
-
-   @FXML
-   private Line greenhouseLineElder;
-
-   @FXML
-   private JFXButton gasButtonElder;
-
-   @FXML
-   private Pane gasPanelElder;
-
-   @FXML
-   private Label gasPanelElderLabel;
-
-   @FXML
-   private JFXToggleButton gasPanelElderSwitch;
-
-   @FXML
-   private Label gasPanelElderLastOpening;
-
-   @FXML
-   private Label gasPanelElderLastClosure;
-
-   @FXML
-   private JFXButton gasPanelElderCloseButton;
-
-   @FXML
-   private ImageView gasPanelElderCloseButtonActive;
-
-   @FXML
-   private JFXButton gasPanelElderSettingsButton;
-
-   @FXML
-   private JFXProgressBar gasPanelElderProgressBar1;
-
-   @FXML
-   private JFXProgressBar gasPanelElderProgressBar2;
-
-   @FXML
-   private Label gasLabelElder;
-
-   @FXML
-   private Line gasLineElder;
-
-   @FXML
-   private JFXButton doorButtonElder;
-
-   @FXML
-   private Pane doorPanelElder;
-
-   @FXML
-   private Label doorPanelElderLabel;
-
-   @FXML
-   private JFXToggleButton doorPanelElderSwitch;
-
-   @FXML
-   private Label doorPanelElderLastOpening;
-
-   @FXML
-   private Label doorPanelElderLastClosure;
-
-   @FXML
-   private JFXButton doorPanelElderCloseButton;
-
-   @FXML
-   private ImageView doorPanelElderCloseButtonActive;
-
-   @FXML
-   private Label doorLabelElder;
-
-   @FXML
-   private Line doorLineElder;
-
-   @FXML
-   private JFXButton houseMenuBackButtonElder2;
-
-   @FXML
-   private Label houseMenuBackButtonSubLabel2;
-
-   @FXML
-   private Label houseMenuFirstLabelElder2;
-
-   @FXML
-   private JFXButton returnPageHouseSettings;
-
+   // Aquarium settings pane's properties
    @FXML
    private Pane aquariumSettingsPanel;
 
    @FXML
-   private Label aquariumMenuFirstLabelElder;
+   private Label aquariumMenuFirstLabelElder, aquariumMenuBackButtonSubLabel,
+           speciesOfFishLabel, FeedingStartTimeLabel,
+           weeklyWaterExchangeDayAndTimeLabel, dailyAirEngineRunTimeandStartTimeLabel,
+           aquariumSaveButtonLabel, aquariumSettingsWarningLabel;
 
    @FXML
-   private JFXButton aquariumMenuBackButtonElder;
+   private JFXButton aquariumMenuBackButtonElder, aquariumSaveButton;
 
    @FXML
-   private Label aquariumMenuBackButtonSubLabel;
-
-   @FXML
-   private Label speciesOfFishLabel;
+   private CheckComboBox<String> speciesOfFishCheckComboBox;
 
    @FXML
    private ChoiceBox<?> speciesOfFishChoice;
 
    @FXML
-   private Label FeedingStartTimeLabel;
+   private JFXTimePicker feedingStartTimeTimePicker, weeklyWaterExchangeDayAndTimeTimePicker,
+           dailyAirEngineRunTimeandStartTimeTimePicker;
 
    @FXML
-   private JFXTimePicker feedingStartTimeTimePicker;
+   private JFXComboBox<String> weeklyWaterExchangeDayAndTimeChoice;
 
    @FXML
-   private Label weeklyWaterExchangeDayAndTimeLabel;
+   private JFXSlider dailyAirEngineRunTimeandStartTimeSlider;
 
-   @FXML
-   private JFXComboBox< String > weeklyWaterExchangeDayAndTimeChoice;
-
-   @FXML
-   private JFXTimePicker weeklyWaterExchangeDayAndTimeTimePicker;
-
-   @FXML
-   private Label dailyAirEngineRunTimeandStartTimeLabel;
-
-   @FXML
-   private JFXTimePicker dailyAirEngineRunTimeandStartTimeTimePicker;
-
-   @FXML
-   private JFXButton aquariumSaveButton;
-
-   @FXML
-   private Label aquariumSaveButtonLabel;
-
+   // Language settings pane's properties
    @FXML
    private Pane languageSettingsElderPanel;
 
    @FXML
-   private Label languagePanelFirstLabelElder;
+   private Label languagePanelFirstLabelElder, languageElderPanelBackButtonSubLabel,
+           englishElderButtonSubLabelPassive, englishElderButtonSubLabelActive,
+           turkishElderButtonSubLabelPassive, turkishElderButtonSubLabelActive;
 
    @FXML
-   private JFXButton languageElderPanelBackButtonElder;
+   private JFXButton languageElderPanelBackButtonElder, englishElderButton,
+           turkishElderButton;
 
-   @FXML
-   private Label languageElderPanelBackButtonSubLabel;
-
-   @FXML
-   private JFXButton englishElderButton;
-
-   @FXML
-   private Label englishElderButtonSubLabelPassive;
-
-   @FXML
-   private Label englishElderButtonSubLabelActive;
-
-   @FXML
-   private JFXButton turkishElderButton;
-
-   @FXML
-   private Label turkishElderButtonSubLabelPassive;
-
-   @FXML
-   private Label turkishElderButtonSubLabelActive;
-
+   // Electricity Settings Pane's properties
    @FXML
    private Pane electiricitySettingsPanel;
 
    @FXML
-   private Label electiricityMenuFirstLabelElder;
+   private Label electiricityMenuFirstLabelElder, electiricityMenuBackButtonSubLabel;
 
    @FXML
    private JFXButton electiricityMenuBackButtonElder;
 
    @FXML
-   private Label electiricityMenuBackButtonSubLabel;
-
-   @FXML
-   private BarChart< Number, Number> electiricitySettingsPanelChart;
+   private BarChart<Number, Number> electiricitySettingsPanelChart;
 
    @FXML
    private JFXToggleButton electiricitySettingsPanelCloseOpenSwitch;
 
+   // Gas Settings Pane's properties
    @FXML
    private Pane gasSettingsPanel;
 
    @FXML
-   private Label gasMenuFirstLabelElder;
+   private Label gasMenuFirstLabelElder, gasMenuBackButtonSubLabel;
 
    @FXML
    private JFXButton gasMenuBackButtonElder;
-
-   @FXML
-   private Label gasMenuBackButtonSubLabel;
 
    @FXML
    private BarChart<Number, Number> gasSettingsPanelChart;
@@ -740,141 +305,66 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private JFXToggleButton gasSettingsPanelCloseOpenSwitch;
 
+   // Greenhouse Settings Pane's properties
    @FXML
    private Pane greenhouseSettingsPanel;
 
    @FXML
-   private Label greenhouseMenuFirstLabelElder;
+   private Label greenhouseMenuFirstLabelElder, greenhouseMenuBackButtonSubLabel,
+           latesWaterFromAquariumLabel, latesWaterFromAquariumVariable,
+           humidityLabel, humidityVariable, greenhouseTemperatureLabel,
+           greenhouseTemperatureVariable;
 
    @FXML
    private JFXButton greenhouseMenuBackButtonElder;
 
    @FXML
-   private Label greenhouseMenuBackButtonSubLabel;
-
-   @FXML
    private LineChart<Number, Number> greenhouseSettingsPanelChart;
 
-   @FXML
-   private Label latesWaterFromAquariumLabel;
-
-   @FXML
-   private Label latesWaterFromAquariumVariable;
-
-   @FXML
-   private Label humidityLabel;
-
-   @FXML
-   private Label humidityVariable;
-
-   @FXML
-   private Label greenhouseTemperatureLabel;
-
-   @FXML
-   private Label greenhouseTemperatureVariable;
-
+   // Connection Settings pane's properties
    @FXML
    private Pane connectionSettingsElderPanel;
 
    @FXML
-   private Label connectionPanelFirstLabelElder;
+   private Label connectionPanelFirstLabelElder, connectionElderPanelBackButtonSubLabel;
 
    @FXML
-   private JFXButton connectionElderPanelBackButtonElder;
-
-   @FXML
-   private Label connectionElderPanelBackButtonSubLabel;
+   private JFXButton connectionElderPanelBackButtonElder, portConnectionButtonElder, bluetoothButton;
 
    @FXML
    private ComboBox<String> portChooserElder;
 
    @FXML
-   private CheckComboBox<String> speciesOfFishCheckComboBox;
+   private ImageView portConnectionButtonElderImage;
 
-   @FXML
-   private CheckComboBox< String > checkComboBox;
-
-   @FXML
-   private JFXSlider dailyAirEngineRunTimeandStartTimeSlider;
-
-   @FXML
-   private JFXButton elderLogoutButton;
-
-   @FXML
-   private JFXButton portConnectionButtonElder;
-
-   @FXML
-   private ToggleButton internalSirenToggle, externalSirenToggle;
-
-
+   // Notification Settings Pane's properties
    @FXML
    private Pane notificationSettingsElderPanel;
 
    @FXML
-   private Label notificationPanelFirstLabelElder;
+   private Label notificationPanelFirstLabelElder, notificationElderPanelBackButtonSubLabel,
+           fireSensorLabel, gasSensorLabel, smokeSensorLabel, visualWarningLabel,
+           auditoryWarningLabel;
 
    @FXML
    private JFXButton notificationElderPanelBackButtonElder;
 
-   @FXML
-   private Label connectionElderPanelBackButtonSubLabel1;
 
    @FXML
-   private JFXToggleButton fireButtonVisualToggle;
+   private JFXToggleButton fireButtonVisualToggle, gasSensorVisualToggle,
+           smokeSensorVisualToggle, fireButtonSoundToggle,
+           gasSensorSoundToggle, smokeSensorSoundToggle;
 
-   @FXML
-   private JFXToggleButton gasSensorVisualToggle;
-
-   @FXML
-   private JFXToggleButton smokeSensorVisualToggle;
-
-   @FXML
-   private JFXToggleButton fireButtonSoundToggle;
-
-   @FXML
-   private JFXToggleButton gasSensorSoundToggle;
-
-   @FXML
-   private JFXToggleButton smokeSensorSoundToggle;
-
-   @FXML
-   private JFXButton notificationSettingsElderButton;
-
-   @FXML
-   private ImageView elderLogoutButtonActive;
-
-   @FXML
-   private Label notificationSettingsElderLabel;
-
-   @FXML
-   private Label notificationElderPanelBackButtonSubLabel;
-
-   @FXML
-   private Line notificationSettingsElderLine;
-
-   @FXML
-   private Label aquariumSettingsWarningLabel;
-
-   @FXML
-   private JFXButton doorButton;
-
-   @FXML
-   private JFXSpinner doorSpinner;
-
-   @FXML
-   private JFXButton houseMenuElderBulkChange;
-
+   // Time Configuration pane's properties
    @FXML
    private Pane timeConfigurationPanel;
 
    @FXML
-   private Label timeConfigurationFirstLabel;
+   private Label timeConfigurationFirstLabel, timeConfigurationBackButtonSubLabel,
+           timeConfigurationPaneWarningLabel, dateTimeSaveButtonSubLabel;
 
    @FXML
-   private JFXButton timeConfigurationBackButton;
-
-   @FXML
-   private Label timeConfigurationBackButtonSubLabel;
+   private JFXButton timeConfigurationBackButton, dateTimeSaveButton;
 
    @FXML
    private JFXTimePicker menuTimePicker;
@@ -882,54 +372,18 @@ public class ElderMainPanel implements Initializable {
    @FXML
    private JFXDatePicker menuDatePicker;
 
-   @FXML
-   private JFXButton dateTimeSaveButton;
-
-   @FXML
-   private Label timeConfigurationPaneWarningLabel;
-
-   @FXML
-   private Label dateTimeSaveButtonSubLabel;
-
-   @FXML
-   private JFXButton menuAquariumFeedButton;
-
-   @FXML
-   private ImageView menuAquariumFeedButtonActive;
-
-   @FXML
-   private ProgressIndicator menuAquariumIndicator;
-
-   @FXML
-   private Label fireSensorLabel;
-
-   @FXML
-   private Label gasSensorLabel;
-
-   @FXML
-   private Label smokeSensorLabel;
-
-   @FXML
-   private Label visualWarningLabel;
-
-   @FXML
-   private Label auditoryWarningLabel;
-
+   // Emergency pane's properties
    @FXML
    private Pane elderEmergencyPane;
 
    @FXML
-   private Label emergencyFirstLabel;
+   private Label emergencyFirstLabel, emergencyBackButtonSubLabel;
 
    @FXML
    private JFXButton emergencyBackButton;
 
    @FXML
-   private Label emergencyBackButtonSubLabel;
-
-   @FXML
-   private ImageView portConnectionButtonElderImage;
-
+   private JFXToggleButton internalSirenToggle, externalSirenToggle;
 
    private boolean isArduinoConnect;
 
@@ -990,7 +444,7 @@ public class ElderMainPanel implements Initializable {
       new Thread( new Runnable() {
          @Override
          public void run() {
-            while(true){
+            while(!exit){
                Platform.runLater( new Runnable() {
                   @Override
                   public void run() {
@@ -1022,7 +476,55 @@ public class ElderMainPanel implements Initializable {
       createEmergencyAnimation();
    }
 
-   //1
+   /**
+    * This method is started before interface starts to work. Its function is take and set house settings.
+    */
+   public void GUIUpdateElder()
+   {
+      String flowAquariumSetting;
+      ElectricityUsage.getInstance().getTable( electiricitySettingsPanelChart );
+      GasUsage.getInstance().getTable( gasSettingsPanelChart );
+      GreenHouseData.getInstance().getTable( greenhouseSettingsPanelChart, bundle );
+      FishSpecies.getInstance().addFishToComboBox( speciesOfFishCheckComboBox );
+
+      for( int k = 1; k <= 7; k++ ) {
+         weeklyWaterExchangeDayAndTimeChoice.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
+      }
+      commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
+      sensors = CommonSettingData.getInstance().getSensors( commonSetting );
+      permissions = CommonSettingData.getInstance().getPermission( commonSetting );
+
+      for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
+         speciesOfFishCheckComboBox.getCheckModel().check( speciesOfFishCheckComboBox.getItems().indexOf( s ) );
+
+      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
+      feedingStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 0, 2 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
+      weeklyWaterExchangeDayAndTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 6, 8 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
+      weeklyWaterExchangeDayAndTimeChoice.getSelectionModel().select( Integer.parseInt(
+              flowAquariumSetting.substring( 13, 14 ) ) - 1 );
+      dailyAirEngineRunTimeandStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
+              flowAquariumSetting.substring( 14, 16 ) ),
+              Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
+      dailyAirEngineRunTimeandStartTimeSlider.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
+
+      //Language setting
+      if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) )
+      {
+         languageStatusElder = false;
+         changeLanguageElder( "en" );
+      }
+
+      else if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) )
+      {
+         languageStatusElder = true;
+         changeLanguageElder( "tr" );
+      }
+   }
+
    /**
     * This method is responsible control main Elder panel's buttons.
     * Every button which is in the main panel is processed in this method.
@@ -1030,12 +532,11 @@ public class ElderMainPanel implements Initializable {
     */
    @FXML
    void actionPerformed( ActionEvent event ) throws SQLException {
-      // settings elder panel -MS 23.04.2020-
+
       if( event.getSource( ) == settingsBackButtonElder ) {
          settingsElderPanel.setVisible( false );
          setMainMenuInvisible( false );
       }
-      // settings elder panel END -MS 23.04.2020
       else if( event.getSource( ) == houseMenuBackButtonElder ) {
          houseMenuElderPane.setVisible( false );
          setMainMenuInvisible( false );
@@ -1044,7 +545,6 @@ public class ElderMainPanel implements Initializable {
          userSettingsElderPanelMenu.setVisible( false );
          setMainMenuInvisible( false );
       }
-      // userSettingsElderPanelMenu END -MS 23.04.2020-
       else if( event.getSource( ) == electricityButtonElder ) {
          electricityButtonElder.setVisible( false );
          electricityPanelElder.setVisible( true );
@@ -1072,14 +572,12 @@ public class ElderMainPanel implements Initializable {
       } else if( event.getSource( ) == lightsButtonElder ) {
          lightsButtonElder.setVisible( false );
          lightsPanelElder.setVisible( true );
-         //setLightsSwitchStatus();
          lightsPanelElder.setDisable( false );
       } else if( event.getSource( ) == lightsPanelElderCloseButton ) {
          lightsButtonElder.setVisible( true );
          lightsPanelElder.setVisible( false );
          lightsPanelElder.setDisable( true );
       }
-      //user change info -MS 24.04.2020-
       else if( event.getSource( ) == userSettingsChangeInfoButton ) {
          userSettingsInfoChangerPanel.setVisible( true );
          userSettingsInfoChangerPanel.setDisable( false );
@@ -1090,8 +588,6 @@ public class ElderMainPanel implements Initializable {
          userSettingsInfoChangerPanel.setVisible( false );
          userSettingsInfoChangerPanel.setDisable( true );
       }
-      //user change info END -MS 24.04.2020-
-      // user-password change -MS 26.04.2020-
       else if( event.getSource( ) == userSettingsUPChangeButton ) {
          userSettingsUIChangerPanel.setVisible( true );
          userSettingsUIChangerPanel.setDisable( false );
@@ -1100,8 +596,6 @@ public class ElderMainPanel implements Initializable {
          userSettingsUIChangerPanel.setVisible( false );
          userSettingsUIChangerPanel.setDisable( true );
       }
-      // user-password change END -MS 26.04.2020-
-      // aquarium -MS 02.05.2020-
       else if( event.getSource( ) == aquariumButtonElder ) {
          aquariumButtonElder.setVisible( false );
          aquariumPanelElder.setVisible( true );
@@ -1111,8 +605,6 @@ public class ElderMainPanel implements Initializable {
          aquariumPanelElder.setVisible( false );
          aquariumPanelElder.setDisable( true );
       }
-      // aquarium END -MS 02.05.2020-
-      // greenhouse -MS 02.05.2020-
       else if( event.getSource( ) == greenhouseButtonElder ) {
          greenhouseButtonElder.setVisible( false );
          greenhousePanelElder.setVisible( true );
@@ -1122,8 +614,6 @@ public class ElderMainPanel implements Initializable {
          greenhousePanelElder.setVisible( false );
          greenhousePanelElder.setDisable( true );
       }
-      // greenhouse END -MS 02.05.2020-
-      // gas -MS 02.05.2020-
       else if( event.getSource( ) == gasButtonElder ) {
          gasButtonElder.setVisible( false );
          gasPanelElder.setVisible( true );
@@ -1133,36 +623,29 @@ public class ElderMainPanel implements Initializable {
          gasPanelElder.setVisible( false );
          gasPanelElder.setDisable( true );
       }
-      // gas END -MS 02.05.2020-
-      // door -MS 02.05.2020-
       else if( event.getSource( ) == doorButtonElder ) {
          if( isArduinoConnect )
-            home.getDoor().open( true );
+            home.getDoor( ).open( true );
 
-         new Thread( () -> {
+         new Thread( ( ) -> {
             for( int k = 0; k < 20; k++ ) {
                final int j = k;
-               Platform.runLater( () -> {
+               Platform.runLater( ( ) -> {
                   doorSpinner.setVisible( true );
-                  doorButton.setVisible( false );
+                  //doorButton.setVisible( false );
                   if( j == 19 ) {
                      doorSpinner.setVisible( false );
-                     doorButton.setVisible( true );
+                     //doorButton.setVisible( true );
                   }
                } );
                try {
                   Thread.sleep( 100 );
                } catch( InterruptedException e ) {
-                  e.printStackTrace();
+                  e.printStackTrace( );
                }
             }
-         } ).start();
-      } else if( event.getSource( ) == doorPanelElderCloseButton ) {
-         doorButtonElder.setVisible( true );
-         doorPanelElder.setVisible( false );
-         doorPanelElder.setDisable( true );
+         } ).start( );
       }
-      // door END -MS 02.05.2020-
       else if( event.getSource( ) == returnPageHouseSettings ) {
          houseMenuElderPane2.setDisable( true );
          houseMenuElderPane2.setVisible( false );
@@ -1178,26 +661,19 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane2.setVisible( false );
          setMainMenuInvisible( false );
       }
-      // aquariumBackButton -MS 03.05.2020-
       else if( event.getSource( ) == aquariumMenuBackButtonElder ) {
-         //**
+
          aquariumSettingsPanel.setDisable( true );
          aquariumSettingsPanel.setVisible( false );
          houseMenuElderPane2.setVisible( true );
          houseMenuElderPane2.setDisable( false );
       }
-      // aquariumBackButton END -MS 03.05.2020-
-
-      // aquariumPanelElderSettingsButton -MS 03.05.2020-
       else if( event.getSource( ) == aquariumPanelElderSettingsButton ) {
          houseMenuElderPane2.setDisable( true );
          houseMenuElderPane2.setVisible( false );
          aquariumSettingsPanel.setVisible( true );
          aquariumSettingsPanel.setDisable( false );
       }
-      // aquariumPanelElderSettingsButton -MS 03.05.2020-
-
-      // applicationBackButtonElder -MS 04.05.2020-
       else if ( event.getSource() == applicationBackButtonElder )
       {
          applicationElderPanel.setDisable( true );
@@ -1205,9 +681,6 @@ public class ElderMainPanel implements Initializable {
          settingsElderPanel.setVisible( true );
          settingsElderPanel.setDisable( false );
       }
-      // applicationBackButtonElder END -MS 04.05.2020-
-
-      // applicationSettingsElderButton -MS 04.05.2020-
       else if( event.getSource() == applicationSettingsElderButton )
       {
          settingsElderPanel.setDisable( true );
@@ -1215,9 +688,6 @@ public class ElderMainPanel implements Initializable {
          applicationElderPanel.setVisible( true );
          applicationElderPanel.setDisable( false );
       }
-      // applicationSettingsElderButton END -MS 04.05.2020-
-
-      // languageSettingsElderButton -MS 06.05.2020-
       else if( event.getSource() == languageSettingsElderButton )
       {
          applicationElderPanel.setDisable( true );
@@ -1225,9 +695,6 @@ public class ElderMainPanel implements Initializable {
          languageSettingsElderPanel.setVisible( true );
          languageSettingsElderPanel.setDisable( false );
       }
-      // languageSettingsElderButton END -MS 06.05.2020-
-
-      // languageElderPanelBackButtonElder -MS 06.05.2020-
       else if ( event.getSource() == languageElderPanelBackButtonElder )
       {
          languageSettingsElderPanel.setDisable( true );
@@ -1235,39 +702,22 @@ public class ElderMainPanel implements Initializable {
          applicationElderPanel.setVisible( true );
          applicationElderPanel.setDisable( false );
       }
-      // languageElderPanelBackButtonElder END -MS 06.05.2020-
-
-      // turkishElderButton -MS 06.05.2020-
       else if ( event.getSource() == turkishElderButton )
       {
-         String language;
-         language = "";
          englishElderButtonSubLabelActive.setVisible( false );
          turkishElderButtonSubLabelActive.setVisible( true );
          languageStatusElder = true;
          changeLanguageElder( "tr" );
-         language = "TÜRKÇE";
          //Users.getInstance().updateLanguage( loginUser, language );
          //userTextFieldController( loginUser );
       }
-      // turkishElderButton END -MS 06.05.2020-
-
-      // englishElderButton -MS 06.05.2020-
       else if ( event.getSource() == englishElderButton )
       {
-         String language;
-         language = "";
          turkishElderButtonSubLabelActive.setVisible( false );
          englishElderButtonSubLabelActive.setVisible( true );
          languageStatusElder = false;
          changeLanguageElder( "en" );
-         language = "ENGLISH";
-         //Users.getInstance().updateLanguage( loginUser, language );
-         //userTextFieldController( loginUser );
       }
-      // englishElderButton END -MS 06.05.2020-
-
-      // electricityPanelElderSettingsButton -MS 06.05.2020-
       else if( event.getSource() == electricityPanelElderSettingsButton )
       {
          houseMenuElderPane.setDisable( true );
@@ -1275,9 +725,6 @@ public class ElderMainPanel implements Initializable {
          electiricitySettingsPanel.setVisible( true );
          electiricitySettingsPanel.setDisable( false );
       }
-      // electricityPanelElderSettingsButton END -MS 06.05.2020-
-
-      // electiricityMenuBackButtonElder -MS 06.05.2020-
       else if( event.getSource() == electiricityMenuBackButtonElder )
       {
          electiricitySettingsPanel.setDisable( true );
@@ -1285,9 +732,6 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane.setVisible( true );
          houseMenuElderPane.setDisable( false );
       }
-      // electiricityMenuBackButtonElder END -MS 06.05.2020-
-
-      // gasPanelElderSettingsButton -MS 06.05.2020-
       else if( event.getSource() == gasPanelElderSettingsButton )
       {
          houseMenuElderPane2.setDisable( true );
@@ -1295,9 +739,6 @@ public class ElderMainPanel implements Initializable {
          gasSettingsPanel.setVisible( true );
          gasSettingsPanel.setDisable( false );
       }
-      // gasPanelElderSettingsButton END -MS 06.05.2020-
-
-      // gasMenuBackButtonElder -MS 07.05.2020-
       else if ( event.getSource() == gasMenuBackButtonElder )
       {
          gasSettingsPanel.setDisable( true );
@@ -1305,9 +746,6 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane2.setVisible( true );
          houseMenuElderPane2.setDisable( false );
       }
-      // gasMenuBackButtonElder END -MS 07.05.2020-
-
-      // greenhousePanelElderSettingsButton -MS 07.05.2020-
       else if ( event.getSource() == greenhousePanelElderSettingsButton )
       {
          houseMenuElderPane2.setDisable( true );
@@ -1315,9 +753,6 @@ public class ElderMainPanel implements Initializable {
          greenhouseSettingsPanel.setVisible( true );
          greenhouseSettingsPanel.setDisable( false );
       }
-      // greenhousePanelElderSettingsButton END -MS 07.05.2020-
-
-      // greenhouseMenuBackButtonElder -MS 07.05.2020-
       else if ( event.getSource() == greenhouseMenuBackButtonElder )
       {
          greenhouseSettingsPanel.setDisable( true );
@@ -1325,11 +760,6 @@ public class ElderMainPanel implements Initializable {
          houseMenuElderPane2.setVisible( true );
          houseMenuElderPane2.setDisable( false );
       }
-      // greenhouseMenuBackButtonElder END -MS 07.05.2020-
-
-
-
-      // connectionSettingsElderButton -MS 11.05.2020-
       else if ( event.getSource() == connectionSettingsElderButton )
       {
          applicationElderPanel.setDisable( true );
@@ -1338,8 +768,6 @@ public class ElderMainPanel implements Initializable {
          connectionSettingsElderPanel.setDisable( false );
          refreshPortList();
       }
-      // connectionSettingsElderButton END -MS 11.05.2020-
-
       else if( event.getSource() == elderLogoutButton )
       {
          Platform.exit();
@@ -1365,8 +793,6 @@ public class ElderMainPanel implements Initializable {
          userSettingsElderPanelMenu.setVisible( true );
          userSettingsElderPanelMenu.setDisable( false );
       }
-
-      // notificationSettingsElderButton Activate -MS 18.05.2020-
       else if( event.getSource() == notificationSettingsElderButton )
       {
          applicationElderPanel.setDisable( true );
@@ -1381,8 +807,6 @@ public class ElderMainPanel implements Initializable {
          applicationElderPanel.setVisible( true );
          applicationElderPanel.setDisable( false );
       }
-
-      // connectionElderPanelBackButtonElder -MS 11.05.2020-
       else if ( event.getSource() == connectionElderPanelBackButtonElder )
       {
          connectionSettingsElderPanel.setDisable( true );
@@ -1657,10 +1081,6 @@ public class ElderMainPanel implements Initializable {
             CommonSettingData.getInstance().updateSelectedFishes( commonSetting, speciesOfFishCheckComboBox.getItems() );
          }
       }
-      else if( event.getSource() == doorButton )
-      {
-
-      }
       else if( event.getSource() == timeConfigurationBackButton )
       {
          timeConfigurationPanel.setDisable( true );
@@ -1722,10 +1142,8 @@ public class ElderMainPanel implements Initializable {
                final int j = k;
                Platform.runLater( () -> {
                   menuAquariumIndicator.setVisible( true );
-                  //feedRadioButton.setSelected( true );
                   if( j == 19 ) {
                      menuAquariumIndicator.setVisible( false );
-                     //feedRadioButton.setSelected( false );
                   }
                } );
                try {
@@ -1758,32 +1176,7 @@ public class ElderMainPanel implements Initializable {
          if( isArduinoConnect )
             home.getSiren( ).buzzerOpen( internalSirenToggle.isSelected( ) );
       }
-
    }
-
-   //2
-   // Make the main menu invisible or visible -MSACAKCI 03.04.2020-
-
-   /**
-    * This method is simply responsible from first panel of the elderMain.java to make it visible or non visible.
-    * @param b
-    */
-   public void setMainMenuInvisible( Boolean b ) {
-      if( b ) {
-         mainElderPanelMenu.setVisible( false );
-      } else {
-         mainElderPanelMenu.setVisible( true );
-      }
-   }
-
-
-   //Set the time END -MS 09.04.2020-
-
-   //3
-
-
-   //4
-   // user after login panel -MS 24.03.2020-
 
    /**
     * This method is responsible to get user information from the User class
@@ -1800,11 +1193,6 @@ public class ElderMainPanel implements Initializable {
       }
       return null;
    }
-   // user after login panel END -MS 24.03.2020-
-
-
-   //5
-   //User textFieldController -MS 24.04.2020-
 
    /**
     * This method is written to fill user settings panel's texts and set user's language.
@@ -1833,7 +1221,6 @@ public class ElderMainPanel implements Initializable {
          englishElderButtonSubLabelActive.setVisible( true );
          languageStatusElder = false;
          changeLanguageElder( "en" );
-         //language = "ENGLISH";
 
       } else if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) ) {
          englishElderButtonSubLabelActive.setVisible( false );
@@ -1842,10 +1229,6 @@ public class ElderMainPanel implements Initializable {
          changeLanguageElder( "tr" );
       }
    }
-   //User textFieldController END -MS 24.04.2020-
-
-
-   ///////////////
 
    /**
     * This method basically sets user's new setting preferences.
@@ -1872,7 +1255,6 @@ public class ElderMainPanel implements Initializable {
       userSettingsInfoChangerPanel.setVisible( false );
       userSettingsInfoChangerPanel.setDisable( true );
    }
-   ///////////////
 
    /**
     * This method is written to prevent user from choice both genders, male and female.
@@ -1891,8 +1273,6 @@ public class ElderMainPanel implements Initializable {
       }
    }
 
-   /////////////////////// -MS 26.04.2020-
-
    /**
     * This method make it possible to change user. It simply close the ElderMainPanel.java and opens the loginPanel.java.
     * @param event
@@ -1900,8 +1280,6 @@ public class ElderMainPanel implements Initializable {
    @FXML
    void toUserElderChanger( ActionEvent event ) {
       try {
-         //User user;
-         //user = new User(loginUser.getName(),loginUser.getSurname(),loginUser.getBirthday(),loginUser.getGender(),loginUser.getUserName(),loginUser.getPassword(),loginUser.getUserType(),loginUser.getPreferredTheme(),loginUser.getPreferredLanguage(),loginUser.getEnter());
          FXMLLoader load = new FXMLLoader( getClass( ).getResource( "view/loginPanel.fxml" ) );
          Parent root = ( Parent ) load.load( );
          Stage stage = new Stage( );
@@ -1910,14 +1288,9 @@ public class ElderMainPanel implements Initializable {
          stage.setResizable( false );
          stage.show( );
          mainElderPanelMenu.getScene( ).getWindow( ).hide( );
-         //loginUser.setEnter("false");
-         //Users.getInstance().updateUser(user,loginUser);
       } catch( Exception e ) {
       }
    }
-   /////////////////////// END -MS 26.04.2020-
-
-   /////////////// -MS 26.04.2020-
 
    /**
     * This method is responsible to set user's new  account preferences.
@@ -1949,7 +1322,6 @@ public class ElderMainPanel implements Initializable {
       }
 
    }
-   /////////////// END -MS 26.04.2020-
 
    /**
     * This method is responsible to activate all of the JFXButtons in the ElderMainPanel.java.
@@ -1959,343 +1331,209 @@ public class ElderMainPanel implements Initializable {
    @FXML
    void buttonElderActivate ( MouseEvent event )
    {
-      // userProfileButtonElderActivate -MS 03.04.2020-
       if ( event.getSource() == userProfileButtonElder )
       {
          userProfileSubLabelActive.setVisible( true );
          userProfileSubLabelNotActive.setVisible( false );
          userProfileElderActiveImage.setVisible( true );
       }
-      // userProfileButtonElderActivate END -MS 03.04.2020-
       else if ( event.getSource() == houseMenuButtonElder )
       {
          menuSubLabelActive.setVisible( true );
          menuSubLabelNotActive.setVisible( false );
          houseMenuElderActiveImage.setVisible( true );
       }
-
-      //Settings Button Activate -MS 05.04.2020-
       else if ( event.getSource() == settingsButtonElder )
       {
          settingsSubLabelActive.setVisible( true );
          settingsSubLabelNotActive.setVisible( false );
          settingsButtonElderActiveImage.setVisible( true );
       }
-      //Settings Button Activate END -MS 05.04.2020-
-
-      //Electricity Button Activate -MS 09.04.2020-
       else if ( ( event.getSource() == electricityButtonElder ) || ( event.getSource() == electricityLabelElder ) )
       {
          electricityLabelElder.setVisible( true );
          electricityLineElder.setVisible( true );
       }
-      //Electricity Button Activate END -MS 09.04.2020-
-
-      //Lights Button -MS 09.04.2020-
       else if ( ( event.getSource() == lightsButtonElder ) || ( event.getSource() == lightsLabelElder) )
       {
          lightsLabelElder.setVisible( true );
          lightsLineElder.setVisible( true );
       }
-      //Lights Button Activate END -MS 09.04.2020-
-
-      //Water Control Button Activate -MS 09.04.2020-
       else if ( (event.getSource() == waterButtonElder ) )
       {
          waterLabelElder.setVisible( true );
          waterLineElder.setVisible( true );
       }
-      //Water Control Button Activate END -MS 09.04.2020-
-
-      //Temperature Button Activate -MS 09.04.2020-
       else if ( event.getSource() == temperatureButtonElder )
       {
          temperatureLabelElder.setVisible( true );
          temperatureLineElder.setVisible( true );
       }
-      //Temperature Button Activate END -MS 09.04.2020-
-
-      //Back Button Activate -MS 09.04.2020-
       else if ( event.getSource() == houseMenuBackButtonElder )
       {
          houseMenuBackButtonSubLabel.setVisible( true );
       }
-      //Back Button Activate END -MS 09.04.2020-
-
-      //Back 2 Button Activate -MS 02.05.2020-
       else if ( event.getSource() == houseMenuBackButtonElder2 )
       {
          houseMenuBackButtonSubLabel2.setVisible( true );
       }
-      //Back 2 Button Activate END -MS 02.05.2020-
-
-      //Electricity panel elder back button Activate -MS 10.04.2020-
       else if ( event.getSource() == electricityPanelElderCloseButton )
       {
          electricityPanelElderCloseButtonActive.setVisible( true );
       }
-      //Electricity panel elder back button Activate END -MS 10.04.2020-
-
-      //Water panel elder back button Activate -MS 10.04.2020-
       else if ( event.getSource() == waterPanelElderCloseButton )
       {
          waterPanelElderCloseButtonActive.setVisible( true );
       }
-      //Water panel elder back button Activate END -MS 10.04.2020-
-
-      //Temperature panel elder back button Activate -MS 10.04.2020-
       else if ( event.getSource() == temperaturePanelElderCloseButton )
       {
          temperaturePanelElderCloseButtonActive.setVisible( true );
       }
-      //Temperature panel elder back button Activate END -MS 10.04.2020-
-
-      //Lights panel elder back button Activate -MS 10.04.2020-
       else if ( event.getSource() == lightsPanelElderCloseButton )
       {
          lightsPanelElderCloseButtonActive.setVisible( true );
       }
-      //Lights panel elder back button Activate END -MS 10.04.2020-
-
-      //applicationSettingsElderButton Activate -MS 23.04.2020-
       else if ( event.getSource() == applicationSettingsElderButton )
       {
          applicationSettingsElderLabel.setVisible( true );
          applicationSettingsElderLine.setVisible( true );
       }
-      //applicationSettingsElderButton Activate END -MS 23.04.2020-
-
-      //homeSettingsElder Activate -MS 23.04.2020-
       else if ( event.getSource() == timeConfigurationElderButton )
       {
          homeSettingsElderLabel.setVisible( true );
          homeSettingsElderLine.setVisible( true );
       }
-      //homeSettingsElder Activate END -MS 23.04.2020-
-
-      //languageSettingsElder Activate -MS 23.04.2020-
       else if ( event.getSource() == languageSettingsElderButton )
       {
          languageSettingsElderLabel.setVisible( true );
          languageSettingsElderLine.setVisible( true );
       }
-      //languageSettingsElder Activate END -MS 23.04.2020-
-
-      //emergencySettingsElder Activate -MS 23.04.2020-
       else if ( event.getSource() == emergencySettingsElderButton )
       {
          emergencySettingsElderLabel.setVisible( true );
          emergencySettingsElderLine.setVisible( true );
       }
-      //emergencySettingsElder Activate END -MS 23.04.2020-
-
-      //connectionSettingsElderButton Activate -MS 23.04.2020-
       else if ( event.getSource() == connectionSettingsElderButton )
       {
          connectionSettingsElderLabel.setVisible( true );
          connectionSettingsElderLine.setVisible( true );
       }
-      //connectionSettingsElderButton Activate -MS 23.04.2020-
-
-      //user settings change info panel Activate -MS 24.04.2020-
       else if ( event.getSource() == userSettingsChangeBackButton )
       {
          userSettingsChangeBackButtonSubLabel.setVisible( true );
          userSettingsChangeBackButtonImage.setVisible( true );
       }
-      //user settings change info panel Activate END -MS 24.04.2020-
-
       else if ( event.getSource() == userSettingsChangeSave )
       {
          userSettingsChangeSaveSubLabel.setVisible( true );
          userSettingsChangeSaveImage.setVisible( true );
       }
-
-      // userSettingsChangeInfoButton Activate -MS 24.04.2020-
       else if ( event.getSource() == userSettingsChangeInfoButton )
       {
          userSettingsChangeInfoButtonImage.setVisible( true );
          userSettingsChangeInfoButtonSubLabel.setVisible( true );
       }
-      // userSettingsChangeInfoButton Activate END -MS 24.04.2020-
-
-      // userSettingsUPChangeButton Activate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsUPChangeButton )
       {
          userSettingsUPChangeButtonImage.setVisible( true );
          userSettingsUPChangeLabel.setVisible( true );
       }
-      // userSettingsUPChangeButton Activate END -MS 26.04.2020-
-
-      // userSettingsPanelTwoChangeSaveButton Activate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsPanelTwoChangeSaveButton )
       {
          userSettingsPanelTwoChangeSaveButtonImage.setVisible( true );
          userSettingsPanelTwoChangeSaveLabel.setVisible( true );
       }
-      // userSettingsPanelTwoChangeSaveButton Activate END -MS 26.04.2020-
-
-      // userSettingsPanelTwoChangeBackButton Activate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsPanelTwoChangeBackButton )
       {
          userSettingsPanelTwoChangeBackButtonImage.setVisible( true );
          userSettingsPanelTwoChangeBackLabel.setVisible( true );
       }
-      // userSettingsPanelTwoChangeBackButton Activate END -MS 26.04.2020-
-
-      // userProfileBackButtonElder Activate -MS 01.05.2020-
       else if ( event.getSource() == userProfileBackButtonElder )
       {
          userProfileBackButtonElderSubLabel.setVisible( true );
       }
-      // userProfileBackButtonElder Activate END -MS 01.05.2020-
-
-      // settingsBackButtonElder Activate -MS 01.05.2020-
       else if ( event.getSource() == settingsBackButtonElder )
       {
          settingsBackButtonSubLabel.setVisible( true );
       }
-      // settingsBackButtonElder Activate END -MS 01.05.2020-
-
-      //aquarium Button Activate -MS 02.05.2020-
       else if ( event.getSource() == aquariumButtonElder)
       {
          aquariumLabelElder.setVisible( true );
          aquariumLineElder.setVisible( true );
       }
-      //aquarium Button Activate END -MS 02.05.2020-
-
-      // aquarium panel elder back button Activate -MS 02.05.2020-
       else if ( event.getSource() == aquariumPanelElderCloseButton)
       {
          aquariumPanelElderCloseButtonActive.setVisible( true );
       }
-      // aquarium panel elder back button Activate END -MS 02.05.2020-
-
-      //greenhouse Button Activate -MS 02.05.2020-
       else if ( event.getSource() == greenhouseButtonElder )
       {
          greenhouseLabelElder.setVisible( true );
          greenhouseLineElder.setVisible( true );
       }
-      //greenhouse Button Activate END -MS 02.05.2020-
-
-      // greenhouse panel elder back button -MS 02.05.2020-
       else if ( event.getSource() == greenhousePanelElderCloseButton )
       {
          greenhousePanelElderCloseButtonActive.setVisible( true );
       }
-      // greenhouse panel elder back button END -MS 02.05.2020-
-
-      //gas Button Activate -MS 02.05.2020-
       else if ( event.getSource() == gasButtonElder )
       {
          gasLabelElder.setVisible( true );
          gasLineElder.setVisible( true );
       }
-      //gas Button Activate END -MS 02.05.2020-
-
-      // gas panel elder back button Activate -MS 02.05.2020-
       else if ( event.getSource() == gasPanelElderCloseButton )
       {
          gasPanelElderCloseButtonActive.setVisible( true );
       }
-      // gas panel elder back button Activate END -MS 02.05.2020-
-
-      //door Button Activate -MS 02.05.2020-
       else if ( event.getSource() == doorButtonElder )
       {
          doorLabelElder.setVisible( true );
          doorLineElder.setVisible( true );
       }
-      //door Button Activate END -MS 02.05.2020-
-
-      // door panel elder back button Activate -MS 02.05.2020-
-      else if ( event.getSource() == doorPanelElderCloseButton )
-      {
-         doorPanelElderCloseButtonActive.setVisible( true );
-      }
-      // door panel elder back button Activate END -MS 02.05.2020-
-
-      // aquariumSaveButton Activate -MS 03.05.2020-
       else if ( event.getSource() == aquariumSaveButton )
       {
          aquariumSaveButtonLabel.setVisible( true );
       }
-      // aquariumSaveButton Activate END -MS 03.05.2020-
-
-      //aquariumMenuBackButtonElder Activate -MS 03.05.2020-
       else if ( event.getSource() == aquariumMenuBackButtonElder )
       {
          aquariumMenuBackButtonSubLabel.setVisible( true );
       }
-      //aquariumMenuBackButtonElder Activate END -MS 03.05.2020-
-
-      // applicationBackButtonElder Activate  -MS 04.05.2020-
       else if ( event.getSource() == applicationBackButtonElder )
       {
          applicationBackButtonSubLabel.setVisible( true );
       }
-      // applicationBackButtonElder Activate END -MS 04.05.2020-
-
-      // applicationBackButtonElder Activate  -MS 06.05.2020-
       else if ( event.getSource() == languageElderPanelBackButtonElder )
       {
          languageElderPanelBackButtonSubLabel.setVisible( true );
       }
-      // applicationBackButtonElder Activate END -MS 06.05.2020-
-
-      // englishElderButton Activate -MS 06.05.2020-
       else if ( event.getSource() == englishElderButton )
       {
          englishElderButtonSubLabelActive.setVisible( true );
          englishElderButtonSubLabelPassive.setVisible( false );
       }
-      // englishElderButton Activate END -MS 06.05.2020-
-
-      // turkishElderButton Activate -MS 06.05.2020-
       else if ( event.getSource() == turkishElderButton )
       {
          turkishElderButtonSubLabelActive.setVisible( true );
          turkishElderButtonSubLabelPassive.setVisible( false );
       }
-      // turkishElderButton Activate END -MS 06.05.2020-
-
-      // electiricityMenuBackButtonElder Activate -MS 06.05.2020-
       else if( event.getSource() == electiricityMenuBackButtonElder )
       {
          electiricityMenuBackButtonSubLabel.setVisible( true );
       }
-      // electiricityMenuBackButtonElder Activate END -MS 06.05.2020-
-
-      // gasMenuBackButtonElder Activate -MS 07.05.2020-
       else if ( event.getSource() == gasMenuBackButtonElder )
       {
          gasMenuBackButtonSubLabel.setVisible( true );
       }
-      // gasMenuBackButtonElder Activate END -MS 07.05.2020-
-
-      // greenhouseSettingsPanel Activate -MS 07.05.2020-
       else if ( event.getSource() == greenhouseMenuBackButtonElder )
       {
          greenhouseMenuBackButtonSubLabel.setVisible( true );
       }
-      // greenhouseSettingsPanel Activate END -MS 07.05.2020-
-
-      //connectionElderPanelBackButtonElder Activate -MS 11.05.2020-
       else if ( event.getSource() == connectionElderPanelBackButtonElder )
       {
          connectionElderPanelBackButtonSubLabel.setVisible( true );
       }
-      //connectionElderPanelBackButtonElder Activate END -MS 11.05.2020-
-
-      // elderLogoutButton Activate -MS 18.05.2020-
       else if( event.getSource() == elderLogoutButton )
       {
          elderLogoutButtonActive.setVisible( true );
       }
-
-      // notificationSettingsElderButton Activate -MS 18.05.2020-
       else if( event.getSource() == notificationSettingsElderButton )
       {
          notificationSettingsElderLabel.setVisible( true );
@@ -2326,9 +1564,7 @@ public class ElderMainPanel implements Initializable {
          portConnectionButtonElderImage.setVisible( true );
       }
    }
-   // buttonElderActivate END -MS 05.05.2020-
 
-   // buttonElderDeactivate -MS 05.05.2020-
    /**
     * This method is responsible to deactivate all of the JFXButtons in the ElderMainPanel.java.
     * @param event
@@ -2336,293 +1572,179 @@ public class ElderMainPanel implements Initializable {
    @FXML
    void buttonElderDeactivate ( MouseEvent event )
    {
-      // userProfileButtonElderDeactivate -MS 03.04.2020-
       if ( event.getSource() == userProfileButtonElder )
       {
          userProfileSubLabelActive.setVisible( false );
          userProfileSubLabelNotActive.setVisible( true );
          userProfileElderActiveImage.setVisible( false );
       }
-      // userProfileButtonElderDeactivate END -MS 03.04.2020-
       else if ( event.getSource() == houseMenuButtonElder )
       {
          menuSubLabelActive.setVisible( false );
          menuSubLabelNotActive.setVisible( true );
          houseMenuElderActiveImage.setVisible( false );
       }
-
-      //Settings Button Deactivate -MS 05.04.2020-
       else if ( event.getSource() == settingsButtonElder )
       {
          settingsSubLabelActive.setVisible( false );
          settingsSubLabelNotActive.setVisible( true );
          settingsButtonElderActiveImage.setVisible( false );
       }
-      //Settings Button Deactivate END -MS 05.04.2020-
-
-      //Electricity Button Deactivate -MS 09.04.2020-
       else if ( ( event.getSource() == electricityButtonElder ) || ( event.getSource() == electricityLabelElder ) )
       {
          electricityLabelElder.setVisible( false );
          electricityLineElder.setVisible( false );
       }
-      //Electricity Button Deactivate END -MS 09.04.2020-
-
-      //Lights Button -MS 09.04.2020-
       else if ( ( event.getSource() == lightsButtonElder ) || ( event.getSource() == lightsLabelElder) )
       {
          lightsLabelElder.setVisible( false );
          lightsLineElder.setVisible( false );
       }
-      //Lights Button Deactivate END -MS 09.04.2020-
-
-      //Water Control Button Deactivate -MS 09.04.2020-
       else if ( (event.getSource() == waterButtonElder ) )
       {
          waterLabelElder.setVisible( false );
          waterLineElder.setVisible( false );
       }
-      //Water Control Button Deactivate END -MS 09.04.2020-
-
-      //Temperature Button Deactivate -MS 09.04.2020-
       else if ( event.getSource() == temperatureButtonElder )
       {
          temperatureLabelElder.setVisible( false );
          temperatureLineElder.setVisible( false );
       }
-      //Temperature Button Deactivate END -MS 09.04.2020-
-
-      //Back Button Deactivate -MS 09.04.2020-
       else if ( event.getSource() == houseMenuBackButtonElder )
       {
          houseMenuBackButtonSubLabel.setVisible( false );
       }
-      //Back Button Deactivate END -MS 09.04.2020-
-
-      //Back 2 Button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == houseMenuBackButtonElder2 )
       {
          houseMenuBackButtonSubLabel2.setVisible( false );
       }
-      //Back 2 Button Deactivate END -MS 02.05.2020-
-
-      //Electricity panel elder back button Deactivate -MS 10.04.2020-
       else if ( event.getSource() == electricityPanelElderCloseButton )
       {
          electricityPanelElderCloseButtonActive.setVisible( false );
       }
-      //Electricity panel elder back button Deactivate END -MS 10.04.2020-
-
-      //Water panel elder back button Deactivate -MS 10.04.2020-
       else if ( event.getSource() == waterPanelElderCloseButton )
       {
          waterPanelElderCloseButtonActive.setVisible( false );
       }
-      //Water panel elder back button Deactivate END -MS 10.04.2020-
-
-      //Temperature panel elder back button Deactivate -MS 10.04.2020-
       else if ( event.getSource() == temperaturePanelElderCloseButton )
       {
          temperaturePanelElderCloseButtonActive.setVisible( false );
       }
-      //Temperature panel elder back button Deactivate END -MS 10.04.2020-
-
-      //Lights panel elder back button Deactivate -MS 10.04.2020-
       else if ( event.getSource() == lightsPanelElderCloseButton )
       {
          lightsPanelElderCloseButtonActive.setVisible( false );
       }
-      //Lights panel elder back button Deactivate END -MS 10.04.2020-
-
-      //applicationSettingsElderButton Deactivate -MS 23.04.2020-
       else if ( event.getSource() == applicationSettingsElderButton )
       {
          applicationSettingsElderLabel.setVisible( false );
          applicationSettingsElderLine.setVisible( false );
       }
-      //applicationSettingsElderButton Deactivate END -MS 23.04.2020-
-
-      //homeSettingsElder Deactivate -MS 23.04.2020-
       else if ( event.getSource() == timeConfigurationElderButton )
       {
          homeSettingsElderLabel.setVisible( false );
          homeSettingsElderLine.setVisible( false );
       }
-      //homeSettingsElder Deactivate END -MS 23.04.2020-
-
-      //languageSettingsElder Deactivate -MS 23.04.2020-
       else if ( event.getSource() == languageSettingsElderButton )
       {
          languageSettingsElderLabel.setVisible( false );
          languageSettingsElderLine.setVisible( false );
       }
-      //languageSettingsElder Deactivate END -MS 23.04.2020-
-
-      //emergencySettingsElder Deactivate -MS 23.04.2020-
       else if ( event.getSource() == emergencySettingsElderButton )
       {
          emergencySettingsElderLabel.setVisible( false );
          emergencySettingsElderLine.setVisible( false );
       }
-      //emergencySettingsElder Deactivate END -MS 23.04.2020-
-
-      //connectionSettingsElderButton Deactivate -MS 23.04.2020-
       else if ( event.getSource() == connectionSettingsElderButton )
       {
          connectionSettingsElderLabel.setVisible( false );
          connectionSettingsElderLine.setVisible( false );
       }
-      //connectionSettingsElderButton Deactivate -MS 23.04.2020-
-
-      //user settings change info panel Deactivate -MS 24.04.2020-
       else if ( event.getSource() == userSettingsChangeBackButton )
       {
          userSettingsChangeBackButtonSubLabel.setVisible( false );
          userSettingsChangeBackButtonImage.setVisible( false );
       }
-      //user settings change info panel Deactivate END -MS 24.04.2020-
-
       else if ( event.getSource() == userSettingsChangeSave )
       {
          userSettingsChangeSaveSubLabel.setVisible( false );
          userSettingsChangeSaveImage.setVisible( false );
       }
-
-      // userSettingsChangeInfoButton Deactivate -MS 24.04.2020-
       else if ( event.getSource() == userSettingsChangeInfoButton )
       {
          userSettingsChangeInfoButtonImage.setVisible( false );
          userSettingsChangeInfoButtonSubLabel.setVisible( false );
       }
-      // userSettingsChangeInfoButton Deactivate END -MS 24.04.2020-
-
-      // userSettingsUPChangeButton Deactivate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsUPChangeButton )
       {
          userSettingsUPChangeButtonImage.setVisible( false );
          userSettingsUPChangeLabel.setVisible( false );
       }
-      // userSettingsUPChangeButton Deactivate END -MS 26.04.2020-
-
-      // userSettingsPanelTwoChangeSaveButton Deactivate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsPanelTwoChangeSaveButton )
       {
          userSettingsPanelTwoChangeSaveButtonImage.setVisible( false );
          userSettingsPanelTwoChangeSaveLabel.setVisible( false );
       }
-      // userSettingsPanelTwoChangeSaveButton Deactivate END -MS 26.04.2020-
-
-      // userSettingsPanelTwoChangeBackButton Deactivate -MS 26.04.2020-
       else if ( event.getSource() == userSettingsPanelTwoChangeBackButton )
       {
          userSettingsPanelTwoChangeBackButtonImage.setVisible( false );
          userSettingsPanelTwoChangeBackLabel.setVisible( false );
       }
-      // userSettingsPanelTwoChangeBackButton Deactivate END -MS 26.04.2020-
-
-      // userProfileBackButtonElder Deactivate -MS 01.05.2020-
       else if ( event.getSource() == userProfileBackButtonElder )
       {
          userProfileBackButtonElderSubLabel.setVisible( false );
       }
-      // userProfileBackButtonElder Deactivate END -MS 01.05.2020-
-
-      // settingsBackButtonElder Deactivate -MS 01.05.2020-
       else if ( event.getSource() == settingsBackButtonElder )
       {
          settingsBackButtonSubLabel.setVisible( false );
       }
-      // settingsBackButtonElder Deactivate END -MS 01.05.2020-
-
-      //aquarium Button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == aquariumButtonElder)
       {
          aquariumLabelElder.setVisible( false );
          aquariumLineElder.setVisible( false );
       }
-      //aquarium Button Deactivate END -MS 02.05.2020-
-
-      // aquarium panel elder back button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == aquariumPanelElderCloseButton)
       {
          aquariumPanelElderCloseButtonActive.setVisible( false );
       }
-      // aquarium panel elder back button Deactivate END -MS 02.05.2020-
-
-      //greenhouse Button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == greenhouseButtonElder )
       {
          greenhouseLabelElder.setVisible( false );
          greenhouseLineElder.setVisible( false );
       }
-      //greenhouse Button Deactivate END -MS 02.05.2020-
-
-      // greenhouse panel elder back button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == greenhousePanelElderCloseButton )
       {
          greenhousePanelElderCloseButtonActive.setVisible( false );
       }
-      // greenhouse panel elder back button Deactivate END -MS 02.05.2020-
-
-      //gas Button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == gasButtonElder )
       {
          gasLabelElder.setVisible( false );
          gasLineElder.setVisible( false );
       }
-      //gas Button Deactivate END -MS 02.05.2020-
-
-      // gas panel elder back button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == gasPanelElderCloseButton )
       {
          gasPanelElderCloseButtonActive.setVisible( false );
       }
-      // gas panel elder back button Deactivate END -MS 02.05.2020-
-
-      //door Button Deactivate -MS 02.05.2020-
       else if ( event.getSource() == doorButtonElder )
       {
          doorLabelElder.setVisible( false );
          doorLineElder.setVisible( false );
       }
-      //door Button Deactivate END -MS 02.05.2020-
-
-      // door panel elder back button Deactivate -MS 02.05.2020-
-      else if ( event.getSource() == doorPanelElderCloseButton )
-      {
-         doorPanelElderCloseButtonActive.setVisible( false );
-      }
-      // door panel elder back button Deactivate END -MS 02.05.2020-
-
-      // aquariumSaveButton Deactivate -MS 03.05.2020-
       else if ( event.getSource() == aquariumSaveButton )
       {
          aquariumSaveButtonLabel.setVisible( false );
       }
-      // aquariumSaveButton Deactivate END -MS 03.05.2020-
-
-      //aquariumMenuBackButtonElder Deactivate -MS 03.05.2020-
       else if ( event.getSource() == aquariumMenuBackButtonElder )
       {
          aquariumMenuBackButtonSubLabel.setVisible( false );
       }
-      //aquariumMenuBackButtonElder Deactivate END -MS 03.05.2020-
-
-      // applicationBackButtonElder Deactivate  -MS 04.05.2020-
       else if ( event.getSource() == applicationBackButtonElder )
       {
          applicationBackButtonSubLabel.setVisible( false );
       }
-      // applicationBackButtonElder Deactivate END -MS 04.05.2020-
-
-      // applicationBackButtonElder Deactivate  -MS 06.05.2020-
       else if ( event.getSource() == languageElderPanelBackButtonElder )
       {
          languageElderPanelBackButtonSubLabel.setVisible( false );
       }
-      // applicationBackButtonElder Deactivate END -MS 06.05.2020-
-
-      // englishElderButton Deactivate -MS 06.05.2020-
       else if ( event.getSource() == englishElderButton )
       {
          if( languageStatusElder) {
@@ -2633,9 +1755,6 @@ public class ElderMainPanel implements Initializable {
             englishElderButtonSubLabelActive.setVisible( true );
          }
       }
-      // englishElderButton Deactivate END -MS 06.05.2020-
-
-      // turkishElderButton Deactivate -MS 06.05.2020-
       else if ( event.getSource() == turkishElderButton )
       {
          if( !languageStatusElder) {
@@ -2646,43 +1765,26 @@ public class ElderMainPanel implements Initializable {
             turkishElderButtonSubLabelActive.setVisible( true );
          }
       }
-      // turkishElderButton Deactivate END -MS 06.05.2020-
-
-      // electiricityMenuBackButtonElder Deactivate -MS 06.05.2020-
       else if( event.getSource() == electiricityMenuBackButtonElder )
       {
          electiricityMenuBackButtonSubLabel.setVisible( false );
       }
-      // electiricityMenuBackButtonElder Deactivate END -MS 06.05.2020-
-
-      // gasMenuBackButtonElder Deactivate -MS 07.05.2020-
       else if ( event.getSource() == gasMenuBackButtonElder )
       {
          gasMenuBackButtonSubLabel.setVisible( false );
       }
-      // gasMenuBackButtonElder Deactivate END -MS 07.05.2020-
-
-      // greenhouseSettingsPanel Deactivate -MS 07.05.2020-
       else if ( event.getSource() == greenhouseMenuBackButtonElder )
       {
          greenhouseMenuBackButtonSubLabel.setVisible( false );
       }
-      // greenhouseSettingsPanel Deactivate END -MS 07.05.2020-
-
-      //connectionElderPanelBackButtonElder Deactivate -MS 11.05.2020-
       else if ( event.getSource() == connectionElderPanelBackButtonElder )
       {
          connectionElderPanelBackButtonSubLabel.setVisible( false );
       }
-      //connectionElderPanelBackButtonElder Deactivate END -MS 11.05.2020-
-
-      // elderLogoutButton Dectivate -MS 18.05.2020-
       else if( event.getSource() == elderLogoutButton )
       {
          elderLogoutButtonActive.setVisible( false );
       }
-
-      // notificationSettingsElderButton Activate -MS 18.05.2020-
       else if( event.getSource() == notificationSettingsElderButton )
       {
          notificationSettingsElderLabel.setVisible( false );
@@ -2713,9 +1815,6 @@ public class ElderMainPanel implements Initializable {
          portConnectionButtonElderImage.setVisible( false );
       }
    }
-   // buttonElderDeactivate END -MS 05.05.2020-
-
-   // changeLanguageElder -MS 06.05.2020-
 
    /**
     * When user want to change the programs language, this method changes all labels and names on the interface.
@@ -2786,7 +1885,7 @@ public class ElderMainPanel implements Initializable {
          greenhouseLabelElder.setText( bundle.getString("greenHouse" ) );
          gasPanelElderLabel.setText( bundle.getString("gasLang" ));
          gasLabelElder.setText( bundle.getString("gasLang" ) );
-         doorPanelElderLabel.setText( bundle.getString("doorLang" ));
+         //doorPanelElderLabel.setText( bundle.getString("doorLang" ));
          doorLabelElder.setText( bundle.getString("doorLang" ) );
          houseMenuBackButtonElder2.setText( bundle.getString("getBackButtonLang" ));
          houseMenuBackButtonSubLabel2.setText( bundle.getString("settingsBackButtonSubLabelLang" ));
@@ -2841,15 +1940,10 @@ public class ElderMainPanel implements Initializable {
          emergencyBackButtonSubLabel.setText( bundle.getString( "applicationBackButtonSubLabelLang" ));
          internalSirenToggle.setText( bundle.getString( "internalSirenLang" ) );
          externalSirenToggle.setText( bundle.getString( "externalSirenLang" ) );
-
       } catch( Exception e ) {
          e.printStackTrace();
       }
    }
-   // changeLanguageElder END -MS 06.05.2020-
-
-
-   // house settings controller -MS 11.05.2020- from mainPanel.java
 
    /**
     * This method is responsible to control house settings such as electricity contol or gas control, etc.
@@ -2865,7 +1959,6 @@ public class ElderMainPanel implements Initializable {
          {
             home.getElectricity( ).open( electricityPanelElderSwitch.isSelected( ) );
          }
-
       }
       else if( event.getSource() == gasPanelElderSwitch )
       {
@@ -2893,6 +1986,10 @@ public class ElderMainPanel implements Initializable {
 
    }
 
+   /**
+    * This method controls electricity pane which is located in the house setting pane.
+    * @param status
+    */
    @FXML
    void controlElectricity ( boolean status )
    {
@@ -2905,6 +2002,11 @@ public class ElderMainPanel implements Initializable {
          lightsPanelElderSwitch.setSelected( false );
       }
    }
+
+   /**
+    * This method controls garden light pane which is located in the house setting pane.
+    * @param status
+    */
    @FXML
    void controlLights ( boolean status )
    {
@@ -2912,6 +2014,11 @@ public class ElderMainPanel implements Initializable {
       lightsPanelElderProgressBar2.setVisible( status );
       electiricitySettingsPanelCloseOpenSwitch.setSelected( status );
    }
+
+   /**
+    * This method controls gas pane which is located in the house setting pane.
+    * @param status
+    */
    @FXML
    void controlGas ( boolean status )
    {
@@ -2919,19 +2026,21 @@ public class ElderMainPanel implements Initializable {
       gasPanelElderProgressBar2.setVisible( status );
       gasSettingsPanelCloseOpenSwitch.setSelected( status );
    }
+
+   /**
+    * This method controls aquarium pane which is located in the house setting pane.
+    * @param status
+    */
    @FXML
    void controlAquarium ( boolean status )
    {
       aquariumPanelElderProgressBar1.setVisible( status );
       aquariumPanelElderProgressBar2.setVisible( status );
    }
-   @FXML
-   void controlWater ( boolean status )
-   {
 
-   }
-
-   // refreshPortList() -MS 11.05.2020- from mainPanel.java
+   /**
+    * It is a refreshPortList that is refresh the port list for combo box
+    */
    void refreshPortList() {
       SerialPort[] portNames;
       portChooserElder.getItems().removeAll( portChooserElder.getItems() );
@@ -2940,77 +2049,11 @@ public class ElderMainPanel implements Initializable {
       for( SerialPort portName : portNames )
          portChooserElder.getItems().add( portName.getSystemPortName() );
    }
-   //
-
-   // GUIUpdateElder -MS 11.05.2020- from mainPanel.java
 
    /**
-    * This method is started before interface starts to work. Its function is take and set house settings.
+    * It is a createEmergencyAnimation that creates animation for
+    * emergency warning but it does not play when It is created
     */
-   public void GUIUpdateElder()
-   {
-      String flowAquariumSetting;
-      ElectricityUsage.getInstance().getTable( electiricitySettingsPanelChart );
-      GasUsage.getInstance().getTable( gasSettingsPanelChart );
-      GreenHouseData.getInstance().getTable( greenhouseSettingsPanelChart, bundle );
-      FishSpecies.getInstance().addFishToComboBox( speciesOfFishCheckComboBox );
-
-      for( int k = 1; k <= 7; k++ ) {
-         weeklyWaterExchangeDayAndTimeChoice.getItems().add( k + bundle.getString( "daysOfWeekLang" ) );
-      }
-      commonSetting = CommonSettingData.getInstance().getHomeList().get( 0 );
-      sensors = CommonSettingData.getInstance().getSensors( commonSetting );
-      permissions = CommonSettingData.getInstance().getPermission( commonSetting );
-
-      for( String s : CommonSettingData.getInstance().getSelectedFishes( commonSetting ) )
-         speciesOfFishCheckComboBox.getCheckModel().check( speciesOfFishCheckComboBox.getItems().indexOf( s ) );
-
-      flowAquariumSetting = CommonSettingData.getInstance().getAquariumSettings( commonSetting );
-      feedingStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-              flowAquariumSetting.substring( 0, 2 ) ),
-              Integer.parseInt( flowAquariumSetting.substring( 2, 4 ) ) ) );
-      weeklyWaterExchangeDayAndTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-              flowAquariumSetting.substring( 6, 8 ) ),
-              Integer.parseInt( flowAquariumSetting.substring( 8, 10 ) ) ) );
-      weeklyWaterExchangeDayAndTimeChoice.getSelectionModel().select( Integer.parseInt(
-              flowAquariumSetting.substring( 13, 14 ) ) - 1 );
-      dailyAirEngineRunTimeandStartTimeTimePicker.setValue( LocalTime.of( Integer.parseInt(
-              flowAquariumSetting.substring( 14, 16 ) ),
-              Integer.parseInt( flowAquariumSetting.substring( 16, 18 ) ) ) );
-      dailyAirEngineRunTimeandStartTimeSlider.setValue( Integer.parseInt( flowAquariumSetting.substring( 20, 22 ) ) );
-
-      //Language setting
-      if( loginUser.getPreferredLanguage().equals( "ENGLISH" ) )
-      {
-         languageStatusElder = false;
-         changeLanguageElder( "en" );
-      }
-
-      else if( loginUser.getPreferredLanguage().equals( "TÜRKÇE" ) )
-      {
-         languageStatusElder = true;
-         changeLanguageElder( "tr" );
-      }
-
-      Thread thread = new Thread( () -> {
-         while( !exit ) {
-            Platform.runLater( () -> time.setText( LocalDate.now().format( DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) +
-                    "   " + LocalTime.now().format( DateTimeFormatter.ofPattern( "HH:mm:ss" ) ) ) );
-            try {
-               Thread.sleep( 1000 );
-            } catch( InterruptedException e ) {
-               e.printStackTrace();
-            }
-         }
-      } );
-      thread.start();
-   }
-
-   public void connectionPanelOperations( ActionEvent event )
-   {
-
-   }
-
    void createEmergencyAnimation() {
       rectangle = new Rectangle( 0, 0, 800, 800 );
       rectangle.setDisable( true );
@@ -3023,5 +2066,16 @@ public class ElderMainPanel implements Initializable {
       rectangle.setVisible( false );
    }
 
+   /**
+    * This method is simply responsible from first panel of the elderMain.java to make it visible or non visible.
+    * @param b
+    */
+   public void setMainMenuInvisible( Boolean b ) {
+      if( b ) {
+         mainElderPanelMenu.setVisible( false );
+      } else {
+         mainElderPanelMenu.setVisible( true );
+      }
+   }
 
 }
