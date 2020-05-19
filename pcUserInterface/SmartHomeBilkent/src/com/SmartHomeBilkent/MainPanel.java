@@ -2177,7 +2177,7 @@ public class MainPanel implements Initializable {
 
    /**
     * changeTheme method that regulate GUI according to given theme
-    *
+    * @authors Hacı Çakın, İlke Doğan
     * @param themeName is a String input parameter that is new theme name
     */
    void changeTheme( String themeName ) {

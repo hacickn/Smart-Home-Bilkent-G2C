@@ -8,18 +8,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * a HelpPanel class implements Initializable
+ * @author Hacı Çakın, İlke Doğan
+ * @version 05.05.2020
+ */
 public class HelpPanel implements Initializable {
+
+   // properties
    @FXML
    private AnchorPane helpMainPane, helpExitPane,
          helpUserProfilePane, helpMenuPane,
          helpSettingsPane, homeSettingPane,
          modsSettingPane, usersSettingPane,
          applicationSettingPane;
-
    @FXML
    private JFXButton helpExitButton, helpMenuButton,
          helpUserProfileButton, helpSettingsButton,
@@ -29,7 +34,6 @@ public class HelpPanel implements Initializable {
          modsSettingButton, homeSettingButton,
          goBackFromApplicationSetting, goBackFromUsersSetting,
          goBackFromModsSetting, goBackFromHomeSetting;
-
    @FXML
    private JFXTextArea menuTextField, userProfileTextField,
          logoutTextField, applicationSettingTextArea,
@@ -37,6 +41,11 @@ public class HelpPanel implements Initializable {
          homeSettingTextArea;
    private User loginUser;
 
+   /**
+    * This initialize method is simply responsible for help panel instructions is added as a text and setText method
+    * convert notepad format to panel format. It designed for 3 languages, turkish, english, deutsch.
+    * @param location,resources
+    */
    @Override
    public void initialize( URL location, ResourceBundle resources ) {
       getLoginUser();
@@ -389,7 +398,9 @@ public class HelpPanel implements Initializable {
                  "box at the top and clicking the update button below. \n" );
       }
    }
-
+   /**
+    * It is a getLoginUser method that runs loginUser
+    */
    public void getLoginUser() {
       for( User u : Users.getInstance().getUserList() ) {
          if( u.getEnter().equals( "true" ) ) {
@@ -397,7 +408,10 @@ public class HelpPanel implements Initializable {
          }
       }
    }
-
+   /**
+    * It is a mainButtonOnAction method that run when this class runs
+    * @param event  is a ActionEvent input parameter
+    */
    @FXML
    void mainButtonOnAction( ActionEvent event ) {
       if( event.getSource() == helpExitButton ) {
@@ -417,7 +431,9 @@ public class HelpPanel implements Initializable {
          helpMainPane.setVisible( true );
       }
    }
-
+   /**
+    * It is a closeAllMainPanes method that is used for setting visible help panel component's panels
+    */
    private void closeAllMainPanes() {
       helpMainPane.setVisible( false );
       helpExitPane.setVisible( false );
@@ -426,6 +442,10 @@ public class HelpPanel implements Initializable {
       helpSettingsPane.setVisible( false );
    }
 
+   /**
+    * It is a settingButtonOnAction method that run when this class runs
+    * @param event  is a ActionEvent input parameter
+    */
    @FXML
    void settingButtonOnAction( ActionEvent event ) {
       if( event.getSource() == applicationSettingButton ) {

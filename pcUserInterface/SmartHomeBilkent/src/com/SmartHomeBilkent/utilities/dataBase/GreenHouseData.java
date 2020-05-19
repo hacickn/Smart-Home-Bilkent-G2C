@@ -35,16 +35,29 @@ public class GreenHouseData {
    private String[] detailUsage;
 
    //constructor
+   /**
+    * it is a GreenHouseData constructor
+    */
    private GreenHouseData() {
       connection = DatabaseConnection.getInstance().getConnection();
       dateTimeFormatter = DateTimeFormatter.ofPattern( "yyyy.MM.dd" );
    }
 
-   //methods
+   //method
+
+    /**
+     * it is a getInstance method that provide the access to GreenHouseData
+     * @return result as a instance
+     */
    public static GreenHouseData getInstance() {
       return instance;
    }
 
+    /**
+     * it is a getGreenHouseValues method that get all user from the USERS table
+     *
+     * @return result as a ObservableList<User>
+     */
    public ObservableList< GreenHouseValues > getGreenHouseValues() {
       valuesList = FXCollections.observableArrayList();
       try {
@@ -66,6 +79,11 @@ public class GreenHouseData {
       }
    }
 
+   /**
+    * It is a calculateAverageTemperature that controls the given
+    * calculated temperature values
+    * @return result as a temperaturesPerDay
+    */
    public ObservableList< Integer > calculateAverageTemperature() {
       temperaturesPerDay = FXCollections.observableArrayList();
       int temperature;
@@ -83,6 +101,11 @@ public class GreenHouseData {
       return temperaturesPerDay;
    }
 
+    /**
+     * It is a calculateAverageHumidity that controls the given
+     * calculated humidity values
+     * @return result as a humidityPerDay
+     */
    public ObservableList< Integer > calculateAverageHumidity() {
       humidityPerDay = FXCollections.observableArrayList();
       int humidity;
@@ -100,6 +123,11 @@ public class GreenHouseData {
       return humidityPerDay;
    }
 
+   /**
+    * it is a updateSelectedFishes method
+    * @param lineChart   LineChart< Number, Number > input parameter
+    * @param bundle      as an ResourceBundle input parameter
+    */
    public void getTable( LineChart< Number, Number > lineChart, ResourceBundle bundle ) {
       XYChart.Series dataSeries;
       dataSeries = new XYChart.Series();
