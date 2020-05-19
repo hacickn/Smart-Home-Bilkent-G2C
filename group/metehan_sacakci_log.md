@@ -20,4 +20,7 @@ This week I succesfully design the "user" panel and finished it. At this point, 
 ### ~ 02.05.2020 ~
 This week I realized that Elder Main Panel has crucial problems about code efficiency. That is why I mostly worked to solve this problem and now I believe that Elder Panel has more efficient well proper methods and variables. Also, I mostly finished the code which is written to give functionality to settings pane. Whether there are still settings pane's sub panes that are needed to be completed, I believe that next week I will complete that part. Lastly, I add English and Turkish language choice for the user but again that method has a problem and next week, I will able the solve that problem. 
 
+### ~ 10.05.2020 ~
+This week I successfully completed the elder panel's emergency, notification, connection and language panes which are sub panes of the setting pane. At this point, all of these panes' designs and code structures are mostly finished. Also, I fixed the language code problem and now we have more efficient language method to change program's language. Next week I will mainly focus on the house attributes to connect them with the simulation. After connection codes are written and designed, I will start to start to investigate all my code so far and I will make it better my code writing as much as possible.
+
 ****
