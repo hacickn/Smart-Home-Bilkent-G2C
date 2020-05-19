@@ -94,7 +94,8 @@ public class gasPop extends Activity {
         wave_one = findViewById(R.id.wave_1);
         wave_two = findViewById(R.id.wave_two);
         gas_controller = (ToggleButton) findViewById(R.id.gas_control);
-        gas=findViewById(R.id.gas_gas);
+        gas = findViewById(R.id.gas_gas);
+        gasGIF = findViewById(R.id.gasGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
@@ -119,6 +120,25 @@ public class gasPop extends Activity {
             wave_one.setBackgroundResource(R.drawable.ic_bluenight_wave);
             wave_two.setBackgroundResource(R.drawable.ic_bluenight_wave);
             gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
+        }
+
+        if(themeNumber == 2){
+
+            smokes.setBackgroundResource(R.drawable.ic_alien_smoke);
+            wave_one.setBackgroundResource(R.drawable.ic_alien_wave);
+            wave_two.setBackgroundResource(R.drawable.ic_alien_wave);
+            gas.setBackgroundResource(R.drawable.ic_alien_gas);
+
+        }
+
+        if(themeNumber == 3){
+
+            smokes.setBackgroundResource(R.drawable.ic_wood_smoke);
+            wave_one.setBackgroundResource(R.drawable.ic_wood_wave);
+            wave_two.setBackgroundResource(R.drawable.ic_wood_wave);
+            gas.setBackgroundResource(R.drawable.ic_wood_gas);
+            gasGIF.setImageResource(R.drawable.backgroundwood);
+
         }
 
         //events

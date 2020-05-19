@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/notifications"
     android:background="@drawable/gradient">
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/text_notif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Notifications"
@@ -28,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/text_notif"
         app:srcCompat="@drawable/ic_musical_instrument" />
 
     <TextView
@@ -89,7 +90,7 @@
         android:id="@+id/auditory_warning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="16dp"
         android:text="Auditory Warning"
         android:textColor="#FFFFFF"

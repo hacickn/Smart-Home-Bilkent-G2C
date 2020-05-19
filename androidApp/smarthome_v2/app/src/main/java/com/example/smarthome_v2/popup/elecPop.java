@@ -27,6 +27,8 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class elecPop extends Activity {
 
@@ -48,6 +50,7 @@ public class elecPop extends Activity {
     private Intent thm;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private GifImageView electricityGIF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,7 @@ public class elecPop extends Activity {
         light_three = findViewById(R.id.light3);
         elec = findViewById(R.id.mainelectiricity);
         mAuth = FirebaseAuth.getInstance();
+        electricityGIF = findViewById(R.id.electricityGIF);
 
         //getting datas
 
@@ -117,13 +121,34 @@ public class elecPop extends Activity {
         }
 
         //choosing theme
-        if(themeNumber == 1)
-        {
+        if(themeNumber == 1){
 
             light_one.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
+            electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
+
+        }
+
+        if(themeNumber == 2){
+
+            light_one.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            light_two.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            light_three.setBackgroundResource(R.drawable.ic_alien_eleclight);
+            elec.setBackgroundResource(R.drawable.ic_alien_electricity);
+            electricityGIF.setImageResource(R.drawable.alien_electricity_first);
+
+
+        }
+
+        if(themeNumber == 3){
+
+            light_one.setBackgroundResource(R.drawable.ic_wood_eleclight);
+            light_two.setBackgroundResource(R.drawable.ic_wood_eleclight);
+            light_three.setBackgroundResource(R.drawable.ic_wood_eleclight);
+            elec.setBackgroundResource(R.drawable.ic_wood_electricity);
+            electricityGIF.setImageResource(R.drawable.backgroundwood);
         }
 
 
