@@ -23,4 +23,7 @@ This week I realized that Elder Main Panel has crucial problems about code effic
 ### ~ 10.05.2020 ~
 This week I successfully completed the elder panel's emergency, notification, connection and language panes which are sub panes of the setting pane. At this point, all of these panes' designs and code structures are mostly finished. Also, I fixed the language code problem and now we have more efficient language method to change program's language. Next week I will mainly focus on the house attributes to connect them with the simulation. After connection codes are written and designed, I will start to start to investigate all my code so far and I will make it better my code writing as much as possible.
 
+### ~ 18.05.2020 ~
+This week I tried my best to understand how I can send messages to ardunio and thanks to my group members, I understand most part of it and I completed elder panels house settings and their connection with the simulation. Other than that, I tried to detect and fix every kind of design problem. I mostly arrange labels' and buttons' size and positions. At this point, it can be assumed that elder panel is mostly finished. Now I will focus on our project's final video until 20.05.2020.
+
 ****
