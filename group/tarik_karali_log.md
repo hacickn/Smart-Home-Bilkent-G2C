@@ -50,5 +50,8 @@ This week, Aquarium layouts and all java classes are added. Toggle buttons are d
 ---
 
 ### ~ 11.05.2020 ~
+This week, Themes are stronged.Gif technology is applied Text settings is added.Last changes about layout is implemented.(69-70 hours)
+
+---
 
 ****
