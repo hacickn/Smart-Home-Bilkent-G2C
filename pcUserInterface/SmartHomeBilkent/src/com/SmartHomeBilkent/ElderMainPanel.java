@@ -631,10 +631,10 @@ public class ElderMainPanel implements Initializable {
             for( int k = 0; k < 20; k++ ) {
                final int j = k;
                Platform.runLater( ( ) -> {
-                  doorSpinner.setVisible( true );
+                  //doorSpinner.setVisible( true );
                   //doorButton.setVisible( false );
                   if( j == 19 ) {
-                     doorSpinner.setVisible( false );
+                     //doorSpinner.setVisible( false );
                      //doorButton.setVisible( true );
                   }
                } );
