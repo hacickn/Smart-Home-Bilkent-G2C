@@ -5,8 +5,9 @@ import com.SmartHomeBilkent.home.features.*;
 
 /**
  * a Home class
- * In this class Actually, inheritance is used. Each object can be reached through the serial port.
- * The objects of the classes in the home are used in this class. The communication class is being extended.
+ * In this class Actually, inheritance is used. Each object can be reached
+ * through the serial port.The objects of the classes in the home are used in
+ * this class. The communication class is being extended.
  * @author İlke Doğan
  * @version 29.04.2020
  */
