@@ -1804,6 +1804,8 @@ public class MainPanel implements Initializable {
                                  && audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
 
                         }else if( out.toString().equals( "SmokeAlarm" ) ) {
                            if( smokeSensorVisualToggle.isSelected()
@@ -1816,6 +1818,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
 
                         }else if( out.toString().equals( "GasAlarm" ) ) {
                            if( gasSensorVisualToggle.isSelected()
@@ -1828,6 +1833,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
 
                         }else if( out.toString().equals( "Gas+Fire" ) ) {
                            if( ( gasSensorVisualToggle.isSelected()
@@ -1842,6 +1850,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
 
                         }else if( out.toString().equals( "Gas+Smokealarm" ) ) {
                            if( ( gasSensorVisualToggle.isSelected()
@@ -1856,6 +1867,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
 
                         }else if( out.toString().equals( "Gas+Smoke" ) ) {
                            if( ( fireButtonVisualToggle.isSelected()
@@ -1870,6 +1884,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
 
                         }else if( out.toString().equals( "Gas+Smoke+Fire" ) ) {
                            if( ( fireButtonVisualToggle.isSelected()
@@ -1886,6 +1903,9 @@ public class MainPanel implements Initializable {
                                  && !audioClipEmergency.isPlaying() ){
                               audioClipEmergency.play();
                            }
+                           openElectricity( false );
+                           openGas( false );
+
                         }
                      }
                   }
