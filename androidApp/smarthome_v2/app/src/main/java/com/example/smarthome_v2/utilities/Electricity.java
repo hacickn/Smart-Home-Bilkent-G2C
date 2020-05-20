@@ -59,8 +59,6 @@ public class Electricity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
-
-   // @SuppressLint("WrongViewCast")
     @SuppressLint("WrongViewCast")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +91,6 @@ public class Electricity extends AppCompatActivity {
         description = new Description();
         description.setText("HOURS/DAY");
         gasChart.setDescription(description);
-
 
         //initialization
         exit=findViewById(R.id.exit_elec);
@@ -129,7 +126,6 @@ public class Electricity extends AppCompatActivity {
             light_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
             electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
-
         }
 
         if(themeNumber == 2){
@@ -139,8 +135,6 @@ public class Electricity extends AppCompatActivity {
             light_three.setBackgroundResource(R.drawable.ic_alien_eleclight);
             elec.setBackgroundResource(R.drawable.ic_alien_electricity);
             electricityGIF.setImageResource(R.drawable.alien_electricity_first);
-
-
         }
 
         if(themeNumber == 3){
@@ -184,8 +178,8 @@ public class Electricity extends AppCompatActivity {
                     if(themeNumber == 1) {
                         electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
                     }
-
                 }
+
                 String user_id = mAuth.getCurrentUser().getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
                 HashMap<String, Object> userMap = new HashMap<>();
@@ -215,6 +209,5 @@ public class Electricity extends AppCompatActivity {
                 startActivity(thm);
             }
         });
-
     }
 }

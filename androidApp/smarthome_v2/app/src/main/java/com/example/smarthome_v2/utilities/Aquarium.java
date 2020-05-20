@@ -48,8 +48,6 @@ public class Aquarium extends AppCompatActivity {
     private TextView a,b,c,d,e;
     private GifImageView aquariumGIF;
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aquarium_screen);
@@ -98,16 +96,21 @@ public class Aquarium extends AppCompatActivity {
             feed.setBackgroundResource(R.drawable.ic_nightblue_fish_food);
             motor.setBackgroundResource(R.drawable.ic_bluenight_air_engine);
             Drawable drawable = textView_one.getBackground(); // get current EditText drawable
-            drawable.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawable.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); //change the drawable
+            // color
             textView_one.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableTwo = textView_two.getBackground(); // get current EditText drawable
-            drawableTwo.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableTwo.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable
+            // color
             textView_two.setBackgroundDrawable(drawable); // set the new drawable to EditText
-            Drawable drawableThree = textView_three.getBackground(); // get current EditText drawable
-            drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            Drawable drawableThree = textView_three.getBackground(); // get current EditText
+            // drawable
+            drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_three.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableFour = textView_four.getBackground(); // get current EditText drawable
-            drawableFour.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableFour.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_four.setBackgroundDrawable(drawable); // set the new drawable to EditText
             timeButton_one.setBackgroundResource(R.drawable.ic_bluenight_clock);
             timeButton_two.setBackgroundResource(R.drawable.ic_bluenight_clock);
@@ -120,7 +123,6 @@ public class Aquarium extends AppCompatActivity {
             e.setTextColor(Color.BLUE);
             species.setBackgroundResource(R.color.blue_night);
             aquariumGIF.setImageResource(R.drawable.bluenight_electricity);
-
         }
 
         if(themeNumber == 2){
@@ -131,16 +133,21 @@ public class Aquarium extends AppCompatActivity {
             feed.setBackgroundResource(R.drawable.ic_alien_fish_feed);
             motor.setBackgroundResource(R.drawable.ic_alien_air_engine);
             Drawable drawable = textView_one.getBackground(); // get current EditText drawable
-            drawable.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawable.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable
+            // color
             textView_one.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableTwo = textView_two.getBackground(); // get current EditText drawable
-            drawableTwo.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableTwo.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_two.setBackgroundDrawable(drawable); // set the new drawable to EditText
-            Drawable drawableThree = textView_three.getBackground(); // get current EditText drawable
-            drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            Drawable drawableThree = textView_three.getBackground(); // get current EditText
+            // drawable
+            drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_three.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableFour = textView_four.getBackground(); // get current EditText drawable
-            drawableFour.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableFour.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_four.setBackgroundDrawable(drawable); // set the new drawable to EditText
             timeButton_one.setBackgroundResource(R.drawable.ic_bluenight_clock);
             timeButton_two.setBackgroundResource(R.drawable.ic_bluenight_clock);
@@ -152,11 +159,6 @@ public class Aquarium extends AppCompatActivity {
             d.setTextColor(Color.BLACK);
             e.setTextColor(Color.BLACK);
             species.setBackgroundResource(R.color.alien);
-            //aquariumGIF.setImageResource(R.drawable.electricity);
-
-
-
-
         }
 
         if(themeNumber == 3){
@@ -167,16 +169,20 @@ public class Aquarium extends AppCompatActivity {
             feed.setBackgroundResource(R.drawable.ic_wood_fish_food);
             motor.setBackgroundResource(R.drawable.ic_wood_air_engine);
             Drawable drawable = textView_one.getBackground(); // get current EditText drawable
-            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_one.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableTwo = textView_two.getBackground(); // get current EditText drawable
-            drawableTwo.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableTwo.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_two.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableThree = textView_three.getBackground(); // get current EditText drawable
-            drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_three.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableFour = textView_four.getBackground(); // get current EditText drawable
-            drawableFour.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableFour.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             textView_four.setBackgroundDrawable(drawable); // set the new drawable to EditText
             timeButton_one.setBackgroundResource(R.drawable.ic_wood_clock);
             timeButton_two.setBackgroundResource(R.drawable.ic_wood_clock);
@@ -189,7 +195,6 @@ public class Aquarium extends AppCompatActivity {
             e.setTextColor(Color.WHITE);
             species.setBackgroundResource(R.color.alien);
             aquariumGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //choosing text type
@@ -237,7 +242,8 @@ public class Aquarium extends AppCompatActivity {
 
         if(textNo == 4)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/annie_use_your_telescope.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(),
+                    "fonts/annie_use_your_telescope.ttf");
             textView_one.setTypeface(typeface);
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
@@ -251,7 +257,8 @@ public class Aquarium extends AppCompatActivity {
 
         if(textNo == 5)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/atomic_age.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(),
+                    "fonts/atomic_age.ttf");
             textView_one.setTypeface(typeface);
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
@@ -262,6 +269,7 @@ public class Aquarium extends AppCompatActivity {
             d.setTypeface(typeface);
             e.setTypeface(typeface);
         }
+
         if(textNo == 6)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
@@ -278,7 +286,8 @@ public class Aquarium extends AppCompatActivity {
 
         if(textNo == 7)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/BlackHanSans-Regular.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(),
+                    "fonts/BlackHanSans-Regular.ttf");
             textView_one.setTypeface(typeface);
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
@@ -290,10 +299,10 @@ public class Aquarium extends AppCompatActivity {
             e.setTypeface(typeface);
         }
 
-
         if(textNo == 8)
         {
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora_one.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(),
+                    "fonts/cantora_one.ttf");
             textView_one.setTypeface(typeface);
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
@@ -326,10 +335,13 @@ public class Aquarium extends AppCompatActivity {
                 TimePickerDialog timePicker; //Time Picker reference is created.
 
                //TimePicker creates object and add  click listener
-                timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
+                timePicker = new TimePickerDialog(Aquarium.this,
+                        new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_one.setText( selectedHour + ":" + selectedMinute);//print on the text view
+                    public void onTimeSet(TimePicker timePicker, int selectedHour,
+                                          int selectedMinute) {
+                        textView_one.setText( selectedHour + ":" + selectedMinute);
+                        //print on the text view
                     }
                 }, hour, minute, true);//true for 24 hour system
                 timePicker.setTitle("Choose Time");
@@ -339,7 +351,6 @@ public class Aquarium extends AppCompatActivity {
                 timePicker.show();
             }
         });
-
 
         timeButton_two.setOnClickListener(new View.OnClickListener() {//saatButona Click Listener ekliyoruz
 
@@ -352,10 +363,13 @@ public class Aquarium extends AppCompatActivity {
                 TimePickerDialog timePicker; //Time Picker reference is created.
 
                 //TimePicker creates object and add  click listener
-                timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
+                timePicker = new TimePickerDialog(Aquarium.this,
+                        new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_two.setText( selectedHour + ":" + selectedMinute);//print on the text view
+                    public void onTimeSet(TimePicker timePicker, int selectedHour,
+                                          int selectedMinute) {
+                        textView_two.setText( selectedHour + ":" + selectedMinute);
+                        //print on the text view
                     }
                 }, hour, minute, true);//true for 24 hour system
                 timePicker.setTitle("Choose Time");
@@ -366,7 +380,6 @@ public class Aquarium extends AppCompatActivity {
             }
         });
 
-
         day.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -375,7 +388,6 @@ public class Aquarium extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
 
         timeButton_three.setOnClickListener(new View.OnClickListener() {//saatButona Click Listener ekliyoruz
 
@@ -388,10 +400,13 @@ public class Aquarium extends AppCompatActivity {
                 TimePickerDialog timePicker; //Time Picker reference is created.
 
                 //TimePicker creates object and add  click listener
-                timePicker = new TimePickerDialog(Aquarium.this, new TimePickerDialog.OnTimeSetListener() {
+                timePicker = new TimePickerDialog(Aquarium.this,
+                        new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        textView_four.setText( selectedHour + ":" + selectedMinute);//print on the text view
+                    public void onTimeSet(TimePicker timePicker, int selectedHour,
+                                          int selectedMinute) {
+                        textView_four.setText( selectedHour + ":" + selectedMinute);
+                        //print on the text view
                     }
                 }, hour, minute, true);//true for 24 hour system
                 timePicker.setTitle("Choose Time");
@@ -413,7 +428,5 @@ public class Aquarium extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 }

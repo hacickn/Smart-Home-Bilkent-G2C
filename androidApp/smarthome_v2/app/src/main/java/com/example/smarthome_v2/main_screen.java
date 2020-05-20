@@ -49,7 +49,6 @@ public class main_screen extends AppCompatActivity {
     private boolean gasCheck,gardenCheck,electricityCheck,waterCheck;
     private DatabaseReference mDatabase;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
@@ -89,7 +88,6 @@ public class main_screen extends AppCompatActivity {
         bundle = getIntent().getExtras();
 
         if(bundle!=null) {
-            // themeNumber = bundle.getInt("theme");
             textNo = bundle.getInt("text");
             gasCheck = bundle.getBoolean("gas");
             gardenCheck = bundle.getBoolean("garden");
@@ -187,7 +185,6 @@ public class main_screen extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -215,17 +212,15 @@ public class main_screen extends AppCompatActivity {
                 HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
                 Object thmObj = map.get("theme");
                 String thmNum =  String.valueOf(thmObj);
+
                 if(thmNum.equals("0"))
                 {
-
                     themeNumber = 0;
                 }
 
                 else if (thmNum.equals("1"))
                 {
-
                     themeNumber = 1;
-
                     gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
                     main.setBackgroundResource(R.drawable.backgroundbluenight);
                     gardenLight.setBackgroundResource(R.drawable.ic_bluenight_gardening);
@@ -241,9 +236,7 @@ public class main_screen extends AppCompatActivity {
 
                 else if (thmNum.equals("2"))
                 {
-
                     themeNumber = 2;
-
                     gas.setBackgroundResource(R.drawable.ic_alien_gas);
                     main.setBackgroundResource(R.drawable.backgroundalien);
                     gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
@@ -259,9 +252,7 @@ public class main_screen extends AppCompatActivity {
 
                 else if (thmNum.equals("3"))
                 {
-
                     themeNumber = 3;
-
                     gas.setBackgroundResource(R.drawable.ic_wood_gas);
                     main.setBackgroundResource(R.drawable.backgroundwood);
                     gardenLight.setBackgroundResource(R.drawable.ic_wood_gardening);
@@ -277,9 +268,7 @@ public class main_screen extends AppCompatActivity {
 
                 else if (thmNum.equals("4"))
                 {
-
                     themeNumber = 4;
-
                     gas.setBackgroundResource(R.drawable.ic_alien_gas);
                     main.setBackgroundResource(R.drawable.backgroundspace);
                     gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
@@ -297,7 +286,6 @@ public class main_screen extends AppCompatActivity {
                 {
                     themeNumber = 0;
                 }
-
             }
 
             @Override
@@ -312,6 +300,7 @@ public class main_screen extends AppCompatActivity {
                 HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
                 Object txtObj = map.get("txt");
                 String txtNum =  String.valueOf(txtObj);
+
                 if(txtNum.equals("0"))
                 {
                     textNo = 0;
@@ -388,8 +377,8 @@ public class main_screen extends AppCompatActivity {
             greenHouse.setBackgroundResource(R.drawable.ic_bluenight_green_house);
             graphics.setBackgroundResource(R.drawable.ic__bluenight_graphic_option);
             menu.setBackgroundResource(R.drawable.ic_bluenight_menu);
-
         }
+
         if(themeNumber == 2){
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
             main.setBackgroundResource(R.drawable.backgroundalien);
@@ -402,7 +391,6 @@ public class main_screen extends AppCompatActivity {
             greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
             graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
             menu.setBackgroundResource(R.drawable.ic_alien_menu);
-
         }
 
         if(themeNumber == 3){
@@ -417,13 +405,12 @@ public class main_screen extends AppCompatActivity {
             greenHouse.setBackgroundResource(R.drawable.ic_wood_green_house);
             graphics.setBackgroundResource(R.drawable.ic_wood_graphic_option);
             menu.setBackgroundResource(R.drawable.ic_wood_menu);
-
         }
+
         if(themeNumber == 4){
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
             main.setBackgroundResource(R.drawable.backgroundspace);
             gardenLight.setBackgroundResource(R.drawable.ic_alien_gardening);
-
             weather.setBackgroundResource(R.drawable.ic_alien_weather);
             settings.setBackgroundResource(R.drawable.ic_alien_optons);
             elec.setBackgroundResource(R.drawable.ic_alien_electricity);
@@ -432,11 +419,9 @@ public class main_screen extends AppCompatActivity {
             greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
             graphics.setBackgroundResource(R.drawable.ic__alien_graphic_option);
             menu.setBackgroundResource(R.drawable.ic_alien_menu);
-
         }
 
-
-
+        //events
         gardenLight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -450,7 +435,6 @@ public class main_screen extends AppCompatActivity {
                 finish();
             }
         });
-
 
         gas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -466,9 +450,6 @@ public class main_screen extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
 
         weather.setOnClickListener(new View.OnClickListener() {
             @Override

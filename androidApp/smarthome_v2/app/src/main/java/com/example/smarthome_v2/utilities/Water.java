@@ -132,21 +132,27 @@ public class Water extends AppCompatActivity {
                         waterGIF.setImageResource(R.drawable.backgroundwood);
                     }
                 }
+
                 String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").
+                        child(user_id);
                 HashMap<String, Object> userMap = new HashMap<>();
 
                 if( water_controller.isChecked() )
                 {
                     userMap.put("water", "on");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_water_exchange,false).show();
+                    FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" ,
+                            FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,
+                            R.drawable.ic_alien_water_exchange,false).show();
                 }
                 else
                 {
                     userMap.put("water", "off");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_water_exchange,false).show();
+                    FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" ,
+                            FancyToast.LENGTH_SHORT,FancyToast.WARNING ,
+                            R.drawable.ic_alien_water_exchange,false).show();
                 }
             }
         });
@@ -161,6 +167,5 @@ public class Water extends AppCompatActivity {
                 startActivity(thm);
             }
         });
-
     }
 }

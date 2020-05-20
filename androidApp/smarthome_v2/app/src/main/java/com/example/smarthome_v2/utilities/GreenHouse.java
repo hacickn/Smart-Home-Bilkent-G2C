@@ -68,16 +68,18 @@ public class GreenHouse extends Activity {
             water.setTextColor(Color.BLUE);
             humudity.setTextColor(Color.BLUE);
             Drawable drawable = hum.getBackground(); // get current EditText drawable
-            drawable.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawable.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             hum.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableTwo = comingWater.getBackground(); // get current EditText drawable
-            drawableTwo.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableTwo.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             comingWater.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
-            drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
             greenHouseGIF.setImageResource(R.drawable.bluenight_electricity);
-
         }
 
         if(themeNumber == 2){
@@ -95,8 +97,6 @@ public class GreenHouse extends Activity {
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
             drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
-           //greenHouseGIF.setImageResource(R.drawable.electricity);
-
         }
 
         if(themeNumber == 3){
@@ -106,16 +106,18 @@ public class GreenHouse extends Activity {
             water.setTextColor(Color.WHITE);
             humudity.setTextColor(Color.WHITE);
             Drawable drawable = hum.getBackground(); // get current EditText drawable
-            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             hum.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableTwo = comingWater.getBackground(); // get current EditText drawable
-            drawableTwo.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableTwo.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             comingWater.setBackgroundDrawable(drawable); // set the new drawable to EditText
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
-            drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
+            drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the
+            // drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
             greenHouseGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //choosing text type
@@ -174,6 +176,7 @@ public class GreenHouse extends Activity {
             comingWater.setTypeface(typeface);
             temp.setTypeface(typeface);
         }
+
         if(textNo == 6)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
@@ -195,7 +198,6 @@ public class GreenHouse extends Activity {
             comingWater.setTypeface(typeface);
             temp.setTypeface(typeface);
         }
-
 
         if(textNo == 8)
         {
@@ -219,6 +221,5 @@ public class GreenHouse extends Activity {
                 startActivity(thm);
             }
         });
-
     }
 }
