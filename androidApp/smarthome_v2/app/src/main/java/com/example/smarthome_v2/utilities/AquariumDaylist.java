@@ -60,7 +60,6 @@ public class AquariumDaylist extends AppCompatActivity {
             adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,days);
         }
 
-
         //implementation
         list.setAdapter(adaptor);
 

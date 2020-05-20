@@ -67,7 +67,8 @@ public class WeatherForecast {
         responseCode = con.getResponseCode();
 
         if( responseCode == HttpURLConnection.HTTP_OK ) {
-            BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( con.getInputStream() ) );
+            BufferedReader bufferedReader =
+                    new BufferedReader( new InputStreamReader( con.getInputStream() ) );
             StringBuilder response;
             response = new StringBuilder();
 
@@ -117,7 +118,8 @@ public class WeatherForecast {
         responseCode = con.getResponseCode();
 
         if( responseCode == HttpURLConnection.HTTP_OK ) {
-            BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( con.getInputStream() ) );
+            BufferedReader bufferedReader =
+                    new BufferedReader( new InputStreamReader( con.getInputStream() ) );
             response = new StringBuilder();
 
             while( ( inputLine = bufferedReader.readLine() ) != null ) {

@@ -42,7 +42,6 @@ public class GardenLight extends AppCompatActivity {
         gardenLightGIF = findViewById(R.id.gardenlightGIF);
         mAuth = FirebaseAuth.getInstance();
 
-
         //getting datas
         bundle = getIntent().getExtras();
 
@@ -114,24 +113,30 @@ public class GardenLight extends AppCompatActivity {
 
                 //database
                 String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users")
+                        .child(user_id);
                 HashMap<String, Object> userMap = new HashMap<>();
 
                 if( gardenLightController.isChecked() )
                 {
                     userMap.put("gardenLight", "on");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gardening,false).show();
+                    FancyToast.makeText(getApplicationContext(),
+                            "GARDEN LIGHT IS OPENED" , FancyToast
+                                    .LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.
+                                    ic_alien_gardening,false).show();
                 }
                 else
                 {
                     userMap.put("gardenLight", "off");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gardening,false).show();
+                    FancyToast.makeText(getApplicationContext(),
+                            "GARDEN LIGHT IS CLOSED" , FancyToast.LENGTH_SHORT,
+                            FancyToast.WARNING ,R.drawable.ic_alien_gardening,false).
+                            show();
                 }
             }
         });
-
 
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +148,5 @@ public class GardenLight extends AppCompatActivity {
                 startActivity(thm);
             }
         });
-
     }
 }

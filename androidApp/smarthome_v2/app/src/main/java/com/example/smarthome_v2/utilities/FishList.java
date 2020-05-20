@@ -24,7 +24,8 @@ public class FishList extends AppCompatActivity {
 
     //properties
     private ListView list;
-    private static final String[] fishTypes = new String[]{"Lepistes","Japon","Vatoz","Brachydanio","clownfish","Pencilfish","Juvenile"};
+    private static final String[] fishTypes = new String[]
+            {"Lepistes","Japon","Vatoz","Brachydanio","clownfish","Pencilfish","Juvenile"};
     private Context context = this;
     private Bundle bundle;
     private int themeNumber;
@@ -73,6 +74,5 @@ public class FishList extends AppCompatActivity {
                 setContentView(R.layout.aquarium_screen);
             }
         });
-
     }
 }

@@ -58,8 +58,6 @@ public class Gas extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gas_screen);
@@ -90,7 +88,6 @@ public class Gas extends AppCompatActivity {
         description = new Description();
         description.setText("HOURS/DAY");
         gasChart.setDescription(description);
-
 
         //initialization
         exit=findViewById(R.id.exit_gas);
@@ -188,25 +185,27 @@ public class Gas extends AppCompatActivity {
                     }
                     }
                 String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").
+                        child(user_id);
                 HashMap<String, Object> userMap = new HashMap<>();
 
                 if( gas_controller.isChecked() )
                 {
                     userMap.put("gas", "on");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,false).show();
+                    FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" ,
+                            FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,
+                            false).show();
                 }
                 else
                 {
                     userMap.put("gas", "off");
                     mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,false).show();
+                    FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" ,
+                            FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,
+                            false).show();
                 }
             }
         });
-
-
     }
-
 }
