@@ -14,4 +14,7 @@ This week me and my android group had a discussion about which layout we were go
 Through these ten days, I tried to implement and design the settings, some home utilities such as Electricity, Garden Light, Weather popup, door sign and a profile card. I also added pop ups for the settings part to give a user better feeling of the interface. Settings includes two parts one is for the adjusting home settings, one is for the app. To implement pop ups I watched some youtube videos on the internet and implemented it on the app.
 ### ~ 14 may 2020 ~ 
 Today I uploaded the profile card and some app settings features on github. 
+### ~ 21 may 2020 ~ 
+Through the week we tried to finish the app and we shoot a video with the group about our project. Also, I add some comments on the Java classes for better understanding of the code.
+
 ****
