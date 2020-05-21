@@ -28,6 +28,7 @@ public class blutPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth_pop);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 

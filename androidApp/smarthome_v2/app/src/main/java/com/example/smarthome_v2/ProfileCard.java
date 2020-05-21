@@ -41,9 +41,10 @@ public class ProfileCard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_card);
-        settingsName = (EditText) findViewById(R.id.profile_name);
 
-        DisplayMetrics dm = new DisplayMetrics();
+        settingsName = (EditText) findViewById(R.id.profile_name);//initializing the name text editor
+
+        DisplayMetrics dm = new DisplayMetrics();//related to pop-up
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         //getting data
@@ -54,7 +55,7 @@ public class ProfileCard extends AppCompatActivity {
             textNo = bundle.getInt("text");
 
         }
-
+        //pop-up initialize
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
@@ -62,7 +63,7 @@ public class ProfileCard extends AppCompatActivity {
 
 
         mDisplayDate = findViewById(R.id.birthday);
-
+        //We get the name from user to put it in the firebase
         mAuth = FirebaseAuth.getInstance();
         String user_id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
@@ -165,15 +166,16 @@ public class ProfileCard extends AppCompatActivity {
             mDisplayDate.setTypeface(typeface);
         }
 
-
+        //this part is for the calendar object
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
+                Calendar cal = Calendar.getInstance(); //we use the java Calendar from the java library
+                //initializing the year, month and day
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
-
+                //we store the Calendar data in the firebase below
                 String user_id = mAuth.getCurrentUser().getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
                 HashMap<String, Object> userMap = new HashMap<>();
@@ -181,18 +183,21 @@ public class ProfileCard extends AppCompatActivity {
                 userMap.put("day", day + "");
                 userMap.put("month", month + "");
                 mDatabase.updateChildren(userMap);
-
-                DatePickerDialog dialog = new DatePickerDialog(ProfileCard.this,android.R.style.Theme_Holo_Light_Dialog_MinWidth,mDateSetListener,year,month,day);
-
+                //Creating a date picker dialog
+                DatePickerDialog dialog = new DatePickerDialog(ProfileCard.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,year,month,day);
+                //while choosing the date, this method makes the background transparent
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
         });
+        //this is the illustration of the date
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 month = month + 1;
-                String date = day + "/" + month + "/" + year;
+                String date = day + " / " + month + " / " + year;
                 mDisplayDate.setText(date);
 
             }

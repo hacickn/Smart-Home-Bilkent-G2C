@@ -24,6 +24,7 @@ public class alarmPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_pop);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 

@@ -36,6 +36,7 @@ public class ghPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.green_house_screen);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -43,7 +44,7 @@ public class ghPop extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int) (width*1),(int)(height*1));
-        //initialization
+        //initialization of the objects
         greenHouse = findViewById(R.id.green_house_image);
         temperature = findViewById(R.id.Temperature);
         water = findViewById(R.id.Water);

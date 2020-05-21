@@ -57,6 +57,7 @@ public class elecPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.electricity_screen);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 

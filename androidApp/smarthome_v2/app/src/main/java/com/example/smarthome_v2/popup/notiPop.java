@@ -24,6 +24,7 @@ public class notiPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_pop);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 

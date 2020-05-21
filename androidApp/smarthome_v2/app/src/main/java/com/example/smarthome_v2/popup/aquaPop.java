@@ -51,6 +51,7 @@ public class aquaPop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aquarium_screen);
 
+        //initializing the pop-up as below
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
