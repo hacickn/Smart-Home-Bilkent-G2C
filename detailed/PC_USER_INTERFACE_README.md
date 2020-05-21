@@ -1,12 +1,35 @@
 # Smart Home Bilkent G2C
 ## Pc User Interface 
-> (Until Today)
-To experience the program there are for users in the program( Each user type has different features ).
 
-> Note: After the Java 11, module system came to Java. Because we have written 
-this code in JDK v1.8.0 we don't use this module system. Therefore when 
-you are running program in intelliJ, Please use JDK 1.8(In intelliJ v2020.1,
-you can download all JDK versions).
+> Note: After the Java 8, module system came to Java. Because we have written 
+this code in JDK v1.8.0 we don't use this module system.Moreover, after the Java 9 javafx library is removed from default. Therefore when 
+you are running program in intelliJ, Please use JDK 1.8(Any java 8' JDK )(In intelliJ v2020.1,
+you can download all JDK versions). However if you use Java JDK which is publish after the Java 8, you need to follow this steps(First step is valid for only after the java 10);
+
+1) Instead of dealing with all this, you can download java JDK 1.8 version and choose it from the project sdk. Or you can follow the steps 2-6.
+
+2)[Go Gluon website](https://gluonhq.com/products/javafx/) and find suitable version for your JDK version and download it and add these libraries to project in project structere.
+3) You have to add following codes to your module-info.java 
+```
+module ProjectName{
+   requires javafx.fxml;
+   requires javafx.controls;
+   
+   opens sample;  //package name of the main class
+}
+```
+5) Enter the run configuration settings and add these following lines to VM option
+```
+--add-exports javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix
+--add-exports javafx.controls/com.sun.javafx.scene.control=com.jfoenix
+--add-exports javafx.base/com.sun.javafx.binding=com.jfoenix
+--add-exports javafx.graphics/com.sun.javafx.stage=com.jfoenix
+--add-exports javafx.base/com.sun.javafx.event=com.jfoenix
+```
+6) Add others libraries as a maven library. Maven links of each libraries can be found in the their github pages. You can reach these pages links which are below.Hopefully it should work.
+---
+
+>To experience the program there are for users in the program( Each user type has different features ).
 ```
  UserName       Password      User Type
 - david     |    cs102    |    Parent
@@ -14,10 +37,10 @@ you can download all JDK versions).
 - mete      |    mete     |    Child
 - ilke      |    ilke     |    Elder
 ```
+---
 - [Materials Used](#MaterialsUsed)
 - [Features](#Features)
-
-
+- [Useful Codes Explanations](#UsefulCodesExplanations)
 
 #### Materials Used
 
@@ -42,16 +65,16 @@ any location in the world in lightweight JSON format
 * [animate-fx](https://github.com/onexip/animate-fx) - Animation library for JavaFX
 
 #### Features
-##### PROGRAM FEATURES
+##### Program Features
 ```
 1) There are three option for user type ( CHILD/PARENT/ELDER ).
 
 2) There are many features which can be personalized for each person.These are: 
-2.1) Theme of user interface can be changed(There are 6 option).
+2.1) Theme of user interface can be changed(There are 12 option).
 2.2) Text mode can be closed or opened.
 2.3) Sound mode can be closed or opended.
 2.4) Each person can adjust sound mode volume level.
-2.5) There are 3 Language for both sound and text modes.
+2.5) There are 5 Language for both sound and text modes.
 2.6) Each person can get weather information, no matter where they want to learn 
 about which part of the world.(Internet connection is necessity)
 2.7) Each person has personal information card which can be updated by the users.
@@ -90,10 +113,10 @@ password.
 day and time, air motor work amount and start time).
 
 8) In user interface, If program is not connected status(*), users can;
-8.1) See their electricity opening time each day on the graph(hours/day).
-8.2) See their gas opening time each day on the graph(hours/day).
+8.1) See their electricity run time each day on the graph(hours/day).
+8.2) See their gas run time each day on the graph(hours/day).
 8.3) See their green house average of each day on the graph.
-8.4) Use weather service.
+8.4) Use weather service(internet connection is necessity).
 8.5) Change personal information
 
 9) Interface gives chance to choose which port we use when connecting to 
@@ -101,6 +124,8 @@ embedded system.
 
 10)Each user names are unique. Therefore if you try to get user name that is 
 used by somenone, program doesn't permit to do that.
+
+11)Program has help button which contains all information about the program.
 
 (*)= In this demo, people can experience without connection. Program will
 not five any error because we prevent it. However, In logic way, users 
@@ -111,7 +136,7 @@ IDE. If they setup them in their computers, program also can connected and
 work correctly. As a result, user can use this interface without error when
 both connecting or not connecting. 
 ```
-##### TECHNICAL DETAILS
+##### Technical Details
 ```
 1) To communicate with database, Singleton patters is used.
 2) Model-View-Controller pattern is used.
@@ -123,7 +148,7 @@ simulate serial port connection in the simulation program virtually)
 6) To be contiuned...
 ```
 
-##### USEFULL CODES EXPLANATIONS
+### Useful Codes Explanations
 ##### In here, I put some extra code with their explanation to be useful my friends or anyone who interested in this project.
 
 >1. In javaFX, if you will use Threads, then you have to use Platform.runLater method.
