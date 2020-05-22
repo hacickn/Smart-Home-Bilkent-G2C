@@ -9,6 +9,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * a Open Screen class
+ *
+ * @author Tarık Buğra Karali
+ * @version 11.05.2020
+ */
 public class OpenScreen extends Activity {
 
     //properties
@@ -19,14 +25,10 @@ public class OpenScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.opening_screen);
-
-
         TextView shome = (TextView) findViewById(R.id.shometext);
-
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/BlackHanSans-Regular.ttf");
         shome.setTypeface(typeface);
         ImageView roof = findViewById(R.id.roof);
-
 
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
         //anim.reset();
@@ -38,13 +40,11 @@ public class OpenScreen extends Activity {
             public void onAnimationStart(Animation animation) {
 
             }
-
             @Override
             public void onAnimationEnd(Animation animation) {
                 Intent intocan = new Intent(OpenScreen.this, MainActivity.class);
                 startActivity(intocan);
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 
@@ -57,13 +57,11 @@ public class OpenScreen extends Activity {
             public void onAnimationStart(Animation animation) {
 
             }
-
             @Override
             public void onAnimationEnd(Animation animation) {
                 Intent intocan = new Intent(OpenScreen.this, MainActivity.class);
                 startActivity(intocan);
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 

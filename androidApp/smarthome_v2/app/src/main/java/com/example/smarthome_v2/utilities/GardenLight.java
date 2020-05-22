@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -16,6 +16,12 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 import java.util.HashMap;
 import pl.droidsonroids.gif.GifImageView;
 
+/**
+ * an Garden Light Settings class
+ *
+ * @author Eren Gazi Mutlu , Nasuh Dinçer
+ * @version 11.05.2020
+ */
 public class GardenLight extends AppCompatActivity {
 
     //properties
@@ -23,7 +29,7 @@ public class GardenLight extends AppCompatActivity {
     private Bundle bundle;
     private int themeNumber;
     private ImageView gardenLight;
-    private boolean gardenLightOnOff,cuurentCondition;
+    private boolean gardenLightOnOff, currentCondition;
     private ImageButton exit;
     private Intent thm;
     private GifImageView gardenLightGIF;
@@ -141,9 +147,9 @@ public class GardenLight extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                thm = new Intent(GardenLight.this, main_screen.class);
+                thm = new Intent(GardenLight.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
-                thm.putExtra("garden",cuurentCondition);
+                thm.putExtra("garden", currentCondition);
 
                 startActivity(thm);
             }

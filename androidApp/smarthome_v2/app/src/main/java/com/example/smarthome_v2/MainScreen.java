@@ -3,7 +3,6 @@ package com.example.smarthome_v2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,8 +21,6 @@ import com.example.smarthome_v2.utilities.GardenLight;
 import com.example.smarthome_v2.utilities.Gas;
 import com.example.smarthome_v2.utilities.GreenHouse;
 import com.example.smarthome_v2.utilities.Water;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,9 +31,15 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.HashMap;
 
-public class main_screen extends AppCompatActivity {
+/**
+ * an Main Screen class
+ *
+ * @author Tarık Buğra Karali , Nasuh Dinçer , Erengazi Mutlu
+ * @version 11.05.2020
+ */
+public class MainScreen extends AppCompatActivity {
 
-    private ToggleButton electricity_control, water_control,gas_control,gardenLight_control,
+    private ToggleButton electricity_control, water_control, gas_control, gardenLight_control,
             aquarium_control,greenhouse_control;
     private boolean gasOnOff, elecOnOff, waterOnOff,gardenLightOnOff;
     private ImageButton weather, settings, elec, water,gardenLight,gas,aquarium,greenHouse,
@@ -58,7 +61,7 @@ public class main_screen extends AppCompatActivity {
         if (mAuth.getCurrentUser() == null)
         {
             Intent loginIntent;
-            loginIntent = new Intent(main_screen.this, MainActivity.class);
+            loginIntent = new Intent(MainScreen.this, MainActivity.class);
             startActivity(loginIntent);
             Toast.makeText(getApplicationContext(), "Please Log in", Toast.LENGTH_SHORT).show();
         }
@@ -96,7 +99,6 @@ public class main_screen extends AppCompatActivity {
         }
 
         //database
-
         final String user_id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -426,13 +428,13 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                gardenLightOnOff= gardenLight_control.isChecked();
-                Intent i = new Intent(getApplicationContext(), GardenLight.class);
-                i.putExtra("gardenCondition", gardenLightOnOff);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
-                finish();
+            gardenLightOnOff= gardenLight_control.isChecked();
+            Intent i = new Intent(getApplicationContext(), GardenLight.class);
+            i.putExtra("gardenCondition", gardenLightOnOff);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
+            finish();
             }
         });
 
@@ -440,109 +442,102 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                gasOnOff = gas_control.isChecked();
-                Intent i = new Intent(getApplicationContext(), Gas.class);
-
-                i.putExtra("gasCondition", gasOnOff);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
-                finish();
+            gasOnOff = gas_control.isChecked();
+            Intent i = new Intent(getApplicationContext(), Gas.class);
+            i.putExtra("gasCondition", gasOnOff);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
+            finish();
             }
         });
 
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toWeather = new Intent(main_screen.this, WeatherPop.class);
-                startActivity(toWeather);
+            Intent toWeather = new Intent(MainScreen.this, WeatherPop.class);
+            startActivity(toWeather);
             }
         });
 
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Settings.class);
-
-                i.putExtra("elecCondition", elecOnOff);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+            Intent i = new Intent(getApplicationContext(), Settings.class);
+            i.putExtra("elecCondition", elecOnOff);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
-
 
         elec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                elecOnOff = electricity_control.isChecked();
-                Intent i = new Intent(getApplicationContext(), Electricity.class);
-
-                i.putExtra("elecCondition", elecOnOff);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+            elecOnOff = electricity_control.isChecked();
+            Intent i = new Intent(getApplicationContext(), Electricity.class);
+            i.putExtra("elecCondition", elecOnOff);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
-
 
         water.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                waterOnOff = water_control.isChecked();
-                Intent i = new Intent(getApplicationContext(), Water.class);
-
-                i.putExtra("waterCondition", waterOnOff);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+            waterOnOff = water_control.isChecked();
+            Intent i = new Intent(getApplicationContext(), Water.class);
+            i.putExtra("waterCondition", waterOnOff);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
-
 
         aquarium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), Aquarium.class);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+            Intent i = new Intent(getApplicationContext(), Aquarium.class);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
-
 
         greenHouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), GreenHouse.class);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+            Intent i = new Intent(getApplicationContext(), GreenHouse.class);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
 
         graphics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(main_screen.this, GraphicSettings.class);
-                i.putExtra("theme", themeNumber);
-                i.putExtra("text", textNo);
-                startActivity(i);
+
+            Intent i = new Intent(MainScreen.this, GraphicSettings.class);
+            i.putExtra("theme", themeNumber);
+            i.putExtra("text", textNo);
+            startActivity(i);
             }
         });
 
         helpbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toHelp = new Intent(main_screen.this, HelpPop.class);
-                toHelp.putExtra("theme", themeNumber);
-                toHelp.putExtra("text", textNo);
-                startActivity(toHelp);
+            Intent toHelp = new Intent(MainScreen.this, HelpPop.class);
+            toHelp.putExtra("theme", themeNumber);
+            toHelp.putExtra("text", textNo);
+            startActivity(toHelp);
             }
         });
 
@@ -550,22 +545,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( electricity_control.isChecked() )
-                {
-                    userMap.put("electricity", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_electricity,false).show();
-                }
-                else
-                {
-                    userMap.put("electricity", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,false).show();
-                }
+            if( electricity_control.isChecked() )
+            {
+                userMap.put("electricity", "on");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS OPENED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_electricity,
+                false).show();
+            }
+            else
+            {
+                userMap.put("electricity", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"ELECTRICITY IS CLOSED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_electricity,
+               false).show();
+            }
             }
         });
 
@@ -573,22 +572,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( gas_control.isChecked() )
-                {
-                    userMap.put("gas", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,false).show();
-                }
-                else
-                {
-                    userMap.put("gas", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,false).show();
-                }
+            if( gas_control.isChecked() )
+            {
+                userMap.put("gas", "on");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"GAS IS OPENED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gas,
+                false).show();
+            }
+            else
+            {
+                userMap.put("gas", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"GAS IS CLOSED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gas,
+               false).show();
+            }
             }
         });
 
@@ -596,22 +599,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( greenhouse_control.isChecked() )
-                {
-                    userMap.put("greenHouse", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(), "GREENHOUSE IS OPENED", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, R.drawable.ic_alien_green_house, false).show();
-                }
-                else
-                {
-                    userMap.put("greenHouse", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GREENHOUSE IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_green_house,false).show();
-                }
+            if( greenhouse_control.isChecked() )
+            {
+                userMap.put("greenHouse", "on");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(), "GREENHOUSE IS OPENED",
+                FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, R.drawable.ic_alien_green_house,
+                false).show();
+            }
+            else
+            {
+                userMap.put("greenHouse", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"GREENHOUSE IS CLOSED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_green_house,
+                false).show();
+            }
             }
         });
 
@@ -619,22 +626,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( gardenLight_control.isChecked() )
-                {
-                    userMap.put("gardenLight", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gardening,false).show();
-                }
-                else
-                {
-                    userMap.put("gardenLight", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gardening,false).show();
-                }
+            if( gardenLight_control.isChecked() )
+            {
+                userMap.put("gardenLight", "on");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS OPENED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_gardening,
+                false).show();
+            }
+            else
+            {
+                userMap.put("gardenLight", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"GARDEN LIGHT IS CLOSED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_gardening,
+                false).show();
+            }
             }
         });
 
@@ -642,22 +653,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( water_control.isChecked() )
-                {
-                    userMap.put("water", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" , FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_water_exchange,false).show();
-                }
-                else
-                {
-                    userMap.put("water", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_water_exchange,false).show();
-                }
+            if( water_control.isChecked() )
+            {
+                userMap.put("water", "on");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"WATER IS OPENED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.SUCCESS ,R.drawable.ic_alien_water_exchange,
+                false).show();
+            }
+            else
+            {
+                userMap.put("water", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"WATER IS CLOSED" ,
+                 FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_water_exchange,
+                false).show();
+            }
             }
         });
 
@@ -665,22 +680,26 @@ public class main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user_id = mAuth.getCurrentUser().getUid();
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                HashMap<String, Object> userMap = new HashMap<>();
+            String user_id = mAuth.getCurrentUser().getUid();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+            HashMap<String, Object> userMap = new HashMap<>();
 
-                if( aquarium_control.isChecked() )
-                {
-                    userMap.put("aquarium", "on");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(), "AQUARIUM IS OPENED", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, R.drawable.ic_alien_aquarium, false).show();
-                }
-                else
-                {
-                    userMap.put("aquarium", "off");
-                    mDatabase.updateChildren(userMap);
-                    FancyToast.makeText(getApplicationContext(),"AQUARIUM IS CLOSED" , FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_aquarium,false).show();
-                }
+            if( aquarium_control.isChecked() )
+            {
+                 userMap.put("aquarium", "on");
+                 mDatabase.updateChildren(userMap);
+                 FancyToast.makeText(getApplicationContext(), "AQUARIUM IS OPENED",
+                 FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, R.drawable.ic_alien_aquarium,
+                 false).show();
+            }
+            else
+            {
+                userMap.put("aquarium", "off");
+                mDatabase.updateChildren(userMap);
+                FancyToast.makeText(getApplicationContext(),"AQUARIUM IS CLOSED" ,
+                FancyToast.LENGTH_SHORT,FancyToast.WARNING ,R.drawable.ic_alien_aquarium,
+               false).show();
+            }
             }
         });
     }

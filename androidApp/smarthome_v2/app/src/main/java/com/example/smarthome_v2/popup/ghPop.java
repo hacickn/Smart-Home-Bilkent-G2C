@@ -14,12 +14,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
-import com.example.smarthome_v2.utilities.GreenHouse;
+import com.example.smarthome_v2.MainScreen;
 
-
+/**
+ * a Green House Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 11.05.2020
+ */
 public class ghPop extends Activity {
 
     //properties
@@ -56,13 +59,14 @@ public class ghPop extends Activity {
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_bluenight_green_house);
             temperature.setTextColor(Color.BLUE);
             water.setTextColor(Color.BLUE);
@@ -76,11 +80,10 @@ public class ghPop extends Activity {
             Drawable drawableThree = temp.getBackground(); // get current EditText drawable
             drawableThree.setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
-
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
             temperature.setTextColor(Color.BLACK);
             water.setTextColor(Color.BLACK);
@@ -95,11 +98,10 @@ public class ghPop extends Activity {
             drawableThree.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
             //greenHouseGIF.setImageResource(R.drawable.electricity);
-
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_wood_green_house);
             temperature.setTextColor(Color.WHITE);
             water.setTextColor(Color.WHITE);
@@ -114,7 +116,6 @@ public class ghPop extends Activity {
             drawableThree.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // change the drawable color
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
             //greenHouseGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //choosing text type
@@ -127,7 +128,6 @@ public class ghPop extends Activity {
             hum.setTypeface(typeface);
             comingWater.setTypeface(typeface);
             temp.setTypeface(typeface);
-
         }
 
         if(textNo == 2)
@@ -173,6 +173,7 @@ public class ghPop extends Activity {
             comingWater.setTypeface(typeface);
             temp.setTypeface(typeface);
         }
+
         if(textNo == 6)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
@@ -195,7 +196,6 @@ public class ghPop extends Activity {
             temp.setTypeface(typeface);
         }
 
-
         if(textNo == 8)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/cantora.ttf");
@@ -211,11 +211,10 @@ public class ghPop extends Activity {
             @Override
             public void onClick(View v) {
 
-                thm = new Intent(ghPop.this, main_screen.class);
+                thm = new Intent(ghPop.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 startActivity(thm);
             }
         });
-
     }
 }

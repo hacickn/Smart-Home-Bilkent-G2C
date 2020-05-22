@@ -2,20 +2,24 @@ package com.example.smarthome_v2.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.example.smarthome_v2.AppSettingsHelper;
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.popup.alarmPop;
 import com.example.smarthome_v2.popup.blutPop;
 import com.example.smarthome_v2.popup.notiPop;
 
+/**
+ * a App Settings class
+ *
+ * @author Erengazi Mutlu
+ * @version 09.05.2020
+ */
 public class AppSettings extends AppCompatActivity {
 
     //properties
@@ -43,7 +47,8 @@ public class AppSettings extends AppCompatActivity {
         //getting data
         bundle = getIntent().getExtras();
 
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
         }
         if(themeNumber == 1)
@@ -72,7 +77,6 @@ public class AppSettings extends AppCompatActivity {
             notification.setTextColor(Color.WHITE);
             top.setTextColor(Color.WHITE);
         }
-
 
         //events
         alarm.setOnClickListener(new View.OnClickListener() {

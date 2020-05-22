@@ -22,6 +22,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+/**
+ * a Register Activity class
+ *
+ * @author Nasuh Dinçer
+ * @version 08.05.2020
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     //properties
@@ -57,20 +63,19 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String name = registerName.getText().toString().trim();
-                String password = registerPassword.getText().toString().trim();
-                String email = registerEmail.getText().toString().trim();
+            String name = registerName.getText().toString().trim();
+            String password = registerPassword.getText().toString().trim();
+            String email = registerEmail.getText().toString().trim();
 
-                if (!TextUtils.isEmpty(name) || !TextUtils.isEmpty(password) || !TextUtils.isEmpty(email)) {
+            if (!TextUtils.isEmpty(name) || !TextUtils.isEmpty(password) || !TextUtils.isEmpty(email)) {
 
-                    registerProgress.setTitle("Saving");
-                    registerProgress.setMessage("Your account is created, please wait");
-                    registerProgress.setCanceledOnTouchOutside(false);
-                    registerProgress.show();
+                registerProgress.setTitle("Saving");
+                registerProgress.setMessage("Your account is created, please wait");
+                registerProgress.setCanceledOnTouchOutside(false);
+                registerProgress.show();
 
-                    register_user(name, password, email);
-                }
-
+                register_user(name, password, email);
+            }
             }
         });
     }
@@ -80,46 +85,44 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if (task.isSuccessful())
-                {
-                    String user_id = mAuth.getCurrentUser().getUid();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-                    HashMap<String, String> userMap = new HashMap<>();
-                    userMap.put("name", name);
-                    userMap.put("email", email);
-                    userMap.put("password", password);
-                    userMap.put("aquarium", "off");
-                    userMap.put("gas", "off");
-                    userMap.put("water", "off");
-                    userMap.put("gardenLight", "off");
-                    userMap.put("greenHouse", "off");
-                    userMap.put("electricity", "off");
-                    userMap.put("theme", "0");
-                    userMap.put("txt", "0");
-                    userMap.put("day", "-");
-                    userMap.put("month", "-");
-                    userMap.put("year", "-");
+            if (task.isSuccessful())
+            {
+                String user_id = mAuth.getCurrentUser().getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                HashMap<String, String> userMap = new HashMap<>();
+                userMap.put("name", name);
+                userMap.put("email", email);
+                userMap.put("password", password);
+                userMap.put("aquarium", "off");
+                userMap.put("gas", "off");
+                userMap.put("water", "off");
+                userMap.put("gardenLight", "off");
+                userMap.put("greenHouse", "off");
+                userMap.put("electricity", "off");
+                userMap.put("theme", "0");
+                userMap.put("txt", "0");
+                userMap.put("day", "-");
+                userMap.put("month", "-");
+                userMap.put("year", "-");
 
-                    mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task)
-                        {
-
-                            if(task.isSuccessful())
-                            {
-                                registerProgress.dismiss();
-                                Intent mainIntent = new Intent(RegisterActivity.this, main_screen.class);
-                                startActivity(mainIntent);
-                            }
-                        }
-                    });
-
-                }
-                else {
-                    registerProgress.dismiss();
-                    Toast.makeText(getApplicationContext(), "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
+                mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                     @Override
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
+                    if(task.isSuccessful())
+                    {
+                        registerProgress.dismiss();
+                        Intent mainIntent = new Intent(RegisterActivity.this, MainScreen.class);
+                        startActivity(mainIntent);
+                    }
+                    }
+                });
+            }
+            else
+            {
+                registerProgress.dismiss();
+                Toast.makeText(getApplicationContext(), "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
             }
         });
     }

@@ -7,7 +7,13 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class connection_settings extends AppCompatActivity {
+/**
+ * an Connection Settings class
+ *
+ * @author Erengazi Mutlu
+ * @version 11.05.2020
+ */
+public class ConnectionSettings extends AppCompatActivity {
     public ImageButton exit;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +24,7 @@ public class connection_settings extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(connection_settings.this,main_screen.class);
+                Intent main = new Intent(ConnectionSettings.this, MainScreen.class);
                 startActivity(main);
             }
         });

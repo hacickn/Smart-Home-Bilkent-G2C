@@ -5,16 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+/**
+ * a Text Settings class
+ *
+ * @author Tarık Buğra Karali , Nasuh Dincer
+ * @version 11.05.2020
+ */
 public class TextSettings extends Activity {
 
     //properties
@@ -31,7 +36,7 @@ public class TextSettings extends Activity {
         setContentView(R.layout.text_settings_screen);
 
         //initialization
-        txt = new Intent(getApplicationContext(), main_screen.class);
+        txt = new Intent(getApplicationContext(), MainScreen.class);
         acme = findViewById(R.id.text_acme);
         aladin = findViewById(R.id.text_aladin);
         amarante = findViewById(R.id.text_amarante);
@@ -45,7 +50,7 @@ public class TextSettings extends Activity {
         final String user_id = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
-
+        //getting data
         bundle = getIntent().getExtras();
         if(bundle!=null) {
             text = bundle.getInt("text");
@@ -85,12 +90,12 @@ public class TextSettings extends Activity {
             blackHans.setBackgroundResource(R.drawable.buttonshapetwo);
         }
 
-
         if(text == 8)
         {
             cantora.setBackgroundResource(R.drawable.buttonshapetwo);
         }
 
+        //events
         acme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,7 +223,6 @@ public class TextSettings extends Activity {
 
             }
         });
-
 
     }
 }

@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.ToggleButton;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -30,11 +30,11 @@ import pl.droidsonroids.gif.GifImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
+
 /**
  * an Electricity class
  *
- * @author Erengazi Mutlu
+ * @author Erengazi Mutlu , Nasuh Dincer
  * @version 06.05.2020
  */
 public class Electricity extends AppCompatActivity {
@@ -42,13 +42,11 @@ public class Electricity extends AppCompatActivity {
     //properties
     private ImageButton exit;
     private ToggleButton elec_controller;
-    private ImageView light_one;
-    private ImageView light_two;
-    private ImageView light_three,elec;
+    private ImageView light_one, light_two, light_three, elec;
     private BarChart gasChart;
-    private ArrayList<BarEntry> dataValues;
     private BarDataSet lineDataSet;
-    private  ArrayList<IBarDataSet> dataSets;
+    private ArrayList<BarEntry> dataValues;
+    private ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
     private Bundle bundle;
@@ -203,7 +201,7 @@ public class Electricity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentCondition =elec_controller.isChecked();
-                thm = new Intent(Electricity.this, main_screen.class);
+                thm = new Intent(Electricity.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 thm.putExtra("electricity",currentCondition);
                 startActivity(thm);

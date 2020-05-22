@@ -8,13 +8,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+/**
+ * a Theme Settings class
+ *
+ * @author Tarık Buğra Karali , Nasuh Dincer
+ * @version 11.05.2020
+ */
 public class ThemeSettings extends Activity {
 
     //properties
@@ -32,12 +38,7 @@ public class ThemeSettings extends Activity {
         setContentView(R.layout.theme_settings_screen);
 
         //initialization
-        thm = new Intent(getApplicationContext(), main_screen.class);
-        mAuth = FirebaseAuth.getInstance();
-        final String user_id = mAuth.getCurrentUser().getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-
-
+        thm = new Intent(getApplicationContext(), MainScreen.class);
         mainTheme = findViewById(R.id.main_theme);
         blueNight = findViewById(R.id.blue_night);
         alien =findViewById(R.id.alien);
@@ -49,8 +50,13 @@ public class ThemeSettings extends Activity {
         woodtxt =findViewById(R.id.woodtxt);
         spacetxt =findViewById(R.id.spacetxt);
 
+        mAuth = FirebaseAuth.getInstance();
+        final String user_id = mAuth.getCurrentUser().getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             thmNo = bundle.getInt("theme");
         }
 
@@ -76,9 +82,7 @@ public class ThemeSettings extends Activity {
             main.setBackgroundResource(R.drawable.buttonshapetwo);
         }
 
-
         //events
-
         mainTheme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,9 +163,4 @@ public class ThemeSettings extends Activity {
             }
         });
     }
-
-
-
-
-
 }

@@ -13,7 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -30,11 +30,11 @@ import pl.droidsonroids.gif.GifImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
+
 /**
  * a Gas class
  *
- * @author Tarık Buğra Karali
+ * @author Tarık Buğra Karali , Nasuh Dincer
  * @version 06.05.2020
  */
 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -47,7 +47,7 @@ public class Gas extends AppCompatActivity {
     private BarChart gasChart;
     private ArrayList<BarEntry> dataValues;
     private BarDataSet lineDataSet;
-    private  ArrayList<IBarDataSet> dataSets;
+    private ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
     private boolean condition,currentCondition;
@@ -101,7 +101,8 @@ public class Gas extends AppCompatActivity {
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
             condition = bundle.getBoolean("gasCondition");
         }
@@ -109,38 +110,37 @@ public class Gas extends AppCompatActivity {
 
         gas_controller.setChecked(condition);
 
-        if(!condition) {
+        if(!condition)
+        {
             smokes.setVisibility(View.INVISIBLE);
             wave_one.setVisibility(View.INVISIBLE);
             wave_two.setVisibility(View.INVISIBLE);
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             smokes.setBackgroundResource(R.drawable.ic_bluenight_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_bluenight_wave);
             wave_two.setBackgroundResource(R.drawable.ic_bluenight_wave);
             gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             smokes.setBackgroundResource(R.drawable.ic_alien_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_alien_wave);
             wave_two.setBackgroundResource(R.drawable.ic_alien_wave);
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
-
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             smokes.setBackgroundResource(R.drawable.ic_wood_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_wood_wave);
             wave_two.setBackgroundResource(R.drawable.ic_wood_wave);
             gas.setBackgroundResource(R.drawable.ic_wood_gas);
             gasGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //events
@@ -148,7 +148,7 @@ public class Gas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentCondition =gas_controller.isChecked();
-                 thm = new Intent(Gas.this, main_screen.class);
+                 thm = new Intent(Gas.this, MainScreen.class);
                  thm.putExtra("theme",themeNumber);
                 thm.putExtra("gas",currentCondition);
                 startActivity(thm);
@@ -160,30 +160,36 @@ public class Gas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
-                if (on) {
+                if (on)
+                {
                     // ON
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
                     wave_two.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
                     gasGIF.setImageResource(R.drawable.gas);
+
                     if(themeNumber ==3)
                     {
                         gasGIF.setImageResource(R.drawable.backgroundwood);
                     }
-                } else
-                    {
+                }
+                else
+                {
                     // OFF
                     smokes.setVisibility(View.INVISIBLE);
                     wave_one.setVisibility(View.INVISIBLE);
                     wave_two.setVisibility(View.INVISIBLE);
                     gasChart.setBackgroundColor(Color.RED);
                     gasGIF.setImageResource(R.drawable.gas_first);
+
                     if(themeNumber ==3)
                     {
                         gasGIF.setImageResource(R.drawable.backgroundwood);
                     }
-                    }
+                }
+
+                //initialization of database
                 String user_id = mAuth.getCurrentUser().getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").
                         child(user_id);

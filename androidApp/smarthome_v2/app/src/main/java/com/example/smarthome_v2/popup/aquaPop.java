@@ -17,33 +17,30 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.utilities.AquariumDaylist;
 import com.example.smarthome_v2.utilities.FishList;
-
 import java.util.Calendar;
-
 import pl.droidsonroids.gif.GifImageView;
 
-
+/**
+ * a Aquarium Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 09.05.2020
+ */
 public class aquaPop extends Activity {
 
     //properties
     private Button species;
     private ImageButton timeButton_one;
-    private EditText textView_one;
-    private ImageButton timeButton_two;
-    private EditText textView_two;
-    private ImageButton day;
-    private EditText textView_three;
-    private ImageButton timeButton_three;
-    private ImageView specy,feed,waterExchange,motor,aquarim;
-    private EditText textView_four;
+    private EditText textView_one, textView_two, textView_three, textView_four;
+    private ImageButton timeButton_two, day, timeButton_three;
+    private ImageView specy, feed, waterExchange, motor, aquarim;
     private Bundle bundle;
-    private String type,dayMotor;
+    private String type, dayMotor;
     private int themeNumber,textNo;
-    private TextView a,b,c,d,e;
+    private TextView feedText, exchangeDayText, exchangeTimeText, appSettingsText, motorDay;
     private GifImageView aquariumGIF;
 
     @Override
@@ -75,16 +72,17 @@ public class aquaPop extends Activity {
         feed = findViewById(R.id.im_feed);
         motor = findViewById(R.id.im_motor);
         aquarim = findViewById(R.id.im_aquarium);
-        a = findViewById(R.id.feed_text);
-        b = findViewById(R.id.exchange_day_text);
-        c = findViewById(R.id.exchange_time_text);
-        d = findViewById(R.id.text_appsetting);
-        e = findViewById(R.id.motor_day);
+        feedText = findViewById(R.id.feed_text);
+        exchangeDayText = findViewById(R.id.exchange_day_text);
+        exchangeTimeText = findViewById(R.id.exchange_time_text);
+        appSettingsText = findViewById(R.id.text_appsetting);
+        motorDay = findViewById(R.id.motor_day);
         aquariumGIF = findViewById(R.id.aquariumGIF);
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle != null ){
+        if(bundle != null )
+        {
             type = bundle.getString("type");
             themeNumber = bundle.getInt("theme");
             textNo = bundle.getInt("text");
@@ -95,8 +93,8 @@ public class aquaPop extends Activity {
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             aquarim.setBackgroundResource(R.drawable.ic_bluenight_aquarium);
             specy.setBackgroundResource(R.drawable.ic_bluenight_species);
             waterExchange.setBackgroundResource(R.drawable.ic_bluenight_water_exhange);
@@ -118,18 +116,17 @@ public class aquaPop extends Activity {
             timeButton_two.setBackgroundResource(R.drawable.ic_bluenight_clock);
             timeButton_three.setBackgroundResource(R.drawable.ic_bluenight_clock);
             day.setBackgroundResource(R.drawable.ic_bluenight_clock);
-            a.setTextColor(Color.BLUE);
-            b.setTextColor(Color.BLUE);
-            c.setTextColor(Color.BLUE);
-            d.setTextColor(Color.BLUE);
-            e.setTextColor(Color.BLUE);
+            feedText.setTextColor(Color.BLUE);
+            exchangeDayText.setTextColor(Color.BLUE);
+            exchangeTimeText.setTextColor(Color.BLUE);
+            appSettingsText.setTextColor(Color.BLUE);
+            motorDay.setTextColor(Color.BLUE);
             species.setBackgroundResource(R.color.blue_night);
             aquariumGIF.setImageResource(R.drawable.bluenight_electricity);
-
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             aquarim.setBackgroundResource(R.drawable.ic_alien_aquarium);
             specy.setBackgroundResource(R.drawable.ic_alien_species);
             waterExchange.setBackgroundResource(R.drawable.ic_alien_water_exchange);
@@ -151,19 +148,17 @@ public class aquaPop extends Activity {
             timeButton_two.setBackgroundResource(R.drawable.ic_bluenight_clock);
             timeButton_three.setBackgroundResource(R.drawable.ic_bluenight_clock);
             day.setBackgroundResource(R.drawable.ic_bluenight_clock);
-            a.setTextColor(Color.BLACK);
-            b.setTextColor(Color.BLACK);
-            c.setTextColor(Color.BLACK);
-            d.setTextColor(Color.BLACK);
-            e.setTextColor(Color.BLACK);
+            feedText.setTextColor(Color.BLACK);
+            exchangeDayText.setTextColor(Color.BLACK);
+            exchangeTimeText.setTextColor(Color.BLACK);
+            appSettingsText.setTextColor(Color.BLACK);
+            motorDay.setTextColor(Color.BLACK);
             species.setBackgroundResource(R.color.alien);
             aquariumGIF.setImageResource(R.drawable.electricity);
-
-
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             aquarim.setBackgroundResource(R.drawable.ic_wood_aquarium);
             specy.setBackgroundResource(R.drawable.ic_wood_species);
             waterExchange.setBackgroundResource(R.drawable.ic_wood_water_exhange);
@@ -185,14 +180,13 @@ public class aquaPop extends Activity {
             timeButton_two.setBackgroundResource(R.drawable.ic_wood_clock);
             timeButton_three.setBackgroundResource(R.drawable.ic_wood_clock);
             day.setBackgroundResource(R.drawable.ic_wood_clock);
-            a.setTextColor(Color.WHITE);
-            b.setTextColor(Color.WHITE);
-            c.setTextColor(Color.WHITE);
-            d.setTextColor(Color.WHITE);
-            e.setTextColor(Color.WHITE);
+            feedText.setTextColor(Color.WHITE);
+            exchangeDayText.setTextColor(Color.WHITE);
+            exchangeTimeText.setTextColor(Color.WHITE);
+            appSettingsText.setTextColor(Color.WHITE);
+            motorDay.setTextColor(Color.WHITE);
             species.setBackgroundResource(R.color.alien);
             aquariumGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //choosing text type
@@ -203,11 +197,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         if(textNo == 2)
@@ -217,11 +211,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         if(textNo == 3)
@@ -231,11 +225,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         if(textNo == 4)
@@ -245,11 +239,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         if(textNo == 5)
@@ -259,12 +253,13 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
+
         if(textNo == 6)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
@@ -272,11 +267,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         if(textNo == 7)
@@ -286,13 +281,12 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
-
 
         if(textNo == 8)
         {
@@ -301,11 +295,11 @@ public class aquaPop extends Activity {
             textView_two.setTypeface(typeface);
             textView_three.setTypeface(typeface);
             textView_four.setTypeface(typeface);
-            a.setTypeface(typeface);
-            b.setTypeface(typeface);
-            c.setTypeface(typeface);
-            d.setTypeface(typeface);
-            e.setTypeface(typeface);
+            feedText.setTypeface(typeface);
+            exchangeDayText.setTypeface(typeface);
+            exchangeTimeText.setTypeface(typeface);
+            appSettingsText.setTypeface(typeface);
+            motorDay.setTypeface(typeface);
         }
 
         //events
@@ -343,7 +337,6 @@ public class aquaPop extends Activity {
             }
         });
 
-
         timeButton_two.setOnClickListener(new View.OnClickListener() {//saatButona Click Listener ekliyoruz
 
             @Override
@@ -369,7 +362,6 @@ public class aquaPop extends Activity {
             }
         });
 
-
         day.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -378,7 +370,6 @@ public class aquaPop extends Activity {
                 startActivity(i);
             }
         });
-
 
         timeButton_three.setOnClickListener(new View.OnClickListener() {//saatButona Click Listener ekliyoruz
 

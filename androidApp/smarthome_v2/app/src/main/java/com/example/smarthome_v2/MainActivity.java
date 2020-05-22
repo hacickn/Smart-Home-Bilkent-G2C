@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import at.markushi.ui.CircleButton;
 
 /**
- * an AquariumDayList class
+ * an Main Activity class
  *
  * @author Tarık Buğra Karali , Nasuh Dinçer
  * @version 11.05.2020
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     loginProgress.dismiss();
                     Toast.makeText(getApplicationContext(), "Login is succesfull", Toast.LENGTH_SHORT);
-                    Intent mainIntent = new Intent(MainActivity.this, main_screen.class);
+                    Intent mainIntent = new Intent(MainActivity.this, MainScreen.class);
                     startActivity(mainIntent);
 
                 } else {

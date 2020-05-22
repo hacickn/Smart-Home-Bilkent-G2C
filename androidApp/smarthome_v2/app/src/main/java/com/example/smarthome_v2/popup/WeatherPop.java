@@ -11,13 +11,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Lifecycle;
-
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.utilities.WeatherForecast;
 import java.io.IOException;
 import java.time.LocalTime;
 import pl.droidsonroids.gif.GifImageView;
 
+/**
+ * a Weather Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 06.05.2020
+ */
 public class WeatherPop extends Activity {
 
     //properties
@@ -29,10 +34,8 @@ public class WeatherPop extends Activity {
     private WeatherForecast weatherForecast;
     private GifImageView weatherGIF;
 
-
-
-
     @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -50,45 +53,59 @@ public class WeatherPop extends Activity {
         locationTextField = findViewById(R.id.locationTextField);
         weatherGIF = findViewById(R.id.weatherGIF);
 
-        if( LocalTime.now().getHour() >= 6 && LocalTime.now().getHour() < 20 ){
+        if( LocalTime.now().getHour() >= 6 && LocalTime.now().getHour() < 20 )
+        {
             weatherGIF.setImageResource(R.drawable.morning);
             System.out.println(LocalTime.now().getHour());
-        }else if( LocalTime.now().getHour() >= 20  ){
+        }
+
+        else if( LocalTime.now().getHour() >= 20  )
+        {
             weatherGIF.setImageResource(R.drawable.morning);
-        }else if( LocalTime.now().getHour() < 6 ){
+        }
+
+        else if( LocalTime.now().getHour() < 6 )
+        {
             weatherGIF.setImageResource(R.drawable.morning);
         }
 
         weatherUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!String.valueOf(locationTextField.getText()).isEmpty()) {
-                    new Thread(new Runnable() {
+            if (!String.valueOf(locationTextField.getText()).isEmpty())
+            {
+                new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            try {
-                                weatherForecast = new WeatherForecast(locationTextField.getText().toString());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                     try
+                     {
+                         weatherForecast = new WeatherForecast(locationTextField.getText().toString());
+                     }
+                     catch (IOException e)
+                     {
+                         e.printStackTrace();
+                     }
 
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    weatherForecastValue.setText( weatherForecast.getWeather());
-                                    weatherTemperature.setText( weatherForecast.getTemperature() + "°" );
-                                    weatherHumidity.setText("HUMIDITY: %" + weatherForecast.getHumidity());
-                                    weatherWind.setText("WIND: " + weatherForecast.getWind());
-                                    weatherLastUpdate.setText("LAST UPDATE: " + weatherForecast.getLocalTime());
-                                    weatherUpdateButton.setVisibility(View.INVISIBLE);
-                                }
-                            });
+                         runOnUiThread(new Runnable() {
+                             @Override
+                             public void run()
+                             {
+                                  weatherForecastValue.setText( weatherForecast.getWeather());
+                                  weatherTemperature.setText( weatherForecast.getTemperature() + "°" );
+                                  weatherHumidity.setText("HUMIDITY: %" + weatherForecast.getHumidity());
+                                  weatherWind.setText("WIND: " + weatherForecast.getWind());
+                                  weatherLastUpdate.setText("LAST UPDATE: " + weatherForecast.getLocalTime());
+                                  weatherUpdateButton.setVisibility(View.INVISIBLE);
+                             }
+                          });
                         }
                     }).start();
 
-                } else {
-                    weatherLastUpdate.setText("PLEASE ENTER YOUR LOCATION");
-                }
+            }
+            else
+            {
+                weatherLastUpdate.setText("PLEASE ENTER YOUR LOCATION");
+            }
             }
         });
 
@@ -96,9 +113,13 @@ public class WeatherPop extends Activity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if( String.valueOf(locationTextField.getText()).isEmpty() )
+                {
                     weatherUpdateButton.setVisibility(View.INVISIBLE);
+                }
                 else
+                {
                     weatherUpdateButton.setVisibility(View.VISIBLE);
+                }
                 return false;
             }
         });

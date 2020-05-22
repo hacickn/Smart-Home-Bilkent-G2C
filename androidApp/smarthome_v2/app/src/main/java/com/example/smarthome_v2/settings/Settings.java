@@ -14,6 +14,12 @@ import com.example.smarthome_v2.ProfileCard;
 import com.example.smarthome_v2.R;
 import com.example.smarthome_v2.SettingsHelper;
 
+/**
+ * a Settings Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 09.05.2020
+ */
 public class Settings extends AppCompatActivity {
 
     //properties
@@ -38,12 +44,11 @@ public class Settings extends AppCompatActivity {
         home = findViewById(R.id.text_hset);
         top = findViewById(R.id.text_set);
 
-
-
         //getting data
         bundle = getIntent().getExtras();
 
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
             textNo = bundle.getInt("text");
         }

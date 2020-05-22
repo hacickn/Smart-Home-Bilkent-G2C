@@ -9,10 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
-
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
-import com.example.smarthome_v2.utilities.Electricity;
+import com.example.smarthome_v2.MainScreen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -23,25 +21,26 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import pl.droidsonroids.gif.GifImageView;
 
-
+/**
+ * a Electricity Pop class
+ *
+ * @author Erengazi Mutlu , Nasuh Dincer
+ * @version 10.05.2020
+ */
 public class elecPop extends Activity {
 
     //properties
     private ImageButton exit;
     private ToggleButton elec_controller;
-    private ImageView light_one;
-    private ImageView light_two;
-    private ImageView light_three,elec;
+    private ImageView light_one, light_two, light_three, elec;
     private BarChart gasChart;
     private ArrayList<BarEntry> dataValues;
+    private ArrayList<IBarDataSet> dataSets;
     private BarDataSet lineDataSet;
-    private  ArrayList<IBarDataSet> dataSets;
     private BarData data;
     private Description description;
     private Bundle bundle;
@@ -107,7 +106,8 @@ public class elecPop extends Activity {
         //getting datas
 
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
             condition = bundle.getBoolean("elecCondition");
         }
@@ -115,36 +115,34 @@ public class elecPop extends Activity {
         //impementation of datas
         elec_controller.setChecked(condition);
 
-        if(!condition) {
+        if(!condition)
+        {
             light_one.setVisibility(View.INVISIBLE);
             light_two.setVisibility(View.INVISIBLE);
             light_three.setVisibility(View.INVISIBLE);
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             light_one.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_two.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_bluenight_eleclight);
             elec.setBackgroundResource(R.drawable.ic_bluenight_electricity);
             electricityGIF.setImageResource(R.drawable.bluenight_electricity_first);
-
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             light_one.setBackgroundResource(R.drawable.ic_alien_eleclight);
             light_two.setBackgroundResource(R.drawable.ic_alien_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_alien_eleclight);
             elec.setBackgroundResource(R.drawable.ic_alien_electricity);
             electricityGIF.setImageResource(R.drawable.alien_electricity_first);
-
-
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             light_one.setBackgroundResource(R.drawable.ic_wood_eleclight);
             light_two.setBackgroundResource(R.drawable.ic_wood_eleclight);
             light_three.setBackgroundResource(R.drawable.ic_wood_eleclight);
@@ -152,20 +150,20 @@ public class elecPop extends Activity {
             electricityGIF.setImageResource(R.drawable.backgroundwood);
         }
 
-
-
         //events
         elec_controller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
-                if (on) {
+                if (on)
+                {
                     // ON
                     light_one.setVisibility(View.VISIBLE);
                     light_two.setVisibility(View.VISIBLE);
                     light_three.setVisibility(View.VISIBLE);
                     gasChart.setBackgroundColor(Color.GREEN);
-                } else {
+                } else
+                {
                     // OFF
                     light_one.setVisibility(View.INVISIBLE);
                     light_two.setVisibility(View.INVISIBLE);
@@ -196,7 +194,7 @@ public class elecPop extends Activity {
             @Override
             public void onClick(View v) {
                 currentCondition =elec_controller.isChecked();
-                thm = new Intent(elecPop.this, main_screen.class);
+                thm = new Intent(elecPop.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 thm.putExtra("electricity",currentCondition);
                 startActivity(thm);

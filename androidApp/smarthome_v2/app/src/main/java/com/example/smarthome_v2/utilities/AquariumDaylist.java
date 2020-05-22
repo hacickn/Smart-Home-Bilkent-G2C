@@ -45,17 +45,20 @@ public class AquariumDaylist extends AppCompatActivity {
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle != null ){
+        if(bundle != null )
+        {
             themeNumber = bundle.getInt("theme");
         }
 
         //choosing theme
-        if(themeNumber == 1){
+        if(themeNumber == 1)
+        {
             main.setBackgroundResource(R.color.blue_night);
             adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,days);
         }
 
-        if(themeNumber == 2){
+        if(themeNumber == 2)
+        {
             main.setBackgroundResource(R.color.alien);
             adaptor = new ArrayAdapter<String>(context,R.layout.bluenight_text_special,days);
         }

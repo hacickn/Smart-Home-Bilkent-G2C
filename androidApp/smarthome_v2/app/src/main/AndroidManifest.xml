@@ -61,8 +61,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".main_screen" />
-        <activity android:name=".connection_settings" />
+        <activity android:name=".MainScreen" />
+        <activity android:name=".ConnectionSettings" />
         <activity android:name=".utilities.Gas" />
         <activity android:name=".utilities.Electricity" />
         <activity android:name=".utilities.Water" />

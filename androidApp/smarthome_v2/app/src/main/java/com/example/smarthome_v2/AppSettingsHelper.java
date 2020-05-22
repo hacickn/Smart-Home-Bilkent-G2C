@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
+/**
+ * an App Setting Helper class
+ *
+ * @author Erengazi Mutlu
+ * @version 11.05.2020
+ */
 public class AppSettingsHelper extends AppCompatActivity {
 
     @Override

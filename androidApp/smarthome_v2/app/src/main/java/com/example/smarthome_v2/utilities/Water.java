@@ -7,25 +7,21 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
 import pl.droidsonroids.gif.GifImageView;
-
 import java.util.HashMap;
-import java.util.Objects;
+
 /**
  * a Water class
  *
- * @author Tarık Buğra Karali
+ * @author Tarık Buğra Karali , Nasuh Dincer
  * @version 06.05.2020
  */
 public class Water extends AppCompatActivity {
@@ -109,29 +105,35 @@ public class Water extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
-                if (on) {
+                if (on)
+                {
                     // ON
                     drop_one.setVisibility(View.VISIBLE);
                     drop_two.setVisibility(View.VISIBLE);
                     drop_three.setVisibility(View.VISIBLE);
                     water_wave.setVisibility(View.VISIBLE);
                     waterGIF.setImageResource(R.drawable.water);
+
                     if(themeNumber ==3)
                     {
                         waterGIF.setImageResource(R.drawable.backgroundwood);
                     }
-                } else {
+                }
+                else
+                {
                     // OFF
                     drop_one.setVisibility(View.INVISIBLE);
                     drop_two.setVisibility(View.INVISIBLE);
                     drop_three.setVisibility(View.INVISIBLE);
                     water_wave.setVisibility(View.INVISIBLE);
                     waterGIF.setImageResource(R.drawable.water_first);
+
                     if(themeNumber ==3)
                     {
                         waterGIF.setImageResource(R.drawable.backgroundwood);
                     }
                 }
+
 
                 String user_id = mAuth.getCurrentUser().getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").
@@ -161,7 +163,7 @@ public class Water extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentCondition = water_controller.isChecked();
-                thm = new Intent(Water.this, main_screen.class);
+                thm = new Intent(Water.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 thm.putExtra("water",currentCondition);
                 startActivity(thm);

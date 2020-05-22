@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * a User class
+ *
+ * @author Nasuh Dinçer
+ * @version 07.05.2020
+ */
 public class User {
 
     //properties
@@ -22,15 +28,14 @@ public class User {
         this.aquarium = aquarium;
 
         setInformation( name, email, password, aquarium );
-
     }
 
-    public User() {
+    public User()
+    {
         this.name = "";
         this.email = "";
         this.password = "";
         this.aquarium = "Off";
-
 
         information = new HashMap<>();
     }
@@ -74,7 +79,5 @@ public class User {
     public static List<HashMap<String, String>> getInformation() {
 
         return Arrays.asList( information );
-
     }
-
 }

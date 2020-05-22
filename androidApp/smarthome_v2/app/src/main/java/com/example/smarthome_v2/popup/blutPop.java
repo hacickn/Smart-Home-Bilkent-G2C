@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.example.smarthome_v2.R;
 
-
+/**
+ * a Blutetooth Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 10.05.2020
+ */
 public class blutPop extends Activity {
 
     private Button search;
@@ -46,35 +49,33 @@ public class blutPop extends Activity {
         //getting data
         bundle = getIntent().getExtras();
 
-        if (bundle != null) {
+        if (bundle != null)
+        {
             themeNumber = bundle.getInt("theme");
         }
 
         //theme choosing
-        if (themeNumber == 1) {
+        if (themeNumber == 1)
+        {
             connection.setBackgroundResource(R.drawable.gradient_bluenight);
             top.setTextColor(Color.BLUE);
         }
 
-        if (themeNumber == 2) {
+        if (themeNumber == 2)
+        {
             connection.setBackgroundResource(R.drawable.gradient_alien);
             top.setTextColor(Color.GREEN);
         }
 
-        if (themeNumber == 3) {
+        if (themeNumber == 3)
+        {
             connection.setBackgroundResource(R.drawable.backgroundwood);
             top.setTextColor(Color.WHITE);
         }
 
-
-
-
-
             search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-            }
+            public void onClick(View v) { }
         });
     }
 }

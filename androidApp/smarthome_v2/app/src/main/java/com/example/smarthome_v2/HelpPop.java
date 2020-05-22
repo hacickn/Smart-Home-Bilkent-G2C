@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
+/**
+ * an Help Pop class
+ *
+ * @author Erengazi Mutlu , Tarık Buğra Karali
+ * @version 11.05.2020
+ */
 public class HelpPop extends AppCompatActivity {
     Bundle bundle;
     int textNo,themeNumber;
@@ -90,11 +96,9 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
 
-        if(textNo == 4)
-        {
+        if(textNo == 4) {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/annie_use_your_telescope.ttf");
             graphic.setTypeface(typeface);
             garden.setTypeface(typeface);
@@ -106,7 +110,6 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
 
         if(textNo == 5)
@@ -122,8 +125,8 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
+
         if(textNo == 6)
         {
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/baumans.ttf");
@@ -137,7 +140,6 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
 
         if(textNo == 7)
@@ -153,9 +155,7 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
-
 
         if(textNo == 8)
         {
@@ -170,8 +170,6 @@ public class HelpPop extends AppCompatActivity {
             opt.setTypeface(typeface);
             door.setTypeface(typeface);
             weather.setTypeface(typeface);
-
         }
-
     }
 }

@@ -13,23 +13,23 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+
 import pl.droidsonroids.gif.GifImageView;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 
 /**
  * a GreenHouse class
  *
- * @author Tarık Buğra Karali
+ * @author Tarık Buğra Karali , Nasuh Dincer
  * @version 06.05.2020
  */
 public class GreenHouse extends Activity {
 
     //properties
     private ImageButton exit;
-    private  ImageView greenHouse;
+    private ImageView greenHouse;
     private TextView temperature,water,humudity;
     private EditText hum,comingWater,temp;
     private int themeNumber,textNo;
@@ -55,14 +55,15 @@ public class GreenHouse extends Activity {
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
             textNo = bundle.getInt("text");
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_bluenight_green_house);
             temperature.setTextColor(Color.BLUE);
             water.setTextColor(Color.BLUE);
@@ -82,8 +83,8 @@ public class GreenHouse extends Activity {
             greenHouseGIF.setImageResource(R.drawable.bluenight_electricity);
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_alien_green_house);
             temperature.setTextColor(Color.BLACK);
             water.setTextColor(Color.BLACK);
@@ -99,8 +100,8 @@ public class GreenHouse extends Activity {
             temp.setBackgroundDrawable(drawable); // set the new drawable to EditText
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             greenHouse.setBackgroundResource(R.drawable.ic_wood_green_house);
             temperature.setTextColor(Color.WHITE);
             water.setTextColor(Color.WHITE);
@@ -215,7 +216,7 @@ public class GreenHouse extends Activity {
             @Override
             public void onClick(View v) {
 
-                thm = new Intent(GreenHouse.this, main_screen.class);
+                thm = new Intent(GreenHouse.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 thm.putExtra("text",textNo);
                 startActivity(thm);

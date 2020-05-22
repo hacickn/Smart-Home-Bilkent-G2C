@@ -16,6 +16,12 @@ import com.example.smarthome_v2.popup.elecPop;
 import com.example.smarthome_v2.popup.gasPop;
 import com.example.smarthome_v2.popup.ghPop;
 
+/**
+ * a Home Settings class
+ *
+ * @author Erengazi Mutlu
+ * @version 10.05.2020
+ */
 public class HomeSettings extends AppCompatActivity {
 
     //properties
@@ -45,7 +51,8 @@ public class HomeSettings extends AppCompatActivity {
         //getting data
         bundle = getIntent().getExtras();
 
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
         }
 

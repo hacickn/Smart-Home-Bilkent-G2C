@@ -7,11 +7,15 @@ import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.example.smarthome_v2.R;
 
+/**
+ * a Notification Pop class
+ *
+ * @author Erengazi Mutlu
+ * @version 11.05.2020
+ */
 public class notiPop extends Activity {
     private Bundle bundle;
     private int themeNumber;
@@ -19,7 +23,6 @@ public class notiPop extends Activity {
     private TextView top, fire, gas, smoke;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_pop);
@@ -48,7 +51,8 @@ public class notiPop extends Activity {
         }
 
         //theme choosing
-        if (themeNumber == 1) {
+        if (themeNumber == 1)
+        {
             notifications.setBackgroundResource(R.drawable.gradient_bluenight);
             top.setTextColor(Color.BLUE);
             fire.setTextColor(Color.BLUE);
@@ -56,7 +60,8 @@ public class notiPop extends Activity {
             smoke.setTextColor(Color.BLUE);
         }
 
-        if (themeNumber == 2) {
+        if (themeNumber == 2)
+        {
             notifications.setBackgroundResource(R.drawable.gradient_alien);
             top.setTextColor(Color.GREEN);
             fire.setTextColor(Color.GREEN);
@@ -64,7 +69,8 @@ public class notiPop extends Activity {
             smoke.setTextColor(Color.GREEN);
         }
 
-        if (themeNumber == 3) {
+        if (themeNumber == 3)
+        {
             notifications.setBackgroundResource(R.drawable.backgroundwood);
             top.setTextColor(Color.WHITE);
             fire.setTextColor(Color.WHITE);

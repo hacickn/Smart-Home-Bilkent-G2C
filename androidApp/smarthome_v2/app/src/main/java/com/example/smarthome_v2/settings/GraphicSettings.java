@@ -7,8 +7,13 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
 
+/**
+ * a Graphic Settings class
+ *
+ * @author Erengazi Mutlu
+ * @version 08.05.2020
+ */
 public class GraphicSettings extends Activity {
 
     //properties
@@ -20,13 +25,13 @@ public class GraphicSettings extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graphic_settings_screen);
 
-
+        //initialization
         theme = findViewById(R.id.theme_type);
         textType = findViewById(R.id.text_type);
-
         bundle = getIntent().getExtras();
 
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNo = bundle.getInt("theme");
             text = bundle.getInt("text");
         }

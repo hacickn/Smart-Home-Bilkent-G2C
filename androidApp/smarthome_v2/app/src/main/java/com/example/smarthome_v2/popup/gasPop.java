@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
-
 import com.example.smarthome_v2.R;
-import com.example.smarthome_v2.main_screen;
+import com.example.smarthome_v2.MainScreen;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -22,12 +21,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import pl.droidsonroids.gif.GifImageView;
 
+/**
+ * a Gas Pop class
+ *
+ * @author Erengazi Mutlu , Nasuh Dincer
+ * @version 10.05.2020
+ */
 public class gasPop extends Activity {
 
     //properties
@@ -88,7 +91,6 @@ public class gasPop extends Activity {
         description.setText("HOURS/DAY");
         gasChart.setDescription(description);
 
-
         //initialization
         exit=findViewById(R.id.exit_gas);
         smokes = findViewById(R.id.smokes);
@@ -100,7 +102,8 @@ public class gasPop extends Activity {
 
         //getting datas
         bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if(bundle!=null)
+        {
             themeNumber = bundle.getInt("theme");
             condition = bundle.getBoolean("gasCondition");
         }
@@ -108,38 +111,37 @@ public class gasPop extends Activity {
 
         gas_controller.setChecked(condition);
 
-        if(!condition) {
+        if(!condition)
+        {
             smokes.setVisibility(View.INVISIBLE);
             wave_one.setVisibility(View.INVISIBLE);
             wave_two.setVisibility(View.INVISIBLE);
         }
 
         //choosing theme
-        if(themeNumber == 1){
-
+        if(themeNumber == 1)
+        {
             smokes.setBackgroundResource(R.drawable.ic_bluenight_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_bluenight_wave);
             wave_two.setBackgroundResource(R.drawable.ic_bluenight_wave);
             gas.setBackgroundResource(R.drawable.ic_bluenight_gas);
         }
 
-        if(themeNumber == 2){
-
+        if(themeNumber == 2)
+        {
             smokes.setBackgroundResource(R.drawable.ic_alien_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_alien_wave);
             wave_two.setBackgroundResource(R.drawable.ic_alien_wave);
             gas.setBackgroundResource(R.drawable.ic_alien_gas);
-
         }
 
-        if(themeNumber == 3){
-
+        if(themeNumber == 3)
+        {
             smokes.setBackgroundResource(R.drawable.ic_wood_smoke);
             wave_one.setBackgroundResource(R.drawable.ic_wood_wave);
             wave_two.setBackgroundResource(R.drawable.ic_wood_wave);
             gas.setBackgroundResource(R.drawable.ic_wood_gas);
             gasGIF.setImageResource(R.drawable.backgroundwood);
-
         }
 
         //events
@@ -147,7 +149,7 @@ public class gasPop extends Activity {
             @Override
             public void onClick(View v) {
                 currentCondition =gas_controller.isChecked();
-                thm = new Intent(gasPop.this, main_screen.class);
+                thm = new Intent(gasPop.this, MainScreen.class);
                 thm.putExtra("theme",themeNumber);
                 thm.putExtra("gas",currentCondition);
                 startActivity(thm);
@@ -158,7 +160,8 @@ public class gasPop extends Activity {
             @Override
             public void onClick(View v) {
                 boolean on = ((ToggleButton) v).isChecked();
-                if (on) {
+                if (on)
+                {
                     // ON
                     smokes.setVisibility(View.VISIBLE);
                     wave_one.setVisibility(View.VISIBLE);
