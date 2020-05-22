@@ -137,3 +137,57 @@ We decided to what we can for pc user interface. We decided to add elder part.We
 
 
 **ToDo:**
+****
+### Meeting ~ (22.04.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (29.04.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (02.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (06.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (13.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
+****
+### Meeting ~ (20.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** 
+
+
+**ToDo:**
