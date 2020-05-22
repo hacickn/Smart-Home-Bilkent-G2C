@@ -62,7 +62,7 @@ This week, I continuied to fix some bugs and tried to make pc user interface mor
 This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I added 3 more theme and 2 more language(both sound and in text). I also added new fonts. I embedded them in the program because otherwise fonts can change computer to computer(Last week I tried the program's jar version on my father computer.There are some differences between what I did and What I saw. Font was one of them.Therefore to fix it, I embedded fonts to program). Not only fonts, but also there were some görünüşsel differences. I fixed them. I also added a method that regulate string to make it suitable for request.(nearly 30 hours) 
 
 ### ~ 18.05.2020 ~
-This week I will work on only project video.
+This week I will work on only project video. I also fixed some little bugs. I adjust pc user interface part in detail desing's second report.(nearly 15 hours)
 ****
 
 > What I did until now
@@ -113,9 +113,15 @@ characters should be suitable for request string. However, some cities has chara
 not suitable for this. Therefore, My method regulates according to request criteria.(Ç,Ş.. etc).
 ```
 
-> What I think about what I will do 
+> What will we do?( We will do them in the summer )
 ```
-* The last remaining part is that pc user interface will recieve humidity and temperature 
-information about greenhouse. Other communication parts are done.
+* We fixed all bugs which we can find but most probably there will be lots of bugs which we cannot 
+realize at this point.Therefore, as the bugs come out, we will continue to fix them.
+* We also want to synchronize android app and pc application.
+* We will learn and add IoT and AI things(But we cannot find a way that we should follow 
+for these fields. If you have suggestions for these fields, please inform us :) ).
+* In order to make our project more funtional, I will finish node.js. I already learnt %50
+of the course. Node.js helps us in backhand side. When we synchronize, It will have a very important
+role at this stage.
 ```
-> Note: I want to add one more fact about this project. When I was working on this project, I discovered lots of technologies and infrmation. But main contribution of this project is none of them. In this project, I understood that, I'm in right palace where I should be. I discovered that I enjoy so much when I spend my time my time with coding and discovering new things. After the this project, I create a way in my mind which I follow to learn such technologies. I do not know how many point we will get but I know that this project trigger me to understand that I'm very happy with what I did for this project. Thanks for everything teacher. I just wanted to said these words because of my happiness
+> Note: I want to add one more facts about this project. When I was working on this project, I discovered lots of technologies and infrmation. But main contribution of this project is none of them. In this project, I understood that, I'm in right palace where I should be. I discovered that I enjoy so much when I spend my time my time with coding and discovering new things. After the this project, I create a way in my mind which I follow to learn such technologies. I do not know how many point we will get but I know that this project trigger me to understand that I'm very happy with what I did for this project. Thanks for everything teacher. I just wanted to said these words because of my happiness
