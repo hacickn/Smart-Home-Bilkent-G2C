@@ -1,6 +1,7 @@
 İlke Doğan	21702215
 Hacı Çakın	21802641
  
+### It works with the program Proteus. When the user open Proteus, Arduino, and PC Interface together, the user should open all the programs at the same time and use these commands through Proteus.
 ### Is it manuel ?
 
 ```
@@ -22,8 +23,8 @@ manual_off#:
 * outgoing_water_off#:
 * air_motor_on#:
 * air_motor_off#:
-* door_on#:   		// door closing automatically
-* water_valve_on#:
+* door_on#:   		 // door closing automatically
+* water_valve_on#: 
 * water_valve_off#:
 * external_siren_on#:
 * external_siren_off#:
