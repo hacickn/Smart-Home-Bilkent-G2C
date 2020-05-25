@@ -136,7 +136,7 @@
              String tempa = ""; 
              byte i = 0, j = 2;
       
-             tempa=last_data.substring( i,i+j ); 
+             tempa=last_data.substring( i, i + j ); 
              i = i + 2; 
              //Serial.print(tempa);
           if( tempa == "B1" )       
@@ -144,7 +144,7 @@
           else if( tempa == "B0" )
                digitalWrite( Buzzer, LOW );       
       
-             tempa = last_data.substring( i,i+j );
+             tempa = last_data.substring( i, i + j );
              i = i+2;
              //Serial.print(tempa);
           if( tempa == "E1" )       
@@ -152,7 +152,7 @@
           else if( tempa == "E0" )
                 digitalWrite( electricity, LOW );
           
-             tempa = last_data.substring( i,i+j );
+             tempa = last_data.substring( i, i + j );
              i = i + 2;
              //Serial.print(tempa);
           if(tempa == "G1" )       
@@ -230,17 +230,17 @@
              tempa = last_data.substring (i , i + j );
              i = i + 2;
              //Serial.println(tempa);             
-          if( tempa == "R1" )                            //////////////////// 
+          if( tempa == "R1" )                           
             {
                  window_open=true;
                  Serial.println( "Window Open" );     
-                 myServo_Rain_Device_Cnt.write( 180 );   //////////////////// 
+                 myServo_Rain_Device_Cnt.write( 180 );  
             }
-           else if( tempa == "R0" )                     //////////////////// 
+           else if( tempa == "R0" )                     
             {
                  window_open=false;
                  Serial.println( "Window closed" );    
-                 myServo_Rain_Device_Cnt.write( 0 );     //////////////////// 
+                 myServo_Rain_Device_Cnt.write( 0 );    
             }
       
              tempa = last_data.substring ( i , i + j);
@@ -421,7 +421,8 @@
             if (Serial3.available())    
             {  
                  incoming_data = Serial3.readStringUntil(':');
-                 data_count=incoming_data.length();Serial.println(data_count);
+                 data_count=incoming_data.length();
+                 Serial.println(data_count);
                  
                  first_index = incoming_data.indexOf('#');
                  last_index  = incoming_data.indexOf(':'); 

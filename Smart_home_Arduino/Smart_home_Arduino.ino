@@ -390,7 +390,10 @@
         }
      }
 
-     //HC-05 Bluetooth Modülü                           
+        /** For connection 
+         *  HC-05 Bluetooth Modülü  
+         */
+                       
       void Bluetooth_Setting()
       {
             String _name = "Bluet_Cnt_Car_rk";

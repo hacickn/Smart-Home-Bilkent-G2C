@@ -8,12 +8,12 @@
       void Sensor_Cnt()
       {     //alarm_condition=0;
       
-              if( (digitalRead( Rain_sens ) )  && ( window_open) )  
+              if( ( digitalRead( Rain_sens ) )  && ( window_open ) )  
               {
                 /*
                  * servo motor will turn off at 0 degrees
                  */
-                 window_open=false;
+                 window_open = false;
                  Serial.println( "Window closed" );    
                  myServo_Rain_Device_Cnt.write( 0 );                
               }  
@@ -77,76 +77,76 @@
                 Serial3.println( "low water level" );
              }      
                  
-             alarm_message="";  
+             alarm_message = "";  
          if ( alarm_condition > 0 )    
             {                    
-              if(alarm_condition== 1)
-                 alarm_message="Gas Alarm           ";             
-              else if(alarm_condition== 2)
-                 alarm_message="Smoke Alarm         ";
-              else if(alarm_condition== 3)
-                 alarm_message="Gas+Smoke alarm     ";  
-              else if(alarm_condition== 4)
-                 alarm_message="Fire Buton          ";
-              else if(alarm_condition== 5)
-                 alarm_message="Gas+Fire            ";  
-              else if(alarm_condition== 6)
-                 alarm_message="Gas+Smoke           ";             
-              else if(alarm_condition== 7)
-                 alarm_message="Gas+Smoke+Fire      ";
+              if( alarm_condition == 1 )
+                 alarm_message = "Gas Alarm           ";             
+              else if( alarm_condition == 2 )
+                 alarm_message = "Smoke Alarm         ";
+              else if( alarm_condition == 3 )
+                 alarm_message = "Gas+Smoke alarm     ";  
+              else if( alarm_condition == 4 )
+                 alarm_message = "Fire Buton          ";
+              else if( alarm_condition == 5 )
+                 alarm_message = "Gas+Fire            ";  
+              else if( alarm_condition == 6 )
+                 alarm_message = "Gas+Smoke           ";             
+              else if( alarm_condition == 7 )
+                 alarm_message = "Gas+Smoke+Fire      ";
                  
-              else if(alarm_condition== 8)
-                 alarm_message="motion Alarm        ";
-              else if(alarm_condition== 9)
-                 alarm_message="Motion+Gas Alarm    ";
-              else if(alarm_condition== 10)
-                 alarm_message="Motion+Smoke  Alarm "; 
-              else if(alarm_condition== 11)
-                 alarm_message="Motion+Smoke+Gas    ";
-              else if(alarm_condition== 12)
-                 alarm_message="Motion+Fire Buton   ";
-              else if(alarm_condition== 13)
+              else if( alarm_condition == 8 )
+                 alarm_message = "motion Alarm        ";
+              else if( alarm_condition == 9 )
+                 alarm_message = "Motion+Gas Alarm    ";
+              else if( alarm_condition == 10 )
+                 alarm_message = "Motion+Smoke  Alarm "; 
+              else if( alarm_condition == 11 )
+                 alarm_message = "Motion+Smoke+Gas    ";
+              else if( alarm_condition == 12 )
+                 alarm_message = "Motion+Fire Buton   ";
+              else if( alarm_condition == 13 )
                  alarm_message="Motion+Fire+Gas     "; 
-              else if(alarm_condition== 14)
+              else if( alarm_condition == 14 )
                  alarm_message="Motion+Fire+Smoke   ";
-              else if(alarm_condition== 15)
-                 alarm_message="Motion+Fire+Smok+Gas";
+              else if( alarm_condition == 15 )
+                 alarm_message = "Motion+Fire+Smok+Gas";
                  
-              else if(alarm_condition== 16)
-                 alarm_message="Psw Alarm           ";
-              else if(alarm_condition== 17)
+              else if( alarm_condition == 16 )
+                 alarm_message = "Psw Alarm           ";
+              else if( alarm_condition == 17 )
                  alarm_message="Psw+Gas Alarm       ";
-              else if(alarm_condition== 18)
-                 alarm_message="Psw+Smoke Alarm     "; 
-              else if(alarm_condition== 19)
-                 alarm_message="Psw+Smoke+Gas       ";
-              else if(alarm_condition== 20)
-                 alarm_message="Psw+Fire Buton      ";
-              else if(alarm_condition== 21)
-                 alarm_message="Psw+Fire+Gas        "; 
-              else if(alarm_condition== 22)
-                 alarm_message="Psw+Fire+Smoke      ";
-              else if(alarm_condition== 23)
-                 alarm_message="Psw+Fire+Smoke+Gas  ";
-              else if(alarm_condition== 24)
-                 alarm_message="Psw+Motion          ";
-              else if(alarm_condition== 25)
-                 alarm_message="Psw+Motion+Gas      ";
-              else if(alarm_condition== 26)
+              else if( alarm_condition == 18 )
+                 alarm_message = "Psw+Smoke Alarm     "; 
+              else if( alarm_condition == 19 )
+                 alarm_message = "Psw+Smoke+Gas       ";
+              else if( alarm_condition == 20 )
+                 alarm_message = "Psw+Fire Buton      ";
+              else if( alarm_condition == 21 )
+                 alarm_message = "Psw+Fire+Gas        "; 
+              else if( alarm_condition == 22 )
+                 alarm_message = "Psw+Fire+Smoke      ";
+              else if( alarm_condition == 23 )
+                 alarm_message = "Psw+Fire+Smoke+Gas  ";
+              else if( alarm_condition == 24 )
+                 alarm_message = "Psw+Motion          ";
+              else if( alarm_condition == 25 )
+                 alarm_message = "Psw+Motion+Gas      ";
+              else if( alarm_condition == 26 )
                  alarm_message="Psw+Motion+Smoke    "; 
-              else if(alarm_condition== 27)
-                 alarm_message="Psw+Motion+Smoke+Gas";
-              else if(alarm_condition== 28)
-                 alarm_message="Psw+Motion+Fire     ";
-              else if(alarm_condition== 29)
-                 alarm_message="Psw+Motion+Fire+Gas "; 
-              else if(alarm_condition== 30)
-                 alarm_message="Psw+Motion+Fire+Smok";
-              else if(alarm_condition== 31)
-                 alarm_message="Psw+Mot+Fir+Smok+Gas";
+              else if( alarm_condition == 27 )
+                 alarm_message = "Psw+Motion+Smoke+Gas";
+              else if( alarm_condition == 28 )
+                 alarm_message = "Psw+Motion+Fire     ";
+              else if( alarm_condition == 29 )
+                 alarm_message = "Psw+Motion+Fire+Gas "; 
+              else if( alarm_condition == 30 )
+                 alarm_message = "Psw+Motion+Fire+Smok";
+              else if( alarm_condition == 31 )
+                 alarm_message = "Psw+Mot+Fir+Smok+Gas";
 
-              else if(alarm_condition== 32)
-                 alarm_message="Water Decreased     ";
+              else if( alarm_condition == 32 )
+                 alarm_message = "Water Decreased     ";
             }
           //Serial.println(alarm_condition);
       }
