@@ -118,7 +118,66 @@ We concluded to continue our work with same plan for one more week and for any p
 
 **ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 ****
-### Meeting ~ (01.04.2020, 40 min)
+### Meeting ~ (01.05.2020, 40 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:**  We discussed at what stage we are. There were some problems in Github files' design. We talked they are should be reorganized again based on the format that is given. Secondly, PC and embedded system are packaged and that are shown to other group members. We talked about report template and we did distribution of works that will be handled. We warned themselves about javadoc in our codes. 
+
+Android----------
+We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.  
+
+
+**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+****
+### Meeting ~ (08.05.2020, 70 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** We discussed at what stage we are. Little changes on PC and embedded system are shared with other group members by İlke,Hacı, and Metehan. We talked about report template and we did distribution of works that will be handled again. We discuss about how to use UMLet program and we talked that we should start to create our system designs. Introduction part was given to metehan. Details part is divided as the work has been done. Also, it is said that every member should filled their place what they done. In part 3, whole group members will write.    
+
+Android----------
+We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+
+
+**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc). İlke will design android umlet design, Hacı will do Pc interface umlet desing. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application. They will do Android umlet design. 
+****
+### Meeting ~ (15.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:**  We discussed at what stage we are.
+
+Android----------
+We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+
+**ToDo:**
+****
+### Meeting ~ (22.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** We discussed at what stage we are.
+
+Android----------
+We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+
+
+**ToDo:**
+****
+### Meeting ~ (29.05.2020, 50 min)
+****
+**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
+
+**Discussion:** We discussed at what stage we are.
+
+Android----------
+We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+
+
+**ToDo:**
+****
+### Meeting ~ (02.06.2020, 50 min)
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
@@ -127,74 +186,13 @@ We concluded to continue our work with same plan for one more week and for any p
 
 **ToDo:**
 ****
-### Meeting ~ (08.04.2020, 70 min)
+### Meeting ~ (06.06.2020, 50 min)
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
 **Discussion:** 
 
 
-**ToDo:**
-****
-### Meeting ~ (15.04.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (22.04.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (29.04.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (02.05.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (06.05.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (13.05.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (20.05.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
 
 
 **ToDo:**
