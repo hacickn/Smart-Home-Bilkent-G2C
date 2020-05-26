@@ -151,17 +151,14 @@ We discussed during the week about the features that we are adding to app, Also 
 
 **ToDo:** İlke should complete the introduction and android records. Hacı and Metehan should complete pc interface records. Erengazi, Tarık and Nasuh should complete android interface records.
 ****
-### Meeting ~ (22.05.2020, 50 min)
+### Meeting ~ (25.05.2020, 50 min)
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
-**Discussion:** We discussed at what stage we are.
-
-Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+**Discussion:** This week we all talk about what we have done so far. We are try to cover up all of the codes that are written by us and at this point, and before the final code submission we have to minimalize our code mistakes immediately.
 
 
-**ToDo:**
+**ToDo:** Everyone should be sure about project's codes' final stage. Every mistakes should be fixed correctly.
 ****
 ### Meeting ~ (29.05.2020, 50 min)
 ****
