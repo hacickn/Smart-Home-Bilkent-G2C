@@ -23,8 +23,6 @@
 - Then again  try to press Sketch button > Verify/Compile
 - the error should be gone 
 ```
-#### Materials Used
-1) Programs
  
 ### It works with the program Proteus. When the user open Proteus, Arduino, and PC Interface together, the user should open all the programs at the same time and use these commands through Proteus.
 ### Is it manuel ?
@@ -243,6 +241,11 @@ sum = sum*16 + temp;
 return sum;
 }
 ```
+#### Materials Used
+1) Programs
+*[Proteus_7](https://proteus-7-professional.software.informer.com/)
+*[Proteus_8](https://www.labcenter.com/downloads/) or [Proteus_8](https://proteus.informer.com/8.0/)
+*[Arduino 1.8.12](https://www.arduino.cc/en/main/software)
 ---
 2) Web Sites
 *[robitshop](https://www.robitshop.com/) 
@@ -258,19 +261,26 @@ return sum;
 *[Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/)
 *[Tripod](http://yildizertan.tripod.com/whatsnew.htm)
 *[Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart-spi-i2c/)
+*[EEPROM](https://www.arduino.cc/en/Reference/EEPROM)
+*[MsTimer2](https://playground.arduino.cc/Main/MsTimer2/)
+*[Keypad](https://playground.arduino.cc/Code/Keypad/)
+*[LiquidCrystal](https://www.arduino.cc/en/Reference/LiquidCrystal)
+*[Servo](https://www.arduino.cc/en/reference/servo)
+*[DS1307RTC](https://create.arduino.cc/projecthub/electropeak/interfacing-ds1307-rtc-module-with-arduino-make-a-reminder-08cb61)
+*[SHT21](https://forum.arduino.cc/index.php?topic=557338.0)
+*[DHT](https://playground.arduino.cc/Main/DHTLib/)
 ---
 3) Libraries
-*MsTimer2
-*Keypad
-*LiquidCrystal
-*Servo
-*EEPROM
-*DS1307RTC
-*SHT21
-*DHT
----
-```
-```
+*[MsTimer2](https://www.arduinolibraries.info/libraries/ms-timer2)
+*[Keypad](https://www.arduinolibraries.info/libraries/keypad)
+*[LiquidCrystal](https://www.arduinolibraries.info/libraries/liquid-crystal)
+*[Servo](https://www.arduinolibraries.info/libraries/servo)
+*[EEPROM](https://www.arduinolibraries.info/libraries/spark-fun-external-eeprom-arduino-library)
+*[DS1307RTC](https://www.arduinolibraries.info/libraries/ds1307-rtc)
+*[SHT21](https://forum.arduino.cc/index.php?topic=557338.0)
+*[DHT](https://www.arduinolibraries.info/libraries/dht-sensor-library)
+
 #### Features
+```
 - To communicate with database, Singleton patters is used.
 ```
