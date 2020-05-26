@@ -4,9 +4,7 @@
 İlke Doğan	21702215
 
 ### When you upload this program, Arduino, you may get the error of library. The steps;
-```
----
-```
+
 ### Instruction to set-up Arduino to your computer
 - Download the Smart_home_Arduino file
 - Open in your computer, then go into Smart_home_Arduino file
@@ -289,5 +287,5 @@ return sum;
 #### Features
 ##### Program Features
 ```
-* To communicate with database, Singleton patters is used.
+* To
 ```
