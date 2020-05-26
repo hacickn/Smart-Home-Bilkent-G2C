@@ -242,7 +242,7 @@ sum = sum*16 + temp;
 }
 return sum;
 }
-
+```
 ---
 2) Web Sites
 *[robitshop](https://www.robitshop.com/) 
@@ -269,5 +269,8 @@ return sum;
 *SHT21
 *DHT
 ---
+```
+```
 #### Features
 - To communicate with database, Singleton patters is used.
+```
