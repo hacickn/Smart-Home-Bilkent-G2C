@@ -71,8 +71,8 @@ Moreover, we showed what we did for application building. We gave suggestions to
 
 **Discussion:** 
 We decided to what we can for pc user interface. We decided to add elder part.We discussed that who will weigh more where. However, we said that each member should help each other. According to we decided to separate three main part. Elder part, main part, proteus and arduino part. We thought that doing a job division could improve our project better. Hacı and İlke shared their opinions on how to establish the communication between the interface and the embedded system and how the protocol should be. Topics such as how to add aquarium and greenhouse to smart home, how to make theme and design were discussed. We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact. 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do Main Panel.(Although we decided to who weight more where, we also will do work on each piece.)
 
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do Main Panel.(Although we decided to who weight more where, we also will do work on each piece.)
 ****
 ### Meeting ~ (29.03.2020, 50 min)(ANDROID PART)
 ****
@@ -152,8 +152,8 @@ We discussed during the week about the features that we are adding to app, Also 
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
-**Discussion:** This week we all talk about what we have done so far. We are try to cover up all of the codes that are written by us and at this point, and before the final code submission we have to minimalize our code mistakes immediately.
+**Discussion:** This week we all talk about what we have done so far. We are try to cover up all of the codes that are written by us and at this point, and before the final code submission we have to minimalize our code mistakes immediately. 
 
 
-**ToDo:** Everyone should be sure about project's codes' final stage. Every mistakes should be fixed correctly.
+**ToDo:** Everyone should be sure about project's codes' final stage. Every mistakes should be fixed correctly. To upload final code each group member will organize and arrange their codes again. 
 ****
