@@ -263,7 +263,7 @@ return sum;
 * [robitshop](https://www.robitshop.com/) 
 * [Robotistan](https://www.robotistan.com/)
 * [Mobilhanem.com](https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/)
-* [gelecegiyazanlar.turkcell](https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) 
+* [gelecegiyazanlar.turkcell](https://gelecegiyazanlar.turkcell.com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) 
 * [Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/)
 * [Tripod](http://yildizertan.tripod.com/whatsnew.htm)
 * [Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart-spi-i2c/)
