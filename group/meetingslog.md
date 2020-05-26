@@ -70,10 +70,7 @@ Moreover, we showed what we did for application building. We gave suggestions to
 **Present:** Metehan Saçakçı, İlke Doğan,Hacı Çakın
 
 **Discussion:** 
-We decided to what we can for pc user interface. We decided to add elder part.We discussed that who will weigh more where. However, we said that each member should help each other. According to we decided to separate three main part. Elder part, main part, proteus and arduino part. We thought that doing a job division could improve our project better. Hacı and İlke shared their opinions on how to establish the communication between the interface and the embedded system and how the protocol should be. Topics such as how to add aquarium and greenhouse to smart home, how to make theme and design were discussed. 
-
-Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact. 
+We decided to what we can for pc user interface. We decided to add elder part.We discussed that who will weigh more where. However, we said that each member should help each other. According to we decided to separate three main part. Elder part, main part, proteus and arduino part. We thought that doing a job division could improve our project better. Hacı and İlke shared their opinions on how to establish the communication between the interface and the embedded system and how the protocol should be. Topics such as how to add aquarium and greenhouse to smart home, how to make theme and design were discussed. We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact. 
 **ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do Main Panel.(Although we decided to who weight more where, we also will do work on each piece.)
 
 ****
@@ -105,7 +102,7 @@ Android -
 At this point we choose one of the app design that we created and give our focus to develop it. Nasuh worked on the databases, Tarık and Eren focused on the designing and functionality of the app. Still in that time we keep learning about the android stuido to develop the app more.
 
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı focused on the functionality of the app and its interface. Nasuh Dinçer keep his attention on the database system.
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part, and weather code design with Hacı. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı focused on the functionality of the app and its interface. Nasuh Dinçer keep his attention on the database system.
 ****
 ### Meeting ~ (26.04.2020, 30 min)
 ****
@@ -117,7 +114,7 @@ Android -
 At this time, we discuss regularly to understand what stage we are at and sometimes we design the app together via using zoom application. We asked questions frequently to each other 
 about how the interface of the app should look. We pay attention to our updates by keeping an eye on the github. Also we tried to finish the basic structure of the app.
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı keep their focus on the designin while Nasuh paid his attention on the database.
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part,and will add help button with Hacı. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı keep their focus on the designin while Nasuh paid his attention on the database.
 ****
 ### Meeting ~ (01.05.2020, 40 min)
 ****
