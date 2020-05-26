@@ -242,35 +242,32 @@ sum = sum*16 + temp;
 }
 return sum;
 }
-```
 
+---
 2) Web Sites
-```
--[robitshop](https://www.robitshop.com/) 
--[Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
--[Current consumer attitudes towards Smart Home](https://www.citizensadvice.org.uk/Global/CitizensAdvice/Energy/Smart%20homes%20final%20report%20(new%20Traverse%20logo).pdf)
--[Direnc.net](https://www.direnc.net/) 
--[Robotus](https://www.robotus.net/)
--[Proteus](https://www.labcenter.com/) 
--[robitshop](https://www.robitshop.com/) 
--[Robotistan](https://www.robotistan.com/)
--[Mobilhanem.com](https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/)
--[gelecegiyazanlar.turkcell](https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) 
--[Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/)
--[Tripod](http://yildizertan.tripod.com/whatsnew.htm)
--[Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart-spi-i2c/)
-```
-
+*[robitshop](https://www.robitshop.com/) 
+*[Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
+*[Current consumer attitudes towards Smart Home](https://www.citizensadvice.org.uk/Global/CitizensAdvice/Energy/Smart%20homes%20final%20report%20(new%20Traverse%20logo).pdf)
+*[Direnc.net](https://www.direnc.net/) 
+*[Robotus](https://www.robotus.net/)
+*[Proteus](https://www.labcenter.com/) 
+*[robitshop](https://www.robitshop.com/) 
+*[Robotistan](https://www.robotistan.com/)
+*[Mobilhanem.com](https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/)
+*[gelecegiyazanlar.turkcell](https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) 
+*[Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/)
+*[Tripod](http://yildizertan.tripod.com/whatsnew.htm)
+*[Hasan Eren Keskin](https://herenkeskin.com/seri-haberlesme-protokolleri-uart-spi-i2c/)
+---
 3) Libraries
-```
--MsTimer2
--Keypad
--LiquidCrystal
--Servo
--EEPROM
--DS1307RTC
--SHT21
--DHT
-```
+*MsTimer2
+*Keypad
+*LiquidCrystal
+*Servo
+*EEPROM
+*DS1307RTC
+*SHT21
+*DHT
+---
 #### Features
 - To communicate with database, Singleton patters is used.
