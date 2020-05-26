@@ -143,16 +143,13 @@ We discussed during the week about the features that we are adding to app, Also 
 
 **ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc). İlke will design android umlet design, Hacı will do Pc interface umlet desing. Erengazi Mutlu, Tarık Karalı decided to add features like helper button(to help first time users),themes and so on.Nasuh tried to add database to each feature that we have in the app. They will do Android umlet design together. 
 ****
-### Meeting ~ (15.05.2020, 50 min)
+### Meeting ~ (16.05.2020, 50 min)
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
-**Discussion:**  We discussed at what stage we are.
+**Discussion:**  This week we are assigned to create a video that represents our project. This week we mainly discussed organization of that video and according to that orgazination every individual is started to record the screen video and his or her audio. Our plan is basically talk about our project and then mention pc and android interfaces, respectively. After the recordings are done which we are try to complete at least in one day, we will edit and create the required video.
 
-Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
-
-**ToDo:**
+**ToDo:** İlke should complete the introduction and android records. Hacı and Metehan should complete pc interface records. Erengazi, Tarık and Nasuh should complete android interface records.
 ****
 ### Meeting ~ (22.05.2020, 50 min)
 ****
@@ -170,13 +167,13 @@ We concluded to continue our work with same plan for one more week and for any p
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
-**Discussion:** We discussed at what stage we are.
+**Discussion:** 
 
 Android----------
 We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
 
 
-**ToDo:**
+**ToDo:** 
 ****
 ### Meeting ~ (02.06.2020, 50 min)
 ****
