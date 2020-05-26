@@ -62,7 +62,7 @@ This week, I continuied to fix some bugs and tried to make pc user interface mor
 This week I added javadocs and I will add comments. We also finished detail design. I made uml diagram of pc user interface. This week we will contiune to find bugs and fix them. Last week, I allocated my time to find bugs and nonsense points. I made a list which has 25 different little bugs(from font size to adding new user). I fixed all these bugs. After this point, I added 3 more theme and 2 more language(both sound and in text). I also added new fonts. I embedded them in the program because otherwise fonts can change computer to computer(Last week I tried the program's jar version on my father computer.There are some differences between what I did and What I saw. Font was one of them.Therefore to fix it, I embedded fonts to program). Not only fonts, but also there were some görünüşsel differences. I fixed them. I also added a method that regulate string to make it suitable for request.(nearly 30 hours) 
 
 ### ~ 18.05.2020 ~
-This week I will work on only project video. I also fixed some little bugs. I adjust pc user interface part in detail desing's second report.(nearly 15 hours)
+This week I will work on only project video. I also fixed some little bugs. I adjust pc user interface part in detail desing's second report. I also started to build a program for my dad(nearly 15 hours)
 ****
 
 > What I did until now
