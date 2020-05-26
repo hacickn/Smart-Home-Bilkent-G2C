@@ -160,34 +160,3 @@ We discussed during the week about the features that we are adding to app, Also 
 
 **ToDo:** Everyone should be sure about project's codes' final stage. Every mistakes should be fixed correctly.
 ****
-### Meeting ~ (29.05.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
-
-
-**ToDo:** 
-****
-### Meeting ~ (02.06.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-**ToDo:**
-****
-### Meeting ~ (06.06.2020, 50 min)
-****
-**Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
-
-**Discussion:** 
-
-
-
-
-**ToDo:**
