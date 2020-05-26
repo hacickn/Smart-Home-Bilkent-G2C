@@ -82,9 +82,9 @@ We concluded to continue our work with same plan for one more week and for any p
 **Present:**  Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer
 
 **Discussion:** 
+This week we started to design a simple app to understand android studio better. We created some basic apps according to what we learn from the videos that we watch. Than we compare each other apps. We tried to learn from each other by asking questions.
 
-
-**ToDo:** 
+**ToDo:** we decided to keep working on the android studio to understand the Android Environment better. 
 ****
 ### Meeting ~ (12.04.2020, 20 min)
 ****
@@ -102,9 +102,10 @@ We concluded to continue our work with same plan for one more week and for any p
 **Discussion:** We discussed at what stage we are. Due to exams, we could not talk to much like previous weeks. Arduino part and Proteus part is mostly done by İlke, Hacı and Metehan. They show their work to the other gruop members. The first version of PC and Embedded system are shown and discussed about its lack properties. We discussed, how can we improve our system and also new features that are added. 
 
 Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.  
+At this point we choose one of the app design that we created and give our focus to develop it. Nasuh worked on the databases, Tarık and Eren focused on the designing and functionality of the app. Still in that time we keep learning about the android stuido to develop the app more.
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı focused on the functionality of the app and its interface. Nasuh Dinçer keep his attention on the database system.
 ****
 ### Meeting ~ (26.04.2020, 30 min)
 ****
@@ -113,10 +114,10 @@ We concluded to continue our work with same plan for one more week and for any p
 **Discussion:**  We discussed at what stage we are. The connection between Arduinoand PC interface is done and this progress is showed bu Hacı, İlke, and Metehan. They show their work to the other gruop members. We discussed new libraries and applications we used. Some of group members share their research and they advice several websites to the other group members. Project design in Github is discussed and the way use it properly is talked. This is concept is actually useful for us because to integrate our codes we talked we can add this to github and connections can be done easily. We talked that every group member should start to fill their log files and the meeting should be added to the github file in the proper type and we think that we should start to fill our READ.me files. We again discussed, how can we improve our system and also new features that are added. 
 
 Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.  
+At this time, we discuss regularly to understand what stage we are at and sometimes we design the app together via using zoom application. We asked questions frequently to each other 
+about how the interface of the app should look. We pay attention to our updates by keeping an eye on the github. Also we tried to finish the basic structure of the app.
 
-
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı keep their focus on the designin while Nasuh paid his attention on the database.
 ****
 ### Meeting ~ (01.05.2020, 40 min)
 ****
@@ -125,10 +126,11 @@ We concluded to continue our work with same plan for one more week and for any p
 **Discussion:**  We discussed at what stage we are. There were some problems in Github files' design. We talked they are should be reorganized again based on the format that is given. Secondly, PC and embedded system are packaged and that are shown to other group members. We talked about report template and we did distribution of works that will be handled. We warned themselves about javadoc in our codes. 
 
 Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.  
+We discussed about what stage we are at and keep designing the project. At this time, we finished the basic structure of the app (w/o database)such as login screen, main screen, settings etc. and Also our friend Hacı helped us with designing of the weather pop-up.
+Tarık and Eren focused on the developing the features on the app while Nasuh started to design the firebase for the app.
 
 
-**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc), Erengazi Mutlu, Tarık Karalı keep working on the app and improve the features and add some new ones; Nasuh will keep working on the database.
 ****
 ### Meeting ~ (08.05.2020, 70 min)
 ****
@@ -137,10 +139,9 @@ We concluded to continue our work with same plan for one more week and for any p
 **Discussion:** We discussed at what stage we are. Little changes on PC and embedded system are shared with other group members by İlke,Hacı, and Metehan. We talked about report template and we did distribution of works that will be handled again. We discuss about how to use UMLet program and we talked that we should start to create our system designs. Introduction part was given to metehan. Details part is divided as the work has been done. Also, it is said that every member should filled their place what they done. In part 3, whole group members will write.    
 
 Android----------
-We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
+We discussed during the week about the features that we are adding to app, Also at this time Nasuh keep working on the firebase and tried to test it. Eren and Tarık keep working on the designing the features.
 
-
-**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc). İlke will design android umlet design, Hacı will do Pc interface umlet desing. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application. They will do Android umlet design. 
+**ToDo:** Metehan, İlke,and Hacı will complete their part and imporve their codes( they should add javadoc). İlke will design android umlet design, Hacı will do Pc interface umlet desing. Erengazi Mutlu, Tarık Karalı decided to add features like helper button(to help first time users),themes and so on.Nasuh tried to add database to each feature that we have in the app. They will do Android umlet design together. 
 ****
 ### Meeting ~ (15.05.2020, 50 min)
 ****
