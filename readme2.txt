@@ -1,5 +1,11 @@
 G2C
 SMART HOME
+1) İLKE DOĞAN 21702215
+2) HACI ÇAKIN 21802641
+3) METEHAN SAÇAKÇI 21802788
+4) ERENGAZİ MUTLU 21803676
+5) TARIK BUĞRA KARALI 21703937
+6) NASUH DİNÇER 21702933
 
 1)Description of the project: Smart Home is a project that makes it possible to control home attributes from a
 well-designed pc and android interfaces. Therefore, our main target is to provide the program that

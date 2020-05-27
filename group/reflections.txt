@@ -1,0 +1,26 @@
+G2C-SMART HOME 
+
+	Thanks to this project, we experienced lots of new things. We learnt embedded systems, databases and their relations.
+More important, we learnt how should work on a project as a group. In this project, we also used different ways to 
+get knowledge. We watched videos, read the sources, search the websites and we examined the codes of other people.
+We saw the advantages and disadvantages of these ways. For example, videos seem to be more practical but we think
+searching and reading are more permanent. As a group, we think that the most important benefit of this project is 
+that we learnt the relations of some technologies and now thanks to this, we can draw out path in computer science
+(at least some of us). Before the this project we even don't know which program will we use to make
+java program for pc(In presentation at the beginning of the semester,we wrote Visual Studio which not support java).
+However, when we made searchs about it we discovered we should use IntelliJ(also there were other alternatives which
+are netbeans,eclipse...). This one is simplest example. We try to say that we are very stranger to computer 
+technologies. Now, we know which technologies for which platform and how they work. Because we are familier with
+computer technologies, we better understand what we want. For example, one of us started to learn node.js which is
+very powerful technology for server side. One of us will start to work on machine learning and go deeper. Of course
+these ideas can be changed in time. However the main point is that if we are not familier with these technologies,
+we can not think them. This project taught us to open up to the universe of computer technologies and how to discover
+them. After this we will continue to discover on our own. Moreover, we have become more knowledgeable about the 
+technologies we used(Java-Javafx-Android-Arduino-Relational Databases(SQL)-Firabases-Libraries-MavenLibraries
+APIs etc.). We learnt lots of new terms and what they mean.
+
+	There is no big problem about the project. If Covid 19 situation did not happen, maybe communication could 
+be better. We could meet and we could write code together. The difficult aspect of our project is writing code
+systematic and proper. Because we wrote codes when we had continued to learn. Therefore, in some points, we wrote
+codes little bit silly. We regulated after finished but It took times. Therefore, if we made it again, we definetly
+would take care of it.
