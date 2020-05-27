@@ -1,4 +1,4 @@
-G2C-SMART HOME 
+						G2C-SMART HOME 
 
 	Thanks to this project, we experienced lots of new things. We learnt embedded systems, databases and their relations.
 More important, we learnt how should work on a project as a group. In this project, we also used different ways to 
@@ -23,4 +23,40 @@ APIs etc.). We learnt lots of new terms and what they mean.
 be better. We could meet and we could write code together. The difficult aspect of our project is writing code
 systematic and proper. Because we wrote codes when we had continued to learn. Therefore, in some points, we wrote
 codes little bit silly. We regulated after finished but It took times. Therefore, if we made it again, we definetly
-would take care of it.
+would take care of it(for the pc application, Hacı made a demo. Because of this demo, he experienced this issue.
+Therefore our pc program's project more tidy).
+
+	All members spent at least 100 hours(average 150-170 estimation). Pc program,arduino and proteus part were 
+started early. Therefore, the time which spent for these parts are more much . Because of this everyone did not 
+spent equal time but we are all satisfied with each other's efforts.
+
+	At the beginning of the semester, there were fear of low grade, but as we developed and elaborated the 
+project, we started to think that it was more than a grades.Now, we think that we can get enough point to pass the 
+course with less effort. However, we have started to get enjoy to spend time on it.Therefore, our motivation was always high.
+Because of this, some time after starting the project, working on the project turned out to be an event that pleased us more 
+than an obligation. Therefore, we spent a lot of time with pleasure. To be honest, in first semester,it were not like it. 
+Of course we liked cs101 but working on the console did not make us satisfied.Working on a project, discussions, make a 
+new things(although it exist, make a working program) are very pleasing.We do not know how many points we will get but 
+we are very proud of what we did until now.Although our program can have missing parts, we gave to much effort to do our 
+best.Sometimes in order to work together, we worked until the morning because our common empty time was just this range.
+When we think about what we have experineced and done,we are very pleased with the point that we have reached.We will not 
+be limited to this cs project, we will continue to work on this project. We believe that our project will be base to
+colonies and sustaniable life(Because of time restriction we can not mentioned our this idea. The reason we put the aquarium 
+and greenhouse into the project is to provide sustaniable system.For example,The water which come from aquarim will use in 
+greenhouse etc.In the future, if humanity goes to Mars, sources may be limited). Therefore, we start to search,consult 
+some people about this subject. We don't have much information about artificial intelligence and IoT, but the best thing 
+that we know is that we still have a long way to go(If you have any suggestions about these fields,we will be pleasure to 
+hear. We need to find a way for these fields). To conclude,we are proud of what we did. it may not be exactly as required 
+by the course conditions or it may have bad parts but we are really happy with what we learned and did while doing this 
+project. this project is like our baby now. We will always make new projects throughout our lives, we will work in big 
+companies, but we do not think that any of them will give us the feeling that this project gives us.
+
+	Thanks for everything hocam :)
+
+	İLKE DOĞAN 
+	HACI ÇAKIN 
+	METEHAN SAÇAKÇI 
+	ERENGAZİ MUTLU
+	TARIK BUĞRA KARALİ
+	NASUH DİNÇER 
+
