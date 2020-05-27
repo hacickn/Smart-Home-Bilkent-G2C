@@ -55,5 +55,11 @@ This week I comletely finished the android app database systems(30-40 hours)
 
 ---
 
+### ~ 11.05.2020 ~
+This week I deal with javadoc and fixing bug problems. Integration between database and app completely finished. (20-25 hours)
+
+
+---
+
 
 ****
