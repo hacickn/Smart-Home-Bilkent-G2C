@@ -41,7 +41,7 @@ This week because of the covid-19, we meet on the zoom platform first time. Afte
 **Discussion:** 
 This week every group member mentioned his/her's ideas about should we continue to work on our project with last week's plan or not. At this point, whether we do not have displayable interface design on our project files, everyone in the group wants to continue to work with last week's same ToDo list. Interfaces and embedded systems that were learned and created in a week were shared among group members. Ideas were thought about new systems that could be added and additions were made. For example, as a group, to make our smart home functional and equipped, we discussed that we should add different systems like greenhouses and aquariums in our smart home system. We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.
 
-**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should continue to work on pc interface design Arduino platform design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should continue to work on pc interface design, Arduino platform design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 
 ****
 ### Meeting ~ (17.03.2020, 60 min)
@@ -52,7 +52,7 @@ This week every group member mentioned his/her's ideas about should we continue 
 **Discussion:** 
 Hacı was absent because of illness. We discussed what we found, our suggestions. Our main target was that how we can come forward other smart home products. Then we decided to go over this subject. We shared our design ideas. Moreover, we started to think specificially how to build for functionally. All groups members will start to think what we can add more than what we though at the beginning of the idea. Also we started to build applications. We discussed that searching from internet about smart home systems that are done by some of compaines should be done to get impression regarding similar systems. Due to covid'19, we think that, to show our system works properly, we should use virtual simulation on Protues. We think that, it's digital design should be created and sensors that has been searched and chosen will be added. However, we also have some concerns about how to connect embedded system and interfaces. We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact. 
 
-**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should continue to work on pc interface design Arduino and Proteus platform design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+**ToDo:** Metehan Saçakçı, Hacı Çakın, İlke Doğan should continue to work on pc interface design, Arduino and Proteus platform design. Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 
 ****
 ### Meeting ~ (24.03.2020, 60 min)
@@ -90,7 +90,7 @@ This week we started to design a simple app to understand android studio better.
 **Discussion:** We discussed at what stage we are. We showed what we experience to each other. We talked what we did for our project. Metehan showed that he started to build special desing for elders which should have bigger labels or buttons. Erengazi showed that what he learnt from udemy courde and which material he can use. İlke informed us about Proteus and how it works. She shows improvement regarding Arduino and Protocols that is created by İlke. Hacı showed what main panel have until now. He also made a little arduino circuit which have 6 leds and control them in java user interface(video record). Tarık showed that he learnt using android layouts and materials. Nasuh started to search firebase systems and he learnt what is the differences between firebases and databases. All members will continue to do what they are doing. Also we will search how we can add functionality according to MVC. We concluded to continue our work with same plan for one more week and for any problem we might face we kept our contact.  
 
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus and Arduino part. Hacı will do Main Panel.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
+**ToDo:** Pc part will continue to work on same parts, Erengazi Mutlu, Tarık Karalı, Nasuh Dinçer should start to work on the mobile application.
 ****
 ### Meeting ~ (19.04.2020, 20 min)
 ****
@@ -102,7 +102,7 @@ Android -
 At this point we choose one of the app design that we created and give our focus to develop it. Nasuh worked on the databases, Tarık and Eren focused on the designing and functionality of the app. Still in that time we keep learning about the android stuido to develop the app more.
 
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part, and weather code design with Hacı. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı focused on the functionality of the app and its interface. Nasuh Dinçer keep his attention on the database system.
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part, and weather code design with Hacı. , Erengazi Mutlu, Tarık Karalı focused on the functionality of the app and its interface. Nasuh Dinçer keep his attention on the database system.
 ****
 ### Meeting ~ (26.04.2020, 30 min)
 ****
@@ -114,7 +114,7 @@ Android -
 At this time, we discuss regularly to understand what stage we are at and sometimes we design the app together via using zoom application. We asked questions frequently to each other 
 about how the interface of the app should look. We pay attention to our updates by keeping an eye on the github. Also we tried to finish the basic structure of the app.
 
-**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part,and will add help button with Hacı. Hacı will do ????????.(Although we decided to who weight more where, we also will do work on each piece.), Erengazi Mutlu, Tarık Karalı keep their focus on the designin while Nasuh paid his attention on the database.
+**ToDo:** Metehan will continue to do Elder Panel. İlke will weight Proteus, Arduino part,and will add help button with Hacı. Hacı will add weather pane for android part, Erengazi Mutlu, Tarık Karalı keep their focus on the designin while Nasuh paid his attention on the database.
 ****
 ### Meeting ~ (01.05.2020, 40 min)
 ****
@@ -152,7 +152,7 @@ We discussed during the week about the features that we are adding to app, Also 
 ****
 **Present:** Metehan Saçakçı, Erengazi Mutlu, İlke Doğan, Hacı Çakın, Tarık Karalı, Nasuh Dinçer
 
-**Discussion:** This week we all talk about what we have done so far. We are try to cover up all of the codes that are written by us and at this point, and before the final code submission we have to minimalize our code mistakes immediately. 
+**Discussion:** This week we all talk about what we have done so far. We are try to cover up all of the codes that are written by us and at this point, and before the final code submission we have to minimalize our code mistakes immediately. We also talked about what we did, what are contribution of working on the this project and we wrote reflections. 
 
 
 **ToDo:** Everyone should be sure about project's codes' final stage. Every mistakes should be fixed correctly. To upload final code each group member will organize and arrange their codes again. 
