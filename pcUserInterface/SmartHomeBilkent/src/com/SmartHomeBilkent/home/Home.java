@@ -26,7 +26,7 @@ public class Home {
 
    /**
     * it is a Home constructor
-    * @param arduino
+    * @param arduino is an input parameter
     */
    //constructors
    public Home( Arduino arduino ) {

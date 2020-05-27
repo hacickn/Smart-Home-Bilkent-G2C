@@ -1,440 +1,437 @@
-#mainButton
-{
-    -fx-background-color:  #ff5d00;
+#mainButton {
+    -fx-background-color: #ff5d00;
     -fx-background-radius: 30;
 }
-#userProfileButtonElder
-{
+
+#userProfileButtonElder {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/couple2.png");
     -fx-background-size: 200, 200;
 }
-#userProfileSubLabelActive
-{
+
+#userProfileSubLabelActive {
     -fx-background-color: #176BEF;
     -fx-background-radius: 25;
 }
 
-#menuButtonElder
-{
+#menuButtonElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/houseMenu2Finished.png");
     -fx-background-size: 200, 200;
 }
-#settingsButtonElder
-{
+
+#settingsButtonElder {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/cogwheel2.png");
     -fx-background-size: 200, 200;
 }
-#settingsSubLabelActive
-{
+
+#settingsSubLabelActive {
     -fx-background-color: #179C52;
     -fx-background-radius: 25;
 }
 
-#menuSubLabelActive
-{
+#menuSubLabelActive {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 25;
 }
-#electricityButtonElder
-{
+
+#electricityButtonElder {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/lightning2.png");
     -fx-background-size: 200, 200;
 }
-#electricityLabelElder
-{
+
+#electricityLabelElder {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
 }
-#lightsButtonElder
-{
+
+#lightsButtonElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/concept2.png");
     -fx-background-size: 200, 200;
 }
-#lightsLabelElder
-{
+
+#lightsLabelElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
 }
-#waterButtonElder
-{
+
+#waterButtonElder {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/droplet02.png");
     -fx-background-size: 200, 200;
 }
-#waterLabelElder
-{
+
+#waterLabelElder {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
 }
-#temperatureButtonElder
-{
+
+#temperatureButtonElder {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/thermometer2.png");
     -fx-background-size: 200, 200;
 }
-#temperatureLabelElder
-{
+
+#temperatureLabelElder {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
 }
-#houseMenuBackButtonElder
-{
+
+#houseMenuBackButtonElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 15;
 
 }
-#electricityPanelElderCloseButton
-{
+
+#electricityPanelElderCloseButton {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#waterPanelElderCloseButton
-{
+
+#waterPanelElderCloseButton {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#temperaturePanelElderCloseButton
-{
+
+#temperaturePanelElderCloseButton {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#lightsPanelElderCloseButton
-{
+
+#lightsPanelElderCloseButton {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#applicationSettingsElderButton
-{
+
+#applicationSettingsElderButton {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/data2.png");
     -fx-background-size: 250, 250;
 }
-#applicationSettingsElderLabel
-{
+
+#applicationSettingsElderLabel {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
 }
-#modsSettingsElderButton
-{
+
+#modsSettingsElderButton {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/settings2.png");
     -fx-background-size: 150, 150;
 }
-#modsSettingsElderLabel
-{
+
+#modsSettingsElderLabel {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
 }
-#themeSettingsElderButton
-{
+
+#themeSettingsElderButton {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/smart-house2.png");
     -fx-background-size: 150, 150;
 }
-#themeSettingsElderLabel
-{
+
+#themeSettingsElderLabel {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
 }
-#usersSettingsElderButton
-{
+
+#usersSettingsElderButton {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/couple2.png");
     -fx-background-size: 150, 150;
 }
-#usersSettingsElderLabel
-{
+
+#usersSettingsElderLabel {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
 }
-#timeConfigurationElderButton
-{
+
+#timeConfigurationElderButton {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/bulkChange5.png");
     -fx-background-size: 250, 250;
 }
-#homeSettingsElderLabel
-{
+
+#homeSettingsElderLabel {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
 }
-#languageSettingsElderButton
-{
+
+#languageSettingsElderButton {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/language2.png");
     -fx-background-size: 150, 150;
 }
-#languageSettingsElderLabel
-{
+
+#languageSettingsElderLabel {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
 }
-#emergencySettingsElderButton
-{
+
+#emergencySettingsElderButton {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/siren2.png");
     -fx-background-size: 150, 150;
 }
-#emergencySettingsElderLabel
-{
+
+#emergencySettingsElderLabel {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
 }
-#notificationSettingsElderButton
-{
+
+#notificationSettingsElderButton {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/notification2.png");
     -fx-background-size: 150, 150;
 }
-#notificationSettingsElderLabel
-{
+
+#notificationSettingsElderLabel {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
 }
-#connectionSettingsElderButton
-{
+
+#connectionSettingsElderButton {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/connection3.png");
     -fx-background-size: 150, 150;
 }
-#connectionSettingsElderLabel
-{
+
+#connectionSettingsElderLabel {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
 }
-#userSettingsChangeSave
-{
-    //-fx-background-color: #179C52;
+
+#userSettingsChangeSave {
+/ / -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/floppy-disk2.png");
     -fx-background-size: 100, 100;
 }
-#userSettingsChangeBackButton
-{
+
+#userSettingsChangeBackButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 100, 100;
 }
-#userSettingsChangeInfoButton
-{
+
+#userSettingsChangeInfoButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrows2.png");
     -fx-background-size: 150, 150;
 }
-#userSettingsUPChangeButton
-{
+
+#userSettingsUPChangeButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/settingsUser2.png");
     -fx-background-size: 150, 150;
 }
-#userSettingsPanelTwoChangeSaveButton
-{
-//-fx-background-color: #179C52;
+
+#userSettingsPanelTwoChangeSaveButton {
+/ / -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/floppy-disk2.png");
     -fx-background-size: 100, 100;
 }
-#userSettingsPanelTwoChangeBackButton
-{
+
+#userSettingsPanelTwoChangeBackButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 100, 100;
 }
-#aquariumButtonElder
-{
+
+#aquariumButtonElder {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/animals2.png");
     -fx-background-size: 200, 200;
 }
-#aquariumLabelElder
-{
+
+#aquariumLabelElder {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
 }
-#greenhouseButtonElder
-{
+
+#greenhouseButtonElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/plants2.png");
     -fx-background-size: 200, 200;
 }
-#greenhouseLabelElder
-{
+
+#greenhouseLabelElder {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
 }
-#gasButtonElder
-{
+
+#gasButtonElder {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/pipe2.png");
     -fx-background-size: 200, 200;
 }
-#gasLabelElder
-{
+
+#gasLabelElder {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
 }
-#doorButtonElder
-{
+
+#doorButtonElder {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/buildings2.png");
     -fx-background-size: 200, 200;
 }
-#doorLabelElder
-{
+
+#doorLabelElder {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
 }
-#aquariumPanelElderCloseButton
-{
+
+#aquariumPanelElderCloseButton {
     -fx-background-color: #176BEF;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#gasPanelElderCloseButton
-{
+
+#gasPanelElderCloseButton {
     -fx-background-color: #F7B529;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#doorPanelElderCloseButton
-{
+
+#doorPanelElderCloseButton {
     -fx-background-color: #179C52;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#greenhousePanelElderCloseButton
-{
+
+#greenhousePanelElderCloseButton {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/arrow5.png");
     -fx-background-size: 58, 58;
 }
-#aquariumSaveButton
-{
+
+#aquariumSaveButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/floppy-disk2.png");
     -fx-background-size: 120, 120;
 }
-#aquariumPanelElderSettingsButton
-{
+
+#aquariumPanelElderSettingsButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
-#electricityPanelElderSettingsButton
-{
+
+#electricityPanelElderSettingsButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
-#greenhousePanelElderSettingsButton
-{
+
+#greenhousePanelElderSettingsButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
-#gasPanelElderSettingsButton
-{
+
+#gasPanelElderSettingsButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/cogwheel3.png");
     -fx-background-size: 58, 58;
 }
-#turkishElderButton
-{
+
+#turkishElderButton {
     -fx-border-radius: 100;
     -fx-background-image: url("imagesElder/tr.png");
     -fx-background-size: 250, 250;
 }
-#turkishElderButtonSubLabelActive
-{
+
+#turkishElderButtonSubLabelActive {
     -fx-background-color: #FF3E30;
     -fx-background-radius: 25;
 }
-#englishElderButton
-{
+
+#englishElderButton {
     -fx-border-radius: 100;
     -fx-background-image: url("imagesElder/uk.png");
     -fx-background-size: 250, 250;
 }
-#englishElderButtonSubLabelActive
-{
+
+#englishElderButtonSubLabelActive {
     -fx-background-color: #176BEF;
     -fx-background-radius: 25;
 }
-#elderLogoutButton
-{
+
+#elderLogoutButton {
     -fx-border-radius: 5;
     -fx-background-image: url("imagesElder/logout1.png");
     -fx-background-size: 60, 60;
 }
-#nextPageHouseSettings
-{
+
+#nextPageHouseSettings {
     -fx-border-radius: 5;
     -fx-background-image: url("imagesElder/arrow4Extra.png");
     -fx-background-size: 52, 52;
 }
-#returnPageHouseSettings
-{
+
+#returnPageHouseSettings {
     -fx-border-radius: 5;
     -fx-background-image: url("imagesElder/arrow4.png");
     -fx-background-size: 52, 52;
 }
-#dateTimeSaveButton
-{
+
+#dateTimeSaveButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/floppy-disk2.png");
     -fx-background-size: 100, 100;
 }
-#menuAquariumFeedButton
-{
+
+#menuAquariumFeedButton {
     -fx-background-radius: 5;
     -fx-background-image: url("imagesElder/feeding5.png");
     -fx-background-size: 60, 60;
 }
-#portConnectionButtonElder
-{
+
+#portConnectionButtonElder {
     -fx-background-radius: 5;
     -fx-background-image: url("images/connection5.png");
     -fx-background-size: 100, 100;
 }
-#bluetoothButton
-{
+
+#bluetoothButton {
     -fx-background-radius: 5;
     -fx-background-image: url("images/connection5.png");
     -fx-background-size: 100, 100;
