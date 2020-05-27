@@ -41,6 +41,11 @@ import java.util.ResourceBundle;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+/**
+ * Elder Main Panel Class
+ * @author Metehan Saçakçı
+ * @version 27.05.2020
+ */
 
 public class ElderMainPanel implements Initializable {
    //properties
@@ -850,7 +855,8 @@ public class ElderMainPanel implements Initializable {
                         e.printStackTrace();
                      }
                      out = new StringBuilder( out.toString().replaceAll( "\\s", "" ) );
-                     out = new StringBuilder( out.toString().replace( "\n", "" ).replace( "\r", "" ) );
+                     out = new StringBuilder( out.toString().replace( "\n", "" ).replace
+                             ( "\r", "" ) );
 
 
                      if( out.length() > 0 ) {
@@ -1065,7 +1071,8 @@ public class ElderMainPanel implements Initializable {
                message.append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getHour() );
 
             if( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() < 10 )
-               message.append( "0" ).append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() ).append( "00" );
+               message.append( "0" ).append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() )
+                       .append( "00" );
             else
                message.append( dailyAirEngineRunTimeandStartTimeTimePicker.getValue().getMinute() ).append( "00" );
 
@@ -1077,8 +1084,10 @@ public class ElderMainPanel implements Initializable {
             if( isArduinoConnect )
                home.getAquarium().setAquariumSettings( message.toString() );
 
-            CommonSettingData.getInstance().updateAquariumSettings( commonSetting, message.toString().substring( 9, 31 ) );
-            CommonSettingData.getInstance().updateSelectedFishes( commonSetting, speciesOfFishCheckComboBox.getItems() );
+            CommonSettingData.getInstance().updateAquariumSettings( commonSetting, message.toString().substring
+                    ( 9, 31 ) );
+            CommonSettingData.getInstance().updateSelectedFishes( commonSetting, speciesOfFishCheckComboBox.
+                    getItems() );
          }
       }
       else if( event.getSource() == timeConfigurationBackButton )
@@ -1274,7 +1283,8 @@ public class ElderMainPanel implements Initializable {
    }
 
    /**
-    * This method make it possible to change user. It simply close the ElderMainPanel.java and opens the loginPanel.java.
+    * This method make it possible to change user. It simply close the ElderMainPanel.java and opens
+    * the loginPanel.java.
     * @param event
     */
    @FXML
@@ -1300,9 +1310,12 @@ public class ElderMainPanel implements Initializable {
    @FXML
    void saveUserPrivInfoChanges( ActionEvent event ) throws SQLException {
       User user;
-      if( userSettingsUNElderChangeText.getText( ).length( ) > 0 && userSettingsPasswordChangeElderTextCurrent.getText( ).length( ) > 0 && userSettingsPasswordChangeElderNewText.getText( ).length( ) > 0 && userSettingsPasswordChangeElderNewConfirmText.getText( ).length( ) > 0 ) {
+      if( userSettingsUNElderChangeText.getText( ).length( ) > 0 && userSettingsPasswordChangeElderTextCurrent.
+              getText( ).length( ) > 0 && userSettingsPasswordChangeElderNewText.getText( ).length( ) > 0 &&
+              userSettingsPasswordChangeElderNewConfirmText.getText( ).length( ) > 0 ) {
          //for database
-         if( !userSettingsPasswordChangeElderNewText.getText( ).equals( userSettingsPasswordChangeElderNewConfirmText.getText( ) ) ) {
+         if( !userSettingsPasswordChangeElderNewText.getText( ).equals( userSettingsPasswordChangeElderNewConfirmText.
+                 getText( ) ) ) {
             //privateInfoWarning.setVisible(true);
             //privateInfoWarning.setText("PASSWORDS ARE NOT SAME");
          } else if( !userSettingsPasswordChangeElderTextCurrent.getText( ).equals( loginUser.getPassword( ) ) ) {
@@ -1310,7 +1323,8 @@ public class ElderMainPanel implements Initializable {
             //privateInfoWarning.setText("CURRENT PASSWORD IS WRONG");
          } else {
             //privateInfoWarning.setVisible(false);
-            Users.getInstance( ).updatePrivateInfo( loginUser, userSettingsUNElderChangeText.getText( ), userSettingsPasswordChangeElderNewText.getText( ) );
+            Users.getInstance( ).updatePrivateInfo( loginUser, userSettingsUNElderChangeText.getText( ),
+                    userSettingsPasswordChangeElderNewText.getText( ) );
 
             userTextFieldController( loginUser );
             //userPreferenceUpdate(loginUser);
@@ -1904,7 +1918,8 @@ public class ElderMainPanel implements Initializable {
          englishElderButtonSubLabelActive.setText( bundle.getString("englishElderButtonSubLabelLang" ) );
          turkishElderButtonSubLabelPassive.setText( bundle.getString("turkishElderButtonSubLabelLang" ));
          turkishElderButtonSubLabelActive.setText( bundle.getString("turkishElderButtonSubLabelLang" ) );
-         languageElderPanelBackButtonSubLabel.setText( bundle.getString("languageElderPanelBackButtonSubLabelLang" ));
+         languageElderPanelBackButtonSubLabel.setText( bundle.getString("languageElderPanelBackButtonSubLabelLang"
+         ));
          homeSettingsElderLabel.setText( bundle.getString( "timeConfigurationLang" ));
          timeConfigurationFirstLabel.setText( bundle.getString( "timeConfigurationFirstLabelLang" ) );
          timeConfigurationBackButton.setText( bundle.getString( "getBackButtonLang" ) );
@@ -1914,10 +1929,12 @@ public class ElderMainPanel implements Initializable {
          smokeSensorLabel.setText( bundle.getString( "smokeSensor" ) );
          visualWarningLabel.setText( bundle.getString( "visualWarningLang" ) );
          auditoryWarningLabel.setText( bundle.getString( "auditoryWarning" ) );
-         notificationElderPanelBackButtonSubLabel.setText( bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
+         notificationElderPanelBackButtonSubLabel.setText(
+                 bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
          notificationPanelFirstLabelElder.setText( bundle.getString( "notificationPanelFirstLabelElderLang" ) );
          connectionElderPanelBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
-         connectionElderPanelBackButtonSubLabel.setText( bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
+         connectionElderPanelBackButtonSubLabel.setText(
+                 bundle.getString( "languageElderPanelBackButtonSubLabelLang" ) );
          connectionPanelFirstLabelElder.setText( bundle.getString( "connectionPanelFirstLabelElderLang" ) );
          greenhouseMenuFirstLabelElder.setText( bundle.getString( "greenhouseMenuFirstLabelElderLang" ) );
          greenhouseMenuBackButtonElder.setText( bundle.getString( "getBackButtonLang" ) );
