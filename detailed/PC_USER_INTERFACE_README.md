@@ -4,7 +4,7 @@
 > Note: After the Java 8, module system came to Java. Because we have written 
 this code in JDK v1.8.0 we don't use this module system.Moreover, after the Java 9 javafx library is removed from default. Therefore when 
 you are running program in intelliJ, Please use JDK 1.8(Any java 8' JDK )(In intelliJ v2020.1,
-you can download all JDK versions). However if you use Java JDK which is publish after the Java 8, you need to follow this steps(First step is valid for only after the java 10);
+you can download all JDK versions). However if you use Java JDK which is publish after the Java 8, you need to follow this steps(Second step is valid for only after the java 10);
 
 1) Instead of dealing with all this, you can download java JDK 1.8 version and choose it from the project sdk. Or you can follow the steps 2-6.
 

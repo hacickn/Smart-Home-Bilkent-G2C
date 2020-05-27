@@ -17,7 +17,7 @@ To experince pc user interface, PLEASE read Its README file.
 - [Pc User Application](detailed/PC_USER_INTERFACE_README.md)
 - [Android User Application](detailed/ANDROID_USER_INTERFACE_README.md)
 - [Arduino](detailed/ARDUINO_README.md)
-- [Proteus](detailed/PROTEUS_README.md)
+- Proteus
 > What We did until now is written in these files seperately.
 
 ## Project Status

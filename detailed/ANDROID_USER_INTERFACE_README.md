@@ -1,7 +1,12 @@
 # Smart Home Bilkent G2C
 ## Android Application
 > (Until Today)
-To experience the program there are for users in the program( Each user type has different features ).
+To experience the app, follow these steps;
+1)open the smarthome_v2 folder which is under androidApp folder with Android Studio.
+2)If you don't have suitable sdk, download it in android studio
+3)Build program and synchronize the gradle file if it did not
+4)Wait all progress to be done,then run the app
+5)You can register and start to use program
 
 
 #### Materials Used
@@ -62,11 +67,3 @@ used by somenone, program doesn't permit to do that.
 1) To communicate with database, Firebase is used.
 
 ```
-
-
-   }
-   
-   printWriter = new PrintWriter( comPort.getOutputStream() );
-   printWriter.print( string );
-   printWriter.flush();
-}
