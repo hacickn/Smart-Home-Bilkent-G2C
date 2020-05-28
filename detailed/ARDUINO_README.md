@@ -2,6 +2,7 @@
 ## Arduino
 > (updating..)
 İlke Doğan	21702215
+ilke.dogan@ug.bilkent.edu.tr
 
 ### When you upload this program, Arduino, you may get the error of library. The steps;
 
@@ -23,6 +24,7 @@
 
  
 ### It works with the program Proteus. When the user open Proteus, Arduino, and PC Interface together, the user should open all the programs at the same time and use these commands through Proteus.
+### Proteus is not in this file, to reach this it can be send thorugh the email that is given on the top of the page.
 ### Is it manuel ?
 
 ```
@@ -283,9 +285,3 @@ return sum;
 * [DS1307RTC](https://www.arduinolibraries.info/libraries/ds1307-rtc)
 * [SHT21](https://forum.arduino.cc/index.php?topic=557338.0)
 * [DHT](https://www.arduinolibraries.info/libraries/dht-sensor-library)
-
-#### Features
-##### Program Features
-```
-* To
-```
