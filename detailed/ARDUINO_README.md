@@ -6,6 +6,8 @@ ilke.dogan@ug.bilkent.edu.tr
 
 ### When you upload this program, Arduino, you may get the error of library. The steps;
 
+>It works only with circuit.Therefore you need a circuit or simulation to run arduino code
+
 ### Instruction to set-up Arduino to your computer
 - Download the Smart_home_Arduino file
 - Open in your computer, then go into Smart_home_Arduino file
