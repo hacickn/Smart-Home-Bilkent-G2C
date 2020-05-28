@@ -6,7 +6,7 @@ this code in JDK v1.8.0 we don't use this module system.Moreover, after the Java
 you are running program in intelliJ, Please use JDK 1.8(Any java 8' JDK )(In intelliJ v2020.1,
 you can download all JDK versions). However if you use Java JDK which is publish after the Java 8, you need to follow this steps(Second step is valid for only after the java 10);
 
-1) Instead of dealing with all this, you can download java JDK 1.8 version and choose it from the project sdk. Or you can follow the steps 2-6.
+1) Instead of dealing with all this, you can download java JDK 1.8 version and choose it from the project sdk. Or you can follow the steps 2-6.If you use java 8, you can move on step 7.
 
 2)[Go Gluon website](https://gluonhq.com/products/javafx/) and find suitable version for your JDK version and download it and add these libraries to project in project structere.
 3) You have to add following codes to your module-info.java 
@@ -27,6 +27,8 @@ module ProjectName{
 --add-exports javafx.base/com.sun.javafx.event=com.jfoenix
 ```
 6) Add others libraries as a maven library. Maven links of each libraries can be found in the their github pages. You can reach these pages links which are below.Hopefully it should work.
+
+7) Rebuild project and run.
 ---
 
 >To experience the program there are for users in the program( Each user type has different features ).
