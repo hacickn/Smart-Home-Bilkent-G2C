@@ -449,7 +449,7 @@ public class ElderMainPanel implements Initializable {
       new Thread( new Runnable() {
          @Override
          public void run() {
-            while(!exit){
+            while( !exit ){
                Platform.runLater( new Runnable() {
                   @Override
                   public void run() {
@@ -775,11 +775,11 @@ public class ElderMainPanel implements Initializable {
       }
       else if( event.getSource() == elderLogoutButton )
       {
-         Platform.exit();
-         exit = true;
-
          if( isArduinoConnect )
             home.getArduino().closeConnection();
+         Platform.exit();
+         exit = true;
+         System.exit( 0 );
       }
       else if( event.getSource( ) == settingsButtonElder )
       {

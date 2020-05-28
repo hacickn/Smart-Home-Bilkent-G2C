@@ -1,703 +1,852 @@
-.root{
+.root {
     -fx-background-image: url("images/forest.jpg");
     -fx-background-size: cover;
 }
-.menuBorderPane{
-           -fx-background-color:#c6ecd7;
-           -fx-border-color: #3d5214;
-}
-.homeFacilityPane{
-       -fx-background-color: #ecf9f4;
-      -fx-border-color:#3d5214;
- }
- .userInfoPane{
-        -fx-background-color:#c6ecd7 ;
-        -fx-border-color: #3d5214;
- }
- .settingBorderPane{
-        -fx-background-color: #ecf9f4;
-        -fx-border-color:#3d5214;
- }
- .settingFacilitiesPane{
-        -fx-background-color: #c6ecd7;
-       -fx-border-color: #3d5214;
-  }
-.userProfileButtonBoy{
-           -fx-background-image: url("images/userSetting5.png");
-           -fx-background-size: cover;
-}
-.userProfileButtonBoy:hover{
-           -fx-background-image: url("images/userSetting4.png");
-           -fx-background-size: cover;
-}
-.userProfileButtonBoyActive{
-           -fx-background-image: url("images/userSetting4.png");
-           -fx-background-size: cover;
-}
-.menuButton{
-           -fx-background-image: url("images/menu5.png");
-           -fx-background-size: cover;
-}
-.menuButton:hover{
-           -fx-background-image: url("images/menu4.png");
-           -fx-background-size: cover;
-}
-.menuButtonActive{
-           -fx-background-image: url("images/menu4.png");
-           -fx-background-size: cover;
-}
-.settingButton{
-           -fx-background-image: url("images/engineer5.png");
-           -fx-background-size: cover;
-}
-.settingButton:hover{
-           -fx-background-image: url("images/engineer4.png");
-           -fx-background-size: cover;
-}
-.settingButtonActive{
-           -fx-background-image: url("images/engineer4.png");
-           -fx-background-size: cover;
-}
-.logoutButton{
-           -fx-background-image: url("images/logout5.png");
-           -fx-background-size: cover;
-}
-.logoutButton:hover{
-           -fx-background-image: url("images/logout4.png");
-           -fx-background-size: cover;
-}
-.elecButtonActive{
-           -fx-background-image: url("images/elec4.png");
-           -fx-background-size: cover;
-}
-.greenHouseActive{
-           -fx-background-image: url("images/greenhouse4.png");
-           -fx-background-size: cover;
-}
-.gasButtonActive{
-           -fx-background-image: url("images/gas4.png");
-           -fx-background-size: cover;
-}
-.rfidActive{
-           -fx-background-image: url("images/rfid4.png");
-            -fx-background-size: cover;
- }
-.waterButtonActive{
-           -fx-background-image: url("images/water4.png");
-           -fx-background-size: cover;
-}
-.aquariumButtonActive{
-           -fx-background-image: url("images/aquarium4.png");
-           -fx-background-size: cover;
-}
-.elecButton{
-           -fx-background-image: url("images/elec5.png");
-           -fx-background-size: cover;
-}
-.elecButton:hover{
-           -fx-background-image: url("images/elec4.png");
-           -fx-background-size: cover;
-}
-.doorButton{
-           -fx-background-image: url("images/door5.png");
-           -fx-background-size: cover;
-}
-.doorButton:hover{
-           -fx-background-image: url("images/door4.png");
-           -fx-background-size: cover;
-}
-.lightButton{
-           -fx-background-image: url("images/idea5.png");
-           -fx-background-size: cover;
-}
-.lightButton:hover{
-           -fx-background-image: url("images/idea4.png");
-           -fx-background-size: cover;
-}
-.lightButtonActive{
-           -fx-background-image: url("images/idea4.png");
-           -fx-background-size: cover;
-}
-.bulkChangeButton{
-           -fx-background-image: url("images/bulkChange5.png");
-           -fx-background-size: cover;
-}
-.bulkChangeButton:hover{
-           -fx-background-image: url("images/bulkChange4.png");
-           -fx-background-size: cover;
-}
-.timeConfigurationButton{
-           -fx-background-image: url("images/data5.png");
-           -fx-background-size: cover;
-}
-.timeConfigurationButton:hover{
-           -fx-background-image: url("images/data4.png");
-           -fx-background-size: cover;
-}
-.greenHouse{
-           -fx-background-image: url("images/greenhouse5.png");
-           -fx-background-size: cover;
-}
-.greenHouse:hover{
-           -fx-background-image: url("images/greenhouse4.png");
-           -fx-background-size: cover;
-}
-.gasButton{
-           -fx-background-image: url("images/gas5.png");
-           -fx-background-size: cover;
-}
-.gasButton:hover{
-           -fx-background-image: url("images/gas4.png");
-           -fx-background-size: cover;
-}
-.waterButton{
-           -fx-background-image: url("images/water5.png");
-           -fx-background-size: cover;
-}
-.waterButton:hover{
-           -fx-background-image: url("images/water4.png");
-           -fx-background-size: cover;
-}
-.aquariumButton{
-           -fx-background-image: url("images/aquarium5.png");
-           -fx-background-size: cover;
-}
-.aquariumButton:hover{
-           -fx-background-image: url("images/aquarium4.png");
-           -fx-background-size: cover;
-}
-.rfid{
-           -fx-background-image: url("images/rfid5.png");
-            -fx-background-size: cover;
- }
-.rfid:hover{
-           -fx-background-image: url("images/rfid4.png");
-           -fx-background-size: cover;
- }
-.coolerButton{
-           -fx-background-image: url("images/airconditioner5.png");
-           -fx-background-size: cover;
-}
-.coolerButton:hover{
-           -fx-background-image: url("images/airconditioner4.png");
-           -fx-background-size: cover;
+
+.menuBorderPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #3d5214;
 }
 
-.connectionButton{
-        -fx-background-image: url("images/connection5.png");
-        -fx-background-size: cover;
+.homeFacilityPane {
+    -fx-background-color: #ecf9f4;
+    -fx-border-color: #3d5214;
 }
-.connectionButton:hover{
-        -fx-background-image: url("images/connection4.png");
-        -fx-background-size: cover;
+
+.userInfoPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #3d5214;
 }
-.temperatureButton{
-        -fx-image: url("images/cold5.png");
-         -fx-background-size: cover;
+
+.settingBorderPane {
+    -fx-background-color: #ecf9f4;
+    -fx-border-color: #3d5214;
 }
-.temperatureButton:hover{
-        -fx-image: url("images/cold4.png");
-        -fx-background-size: cover;
- }
-  .weather{
-          -fx-background-image: url("images/cloudy5.png");
-           -fx-background-size: cover;
-  }
-  .weather:hover{
-          -fx-background-image: url("images/cloudy4.png");
-          -fx-background-size: cover;
-   }
-   .weatherActive{
-              -fx-background-image: url("images/cloudy4.png");
-               -fx-background-size: cover;
-   }
-.tempLabel{
-      -fx-text-fill: #136c68;
-    -fx-font-family:  'Patrick Hand', cursive;
-          -fx-font-size: 18px;
- }
-  .aquariumSettingsLabel{
-        -fx-text-fill: #136c68;
-        -fx-font-family:  'Patrick Hand', cursive;
-        -fx-font-size: 14px;
-   }
-   .timePickerAquarium{
-        -jfx-default-color: #b85c00;
-        -fx-text-fill: #136c68;
-        -fx-font-family:  'Patrick Hand', cursive;
-        -fx-font-size: 13px;
-   }
-     .timePicker{
-          -jfx-default-color: #b85c00;
-          -fx-text-fill: #136c68;
-          -fx-font-family:  'Patrick Hand', cursive;
-          -fx-font-size: 13px;
-     }
-.tempValueLabel{
-    -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-border-color: black;
+
+.settingFacilitiesPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #3d5214;
 }
-.connectionInfo{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill: darkRed;
- }
-.contextPassiveTop{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill: #136c68;
-      -fx-font-size: 35px;
- }
- .contextPassiveSub{
-     -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-font-size: 20px;
-  }
-.contextActiveTop{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill:darkGreen;
-      -fx-font-size: 35px;
+
+.userProfileButtonBoy {
+    -fx-background-image: url("images/userSetting5.png");
+    -fx-background-size: cover;
 }
-.contextActiveSub{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill:darkGreen;
-             -fx-font-size: 20px;
+
+.userProfileButtonBoy:hover {
+    -fx-background-image: url("images/userSetting4.png");
+    -fx-background-size: cover;
 }
-.toggleButtons{
-    -jfx-toggle-color: darkGreen;
-    -jfx-untoggle-color: black;
+
+.userProfileButtonBoyActive {
+    -fx-background-image: url("images/userSetting4.png");
+    -fx-background-size: cover;
 }
-.toggleButtonsMiddle{
-    -jfx-toggle-color: darkGreen;
-    -jfx-untoggle-color: black;
-    -fx-text-fill:#136c68;
-    -fx-font-family:  'Patrick Hand', cursive;
+
+.menuButton {
+    -fx-background-image: url("images/menu5.png");
+    -fx-background-size: cover;
+}
+
+.menuButton:hover {
+    -fx-background-image: url("images/menu4.png");
+    -fx-background-size: cover;
+}
+
+.menuButtonActive {
+    -fx-background-image: url("images/menu4.png");
+    -fx-background-size: cover;
+}
+
+.settingButton {
+    -fx-background-image: url("images/engineer5.png");
+    -fx-background-size: cover;
+}
+
+.settingButton:hover {
+    -fx-background-image: url("images/engineer4.png");
+    -fx-background-size: cover;
+}
+
+.settingButtonActive {
+    -fx-background-image: url("images/engineer4.png");
+    -fx-background-size: cover;
+}
+
+.logoutButton {
+    -fx-background-image: url("images/logout5.png");
+    -fx-background-size: cover;
+}
+
+.logoutButton:hover {
+    -fx-background-image: url("images/logout4.png");
+    -fx-background-size: cover;
+}
+
+.elecButtonActive {
+    -fx-background-image: url("images/elec4.png");
+    -fx-background-size: cover;
+}
+
+.greenHouseActive {
+    -fx-background-image: url("images/greenhouse4.png");
+    -fx-background-size: cover;
+}
+
+.gasButtonActive {
+    -fx-background-image: url("images/gas4.png");
+    -fx-background-size: cover;
+}
+
+.rfidActive {
+    -fx-background-image: url("images/rfid4.png");
+    -fx-background-size: cover;
+}
+
+.waterButtonActive {
+    -fx-background-image: url("images/water4.png");
+    -fx-background-size: cover;
+}
+
+.aquariumButtonActive {
+    -fx-background-image: url("images/aquarium4.png");
+    -fx-background-size: cover;
+}
+
+.elecButton {
+    -fx-background-image: url("images/elec5.png");
+    -fx-background-size: cover;
+}
+
+.elecButton:hover {
+    -fx-background-image: url("images/elec4.png");
+    -fx-background-size: cover;
+}
+
+.doorButton {
+    -fx-background-image: url("images/door5.png");
+    -fx-background-size: cover;
+}
+
+.doorButton:hover {
+    -fx-background-image: url("images/door4.png");
+    -fx-background-size: cover;
+}
+
+.lightButton {
+    -fx-background-image: url("images/idea5.png");
+    -fx-background-size: cover;
+}
+
+.lightButton:hover {
+    -fx-background-image: url("images/idea4.png");
+    -fx-background-size: cover;
+}
+
+.lightButtonActive {
+    -fx-background-image: url("images/idea4.png");
+    -fx-background-size: cover;
+}
+
+.bulkChangeButton {
+    -fx-background-image: url("images/bulkChange5.png");
+    -fx-background-size: cover;
+}
+
+.bulkChangeButton:hover {
+    -fx-background-image: url("images/bulkChange4.png");
+    -fx-background-size: cover;
+}
+
+.timeConfigurationButton {
+    -fx-background-image: url("images/data5.png");
+    -fx-background-size: cover;
+}
+
+.timeConfigurationButton:hover {
+    -fx-background-image: url("images/data4.png");
+    -fx-background-size: cover;
+}
+
+.greenHouse {
+    -fx-background-image: url("images/greenhouse5.png");
+    -fx-background-size: cover;
+}
+
+.greenHouse:hover {
+    -fx-background-image: url("images/greenhouse4.png");
+    -fx-background-size: cover;
+}
+
+.gasButton {
+    -fx-background-image: url("images/gas5.png");
+    -fx-background-size: cover;
+}
+
+.gasButton:hover {
+    -fx-background-image: url("images/gas4.png");
+    -fx-background-size: cover;
+}
+
+.waterButton {
+    -fx-background-image: url("images/water5.png");
+    -fx-background-size: cover;
+}
+
+.waterButton:hover {
+    -fx-background-image: url("images/water4.png");
+    -fx-background-size: cover;
+}
+
+.aquariumButton {
+    -fx-background-image: url("images/aquarium5.png");
+    -fx-background-size: cover;
+}
+
+.aquariumButton:hover {
+    -fx-background-image: url("images/aquarium4.png");
+    -fx-background-size: cover;
+}
+
+.rfid {
+    -fx-background-image: url("images/rfid5.png");
+    -fx-background-size: cover;
+}
+
+.rfid:hover {
+    -fx-background-image: url("images/rfid4.png");
+    -fx-background-size: cover;
+}
+
+.coolerButton {
+    -fx-background-image: url("images/airconditioner5.png");
+    -fx-background-size: cover;
+}
+
+.coolerButton:hover {
+    -fx-background-image: url("images/airconditioner4.png");
+    -fx-background-size: cover;
+}
+
+.connectionButton {
+    -fx-background-image: url("images/connection5.png");
+    -fx-background-size: cover;
+}
+
+.connectionButton:hover {
+    -fx-background-image: url("images/connection4.png");
+    -fx-background-size: cover;
+}
+
+.temperatureButton {
+    -fx-image: url("images/cold5.png");
+    -fx-background-size: cover;
+}
+
+.temperatureButton:hover {
+    -fx-image: url("images/cold4.png");
+    -fx-background-size: cover;
+}
+
+.weather {
+    -fx-background-image: url("images/cloudy5.png");
+    -fx-background-size: cover;
+}
+
+.weather:hover {
+    -fx-background-image: url("images/cloudy4.png");
+    -fx-background-size: cover;
+}
+
+.weatherActive {
+    -fx-background-image: url("images/cloudy4.png");
+    -fx-background-size: cover;
+}
+
+.tempLabel {
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
     -fx-font-size: 18px;
 }
-.permissionButtonsMiddle{
+
+.aquariumSettingsLabel {
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-font-size: 14px;
+}
+
+.timePickerAquarium {
+    -jfx-default-color: #b85c00;
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-font-size: 13px;
+}
+
+.timePicker {
+    -jfx-default-color: #b85c00;
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-font-size: 13px;
+}
+
+.tempValueLabel {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-border-color: black;
+}
+
+.connectionInfo {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: darkRed;
+}
+
+.contextPassiveTop {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 35px;
+}
+
+.contextPassiveSub {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 20px;
+}
+
+.contextActiveTop {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: darkGreen;
+    -fx-font-size: 35px;
+}
+
+.contextActiveSub {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: darkGreen;
+    -fx-font-size: 20px;
+}
+
+.toggleButtons {
     -jfx-toggle-color: darkGreen;
     -jfx-untoggle-color: black;
-    -fx-text-fill:#136c68;
-    -fx-font-family:  'Patrick Hand', cursive;
+}
+
+.toggleButtonsMiddle {
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-font-size: 18px;
+}
+
+.permissionButtonsMiddle {
+    -jfx-toggle-color: darkGreen;
+    -jfx-untoggle-color: black;
+    -fx-text-fill: #136c68;
+    -fx-font-family: 'Patrick Hand', cursive;
     -fx-font-size: 15px;
 }
-.contextDetailPassive{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill: #136c68;
-      -fx-border-color: #136c68;
-       -fx-font-size: 20px;
- }
-.contextDetailActive{
-    -fx-font-family:  'Patrick Hand', cursive;
-      -fx-text-fill:darkGreen;
-      -fx-border-color: darkGreen;
-       -fx-font-size: 20px;
+
+.contextDetailPassive {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-border-color: #136c68;
+    -fx-font-size: 20px;
 }
-.gearPassive{
+
+.contextDetailActive {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: darkGreen;
+    -fx-border-color: darkGreen;
+    -fx-font-size: 20px;
+}
+
+.gearPassive {
     -fx-background-image: url("images/gear5.png");
     -fx-background-size: cover;
 }
-.gearPassive:hover{
+
+.gearPassive:hover {
     -fx-background-image: url("images/gear4.png");
     -fx-background-size: cover;
 }
-.gearActive{
+
+.gearActive {
     -fx-background-image: url("images/gear5.png");
     -fx-background-size: cover;
 }
-.gearActive:hover{
+
+.gearActive:hover {
     -fx-background-image: url("images/gear4.png");
     -fx-background-size: cover;
 }
-.userInfoChange{
+
+.userInfoChange {
     -fx-background-image: url("images/change5.png");
     -fx-background-size: cover;
 }
-.userInfoChange:hover{
+
+.userInfoChange:hover {
     -fx-background-image: url("images/change4.png");
     -fx-background-size: cover;
 }
-.userChange{
-     -fx-background-image: url("images/userChange5.png");
-     -fx-background-size: cover;
+
+.userChange {
+    -fx-background-image: url("images/userChange5.png");
+    -fx-background-size: cover;
 }
-.userChange:hover{
-     -fx-background-image: url("images/userChange4.png");
-     -fx-background-size: cover;
+
+.userChange:hover {
+    -fx-background-image: url("images/userChange4.png");
+    -fx-background-size: cover;
 }
-.changeUserInfoPane{
-      -fx-background-color: #9fdfbb;
-      -fx-border-color: #3d5214;
+
+.changeUserInfoPane {
+    -fx-background-color: #9fdfbb;
+    -fx-border-color: #3d5214;
 }
-.changeUserInfoSave{
+
+.changeUserInfoSave {
     -fx-background-image: url("images/save5.png");
     -fx-background-size: cover;
 }
-.changeUserInfoSave:hover{
+
+.changeUserInfoSave:hover {
     -fx-background-image: url("images/save4.png");
     -fx-background-size: cover;
 }
-.changeUserInfoBack{
+
+.changeUserInfoBack {
     -fx-background-image: url("images/arrow5.png");
     -fx-background-size: cover;
 }
-.changeUserInfoBack:hover{
+
+.changeUserInfoBack:hover {
     -fx-background-image: url("images/arrow4.png");
     -fx-background-size: cover;
 }
-.changeUserInfoTextField{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #136c68;
-     -jfx-focus-color:#DB7093;
-     -jfx-unfocus-color: black;
-     -fx-font-size: 12px;
-}
-.addUserInfoTextField{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #136c68;
-     -jfx-focus-color:#DB7093;
-     -jfx-unfocus-color: black;
-     -fx-font-size: 14px;
-}
-.changeUserWeather{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #136c68;
-     -jfx-focus-color:darkGreen;
-     -jfx-unfocus-color: #ffe100;
-     -fx-font-size: 20
 
-}
-.changeUserInforRadioButton{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#DB7093;
-     -jfx-unselected-color: black;
-     -fx-font-size: 12px;
-}
-.bulkChangesRadioButton{
- -fx-font-family:  'Patrick Hand', cursive;
-     -jfx-selected-color:#136c68;
-     -jfx-unselected-color: black;
-     -fx-font-size: 10px;
-      -fx-text-fill: #136c68;
-}
-.changeUserInfoLabels{
-    -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-  -fx-font-size:20px;
-}
-.changeUserSubInfoLabels{
-    -fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-font-size:13px;
-}
-.settingsTopLabels{
--fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-font-size:27px;
-}
-.settingMiddleLabels{
--fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-font-size:18px;
-}
-.settingLittleLabels{
--fx-font-family:  'Patrick Hand', cursive;
-       -fx-text-fill: #136c68;
-       -fx-font-size:14px;
-}
-.addUserLabel{
-    -fx-font-family:  'Oswald', sans-serif;
-       -fx-text-fill: #136c68;
-       -fx-font-size:15px;
+.changeUserInfoTextField {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -jfx-focus-color: #DB7093;
+    -jfx-unfocus-color: black;
+    -fx-font-size: 12px;
 }
 
-.userInfoTextField{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #136c68;
-     -jfx-focus-color:#b85c00;
-     -jfx-unfocus-color: black;
-         -fx-font-size: 14px;
-}
-.applicationSettings{
-     -fx-background-image: url("images/monitor5.png");
-     -fx-background-size: cover;
-}
-.applicationSettings:hover{
-     -fx-background-image: url("images/monitor4.png");
-     -fx-background-size: cover;
-}
-.applicationSettingsActive{
-     -fx-background-image: url("images/monitor4.png");
-     -fx-background-size: cover;
-}
-.userSettings{
-     -fx-background-image: url("images/users5.png");
-     -fx-background-size: cover;
-}
-.userSettings:hover{
-     -fx-background-image: url("images/users4.png");
-     -fx-background-size: cover;
-}
-.userSettingsActive{
-     -fx-background-image: url("images/users4.png");
-     -fx-background-size: cover;
-}
-.modsSettings{
-     -fx-background-image: url("images/mods5.png");
-     -fx-background-size: cover;
-}
-.modsSettings:hover{
-     -fx-background-image: url("images/mods4.png");
-     -fx-background-size: cover;
-}
-.modsSettingsActive{
-     -fx-background-image: url("images/mods4.png");
-     -fx-background-size: cover;
-}
-.homeSettings{
-     -fx-background-image: url("images/homeSetting5.png");
-     -fx-background-size: cover;
-}
-.homeSettings:hover{
-     -fx-background-image: url("images/homeSetting4.png");
-     -fx-background-size: cover;
-}
-.homeSettingsActive{
-     -fx-background-image: url("images/homeSetting4.png");
-     -fx-background-size: cover;
+.addUserInfoTextField {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -jfx-focus-color: #DB7093;
+    -jfx-unfocus-color: black;
+    -fx-font-size: 14px;
 }
 
-.themeSettings{
-     -fx-background-image: url("images/theme5.png");
-     -fx-background-size: cover;
-}
-.themeSettings:hover{
-     -fx-background-image: url("images/theme4.png");
-     -fx-background-size: cover;
-}
-.themeSettingsActive{
-     -fx-background-image: url("images/theme4.png");
-     -fx-background-size: cover;
+.changeUserWeather {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -jfx-focus-color: darkGreen;
+    -jfx-unfocus-color: #ffe100;
+    -fx-font-size: 20
+
 }
 
-.languageSettings{
-     -fx-background-image: url("images/language5.png");
-     -fx-background-size: cover;
-}
-.languageSettings:hover{
-     -fx-background-image: url("images/language4.png");
-     -fx-background-size: cover;
-}
-.languageSettingsActive{
-     -fx-background-image: url("images/language4.png");
-     -fx-background-size: cover;
+.changeUserInforRadioButton {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -jfx-selected-color: #DB7093;
+    -jfx-unselected-color: black;
+    -fx-font-size: 12px;
 }
 
-.notificationSettings{
-     -fx-background-image: url("images/notification5.png");
-     -fx-background-size: cover;
-}
-.notificationSettings:hover{
-     -fx-background-image: url("images/notification4.png");
-     -fx-background-size: cover;
-}
-.notificationSettingsActive{
-     -fx-background-image: url("images/notification4.png");
-     -fx-background-size: cover;
+.bulkChangesRadioButton {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -jfx-selected-color: #136c68;
+    -jfx-unselected-color: black;
+    -fx-font-size: 10px;
+    -fx-text-fill: #136c68;
 }
 
-.emergencySettings{
-     -fx-background-image: url("images/alarm5.png");
-     -fx-background-size: cover;
-}
-.emergencySettings:hover{
-     -fx-background-image: url("images/alarm4.png");
-     -fx-background-size: cover;
-}
-.emergencySettingsActive{
-     -fx-background-image: url("images/alarm4.png");
-     -fx-background-size: cover;
+.changeUserInfoLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 20px;
 }
 
-.connectionSettings{
-     -fx-background-image: url("images/homeConnection5.png");
-     -fx-background-size: cover;
+.changeUserSubInfoLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 13px;
 }
-.connectionSettings:hover{
-     -fx-background-image: url("images/homeConnection4.png");
-     -fx-background-size: cover;
+
+.settingsTopLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 27px;
 }
-.connectionSettingsActive{
-     -fx-background-image: url("images/homeConnection4.png");
-     -fx-background-size: cover;
+
+.settingMiddleLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 18px;
 }
-.settingSubPane{
-        -fx-background-color: #c6ecd7;
-        -fx-border-color:#3d5214;
+
+.settingLittleLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 14px;
 }
-.settingWeatherPane{
-        -fx-background-color:#c6ecd7;
-        -fx-border-color:#3d5214;
-}
-.changeThemeSave{
-    -fx-background-image: url("images/save5.png");
-    -fx-background-size: cover;
-}
-.changeThemeSave:hover{
-    -fx-background-image: url("images/save4.png");
-    -fx-background-size: cover;
-}
-.changeThemeSaveRadioButton{
-     -jfx-selected-color:#DB7093;
-     -jfx-unselected-color: black;
-    -fx-font-family:  'Patrick Hand', cursive;
+
+.addUserLabel {
+    -fx-font-family: 'Oswald', sans-serif;
     -fx-text-fill: #136c68;
     -fx-font-size: 15px;
 }
-.addUserRadioButton{
-     -jfx-selected-color:#DB7093;
-     -jfx-unselected-color: black;
-    -fx-font-family:  'Patrick Hand', cursive;
-          -fx-text-fill: #136c68;
-          -fx-font-size: 13px;
-}
-.userProfileInfoLabel{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #136c68;
-     -fx-font-size: 12px;
-}
-.userProfileButtonGirls{
-           -fx-background-image: url("images/girls5.png");
-           -fx-background-size: cover;
-}
-.userProfileButtonGirls:hover{
-           -fx-background-image: url("images/girls4.png");
-           -fx-background-size: cover;
-}
-.userProfileButtonGirlsActive{
-           -fx-background-image: url("images/girls4.png");
-           -fx-background-size: cover;
-}
-.settingTopPaneLabels{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #004b4d;
-     -fx-font-size: 14px;
-}
-.topPaneLabels{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #3399ff;
-     -fx-font-size: 16px;
-}
-.timeLabel{
-    -fx-font-family:  'Patrick Hand', cursive;
-     -fx-text-fill: #3399ff;
-     -fx-font-size: 20px;
-}
-.deutsch{
-           -fx-background-image: url("images/germany.png");
-           -fx-background-size: cover;
-}
-.english{
-           -fx-background-image: url("images/uk.png");
-           -fx-background-size: cover;
-}
-.turkce{
-           -fx-background-image: url("images/turkey.png");
-           -fx-background-size: cover;
-}
-.italiano{
-           -fx-background-image: url("images/italy.png");
-           -fx-background-size: cover;
-}
-.francais{
-           -fx-background-image: url("images/france.png");
-           -fx-background-size: cover;
-}
-.wifiImage{
-        -fx-image: url("images/wifiConnection5.png");
-}
-.wifiImageActive{
-        -fx-image: url("images/wifiConnection4.png");
-}
-.usbImage{
-        -fx-image: url("images/usbConnection5.png");
-}
-.usbImageActive{
-        -fx-image: url("images/usbConnection4.png");
-}
-.bluImage{
-        -fx-image: url("images/computerBlu5.png");
-}
-.bluImageActive{
-        -fx-image: url("images/computerBlu4.png");
-}
-.addUserButton{
-         -fx-background-image: url("images/addUser5.png");
-         -fx-background-size: cover;
- }
- .addUserButton:hover{
-         -fx-background-image: url("images/addUser4.png");
-         -fx-background-size: cover;
- }
- .permissionButton{
-          -fx-background-image: url("images/permission5.png");
-          -fx-background-size: cover;
-  }
-  .permissionButton:hover{
-          -fx-background-image: url("images/permission4.png");
-          -fx-background-size: cover;
-  }
-.removeUserButton{
-        -fx-background-image: url("images/removeUser5.png");
-        -fx-background-size: cover;
-}
-.removeUserButton:hover{
-        -fx-background-image: url("images/removeUser4.png");
-        -fx-background-size: cover;
-}
-.verifyAddUserButton{
-        -fx-background-image: url("images/verifyAdd5.png");
-        -fx-background-size: cover;
-}
-.verifyAddUserButton:hover{
-        -fx-background-image: url("images/verifyAdd4.png");
-        -fx-background-size: cover;
-}
-.addRemoveUserPane{
-           -fx-background-color: #c6ecd7;
-           -fx-border-color: #E6E6FA;
-}
-.changeUserType{
-        -fx-background-image: url("images/userType5.png");
-        -fx-background-size: cover;
-}
-.changeUserType:hover{
-        -fx-background-image: url("images/userType4.png");
-        -fx-background-size: cover;
-}
-.verifyRemove{
-        -fx-background-image: url("images/verifyRemove5.png");
-        -fx-background-size: cover;
-}
-.verifyRemove:hover{
-        -fx-background-image: url("images/verifyRemove4.png");
-        -fx-background-size: cover;
-}
-//for table
 
-.tree-table-view{
-    -fx-tree-table-color: #FFE4C4  ;
-    -fx-tree-table-rippler-color : #b85c00;
+.userInfoTextField {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -jfx-focus-color: #b85c00;
+    -jfx-unfocus-color: black;
+    -fx-font-size: 14px;
 }
+
+.applicationSettings {
+    -fx-background-image: url("images/monitor5.png");
+    -fx-background-size: cover;
+}
+
+.applicationSettings:hover {
+    -fx-background-image: url("images/monitor4.png");
+    -fx-background-size: cover;
+}
+
+.applicationSettingsActive {
+    -fx-background-image: url("images/monitor4.png");
+    -fx-background-size: cover;
+}
+
+.userSettings {
+    -fx-background-image: url("images/users5.png");
+    -fx-background-size: cover;
+}
+
+.userSettings:hover {
+    -fx-background-image: url("images/users4.png");
+    -fx-background-size: cover;
+}
+
+.userSettingsActive {
+    -fx-background-image: url("images/users4.png");
+    -fx-background-size: cover;
+}
+
+.modsSettings {
+    -fx-background-image: url("images/mods5.png");
+    -fx-background-size: cover;
+}
+
+.modsSettings:hover {
+    -fx-background-image: url("images/mods4.png");
+    -fx-background-size: cover;
+}
+
+.modsSettingsActive {
+    -fx-background-image: url("images/mods4.png");
+    -fx-background-size: cover;
+}
+
+.homeSettings {
+    -fx-background-image: url("images/homeSetting5.png");
+    -fx-background-size: cover;
+}
+
+.homeSettings:hover {
+    -fx-background-image: url("images/homeSetting4.png");
+    -fx-background-size: cover;
+}
+
+.homeSettingsActive {
+    -fx-background-image: url("images/homeSetting4.png");
+    -fx-background-size: cover;
+}
+
+.themeSettings {
+    -fx-background-image: url("images/theme5.png");
+    -fx-background-size: cover;
+}
+
+.themeSettings:hover {
+    -fx-background-image: url("images/theme4.png");
+    -fx-background-size: cover;
+}
+
+.themeSettingsActive {
+    -fx-background-image: url("images/theme4.png");
+    -fx-background-size: cover;
+}
+
+.languageSettings {
+    -fx-background-image: url("images/language5.png");
+    -fx-background-size: cover;
+}
+
+.languageSettings:hover {
+    -fx-background-image: url("images/language4.png");
+    -fx-background-size: cover;
+}
+
+.languageSettingsActive {
+    -fx-background-image: url("images/language4.png");
+    -fx-background-size: cover;
+}
+
+.notificationSettings {
+    -fx-background-image: url("images/notification5.png");
+    -fx-background-size: cover;
+}
+
+.notificationSettings:hover {
+    -fx-background-image: url("images/notification4.png");
+    -fx-background-size: cover;
+}
+
+.notificationSettingsActive {
+    -fx-background-image: url("images/notification4.png");
+    -fx-background-size: cover;
+}
+
+.emergencySettings {
+    -fx-background-image: url("images/alarm5.png");
+    -fx-background-size: cover;
+}
+
+.emergencySettings:hover {
+    -fx-background-image: url("images/alarm4.png");
+    -fx-background-size: cover;
+}
+
+.emergencySettingsActive {
+    -fx-background-image: url("images/alarm4.png");
+    -fx-background-size: cover;
+}
+
+.connectionSettings {
+    -fx-background-image: url("images/homeConnection5.png");
+    -fx-background-size: cover;
+}
+
+.connectionSettings:hover {
+    -fx-background-image: url("images/homeConnection4.png");
+    -fx-background-size: cover;
+}
+
+.connectionSettingsActive {
+    -fx-background-image: url("images/homeConnection4.png");
+    -fx-background-size: cover;
+}
+
+.settingSubPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #3d5214;
+}
+
+.settingWeatherPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #3d5214;
+}
+
+.changeThemeSave {
+    -fx-background-image: url("images/save5.png");
+    -fx-background-size: cover;
+}
+
+.changeThemeSave:hover {
+    -fx-background-image: url("images/save4.png");
+    -fx-background-size: cover;
+}
+
+.changeThemeSaveRadioButton {
+    -jfx-selected-color: #DB7093;
+    -jfx-unselected-color: black;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 15px;
+}
+
+.addUserRadioButton {
+    -jfx-selected-color: #DB7093;
+    -jfx-unselected-color: black;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 13px;
+}
+
+.userProfileInfoLabel {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #136c68;
+    -fx-font-size: 12px;
+}
+
+.userProfileButtonGirls {
+    -fx-background-image: url("images/girls5.png");
+    -fx-background-size: cover;
+}
+
+.userProfileButtonGirls:hover {
+    -fx-background-image: url("images/girls4.png");
+    -fx-background-size: cover;
+}
+
+.userProfileButtonGirlsActive {
+    -fx-background-image: url("images/girls4.png");
+    -fx-background-size: cover;
+}
+
+.settingTopPaneLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #004b4d;
+    -fx-font-size: 14px;
+}
+
+.topPaneLabels {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #3399ff;
+    -fx-font-size: 16px;
+}
+
+.timeLabel {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #3399ff;
+    -fx-font-size: 20px;
+}
+
+.deutsch {
+    -fx-background-image: url("images/germany.png");
+    -fx-background-size: cover;
+}
+
+.english {
+    -fx-background-image: url("images/uk.png");
+    -fx-background-size: cover;
+}
+
+.turkce {
+    -fx-background-image: url("images/turkey.png");
+    -fx-background-size: cover;
+}
+
+.italiano {
+    -fx-background-image: url("images/italy.png");
+    -fx-background-size: cover;
+}
+
+.francais {
+    -fx-background-image: url("images/france.png");
+    -fx-background-size: cover;
+}
+
+.wifiImage {
+    -fx-image: url("images/wifiConnection5.png");
+}
+
+.wifiImageActive {
+    -fx-image: url("images/wifiConnection4.png");
+}
+
+.usbImage {
+    -fx-image: url("images/usbConnection5.png");
+}
+
+.usbImageActive {
+    -fx-image: url("images/usbConnection4.png");
+}
+
+.bluImage {
+    -fx-image: url("images/computerBlu5.png");
+}
+
+.bluImageActive {
+    -fx-image: url("images/computerBlu4.png");
+}
+
+.addUserButton {
+    -fx-background-image: url("images/addUser5.png");
+    -fx-background-size: cover;
+}
+
+.addUserButton:hover {
+    -fx-background-image: url("images/addUser4.png");
+    -fx-background-size: cover;
+}
+
+.permissionButton {
+    -fx-background-image: url("images/permission5.png");
+    -fx-background-size: cover;
+}
+
+.permissionButton:hover {
+    -fx-background-image: url("images/permission4.png");
+    -fx-background-size: cover;
+}
+
+.removeUserButton {
+    -fx-background-image: url("images/removeUser5.png");
+    -fx-background-size: cover;
+}
+
+.removeUserButton:hover {
+    -fx-background-image: url("images/removeUser4.png");
+    -fx-background-size: cover;
+}
+
+.verifyAddUserButton {
+    -fx-background-image: url("images/verifyAdd5.png");
+    -fx-background-size: cover;
+}
+
+.verifyAddUserButton:hover {
+    -fx-background-image: url("images/verifyAdd4.png");
+    -fx-background-size: cover;
+}
+
+.addRemoveUserPane {
+    -fx-background-color: #c6ecd7;
+    -fx-border-color: #E6E6FA;
+}
+
+.changeUserType {
+    -fx-background-image: url("images/userType5.png");
+    -fx-background-size: cover;
+}
+
+.changeUserType:hover {
+    -fx-background-image: url("images/userType4.png");
+    -fx-background-size: cover;
+}
+
+.verifyRemove {
+    -fx-background-image: url("images/verifyRemove5.png");
+    -fx-background-size: cover;
+}
+
+.verifyRemove:hover {
+    -fx-background-image: url("images/verifyRemove4.png");
+    -fx-background-size: cover;
+}
+
+.tree-table-view {
+    -fx-tree-table-color: #FFE4C4;
+    -fx-tree-table-rippler-color: #b85c00;
+}
+
 .tree-table-view:focused .tree-table-row-cell:selected {
-    -fx-background-color:#FFE4C4  ;
+    -fx-background-color: #FFE4C4;
     -fx-table-cell-border-color: #F0FFFF;
-    -fx-border-color:#F0FFFF;
+    -fx-border-color: #F0FFFF;
 }
 
-.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
-    -fx-font-family:  'Patrick Hand', cursive;
+.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell {
+    -fx-font-family: 'Patrick Hand', cursive;
     -fx-text-fill: black;
-    -fx-border-color:#F0FFFF;
+    -fx-border-color: #F0FFFF;
 }
 
 .tree-table-view .jfx-rippler {
@@ -705,121 +854,143 @@
     -fx-border-color: black;
 }
 
-.tree-table-view .column-header ,
+.tree-table-view .column-header,
 .tree-table-view .column-header-background,
-.tree-table-view .column-header-background .filler{
-    -fx-background-color:#F0F8FF;
-    -fx-border-color:#DEB887;
+.tree-table-view .column-header-background .filler {
+    -fx-background-color: #F0F8FF;
+    -fx-border-color: #DEB887;
 }
 
-.tree-table-view .column-header{
-    -fx-border-width : 0 2 0 2;
+.tree-table-view .column-header {
+    -fx-border-width: 0 2 0 2;
     -fx-border-color: #DEB887;
 }
 
 .tree-table-view .column-header .label {
-    -fx-font-family:  'Patrick Hand', cursive;
-    -fx-text-fill : #DEB887;
-    -fx-padding : 16 0 16 0 ;
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-text-fill: #DEB887;
+    -fx-padding: 16 0 16 0;
 }
 
-.tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot{
-    -fx-background-color : #DEB887;
+.tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot {
+    -fx-background-color: #DEB887;
 }
 
 .tree-table-view .column-header:last-visible {
     -fx-border-width: 0 2 0 1;
-        -fx-border-color: #DEB887;
+    -fx-border-color: #DEB887;
 }
-.datePicker{
-    -fx-font-family:  'Patrick Hand', cursive;
-    -jfx-default-color:darkGreen;
-    -fx-text-fill:darkGreen;
-     -fx-font-size: 12px;
+
+.datePicker {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -jfx-default-color: darkGreen;
+    -fx-text-fill: darkGreen;
+    -fx-font-size: 12px;
 }
-.updateWeather{
-        -fx-background-image: url("images/updater5.png");
-        -fx-background-size: cover;
+
+.updateWeather {
+    -fx-background-image: url("images/updater5.png");
+    -fx-background-size: cover;
 }
-.updateWeather:hover{
-        -fx-background-image: url("images/updater4.png");
-        -fx-background-size: cover;
+
+.updateWeather:hover {
+    -fx-background-image: url("images/updater4.png");
+    -fx-background-size: cover;
 }
-.electricityImage{
-        -fx-image: url("images/elec5.png");
-         -fx-background-size: cover;
+
+.electricityImage {
+    -fx-image: url("images/elec5.png");
+    -fx-background-size: cover;
 }
-.gasImage{
-        -fx-image: url("images/gas5.png");
-         -fx-background-size: cover;
+
+.gasImage {
+    -fx-image: url("images/gas5.png");
+    -fx-background-size: cover;
 }
-.waterImage{
-        -fx-image: url("images/water5.png");
-         -fx-background-size: cover;
+
+.waterImage {
+    -fx-image: url("images/water5.png");
+    -fx-background-size: cover;
 }
-.aquariumImage{
-        -fx-image: url("images/aquarium5.png");
-         -fx-background-size: cover;
+
+.aquariumImage {
+    -fx-image: url("images/aquarium5.png");
+    -fx-background-size: cover;
 }
-.gardenLightImage{
-        -fx-image: url("images/idea5.png");
-         -fx-background-size: cover;
+
+.gardenLightImage {
+    -fx-image: url("images/idea5.png");
+    -fx-background-size: cover;
 }
-.clockImage{
-        -fx-image: url("images/clock5.png");
-         -fx-background-size: cover;
+
+.clockImage {
+    -fx-image: url("images/clock5.png");
+    -fx-background-size: cover;
 }
-.calenderImage{
-        -fx-image: url("images/calender5.png");
-         -fx-background-size: cover;
+
+.calenderImage {
+    -fx-image: url("images/calender5.png");
+    -fx-background-size: cover;
 }
-.buzzerImage{
-        -fx-image: url("images/siren5.png");
-         -fx-background-size: cover;
+
+.buzzerImage {
+    -fx-image: url("images/siren5.png");
+    -fx-background-size: cover;
 }
-.incomingWaterImage{
-        -fx-image: url("images/incomingWater5.png");
-         -fx-background-size: cover;
+
+.incomingWaterImage {
+    -fx-image: url("images/incomingWater5.png");
+    -fx-background-size: cover;
 }
-.outgoingWaterImage{
-        -fx-image: url("images/outgoingWater5.png");
-         -fx-background-size: cover;
+
+.outgoingWaterImage {
+    -fx-image: url("images/outgoingWater5.png");
+    -fx-background-size: cover;
 }
-.doorImage{
-        -fx-image: url("images/door5.png");
-         -fx-background-size: cover;
+
+.doorImage {
+    -fx-image: url("images/door5.png");
+    -fx-background-size: cover;
 }
-.feedingImage{
-        -fx-image: url("images/feeding5.png");
-         -fx-background-size: cover;
+
+.feedingImage {
+    -fx-image: url("images/feeding5.png");
+    -fx-background-size: cover;
 }
-.calenderDatePicker{
-        -fx-font-family:  'Patrick Hand', cursive;
-        -jfx-default-color:darkGreen;
-        -fx-text-fill:darkGreen;
-         -fx-font-size: 12px;
+
+.calenderDatePicker {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -jfx-default-color: darkGreen;
+    -fx-text-fill: darkGreen;
+    -fx-font-size: 12px;
 }
-.helpButton{
-           -fx-background-image: url("images/help5.png");
-           -fx-background-size: cover;
+
+.helpButton {
+    -fx-background-image: url("images/help5.png");
+    -fx-background-size: cover;
 }
-.helpButton:hover{
-           -fx-background-image: url("images/help4.png");
-           -fx-background-size: cover;
+
+.helpButton:hover {
+    -fx-background-image: url("images/help4.png");
+    -fx-background-size: cover;
 }
-.soundHelperImage{
-        -fx-image: url("images/soundHelper5.png");
-         -fx-background-size: cover;
+
+.soundHelperImage {
+    -fx-image: url("images/soundHelper5.png");
+    -fx-background-size: cover;
 }
-.textHelperImage{
-        -fx-image: url("images/textHelper5.png");
-         -fx-background-size: cover;
+
+.textHelperImage {
+    -fx-image: url("images/textHelper5.png");
+    -fx-background-size: cover;
 }
-.feedingButton{
-        -fx-background-image: url("images/feeding5.png");
-         -fx-background-size: cover;
+
+.feedingButton {
+    -fx-background-image: url("images/feeding5.png");
+    -fx-background-size: cover;
 }
-.feedingButton:hover{
-        -fx-background-image: url("images/feeding4.png");
-         -fx-background-size: cover;
+
+.feedingButton:hover {
+    -fx-background-image: url("images/feeding4.png");
+    -fx-background-size: cover;
 }

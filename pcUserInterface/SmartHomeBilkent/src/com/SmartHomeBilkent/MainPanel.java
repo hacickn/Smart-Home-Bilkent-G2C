@@ -722,11 +722,11 @@ public class MainPanel implements Initializable {
          openSettingsPane();
 
       } else if( event.getSource() == logoutButton ) {
-         Platform.exit();
-         exit = true;
-
          if( isArduinoConnect )
             home.getArduino().closeConnection();
+         Platform.exit();
+         exit = true;
+         System.exit( 0 );
 
       } else if( event.getSource() == helpButton ) {
          try {

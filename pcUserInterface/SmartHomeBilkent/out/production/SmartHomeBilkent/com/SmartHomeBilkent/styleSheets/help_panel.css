@@ -1,80 +1,99 @@
-.root{
-     -fx-background-image : url("images/helpImage.jpg");
-     -fx-background-size: cover;
+.root {
+    -fx-background-image: url("images/helpImage.jpg");
+    -fx-background-size: cover;
 }
-.exitHelp{
-     -fx-background-image: url("images/logout4.png");
-     -fx-background-size: cover;
+
+.exitHelp {
+    -fx-background-image: url("images/logout4.png");
+    -fx-background-size: cover;
 }
-.exitHelp:hover{
-     -fx-background-image: url("images/logout5.png");
-     -fx-background-size: cover;
+
+.exitHelp:hover {
+    -fx-background-image: url("images/logout5.png");
+    -fx-background-size: cover;
 }
-.userProfileHelp{
-     -fx-background-image: url("images/userSetting4.png");
-     -fx-background-size: cover;
+
+.userProfileHelp {
+    -fx-background-image: url("images/userSetting4.png");
+    -fx-background-size: cover;
 }
-.userProfileHelp:hover{
-     -fx-background-image: url("images/userSetting5.png");
-     -fx-background-size: cover;
+
+.userProfileHelp:hover {
+    -fx-background-image: url("images/userSetting5.png");
+    -fx-background-size: cover;
 }
-.menuHelp{
-     -fx-background-image: url("images/menu4.png");
-     -fx-background-size: cover;
+
+.menuHelp {
+    -fx-background-image: url("images/menu4.png");
+    -fx-background-size: cover;
 }
-.menuHelp:hover{
-     -fx-background-image: url("images/menu5.png");
-     -fx-background-size: cover;
+
+.menuHelp:hover {
+    -fx-background-image: url("images/menu5.png");
+    -fx-background-size: cover;
 }
-.settingsHelp{
-     -fx-background-image: url("images/engineer4.png");
-     -fx-background-size: cover;
+
+.settingsHelp {
+    -fx-background-image: url("images/engineer4.png");
+    -fx-background-size: cover;
 }
-.settingsHelp:hover{
-     -fx-background-image: url("images/engineer5.png");
-     -fx-background-size: cover;
+
+.settingsHelp:hover {
+    -fx-background-image: url("images/engineer5.png");
+    -fx-background-size: cover;
 }
- .warningHelpLabel{
-       -fx-font-family:  'Patrick Hand', cursive;
-       -fx-font-size: 15px;
-  }
-.goBackButton{
-     -fx-background-image: url("images/arrow4.png");
-     -fx-background-size: cover;
+
+.warningHelpLabel {
+    -fx-font-family: 'Patrick Hand', cursive;
+    -fx-font-size: 15px;
 }
-.goBackButton:hover{
-     -fx-background-image: url("images/arrow5.png");
-     -fx-background-size: cover;
+
+.goBackButton {
+    -fx-background-image: url("images/arrow4.png");
+    -fx-background-size: cover;
 }
-.applicationSettingHelp{
-     -fx-background-image: url("images/monitor4.png");
-     -fx-background-size: cover;
+
+.goBackButton:hover {
+    -fx-background-image: url("images/arrow5.png");
+    -fx-background-size: cover;
 }
-.applicationSettingHelp:hover{
-     -fx-background-image: url("images/monitor5.png");
-     -fx-background-size: cover;
+
+.applicationSettingHelp {
+    -fx-background-image: url("images/monitor4.png");
+    -fx-background-size: cover;
 }
-.usersSettingHelp{
-     -fx-background-image: url("images/users4.png");
-     -fx-background-size: cover;
+
+.applicationSettingHelp:hover {
+    -fx-background-image: url("images/monitor5.png");
+    -fx-background-size: cover;
 }
-.usersSettingHelp:hover{
-     -fx-background-image: url("images/users5.png");
-     -fx-background-size: cover;
+
+.usersSettingHelp {
+    -fx-background-image: url("images/users4.png");
+    -fx-background-size: cover;
 }
-.modsSettingHelp{
-     -fx-background-image: url("images/mods4.png");
-     -fx-background-size: cover;
+
+.usersSettingHelp:hover {
+    -fx-background-image: url("images/users5.png");
+    -fx-background-size: cover;
 }
-.modsSettingHelp:hover{
-     -fx-background-image: url("images/mods5.png");
-     -fx-background-size: cover;
+
+.modsSettingHelp {
+    -fx-background-image: url("images/mods4.png");
+    -fx-background-size: cover;
 }
-.homeSettingHelp{
-     -fx-background-image: url("images/homeSetting4.png");
-     -fx-background-size: cover;
+
+.modsSettingHelp:hover {
+    -fx-background-image: url("images/mods5.png");
+    -fx-background-size: cover;
 }
-.homeSettingHelp:hover{
-     -fx-background-image: url("images/homeSetting5.png");
-     -fx-background-size: cover;
+
+.homeSettingHelp {
+    -fx-background-image: url("images/homeSetting4.png");
+    -fx-background-size: cover;
+}
+
+.homeSettingHelp:hover {
+    -fx-background-image: url("images/homeSetting5.png");
+    -fx-background-size: cover;
 }
