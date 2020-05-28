@@ -18,12 +18,12 @@ This week, with the start of the exams, I continued to research the systems we c
 ---
 
 ### ~ 16.03.2020 ~
-With the onset of the pandemic period, I started to work more intensively on the project. I shared the idea of ​​adding the Aquarium and Greenhouse systems to the smart home with my group friends, and we thought that it would actually be a useful idea for the pandemic period. I made researches and made reports about how plant production and aquarium cycle can be achieved. I continued my first week based on the research of the digital systems of the sensors that we will generally use like from [Direnc.net](https://www.direnc.net/) and [Robotus](https://www.robotus.net/). I also thought that a simulation would help us implement and test the project, with the idea that project presentations could be made at home.  I have tried a few researches and applications on digital design in [Proteus](https://www.labcenter.com/) simulation. (almost 30 hours)
+With the onset of the pandemic period, I started to work more intensively on the project. I shared the idea of adding the Aquarium and Greenhouse systems to the smart home with my group friends, and we thought that it would actually be a useful idea for the pandemic period. I made researches and made reports about how plant production and aquarium cycle can be achieved. I continued my first week based on the research of the digital systems of the sensors that we will generally use like from [Direnc.net](https://www.direnc.net/) and [Robotus](https://www.robotus.net/). I also thought that a simulation would help us implement and test the project, with the idea that project presentations could be made at home.  I have tried a few researches and applications on digital design in [Proteus](https://www.labcenter.com/) simulation. Because of we are using Arduino, I used [EEPROM](https://www.arduinolibraries.info/libraries/spark-fun-external-eeprom-arduino-library) for microcontrtoller that is used for saving our program to the EEPROM that is type of ROM. FOr me, most important part is date and time integration and I used date and time integration [DS1307RTC](https://www.arduinolibraries.info/libraries/ds1307-rtc) to keep time and date constantly wehether electric on or off on the circuit(almost 30 hours)
 
 ---
 
 ### ~ 23.03.2020 ~
-This week, I continued my sensor research that can be used  [robitshop](https://www.robitshop.com/) and [Robotistan](https://www.robotistan.com/). Although I initially thought of the sensor that uses infrared beam to measure the water level in the aquarium, I then thought about the breaks that might have been in the water and decided to use an ultrasonic sensor. In the encryption system we will use, I decided to choose motion, gas, smoke sensors and fire button, lcd and lcd types. With the researches of the code we will write in Arduino, [Mobilhanem.com](https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/) and [gelecegiyazanlar.turkcell](https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) I started writing the codes. Examine the connection diagrams of these systems [Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/) I started to build our C ++ code. I also thought that being a 4x4 Keypad is suitable for features such as deletion, changing the password and I started to add these systems to the simulation in Proteus. I also found libraries not in Proteus' library on the internet and added them to the library of the simulation program. I examined the individual connection protocols of these sensors and added them to the code in C ++ and to Proteus.(nearly 30- 40 hours)
+This week, I continued my sensor research that can be used  [robitshop](https://www.robitshop.com/) and [Robotistan](https://www.robotistan.com/). Although I initially thought of the sensor that uses infrared beam to measure the water level in the aquarium, I then thought about the breaks that might have been in the water and decided to use an ultrasonic sensor. In the encryption system we will use, I decided to choose motion, gas, smoke sensors and fire button, lcd [LiquidCrystal](https://www.arduinolibraries.info/libraries/liquid-crystal) and lcd types. With the researches of the code we will write in Arduino, [Mobilhanem.com](https://www.mobilhanem.com/arduino-dersleri-serial-port-ve-fonctionlari/) and [gelecegiyazanlar.turkcell](https: //gelecegiyazanlar.turkcell. com.tr/konu/arduino/egitim/arduino-201/seri-port-uzinden-haberlesme) I started writing the codes. Examine the connection diagrams of these systems [Arduino Turkey](http://arduinoturkiye.com/arduino-ile-seri-iletisim-2/) I started to build our C ++ code. I also thought that being a 4x4 [Keypad](https://playground.arduino.cc/Code/Keypad/) is suitable for features such as deletion, changing the password and I started to add these systems to the simulation in Proteus. I also found libraries not in Proteus' library on the internet and added them to the library of the simulation program. I examined the individual connection protocols of these sensors and added them to the code in C ++ and to Proteus.(nearly 30- 40 hours)
 
 ---
 
@@ -52,24 +52,34 @@ I fixed it with the code.
 ---
 
 ### ~ 13.04.2020 ~
-  This week I started working on the pc interface and started adding on greenhouse. In Arduino, we measured the moisture of the soil and sent it to the smart home as data, and we had to make the pc interface read it. We added the soil moisture sensor and used DHT222 to measure the temperature and humidity of the environment in the greenhouse and added the library "DHT.h". I added the classes regarding GreenhHouse that are
-GreenHouseData, GreenHouseValues, and GreenHouse. From the Ardunio data from greenhouse is measured and can be sent to pc interface. In this classes I also design the view of greenhouse button and labels.(nearly estimation 10-20 hours)
+This week I started working on the pc interface and started adding on greenhouse. In Arduino, we measured the moisture of the soil and sent it to the smart home as data, and we had to make the pc interface read it. We added the soil moisture sensor and used DHT222 to measure the temperature and humidity of the environment in the greenhouse and added the library "DHT.h". I added the classes regarding GreenhHouse that are GreenHouseData, GreenHouseValues, and GreenHouse. From the Ardunio data from greenhouse is measured and can be sent to pc interface. In this classes I also design the view of greenhouse button and labels.(nearly estimation 10-20 hours)
 
 ---
 
 ### ~ 20.04.2020 ~
-This week I started working on weather class on the pc interface with Hacı. We designed background of the weather class in Main panel. We arranged the idea that it should suit based on the weather and we added some of pictures to pictures file and arrange the colors which is suitable for background color.  I wrote Ultrasonic sensor methods that are echo and trigger and I did search about the way to use these connection and I found the formula from the internet t  = s /  v  => 10cm/ 0..34 = 294 micro sec * distance: => s = t*0.034/2q. (nearly 10-15 hours)
+This week I started working on weather class on the pc interface with Hacı. We designed background of the weather class in Main panel. We arranged the idea that it should suit based on the weather and we added some of pictures to pictures file and arrange the colors which is suitable for background color.  I wrote Ultrasonic sensor methods that are echo and trigger and I did search about the way to use these connection and I found the formula from the internet t  = s /  v  => 10cm/ 0..34 = 294 micro sec * distance: => s = t*0.034/2q. I connect it with servo because to fet the fishes on the aquarium the forage should be given by feed engine that is connect with servo motor [Servo](https://www.arduino.cc/en/reference/servo). I start to add humidty sensor to the Arduino for greenhouse system [DHT](https://playground.arduino.cc/Main/DHTLib/), I added SHT21 that I used this sensor for the heat and humidity of the house has a wider range than DHT, [SHT21](https://forum.arduino.cc/index.php?topic=557338.0)(nearly 30-32 hours)
 
 ---
 
 ### ~ 27.04.2020 ~
-This week I almost packed the program in Arduino. I moved on to the simulations in Proteus. I started shortening the codes. I had my friends tested the interface and tried to find the bugs of the interface and took notes of them and corrected them with the Hacı.
+This week I almost packed the program in Arduino. I moved on to the simulations in Proteus. I started shortening the codes. I had my friends tested the interface and tried to find the bugs of the interface and took notes of them and corrected them with the Hacı. I mailed to Proteus gruop for lisence. I divide Arduino project based on tasks, like keypad, sensors, lcd . In that way, I think understanding of the code will be much more easy. 
+
 
 ---
 
 ### ~ 04.05.2020 ~
-This week we started to develop programs in Arduino and Pc interface. We've duplicated the user's background theme option and I added 3 backgrounds. We researched these pictures from the internet and I added them to the images file. Then I made the color adjustments for these 3 background pics in the interface.
+This week we started to develop programs in Arduino and Pc interface. We've duplicated the user's background theme option and I added 3 backgrounds. We researched these pictures from the internet and I added them to the images file. Then I made the color adjustments for these 3 background pics in the interface. I added Help button to the PC interface with Hacı. We divideed into 4 buttons mainly, based on our interdace and I wrote in the text file instructions. Then, in intelliJ we converted into code format. (nearly 20-22 hours)
 
-****
+---
 
 ### ~ 11.05.2020 ~
+This week we started write our report. I did Arduino UMLet design and wrote report with my group friends. Then, I record my voice for the video that will be added on the youtube. I helped my friend for editinng the video. We arrange all the photos, records, videos, and, music file. I searched photos and gipfs from [Pinterest](https://tr.pinterest.com/pin/271201208786791651/) and [Giphy](https://giphy.com/explore/smart-home).(nearly 12-14 hours)
+
+
+---
+
+### ~ 22.05.2020 ~
+This week we packed our project and I write our meetings record to the meetinglog file and I arranged our Arduino_READ.me, however I could not find a solution to upload our Simulation, Proteus. Some of lisence problems, I faced. We are prepearing to final code submission. I am arranging my code, my log file, and read.me. (nearly 6-8 hours)
+
+
+****
