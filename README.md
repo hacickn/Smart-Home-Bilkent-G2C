@@ -25,8 +25,8 @@ To experince pc user interface, PLEASE read Its README file.
 + **Requirements:** completed (08.03.2020)
 + **UI Design:** completed (29.03.2020)
 + **Detailed Design:** completed (11.05.2020)
-+ **Implementation:** progress
-+ **Reflections:** not yet!
++ **Implementation:** completed (25.05.2020)
++ **Reflections:** completed (27.05.2020)
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
