@@ -31,7 +31,7 @@ module ProjectName{
 7) Rebuild project and run.
 ---
 
->To experience the program there are for users in the program( Each user type has different features ).
+>To experience the program there are four users in the program( Each user type has different features ).
 ```
  UserName       Password      User Type
 - david     |    cs102    |    Parent
@@ -69,7 +69,7 @@ any location in the world in lightweight JSON format
 #### Features
 ##### Program Features
 ```
-1) There are three option for user type ( CHILD/PARENT/ELDER ).
+1) There are three options for user type ( CHILD/PARENT/ELDER ).
 
 2) There are many features which can be personalized for each person.These are: 
 2.1) Theme of user interface can be changed(There are 12 option).
@@ -130,11 +130,11 @@ used by somenone, program doesn't permit to do that.
 11)Program has help button which contains all information about the program.
 
 (*)= In this demo, people can experience without connection. Program will
-not five any error because we prevent it. However, In logic way, users 
-should not able to use this features(7.1-7.14). In order to experience all
+not give any error because we prevent it. However, In logic way, users 
+should not able to use these features(7.1-7.14). In order to experience whole
 user interface, we use this way. However, if people want to experince all
 things working, they have to use simulation program( proteus ) and arduino
-IDE. If they setup them in their computers, program also can connected and 
+IDE. If they setup them in their computers, program also can connect and 
 work correctly. As a result, user can use this interface without error when
 both connecting or not connecting. 
 ```
